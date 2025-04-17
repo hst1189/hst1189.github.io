@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.us.kg</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.us.kg</link></image><lastBuildDate>Mon, 03 Mar 2025 13:21:21 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.34 虚拟币空投</title><link>https://grapehut.us.kg/post/34.html</link><description># 🎏 pump.fun
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://www.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://www.grapehut.xyz</link></image><lastBuildDate>Thu, 17 Apr 2025 14:13:51 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.34 虚拟币空投</title><link>https://www.grapehut.xyz/post/34.html</link><description># 🎏 pump.fun
 https://pump.fun/board
 
 
@@ -49,13 +49,13 @@ Wallet　ETH：0x7d6693e04c04471fbc7fe2f38245d83419f641f5
 Wallet　ETH：0x7d6693e04c04471fbc7fe2f38245d83419f641f5
 
 
-。</description><guid isPermaLink="true">https://grapehut.us.kg/post/34.html</guid><pubDate>Wed, 15 Jan 2025 13:58:27 +0000</pubDate></item><item><title>Vol.33 PowerToys使用技巧</title><link>https://grapehut.us.kg/post/33.html</link><description># 下载PowerToys&#13;
+。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/34.html</guid><pubDate>Wed, 15 Jan 2025 13:58:27 +0000</pubDate></item><item><title>Vol.33 PowerToys使用技巧</title><link>https://www.grapehut.xyz/post/33.html</link><description># 下载PowerToys&#13;
 https://github.com/microsoft/PowerToys&#13;
 &#13;
 # 下载插件&#13;
 1. [ChatGPTPowerToys](https://github.com/ferraridavide/ChatGPTPowerToys)&#13;
 将下载的插件解压后，放置到这个目录下：`C:\Program Files\PowerToys\RunPlugins`&#13;
-重启PowerToys。</description><guid isPermaLink="true">https://grapehut.us.kg/post/33.html</guid><pubDate>Tue, 14 Jan 2025 03:54:48 +0000</pubDate></item><item><title>Vol.32 白嫖Cloudflare无限多企业邮箱</title><link>https://grapehut.us.kg/post/32.html</link><description># 白嫖Cloudflare无限多企业邮箱
+重启PowerToys。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/33.html</guid><pubDate>Tue, 14 Jan 2025 03:54:48 +0000</pubDate></item><item><title>Vol.32 白嫖Cloudflare无限多企业邮箱</title><link>https://www.grapehut.xyz/post/32.html</link><description># 白嫖Cloudflare无限多企业邮箱
 
 ## 收邮件
 1. 进入cloudflare，选择一个已绑定的域名
@@ -93,7 +93,7 @@ curl -X POST 'https://api.resend.com/emails' \
   'subject': 'hello world',
   'html': '&lt;p&gt;it works!&lt;/p&gt;'
 }'
-```。</description><guid isPermaLink="true">https://grapehut.us.kg/post/32.html</guid><pubDate>Mon, 13 Jan 2025 14:12:12 +0000</pubDate></item><item><title>Vol.31 免费代理节点（CF 挂Vless/Trojan节点（ERROR1101 对策）</title><link>https://grapehut.us.kg/post/31.html</link><description># 🔖 新建Worker
+```。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/32.html</guid><pubDate>Mon, 13 Jan 2025 14:12:12 +0000</pubDate></item><item><title>Vol.31 免费代理节点（CF 挂Vless/Trojan节点（ERROR1101 对策）</title><link>https://www.grapehut.xyz/post/31.html</link><description># 🔖 新建Worker
 CF里创建一个worker（worker名字任意，如 cf996），初始脚本（work.js） 为默认Helloworld 即可
 CF会自动生成worker网址   如：https://cf996.hst1189.workers.dev
 
@@ -179,9 +179,9 @@ https://test.cf996.ip-ddns.com/8cda8d90-9c66-4f59-8f98-d433d6238a8c
 
 注意：其他平台客户端未开启分片功能情况下，workers域的6个443系TLS节点是不可用的
 
-注意：Shadowrocket(小火箭)、v2box、v2rayn、v2rayng客户端对trojan+ws有强制开启TLS问题，造成trojan+ws不通。</description><guid isPermaLink="true">https://grapehut.us.kg/post/31.html</guid><pubDate>Mon, 13 Jan 2025 06:08:14 +0000</pubDate></item><item><title>Vol.30 Scoop（Windowsパッケージ管理）</title><link>https://grapehut.us.kg/post/30.html</link><description># 🔖 Windows でのパッケージ管理は Scoop
+注意：Shadowrocket(小火箭)、v2box、v2rayn、v2rayng客户端对trojan+ws有强制开启TLS问题，造成trojan+ws不通。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/31.html</guid><pubDate>Mon, 13 Jan 2025 06:08:14 +0000</pubDate></item><item><title>Vol.30 Scoop（Windowsパッケージ管理）</title><link>https://www.grapehut.xyz/post/30.html</link><description># 🔖 Windows でのパッケージ管理は Scoop
 
-什么是 Scoop？它是一个在 Windows 上运行的软件包管理器。</description><guid isPermaLink="true">https://grapehut.us.kg/post/30.html</guid><pubDate>Sat, 11 Jan 2025 13:13:52 +0000</pubDate></item><item><title>Vol.29 免费获取大模型 API &amp; 利用实例</title><link>https://grapehut.us.kg/post/29.html</link><description># 💯  代理地址
+什么是 Scoop？它是一个在 Windows 上运行的软件包管理器。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/30.html</guid><pubDate>Sat, 11 Jan 2025 13:13:52 +0000</pubDate></item><item><title>Vol.29 免费获取大模型 API &amp; 利用实例</title><link>https://www.grapehut.xyz/post/29.html</link><description># 💯  代理地址
 https://api-proxy.me/
 
 
@@ -218,7 +218,7 @@ API地址： https://api.chatanywhere.tech (国内中转，延时更低)
  　×text-开头系列模型，例如：text-davinci（免费版已取消text系列模型）
  　×gpt-4全系列（只定期限量开放）
  　×付费版API支持OpenAI所有模型，包括（联网、绘画、聊天、向量、图片分析、文件分析、GPTs等）
- 　×付费版API支持Midjourney专业绘画、Suno音乐生成、PPT生成、多种视频模型。</description><guid isPermaLink="true">https://grapehut.us.kg/post/29.html</guid><pubDate>Sun, 05 Jan 2025 13:33:04 +0000</pubDate></item><item><title>Vol.28 Win安全开启SMB共享</title><link>https://grapehut.us.kg/post/28.html</link><description># 🔖 禁用 SMB1
+ 　×付费版API支持Midjourney专业绘画、Suno音乐生成、PPT生成、多种视频模型。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/29.html</guid><pubDate>Sun, 05 Jan 2025 13:33:04 +0000</pubDate></item><item><title>Vol.28 Win安全开启SMB共享</title><link>https://www.grapehut.xyz/post/28.html</link><description># 🔖 禁用 SMB1
 强烈建议关闭，打开Windows機能面板
 ```
 cmd ⇒ OptionalFeatures.exe
@@ -258,13 +258,13 @@ cmd ⇒ compmgmt.msc  打开计算机管理面板
 
 #### 2.1 分配用户权限
 设置好之后，joker 用户就无法本地登录到系统，同时也无法通过远程桌面的形式登录到本机，
-目的就是让 joker 只能用来 SMB 共享。</description><guid isPermaLink="true">https://grapehut.us.kg/post/28.html</guid><pubDate>Tue, 24 Dec 2024 06:00:06 +0000</pubDate></item><item><title>Vol.27 家用服务器（Ubuntu編）</title><link>https://grapehut.us.kg/post/27.html</link><description># 1. 安装Ubuntu系统
+目的就是让 joker 只能用来 SMB 共享。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/28.html</guid><pubDate>Tue, 24 Dec 2024 06:00:06 +0000</pubDate></item><item><title>Vol.27 家用服务器（Ubuntu編）</title><link>https://www.grapehut.xyz/post/27.html</link><description># 1. 安装Ubuntu系统
 Linux发行版Ubuntu24.04LTS　　※LTS的意思是'长期支持'
 https://releases.ubuntu.com/24.04.1/ubuntu-24.04.1-desktop-amd64.iso
 
 
 # 2. 绑定静态IP
-打开路由器设置---&gt;局域网设置--&gt;DHCP静态IP设置，分配一个固定IP，比如192.168.0.100。</description><guid isPermaLink="true">https://grapehut.us.kg/post/27.html</guid><pubDate>Thu, 19 Dec 2024 06:42:55 +0000</pubDate></item><item><title>Vol.26 白嫖批量注册gmail, outlook</title><link>https://grapehut.us.kg/post/26.html</link><description># 📫 Gamil
+打开路由器设置---&gt;局域网设置--&gt;DHCP静态IP设置，分配一个固定IP，比如192.168.0.100。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/27.html</guid><pubDate>Thu, 19 Dec 2024 06:42:55 +0000</pubDate></item><item><title>Vol.26 白嫖批量注册gmail, outlook</title><link>https://www.grapehut.xyz/post/26.html</link><description># 📫 Gamil
 例如：johndoe@gmail.com
 
 1. 任意位置添加「.」，都被视为同一个地址
@@ -294,7 +294,7 @@ john.doe+lable@googlemail.com
 
 
 # 📫 Outlook
-通过为outlook设备别名的方式，一次获得10个outlook邮箱，outlook邮箱与真实的完全一样。</description><guid isPermaLink="true">https://grapehut.us.kg/post/26.html</guid><pubDate>Wed, 18 Dec 2024 15:04:02 +0000</pubDate></item><item><title>Vol.25 白嫖AWS（免费一年）</title><link>https://grapehut.us.kg/post/25.html</link><description># 注册&#13;
+通过为outlook设备别名的方式，一次获得10个outlook邮箱，outlook邮箱与真实的完全一样。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/26.html</guid><pubDate>Wed, 18 Dec 2024 15:04:02 +0000</pubDate></item><item><title>Vol.25 白嫖AWS（免费一年）</title><link>https://www.grapehut.xyz/post/25.html</link><description># 注册&#13;
 1. 注册aws账号（需要信用卡，验证时会扣除1美元或等值的货币）&#13;
 https://aws.amazon.com/cn/campaigns/nc20241101/&#13;
 &#13;
@@ -339,7 +339,7 @@ docker ps -a                            #查看docker中所有容器&#13;
 # 常见问题&#13;
 &#13;
 ## 无法ping的解决方案&#13;
-首先Ping只是向服务器发送ICMP的数据包，如果在服务器的防火墙没有允许ICMP协议的数据包的话，那么即使服务器正常运行，那也是ping不同的。</description><guid isPermaLink="true">https://grapehut.us.kg/post/25.html</guid><pubDate>Tue, 17 Dec 2024 15:42:07 +0000</pubDate></item><item><title>Vol.24 本地构建ChatGPT</title><link>https://grapehut.us.kg/post/24.html</link><description># 创建一个本地ChatGPT&#13;
+首先Ping只是向服务器发送ICMP的数据包，如果在服务器的防火墙没有允许ICMP协议的数据包的话，那么即使服务器正常运行，那也是ping不同的。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/25.html</guid><pubDate>Tue, 17 Dec 2024 15:42:07 +0000</pubDate></item><item><title>Vol.24 本地构建ChatGPT</title><link>https://www.grapehut.xyz/post/24.html</link><description># 创建一个本地ChatGPT&#13;
 &#13;
 ### 0. 前提&#13;
 本地Linux（window可以利用wsl），或者VPS上构建 Linux&#13;
@@ -372,7 +372,7 @@ docker ps -a                             #查看docker容器状态&#13;
 ### 3. 打开网页，即开即用&#13;
 http://127.0.0.1:3000/&#13;
 &#13;
-。</description><guid isPermaLink="true">https://grapehut.us.kg/post/24.html</guid><pubDate>Tue, 17 Dec 2024 12:28:35 +0000</pubDate></item><item><title>Vol.23 油猴（Tampermonkey)</title><link>https://grapehut.us.kg/post/23.html</link><description># 比較&#13;
+。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/24.html</guid><pubDate>Tue, 17 Dec 2024 12:28:35 +0000</pubDate></item><item><title>Vol.23 油猴（Tampermonkey)</title><link>https://www.grapehut.xyz/post/23.html</link><description># 比較&#13;
 || Greasemonkey | Violentmonkey | Tampermonkey| Scriptcat&#13;
 -- |-- | -- | --|--&#13;
 Firefox | 〇 | 〇 | 〇|〇&#13;
@@ -415,8 +415,8 @@ Initial release | 2005/03/28 | 2013/09/03 | 2010/05/26|&#13;
   ---&#13;
 &#13;
 &#13;
-。</description><guid isPermaLink="true">https://grapehut.us.kg/post/23.html</guid><pubDate>Sat, 07 Dec 2024 12:03:52 +0000</pubDate></item><item><title>Vol.22  使用Portableapps.com Launcher制作便携软件 实例教程</title><link>https://grapehut.us.kg/post/22.html</link><description># 前言&#13;
-`PortableApps.com Launcher`（以下简称PAL）是`PortableApps.com`开发的便携软件制作工具。</description><guid isPermaLink="true">https://grapehut.us.kg/post/22.html</guid><pubDate>Fri, 29 Nov 2024 14:57:31 +0000</pubDate></item><item><title>Vol.21 批量获取免费的VPN节点</title><link>https://grapehut.us.kg/post/21.html</link><description># 【基礎篇】&#13;
+。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/23.html</guid><pubDate>Sat, 07 Dec 2024 12:03:52 +0000</pubDate></item><item><title>Vol.22  使用Portableapps.com Launcher制作便携软件 实例教程</title><link>https://www.grapehut.xyz/post/22.html</link><description># 前言&#13;
+`PortableApps.com Launcher`（以下简称PAL）是`PortableApps.com`开发的便携软件制作工具。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/22.html</guid><pubDate>Fri, 29 Nov 2024 14:57:31 +0000</pubDate></item><item><title>Vol.21 批量获取免费的VPN节点</title><link>https://www.grapehut.xyz/post/21.html</link><description># 【基礎篇】&#13;
 &#13;
 这个免费的代理节点主要是来自BPB-Worker-Panel 面板的漏洞利用&#13;
 &#13;
@@ -581,15 +581,15 @@ python vpn.py&#13;
 `Gmeek-html&lt;img src='https://www.freedidi.com/wp-content/uploads/2024/11/c85b610e7e20241124163116-2081x1440.webp'&gt;`&#13;
 &#13;
 &gt; [!CAUTION]&#13;
-&gt; 默认我只获取了第一个页面，因为如果批量获取分页的话，会引起网站防火墙的拦截。</description><guid isPermaLink="true">https://grapehut.us.kg/post/21.html</guid><pubDate>Tue, 26 Nov 2024 14:47:33 +0000</pubDate></item><item><title>Vol.19 如何找到Shopify中国卖家网站</title><link>https://grapehut.us.kg/post/19.html</link><description>&#13;
+&gt; 默认我只获取了第一个页面，因为如果批量获取分页的话，会引起网站防火墙的拦截。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/21.html</guid><pubDate>Tue, 26 Nov 2024 14:47:33 +0000</pubDate></item><item><title>Vol.19 如何找到Shopify中国卖家网站</title><link>https://www.grapehut.xyz/post/19.html</link><description>&#13;
 ## 你想知道别人的Shopify网站怎么做的吗？&#13;
 &#13;
-一个傻瓜式的方式教大家如何找到Shopify中国卖家的网站（当然也可以找国外的）。</description><guid isPermaLink="true">https://grapehut.us.kg/post/19.html</guid><pubDate>Sun, 03 Nov 2024 13:59:27 +0000</pubDate></item><item><title>Vol.18 jsdelivr CDN</title><link>https://grapehut.us.kg/post/18.html</link><description># 关于jsdelivr &#13;
+一个傻瓜式的方式教大家如何找到Shopify中国卖家的网站（当然也可以找国外的）。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/19.html</guid><pubDate>Sun, 03 Nov 2024 13:59:27 +0000</pubDate></item><item><title>Vol.18 jsdelivr CDN</title><link>https://www.grapehut.xyz/post/18.html</link><description># 关于jsdelivr &#13;
 &gt; https://www.jsdelivr.com/&#13;
 &#13;
 ## jsdelivr CDN 和 GitHub 的关系&#13;
-jsdelivr 是一个免费且可靠的内容分发网络（CDN）服务，允许开发者将静态资源存储在 GitHub 仓库中，并通过 jsdelivr 进行全球加速访问。</description><guid isPermaLink="true">https://grapehut.us.kg/post/18.html</guid><pubDate>Sun, 03 Nov 2024 09:00:24 +0000</pubDate></item><item><title>Vol.17 Omakub 专为开发者设计的 Ubuntu</title><link>https://grapehut.us.kg/post/17.html</link><description># 前言&#13;
-Omakub 是一个专为开发者设计的 Ubuntu 环境配置项目，由 Ruby on Rails 的创造者 David Heinemeier Hansson（DHH）发起。</description><guid isPermaLink="true">https://grapehut.us.kg/post/17.html</guid><pubDate>Sun, 27 Oct 2024 15:29:54 +0000</pubDate></item><item><title>Vol.16 Chrome 命令大全 chrome:// 设置</title><link>https://grapehut.us.kg/post/16.html</link><description># Chrome 命令大全&#13;
+jsdelivr 是一个免费且可靠的内容分发网络（CDN）服务，允许开发者将静态资源存储在 GitHub 仓库中，并通过 jsdelivr 进行全球加速访问。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/18.html</guid><pubDate>Sun, 03 Nov 2024 09:00:24 +0000</pubDate></item><item><title>Vol.17 Omakub 专为开发者设计的 Ubuntu</title><link>https://www.grapehut.xyz/post/17.html</link><description># 前言&#13;
+Omakub 是一个专为开发者设计的 Ubuntu 环境配置项目，由 Ruby on Rails 的创造者 David Heinemeier Hansson（DHH）发起。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/17.html</guid><pubDate>Sun, 27 Oct 2024 15:29:54 +0000</pubDate></item><item><title>Vol.16 Chrome 命令大全 chrome:// 设置</title><link>https://www.grapehut.xyz/post/16.html</link><description># Chrome 命令大全&#13;
 &#13;
 ### 查看命令一览&#13;
 ```&#13;
@@ -736,13 +736,13 @@ chrome://heapcorruptioncrash/&#13;
 chrome://quit/&#13;
 chrome://restart&#13;
 ```&#13;
-。</description><guid isPermaLink="true">https://grapehut.us.kg/post/16.html</guid><pubDate>Sat, 12 Oct 2024 03:00:14 +0000</pubDate></item><item><title>Vol.14 Hyper-v安装openwrt软路由</title><link>https://grapehut.us.kg/post/14.html</link><description># 事前准备&#13;
+。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/16.html</guid><pubDate>Sat, 12 Oct 2024 03:00:14 +0000</pubDate></item><item><title>Vol.14 Hyper-v安装openwrt软路由</title><link>https://www.grapehut.xyz/post/14.html</link><description># 事前准备&#13;
 &#13;
 ### 1. 下载 OpenWrt 镜像&#13;
 骷髅大佬版本：[DHDAXCW/OpenWRT_x86_x64](https://github.com/DHDAXCW/OpenWRT_x86_x64/releases)&#13;
 &#13;
 `ext4` 文件系统镜像可以对任何改动都进行持久化存储，&#13;
-`squashfs` 一般情况下对文件系统的改动无法持久化，每次重启都会重置更改，但便于从错误配置中重置。</description><guid isPermaLink="true">https://grapehut.us.kg/post/14.html</guid><pubDate>Wed, 02 Oct 2024 13:10:21 +0000</pubDate></item><item><title>Vol.13 Windows KMS激活</title><link>https://grapehut.us.kg/post/13.html</link><description>```&#13;
+`squashfs` 一般情况下对文件系统的改动无法持久化，每次重启都会重置更改，但便于从错误配置中重置。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/14.html</guid><pubDate>Wed, 02 Oct 2024 13:10:21 +0000</pubDate></item><item><title>Vol.13 Windows KMS激活</title><link>https://www.grapehut.xyz/post/13.html</link><description>```&#13;
 # Windows 11 LTSC 2024&#13;
 tiny11_24H2&#13;
 　https://archive.org/details/tiny11-2409 &#13;
@@ -1037,13 +1037,13 @@ PowerPoint 2016|J7MQP-HNJ4Y-WJ7YM-PFYGF-BY6C6&#13;
 Publisher 2016|F47MM-N3XJP-TQXJ9-BP99D-8837K&#13;
 Skype for Business 2016|869NQ-FJ69K-466HW-QYCP2-DDBV6&#13;
 Word 2016|WXY84-JN2Q9-RBCCQ-3Q3J3-3PFJ6&#13;
-。</description><guid isPermaLink="true">https://grapehut.us.kg/post/13.html</guid><pubDate>Sun, 29 Sep 2024 08:00:10 +0000</pubDate></item><item><title>Vol.12 WinPE工具</title><link>https://grapehut.us.kg/post/12.html</link><description># 微 PE 工具箱&#13;
+。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/13.html</guid><pubDate>Sun, 29 Sep 2024 08:00:10 +0000</pubDate></item><item><title>Vol.12 WinPE工具</title><link>https://www.grapehut.xyz/post/12.html</link><description># 微 PE 工具箱&#13;
 &#13;
 ## 以下是使用微 PE 安装 Windows 11 的详细教程：&#13;
 &#13;
 #### 1. 准备工作：&#13;
-   - 一个容量不小于 8GB 的 U 盘（建议使用 USB 3.0 及以上版本，速度更快）。</description><guid isPermaLink="true">https://grapehut.us.kg/post/12.html</guid><pubDate>Sun, 29 Sep 2024 04:13:00 +0000</pubDate></item><item><title>Vol.11 WSL（Windows Subsystem for Linux）</title><link>https://grapehut.us.kg/post/11.html</link><description># 关于 WSL（Windows Subsystem for Linux）
-Windows 的一项功能，可用于在 Windows 计算机上运行 Linux 环境，而无需单独的虚拟机或双引导。</description><guid isPermaLink="true">https://grapehut.us.kg/post/11.html</guid><pubDate>Tue, 24 Sep 2024 14:36:27 +0000</pubDate></item><item><title>Vol.10 Win cmd &amp; Powershell 命令</title><link>https://grapehut.us.kg/post/10.html</link><description># cmd命令
+   - 一个容量不小于 8GB 的 U 盘（建议使用 USB 3.0 及以上版本，速度更快）。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/12.html</guid><pubDate>Sun, 29 Sep 2024 04:13:00 +0000</pubDate></item><item><title>Vol.11 WSL（Windows Subsystem for Linux）</title><link>https://www.grapehut.xyz/post/11.html</link><description># 关于 WSL（Windows Subsystem for Linux）
+Windows 的一项功能，可用于在 Windows 计算机上运行 Linux 环境，而无需单独的虚拟机或双引导。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/11.html</guid><pubDate>Tue, 24 Sep 2024 14:36:27 +0000</pubDate></item><item><title>Vol.10 Win cmd &amp; Powershell 命令</title><link>https://www.grapehut.xyz/post/10.html</link><description># cmd命令
 
 ```
 shell:start menu    用户的开始菜单
@@ -1231,15 +1231,15 @@ pause
 ## Powershell的基本概念
 
 ## ps1文件
-一个PowerShell脚本其实就是一个简单的文本文件， 这个文件包含了一系列PowerShell命令，每个命令显示为独立的一行，文件名需要加上.ps1的扩展名。</description><guid isPermaLink="true">https://grapehut.us.kg/post/10.html</guid><pubDate>Mon, 23 Sep 2024 13:28:51 +0000</pubDate></item><item><title>Vol.9 字体</title><link>https://grapehut.us.kg/post/9.html</link><description># 👀字体类型与格式&#13;
+一个PowerShell脚本其实就是一个简单的文本文件， 这个文件包含了一系列PowerShell命令，每个命令显示为独立的一行，文件名需要加上.ps1的扩展名。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/10.html</guid><pubDate>Mon, 23 Sep 2024 13:28:51 +0000</pubDate></item><item><title>Vol.9 字体</title><link>https://www.grapehut.xyz/post/9.html</link><description># 👀字体类型与格式&#13;
 常见的字体类型与格式有 “ ttf、otf、ttc、vf、woff/woff2、可变字体、EOT、BDF、SVG ” 8种&#13;
 &#13;
 #### 1. TTF（TrueType）&#13;
-由Apple和Microsoft在20世纪80年代后期开发的轮廓字体标准，.ttf结尾的字体具有TrueType轮廓，Windows和MacOS都支持TTF格式的字体，它已成为最常用的字体格式。</description><guid isPermaLink="true">https://grapehut.us.kg/post/9.html</guid><pubDate>Mon, 23 Sep 2024 12:20:16 +0000</pubDate></item><item><title>Vol.8 HyperV虚拟机</title><link>https://grapehut.us.kg/post/8.html</link><description># 常用VM虚拟机软件一览
+由Apple和Microsoft在20世纪80年代后期开发的轮廓字体标准，.ttf结尾的字体具有TrueType轮廓，Windows和MacOS都支持TTF格式的字体，它已成为最常用的字体格式。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/9.html</guid><pubDate>Mon, 23 Sep 2024 12:20:16 +0000</pubDate></item><item><title>Vol.8 HyperV虚拟机</title><link>https://www.grapehut.xyz/post/8.html</link><description># 常用VM虚拟机软件一览
 
-目前市面上适合个人用户使用的9款虚拟化软件。</description><guid isPermaLink="true">https://grapehut.us.kg/post/8.html</guid><pubDate>Mon, 23 Sep 2024 02:36:28 +0000</pubDate></item><item><title>Vol.7 免费托管静态站点</title><link>https://grapehut.us.kg/post/7.html</link><description>服务|特色
+目前市面上适合个人用户使用的9款虚拟化软件。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/8.html</guid><pubDate>Mon, 23 Sep 2024 02:36:28 +0000</pubDate></item><item><title>Vol.7 免费托管静态站点</title><link>https://www.grapehut.xyz/post/7.html</link><description>服务|特色
 --|--
-[GitHub Pages](https://pages.github.com)|GitHub Pages 让开发者可以在 .github.io 域上免费托管静态站点。</description><guid isPermaLink="true">https://grapehut.us.kg/post/7.html</guid><pubDate>Sat, 21 Sep 2024 15:13:50 +0000</pubDate></item><item><title>Vol.6 把萌萌哒的看板娘抱回家 (ノ≧∇≦)ノ | Live2D widget for web platform</title><link>https://grapehut.us.kg/post/6.html</link><description># 内容简介&#13;
+[GitHub Pages](https://pages.github.com)|GitHub Pages 让开发者可以在 .github.io 域上免费托管静态站点。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/7.html</guid><pubDate>Sat, 21 Sep 2024 15:13:50 +0000</pubDate></item><item><title>Vol.6 把萌萌哒的看板娘抱回家 (ノ≧∇≦)ノ | Live2D widget for web platform</title><link>https://www.grapehut.xyz/post/6.html</link><description># 内容简介&#13;
 把萌萌哒的看板娘抱回家 (ノ≧∇≦)ノ | Live2D widget for web platform&#13;
 &#13;
 &#13;
@@ -1257,7 +1257,7 @@ autoload.js 会自动加载：`live2d.min.js` `waifu.min.css` `waifu-tips.min.js
 https://grapehut.us.kg/&#13;
 `Gmeek-html&lt;img src='https://www.live2d.com/wp-content/themes/cubism_new/assets/img/index/index-nizimalive-mainimg.png'&gt;`&#13;
 &#13;
-。</description><guid isPermaLink="true">https://grapehut.us.kg/post/6.html</guid><pubDate>Sun, 15 Sep 2024 06:16:06 +0000</pubDate></item><item><title>Vol.5 git原理及常用命令</title><link>https://grapehut.us.kg/post/5.html</link><description>&#13;
+。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/6.html</guid><pubDate>Sun, 15 Sep 2024 06:16:06 +0000</pubDate></item><item><title>Vol.5 git原理及常用命令</title><link>https://www.grapehut.xyz/post/5.html</link><description>&#13;
 # git 公式サイト&#13;
 [https://git-scm.com](https://git-scm.com/)&#13;
 &#13;
@@ -1277,15 +1277,15 @@ https://grapehut.us.kg/&#13;
 ・Index／Stage：暂存区（或索引区），用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息&#13;
 ・Workspace：工作区，就是你平时存放项目代码的地方&#13;
 ```&#13;
-#### １．具体例：下图中的四条命令在「工作区」、「暂存区」、「仓库区」之间复制文件。</description><guid isPermaLink="true">https://grapehut.us.kg/post/5.html</guid><pubDate>Wed, 04 Sep 2024 14:30:35 +0000</pubDate></item><item><title>Vol.4 网站发布（任意域名）</title><link>https://grapehut.us.kg/post/4.html</link><description>```&#13;
+#### １．具体例：下图中的四条命令在「工作区」、「暂存区」、「仓库区」之间复制文件。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/5.html</guid><pubDate>Wed, 04 Sep 2024 14:30:35 +0000</pubDate></item><item><title>Vol.4 网站发布（任意域名）</title><link>https://www.grapehut.xyz/post/4.html</link><description>```&#13;
 域名　→　cloudflare　→　github&#13;
 ```&#13;
 &#13;
 # 一、注册域名（任意域名）&#13;
-付费的，免费的都可以，根据自身钱包的富裕程度，👀  省略若干字。</description><guid isPermaLink="true">https://grapehut.us.kg/post/4.html</guid><pubDate>Sun, 01 Sep 2024 06:04:46 +0000</pubDate></item><item><title>Vol.3 Gmeek构建网站（进阶篇）</title><link>https://grapehut.us.kg/post/3.html</link><description># 一、主题配置 👀 &#13;
+付费的，免费的都可以，根据自身钱包的富裕程度，👀  省略若干字。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/4.html</guid><pubDate>Sun, 01 Sep 2024 06:04:46 +0000</pubDate></item><item><title>Vol.3 Gmeek构建网站（进阶篇）</title><link>https://www.grapehut.xyz/post/3.html</link><description># 一、主题配置 👀 &#13;
 &#13;
 ### 1. 手动模式（默认）&#13;
-这种模式就是当访问者第一次打开博客页面时，呈现的是亮主题。</description><guid isPermaLink="true">https://grapehut.us.kg/post/3.html</guid><pubDate>Sun, 01 Sep 2024 06:01:28 +0000</pubDate></item><item><title>Vol.1 Gmeek构建网站（基础篇）</title><link>https://grapehut.us.kg/post/1.html</link><description># 前言&#13;
+这种模式就是当访问者第一次打开博客页面时，呈现的是亮主题。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/3.html</guid><pubDate>Sun, 01 Sep 2024 06:01:28 +0000</pubDate></item><item><title>Vol.1 Gmeek构建网站（基础篇）</title><link>https://www.grapehut.xyz/post/1.html</link><description># 前言&#13;
 [Gmeek](https://github.com/Meekdai/Gmeek) 一个博客框架&#13;
 超轻量级个人博客模板，完全基于`Github Pages `、 `Github Issues` 和 `Github Actions`，可以称作`All in Github`&#13;
 &gt; 引用：https://blog.meekdai.com/post/Gmeek-kuai-su-shang-shou.html&#13;
@@ -1293,8 +1293,8 @@ https://grapehut.us.kg/&#13;
 &#13;
 # 📑 一、安装&#13;
 &gt; [!TIP]&#13;
-&gt; 安装极其简单，根据以下步骤，一步一步操作。</description><guid isPermaLink="true">https://grapehut.us.kg/post/1.html</guid><pubDate>Sat, 31 Aug 2024 09:59:06 +0000</pubDate></item><item><title>About</title><link>https://grapehut.us.kg/about.html</link><guid isPermaLink="true">https://grapehut.us.kg/about.html</guid><pubDate>Sat, 31 Aug 2024 14:18:20 +0000</pubDate></item><item><title>Link</title><link>https://grapehut.us.kg/link.html</link><description>- https://app.follow.is/ - 万物皆可订阅，RSSHub创始者的又一个有趣项目&#13;
+&gt; 安装极其简单，根据以下步骤，一步一步操作。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/1.html</guid><pubDate>Sat, 31 Aug 2024 09:59:06 +0000</pubDate></item><item><title>About</title><link>https://www.grapehut.xyz/about.html</link><guid isPermaLink="true">https://www.grapehut.xyz/about.html</guid><pubDate>Sat, 31 Aug 2024 14:18:20 +0000</pubDate></item><item><title>Link</title><link>https://www.grapehut.xyz/link.html</link><description>- https://app.follow.is/ - 万物皆可订阅，RSSHub创始者的又一个有趣项目&#13;
 - https://start.me/ - 网页收藏夹&#13;
 - https://app.raindrop.io/ - 网页收藏夹&#13;
 - https://misskey.io/ - 分散型SNS&#13;
-。</description><guid isPermaLink="true">https://grapehut.us.kg/link.html</guid><pubDate>Wed, 09 Oct 2024 04:44:59 +0000</pubDate></item></channel></rss>
+。</description><guid isPermaLink="true">https://www.grapehut.xyz/link.html</guid><pubDate>Wed, 09 Oct 2024 04:44:59 +0000</pubDate></item></channel></rss>
