@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://cdn.jsdelivr.net/npm/@primer/css@21.5.1/dist/primer.min.css' rel='stylesheet' />
     <link rel="icon" href="../favicon.svg">
-<meta name="description" content="小饅頭の部落格 search page">
-<title>小饅頭の部落格 - Tag</title>
+<meta name="description" content="小饅頭の部屋 search page">
+<title>小饅頭の部屋 - Tag</title>
 
 </head>
 <style>
@@ -72,7 +72,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <nav class="SideNav"></nav>
 <div class="notFind" style="display:none;font-size:24px;margin:8px;">Not Find</div>
 </div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://www.grapehut.xyz">小饅頭の部落格</a> All Rights Reserved. </div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://www.grapehut.xyz">小饅頭の部屋</a> All Rights Reserved. </div>
 <div id="footer2"><span id="filingNum"><a href="https://beian.miit.gov.cn/" target="_blank"><a href='https://icp.gov.moe/?keyword=20241189' target='_blank'>萌ICP备20241189号</a></a> • </span>
     <span>Powered by <a href="https://github.com/Meekdai/Gmeek" target="_blank">Gmeek</a></span><br>
     <span id="runday"></span>
@@ -220,7 +220,7 @@ function setClassDisplay(label){
     let lists = document.getElementsByClassName("lists");
     let tagTitle = document.getElementsByClassName("tagTitle")[0];
     tagTitle.innerHTML="Tag #"+label;
-    document.title=label+" - 小饅頭の部落格";
+    document.title=label+" - 小饅頭の部屋";
     document.getElementsByClassName("subnav-search-input")[0].value='';
     if(label=="All"){
         for(let i = 0; i < lists.length; i++){lists[i].style.display='block';}
@@ -248,8 +248,8 @@ function searchShow(){
     let tagTitle = document.getElementsByClassName("tagTitle")[0];
     let searchInput = document.getElementsByClassName("subnav-search-input")[0].value;
     tagTitle.innerHTML="Search #"+searchInput;
-    if(searchInput==''){document.title="Search - 小饅頭の部落格";}
-    else{document.title=searchInput+" - 小饅頭の部落格";}
+    if(searchInput==''){document.title="Search - 小饅頭の部屋";}
+    else{document.title=searchInput+" - 小饅頭の部屋";}
     let a=0;
     window.location.hash="#"+(searchInput);
     for(let i = 0; i < lists.length; i++){
