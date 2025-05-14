@@ -10,9 +10,9 @@
 <script src='https://cdn.jsdelivr.net/gh/hst1189/live2d-widget/autoload.js'></script>
 ```
 autoload.js 会自动加载：`live2d.min.js` `waifu.min.css` `waifu-tips.min.js` `ModelDefine.js` 
-详细参考：https://github.com/hst1189/live2d-widget
+详细参考：[hst1189.github.io/live2d-widget](https://hst1189.github.io/live2d-widget)
 
 # 添加效果
-https://grapehut.us.kg/
+https://www.grapehut.xyz/
 `Gmeek-html<img src="https://www.live2d.com/wp-content/themes/cubism_new/assets/img/index/index-nizimalive-mainimg.png">`
 
