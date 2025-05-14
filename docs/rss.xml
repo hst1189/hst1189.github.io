@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://www.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://www.grapehut.xyz</link></image><lastBuildDate>Wed, 14 May 2025 12:26:23 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.34 虚拟币空投</title><link>https://www.grapehut.xyz/post/34.html</link><description># 🎏 pump.fun
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://www.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://www.grapehut.xyz</link></image><lastBuildDate>Wed, 14 May 2025 12:27:26 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.34 虚拟币空投</title><link>https://www.grapehut.xyz/post/34.html</link><description># 🎏 pump.fun
 https://pump.fun/board
 
 
@@ -1411,7 +1411,7 @@ https://www.grapehut.xyz/
 | primerCSS | 用于设置primer.css的CDN地址，默认使用[南科大](https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css) |
 | needComment | 用于设置是否需要评论功能，1开启评论，0关闭 |
 
-。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/2.html</guid><pubDate>Sat, 31 Aug 2024 14:18:20 +0000</pubDate></item><item><title>Vol.1 Gmeek构建网站（基础篇）</title><link>https://www.grapehut.xyz/post/1.html</link><description># 前言&#13;
+。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/2.html</guid><pubDate>Sat, 31 Aug 2024 14:18:20 +0000</pubDate></item><item><title>Vol.1 「建站」Gmeek使用手册（基础篇）</title><link>https://www.grapehut.xyz/post/1.html</link><description># 前言&#13;
 [Gmeek](https://github.com/Meekdai/Gmeek) 一个博客框架&#13;
 超轻量级个人博客模板，完全基于`Github Pages `、 `Github Issues` 和 `Github Actions`，可以称作`All in Github`&#13;
 &gt; 引用：https://blog.meekdai.com/post/Gmeek-kuai-su-shang-shou.html&#13;
