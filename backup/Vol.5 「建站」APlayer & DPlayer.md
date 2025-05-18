@@ -1,5 +1,5 @@
 # 内容简介
-把萌萌哒的看板娘抱回家 (ノ≧∇≦)ノ | Live2D widget for web platform
+DIYGod 大神的2款插件
 
 
 # APlayer
@@ -14,7 +14,7 @@ Ogg Theora Vorbis
 Playlist
 Lyrics
 
-[中文文档](https://aplayer.js.org/#/zh-Hans/)
+[Github](https://github.com/DIYgod/APlayer/)、[中文文档](https://aplayer.js.org/#/zh-Hans/) 
 
 ### 使用方法
 ```
@@ -27,6 +27,27 @@ Lyrics
 
 
 # DPlayer
+DPlayer is a lovely HTML5 danmaku video player to help people build video and danmaku easily.
+
+- Streaming formats
+[HLS](https://github.com/video-dev/hls.js)
+[FLV](https://github.com/Bilibili/flv.js)
+[MPEG DASH](https://github.com/Dash-Industry-Forum/dash.js)
+[WebTorrent](https://github.com/webtorrent/webtorrent)
+Any other custom streaming formats
+
+- Media formats
+MP4 H.264
+WebM
+Ogg Theora Vorbis
+
+- Features
+Danmaku
+Screenshot
+Hotkeys
+Quality switching
+Thumbnails
+Subtitle
 如果你是小白，或者只需要最基础的功能，那么只用将这下面代码加入 html 页面的 head 或 body 中，即可加载看板娘：
 ```
 <script src="https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js"></script>
