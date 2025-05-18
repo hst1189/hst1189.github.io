@@ -10,9 +10,15 @@ const ap = new APlayer({
     audio: [{
         name: 'Time after time ～花舞う街で～',
         artist: '倉木 麻衣',
-        url: 'TimeAfterTime.mp3',
-        cover: 'cover1.jpg',
-        lrc: 'TimeAfterTime.lrc',
+        url: '../music/TimeAfterTime.mp3',
+        cover: '../music/cover1.jpg',
+        lrc: '../music/TimeAfterTime.lrc',
         theme: '#ebd0c2'
     }]
+
+
+
+
+
+    
 });
