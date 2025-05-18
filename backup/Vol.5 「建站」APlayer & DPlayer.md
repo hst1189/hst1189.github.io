@@ -18,8 +18,40 @@ Lyrics
 
 ### 使用方法
 ```
+step1: 
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+step2:
+const music_div = document.createElement('div')
+music_div.id = 'music_player'   // 设置元素id
+document.body.appendChild(music_div)  // 插入到body元素最后
+
+step3:
+const ap = new APlayer({
+    container: document.getElementById('music_player'),
+    listFolded: false,
+    listMaxHeight: 90,
+    lrcType: 3,
+    audio: [
+        {
+        name: 'Time after time ～花舞う街で～',
+        artist: '倉木 麻衣',
+        url: '../music/TimeAfterTime.mp3',
+        lrc: '../music/TimeAfterTime.lrc',
+        cover: '../music/cover1.jpg',
+        theme: '#ebd0c2'
+        },
+       {
+        name: 'song name',
+        artist: 'artist',
+        url: 'xx.mp3',
+        lrc: 'xx.lrc',
+        cover: 'cover1.jpg',
+        theme: '#ebd0c2' 
+       }
+    ]
+});
 ```
 ### 添加效果
 `Gmeek-html<img src="https://imgur.com/JDrJXCr.png">`
