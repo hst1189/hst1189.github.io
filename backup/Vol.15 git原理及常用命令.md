@@ -1,0 +1,4 @@
+- https://app.follow.is/ - 万物皆可订阅，RSSHub创始者的又一个有趣项目
+- https://start.me/ - 网页收藏夹
+- https://app.raindrop.io/ - 网页收藏夹
+- https://misskey.io/ - 分散型SNS
