@@ -53,8 +53,17 @@ Subtitle
 
 ### 使用方法
 ```
-<script src="https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js"></script>
+step1:  <script src="https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js"></script>
+step2:  <div id="dplayer" style="width: 100%; height: 100%"></div>
+step3: 
+const dp = new DPlayer({
+  container: document.getElementById('dplayer'),
+  video: {
+      url: https://myqcloud.com/xxx.mp4"); // COSビデオオブジェクトアドレス
+  },
+});
 ```
+参考：https://www.tencentcloud.com/jp/document/product/436/53812
 
 ### 添加效果
 `Gmeek-html<img src="https://imgur.com/207ch36.jpg">`
