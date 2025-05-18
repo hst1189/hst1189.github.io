@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://www.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://www.grapehut.xyz</link></image><lastBuildDate>Sun, 18 May 2025 10:10:48 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.34 虚拟币空投</title><link>https://www.grapehut.xyz/post/34.html</link><description># 🎏 pump.fun
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://www.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://www.grapehut.xyz</link></image><lastBuildDate>Sun, 18 May 2025 10:12:59 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.34 虚拟币空投</title><link>https://www.grapehut.xyz/post/34.html</link><description># 🎏 pump.fun
 https://pump.fun/board
 
 
@@ -1327,16 +1327,16 @@ Hotkeys
 Quality switching
 Thumbnails
 Subtitle
-如果你是小白，或者只需要最基础的功能，那么只用将这下面代码加入 html 页面的 head 或 body 中，即可加载看板娘：
+
+[中文文档](https://dplayer.diygod.dev/zh/)
+
+### 使用方法
 ```
 &lt;script src='https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js'&gt;&lt;/script&gt;
 ```
-autoload.js 会自动加载：`live2d.min.js` `waifu.min.css` `waifu-tips.min.js` `ModelDefine.js` 
-详细参考：[hst1189.github.io/live2d-widget](https://hst1189.github.io/live2d-widget)
 
-# 添加效果
-https://www.grapehut.xyz/
-`Gmeek-html&lt;img src='https://imgur.com/JDrJXCr.png'&gt;`
+### 添加效果
+`Gmeek-html&lt;img src='https://imgur.com/207ch36.jpg'&gt;`
 
 。</description><guid isPermaLink="true">https://www.grapehut.xyz/post/5.html</guid><pubDate>Wed, 04 Sep 2024 14:30:35 +0000</pubDate></item><item><title>Vol.4 「建站」网站发布（域名绑定）</title><link>https://www.grapehut.xyz/post/4.html</link><description>```&#13;
 域名　→　cloudflare　→　github&#13;
