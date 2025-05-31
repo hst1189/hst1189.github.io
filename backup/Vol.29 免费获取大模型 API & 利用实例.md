@@ -6,13 +6,13 @@ https://api-proxy.me/
 10次/分，500次/天，250,000token/分
 
 获取KEY：https://aistudio.google.com/apikey
-API地址： https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}
+API地址： https://generativelanguage.googleapis.com/v1beta/models/
 模型：Gemini 2.5 Flash Preview 05-20
 
 ### 多Key轮询方法：
 https://github.com/snailyp/gemini-balance
 [clawcloud部署sqlite版本](https://gb-docs.snaily.top/guide/setup-clawcloud-sqlite.html)
-
+部署结果：https://wuaacyawcegc.ap-northeast-1.clawcloudrun.com/
 
 ### 自建代理方法：
 通过下面自建代理，同时能转成常用的 OpenAI格式接口
@@ -28,6 +28,8 @@ https://github.com/snailyp/gemini-balance
 
 3. Worker绑定域名（例如：gemini.grapehut.us.kg） 　※然后就可以调用此域名了
 ```
+
+
 
 
 # 🔖 OpenAI API
