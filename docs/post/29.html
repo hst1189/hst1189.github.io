@@ -9,6 +9,34 @@
 <meta name="description" content="# 💯  代理地址
 https://api-proxy.me/
 
+# 🔖 Gemini API  （国内无法直接访问，需代理）
+限制：https://ai.google.dev/gemini-api/docs/rate-limits#free-tier
+10次/分，500次/天，250,000token/分
+
+获取KEY：https://aistudio.google.com/apikey
+API地址： https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}
+模型：Gemini 2.5 Flash Preview 05-20
+
+### 多Key轮询方法：
+https://github.com/snailyp/gemini-balance
+[clawcloud部署sqlite版本](https://gb-docs.snaily.top/guide/setup-clawcloud-sqlite.html)
+
+
+### 自建代理方法：
+通过下面自建代理，同时能转成常用的 OpenAI格式接口
+[openai-gemini](https://github.com/PublicAffairs/openai-gemini)通过Github Actions功能，在Cloudflare创建Worker
+
+```
+1. 选择VPS
+例：Deploy to Cloudflare
+・获取 Account ID
+・获取 API Token  选择所有账户，所有区域
+
+2. Fork repository　运行github workflower， 自動部署 Cloudflare Worker（Worker默认名字为 gemini ） 
+
+3. Worker绑定域名（例如：gemini.grapehut.us.kg） 　※然后就可以调用此域名了
+```
+
 
 # 🔖 OpenAI API
 ### 0. https://api.openai.com（国内无法直接访问，需要自建代理）
@@ -47,6 +75,34 @@ API地址： https://api.chatanywhere.tech (国内中转，延时更低)
 <meta property="og:title" content="Vol.29 免费获取大模型 API & 利用实例">
 <meta property="og:description" content="# 💯  代理地址
 https://api-proxy.me/
+
+# 🔖 Gemini API  （国内无法直接访问，需代理）
+限制：https://ai.google.dev/gemini-api/docs/rate-limits#free-tier
+10次/分，500次/天，250,000token/分
+
+获取KEY：https://aistudio.google.com/apikey
+API地址： https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}
+模型：Gemini 2.5 Flash Preview 05-20
+
+### 多Key轮询方法：
+https://github.com/snailyp/gemini-balance
+[clawcloud部署sqlite版本](https://gb-docs.snaily.top/guide/setup-clawcloud-sqlite.html)
+
+
+### 自建代理方法：
+通过下面自建代理，同时能转成常用的 OpenAI格式接口
+[openai-gemini](https://github.com/PublicAffairs/openai-gemini)通过Github Actions功能，在Cloudflare创建Worker
+
+```
+1. 选择VPS
+例：Deploy to Cloudflare
+・获取 Account ID
+・获取 API Token  选择所有账户，所有区域
+
+2. Fork repository　运行github workflower， 自動部署 Cloudflare Worker（Worker默认名字为 gemini ） 
+
+3. Worker绑定域名（例如：gemini.grapehut.us.kg） 　※然后就可以调用此域名了
+```
 
 
 # 🔖 OpenAI API
@@ -151,6 +207,27 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <!--<nav class="SideNav border"></nav>-->
 <div class="markdown-body spoiler" id="postBody"><h1>💯  代理地址</h1>
 <p><a href="https://api-proxy.me/" rel="nofollow">https://api-proxy.me/</a></p>
+<h1>🔖 Gemini API  （国内无法直接访问，需代理）</h1>
+<p>限制：<a href="https://ai.google.dev/gemini-api/docs/rate-limits#free-tier" rel="nofollow">https://ai.google.dev/gemini-api/docs/rate-limits#free-tier</a><br>
+10次/分，500次/天，250,000token/分</p>
+<p>获取KEY：<a href="https://aistudio.google.com/apikey" rel="nofollow">https://aistudio.google.com/apikey</a><br>
+API地址： <a href="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$%7BGEMINI_API_KEY%7D" rel="nofollow">https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}</a><br>
+模型：Gemini 2.5 Flash Preview 05-20</p>
+<h3>多Key轮询方法：</h3>
+<p><a href="https://github.com/snailyp/gemini-balance">https://github.com/snailyp/gemini-balance</a><br>
+<a href="https://gb-docs.snaily.top/guide/setup-clawcloud-sqlite.html" rel="nofollow">clawcloud部署sqlite版本</a></p>
+<h3>自建代理方法：</h3>
+<p>通过下面自建代理，同时能转成常用的 OpenAI格式接口<br>
+<a href="https://github.com/PublicAffairs/openai-gemini">openai-gemini</a>通过Github Actions功能，在Cloudflare创建Worker</p>
+<pre class="notranslate"><code class="notranslate">1. 选择VPS
+例：Deploy to Cloudflare
+・获取 Account ID
+・获取 API Token  选择所有账户，所有区域
+
+2. Fork repository　运行github workflower， 自動部署 Cloudflare Worker（Worker默认名字为 gemini ） 
+
+3. Worker绑定域名（例如：gemini.grapehut.us.kg） 　※然后就可以调用此域名了
+</code></pre>
 <h1>🔖 OpenAI API</h1>
 <h3>0. <a href="https://api.openai.com%EF%BC%88%E5%9B%BD%E5%86%85%E6%97%A0%E6%B3%95%E7%9B%B4%E6%8E%A5%E8%AE%BF%E9%97%AE%EF%BC%8C%E9%9C%80%E8%A6%81%E8%87%AA%E5%BB%BA%E4%BB%A3%E7%90%86%EF%BC%89" rel="nofollow">https://api.openai.com（国内无法直接访问，需要自建代理）</a></h3>
 <p>代理API地址：<a href="https://api-proxy.me/openai" rel="nofollow">https://api-proxy.me/openai</a><br>
@@ -190,24 +267,6 @@ API地址： <a href="https://api.x.ai/" rel="nofollow">https://api.x.ai/</a><br
 代理API地址： <a href="https://api-proxy.me/xai" rel="nofollow">https://api-proxy.me/xai</a></p>
 <p>Gork2 可在X直接使用<br>
 <a href="https://x.com/i/grok" rel="nofollow">https://x.com/i/grok</a> （有X账号就可以使用）</p>
-<h1>🔖 Gemini API  （国内无法直接访问，需要自建代理（限制10次/分、不适用于沉浸式翻译）</h1>
-<p>获取KEY：<a href="https://aistudio.google.com/apikey" rel="nofollow">https://aistudio.google.com/apikey</a><br>
-API地址： <a href="https://generativelanguage.googleapis.com" rel="nofollow">https://generativelanguage.googleapis.com</a><br>
-代理API地址： <a href="https://gemini.grapehut.us.kg" rel="nofollow">https://gemini.grapehut.us.kg</a><br>
-代理API地址： <a href="https://api-proxy.me/gemini" rel="nofollow">https://api-proxy.me/gemini</a><br>
-模型：gemini-2.0-flash-exp</p>
-<h3>自建代理方法：</h3>
-<p>通过下面自建代理，同时能转成常用的 OpenAI格式接口<br>
-<a href="https://github.com/PublicAffairs/openai-gemini">openai-gemini</a>通过Github Actions功能，在Cloudflare创建Worker</p>
-<pre class="notranslate"><code class="notranslate">1. 选择VPS
-例：Deploy to Cloudflare
-・获取 Account ID
-・获取 API Token  选择所有账户，所有区域
-
-2. Fork repository　运行github workflower， 自動部署 Cloudflare Worker（Worker默认名字为 gemini ） 
-
-3. Worker绑定域名（例如：gemini.grapehut.us.kg） 　※然后就可以调用此域名了
-</code></pre>
 <h1>🔖 Deepseek API（国内直接访问）</h1>
 <p>获取KEY：<a href="https://platform.deepseek.com/api_keys" rel="nofollow">https://platform.deepseek.com/api_keys</a><br>
 API地址： <a href="https://api.deepseek.com/chat/completions" rel="nofollow">https://api.deepseek.com/chat/completions</a><br>
