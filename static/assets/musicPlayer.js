@@ -4,9 +4,7 @@ document.body.appendChild(music_div)  // 插入到body元素最后
 
 const ap = new APlayer({
     container: document.getElementById('music_player'),
-    listFolded: false,
-    listMaxHeight: 90,
-    lrcType: 3,
+    fixed: true,
     audio: [
         {
         name: 'Time after time ～花舞う街で～',
