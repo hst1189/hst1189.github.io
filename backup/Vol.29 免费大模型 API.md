@@ -14,7 +14,7 @@ API地址： https://generativelanguage.googleapis.com/v1beta/models/
 
 ### 多Key轮询方法：
 https://github.com/snailyp/gemini-balance
-[clawcloud部署sqlite版本](https://gb-docs.snaily.top/guide/setup-clawcloud-sqlite.html)
+[从零部署 Gemini Balance 手册 clawcloud部署sqlite版本](https://gb-docs.snaily.top/guide/setup-clawcloud-sqlite.html)
 部署结果：https://wuaacyawcegc.ap-northeast-1.clawcloudrun.com/
 
 ### 自建代理方法：
