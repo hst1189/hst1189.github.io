@@ -193,7 +193,7 @@ force group =用户名 #更改用户名
 </code></pre>
 <h1>6. 安装Docker</h1>
 <p>安装docker本体，需要执行以下命令。</p>
-<pre class="notranslate"><code class="notranslate">curl -fsSL https://get.docker.com | sh    #安装Docker
+<pre class="notranslate"><code class="notranslate">sudo curl -fsSL https://get.docker.com | sh    #安装Docker
 sudo systemctl enable --now docker        #启动Docker服务
 sudo docker -v                            #查看docker版本，检查是否安装成功
 sudo docker ps -a                         #查看docker中所有容器
