@@ -1,0 +1,22 @@
+<footer class="footer">
+  <section class="container">
+
+    Copyright ©
+    {{ if (and .Site.Params.since (lt .Site.Params.since now.Year)) }}
+      {{ .Site.Params.since }} -
+    {{ end }}
+    {{ now.Year }}
+    {{ with .Site.Params.author }} {{ . }} {{ end }}
+    All Rights Reserved ·
+    {{ if (and .Site.Params.license) }}
+    <!-- {{ i18n "licensed_under" }} {{ .Site.Params.license | safeHTML }}-->
+      <br>{{ .Site.Params.license | safeHTML }}
+    {{ end }}
+    ·
+    {{ i18n "powered_by" }} <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://fontawesome.com/search?o=r&ic=brands" target="_blank" rel="noopener">Icon</a>
+    {{ if (and .Site.Params.commit .GitInfo) }}
+      [<a href="{{ .Site.Params.commit }}/{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash }}</a>]
+    {{ end }}
+
+  </section>
+</footer>

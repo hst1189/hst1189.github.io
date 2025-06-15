@@ -1,0 +1,39 @@
+/*background-image*/
+.bg-show {
+    background-image: url("../home-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.bg-hide {
+    background-image: none;
+}
+
+
+/*avatar-image*/
+.avatar-show{
+    display: block
+}
+
+.avatar-hide{
+    display: none
+}
+
+.avatar {height:80px;}
+.avatar {transition: 0.8s;object-fit: cover;}
+.avatar:hover{transform: scale(1.5) rotate(360deg);}
+
+
+/*social*/
+.box {
+    margin-left: 20px;
+    transition: all 0.4s;
+}
+
+.box:hover {
+    box-shadow: 0 8px 8px 0 grey;
+    transform: translate(0,-10x);
+    transform: scale(1.2);
+}

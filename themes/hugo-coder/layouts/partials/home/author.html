@@ -1,0 +1,7 @@
+<h1>{{ .Site.Params.author }}</h1>
+{{ if reflect.IsSlice .Site.Params.info }}
+<div class="info_box" id="info_box"><h2>{{ range .Site.Params.info }}{{ . | markdownify }}<br>{{ end}}</h2></div>
+{{ else }}
+<div class="info_box" id="info_box"><h2>{{ .Site.Params.info | markdownify }} </h2></div>
+{{ end }}
+<span id="typed"></span>

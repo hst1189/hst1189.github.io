@@ -1,0 +1,66 @@
+[categories]
+one = "kategória"
+other = "categories"
+
+[tags]
+one = "téma"
+other = "tags"
+
+[series]
+one = "diel"
+other = "series"
+
+[authors]
+one = "autor"
+other = "authors"
+
+[posts]
+other = "články"
+
+[reading_time]
+one = "Prečítate si za minútu"
+few = "Prečítate si do {{ .Count }} minút"
+many = "Prečítate si do {{ .Count }} minút"
+other = "Prečítate si do {{ .Count }} minút"
+
+[page_not_found]
+other = "Stránka nebola nájdená"
+
+[page_does_not_exist]
+other = "Prepáčte, ale táto stránka neexistuje."
+
+[head_back]
+other = "Späť na <a href=\"{{ . }}\">domácu stránku</a>."
+
+[licensed_under]
+other = "Licensed under"
+
+[see_also]
+other = "Pozrite tiež"
+
+[powered_by]
+other = "Táto stránka bola vytvorená cez"
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"
+
+[link_to_heading]
+other = "Link to heading"

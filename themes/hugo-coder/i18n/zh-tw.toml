@@ -1,0 +1,64 @@
+[categories]
+one = "分類"
+other = "categories"
+
+[tags]
+one = "標籤"
+other = "tags"
+
+[series]
+one = "系列"
+other = "series"
+
+[authors]
+one = "作者"
+other = "authors"
+
+[posts]
+other = "文章"
+
+[reading_time]
+one = "閱讀時間 1 分鐘"
+other = "閱讀時間 {{ .Count }} 分鐘"
+
+[page_not_found]
+other = "找不到頁面"
+
+[page_does_not_exist]
+other = "此頁面不存在"
+
+[head_back]
+other = "返回 <a href=\"{{ . }}\">首頁</a>."
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "技術支援"
+
+[see_also]
+other = "參見"
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"
+
+[link_to_heading]
+other = "Link to heading"

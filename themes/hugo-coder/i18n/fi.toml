@@ -1,0 +1,64 @@
+[categories]
+one = "kategoria"
+other = "categories"
+
+[tags]
+one = "merkki"
+other = "tags"
+
+[series]
+one = "sarja"
+other = "series"
+
+[authors]
+one = "Kirjoittaja"
+other = "authors"
+
+[posts]
+other = "Artikkelit"
+
+[reading_time]
+one = "Yksi lukuminuutti"
+other = "{{ .Count }} lukuminuuttia"
+
+[page_not_found]
+other = "Sivua ei löydetty"
+
+[page_does_not_exist]
+other = "Valitettavasti tätä sivua ei ole olemassa."
+
+[head_back]
+other = "Voit palata takaisin <a href=\"{{ . }}\">kotisivulle</a>."
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "Tarjoaa"
+
+[see_also]
+other = "Katso myös"
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"
+
+[link_to_heading]
+other = "Link to heading"

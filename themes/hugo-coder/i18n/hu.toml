@@ -1,0 +1,64 @@
+[categories]
+one = "Kategória"
+other = "categories"
+
+[tags]
+one = "Címke"
+other = "tags"
+
+[series]
+one = "Sorozat"
+other = "series"
+
+[authors]
+one = "Szerző"
+other = "authors"
+
+[posts]
+other = "Írások"
+
+[reading_time]
+one = "Egyperces"
+other = "{{ .Count }} percnyi olvasnivaló"
+
+[page_not_found]
+other = "Az oldal nem található"
+
+[page_does_not_exist]
+other = "Sajnálom, a kért oldal nem létezik."
+
+[head_back]
+other = "Itt visszaléphet a <a href=\"{{ . }}\">Főoldalra</a>."
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "Motor:"
+
+[see_also]
+other = "Lásd még"
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"
+
+[link_to_heading]
+other = "Link to heading"

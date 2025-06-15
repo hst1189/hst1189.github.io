@@ -1,0 +1,63 @@
+[categories]
+one = "فئة"
+other = "categories"
+
+[tags]
+one = "وَسم"
+other = "tags"
+
+[series]
+one = "سلسلة"
+other = "series"
+
+[authors]
+one = "الكاتب"
+other = "authors"
+
+[posts]
+other = "المنشورات"
+
+[reading_time]
+other = "تستغرق {{ .Count }} د"
+
+[page_not_found]
+other = "الصفحة غير موجودة"
+
+[page_does_not_exist]
+other = "هذه الصفحة غير موجودة"
+
+[head_back]
+other = "بإمكانك العودة إلى <a href=\"{{ . }}\">homepage</a>."
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "بواسطة"
+
+[see_also]
+other = "انظر أيضاً"
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"
+
+[link_to_heading]
+other = "Link to heading"

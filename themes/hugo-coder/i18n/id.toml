@@ -1,0 +1,64 @@
+[categories]
+one = "kategori"
+other = "categories"
+
+[tags]
+one = "label"
+other = "tags"
+
+[series]
+one = "seri"
+other = "series"
+
+[authors]
+one = "penulis"
+other = "authors"
+
+[posts]
+other = "artikel"
+
+[reading_time]
+one = "bacaan satu menit"
+other = "bacaan {{ .Count }} menit"
+
+[page_not_found]
+other = "Halaman tidak ditemukan"
+
+[page_does_not_exist]
+other = "Maaf, halaman ini tidak ada."
+
+[head_back]
+other = "Anda dapat kembali ke <a href=\"{{ . }}\">beranda</a>."
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "Dipersembahkan oleh"
+
+[see_also]
+other = "artikel terkait"
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"
+
+[link_to_heading]
+other = "Link to heading"

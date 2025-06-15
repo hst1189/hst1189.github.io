@@ -1,0 +1,64 @@
+[categories]
+one = "catégorie"
+other = "catégories"
+
+[tags]
+one = "tag"
+other = "tags"
+
+[series]
+one = "série"
+other = "séries"
+
+[authors]
+one = "auteur"
+other = "auteurs"
+
+[posts]
+other = "articles"
+
+[reading_time]
+one = "Une minute de lecture"
+other = "{{ .Count }} minutes de lecture"
+
+[page_not_found]
+other = "Page Non Trouvée"
+
+[page_does_not_exist]
+other = "Désolé, cette page n'existe pas."
+
+[head_back]
+other = "Vous pouvez revenir à <a href=\"{{ . }}\">l'accueil</a>."
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "Propulsé par"
+
+[see_also]
+other = "Voir aussi dans"
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"
+
+[link_to_heading]
+other = "Link to heading"

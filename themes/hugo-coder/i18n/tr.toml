@@ -1,0 +1,65 @@
+[categories]
+one = "kategori"
+other = "kategoriler"
+
+[tags]
+one = "etiket"
+other = "etiketler"
+
+[series]
+one = "dizi"
+other = "diziler"
+
+[authors]
+one = "yazar"
+other = "yazarlar"
+
+[posts]
+one = "Gönderi"
+other = "Gönderiler"
+
+[reading_time]
+one = "Bir dakikalık okuma"
+other = "{{ .Count }} dakikalık okuma"
+
+[page_not_found]
+other = "Sayfa Bulunamadı"
+
+[page_does_not_exist]
+other = "Özür dileriz, böyle bir sayfa yok."
+
+[head_back]
+other = "<a href=\"{{ . }}\">Ana sayfaya</a> dönebilirsiniz."
+
+[licensed_under]
+other = "Lisansı alınta:"
+
+[powered_by]
+other = "Site program altyapısı"
+
+[see_also]
+other = "Ayrıca bakınız"
+
+[note]
+other = "not"
+
+[tip]
+other = "tavsiye"
+
+[example]
+other = "örnek"
+
+[question]
+other = "soru"
+
+[info]
+other = "bilgi"
+
+[warning]
+other = "uyarı"
+
+[error]
+other = "hata"
+
+[link_to_heading]
+other = "Başlık Linki"

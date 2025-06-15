@@ -1,0 +1,64 @@
+[categories]
+one = "カテゴリー"
+other = "カテゴリー"
+
+[tags]
+one = "タグ"
+other = "タグ"
+
+[series]
+one = "シリーズ"
+other = "シリーズ"
+
+[authors]
+one = "著者"
+other = "著者"
+
+[posts]
+other = "記事"
+
+[reading_time]
+one = "1分で読めます"
+other = "{{ .Count }}分で読めます"
+
+[page_not_found]
+other = "ページが見つかりません"
+
+[page_does_not_exist]
+other = "申し訳ございません。アクセスしようとしたページが見つかりませんでした。"
+
+[head_back]
+other = "<a href=\"{{ . }}\">トップページ</a>からお探しいただきますようお願い申し上げます。"
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "Powered by"
+
+[see_also]
+other = "関連記事："
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"
+
+[link_to_heading]
+other = "見出しへのリンク"

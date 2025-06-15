@@ -1,0 +1,184 @@
+baseurl = "http://www.grapehut.xyz/"
+title = "小饅頭の部屋"
+theme = "hugo-coder"
+
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+
+[pagination]
+pagerSize = 20
+
+[services]
+[services.disqus]
+shortname = "yourdiscussshortname"
+
+[markup.highlight]
+#style = "monokai"
+style = "github-light"
+
+[params]
+  author = "小饅頭の部屋"
+  info = ""
+  description = "小饅頭の部屋"
+  keywords = "blog,developer,personal"
+  avatarurl = "avatar.png"
+  #gravatar = "test@test.com"
+  faviconSVG = "favicon.svg"
+  favicon_32 = "favicon-32x32.png"
+  favicon_16 = "favicon-16x16.png"
+
+  since = 2024
+  license= "<a href='https://icp.gov.moe/?keyword=20241189' target='_blank'>萌ICP备20241189号</a>"
+
+  enableTwemoji = true
+  colorScheme = "auto"  #"auto" or "light" or "dark"
+  hidecolorschemetoggle = false
+
+  customCSS = ["css/custom.css","css/APlayer.min.css"]
+  customJS = ["js/sakuraPlus.js","js/typed.min.js","js/typed.js","js/APlayer.min.js","js/musicPlayer.js"]
+  customRemoteJS= ["<script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661896697976587' crossorigin='anonymous'></script>"]
+
+  enableMusic = true
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+
+# Social links
+[[params.social]]
+  name = "Line"
+  icon = "fa-brands fa-line fa-2x"
+  weight = 1
+  url = "https://access.line.me/oauth2/v2.1/login?fromDomain=access-auto.line.me&loginState=nBeMaOY7Mdu5aFeSo1hVfn&line_auto_login_error=universal_link_error&loginChannelId=1445834080&returnUri=oauth2v2.1authorizeconsentbot_promptnormalscopeopenidprofileresponse_typecodestateRhiVgBoLDGredirect_urihttps3A2F2Fform.tonariwa.com2Fsuntory2Fmeasure_url3Fcpid3Dtennensui_sampling426lcd3D126type3D126nonceEvutxGZ894client_id1445834080"
+
+[[params.social]]
+  name = "Wechat"
+  icon = "fa-brands fa-weixin fa-2x"
+  weight = 2
+  url = "https://web.wechat.com/uklccp?lang=en_US&t=v2/index"
+
+[[params.social]]
+  name = "Telegram"
+  icon = "fa-brands fa-telegram fa-2x"
+  weight = 3
+  url = "https://web.telegram.org/"
+
+[[params.social]]
+  name = "X"
+  icon = "fa-brands fa-x-twitter fa-2x"
+  weight = 4
+  url = "https://x.com/"
+
+
+
+
+# Menu links
+[menu]
+[[menu.main]]
+  name = "小饅頭の部落格ℬ"
+  pre = "fa-solid fa-pen-to-square fa-3x"
+  weight = 1
+  url = "https://blog.grapehut.xyz"
+  target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭の音楽♪"
+  pre = "fa-solid fa-headphones fa-3x"
+  weight = 2
+  url = "https://www.mureka.ai/home"
+  target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭の家庭影院🎞"
+  pre = "fa-solid fa-film fa-3x"
+  weight = 3
+  url = "https://libretv.grapehut.xyz/"
+  target = "_blank"
+  
+[[menu.main]]
+  name = "小饅頭の语音克隆tts"
+  pre = "fa-solid fa-microphone fa-3x"
+  weight = 4
+  url = "https://tts.grapehut.xyz"
+  target = "_blank"    
+
+[[menu.main]]
+  name = "小饅頭の电视直播📺"
+  pre = "fa-brands fa-chromecast fa-3x"
+  weight = 5
+  url = "https://iptv.grapehut.xyz"
+  target = "_blank"
+  
+[[menu.main]]
+  name = "小饅頭の收藏夹🔖"
+  pre = "fa-solid fa-list fa-3x"
+  weight = 6
+  url = "https://webstack.grapehut.xyz"
+  target = "_blank"
+
+
+[[menu.main]]
+  name = "小饅頭の萌娘Live2D🐱"
+  pre = "fa-solid fa-venus fa-3x"
+  weight = 7
+  url = "https://live2d-widget.grapehut.xyz"
+  target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭の萌娘Live2D-Cubism3🐶"
+  pre = "fa-solid fa-venus-double fa-3x"
+  weight = 8
+  url = "https://live2d-cubism3.grapehut.xyz"
+  target = "_blank"
+
+
+ 
+[[menu.main]]
+  name = "小饅頭の字体甄选✎"
+  pre = "fa-solid fa-signature fa-3x"
+  weight = 9
+  url = "https://myfont.dpdns.org"
+  target = "_blank"  
+
+[[menu.main]]
+  name = "mirai-tech ㊑"
+  pre = "fa-solid fa-earth-americas fa-3x"
+  weight = 10
+  url = "https://mirai-tech.dpdns.org"
+  target = "_blank"  
+
+
+
+[[menu.main]]
+  name = "小饅頭のn8n ☯"
+  pre = "fa-brands fa-hubspot fa-3x"
+  weight = 11
+  url = "https://n8n-tqjzivfe.ap-northeast-1.clawcloudrun.com"
+  target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭のGeminiBalance 🤖"
+  pre = "fa-brands fa-google fa-3x"
+  weight = 12
+  url = "https://wuaacyawcegc.ap-northeast-1.clawcloudrun.com"
+  target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭の网站监控👓"
+  pre = "fa-solid fa-chart-bar fa-3x"
+  weight = 13
+  url = "https://klrbsexb.ap-northeast-1.clawcloudrun.com/status/1"
+  target = "_blank"
+
+
+
+[[menu.main]]
+  name = "小饅頭の秘密基地 ㊙"
+  pre = "fa-regular fa-eye-slash fa-3x"
+  weight = 14
+  url = "https://"
+  target = "_blank"

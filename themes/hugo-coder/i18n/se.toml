@@ -1,0 +1,64 @@
+[categories]
+one = "Kategori"
+other = "Katgorier"
+
+[tags]
+one = "Tagg"
+other = "Taggar"
+
+[series]
+one = "Serie"
+other = "Serie"
+
+[authors]
+one = "Författare"
+other = "Författare"
+
+[posts]
+other = "Inlägg"
+
+[reading_time]
+one = "Ein minut lästid"
+other = "{{ .Count }} minuter lästid"
+
+[page_not_found]
+other = "Sida hittades inte"
+
+[page_does_not_exist]
+other = "Ursäkta, men denna sida existerar inte."
+
+[head_back]
+other = "Här kan du komma tillbaka till <a href=\"{{ . }}\">startsidan</a>."
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "Byggd med"
+
+[see_also]
+other = "Se även i"
+
+[note]
+other = "Notera"
+
+[tip]
+other = "Tips"
+
+[example]
+other = "Exempel"
+
+[question]
+other = "Fråga"
+
+[info]
+other = "Info"
+
+[warning]
+other = "Varning"
+
+[error]
+other = "Fel"
+
+[link_to_heading]
+other = "Link to heading"

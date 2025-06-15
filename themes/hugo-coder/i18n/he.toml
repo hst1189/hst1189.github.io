@@ -1,0 +1,64 @@
+[categories]
+one = "קטגוריה"
+other = "categories"
+
+[tags]
+one = "תגית"
+other = "tags"
+
+[series]
+one = "סדרה"
+other = "series"
+
+[authors]
+one = "סופר"
+other = "authors"
+
+[posts]
+other = "פוסטים"
+
+[reading_time]
+one = "דקה אחת לקרוא"
+other = "דקות לקרוא {{ .Count }}"
+
+[page_not_found]
+other = "דף האינטרנט שביקשת לא נמצא"
+
+[page_does_not_exist]
+other = "מצטערים, דף אינטרנט זה אינו קיים"
+
+[head_back]
+other = " אתה יכול לחזור<a href=\"{{ . }}\">לדף הבית</a>."
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "מופעל על ידי"
+
+[see_also]
+other = "רואה עוד ב"
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"
+
+[link_to_heading]
+other = "Link to heading"
