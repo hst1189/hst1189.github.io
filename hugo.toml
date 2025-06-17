@@ -73,7 +73,11 @@ style = "github-light"
   weight = 4
   url = "https://x.com/"
 
-
+[[params.social]]
+  name = "Mail"
+  icon = "fa-solid fa-envelope"fa-2x"
+  weight = 5
+  url = "mailto:call@grapehut.xyz"
 
 
 # Menu links
