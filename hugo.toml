@@ -51,34 +51,38 @@ style = "github-light"
 # Social links
 [[params.social]]
   name = "Line"
-  icon = "fa-brands fa-line fa-3x"
+  icon = "fa-brands fa-line fa-2x"
   weight = 1
   url = "https://access.line.me/oauth2/v2.1/login?fromDomain=access-auto.line.me&loginState=nBeMaOY7Mdu5aFeSo1hVfn&line_auto_login_error=universal_link_error&loginChannelId=1445834080&returnUri=oauth2v2.1authorizeconsentbot_promptnormalscopeopenidprofileresponse_typecodestateRhiVgBoLDGredirect_urihttps3A2F2Fform.tonariwa.com2Fsuntory2Fmeasure_url3Fcpid3Dtennensui_sampling426lcd3D126type3D126nonceEvutxGZ894client_id1445834080"
+  target = "_blank"
 
 [[params.social]]
   name = "Wechat"
-  icon = "fa-brands fa-weixin fa-3x"
+  icon = "fa-brands fa-weixin fa-2x"
   weight = 2
   url = "https://web.wechat.com/uklccp?lang=en_US&t=v2/index"
-
+  target = "_blank"
+  
 [[params.social]]
   name = "Telegram"
-  icon = "fa-brands fa-telegram fa-3x"
+  icon = "fa-brands fa-telegram fa-2x"
   weight = 3
   url = "https://web.telegram.org/"
+  target = "_blank"
 
 [[params.social]]
   name = "X"
-  icon = "fa-brands fa-x-twitter fa-3x"
+  icon = "fa-brands fa-x-twitter fa-2x"
   weight = 4
   url = "https://x.com/"
+  target = "_blank"
 
 [[params.social]]
   name = "Mail"
-  icon = "fa-solid fa-envelope fa-3x"
+  icon = "fa-solid fa-envelope fa-2x"
   weight = 5
   url = "mailto:call@grapehut.xyz"
-
+  target = "_blank"
 
 # Menu links
 [menu]
