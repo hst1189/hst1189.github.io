@@ -13,7 +13,7 @@
       <br>{{ .Site.Params.license | safeHTML }}
     {{ end }}
     ·
-    {{ i18n "powered_by" }} <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://fontawesome.com/search?o=r&ic=brands" target="_blank" rel="noopener">Icon</a>
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://fontawesome.com/search?o=r&ic=brands" target="_blank" rel="noopener">Icon</a>
     {{ if (and .Site.Params.commit .GitInfo) }}
       [<a href="{{ .Site.Params.commit }}/{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash }}</a>]
     {{ end }}
