@@ -1,6 +1,6 @@
 const music_div = document.createElement('div')
 music_div.id = 'music_player'   // 设置元素id
-music_div.style = 'width: 400px; margin: 50px auto 0px auto; background-color: lightblue;' 
+music_div.style = 'width: 400px; margin: 70px auto auto auto; background-color: lightblue;' 
 // document.body.appendChild(music_div)  // 插入到body元素最后
 document.getElementsByClassName('about')[0].appendChild(music_div)
 

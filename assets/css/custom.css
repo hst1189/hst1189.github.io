@@ -21,7 +21,7 @@
     display: none
 }
 
-.avatar {height:80px;}
+.avatar {height:48px;}
 .avatar {transition: 0.8s;object-fit: cover;}
 .avatar:hover{transform: scale(1.5) rotate(360deg);}
 
