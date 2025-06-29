@@ -38,7 +38,11 @@ style = "github-light"
   customCSS = ["css/custom.css","css/APlayer.min.css"]
   customJS = ["js/sakuraPlus.js","js/typed.min.js","js/typed.js","js/APlayer.min.js","js/musicPlayer.js"]
   customRemoteJS= ["<script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661896697976587' crossorigin='anonymous'></script>","<script src='https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'></script>","<script src='https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js'></script>","<script src='https://cdn.jsdelivr.net/gh/hst1189/live2d-widget/autoload.js'></script>"]
-
+  
+  manifest = ""
+  mask_icon = ""
+  touchicon = ""
+  
   enableMusic = true
 
 [taxonomies]
