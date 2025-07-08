@@ -99,28 +99,28 @@ style = "github-light"
   target = "_blank"
 
 [[menu.main]]
-  name = "小饅頭の音楽♪"
+  name = "小饅頭の音楽🎼"
   pre = "fa-solid fa-headphones fa-2x"
   weight = 2
   url = "https://www.mureka.ai/home"
   target = "_blank"
 
 [[menu.main]]
-  name = "小饅頭の壱号家庭影院🎞"
+  name = "小饅頭の家庭影院（壱号）🎞️"
   pre = "fa-solid fa-film fa-2x"
   weight = 3
   url = "https://libretv.grapehut.xyz/"
   target = "_blank"
 
 [[menu.main]]
-  name = "小饅頭の弐号家庭影院🎞"
+  name = "小饅頭の家庭影院（弐号）🎞️"
   pre = "fa-solid fa-film fa-2x"
   weight = 4
   url = "https://moontv.grapehut.xyz/"
   target = "_blank"
   
 [[menu.main]]
-  name = "小饅頭の语音克隆tts"
+  name = "小饅頭の语音克隆tts🎞🎙️"
   pre = "fa-solid fa-microphone fa-2x"
   weight = 5
   url = "https://tts.grapehut.xyz"
