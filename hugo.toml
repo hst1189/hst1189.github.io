@@ -176,24 +176,32 @@ style = "github-light"
 [[menu.main]]
   name = "小饅頭のn8n ☯"
   pre = "fa-brands fa-hubspot fa-2x"
-  weight = 91
+  weight = 31
   url = "https://n8n-tqjzivfe.ap-northeast-1.clawcloudrun.com"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭のGeminiBalance 🤖"
   pre = "fa-brands fa-google fa-2x"
-  weight = 92
+  weight = 32
   url = "https://wuaacyawcegc.ap-northeast-1.clawcloudrun.com"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭の网站监控👓"
   pre = "fa-solid fa-chart-bar fa-2x"
-  weight = 93
+  weight = 33
   url = "https://klrbsexb.ap-northeast-1.clawcloudrun.com/status/1"
   target = "_blank"
 
+
+
+[[menu.main]]
+  name = "小饅頭のBPB Panel👓"
+  pre = "fa-solid fa-chart-bar fa-2x"
+  weight = 90
+  url = "https://710fee0a.x10host999.pages.dev/panel"
+  target = "_blank"
 
 
 [[menu.main]]
