@@ -120,7 +120,7 @@ style = "github-light"
   target = "_blank"
   
 [[menu.main]]
-  name = "小饅頭の语音克隆tts🎞🎙️"
+  name = "小饅頭の语音克隆tts🎙️"
   pre = "fa-solid fa-microphone fa-2x"
   weight = 5
   url = "https://tts.grapehut.xyz"
