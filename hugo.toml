@@ -198,15 +198,15 @@ style = "github-light"
 
 [[menu.main]]
   name = "小饅頭のBPB Panel👓"
-  pre = "fa-solid fa-chart-bar fa-2x"
+  pre = "fa-solid fa-ghost fa-2x"
   weight = 90
-  url = "https://710fee0a.x10host999.pages.dev/panel"
+  url = "https://x10host999.pages.dev/panel"
   target = "_blank"
 
 
 [[menu.main]]
   name = "小饅頭の秘密基地 ㊙"
-  pre = "fa-regular fa-eye-slash fa-2x"
+  pre = "fa-brands fa-expeditedssl fa-2x"
   weight = 99
   url = "https://"
   target = "_blank"
