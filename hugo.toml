@@ -100,7 +100,7 @@ style = "github-light"
 
 [[menu.main]]
   name = "小饅頭の音楽 🐮"
-  pre = "fa-solid fa-headphones fa-2x"
+  pre = "fa-solid fa-headphones-simple fa-2x"
   weight = 2
   url = "https://www.mureka.ai/home"
   target = "_blank"
@@ -166,7 +166,7 @@ style = "github-light"
 
 [[menu.main]]
   name = "mirai-tech 👽"
-  pre = "fa-solid fa-tent" fa-2x"
+  pre = "fa-solid fa-tent fa-2x"
   weight = 22
   url = "https://mirai-tech.dpdns.org"
   target = "_blank"  
