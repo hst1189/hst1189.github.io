@@ -142,6 +142,13 @@ style = "github-light"
 
 
 [[menu.main]]
+  name = "---"
+  pre = "fa-solid fa-line fa-2x"
+  weight = 10
+  url = "#"
+  target = "_blank"
+
+[[menu.main]]
   name = "小饅頭の萌娘Live2D 🐱"
   pre = "fa-solid fa-venus-mars fa-2x"
   weight = 11
@@ -156,10 +163,17 @@ style = "github-light"
   target = "_blank"
 
 
- 
+
+[[menu.main]]
+  name = "---"
+  pre = "fa-solid fa-line fa-2x"
+  weight = 20
+  url = "#"
+  target = "_blank"
+  
 [[menu.main]]
   name = "小饅頭の字体甄选 🐭"
-  pre = "fa-solid fa-featherfa-solid fa-2x"
+  pre = "fa-solid fa-feather fa-2x"
   weight = 21
   url = "https://myfont.dpdns.org"
   target = "_blank"  
@@ -171,13 +185,26 @@ style = "github-light"
   url = "https://mirai-tech.dpdns.org"
   target = "_blank"  
 
+[[menu.main]]
+  name = "rentacar-twins 🚗"
+  pre = "fa-solid fa-car fa-2x"
+  weight = 23
+  url = "https://rentacar-twins.grapehut.xyz/"
+  target = "_blank"  
 
+
+[[menu.main]]
+  name = "---"
+  pre = "fa-solid fa-line fa-2x"
+  weight = 30
+  url = "#"
+  target = "_blank"
 
 [[menu.main]]
   name = "小饅頭のn8n 👺"
   pre = "fa-brands fa-hubspot fa-2x"
   weight = 31
-  url = "https://n8n-tqjzivfe.ap-northeast-1.clawcloudrun.com"
+  url = "18.181.184.67:5678"
   target = "_blank"
 
 [[menu.main]]
@@ -188,25 +215,23 @@ style = "github-light"
   target = "_blank"
 
 [[menu.main]]
-  name = "小饅頭の网站监控 😎"
-  pre = "fa-solid fa-user-secret fa-2x"
-  weight = 33
-  url = "https://klrbsexb.ap-northeast-1.clawcloudrun.com/status/1"
-  target = "_blank"
-
-
-
-[[menu.main]]
   name = "小饅頭のBPB Panel🦄"
   pre = "fa-solid fa-globe fa-2x"
-  weight = 90
+  weight = 33
   url = "https://x10host999.pages.dev/panel"
   target = "_blank"
-
 
 [[menu.main]]
   name = "小饅頭の秘密基地 🔞"
   pre = "fa-brands fa-expeditedssl fa-2x"
-  weight = 99
+  weight = 34
   url = "https://cf996.hst1189.workers.dev/8cda8d90-9c66-4f59-8f98-d433d6238a8c"
+  target = "_blank"
+
+
+[[menu.main]]
+  name = "小饅頭の网站监控 😎"
+  pre = "fa-solid fa-user-secret fa-2x"
+  weight = 99
+  url = "https://klrbsexb.ap-northeast-1.clawcloudrun.com/status/1"
   target = "_blank"
