@@ -204,7 +204,7 @@ style = "github-light"
   name = "小饅頭のn8n 👺"
   pre = "fa-brands fa-hubspot fa-2x"
   weight = 31
-  url = "18.181.184.67:5678"
+  url = "https://18.181.184.67:5678"
   target = "_blank"
 
 [[menu.main]]
