@@ -143,7 +143,7 @@ style = "github-light"
 
 [[menu.main]]
   name = "---"
-  pre = "fa-solid fa-line fa-2x"
+  pre = "fa-solid fa-linefa-solid fa-2x"
   weight = 10
   url = "#"
   target = "_blank"
@@ -164,9 +164,10 @@ style = "github-light"
 
 
 
+
 [[menu.main]]
   name = "---"
-  pre = "fa-solid fa-line fa-2x"
+  pre = "fa-solid fa-linefa-solid fa-2x"
   weight = 20
   url = "#"
   target = "_blank"
@@ -193,9 +194,11 @@ style = "github-light"
   target = "_blank"  
 
 
+
+
 [[menu.main]]
   name = "---"
-  pre = "fa-solid fa-line fa-2x"
+  pre = "fa-solid fa-linefa-solid fa-2x"
   weight = 30
   url = "#"
   target = "_blank"
@@ -215,23 +218,26 @@ style = "github-light"
   target = "_blank"
 
 [[menu.main]]
+  name = "小饅頭の网站监控 😎"
+  pre = "fa-solid fa-user-secret fa-2x"
+  weight = 33
+  url = "https://klrbsexb.ap-northeast-1.clawcloudrun.com/status/1"
+  target = "_blank"
+
+  
+
+[[menu.main]]
   name = "小饅頭のBPB Panel🦄"
   pre = "fa-solid fa-globe fa-2x"
-  weight = 33
+  weight = 91
   url = "https://x10host999.pages.dev/panel"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭の秘密基地 🔞"
   pre = "fa-brands fa-expeditedssl fa-2x"
-  weight = 34
+  weight = 92
   url = "https://cf996.hst1189.workers.dev/8cda8d90-9c66-4f59-8f98-d433d6238a8c"
   target = "_blank"
 
 
-[[menu.main]]
-  name = "小饅頭の网站监控 😎"
-  pre = "fa-solid fa-user-secret fa-2x"
-  weight = 99
-  url = "https://klrbsexb.ap-northeast-1.clawcloudrun.com/status/1"
-  target = "_blank"
