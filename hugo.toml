@@ -142,7 +142,7 @@ style = "github-light"
 
 
 [[menu.main]]
-  name = "---"
+  name = "-"
   pre = "fa-solid fa-linefa-solid fa-2x"
   weight = 10
   url = "#"
@@ -166,7 +166,7 @@ style = "github-light"
 
 
 [[menu.main]]
-  name = "---"
+  name = "--"
   pre = "fa-solid fa-linefa-solid fa-2x"
   weight = 20
   url = "#"
@@ -210,21 +210,38 @@ style = "github-light"
   url = "https://18.181.184.67:5678"
   target = "_blank"
 
+
+[[menu.main]]
+  name = "----"
+  pre = "fa-solid fa-linefa-solid fa-2x"
+  weight = 40
+  url = "#"
+  target = "_blank"
+
 [[menu.main]]
   name = "小饅頭のGeminiBalance 🤖"
   pre = "fa-brands fa-google fa-2x"
-  weight = 32
+  weight = 41
   url = "https://wuaacyawcegc.ap-northeast-1.clawcloudrun.com"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭の网站监控 😎"
   pre = "fa-solid fa-user-secret fa-2x"
-  weight = 33
+  weight = 42
   url = "https://klrbsexb.ap-northeast-1.clawcloudrun.com/status/1"
   target = "_blank"
 
-  
+
+
+
+
+[[menu.main]]
+  name = "---------"
+  pre = "fa-solid fa-linefa-solid fa-2x"
+  weight = 90
+  url = "#"
+  target = "_blank"
 
 [[menu.main]]
   name = "小饅頭のBPB Panel🦄"
