@@ -185,11 +185,18 @@ style = "github-light"
   weight = 22
   url = "https://mirai-tech.dpdns.org"
   target = "_blank"  
+  
+[[menu.main]]
+  name = "blind-date 💘"
+  pre = "fa-solid fa-heart fa-2x"
+  weight = 23
+  url = "https://blinddate.grapehut.xyz/"
+  target = "_blank"  
 
 [[menu.main]]
   name = "rentacar-twins 🚗"
   pre = "fa-solid fa-car fa-2x"
-  weight = 23
+  weight = 24
   url = "https://rentacar-twins.grapehut.xyz/"
   target = "_blank"  
 
