@@ -179,32 +179,39 @@ style = "github-light"
   weight = 20
   url = "#"
   target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭のProduct宣伝模板 🥷"
+  pre = "fa-brands fa-d-and-d fa-2x"
+  weight = 21
+  url = "https://abc-product-portal.pages.dev"
+  target = "_blank"  
   
 [[menu.main]]
   name = "小饅頭の字体甄选 🐭"
   pre = "fa-solid fa-feather fa-2x"
-  weight = 21
+  weight = 22
   url = "https://myfont.dpdns.org"
   target = "_blank"  
 
 [[menu.main]]
   name = "mirai-tech 👽"
   pre = "fa-solid fa-tent fa-2x"
-  weight = 22
+  weight = 23
   url = "https://mirai-tech.dpdns.org"
   target = "_blank"  
   
 [[menu.main]]
   name = "blind-date 💘"
   pre = "fa-solid fa-heart fa-2x"
-  weight = 23
+  weight = 24
   url = "https://blinddate.grapehut.xyz/"
   target = "_blank"  
 
 [[menu.main]]
   name = "rentacar-twins 🚗"
   pre = "fa-solid fa-car fa-2x"
-  weight = 24
+  weight = 25
   url = "https://rentacar-twins.grapehut.xyz/"
   target = "_blank"  
 
