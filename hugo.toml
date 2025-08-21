@@ -132,21 +132,29 @@ style = "github-light"
   weight = 6
   url = "https://cloudflare-imgbed-1po.pages.dev"
   target = "_blank"
-  
 
+[[menu.main]]
+  name = "小饅頭のAI文生图 🖼️"
+  pre = "fa-solid fa-image fa-2x"
+  weight = 7
+  url = "https://cf-ai-image.hst1189.workers.dev"
+  target = "_blank"
+  
 [[menu.main]]
   name = "小饅頭の电视直播 📺"
   pre = "fa-brands fa-chromecast fa-2x"
-  weight = 7
+  weight = 8
   url = "https://iptv.grapehut.xyz"
   target = "_blank"
   
 [[menu.main]]
   name = "小饅頭の收藏夹 🔖"
   pre = "fa-solid fa-list fa-2x"
-  weight = 8
+  weight = 9
   url = "https://webstack.grapehut.xyz"
   target = "_blank"
+
+
 
 
 [[menu.main]]
