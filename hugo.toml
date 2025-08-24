@@ -162,14 +162,14 @@ style = "github-light"
 
 
 [[menu.main]]
-  name = "小饅頭の收藏夹 🔖"
+  name = "小饅頭の收藏夹 I 🔖"
   pre = "fa-solid fa-list fa-2x"
   weight = 17
   url = "https://white-hall-4c0c.hst1189.workers.dev/"
   target = "_blank"
 
 [[menu.main]]
-  name = "小饅頭の收藏夹 🔖"
+  name = "小饅頭の收藏夹 II 🔖"
   pre = "fa-solid fa-list fa-2x"
   weight = 18
   url = "https://webstack.grapehut.xyz"
