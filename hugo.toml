@@ -89,6 +89,10 @@ style = "github-light"
   url = "mailto:call@grapehut.xyz"
   target = "_blank"
 
+
+
+
+
 # Menu links
 [menu]
 [[menu.main]]
@@ -105,64 +109,6 @@ style = "github-light"
   url = "https://www.mureka.ai/home"
   target = "_blank"
 
-[[menu.main]]
-  name = "小饅頭の家庭影院 I（libretv）🤩"
-  pre = "fa-solid fa-photo-film fa-2x"
-  weight = 3
-  url = "https://libretv.grapehut.xyz/"
-  target = "_blank"
-
-[[menu.main]]
-  name = "小饅頭の家庭影院 II（moontv）🤠"
-  pre = "fa-solid fa-film fa-2x"
-  weight = 4
-  url = "https://moontv.grapehut.xyz/"
-  target = "_blank"
-  
-[[menu.main]]
-  name = "小饅頭の语音克隆tts🎙️"
-  pre = "fa-solid fa-microphone fa-2x"
-  weight = 5
-  url = "https://tts.grapehut.xyz"
-  target = "_blank"
-
-[[menu.main]]
-  name = "小饅頭の图床 🖼️"
-  pre = "fa-solid fa-image fa-2x"
-  weight = 6
-  url = "https://cloudflare-imgbed-1po.pages.dev"
-  target = "_blank"
-
-[[menu.main]]
-  name = "小饅頭のAI文生图 🖼️"
-  pre = "fa-solid fa-image fa-2x"
-  weight = 7
-  url = "https://cf-ai-image.hst1189.workers.dev"
-  target = "_blank"
-
-[[menu.main]]
-  name = "小饅頭のShortURL ♾️"
-  pre = "fa-solid fa-chain fa-2x"
-  weight = 8
-  url = "https://short-url-2vm.pages.dev/"
-  target = "_blank"
-
-  
-[[menu.main]]
-  name = "小饅頭の电视直播 📺"
-  pre = "fa-brands fa-chromecast fa-2x"
-  weight = 9
-  url = "https://iptv.grapehut.xyz"
-  target = "_blank"
-  
-[[menu.main]]
-  name = "小饅頭の收藏夹 🔖"
-  pre = "fa-solid fa-list fa-2x"
-  weight = 10
-  url = "https://webstack.grapehut.xyz"
-  target = "_blank"
-
-
 
 
 [[menu.main]]
@@ -173,16 +119,93 @@ style = "github-light"
   target = "_blank"
 
 [[menu.main]]
+  name = "小饅頭の家庭影院 I（libretv）🤩"
+  pre = "fa-solid fa-photo-film fa-2x"
+  weight = 11
+  url = "https://libretv.grapehut.xyz/"
+  target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭の家庭影院 II（moontv）🤠"
+  pre = "fa-solid fa-film fa-2x"
+  weight = 12
+  url = "https://moontv.grapehut.xyz/"
+  target = "_blank"
+  
+[[menu.main]]
+  name = "小饅頭の语音克隆tts🎙️"
+  pre = "fa-solid fa-microphone fa-2x"
+  weight = 13
+  url = "https://tts.grapehut.xyz"
+  target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭の图床 🖼️"
+  pre = "fa-solid fa-image fa-2x"
+  weight = 14
+  url = "https://cloudflare-imgbed-1po.pages.dev"
+  target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭のAI文生图 🖼️"
+  pre = "fa-solid fa-image fa-2x"
+  weight = 15
+  url = "https://cf-ai-image.hst1189.workers.dev"
+  target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭のShortURL ♾️"
+  pre = "fa-solid fa-chain fa-2x"
+  weight = 16
+  url = "https://short-url-2vm.pages.dev/"
+  target = "_blank"
+
+
+[[menu.main]]
+  name = "小饅頭の收藏夹 🔖"
+  pre = "fa-solid fa-list fa-2x"
+  weight = 17
+  url = "https://white-hall-4c0c.hst1189.workers.dev/"
+  target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭の收藏夹 🔖"
+  pre = "fa-solid fa-list fa-2x"
+  weight = 18
+  url = "https://webstack.grapehut.xyz"
+  target = "_blank"
+
+
+[[menu.main]]
+  name = "小饅頭の电视直播 📺"
+  pre = "fa-brands fa-chromecast fa-2x"
+  weight = 19
+  url = "https://iptv.grapehut.xyz"
+  target = "_blank"
+  
+
+
+
+
+
+[[menu.main]]
+  name = "-"
+  pre = "fa-solid fa-linefa-solid fa-2x"
+  weight = 20
+  url = "#"
+  target = "_blank"
+
+[[menu.main]]
   name = "小饅頭の萌娘Live2D 🐱"
   pre = "fa-solid fa-venus-mars fa-2x"
-  weight = 11
+  weight = 21
   url = "https://live2d-widget.grapehut.xyz"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭の萌娘Live2D-Cubism3 🐶"
   pre = "fa-solid fa-venus-double fa-2x"
-  weight = 12
+  weight = 22
   url = "https://live2d-cubism3.grapehut.xyz"
   target = "_blank"
 
@@ -192,44 +215,44 @@ style = "github-light"
 [[menu.main]]
   name = "--"
   pre = "fa-solid fa-linefa-solid fa-2x"
-  weight = 20
+  weight = 30
   url = "#"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭のProduct宣伝模板 🥷"
   pre = "fa-brands fa-d-and-d fa-2x"
-  weight = 21
+  weight = 31
   url = "https://abc-product-portal.pages.dev"
-  target = "_blank"  
+  target = "_blank"
   
 [[menu.main]]
   name = "小饅頭の字体甄选 🐭"
   pre = "fa-solid fa-feather fa-2x"
-  weight = 22
+  weight = 32
   url = "https://myfont.dpdns.org"
-  target = "_blank"  
+  target = "_blank"
 
 [[menu.main]]
   name = "mirai-tech 👽"
   pre = "fa-solid fa-tent fa-2x"
-  weight = 23
+  weight = 33
   url = "https://mirai-tech.dpdns.org"
-  target = "_blank"  
+  target = "_blank"
   
 [[menu.main]]
   name = "blind-date 💘"
   pre = "fa-solid fa-heart fa-2x"
-  weight = 24
+  weight = 34
   url = "https://blinddate.grapehut.xyz/"
-  target = "_blank"  
+  target = "_blank"
 
 [[menu.main]]
   name = "rentacar-twins 🚗"
   pre = "fa-solid fa-car fa-2x"
-  weight = 25
+  weight = 35
   url = "https://rentacar-twins.grapehut.xyz/"
-  target = "_blank"  
+  target = "_blank"
 
 
 
@@ -237,14 +260,14 @@ style = "github-light"
 [[menu.main]]
   name = "---"
   pre = "fa-solid fa-linefa-solid fa-2x"
-  weight = 30
+  weight = 40
   url = "#"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭のn8n 👺"
   pre = "fa-brands fa-hubspot fa-2x"
-  weight = 31
+  weight = 41
   url = "https://18.181.184.67:5678"
   target = "_blank"
 
@@ -253,21 +276,21 @@ style = "github-light"
 [[menu.main]]
   name = "----"
   pre = "fa-solid fa-linefa-solid fa-2x"
-  weight = 40
+  weight = 50
   url = "#"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭のGeminiBalance 🤖"
   pre = "fa-brands fa-google fa-2x"
-  weight = 41
+  weight = 51
   url = "https://wuaacyawcegc.ap-northeast-1.clawcloudrun.com"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭の网站监控 😎"
   pre = "fa-solid fa-user-secret fa-2x"
-  weight = 42
+  weight = 52
   url = "https://klrbsexb.ap-northeast-1.clawcloudrun.com/status/1"
   target = "_blank"
 
