@@ -1,4 +1,3 @@
-
 baseurl = "http://www.grapehut.xyz/"
 title = "小饅頭の部屋"
 theme = "hugo-coder"
@@ -106,7 +105,7 @@ style = "github-light"
   name = "小饅頭の音楽 🐮"
   pre = "fa-solid fa-headphones-simple fa-2x"
   weight = 2
-  url = "https://www.mureka.ai/home"
+  url = "https://music.grapehut.xyz"
   target = "_blank"
 
 
@@ -119,69 +118,72 @@ style = "github-light"
   target = "_blank"
 
 [[menu.main]]
+  name = "小饅頭の电视直播 📺"
+  pre = "fa-brands fa-chromecast fa-2x"
+  weight = 11
+  url = "https://iptv.grapehut.xyz"
+  target = "_blank"
+  
+[[menu.main]]
   name = "小饅頭の家庭影院 I（libretv）🤩"
   pre = "fa-solid fa-photo-film fa-2x"
-  weight = 11
+  weight = 12
   url = "https://libretv.grapehut.xyz/"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭の家庭影院 II（moontv）🤠"
   pre = "fa-solid fa-film fa-2x"
-  weight = 12
+  weight = 13
   url = "https://moontv.grapehut.xyz/"
   target = "_blank"
   
 [[menu.main]]
   name = "小饅頭の语音克隆tts🎙️"
   pre = "fa-solid fa-microphone fa-2x"
-  weight = 13
+  weight = 14
   url = "https://tts.grapehut.xyz"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭の图床 🖼️"
   pre = "fa-solid fa-image fa-2x"
-  weight = 14
+  weight = 15
   url = "https://cloudflare-imgbed-1po.pages.dev"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭のAI文生图 🖼️"
   pre = "fa-solid fa-image fa-2x"
-  weight = 15
+  weight = 16
   url = "https://cf-ai-image.hst1189.workers.dev"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭のShortURL ♾️"
   pre = "fa-solid fa-chain fa-2x"
-  weight = 16
+  weight = 17
   url = "https://short-url-2vm.pages.dev/"
   target = "_blank"
+
 
 
 [[menu.main]]
   name = "小饅頭の收藏夹 I 🔖"
   pre = "fa-solid fa-list fa-2x"
-  weight = 17
+  weight = 18
   url = "https://white-hall-4c0c.hst1189.workers.dev/"
   target = "_blank"
 
 [[menu.main]]
   name = "小饅頭の收藏夹 II 🔖"
   pre = "fa-solid fa-list fa-2x"
-  weight = 18
+  weight = 19
   url = "https://webstack.grapehut.xyz"
   target = "_blank"
 
 
-[[menu.main]]
-  name = "小饅頭の电视直播 📺"
-  pre = "fa-brands fa-chromecast fa-2x"
-  weight = 19
-  url = "https://iptv.grapehut.xyz"
-  target = "_blank"
+
   
 
 
@@ -268,8 +270,16 @@ style = "github-light"
   name = "小饅頭のn8n 👺"
   pre = "fa-brands fa-hubspot fa-2x"
   weight = 41
-  url = "https://18.181.184.67:5678"
+  url = "http://192.168.0.200:5678/"
   target = "_blank"
+
+[[menu.main]]
+  name = "小饅頭のGeminiBalance 🤖"
+  pre = "fa-brands fa-google fa-2x"
+  weight = 42
+  url = "http://192.168.0.200:8000/"
+  target = "_blank"
+
 
 
 
@@ -281,16 +291,9 @@ style = "github-light"
   target = "_blank"
 
 [[menu.main]]
-  name = "小饅頭のGeminiBalance 🤖"
-  pre = "fa-brands fa-google fa-2x"
-  weight = 51
-  url = "https://wuaacyawcegc.ap-northeast-1.clawcloudrun.com"
-  target = "_blank"
-
-[[menu.main]]
   name = "小饅頭の网站监控 😎"
   pre = "fa-solid fa-user-secret fa-2x"
-  weight = 52
+  weight = 51
   url = "https://klrbsexb.ap-northeast-1.clawcloudrun.com/status/1"
   target = "_blank"
 
