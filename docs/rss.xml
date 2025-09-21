@@ -1,5 +1,107 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:01:12 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.04 「建站」网站发布（域名绑定）</title><link>https://blog.grapehut.xyz/post/4.html</link><description>```
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:01:50 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.05 「建站」「js插件」APlayer &amp; DPlayer</title><link>https://blog.grapehut.xyz/post/5.html</link><description># 内容简介
+DIYGod 大神的2款插件
+
+
+# APlayer
+APlayer is a lovely HTML5 music player.
+
+- Media formats
+MP4 H.264 (AAC or MP3)
+WAVE PCM
+Ogg Theora Vorbis
+
+- Features
+Playlist
+Lyrics
+
+[Github](https://github.com/DIYgod/APlayer/)、[中文文档](https://aplayer.js.org/#/zh-Hans/) 
+
+### 使用方法
+```
+step1: 
+&lt;script src='https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js'&gt;&lt;/script&gt;
+&lt;link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css'&gt;
+
+step2:
+const music_div = document.createElement('div')
+music_div.id = 'music_player'   // 设置元素id
+document.body.appendChild(music_div)  // 插入到body元素最后
+
+step3:
+const ap = new APlayer({
+    container: document.getElementById('music_player'),
+    listFolded: false,
+    listMaxHeight: 90,
+    lrcType: 3,
+    audio: [
+        {
+        name: 'Time after time ～花舞う街で～',
+        artist: '倉木 麻衣',
+        url: '../music/TimeAfterTime.mp3',
+        lrc: '../music/TimeAfterTime.lrc',
+        cover: '../music/cover1.jpg',
+        theme: '#ebd0c2'
+        },
+       {
+        name: 'song name',
+        artist: 'artist',
+        url: 'xx.mp3',
+        lrc: 'xx.lrc',
+        cover: 'cover1.jpg',
+        theme: '#ebd0c2' 
+       }
+    ]
+});
+```
+### 添加效果
+`Gmeek-html&lt;img src='https://imgur.com/JDrJXCr.png'&gt;`
+
+
+
+# DPlayer
+DPlayer is a lovely HTML5 danmaku video player to help people build video and danmaku easily.
+
+- Streaming formats
+[HLS](https://github.com/video-dev/hls.js)
+[FLV](https://github.com/Bilibili/flv.js)
+[MPEG DASH](https://github.com/Dash-Industry-Forum/dash.js)
+[WebTorrent](https://github.com/webtorrent/webtorrent)
+Any other custom streaming formats
+
+- Media formats
+MP4 H.264
+WebM
+Ogg Theora Vorbis
+
+- Features
+Danmaku
+Screenshot
+Hotkeys
+Quality switching
+Thumbnails
+Subtitle
+
+[中文文档](https://dplayer.diygod.dev/zh/)
+
+### 使用方法
+```
+step1:  &lt;script src='https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js'&gt;&lt;/script&gt;
+step2:  &lt;div id='dplayer' style='width: 100%; height: 100%'&gt;&lt;/div&gt;
+step3: 
+const dp = new DPlayer({
+  container: document.getElementById('dplayer'),
+  video: {
+      url: https://myqcloud.com/xxx.mp4'); // COSビデオオブジェクトアドレス
+  },
+});
+```
+参考：https://www.tencentcloud.com/jp/document/product/436/53812
+
+### 添加效果
+`Gmeek-html&lt;img src='https://imgur.com/207ch36.jpg'&gt;`
+
+。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/5.html</guid><pubDate>Sun, 21 Sep 2025 09:01:20 +0000</pubDate></item><item><title>Vol.04 「建站」网站发布（域名绑定）</title><link>https://blog.grapehut.xyz/post/4.html</link><description>```
 域名　→　cloudflare　→　github
 ```
 
