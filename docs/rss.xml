@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:02:37 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.06 「建站」「js插件」萌萌哒的看板娘 (ノ≧∇≦)ノ - Live2D widget</title><link>https://blog.grapehut.xyz/post/6.html</link><description># 内容简介
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:04:52 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.07 「建站」独立开发者之穷鬼省钱套餐</title><link>https://blog.grapehut.xyz/post/7.html</link><description># 技术栈
+前端React + 后端 Node.js       主流：Next.js
+
+
+# Serverless Function
+服务|特色
+--|--
+[Claw.cloud](https://run.claw.cloud/)|最近比较火的容器，github老用户的话，每月$5的免费额度
+[GitHub Pages](https://pages.github.com)|GitHub Pages 让开发者可以在 .github.io 域上免费托管静态站点。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/7.html</guid><pubDate>Sun, 21 Sep 2025 09:04:21 +0000</pubDate></item><item><title>Vol.06 「建站」「js插件」萌萌哒的看板娘 (ノ≧∇≦)ノ - Live2D widget</title><link>https://blog.grapehut.xyz/post/6.html</link><description># 内容简介
 把萌萌哒的看板娘抱回家 (ノ≧∇≦)ノ | Live2D widget for web platform
 
 
