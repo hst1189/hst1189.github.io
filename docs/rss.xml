@@ -1,5 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:09:25 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.14 Scoop（Windows软件管理）</title><link>https://blog.grapehut.xyz/post/14.html</link><description># 🔖 Windows でのパッケージ管理は Scoop
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:10:29 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.16 家用服务器（Ubuntu編）</title><link>https://blog.grapehut.xyz/post/16.html</link><description># 1. 安装Ubuntu系统🔖
+Linux发行版Ubuntu24.04LTS　　※LTS的意思是'长期支持'
+https://ubuntu.com/
+
+查看硬件配置
+```
+CPU：lscpu
+内存：free -h
+磁盘容量：df -h
+OS版本：cat /etc/issue
+```
+
+# 2. 绑定静态IP🔖
+打开路由器设置---&gt;局域网设置--&gt;DHCP静态IP设置，分配一个固定IP，比如192.168.0.100。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/16.html</guid><pubDate>Sun, 21 Sep 2025 09:09:57 +0000</pubDate></item><item><title>Vol.14 Scoop（Windows软件管理）</title><link>https://blog.grapehut.xyz/post/14.html</link><description># 🔖 Windows でのパッケージ管理は Scoop
 
 什么是 Scoop？它是一个在 Windows 上运行的软件包管理器。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/14.html</guid><pubDate>Sun, 21 Sep 2025 09:08:51 +0000</pubDate></item><item><title>Vol.13 PowerToys使用技巧</title><link>https://blog.grapehut.xyz/post/13.html</link><description># 下载PowerToys
 https://github.com/microsoft/PowerToys
