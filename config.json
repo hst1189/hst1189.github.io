@@ -22,9 +22,9 @@
     },
 
     "exlink":{
-        "RSS月刊🔖":"https://gmerss.grapehut.xyz/",
-        "音楽🎶":"https://music.grapehut.xyz/",
-        "Me💕":"https://me.grapehut.xyz/"
+        "RSS月刊🔖":"https://grapehut.xyz/gmerss",
+        "音楽🎶":"https://grapehut.xyz/music",
+        "Me💕":"https://grapehut.xyz/me"
     },
     
     "commentLabelColor":"#006b75",
