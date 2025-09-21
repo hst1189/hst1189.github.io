@@ -1,5 +1,56 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:20:03 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.29 git入門</title><link>https://blog.grapehut.xyz/post/29.html</link><description># git 公式サイト
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:20:43 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.31 科学上网（VPN客户端）</title><link>https://blog.grapehut.xyz/post/31.html</link><description># 翻墙回国
+- quick-fox
+https://www.quick-fox.com/zh-CN
+
+- 穿梭
+https://www.transocks.com/
+
+
+
+# 翻墙出国  
+- StarVPN 
+https://www.starvpn.com/free-vpn
+iOS  2GB/天
+Android 和 Windows 100GB/月
+
+- VivaVPN
+https://www.vivavpn.pro
+不限流量 !
+
+- ZIVPN
+https://zivpn.com
+不限流量 !
+
+- HelloVPN
+https://www.hellovpn.app
+不限流量 !
+
+- Hola VPN
+https://hola.org
+提供原生IP，免费有时间限制
+ 
+- AdGuard VPN — 极速且安全的代理
+https://adguard-vpn.com/zh_cn/welcome.html
+每个月享受 3GB
+ 
+- TunnelBear 
+每月2000M流量，秒开4k/8k视频
+ 
+- Turbo VPN
+安全免费的 VPN 代理！ 5个免费节点
+ 
+- 美国 VPN 
+Planet VPN lite 代理，提供原生IP
+ 
+- 免费VPN 
+Free VPN – 1VPN，不限流量!
+ 
+- DotVPN
+快速且私密的VPN
+ 
+- Urban VPN Proxy
+超多免费节点！速度极快，秒开4K、8K视频。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/31.html</guid><pubDate>Sun, 21 Sep 2025 09:20:13 +0000</pubDate></item><item><title>Vol.29 git入門</title><link>https://blog.grapehut.xyz/post/29.html</link><description># git 公式サイト
 [https://git-scm.com](https://git-scm.com/)
 
 [http://git-cheatsheet.com](http://git-cheatsheet.com/)
