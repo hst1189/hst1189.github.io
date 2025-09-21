@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 08:50:11 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.01 「建站」Gmeek使用手册（基础篇）</title><link>https://blog.grapehut.xyz/post/1.html</link><description># 前言
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 08:53:21 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.03 「建站」Gmeek使用手册（高级篇）</title><link>https://blog.grapehut.xyz/post/3.html</link><description># 一、主题配置 👀 
+
+### 1. 手动模式（默认）
+这种模式就是当访问者第一次打开博客页面时，呈现的是亮主题。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/3.html</guid><pubDate>Sun, 21 Sep 2025 08:52:50 +0000</pubDate></item><item><title>Vol.01 「建站」Gmeek使用手册（基础篇）</title><link>https://blog.grapehut.xyz/post/1.html</link><description># 前言
 [Gmeek](https://github.com/Meekdai/Gmeek) 一个博客框架
 超轻量级个人博客模板，完全基于`Github Pages `、 `Github Issues` 和 `Github Actions`，可以称作`All in Github`
 &gt; 引用：https://blog.meekdai.com/post/Gmeek-kuai-su-shang-shou.html
@@ -1635,10 +1638,7 @@ const dp = new DPlayer({
 ```&#13;
 &#13;
 # 一、注册域名（任意域名）&#13;
-付费的，免费的都可以，根据自身钱包的富裕程度，👀  省略若干字。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/4.html</guid><pubDate>Sun, 01 Sep 2024 06:04:46 +0000</pubDate></item><item><title>Vol.03 「建站」Gmeek使用手册（高级篇）</title><link>https://blog.grapehut.xyz/post/3.html</link><description># 一、主题配置 👀 &#13;
-&#13;
-### 1. 手动模式（默认）&#13;
-这种模式就是当访问者第一次打开博客页面时，呈现的是亮主题。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/3.html</guid><pubDate>Sun, 01 Sep 2024 06:01:28 +0000</pubDate></item><item><title>Vol.02 「建站」Gmeek使用手册（进阶篇）</title><link>https://blog.grapehut.xyz/post/2.html</link><description># 📑 自定义配置文件
+付费的，免费的都可以，根据自身钱包的富裕程度，👀  省略若干字。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/4.html</guid><pubDate>Sun, 01 Sep 2024 06:04:46 +0000</pubDate></item><item><title>Vol.02 「建站」Gmeek使用手册（进阶篇）</title><link>https://blog.grapehut.xyz/post/2.html</link><description># 📑 自定义配置文件
 &gt; [!IMPORTANT]
 &gt; 按照安装步骤成功搭建好后，就可以阅读下面的内容修改配置文件啦
 &gt; 修改配置文件后，一定要手动全局生成一次，不然会报错
