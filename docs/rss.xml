@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:12:20 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.18 jsdelivr CDN</title><link>https://blog.grapehut.xyz/post/18.html</link><description># 关于jsdelivr 
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:12:56 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.19 Hyper-v安装openwrt软路由</title><link>https://blog.grapehut.xyz/post/19.html</link><description># 事前准备
+
+### 1. 下载 OpenWrt 镜像
+骷髅大佬版本：[DHDAXCW/OpenWRT_x86_x64](https://github.com/DHDAXCW/OpenWRT_x86_x64/releases)
+
+`ext4` 文件系统镜像可以对任何改动都进行持久化存储，
+`squashfs` 一般情况下对文件系统的改动无法持久化，每次重启都会重置更改，但便于从错误配置中重置。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/19.html</guid><pubDate>Sun, 21 Sep 2025 09:12:28 +0000</pubDate></item><item><title>Vol.18 jsdelivr CDN</title><link>https://blog.grapehut.xyz/post/18.html</link><description># 关于jsdelivr 
 &gt; https://www.jsdelivr.com/
 
 ## jsdelivr CDN 和 GitHub 的关系
