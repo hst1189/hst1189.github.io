@@ -1,2 +1,1762 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://Meekdai.github.io/Gmeek-template</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Meekdai.github.io/Gmeek-template</link></image><lastBuildDate>Thu, 14 Mar 2024 09:17:29 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>请接着之后的安装步骤执行</title><link>https://Meekdai.github.io/Gmeek-template/post/qing-jie-zhao-zhi-hou-de-an-zhuang-bu-zou-zhi-xing.html</link><description>如果你点击了`READM.md`的链接后，看到了这个页面，请继续之后的安装步骤执行。</description><guid isPermaLink="true">https://Meekdai.github.io/Gmeek-template/post/qing-jie-zhao-zhi-hou-de-an-zhuang-bu-zou-zhi-xing.html</guid><pubDate>Thu, 14 Mar 2024 09:15:10 +0000</pubDate></item><item><title>这是Gmeek模板仓库</title><link>https://Meekdai.github.io/Gmeek-template/post/zhe-shi-Gmeek-mo-ban-cang-ku.html</link><description>通过这个模板创建库，可以大大减少部署Gmeek博客的配置步骤。</description><guid isPermaLink="true">https://Meekdai.github.io/Gmeek-template/post/zhe-shi-Gmeek-mo-ban-cang-ku.html</guid><pubDate>Wed, 20 Dec 2023 07:42:24 +0000</pubDate></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Mon, 15 Sep 2025 11:56:49 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.35 TVBox源</title><link>https://blog.grapehut.xyz/post/35.html</link><description># 🚀 资源站列表
+https://www.yszzq.com/ziyuan/
+
+
+✔️　电影天堂资源：http://caiji.dyttzyapi.com/api.php/provide/vod
+✔️　如意资源　　：https://cj.rycjapi.com/api.php/provide/vod | http://www.ryzyw.com/
+✔️　暴风资源　　：https://bfzyapi.com/api.php/provide/vod | 备用网址：bfzy.tv 
+✔️　天涯资源　　：https://tyyszy.com/api.php/provide/vod
+✔️　小猫咪资源　：https://zy.xmm.hk/api.php/provide/vod
+✔️　非凡资源　　：http://ffzy.tv/api.php/provide/vod | 备用网址：ffzy.tv | ffzy1.tv | ffzy2.tv | ffzy3.tv | ffzy4.tv | ffzy5.tv
+✔️　360资源　　 ：https://360zy.com/api.php/provide/vod
+✔️　爱奇艺资源　：https://iqiyizy1.com/api.php/provide/vod/ | 备用网址：iqiyizy1.com 至 iqiyizy9.com
+✔️　卧龙资源　　：https://wolongzyw.com/api.php/provide/vod
+✔️　极速资源　　：https://jszyapi.com/api.php/provide/vod
+✔️　豆瓣资源　　：https://dbzy.tv/api.php/provide/vod
+✔️　魔爪资源　　：https://mozhuazy.com/api.php/provide/vod
+✔️　魔都资源　　：https://www.mdzyapi.com/api.php/provide/vod | http://moduzy.com/
+✔️　最大资源　　：https://api.zuidapi.com/api.php/provide/vod
+✔️　樱花资源　　：https://m3u8.apiyhzy.com/api.php/provide/vod | 樱花资源网：https://yhzy.cc/
+✔️　百度云资源　：https://api.apibdzy.com/api.php/provide/vod
+✔️　无尽资源　　：https://api.wujinapi.me/api.php/provide/vod | https://www.wujinzy.com/
+✔️　旺旺短剧　　：https://wwzy.tv/api.php/provide/vod
+✔️　iKun资源　　：https://ikunzyapi.com/api.php/provide/vod | 主域名：ikunzy.com | ikunzy.net | ikunzy.org | ikunzy.vip 备用域名ikzy1.com（1-9均可访问）
+✔️　量子资源　　：https://cj.lziapi.com/api.php/provide/vod/ | https://lzizy.com/
+✔️　速播资源　　：https://subocaiji.com/api.php/provide/vod
+✔️　U酷资源　　 ：https://api.ukuapi88.com/api.php/provide/vod | https://ukuzy0.com/
+✔️　金鹰资源　　：https://jinyingzy.com/api.php/provide/vod   域名: jinyingzy.com | jinyingzy.net 备用域名: jinyingziyuan.com | jyzy1.com | jyzy2.com | jyzy3.com
+✔️　光速资源　　：https://api.guangsuapi.com/api.php/provide/vod | https://www.guangsuzy.com
+✔️　虎牙资源　　：https://www.huyaapi.com/api.php/provide/vod | http://huyazy.net
+✔️　淘片资源　　：https://taopianapi.com/cjapi/sda/vod/json.html | https://www.taopianzy.com/
+✔️　极速资源　　：https://jszyapi.com/api.php/provide/vod | https://www.jisuzy.com
+✔️　红牛资源　　：https://www.hongniuzy2.com/api.php/provide/vod | https://hongniuzy.net/
+✔️　速播资源　　：https://subocj.com/api.php/provide/vod | https://www.subocaiji.com/
+✔️　茅台资源　　：https://caiji.maotaizy.cc/api.php/provide/vod | https://mtzy.me/
+✔️　牛牛资源　　：https://api.niuniuzy.me/api.php/provide/vod | https://niuniuzy.cc/
+✔️　豪华资源　　：https://hhzyapi.com/api.php/provide/vod | https://haohuazy.com/
+
+❌　火花资源　　：https://cj.huohua.live/api.php/provide/vod/?uid=你的UID      ※UID
+❌　麒麟资源　　：http://www.qilinzyz.com/api.php/provide/vod     ※IP
+❌　华为吧资源　：https://cjhwba.com/api.php/provide/vod　　　 ※IP
+❌　蜂巢资源　　：https://api.fczy888.me/api.php/provide/vod        ※IP
+❌　黑木耳资源　：https://json.heimuer.xyz/api.php/provide/vod | https://json.heimuer.xyz
+❌　快车资源　　：http://kuaichezy.com/      备用域名：kuaichezy1.com 至 kuaichezy9.com
+❌　新浪资源　　：https://www.xinlangzy.com/
+❌　索尼资源　　：https://suonizy.com/
+
+
+
+
+# 🚚 老司机资源（ 🔞NSFW）
+✔️　大奶子资源　：https://apidanaizi.com/api.php/provide/vod |  https://www.danaizizy1~5.com
+✔️　CK资源　　　：https://ckzy.me/api.php/provide/vod | 备用域名：ckzy.me | www.ckzy1.com　
+✔️　jkun资源　 　：https://jkunzyapi.com/api.php/provide/vod | 备用域名：jkzyuan.cc | jkunzy.com | jkunzy.cc | jkunzy.vip | jkunzy.live | jkunzy.top
+✔️　搜AV资源　　：https://api.souavzy.vip/api.php/provide/vod
+✔️　155资源　  　：https://155api.com/api.php/provide/vod
+✔️　lsb资源　　　：https://apilsbzy1.com/api.php/provide/vod
+✔️　黄色仓库资源：https://hsckzy.vip/api.php/provide/vod
+✔️　玉兔资源　　：https://apiyutu.com/api.php/provide/vod
+✔️　百万资源　　：https://api.bwzym3u8.com/api.php/provide/vod
+
+
+---
+📌 sample：https://www.example.com/api.php/provide/vod
+📌 温馨提示：资源站点可能会不定期更换域名，建议收藏并定期检查更新。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/35.html</guid><pubDate>Mon, 15 Sep 2025 05:29:56 +0000</pubDate></item><item><title>Vol.34 n8n入門</title><link>https://blog.grapehut.xyz/post/34.html</link><description># 安装n8n
+```
+sudo docker run -d -p 5678:5678 --name n8n -v ./n8n_data:/home/node/.n8n -e N8N_SECURE_COOKIE=false docker.n8n.io/n8nio/n8n
+※允许http访问    -e N8N_SECURE_COOKIE=false   　
+```
+
+访问地址：192.168.0.200:5678
+
+。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/34.html</guid><pubDate>Sun, 14 Sep 2025 05:47:01 +0000</pubDate></item><item><title>Vol.33 Vite + React</title><link>https://blog.grapehut.xyz/post/33.html</link><description>
+# 搭建  普通node项目
+```
+npm inti  　　　　　　※生成　package.json
+npm install lodash 　　※lodash導入
+
+
+```
+
+# 搭建 Vite 项目
+```
+npm create vite@latest
+
+输入 project name
+选择 react / vue
+选择 javascript / typescript
+```
+```
+cd my-project （project name）
+
+npm install
+npm run dev
+```
+
+# [React Icons](https://react-icons.github.io/react-icons)
+```
+npm install react-icons --save
+
+import { FaBeer } from 'react-icons/fa';
+
+function Question() {
+  return (
+    &lt;h3&gt;
+      Lets go for a &lt;FaBeer /&gt;?
+    &lt;/h3&gt;
+  );
+}
+```。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/33.html</guid><pubDate>Sat, 06 Sep 2025 09:50:21 +0000</pubDate></item><item><title>Vol.32 Docker入門</title><link>https://blog.grapehut.xyz/post/32.html</link><description># 🎉CheatSheet
+[CheatSheet](/imgs/DockerCheatSheet.pdf)
+
+`Gmeek-html&lt;img src='/imgs/DockerCheatSheet.png'&gt;`
+
+
+
+# 🎉安装Docker
+```
+sudo curl -fsSL https://get.docker.com | sh    #安装Docker
+sudo systemctl enable --now docker             #启动Docker服务
+sudo docker -v                                 #查看docker版本，检查是否安装成功
+```
+
+# 🎉一些Docker常用命令
+```
+🪄拉取image
+sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
+                               ↑            ↑
+                     空间（官方空间可省略）  image（版本省略的话，默认最新）
+
+例：　sudo docker pull nginx　#省略写法表示，从官网拉取nginx的最新版本
+ ```
+
+```
+🪄运行image
+
+docker run   #每次从image 创建新容器及运行
+
+sudo docker run -d  -p 80:8080  -v /data:/data  image_name:lastest      
+                ↑　　　↑　　　　　　↑               ↑
+           -d 后台运行 -p 端口映射 -v 目录映射   image（版本省略的话，默认最新）
+           host内:docker内　host内:docker内
+```
+
+```
+🪄进入容器
+sudo run -it  image_name 
+          ↑
+     -it 进入容器后
+```
+
+
+```
+🪄挂载卷
+sudo docker volume create  volume_name                                #创建挂载卷
+sudo run -d  -p 80:8080  -v volume_name:/data  image_name:lastest     #用挂载卷启动容器
+
+sudo docker volume inspect volume_name                                #查看挂载卷的真是目录
+sudo docker volume list                                               #查看所有挂载卷
+sudo docker volume rm volume_name                                     #删除挂载卷
+```
+
+```
+🪄image管理
+sudo docker images                       #查看docker中所有image
+sudo docker rmi image_id/image_name      #删除image
+```
+
+```
+🪄container管理
+sudo docker ps -a                             #查看docker中所有容器
+sudo docker rm  container_id/container_name   #删除容器
+```
+
+```
+🪄container管理
+sudo docker ps -a                             #查看docker中所有容器
+sudo docker rm  container_id/container_name   #删除容器
+```
+
+```
+🪄启动停止container
+sudo docker start container_id/container_name   #启动容器
+sudo docker stop container_id/container_name   #停止容器
+```
+
+```
+🪄查看docker内network
+sudo docker network ls
+・bridge 
+・host 
+・null
+```
+
+
+
+# 🎉Docker image 制作及Push
+```
+Dockerfile   添加此文件（注意：头文字大写，没有后缀）
+
+FROM node:18-alpine
+WORKDIR /app
+COPY index.js /index.js
+RUN npm install -g pnpm
+RUN pnpm install
+CMD node /index.js
+EXPOSE 3000
+```
+```
+sudo docker build -t user_name/image_name:version .
+sudo docker push user_name/image_name   #上传image
+```
+
+
+
+# 🎉Docker compose
+```
+docker-compose.yaml
+每一个compose，自动创建一个子网
+
+sudo docker compose up -d  #启动compose里所有容器 并自动创建一个子网
+sudo docker compose down   #停止并删除compose里所有容器
+
+sudo docker compose start #启动compose
+sudo docker compose stop #停止compose
+```
+
+
+
+# 🎉Docker Playground
+https://labs.play-with-docker.com/
+
+
+
+# 🎉Docker运行实例
+1. [gemini-balance](https://github.com/snailyp/gemini-balance)
+```
+mkdir ./geminibalance_data
+vi .geminibalance.env
+
+API_KEYS=['AIxxxx','AIxxxx','AIxxxx','AIxxxx']
+ALLOWED_TOKENS=['登入密码']
+DATABASE_TYPE=sqlite
+SQLITE_DATABASE=default_db
+
+sudo docker run -d -p 8000:8000 --name gemini-balance -v ./geminibalance_data:/app/data --env-file .geminibalance.env ghcr.io/snailyp/gemini-balance:latest
+```
+
+
+2. [n8n](https://github.com/n8n-io/n8n)
+```
+mkdir ./n8n_data
+sudo docker run -d -p 5678:5678 --name n8n -v ./n8n_data:/home/node/.n8n -e N8N_SECURE_COOKIE=false docker.n8n.io/n8nio/n8n
+```
+
+
+3. [青龙面板](https://github.com/whyour/qinglong)
+```
+sudo docker run -d -p 5700:5700 --name qinglong -v ./qinglong_data:/ql/data whyour/qinglong:latest
+```
+
+
+4. [CloudSaver](https://github.com/jiangrui1994/CloudSaver)
+```
+mkdir ./cloudsaver_data
+mkdir ./cloudsaver_config
+
+sudo docker run -d -p 8008:8008 --name cloud-saver -v ./cloudsaver_data:/app/data -v ./cloudsaver_config:/app/config jiangrui1994/cloudsaver:latest
+```
+```
+[{'name':'115网盘资源分享频道','id':'Lsp115'},{'id':'alyp_1','name':'网盘(高品质)影视'},{'id':'shareAliyun','name':'阿里云盘发布频道'},{'id':'Quark_Movies','name':'夸克云盘综合资源'},{'id':'Aliyun_4K_Movies','name':'阿里云盘4K影视'},{'id':'zaihuayun','name':'阿里云盘资源'},{'id':'PanjClub','name':'盘酱酱Club'},{'id':'tianyirigeng','name':'天翼云盘资源频道'},{'id':'xx123pan','name':'123云盘资源频道'},{'id':'zyzhpd123','name':'123云盘综合频道'},{'id':'cloudtianyi','name':'天翼云盘资源发布频道'},{'id':'tyypzhpd','name':'天翼云盘综合频道'},{'id':'Oscar_4Kmovies','name':'奥斯卡4K蓝光（精品）影视磁力站'},{'id':'ydypzyfx','name':'移动云盘资源分享'},{'id':'bdwpzhpd','name':'百度网盘综合频道'},{'id':'Q66share','name':'阿里云盘吧'},{'id':'BaiduCloudDisk','name':'百度网盘资源分享'},{'id':'yunpan139','name':'网盘资源收藏（移动云盘）'},{'id':'yunpanuc','name':'网盘资源收藏（UC网盘）'},{'id':'qixingzhenren','name':'云盘资源发布频道'},{'id':'duanjucabian','name':'热门短剧/擦边短剧/精选短剧/在线预览'},{'id':'yoyokuakeduanju','name':'YOYO资源|夸克|短剧'},{'id':'Channel_Shares_115','name':'Shares_115_Channel'},{'id':'yeqingjie_GJG666','name':'爷青回动画分享'},{'id':'gotopan','name':'迅雷云盘'},{'id':'oneonefivewpfx','name':'影巢'},{'id':'zhenyingsg','name':'帧影时光'},{'id':'movielover8888_TV','name':'【热门网剧在线】'},{'id':'CBduanju','name':'全网擦边｜电影｜资源分享'},{'id':'ucquark','name':'UC夸克百度迅雷资源分享'},{'id':'weichengduanju666','name':'短剧大全资源'},{'id':'yingxiangkj','name':'影享空间'},{'name':'夸克网盘资源收藏夹','id':'QuarkFree'},{'name':'综艺网盘资源频道','id':'TG654TG'},{'name':'115影视资源分享频道','id':'QukanMovie'},{'name':'夸克丶百度丶迅雷丶4K网盘','id':'WFYSFX02'},{'name':'网盘资源收藏','id':'naclyunpan'},{'name':'综艺网盘资源频道','id':'TG654TG'},{'name':'网盘资源收藏','id':'naclyunpan'},{'name':'夸克丶百度丶迅雷丶4K网盘','id':'WFYSFX02'},{'name':'115影视资源分享频道','id':'QukanMovie'}]
+```
+
+。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/32.html</guid><pubDate>Tue, 26 Aug 2025 12:21:49 +0000</pubDate></item><item><title>Vol.31 科学上网（VPN客户端）</title><link>https://blog.grapehut.xyz/post/31.html</link><description># 翻墙回国
+- quick-fox
+https://www.quick-fox.com/zh-CN
+
+- 穿梭
+https://www.transocks.com/
+
+
+
+# 翻墙出国  
+- StarVPN 
+https://www.starvpn.com/free-vpn
+iOS  2GB/天
+Android 和 Windows 100GB/月
+
+- VivaVPN
+https://www.vivavpn.pro
+不限流量 !
+
+- ZIVPN
+https://zivpn.com
+不限流量 !
+
+- HelloVPN
+https://www.hellovpn.app
+不限流量 !
+
+- Hola VPN
+https://hola.org
+提供原生IP，免费有时间限制
+ 
+- AdGuard VPN — 极速且安全的代理
+https://adguard-vpn.com/zh_cn/welcome.html
+每个月享受 3GB
+ 
+- TunnelBear 
+每月2000M流量，秒开4k/8k视频
+ 
+- Turbo VPN
+安全免费的 VPN 代理！ 5个免费节点
+ 
+- 美国 VPN 
+Planet VPN lite 代理，提供原生IP
+ 
+- 免费VPN 
+Free VPN – 1VPN，不限流量!
+ 
+- DotVPN
+快速且私密的VPN
+ 
+- Urban VPN Proxy
+超多免费节点！速度极快，秒开4K、8K视频。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/31.html</guid><pubDate>Tue, 08 Jul 2025 10:09:46 +0000</pubDate></item><item><title>Vol.30 科学上网（代理节点客户端）</title><link>https://blog.grapehut.xyz/post/30.html</link><description># Shadowsocks(SS)、ShadowsocksR(SSR)、V2Ray、Clash、Trojan等科学上网协议
+
+### Shadowsocks是什么？
+Shadowsocks（简称SS）是一种基于Socks5代理方式的加密传输协议，也可以指实现这个协议的各种开发包，大家常说的SS科学上网这里说的就是Shadowsocks协议。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/30.html</guid><pubDate>Sun, 06 Jul 2025 05:07:51 +0000</pubDate></item><item><title>Vol.13 PowerToys使用技巧</title><link>https://blog.grapehut.xyz/post/13.html</link><description># 下载PowerToys&#13;
+https://github.com/microsoft/PowerToys&#13;
+&#13;
+# 下载插件&#13;
+1. [ChatGPTPowerToys](https://github.com/ferraridavide/ChatGPTPowerToys)&#13;
+将下载的插件解压后，放置到这个目录下：`C:\Program Files\PowerToys\RunPlugins`&#13;
+重启PowerToys。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/13.html</guid><pubDate>Tue, 14 Jan 2025 03:54:48 +0000</pubDate></item><item><title>Vol.24 「白嫖」cloudflare无限企业邮箱</title><link>https://blog.grapehut.xyz/post/24.html</link><description># 白嫖cloudflare无限企业邮箱
+
+## 收邮件
+1. 进入cloudflare，选择一个已绑定的域名
+2. 启用email routing，自动生成５条DNS记录（３个MX，２个TXT），添加结果可以在DNS面板里看到
+3. 设置email routing规则，编辑Catch-All绑定一个転送邮箱，通过邮箱验证后，転送状态变为可用
+
+&gt; [!TIP]
+&gt; 邮箱「任意字符@ 上述绑定的域名」， 所接受到的邮件 都会転送到Catch-All绑定的邮箱
+&gt; 例如：绑定域名 grapehut.xyz， 发送至：任意@grapehut.xyz  的邮件，会転送到Catch-All 绑定邮箱
+
+
+&gt; [!TIP]
+&gt; cloudflare邮件设置的概要栏里，可以查看所有転送的邮件
+
+
+
+## 发邮件
+通过resend.com的API服务  https://resend.com/onboarding
+
+1. Add Domain，自动生成3条DNS（1条MX，2条TXT）
+`Gmeek-html&lt;img src='../imgs/resend/resend1.PNG'&gt;`
+
+
+2. 添加回 cloudflare
+`Gmeek-html&lt;img src='../imgs/resend/resend2.PNG'&gt;`
+
+
+#### 测试
+```
+curl -X POST 'https://api.resend.com/emails' \
+ -H 'Authorization: Bearer re_123456789' \
+ -H 'Content-Type: application/json' \
+ -d $'{
+  'from': 'Acme &lt;onboarding@resend.dev&gt;',
+  'to': ['delivered@resend.dev'],
+  'subject': 'hello world',
+  'html': '&lt;p&gt;it works!&lt;/p&gt;'
+}'
+```。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/24.html</guid><pubDate>Mon, 13 Jan 2025 14:12:12 +0000</pubDate></item><item><title>Vol.27 科学上网（自建代理节点）</title><link>https://blog.grapehut.xyz/post/27.html</link><description># 方法一：claw.cloud 部署
+
+### Claw Cloud爪云）部署 Vless       
+```
+Docker image：7techlife/seven
+Cpu：0.2
+Memory：256m
+Port：80
+Public Address：不公开 
+
+部署后在logs里 查找 聚合链接 粘贴到V2ray
+```
+
+
+### Claw Cloud爪云）部署 Hysteria2       
+```
+Docker image：7techlife/sevenhy2
+Cpu：0.1
+Memory：64m
+Port：7777
+Public Address：选择udp:// 
+部署后在logs里 查找下面链接 粘贴到V2ray
+hy2:// 一次性强密码 @ public address（去掉udp://）?insecure=1&amp;alpn=h3#sevenhy2
+
+```
+
+
+---
+
+# 方法二：cf worker 部署
+
+
+
+## 🔖 新建Worker
+cf里创建一个worker（worker名字任意，如 cf996），初始脚本（work.js） 为默认Helloworld 即可
+cf会自动生成worker网址   如：https://cf996.hst1189.workers.dev
+
+
+## 🔖 脚本地址
+替换默认脚本 work.js 后部署
+为了防止ERROR1101 , 建议使用以下混淆代码
+https://github.com/yonggekkk/Cloudflare-vless-trojan
+　∟[Vless_workers_pages](https://github.com/yonggekkk/Cloudflare_vless_trojan/tree/main/Vless_workers_pages)
+　∟[Trojan_workers_pages](https://github.com/yonggekkk/Cloudflare_vless_trojan/tree/main/Trojan_workers_pages)
+
+
+## 🔖 Worker添加变量
+### 1. Vless节点的变量设置
+
+`Gmeek-html&lt;img src='../imgs/vlessnode/clouDNS0.PNG'&gt;`
+
+```
+建议修改） uuid ⇒ 8cda8d90-9c66-4f59-8f98-d433d6238a8c
+默认即可）proxyip ⇒ 默认443端口：ipv4地址、ipv6地址、域名（非443端口：ipv4地址/ipv6地址/域名：端口）
+默认即可）ip1 ~ ip13 ⇒ 订阅节点：优选IP
+默认即可）pt1 ~ pt13 ⇒ 订阅节点：优选IP对应端口
+```
+
+&gt; [!TIP]
+&gt; uuid 获取方式
+```
+cmd ⇒ Powershell -NoExit -Command '[guid]::NewGuid()
+```
+
+
+
+## 2. Trojan节点的变量设置
+```
+建议修改）pswd ⇒ 万人骑密码：trojan
+默认即可）proxyip ⇒ 默认443端口：ipv4地址、ipv6地址、域名（非443端口：ipv4地址/ipv6地址/域名：端口）
+默认即可）ip1 ~ ip13 ⇒ 订阅节点：优选IP
+默认即可）pt1 ~ pt13 ⇒ 订阅节点：优选IP对应端口
+```
+
+
+## 🔖 获取链接地址
+上述变量设置以后，部署，更新网址 ↓
+https://cf996.hst1189.workers.dev/8cda8d90-9c66-4f59-8f98-d433d6238a8c
+打开此网址，找到里面的链接，黏贴到软件里即可
+
+
+
+## 🔖 绑定域名（可选，被墙对策）
+CF的worker 域名（https://*. workers.dev）被墙的话，可以通过绑定域名回避
+1. CF里添加网站 cf996.ip-ddns.com（通过clouDNS免费获得）
+2. clouDNS 添加DNS解释 A2个，NS2个（双向解析，如下图，必须和CF设置同步一致）
+3. CF里的worker 绑定自定义域名（test.cf996.ip-ddns.com、※必须添加前缀，clouDNS的根域名无法绑定）
+4. CF里自动添加 worker解析  ，相应的在clouDNS添加  worker的DNS解释 CNAME1个
+5. 添加TSL的DNS解析  TXT2个（等待几分钟~数小时）
+
+
+下图绑定 clouDNS的免费域名为例：
+`Gmeek-html&lt;img src='../imgs/vlessnode/clouDNS1.PNG'&gt;`
+`Gmeek-html&lt;img src='../imgs/vlessnode/clouDNS2.PNG'&gt;`
+`Gmeek-html&lt;img src='../imgs/vlessnode/clouDNS3.PNG'&gt;`
+
+ 
+```
+原始网址：
+https://cf996.hst1189.workers.dev/8cda8d90-9c66-4f59-8f98-d433d6238a8c
+
+绑定域名后：
+https://test.cf996.ip-ddns.com/8cda8d90-9c66-4f59-8f98-d433d6238a8c
+```
+
+
+
+
+
+# 🔖 常用软件
+1、安卓Android：[v2rayNG](https://github.com/2dust/v2rayNG/tags)、[Nekobox](https://github.com/starifly/NekoBoxForAndroid/releases)、[Karing](https://github.com/KaringX/karing/tags)、v2box
+
+2、电脑Windows：[v2rayN](https://github.com/2dust/v2rayN/tags)、[Hiddify](https://github.com/hiddify/hiddify-next/tags)、[Karing](https://github.com/KaringX/karing/tags)
+
+3、苹果Ios：Karing、Hiddify Proxy &amp; VPN、Shadowrocket(小火箭)、Streisand、v2box
+
+4、软路由Openwrt：[homeproxy](https://github.com/kiddin9/openwrt-packages)，建议使用系统自带的软件库查找更新
+
+注意：其他平台客户端未开启分片功能情况下，workers域的6个443系TLS节点是不可用的
+
+注意：Shadowrocket(小火箭)、v2box、v2rayn、v2rayng客户端对trojan+ws有强制开启TLS问题，造成trojan+ws不通。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/27.html</guid><pubDate>Mon, 13 Jan 2025 06:08:14 +0000</pubDate></item><item><title>Vol.14 Scoop（Windows软件管理）</title><link>https://blog.grapehut.xyz/post/14.html</link><description># 🔖 Windows でのパッケージ管理は Scoop
+
+什么是 Scoop？它是一个在 Windows 上运行的软件包管理器。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/14.html</guid><pubDate>Sat, 11 Jan 2025 13:13:52 +0000</pubDate></item><item><title>Vol.25 「白嫖」大語言模型LLM</title><link>https://blog.grapehut.xyz/post/25.html</link><description># 🔖 Openrouter.ai
+获取KEY：https://openrouter.ai/settings/keys
+API地址： https://openrouter.ai/api/v1/chat/completions
+模型：deepseek/deepseek-r1:free
+
+# 🔖 大模型竞技场
+https://lmarena.ai/leaderboard
+
+# 🔖 代理地址
+https://api-proxy.me/
+
+
+
+# 🔖 Gemini API生态  （国内无法直接访问，需代理）
+https://gemini.google.com/
+https://aistudio.google.com/
+https://notebooklm.google.com/
+
+### APIキー
+获取KEY：https://aistudio.google.com/apikey
+API地址： https://generativelanguage.googleapis.com/v1beta/
+模型：Gemini 2.5 Flash Preview 05-20
+
+### Gemini費用
+https://ai.google.dev/gemini-api/docs/rate-limits#free-tier
+10次/分，500次/天，250,000token/分
+
+
+### 多Key轮询
+https://github.com/snailyp/gemini-balance
+```
+1. 创建挂在文件夹
+mkdir ./geminibalance-data
+
+2. 设置env
+vi .geminibalance-env
+
+下列参数：
+API_KEYS=['AIxxxxxxxxx','AIxxxxxxxxx','AIxxxxxxxxxx']
+ALLOWED_TOKENS=['登入密码']
+DATABASE_TYPE=sqlite
+SQLITE_DATABASE=default_db
+
+
+3. 启动容器
+sudo docker run -d -p 8000:8000 --name gemini-balance -v ./geminibalance-data:/app/data --env-file .geminibalance-env ghcr.io/snailyp/gemini-balance:latest
+```
+
+```
+提供商类型：OpenAI
+提供名：GeminiBalance
+APIkey：登入密码
+API地址：http://192.168.0.200:8000
+模型：Gemini 2.5 Flash Preview 05-20
+
+```
+
+### 自建代理方法：
+通过下面自建代理，同时能转成常用的 OpenAI格式接口
+[openai-gemini](https://github.com/PublicAffairs/openai-gemini)通过Github Actions功能，在Cloudflare创建Worker
+
+```
+1. 选择VPS
+例：Deploy to Cloudflare
+・获取 Account ID
+・获取 API Token  选择所有账户，所有区域
+
+2. Fork repository　运行github workflower， 自動部署 Cloudflare Worker（Worker默认名字为 gemini ） 
+
+3. Worker绑定域名（例如：gemini.grapehut.us.kg） 　※然后就可以调用此域名了
+```
+
+
+
+
+
+# 🔖 OpenAI API
+### 0. https://api.openai.com（国内无法直接访问，需要自建代理）
+代理API地址：https://api-proxy.me/openai
+模型：gpt-4o-mini
+
+
+以下2个，大佬自建的代理服务
+### 1. https://github.com/chatanywhere/GPT_API_free （一天200次）
+```
+gpt-4o-mini，和gpt-3.5-turbo共享一天200次
+国内动态加速 直连无需代理
+支持 gpt-3.5-turbo系列 / gpt-4系列 / gpt-4o系列 / gpt-4o-audio-preview / embeddings / DALL·E / whisper 等
+```
+模型：gpt-4o-mini
+获取KEY：[申请内测免费Key](https://api.chatanywhere.org/v1/oauth/free/render)
+API地址： https://api.chatanywhere.tech (国内中转，延时更低)
+　　　　　https://api.chatanywhere.org (国外使用)
+
+
+### 2. https://github.com/popjane/free_chatgpt_api （不限量 无门槛）
+```
+完全免费使用以下勾选模型：
+★ ✓gpt-4o-mini（不限量 无门槛）
+ 　✓gpt-3.5-turbo-0125
+ 　✓gpt-3.5-turbo-1106
+ 　✓gpt-3.5-turbo
+ 　✓gpt-3.5-turbo-16k
+ 　✓net-gpt-3.5-turbo (可联网搜索模型-稳定性稍差)
+ 　✓whisper-1
+ 　✓dall-e-2
+ 　×text-开头系列模型，例如：text-davinci（免费版已取消text系列模型）
+ 　×gpt-4全系列（只定期限量开放）
+ 　×付费版API支持OpenAI所有模型，包括（联网、绘画、聊天、向量、图片分析、文件分析、GPTs等）
+ 　×付费版API支持Midjourney专业绘画、Suno音乐生成、PPT生成、多种视频模型。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/25.html</guid><pubDate>Sun, 05 Jan 2025 13:33:04 +0000</pubDate></item><item><title>Vol.15 Win安全开启SMB共享</title><link>https://blog.grapehut.xyz/post/15.html</link><description># 🔖 禁用 SMB1
+强烈建议关闭，打开Windows機能面板
+```
+cmd ⇒ OptionalFeatures.exe
+```
+SMB1 可以追溯到20世纪80年代 IBM 和 [微软](https://pinpai.smzdm.com/1461/)的DOS 时代
+距离今天已经有三十多年的时间，当时计算机安全还不存在，它在拦截攻击方面有重大的架构问题
+如今版本的 windows 10/11 都默认禁用了 SMB1
+
+
+
+
+# 🔖 安全使用 SMB 共享的步骤
+1. 新建一个用户专门用于共享文件的授权，并设置此用户的权限
+2. 设置网络共享和系统安全的相关设置
+3. 开启共享，授权指定用户
+4. 删除 %User% 默认共享
+
+
+## 🐻 1. 创建专用的用户
+新建一个本地用户，设置只用于 SMB 共享
+```
+cmd ⇒ compmgmt.msc  打开计算机管理面板
+本地用户和组⇒　用户⇒　右键空白处，点击“新用户”
+```
+
+新建账号为 'joker' 的用户为例，相关设置如下：　
+只用于共享，设置**不能更改密码**，**密码不会过期**
+
+`Gmeek-html&lt;img src='../imgs/smb/smb0.png'&gt;`
+`Gmeek-html&lt;img src='../imgs/smb/smb1.png'&gt;`
+`Gmeek-html&lt;img src='../imgs/smb/smb2.png'&gt;`
+`Gmeek-html&lt;img src='../imgs/smb/smb3.png'&gt;`
+`Gmeek-html&lt;img src='../imgs/smb/smb4.png'&gt;`
+
+
+## 🐻 2. 设置网络共享和系统安全的相关设置
+
+#### 2.1 分配用户权限
+设置好之后，joker 用户就无法本地登录到系统，同时也无法通过远程桌面的形式登录到本机，
+目的就是让 joker 只能用来 SMB 共享。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/15.html</guid><pubDate>Tue, 24 Dec 2024 06:00:06 +0000</pubDate></item><item><title>Vol.16 家用服务器（Ubuntu編）</title><link>https://blog.grapehut.xyz/post/16.html</link><description># 1. 安装Ubuntu系统🔖
+Linux发行版Ubuntu24.04LTS　　※LTS的意思是'长期支持'
+https://ubuntu.com/
+
+查看硬件配置
+```
+CPU：lscpu
+内存：free -h
+磁盘容量：df -h
+OS版本：cat /etc/issue
+```
+
+# 2. 绑定静态IP🔖
+打开路由器设置---&gt;局域网设置--&gt;DHCP静态IP设置，分配一个固定IP，比如192.168.0.100。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/16.html</guid><pubDate>Thu, 19 Dec 2024 06:42:55 +0000</pubDate></item><item><title>Vol.23 「白嫖」批量gmail, outlook</title><link>https://blog.grapehut.xyz/post/23.html</link><description># 📫 Gamil
+例如：johndoe@gmail.com
+
+1. 任意位置添加「.」，都被视为同一个地址
+```
+john.doe@gmail.com
+johnd.oe@gmail.com
+jo.hndoe@gmail.com
+```
+ 
+2. 后置添加「+」，都被视为同一个地址```
+```
+johndoe+news@gmail.com
+johndoe+abc@gmail.com
+johndoe+shop@gmail.com
+``` 
+
+3. 使用「googlemail.com」域名
+```
+johndoe@googlemail.com
+```
+
+4. 上述3种方法结合起来
+```
+john.doe+lable@googlemail.com
+```
+
+
+
+# 📫 Outlook
+通过为outlook设备别名的方式，一次获得10个outlook邮箱，outlook邮箱与真实的完全一样。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/23.html</guid><pubDate>Wed, 18 Dec 2024 15:04:02 +0000</pubDate></item><item><title>Vol.22 「白嫖」aws免费一年</title><link>https://blog.grapehut.xyz/post/22.html</link><description># 配置服务器
+
+🔖### 1. 注册aws账号（需要信用卡，验证时会扣除1美元或等值的货币）
+https://aws.amazon.com/cn/campaigns/nc20241101/
+
+🔖### 2. 选择免费额度的配置来创建一个EC2实例
+    名称：任意
+    系统：任意（选择平时常用系统  **Ubuntu**）
+    硬件配置（选择默认的免费）
+    实例类型（默认的**t2.micro**）
+    存储（免费最大30GB）
+    
+　创建密钥（保存为`xxx.pem`，下载到本地， ssh联接用）
+    创建安全组（允许`SSH ✓`，`HTTP ✓`，`HTTPS  ✓`） 
+
+🔖### 3. 确认一下实体配置信息，启动实体
+
+🔖### 4. 进入实体，查看公有IP，进行ssh链接，使用下载到本地的密钥（`xxx.pem`） ，选择Ubuntu的话，默认用户名：`ubuntu
+　　例如：公有IPv4：18.181.184.67
+　　ssh -i 'aws_ubuntu.pem' ubuntu@ec2-18-181-184-67.ap-northeast-1.compute.amazonaws.com
+
+🔖### 5. `sudo -i`  进入root权限
+查看硬件配置
+```
+CPU：lscpu
+内存：free -h
+磁盘容量：df -h
+OS版本：cat /etc/issue
+```
+
+🔖### 6. 安装Docker
+```
+curl -fsSL https://get.docker.com | sh    #安装Docker
+systemctl enable --now docker             #启动Docker服务
+docker -v                                 #查看docker版本，检查是否安装成功
+docker ps -a                            #查看docker中所有容器
+```
+
+
+🔖### 7. 开放端口，设置安全组
+`Gmeek-html&lt;img src='../imgs/aws_security_rull.png'&gt;`
+
+&gt; [!TIP]
+&gt; http 的默认端口: 80
+&gt; https 的默认端口: 433
+&gt; ssh 的默认端口: 22
+&gt; telnet 的默认端口: 23
+&gt; ftp 的默认端口: 20 和 21 ，  20负责连接，21负责传输数据
+&gt; sftp 的默认端口: 22
+
+
+
+
+🔖### 8. 常见问题
+
+《无法ping的解决方案》
+首先Ping只是向服务器发送ICMP的数据包，如果在服务器的防火墙没有允许ICMP协议的数据包的话，那么即使服务器正常运行，那也是ping不同的。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/22.html</guid><pubDate>Tue, 17 Dec 2024 15:42:07 +0000</pubDate></item><item><title>Vol.20 油猴（Tampermonkey)</title><link>https://blog.grapehut.xyz/post/20.html</link><description># 平台比較
+|   | Greasemonkey | Violentmonkey | Tampermonkey| Scriptcat
+-- |-- | -- | --|--
+Firefox | 〇 | 〇 | 〇|〇
+Chrome | × | 〇 | 〇|〇
+Safari | × | × | 〇|〇
+外部エディタ | × | 〇 | 〇|〇
+インポート/エクスポート | 〇 | 〇 | 〇|〇
+Dropbox 同期 | × | 〇 | 〇|×
+Google Drive 同期 | × | 〇 | 〇|×
+One Drive 同期 | × | 〇 | 〇|×
+WebDAV 同期 | × | 〇 | 〇|×
+Yandex Disk 同期 | × | × | 〇|×
+ライセンス | MIT | MIT | proprietary |GPL-3.0 license
+リポジトリ | [GitHub](https://github.com/greasemonkey/greasemonkey/) | [GitHub](https://github.com/violentmonkey/violentmonkey) | [2018 年更新停止](https://github.com/Tampermonkey/tampermonkey)|[GitHub](https://github.com/scriptscat/scriptcat)
+公式サイト | [公式サイト](https://www.greasespot.net/) | [公式サイト](https://violentmonkey.github.io/) | [公式サイト](https://www.tampermonkey.net/)| [公式サイト](https://docs.scriptcat.org)
+Initial release | 2005/03/28 | 2013/09/03 | 2010/05/26|
+
+# 脚本收藏
+  - https://greasyfork.org/scripts
+  - https://sleazyfork.org/scripts
+  - https://scriptcat.org/en/search
+
+---
+Telegram Media Downloader
+- https://greasyfork.org/ja/scripts/446342
+
+百度网盘下载
+- https://greasyfork.org/ja/scripts/484953
+ 
+ 跨克网盘下载
+- https://greasyfork.org/ja/scripts/471333
+
+GitHub仓库页面添加一个'DeepWiki'按钮
+- https://greasyfork.org/ja/scripts/534147
+
+解除CSDN登录复制
+- https://greasyfork.org/ja/scripts/505207
+
+YouTube 広告を自動スキップ
+- https://greasyfork.org/ja/scripts/498197
+
+東方永頁機
+- https://greasyfork.org/ja/scripts/438684
+
+
+---
+pixiv-downloader
+- https://sleazyfork.org/ja/scripts/432150
+
+圖片全載Next（支持寫真、H漫、漫畫的網站1000+）
+- https://sleazyfork.org/ja/scripts/463305
+ 
+ComicRead
+- https://sleazyfork.org/ja/scripts/374903
+
+JavBus Javdb library trailer（JavBus/Javdb/library/javbooks/avmoo/avsox/sehuatang/msin）
+- https://sleazyfork.org/ja/scripts/441120
+
+老司机修炼手册（支持网站 missav | jable.tv | pornhub | 18comic | 91porn | 91porna | xvideos）
+- https://sleazyfork.org/ja/scripts/519635
+
+missav永远播放+不弹广告
+- https://sleazyfork.org/ja/scripts/499213
+
+missav批量备份收藏视频
+- https://sleazyfork.org/ja/scripts/497682
+
+OneJAVOneWeb（javbusjavlibrary.com| onejav.com| 141jav.com| jav321.com| javbus.com| hpjav.tv| jable.tv| hpav.tv| javdb.com| freejavbt.com| avmoo.click）
+- https://sleazyfork.org/ja/scripts/428639
+
+亚洲审美车（theav101.com| theav108.com| theav109.com| theav.fun| theav120.com| theav09.fun| theav121.com）
+- https://sleazyfork.org/ja/scripts/455251
+
+解锁海角社区资源
+- https://sleazyfork.org/zh-CN/scripts/509466
+
+
+
+。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/20.html</guid><pubDate>Sat, 07 Dec 2024 12:03:52 +0000</pubDate></item><item><title>Vol.21  Portableapps便携软件制作</title><link>https://blog.grapehut.xyz/post/21.html</link><description># 前言&#13;
+`PortableApps.com Launcher`（以下简称PAL）是`PortableApps.com`开发的便携软件制作工具。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/21.html</guid><pubDate>Fri, 29 Nov 2024 14:57:31 +0000</pubDate></item><item><title>Vol.26 科学上网（批量免费节点）</title><link>https://blog.grapehut.xyz/post/26.html</link><description>**订阅链接：**
+
+```
+https://raw.githubusercontent.com/mfuu/v2ray/master/v2ray
+```
+```
+https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml
+```
+
+
+# 方法一
+利用google搜索  inurl:clash/proxies
+
+```
+可选参数
+c=国家（HK、TW、KR、JP、US等）
+type=节点类型（ss、ssr、vmess、trojan等）
+speed=速度（数字）需要节点池打开测速才有效
+使用&amp;拼接（问号“?”和逗号“,”都是半角英文）
+
+例如：https://sub.0664.net/clash/proxies?c=HK,TW,KR,JP,US&amp;type=ss,trojan
+筛选出香港、台湾、韩国、日本、美国地区的ss和trojan类型
+
+https://sub.0664.net/ 回到首页
+获取订阅URL
+  https://sub.0664.net/ss/sub
+  https://sub.0664.net/vmess/sub
+  ...
+```
+
+
+
+
+
+# 方法二
+利用BPB-Worker-Panel 面板的漏洞
+
+免费获取BPB面板的后台地址：
+【[点击获取](https://fofa.info/result?qbase64=aWNvbl9oYXNoPSItMTM1NDAyNzMxOSIgJiYgYXNuPSIxMzMzNSIgJiYgcG9ydD0iODAi)】80端口
+【[点击获取](https://fofa.info/result?qbase64=aWNvbl9oYXNoPSItMTM1NDAyNzMxOSIgJiYgYXNuPSIxMzMzNSIgJiYgcG9ydD0iNDQzIg%3D%3D)】443端口
+
+
+打开后获取到大量的BPB-Worker-Panel 面板地址，只需在连接后面加上/login，就可以看到BBP面板的后台，`版本号是2.5.3 以上`就可以直接免费导入使用！
+
+然后把获得的地址填写到V2ray客户端里，如下所示：
+`Gmeek-html&lt;img src='https://www.freedidi.com/wp-content/uploads/2024/11/2fed20789620241124163317-2079x1440.webp'&gt;`
+
+
+# 导入代理
+下载V2ray 客户端： [2dust/v2rayN](https://github.com/2dust/v2rayN/release)
+导入：　菜单「服务器」→  从剪贴板导入链接
+
+```
+trojan://bpb-trojan@www.vpslook.com:443?security=tls&amp;sni=这里填域名&amp;alpn=h3&amp;fp=randomized&amp;allowlnsecure=1&amp;type=ws&amp;host=这里填域名&amp;path=%2Ftr%3Fed%3D2560#BPB
+
+伪装域名(host)：需要替换
+SNI：需要替换
+```
+
+
+
+
+# 【高阶篇】
+
+- 需要安装下Python，没有安装的可以前往【[python官网】](https://www.python.org/)进行下载安装，推荐[python3.10.3](https://www.python.org/downloads/release/python-3103/) 版本
+
+- 安装下 Python 依赖库
+
+```
+pip install requests beautifulsoup4
+pip install selenium
+```
+如果报错，提示找不到package，可能python版本比较低，可以通过下面的命令解决
+
+```
+pip install selenium requests beautifulsoup4 packaging
+ ```
+
+- 把下面的代码另存为一个vpn.py
+
+```
+import requests
+from bs4 import BeautifulSoup
+from packaging import version  # 用于比较版本号
+
+# FOFA 查询页面 URL
+FOFA_URL = 'https://fofa.info/result?qbase64=aWNvbl9oYXNoPSItMTM1NDAyNzMxOSIgJiYgYXNuPSIxMzMzNSIgJiYgcG9ydD0iNDQzIg%3D%3D'
+
+# 文件名定义
+OUTPUT_FILE_1 = '1.txt'
+OUTPUT_FILE_2 = '2.txt'
+OUTPUT_FILE_OK = 'OK.txt'
+
+def get_fofa_results():
+import requests
+from bs4 import BeautifulSoup
+from packaging import version  # 用于比较版本号
+
+# FOFA 查询页面 URL
+FOFA_URL = 'https://fofa.info/result?qbase64=aWNvbl9oYXNoPSItMTM1NDAyNzMxOSIgJiYgYXNuPSIxMzMzNSIgJiYgcG9ydD0iNDQzIg%3D%3D'
+
+# 文件名定义
+OUTPUT_FILE_1 = '1.txt'
+OUTPUT_FILE_2 = '2.txt'
+OUTPUT_FILE_OK = 'OK.txt'
+
+def get_fofa_results():
+    '''抓取 FOFA 页面并提取结果地址'''
+    print('正在抓取 FOFA 页面...')
+    response = requests.get(FOFA_URL)
+    if response.status_code != 200:
+        print(f'无法访问 FOFA 页面，状态码：{response.status_code}')
+        return []
+
+    # 使用 BeautifulSoup 解析 HTML 内容
+    soup = BeautifulSoup(response.text, 'html.parser')
+    results = []
+
+    # 查找所有结果链接
+    for link in soup.find_all('a', href=True):
+        url = link['href']
+        if url.startswith('https://'):  # 提取 https 开头的链接
+            results.append(url)
+
+    print(f'提取到 {len(results)} 个地址')
+    return results
+
+def append_login_to_urls(input_file, output_file):
+    '''将地址加上 /login 并保存到新文件'''
+    print(f'正在处理 {input_file}，将地址加上 /login 并保存到 {output_file}...')
+    with open(input_file, 'r', encoding='utf-8') as infile, open(output_file, 'w', encoding='utf-8') as outfile:
+        for line in infile:
+            url = line.strip() + '/login'
+            outfile.write(url + '\n')
+    print(f'已完成地址追加，结果保存到 {output_file}')
+
+def check_bpb_version(input_file, output_file):
+    '''访问地址并检查 BPB Panel 的版本号'''
+    print(f'正在验证 {input_file} 中的地址...')
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
+    }
+    min_version = version.parse('2.5.3')  # 最低版本号
+    with open(input_file, 'r', encoding='utf-8') as infile, open(output_file, 'w', encoding='utf-8') as outfile:
+        for line in infile:
+            url = line.strip()
+            try:
+                response = requests.get(url, headers=headers, timeout=10)
+                if response.status_code == 200 and 'BPB Panel' in response.text:
+                    # 提取版本号
+                    raw_version = extract_version(response.text)
+                    if raw_version:
+                        parsed_version = version.parse(raw_version)
+                        if parsed_version &gt; min_version:
+                            print(f'[匹配] {url} (版本号: {parsed_version})')
+                            outfile.write(url + '\n')
+            except Exception as e:
+                print(f'[错误] 无法访问 {url}，错误：{e}')
+    print(f'验证完成，符合条件的地址保存到 {output_file}')
+
+def extract_version(html):
+    '''从 HTML 内容中提取 BPB Panel 的版本号'''
+    if 'BPB Panel' in html:
+        start_index = html.find('BPB Panel')
+        # 提取版本号（假设版本号以 2 开头）
+        version_start = html.find('2', start_index)
+        version_end = version_start
+        while version_end &lt; len(html) and (html[version_end].isdigit() or html[version_end] == '.'):
+            version_end += 1
+        return html[version_start:version_end]
+    return None
+
+def main():
+    # 第一步：抓取 FOFA 页面结果并保存到 1.txt
+    urls = get_fofa_results()
+    with open(OUTPUT_FILE_1, 'w', encoding='utf-8') as f:
+        for url in urls:
+            f.write(url + '\n')
+    print(f'FOFA 页面结果已保存到 {OUTPUT_FILE_1}')
+
+    # 第二步：将 1.txt 地址加上 /login 并保存到 2.txt
+    append_login_to_urls(OUTPUT_FILE_1, OUTPUT_FILE_2)
+
+    # 第三步：验证 2.txt 中的地址，符合条件的保存到 OK.txt
+    check_bpb_version(OUTPUT_FILE_2, OUTPUT_FILE_OK)
+
+if __name__ == '__main__':
+    main()
+```
+
+- 最后在终端下执行命令：
+
+```
+python vpn.py
+```
+
+在脚本的所在目录会生成结果OK.txt，里面就是我们需要的地址！
+
+`Gmeek-html&lt;img src='https://www.freedidi.com/wp-content/uploads/2024/11/c85b610e7e20241124163116-2081x1440.webp'&gt;`
+
+&gt; [!CAUTION]
+&gt; 默认我只获取了第一个页面，因为如果批量获取分页的话，会引起网站防火墙的拦截。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/26.html</guid><pubDate>Tue, 26 Nov 2024 14:47:33 +0000</pubDate></item><item><title>Vol.28 如何找到Shopify中国卖家网站</title><link>https://blog.grapehut.xyz/post/28.html</link><description>&#13;
+## 你想知道别人的Shopify网站怎么做的吗？&#13;
+&#13;
+一个傻瓜式的方式教大家如何找到Shopify中国卖家的网站（当然也可以找国外的）。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/28.html</guid><pubDate>Sun, 03 Nov 2024 13:59:27 +0000</pubDate></item><item><title>Vol.18 jsdelivr CDN</title><link>https://blog.grapehut.xyz/post/18.html</link><description># 关于jsdelivr &#13;
+&gt; https://www.jsdelivr.com/&#13;
+&#13;
+## jsdelivr CDN 和 GitHub 的关系&#13;
+jsdelivr 是一个免费且可靠的内容分发网络（CDN）服务，允许开发者将静态资源存储在 GitHub 仓库中，并通过 jsdelivr 进行全球加速访问。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/18.html</guid><pubDate>Sun, 03 Nov 2024 09:00:24 +0000</pubDate></item><item><title>Vol.17 Omakub 专为开发者设计的 Ubuntu</title><link>https://blog.grapehut.xyz/post/17.html</link><description># 前言&#13;
+Omakub 是一个专为开发者设计的 Ubuntu 环境配置项目，由 Ruby on Rails 的创造者 David Heinemeier Hansson（DHH）发起。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/17.html</guid><pubDate>Sun, 27 Oct 2024 15:29:54 +0000</pubDate></item><item><title>Vol.29 git入門</title><link>https://blog.grapehut.xyz/post/29.html</link><description># git 公式サイト
+[https://git-scm.com](https://git-scm.com/)
+
+[http://git-cheatsheet.com](http://git-cheatsheet.com/)
+
+[PDF](https://wac-cdn.atlassian.com/dam/jcr:e7e22f25-bba2-4ef1-a197-53f46b6df4a5/SWTM-2088_Atlassian-Git-Cheatsheet.pdf)
+
+# git-cheat-sheet
+![git](./git-cheat-sheet.png)
+
+
+# git 工作原理
+![git](./git-status.png)
+```
+・Remote：远程仓库，托管代码的服务器
+・Repository：仓库区（或版本库），其中HEAD指向最新放入仓库的版本
+・Index／Stage：暂存区（或索引区），用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息
+・Workspace：工作区，就是你平时存放项目代码的地方
+```
+#### １．具体例：下图中的四条命令在「工作区」、「暂存区」、「仓库区」之间复制文件。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/29.html</guid><pubDate>Wed, 09 Oct 2024 04:44:59 +0000</pubDate></item><item><title>Vol.19 Hyper-v安装openwrt软路由</title><link>https://blog.grapehut.xyz/post/19.html</link><description># 事前准备&#13;
+&#13;
+### 1. 下载 OpenWrt 镜像&#13;
+骷髅大佬版本：[DHDAXCW/OpenWRT_x86_x64](https://github.com/DHDAXCW/OpenWRT_x86_x64/releases)&#13;
+&#13;
+`ext4` 文件系统镜像可以对任何改动都进行持久化存储，&#13;
+`squashfs` 一般情况下对文件系统的改动无法持久化，每次重启都会重置更改，但便于从错误配置中重置。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/19.html</guid><pubDate>Wed, 02 Oct 2024 13:10:21 +0000</pubDate></item><item><title>Vol.11 Windows KMS激活</title><link>https://blog.grapehut.xyz/post/11.html</link><description>```&#13;
+# Windows 11 LTSC 2024&#13;
+tiny11_24H2&#13;
+　https://archive.org/details/tiny11-2409 &#13;
+　✓tiny11 24H2 AMD64.iso&#13;
+　SHA256：87c926dcb9c2927a0d67c5f4084308c61a29581e259e6f4d9ebd36f44c79559a&#13;
+&#13;
+Windows 11 Insider Preview Build 26100 Enterprise LTSC English x86-64&#13;
+　https://archive.org/details/26100-ltsc-x64-enus&#13;
+　✓26100.1.240331-1435.ge_release_CLIENT_ENTERPRISES_OEM_x64FRE_en-us.iso&#13;
+```&#13;
+&#13;
+```&#13;
+# Windows 11 LTSC KMS激活&#13;
+slmgr -ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D&#13;
+slmgr -skms kms.0t.net.cn&#13;
+slmgr -ato&#13;
+```&#13;
+&#13;
+```&#13;
+# Windows MAS激活&#13;
+irm https://massgrave.dev/get | iex&#13;
+```&#13;
+&#13;
+```&#13;
+#Office 2021 Pro plus&#13;
+https://archive.org/details/microsoft_volume_license_office_2019_202110&#13;
+https://github.com/massgravel/Microsoft-Activation-Scripts&#13;
+8WXTP-MN628-KY44G-VJWCK-C7PCF&#13;
+```&#13;
+&#13;
+&#13;
+&#13;
+# Windows&#13;
+&#13;
+&gt; 引用： https://learn.microsoft.com/ja-jp/windows-server/get-started/kms-client-activation-keys&#13;
+&#13;
+## Windows 11 零售版 RTM 通用安装密钥&#13;
+&#13;
+Windows 11 系统版本 | 通用 Key / 安装密钥 / 注册码&#13;
+-- | --&#13;
+Windows 11 Home | YTMG3-N6DKC-DKB77-7M9GH-8HVX7&#13;
+Windows 11 Home N | 4CPRK-NM3K3-X6XXQ-RXX86-WXCHW&#13;
+Windows 11 Home Single Language | BT79Q-G7N6G-PGBYW-4YWX6-6F4BT&#13;
+Windows 11 Home Country Specific | N2434-X9D7W-8PF6X-8DV9T-8TYMD&#13;
+Windows 11 Pro | VK7JG-NPHTM-C97JM-9MPGT-3V66T&#13;
+Windows 11 Pro N | 2B87N-8KFHP-DKV6R-Y2C8J-PKCKT&#13;
+Windows 11 Pro for Workstations | DXG7C-N36C4-C4HTG-X4T3X-2YV77&#13;
+Windows 11 Pro for Workstations N | WYPNQ-8C467-V2W6J-TX4WX-WT2RQ&#13;
+Windows 11 Pro Education | 8PTT6-RNW4C-6V7J2-C2D3X-MHBPB&#13;
+Windows 11 Pro Education N | GJTYN-HDMQY-FRR76-HVGC7-QPF8P&#13;
+Windows 11 Education | YNMGQ-8RYV3-4PGQ3-C8XTP-7CFBY&#13;
+Windows 11 Education N | 84NGF-MHBT6-FXBX8-QWJK7-DRR8H&#13;
+Windows 11 Enterprise | XGVPP-NMH47-7TTHJ-W3FW7-8HV2C&#13;
+Windows 11 Enterprise N | WGGHN-J84D6-QYCPR-T7PJ7-X766F&#13;
+Windows 11 Enterprise G N | FW7NV-4T673-HF4VX-9X4MM-B4H4T&#13;
+&#13;
+&#13;
+## 适用于 KMS 激活的 Win11 安装序列号&#13;
+&#13;
+Windows 11 版本 | KMS 客户端安装序列号&#13;
+-- | --&#13;
+Windows 11 Home | TX9XD-98N7V-6WMQ6-BX7FG-H8Q99&#13;
+Windows 11 Home N | 3KHY7-WNT83-DGQKR-F7HPR-844BM&#13;
+Windows 11 Home Home Single Language | 7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH&#13;
+Windows 11 Home Country Specific | PVMJN-6DFY6-9CCP6-7BKTT-D3WVR&#13;
+Windows 11 Pro | W269N-WFGWX-YVC9B-4J6C9-T83GX&#13;
+Windows 11 Pro N | MH37W-N47XK-V7XM9-C7227-GCQG9&#13;
+Windows 11 Pro for Workstations | NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J&#13;
+Windows 11 Pro for Workstations N | 9FNHH-K3HBT-3W4TD-6383H-6XYWF&#13;
+Windows 11 Pro Education | 6TP4R-GNPTD-KYYHQ-7B7DP-J447Y&#13;
+Windows 11 Pro Education N | YVWGF-BXNMC-HTQYQ-CPQ99-66QFC&#13;
+Windows 11 Education | NW6C2-QMPVW-D7KKK-3GKT6-VCFB2&#13;
+Windows 11 Education N | 2WH4N-8QGBV-H22JP-CT43Q-MDWWJ&#13;
+Windows 11 Enterprise | NPPR9-FWDCX-D2C8J-H872K-2YT43&#13;
+Windows 11 Enterprise N | DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4&#13;
+Windows 11 Enterprise G | YYVX9-NTFWV-6MDM3-9PT4T-4M68B&#13;
+Windows 11 Enterprise G N | 44RPN-FTY23-9VTTB-MP9BX-T84FV&#13;
+Windows 11 Enterprise LTSC 2019 | M7XTQ-FN8P6-TTKYV-9D4CC-J462D&#13;
+Windows 11 Enterprise N LTSC 2019 | 92NFX-8DJQP-P6BBQ-THF9C-7CG2H&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+## Windows Enterprise LTSC および LTSB &#13;
+オペレーティング システムのエディション | KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows 11 Enterprise LTSC 24H2 | M7XTQ-FN8P6-TTKYV-9D4CC-J462D&#13;
+Windows 10 Enterprise LTSC 2021　\|　Windows 10 Enterprise LTSC 2019 | M7XTQ-FN8P6-TTKYV-9D4CC-J462D&#13;
+Windows 10 Enterprise N LTSC 2021　\|　Windows 10 Enterprise N LTSC 2019 | 92NFX-8DJQP-P6BBQ-THF9C-7CG2H&#13;
+&#13;
+&#13;
+## Windows 11 と Windows 10&#13;
+オペレーティング システムのエディション | KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows 11 Pro　\|　Windows 10 Pro | W269N-WFGWX-YVC9B-4J6C9-T83GX&#13;
+Windows 11 Pro N　\|　Windows 10 Pro N | MH37W-N47XK-V7XM9-C7227-GCQG9&#13;
+Windows 11 Pro for Workstations　\|　Windows 10 Pro for Workstations | NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J&#13;
+Windows 11 Pro for Workstations N　\|　Windows 10 Pro for Workstations N | 9FNHH-K3HBT-3W4TD-6383H-6XYWF&#13;
+Windows 11 Pro Education　\|　Windows 10 Pro Education | 6TP4R-GNPTD-KYYHQ-7B7DP-J447Y&#13;
+Windows 11 Pro Education N　\|　Windows 10 Pro Education N | YVWGF-BXNMC-HTQYQ-CPQ99-66QFC&#13;
+Windows 11 Education　\|　Windows 10 Education | NW6C2-QMPVW-D7KKK-3GKT6-VCFB2&#13;
+Windows 11 Education N　\|　Windows 10 Education N | 2WH4N-8QGBV-H22JP-CT43Q-MDWWJ&#13;
+Windows 11 Enterprise　\|　Windows 10 Enterprise | NPPR9-FWDCX-D2C8J-H872K-2YT43&#13;
+Windows 11 Enterprise N　\|　Windows 10 Enterprise N | DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4&#13;
+Windows 11 Enterprise G　\|　Windows 10 Enterprise G | YYVX9-NTFWV-6MDM3-9PT4T-4M68B&#13;
+Windows 11 Enterprise G N　\|　Windows 10 Enterprise G N | 44RPN-FTY23-9VTTB-MP9BX-T84FV&#13;
+&#13;
+## Windows 8.1&#13;
+オペレーティング システムのエディション | KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows 8.1 Pro | GCRJD-8NW9H-F2CDX-CCM8D-9D6T9&#13;
+Windows 8.1 Pro N | HMCNV-VVBFX-7HMBH-CTY9B-B4FXY&#13;
+Windows 8.1 Enterprise | MHF9N-XY6XB-WVXMC-BTDCT-MKKG7&#13;
+Windows 8.1 Enterprise N | TT4HM-HN7YT-62K67-RGRQJ-JFFXW&#13;
+&#13;
+&#13;
+## Windows 8&#13;
+オペレーティング システムのエディション | KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows 8 Pro | NG4HW-VH26C-733KW-K6F98-J8CK4&#13;
+Windows 8 Pro N | XCVCF-2NXM9-723PB-MHCB7-2RYQQ&#13;
+Windows 8 Enterprise | 32JNW-9KQ84-P47T8-D8GGY-CWCK7&#13;
+Windows 8 Enterprise N | JMNMF-RHW7P-DMY6X-RF3DR-X2BQT&#13;
+&#13;
+&#13;
+## Windows 7&#13;
+オペレーティング システムのエディション | KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows 7 Professional | FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4&#13;
+Windows 7 Professional N | MRPKT-YTG23-K7D7T-X2JMM-QY7MG&#13;
+Windows 7 Professional E | W82YF-2Q76Y-63HXB-FGJG9-GF7QX&#13;
+Windows 7 Enterprise | 33PXH-7Y6KF-2VJC9-XBBR8-HVTHH&#13;
+Windows 7 Enterprise N | YDRBP-3D83W-TY26F-D46B2-XCKRJ&#13;
+Windows 7 Enterprise E | C29WB-22CC8-VJ326-GHFJW-H9DH4&#13;
+&#13;
+&#13;
+&#13;
+## Windows Vista&#13;
+オペレーティング システムのエディション | KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows Vista Business | YFKBB-PQJJV-G996G-VWGXY-2V3X8&#13;
+Windows Vista Business N | HMBQG-8H2RH-C77VX-27R82-VMQBT&#13;
+Windows Vista Enterprise | VKK3X-68KWM-X2YGT-QR4M6-4BWMV&#13;
+Windows Vista Enterprise N | VTC42-BM838-43QHV-84HX6-XJXKV&#13;
+&#13;
+&#13;
+## Windows IoT Enterprise&#13;
+オペレーティング システムのエディション | KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows IoT Enterprise LTSC 2021 | KBN8V-HFGQ4-MGXVD-347P6-PDQGT&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+# Windows Server LTSC&#13;
+&#13;
+## Windows Server 2025&#13;
+オペレーティング システムのエディション | KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows Server 2025 Standard | MFY9F-XBN2F-TYFMP-CCV49-RMYVH&#13;
+Windows Server 2025 Datacenter | 2KNJJ-33Y9H-2GXGX-KMQWH-G6H67&#13;
+Windows Server 2025 Datacenter: Azure Edition | ?&#13;
+&#13;
+## Windows Server 2022&#13;
+オペレーティング システムのエディション | KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows Server 2022 Standard | VDYBN-27WPP-V4HQT-9VMD4-VMK7H&#13;
+Windows Server 2022 Datacenter | WX4NM-KYWYW-QJJR4-XV3QB-6VM33&#13;
+Windows Server 2022 Datacenter: Azure Edition | NTBV8-9K7Q8-V27C6-M2BTV-KHMXV&#13;
+&#13;
+## Windows Server 2019&#13;
+オペレーティング システムのエディション | KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows Server 2019 Standard | N69G4-B89J2-4G8F4-WWYCC-J464C&#13;
+Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG&#13;
+Windows Server 2019 Essentials | WVDHN-86M7X-466P6-VHXV7-YY726&#13;
+&#13;
+## Windows Server 2016&#13;
+オペレーティング システムのエディション | KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows Server 2016 Standard | WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY&#13;
+Windows Server 2016 Datacenter | CB7KF-BWN84-R7R2Y-793K2-8XDDG&#13;
+Windows Server 2016 Essentials | JCKRF-N37P4-C2D82-9YXRT-4M63B&#13;
+&#13;
+&#13;
+## Windows Server バージョン 20H2、2004、1909、1903、1809&#13;
+&gt; Windows Server バージョン 20H2以前 は、2022 年 8 月 9 日にサービス終了&#13;
+&#13;
+オペレーティング システムのエディション	| KMS クライアント プロダクト キー&#13;
+-- | --&#13;
+Windows Server Standard	| N2KJX-J94YW-TQVFB-DG9YT-724CC&#13;
+Windows Server Datacenter	| 6NMRW-2C8FM-D24W7-TQWMY-CWH2D&#13;
+&#13;
+&#13;
+# KMS激活&#13;
+## Windows 11 PRO KMS激活&#13;
+```&#13;
+slmgr -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX&#13;
+slmgr -skms kms.0t.net.cn&#13;
+slmgr -ato&#13;
+```&#13;
+&#13;
+## Windows 11 （24H2）LTSC KMS激活&#13;
+```&#13;
+slmgr -ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D&#13;
+slmgr -skms kms.0t.net.cn&#13;
+slmgr -ato&#13;
+```&#13;
+&#13;
+&#13;
+## Windows Server 2025 KMS激活&#13;
+```&#13;
+slmgr -ipk MFY9F-XBN2F-TYFMP-CCV49-RMYVH&#13;
+slmgr -skms kms.0t.net.cn&#13;
+slmgr -ato&#13;
+```&#13;
+&#13;
+- 服务器标准：MFY9F-XBN2F-TYFMP-CCV49-RMYVH&#13;
+- 数据中心：2KNJJ-33Y9H-2GXGX-KMQWH-G6H67&#13;
+&#13;
+&#13;
+&#13;
+# Office、Project 和 Visio 激活的 GVLK&#13;
+&#13;
+## GVLK for Office LTSC 2024&#13;
+产品 | GVLK&#13;
+-- | --&#13;
+Office LTSC 专业增强版 2024 | XJ2XN-FW8RK-P4HMP-DKDBV-GCVGB&#13;
+Office LTSC 标准版 2024 | V28N4-JG22K-W66P8-VTMGK-H6HGR&#13;
+Project Professional 2024 | FQQ23-N4YCY-73HQ3-FM9WC-76HF4&#13;
+Project Standard 2024 | PD3TT-NTHQQ-VC7CY-MFXK3-G87F8&#13;
+Visio LTSC Professional 2024 | B7TN8-FJ8V3-7QYCP-HQPMV-YY89G&#13;
+Visio LTSC Standard 2024 | JMMVY-XFNQC-KK4HK-9H7R3-WQQTV&#13;
+Access LTSC 2024 | 82FTR-NCHR7-W3944-MGRHM-JMCWD&#13;
+Excel LTSC 2024 | F4DYN-89BP2-WQTWJ-GR8YC-CKGJG&#13;
+Outlook LTSC 2024 | D2F8D-N3Q3B-J28PV-X27HD-RJWB9&#13;
+PowerPoint LTSC 2024 | CW94N-K6GJH-9CTXY-MG2VC-FYCWP&#13;
+Skype for Business LTSC 2024 | 4NKHF-9HBQF-Q3B6C-7YV34-F64P3&#13;
+Word LTSC 2024 | MQ84N-7VYDM-FXV7C-6K7CC-VFW9J&#13;
+&#13;
+&#13;
+## GVLK for Office LTSC 2021&#13;
+产品 | GVLK&#13;
+-- | --&#13;
+Office LTSC Professional Plus 2021|FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH&#13;
+Office LTSC Standard 2021|KDX7X-BNVR8-TXXGX-4Q7Y8-78VT3&#13;
+Project Professional 2021|FTNWT-C6WBT-8HMGF-K9PRX-QV9H8&#13;
+Project Standard 2021|J2JDC-NJCYY-9RGQ4-YXWMH-T3D4T&#13;
+Visio LTSC Professional 2021|KNH8D-FGHT4-T8RK3-CTDYJ-K2HT4&#13;
+Visio LTSC Standard 2021|MJVNY-BYWPY-CWV6J-2RKRT-4M8QG&#13;
+Access LTSC 2021|WM8YG-YNGDD-4JHDC-PG3F4-FC4T4&#13;
+Excel LTSC 2021|NWG3X-87C9K-TC7YY-BC2G7-G6RVC&#13;
+Outlook LTSC 2021|C9FM6-3N72F-HFJXB-TM3V9-T86R9&#13;
+PowerPoint LTSC 2021|TY7XF-NFRBR-KJ44C-G83KF-GX27K&#13;
+Publisher LTSC 2021|2MW9D-N4BXM-9VBPG-Q7W6M-KFBGQ&#13;
+Skype for Business LTSC 2021|HWCXN-K3WBT-WJBKY-R8BD9-XK29P&#13;
+Word LTSC 2021|TN8H9-M34D3-Y64V9-TR72V-X79KV&#13;
+&#13;
+&#13;
+## Office 2019 的 GVLK&#13;
+产品 | GVLK&#13;
+-- | --&#13;
+Office 专业增强版 2019|NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP&#13;
+2019 Office Standard|6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK&#13;
+Project Professional 2019|B4NPR-3FKK7-T2MBV-FRQ4W-PKD2B&#13;
+2019 Project Standard|C4F7P-NCP8C-6CQPT-MQHV9-JXD2M&#13;
+2019 Visio Professional|9BGNQ-K37YR-RQHF2-38RQ3-7VCBB&#13;
+2019 Visio Standard|7TQNQ-K3YQQ-3PFH7-CCPPM-X4VQ2&#13;
+Access 2019|9N9PT-27V4Y-VJ2PD-YXFMF-YTFQT&#13;
+Excel 2019|TMJWT-YYNMB-3BKTF-644FC-RVXBD&#13;
+Outlook 2019|7HD7K-N4PVK-BHBCQ-YWQRW-XW4VK&#13;
+PowerPoint 2019|RRNCX-C64HY-W2MM7-MCH9G-TJHMQ&#13;
+Publisher 2019|G2KWX-3NW6P-PY93R-JXK2T-C9Y9V&#13;
+Skype for Business 2019|NCJ33-JHBBY-HTK98-MYCV8-HMKHJ&#13;
+Word 2019|PBX3G-NWMT6-Q7XBW-PYJGG-WXD33&#13;
+ &#13;
+&#13;
+## Office 2016 的 GVLK&#13;
+产品 | GVLK&#13;
+-- | --&#13;
+Office Professional Plus 2016|XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99&#13;
+Office Standard 2016|JNRGM-WHDWX-FJJG3-K47QV-DRTFM&#13;
+Project Professional 2016|YG9NW-3K39V-2T3HJ-93F3Q-G83KT&#13;
+Project Standard 2016|GNFHQ-F6YQM-KQDGJ-327XX-KQBVC&#13;
+Visio Professional 2016|PD3PC-RHNGV-FXJ29-8JK7D-RJRJK&#13;
+Visio Standard 2016|7WHWN-4T7MP-G96JF-G33KR-W8GF4&#13;
+Access 2016|GNH9Y-D2J4T-FJHGG-QRVH7-QPFDW&#13;
+Excel 2016|9C2PK-NWTVB-JMPW8-BFT28-7FTBF&#13;
+OneNote 2016|DR92N-9HTF2-97XKM-XW2WJ-XW3J6&#13;
+Outlook 2016|R69KK-NTPKF-7M3Q4-QYBHW-6MT9B&#13;
+PowerPoint 2016|J7MQP-HNJ4Y-WJ7YM-PFYGF-BY6C6&#13;
+Publisher 2016|F47MM-N3XJP-TQXJ9-BP99D-8837K&#13;
+Skype for Business 2016|869NQ-FJ69K-466HW-QYCP2-DDBV6&#13;
+Word 2016|WXY84-JN2Q9-RBCCQ-3Q3J3-3PFJ6&#13;
+。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/11.html</guid><pubDate>Sun, 29 Sep 2024 08:00:10 +0000</pubDate></item><item><title>Vol.10 WinPE工具</title><link>https://blog.grapehut.xyz/post/10.html</link><description># 微 PE 工具箱&#13;
+&#13;
+## 以下是使用微 PE 安装 Windows 11 的详细教程：&#13;
+&#13;
+#### 1. 准备工作：&#13;
+   - 一个容量不小于 8GB 的 U 盘（建议使用 USB 3.0 及以上版本，速度更快）。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/10.html</guid><pubDate>Sun, 29 Sep 2024 04:13:00 +0000</pubDate></item><item><title>Vol.09 WSL（Windows Subsystem for Linux）</title><link>https://blog.grapehut.xyz/post/9.html</link><description># 关于 WSL（Windows Subsystem for Linux）
+Windows 的一项功能，可用于在 Windows 计算机上运行 Linux 环境，而无需单独的虚拟机或双引导。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/9.html</guid><pubDate>Tue, 24 Sep 2024 14:36:27 +0000</pubDate></item><item><title>Vol.12 Win cmd &amp; Powershell</title><link>https://blog.grapehut.xyz/post/12.html</link><description># cmd命令
+
+## 各种面板
+http://wingsan.web.fc2.com/WinCom/index.html
+
+命令|说明
+---|---
+winver|windows版本
+lusrmgr.msc|用户和组
+netplwiz|用户账号管理
+compmgmt.msc|电脑管理
+devmgmt.msc　|硬件管理
+diskmgmt.msc　|磁盘管理
+dxdiag　|DirectX診断
+regedit　|注册表
+firewall.cpl |防火墙
+control　|控制面板
+services.msc |服务进程
+taskmgr　|任务管理
+appwiz.cpl　|软件一览
+ComputerDefaults　|window默认程序
+OptionalFeatures　|window附加功能★
+sysdm.cpl　|环境变量★
+fsmgmt.msc |共享文件夹
+mstsc　|远程桌面
+fonts　|字体
+
+
+## 查看IP
+```
+内网　ipconfig
+公网　curl ipinfo.io
+网络诊断　tracert www.google.com
+```
+
+## WIFI密码
+```
+netsh wlan show profiles                         　←查看名字
+netsh wlan show profiles name=xxxx key=clear        ←名字代入
+```
+
+## 强制启动旧版IE6.0浏览器
+```
+CreateObject('InternetExplorer.Application').Visible=true
+保存为vbs
+```
+
+## 修复系统文件
+```
+sfc /scannow
+```
+
+## 恢复应用商店
+```
+wsreset -i
+```
+
+## 右键菜单
+```
+传统菜单(Win10)　reg add 'HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32' /f /ve
+折叠菜单(Win11)　reg delete 'HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}' /f 
+```
+
+## 永久暂停Windows自动更新
+```
+reg add 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' /v FlightSettingsMaxPauseDays /t reg_dword /d 9999 /f
+```
+
+
+## Windows家庭版，强制开启hyper-v
+
+```
+pushd '%~dp0'
+dir /b %SystemRoot%servicingPackages*Hyper-V*.mum &gt;hv.txt
+for /f %%i in ('findstr /i . hv.txt 2^&gt;nul') do dism /online /norestart /add-package:'%SystemRoot%servicingPackages%%i'
+del hv.txt
+Dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /ALL
+pause
+
+将文本文档改名为'xxx.bat'，需注意.bat是扩展名
+运行完成后，重启电脑
+```
+
+
+
+## Window附加功能
+```
+機能の確認     dism /online /Get-Features
+機能の有効化  dism /online /Enable-Feature:役割名
+機能の無効化  dism /online /Disable-Feature:役割名
+```
+
+```
+＜Hyper-V＞ 
+dism /online /enable-feature /featurename:Microsoft-Hyper-V/all /norestart
+dism /online /enable-feature /featurename:Microsoft-Hyper-V-All/all /norestart
+dism /online /enable-feature /featurename:Microsoft-Hyper-V-Hypervisor/all /norestart
+dism /online /enable-feature /featurename:Microsoft-Hyper-V-Services/all /norestart
+dism /online /enable-feature /featurename:Microsoft-Hyper-V-Tools-All/all /norestart
+dism /online /enable-feature /featurename:Microsoft-Hyper-V-Management-Clients/all /norestart
+dism /online /enable-feature /featurename:Microsoft-Hyper-V-Management-PowerShell/all /norestart
+
+＜WSL＞
+dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+＜虚拟机Platform＞
+dism /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+表示名 | 機能名
+-- | --
+.NET Framework 3.5 (.NET 2.0 および 3.0 を含む) | NetFx3
+.NET Framework 4.8 Advanced Services | NetFx4-AdvSrvs
+-- | --
+Hyper-V | Microsoft-Hyper-V
+Hyper-V プラットフォーム | Microsoft-Hyper-V-All
+Hyper-V Hypervisor | Microsoft-Hyper-V-Hypervisor
+Hyper-V サービス | Microsoft-Hyper-V-Services
+Hyper-V 管理ツール | Microsoft-Hyper-V-Tools-All
+Hyper-V GUI 管理ツール | Microsoft-Hyper-V-Management-Clients
+Windows PowerShell 用 Hyper-V モジュール | Microsoft-Hyper-V-Management-PowerShell
+-- | --
+Linux 用 Windows サブシステム | Microsoft-Windows-Subsystem-Linux
+-- | --
+仮想マシン プラットフォーム | VirtualMachinePlatform
+
+
+
+
+
+
+
+# Powershell命令
+
+## Powershell的基本概念
+
+## ps1文件
+一个PowerShell脚本其实就是一个简单的文本文件， 这个文件包含了一系列PowerShell命令，每个命令显示为独立的一行，文件名需要加上.ps1的扩展名。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/12.html</guid><pubDate>Mon, 23 Sep 2024 13:28:51 +0000</pubDate></item><item><title>Vol.08 HyperV虚拟机</title><link>https://blog.grapehut.xyz/post/8.html</link><description># 常用VM虚拟机软件一览
+
+目前市面上适合个人用户使用的9款虚拟化软件。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/8.html</guid><pubDate>Mon, 23 Sep 2024 02:36:28 +0000</pubDate></item><item><title>Vol.07 「建站」独立开发者之穷鬼省钱套餐</title><link>https://blog.grapehut.xyz/post/7.html</link><description># 技术栈
+前端React + 后端 Node.js       主流：Next.js
+
+
+# Serverless Function
+服务|特色
+--|--
+[Claw.cloud](https://run.claw.cloud/)|最近比较火的容器，github老用户的话，每月$5的免费额度
+[GitHub Pages](https://pages.github.com)|GitHub Pages 让开发者可以在 .github.io 域上免费托管静态站点。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/7.html</guid><pubDate>Sat, 21 Sep 2024 15:13:50 +0000</pubDate></item><item><title>Vol.06 「建站」「js插件」萌萌哒的看板娘 (ノ≧∇≦)ノ | Live2D widget</title><link>https://blog.grapehut.xyz/post/6.html</link><description># 内容简介
+把萌萌哒的看板娘抱回家 (ノ≧∇≦)ノ | Live2D widget for web platform
+
+
+# 添加内容
+如果你是小白，或者只需要最基础的功能，那么只用将这下面代码加入 html 页面的 head 或 body 中，即可加载看板娘：
+```
+&lt;script src='https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'&gt;&lt;/script&gt;
+&lt;script src='https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js'&gt;&lt;/script&gt;
+&lt;script src='https://cdn.jsdelivr.net/gh/hst1189/live2d-widget/autoload.js'&gt;&lt;/script&gt;
+```
+autoload.js 会自动加载：`live2d.min.js` `waifu.min.css` `waifu-tips.min.js` `ModelDefine.js` 
+详细参考：[hst1189.github.io/live2d-widget](https://hst1189.github.io/live2d-widget)
+
+# 添加效果
+https://www.grapehut.xyz/
+`Gmeek-html&lt;img src='https://www.live2d.com/wp-content/themes/cubism_new/assets/img/index/index-nizimalive-mainimg.png'&gt;`
+
+。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/6.html</guid><pubDate>Sun, 15 Sep 2024 06:16:06 +0000</pubDate></item><item><title>Vol.05 「建站」「js插件」APlayer &amp; DPlayer</title><link>https://blog.grapehut.xyz/post/5.html</link><description># 内容简介
+DIYGod 大神的2款插件
+
+
+# APlayer
+APlayer is a lovely HTML5 music player.
+
+- Media formats
+MP4 H.264 (AAC or MP3)
+WAVE PCM
+Ogg Theora Vorbis
+
+- Features
+Playlist
+Lyrics
+
+[Github](https://github.com/DIYgod/APlayer/)、[中文文档](https://aplayer.js.org/#/zh-Hans/) 
+
+### 使用方法
+```
+step1: 
+&lt;script src='https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js'&gt;&lt;/script&gt;
+&lt;link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css'&gt;
+
+step2:
+const music_div = document.createElement('div')
+music_div.id = 'music_player'   // 设置元素id
+document.body.appendChild(music_div)  // 插入到body元素最后
+
+step3:
+const ap = new APlayer({
+    container: document.getElementById('music_player'),
+    listFolded: false,
+    listMaxHeight: 90,
+    lrcType: 3,
+    audio: [
+        {
+        name: 'Time after time ～花舞う街で～',
+        artist: '倉木 麻衣',
+        url: '../music/TimeAfterTime.mp3',
+        lrc: '../music/TimeAfterTime.lrc',
+        cover: '../music/cover1.jpg',
+        theme: '#ebd0c2'
+        },
+       {
+        name: 'song name',
+        artist: 'artist',
+        url: 'xx.mp3',
+        lrc: 'xx.lrc',
+        cover: 'cover1.jpg',
+        theme: '#ebd0c2' 
+       }
+    ]
+});
+```
+### 添加效果
+`Gmeek-html&lt;img src='https://imgur.com/JDrJXCr.png'&gt;`
+
+
+
+# DPlayer
+DPlayer is a lovely HTML5 danmaku video player to help people build video and danmaku easily.
+
+- Streaming formats
+[HLS](https://github.com/video-dev/hls.js)
+[FLV](https://github.com/Bilibili/flv.js)
+[MPEG DASH](https://github.com/Dash-Industry-Forum/dash.js)
+[WebTorrent](https://github.com/webtorrent/webtorrent)
+Any other custom streaming formats
+
+- Media formats
+MP4 H.264
+WebM
+Ogg Theora Vorbis
+
+- Features
+Danmaku
+Screenshot
+Hotkeys
+Quality switching
+Thumbnails
+Subtitle
+
+[中文文档](https://dplayer.diygod.dev/zh/)
+
+### 使用方法
+```
+step1:  &lt;script src='https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js'&gt;&lt;/script&gt;
+step2:  &lt;div id='dplayer' style='width: 100%; height: 100%'&gt;&lt;/div&gt;
+step3: 
+const dp = new DPlayer({
+  container: document.getElementById('dplayer'),
+  video: {
+      url: https://myqcloud.com/xxx.mp4'); // COSビデオオブジェクトアドレス
+  },
+});
+```
+参考：https://www.tencentcloud.com/jp/document/product/436/53812
+
+### 添加效果
+`Gmeek-html&lt;img src='https://imgur.com/207ch36.jpg'&gt;`
+
+。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/5.html</guid><pubDate>Wed, 04 Sep 2024 14:30:35 +0000</pubDate></item><item><title>Vol.04 「建站」网站发布（域名绑定）</title><link>https://blog.grapehut.xyz/post/4.html</link><description>```&#13;
+域名　→　cloudflare　→　github&#13;
+```&#13;
+&#13;
+# 一、注册域名（任意域名）&#13;
+付费的，免费的都可以，根据自身钱包的富裕程度，👀  省略若干字。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/4.html</guid><pubDate>Sun, 01 Sep 2024 06:04:46 +0000</pubDate></item><item><title>Vol.03 「建站」Gmeek使用手册（高级篇）</title><link>https://blog.grapehut.xyz/post/3.html</link><description># 一、主题配置 👀 &#13;
+&#13;
+### 1. 手动模式（默认）&#13;
+这种模式就是当访问者第一次打开博客页面时，呈现的是亮主题。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/3.html</guid><pubDate>Sun, 01 Sep 2024 06:01:28 +0000</pubDate></item><item><title>Vol.02 「建站」Gmeek使用手册（进阶篇）</title><link>https://blog.grapehut.xyz/post/2.html</link><description># 📑 自定义配置文件
+&gt; [!IMPORTANT]
+&gt; 按照安装步骤成功搭建好后，就可以阅读下面的内容修改配置文件啦
+&gt; 修改配置文件后，一定要手动全局生成一次，不然会报错
+&gt; 配置文件为`json`格式
+
+&gt; [!CAUTION]
+&gt; 最后一行配置末尾不需要逗号，其他行末尾都需要逗号（英文逗号）
+
+`config.json` 就是配置文件，具体说明如下：
+```javascript
+{
+    'title':'小饅頭の部落格',
+    'subTitle':'Stay hungry. Stay foolish. --Steve Jobs',
+    'avatarUrl':'../avatar.png',
+    'GMEEK_VERSION':'last',
+    
+    'displayTitle':'小饅頭の部落格',
+    'homeUrl':'https://www.grapehut.xyz',
+    'faviconUrl':'../favicon.svg',
+    
+    'email':'&lt;style&gt;@font-face {font-family: 'CustomFont';src: '../fonts/975MaruSC-Bold.ttf') format('truetype');}#postBody {font-family: CustomFont;}&lt;/style&gt;',
+    'startSite':'08/31/2024',
+    'filingNum':'&lt;a href='https://icp.gov.moe/?keyword=20241189' target='_blank'&gt;萌ICP备20241189号&lt;/a&gt;',
+    'onePageListNum':100,
+    
+    '#singlePage':['about','link'],       没有用上about 和link 2页面，注释掉了
+
+    
+    'iconList':{
+        'RSS月刊':'M0 2.75A2.75 2.75 0 0 1 2.75 0h10.5A2.75 2.75 0 0 1 16 2.75v10.5A2.75 2.75 0 0 1 13.25 16H2.75A2.75 2.75 0 0 1 0 13.25ZM2.75 1.5c-.69 0-1.25.56-1.25 1.25v10.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25V2.75c0-.69-.56-1.25-1.25-1.25Z M8 4a.75.75 0 0 1 .75.75V6.7l1.69-.975a.75.75 0 0 1 .75 1.3L9.5 8l1.69.976a.75.75 0 0 1-.75 1.298L8.75 9.3v1.951a.75.75 0 0 1-1.5 0V9.299l-1.69.976a.75.75 0 0 1-.75-1.3L6.5 8l-1.69-.975a.75.75 0 0 1 .75-1.3l1.69.976V4.75A.75.75 0 0 1 8 4Z',
+        '网站导航':'M14.184 1.143v-.001l1.422 2.464a1.75 1.75 0 0 1-.757 2.451L3.104 11.713a1.75 1.75 0 0 1-2.275-.702l-.447-.775a1.75 1.75 0 0 1 .53-2.32L11.682.573a1.748 1.748 0 0 1 2.502.57Zm-4.709 9.32h-.001l2.644 3.863a.75.75 0 1 1-1.238.848l-1.881-2.75v2.826a.75.75 0 0 1-1.5 0v-2.826l-1.881 2.75a.75.75 0 1 1-1.238-.848l2.049-2.992a.746.746 0 0 1 .293-.253l1.809-.87a.749.749 0 0 1 .944.252ZM9.436 3.92h-.001l-4.97 3.39.942 1.63 5.42-2.61Zm3.091-2.108h.001l-1.85 1.26 1.505 2.605 2.016-.97a.247.247 0 0 0 .13-.151.247.247 0 0 0-.022-.199l-1.422-2.464a.253.253 0 0 0-.161-.119.254.254 0 0 0-.197.038ZM1.756 9.157a.25.25 0 0 0-.075.33l.447.775a.25.25 0 0 0 .325.1l1.598-.769-.83-1.436-1.465 1Z',
+        '字体甄选':'M11.134 1.535c.7-.509 1.416-.942 2.076-1.155.649-.21 1.463-.267 2.069.34.603.601.568 1.411.368 2.07-.202.668-.624 1.39-1.125 2.096-1.011 1.424-2.496 2.987-3.775 4.249-1.098 1.084-2.132 1.839-3.04 2.3a3.744 3.744 0 0 1-1.055 3.217c-.431.431-1.065.691-1.657.861-.614.177-1.294.287-1.914.357A21.151 21.151 0 0 1 .797 16H.743l.007-.75H.749L.742 16a.75.75 0 0 1-.743-.742l.743-.008-.742.007v-.054a21.25 21.25 0 0 1 .13-2.284c.067-.647.187-1.287.358-1.914.17-.591.43-1.226.86-1.657a3.746 3.746 0 0 1 3.227-1.054c.466-.893 1.225-1.907 2.314-2.982 1.271-1.255 2.833-2.75 4.245-3.777ZM1.62 13.089c-.051.464-.086.929-.104 1.395.466-.018.932-.053 1.396-.104a10.511 10.511 0 0 0 1.668-.309c.526-.151.856-.325 1.011-.48a2.25 2.25 0 1 0-3.182-3.182c-.155.155-.329.485-.48 1.01a10.515 10.515 0 0 0-.309 1.67Zm10.396-10.34c-1.224.89-2.605 2.189-3.822 3.384l1.718 1.718c1.21-1.205 2.51-2.597 3.387-3.833.47-.662.78-1.227.912-1.662.134-.444.032-.551.009-.575h-.001V1.78c-.014-.014-.113-.113-.548.027-.432.14-.995.462-1.655.942Zm-4.832 7.266-.001.001a9.859 9.859 0 0 0 1.63-1.142L7.155 7.216a9.7 9.7 0 0 0-1.161 1.607c.482.302.889.71 1.19 1.192Z',
+        'Gift':'M2 2.75A2.75 2.75 0 0 1 4.75 0c.983 0 1.873.42 2.57 1.232.268.318.497.668.68 1.042.183-.375.411-.725.68-1.044C9.376.42 10.266 0 11.25 0a2.75 2.75 0 0 1 2.45 4h.55c.966 0 1.75.784 1.75 1.75v2c0 .698-.409 1.301-1 1.582v4.918A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V9.332C.409 9.05 0 8.448 0 7.75v-2C0 4.784.784 4 1.75 4h.55c-.192-.375-.3-.8-.3-1.25ZM7.25 9.5H2.5v4.75c0 .138.112.25.25.25h4.5Zm1.5 0v5h4.5a.25.25 0 0 0 .25-.25V9.5Zm0-4V8h5.5a.25.25 0 0 0 .25-.25v-2a.25.25 0 0 0-.25-.25Zm-7 0a.25.25 0 0 0-.25.25v2c0 .138.112.25.25.25h5.5V5.5h-5.5Zm3-4a1.25 1.25 0 0 0 0 2.5h2.309c-.233-.818-.542-1.401-.878-1.793-.43-.502-.915-.707-1.431-.707ZM8.941 4h2.309a1.25 1.25 0 0 0 0-2.5c-.516 0-1 .205-1.43.707-.337.392-.646.975-.879 1.793Z',
+        'Book':'M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z',
+        '音楽♪':'M12.7 0.9L7.3 0.9C6 0.9 4.9 2 4.9 3.3L4.9 10.1C4.5 9.9 4.1 9.8 3.6 9.8C2.1 9.8 0.9 11 0.9 12.4C0.9 13.9 2.1 15.1 3.6 15.1C5 15.1 6.2 13.9 6.2 12.4L6.2 3.3C6.2 2.7 6.7 2.2 7.3 2.2L12.7 2.2C13.3 2.2 13.8 2.7 13.8 3.3L13.8 7.5C13.4 7.3 12.9 7.1 12.4 7.1C11 7.1 9.8 8.3 9.8 9.8C9.8 11.2 11 12.4 12.4 12.4C13.9 12.4 15.1 11.2 15.1 9.8L15.1 3.3C15.1 2 14 0.9 12.7 0.9ZM3.6 13.8C2.8 13.8 2.2 13.2 2.2 12.4C2.2 11.7 2.8 11.1 3.6 11.1C4.3 11.1 4.9 11.7 4.9 12.4C4.9 13.2 4.3 13.8 3.6 13.8ZM12.4 11.1C11.7 11.1 11.1 10.5 11.1 9.8C11.1 9 11.7 8.4 12.4 8.4C13.2 8.4 13.8 9 13.8 9.8C13.8 10.5 13.2 11.1 12.4 11.1ZM12.4 11.1',
+        'Me':'M10.561 8.073a6.005 6.005 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6.004 6.004 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0ZM10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z'
+    },
+
+如上 找了一些好玩的图标↑　实际用到的如下，在exlink里 添加 ↓
+
+    'exlink':{
+        'RSS月刊':'https://www.grapehut.xyz/gmerss',
+        '音楽♪':'https://mc.alger.fun/#/list?type=%E6%97%A5%E8%AF%AD',
+        'Me':'https://www.grapehut.xyz/me'
+    },
+    
+    'commentLabelColor':'#006b75',
+    'yearColorList':['#bc4c00', '#0969da', '#1f883d', '#A333D0'],
+    
+    'i18n':'CN',
+    'UTC':8,
+    
+    'themeMode':'fix',
+    'dayTheme':'light',
+    'nightTheme':'dark-blue',
+    
+    'urlMode':'issue',
+    
+    'style':'',
+    'script':'&lt;script src='../assets/ArticleTOC.js'&gt;&lt;/script&gt;&lt;script src='../assets/lightbox.js'&gt;&lt;/script&gt;&lt;script&gt;document.querySelectorAll('a').forEach(anchor =&gt; {const img = anchor.querySelector('img');if (img &amp;&amp; img.hasAttribute('data-canonical-src')) {const canonicalSrc = img.getAttribute('data-canonical-src');anchor.setAttribute('href', canonicalSrc);img.setAttribute('src', canonicalSrc);img.removeAttribute('data-canonical-src');}});&lt;/script&gt;',
+    'allHead':'&lt;script src='../assets/RonanTheme.js'&gt;&lt;/script&gt;&lt;script src='../assets/GmeekVercount.js'&gt;&lt;/script&gt;&lt;script async src='https://cdn.seline.so/seline.js' data-token='5b15b5092d4879e'&gt;&lt;/script&gt;&lt;script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661896697976587' crossorigin='anonymous'&gt;&lt;/script&gt;',
+    'head':'',
+    'indexStyle':'',
+    'indexScript':'',
+
+    'spoiler':0,     #是否开启页面NSFW遮挡
+
+    'lived2D':1,   #是否开启二次元娘
+    'lived2D_script':'&lt;script src='https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'&gt;&lt;/script&gt;&lt;script src='https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js'&gt;&lt;/script&gt;&lt;script src='https://cdn.jsdelivr.net/gh/hst1189/live2d-widget/autoload.js'&gt;&lt;/script&gt;',
+
+    'sakuraPlus':1,  #是否开启樱花飘落
+    'sakuraPlus_script':'&lt;script src='../assets/sakuraPlus.js'&gt;&lt;/script&gt;',
+    
+    'rssSplit':'sentence',
+    'bottomText':'❤️ 转载文章请注明出处，谢谢！❤️',
+    'ogImage':'',
+    'primerCSS':'&lt;link href='https://cdn.jsdelivr.net/npm/@primer/css@21.5.1/dist/primer.min.css' rel='stylesheet' /&gt;',
+    'showPostSource':0,
+    'needComment':1
+}}
+```
+
+
+| **配置参数** | **说明** | 
+|---|---|
+| title | 【必须】博客标题 |
+| subTitle | 【必须】博客描述&amp;自述 |
+| avatarUrl | 【必须】博客头像 |
+| GMEEK_VERSION | 【必须】Gmeek版本，一般写`last`也可以用具体tag版本 |
+| displayTitle | 用于头像后面的标题展示，如果和`title`一致则不用添加 |
+| homeUrl | 博客的主页地址，自定义域名时需要配置 |
+| faviconUrl | 页面的favicon地址，如果和avatarUrl一致则不用添加 |
+| email | 用于自动提交仓库时用，不添加也可以 |
+| startSite | 用于页面底部显示网站运行天数 |
+| filingNum | 用于页面底部显示备案信息 |
+| onePageListNum | 用于首页每页展示的文章数量 |
+| singlePage | 自定义独立页面，例如`about`或者`link`等 |
+| iconList | 用于定义singlePage按钮展示的[SVG图标](https://primer.style/foundations/icons/#16px) (16px)，`about`和`link`内置无需定义 |
+| exlink | 用于自定义首页右上角圆形按钮到外部链接功能，按钮图标定义在iconList中 |
+| commentLabelColor | 用于自定义显示评论数量标签的颜色 |
+| yearColorList | 用于自定义显示不同年份标签的颜色 |
+| i18n | 用于定义博客语言，目前支持`EN`/`CN`/`RU` |
+| UTC | 用于定义[时区](https://en.wikipedia.org/wiki/List_of_UTC_offsets) |
+| themeMode| 用于定义主题模式，默认为`manual`，也可选择`fix`|
+| dayTheme | 用于定义[亮主题](https://github.com/settings/appearance) |
+| nightTheme | 用于定义[暗主题](https://github.com/settings/appearance) |
+| urlMode | 用于定义文章链接生成模式，目前支持`pinyin`/`issue`/`ru_translit` |
+| style | 用于自定义文章页CSS |
+| script | 用于自定义文章页JavaScript |
+| head | 用于自定义文章页head内容 |
+| allHead | 用于自定义所有页面head内容 |
+| indexStyle | 用于自定义首页CSS |
+| indexScript | 用于自定义首页JavaScript |
+| showPostSource | 在文章页显示issue链接按钮，1显示，0不显示 |
+| rssSplit | 设置RSS输出的截断符号，默认`sentence`为第一句话，可配置其他特殊符号 |
+| bottomText | 用于设置文章页面右下角显示的内容 |
+| ogImage | 用于设置Open Graph协议展示的图片 |
+| primerCSS | 用于设置primer.css的CDN地址，默认使用[南科大](https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css) |
+| needComment | 用于设置是否需要评论功能，1开启评论，0关闭 |
+
+。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/2.html</guid><pubDate>Sat, 31 Aug 2024 14:18:20 +0000</pubDate></item><item><title>Vol.01 「建站」Gmeek使用手册（基础篇）</title><link>https://blog.grapehut.xyz/post/1.html</link><description># 前言&#13;
+[Gmeek](https://github.com/Meekdai/Gmeek) 一个博客框架&#13;
+超轻量级个人博客模板，完全基于`Github Pages `、 `Github Issues` 和 `Github Actions`，可以称作`All in Github`&#13;
+&gt; 引用：https://blog.meekdai.com/post/Gmeek-kuai-su-shang-shou.html&#13;
+&#13;
+&#13;
+# 📑 一、安装&#13;
+&gt; [!TIP]&#13;
+&gt; 安装极其简单，根据以下步骤，一步一步操作。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/1.html</guid><pubDate>Sat, 31 Aug 2024 09:59:06 +0000</pubDate></item></channel></rss>
