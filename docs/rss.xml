@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:01:50 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.05 「建站」「js插件」APlayer &amp; DPlayer</title><link>https://blog.grapehut.xyz/post/5.html</link><description># 内容简介
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:02:37 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.06 「建站」「js插件」萌萌哒的看板娘 (ノ≧∇≦)ノ - Live2D widget</title><link>https://blog.grapehut.xyz/post/6.html</link><description># 内容简介
+把萌萌哒的看板娘抱回家 (ノ≧∇≦)ノ | Live2D widget for web platform
+
+
+# 添加内容
+如果你是小白，或者只需要最基础的功能，那么只用将这下面代码加入 html 页面的 head 或 body 中，即可加载看板娘：
+```
+&lt;script src='https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'&gt;&lt;/script&gt;
+&lt;script src='https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js'&gt;&lt;/script&gt;
+&lt;script src='https://cdn.jsdelivr.net/gh/hst1189/live2d-widget/autoload.js'&gt;&lt;/script&gt;
+```
+autoload.js 会自动加载：`live2d.min.js` `waifu.min.css` `waifu-tips.min.js` `ModelDefine.js` 
+详细参考：[hst1189.github.io/live2d-widget](https://hst1189.github.io/live2d-widget)
+
+# 添加效果
+https://www.grapehut.xyz/
+`Gmeek-html&lt;img src='https://www.live2d.com/wp-content/themes/cubism_new/assets/img/index/index-nizimalive-mainimg.png'&gt;`
+
+。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/6.html</guid><pubDate>Sun, 21 Sep 2025 09:02:02 +0000</pubDate></item><item><title>Vol.05 「建站」「js插件」APlayer &amp; DPlayer</title><link>https://blog.grapehut.xyz/post/5.html</link><description># 内容简介
 DIYGod 大神的2款插件
 
 
