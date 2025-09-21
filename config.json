@@ -5,7 +5,7 @@
     "GMEEK_VERSION":"last",
     
     "displayTitle":"小饅頭の部落格",
-    "homeUrl":"https://blog.grapehut.xyz",
+    "homeUrl":"https://grapehut.xyz",
     "faviconUrl":"../favicon.svg",
     
     "email":"<style>@font-face {font-family: 'CustomFont';src: '../fonts/975MaruSC-Bold.ttf') format('truetype');}#postBody {font-family: CustomFont;}</style>",
@@ -24,7 +24,7 @@
     "exlink":{
         "RSS月刊🔖":"https://gmerss.grapehut.xyz/",
         "音楽🎶":"https://music.grapehut.xyz/",
-        "Me💕":"https://www.grapehut.xyz/"
+        "Me💕":"https://me.grapehut.xyz/"
     },
     
     "commentLabelColor":"#006b75",
