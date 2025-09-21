@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:07:53 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.11 Windows KMS激活</title><link>https://blog.grapehut.xyz/post/11.html</link><description>```
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:08:50 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.13 PowerToys使用技巧</title><link>https://blog.grapehut.xyz/post/13.html</link><description># 下载PowerToys
+https://github.com/microsoft/PowerToys
+
+# 下载插件
+1. [ChatGPTPowerToys](https://github.com/ferraridavide/ChatGPTPowerToys)
+将下载的插件解压后，放置到这个目录下：`C:\Program Files\PowerToys\RunPlugins`
+重启PowerToys。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/13.html</guid><pubDate>Sun, 21 Sep 2025 09:08:19 +0000</pubDate></item><item><title>Vol.11 Windows KMS激活</title><link>https://blog.grapehut.xyz/post/11.html</link><description>```
 # Windows 11 LTSC 2024
 tiny11_24H2
 　https://archive.org/details/tiny11-2409 
