@@ -1,5 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:18:51 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.27 科学上网（自建代理节点）</title><link>https://blog.grapehut.xyz/post/27.html</link><description># 方法一：claw.cloud 部署
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://blog.grapehut.xyz</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://blog.grapehut.xyz</link></image><lastBuildDate>Sun, 21 Sep 2025 09:20:03 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.29 git入門</title><link>https://blog.grapehut.xyz/post/29.html</link><description># git 公式サイト
+[https://git-scm.com](https://git-scm.com/)
+
+[http://git-cheatsheet.com](http://git-cheatsheet.com/)
+
+[PDF](https://wac-cdn.atlassian.com/dam/jcr:e7e22f25-bba2-4ef1-a197-53f46b6df4a5/SWTM-2088_Atlassian-Git-Cheatsheet.pdf)
+
+# git-cheat-sheet
+![git](./git-cheat-sheet.png)
+
+
+# git 工作原理
+![git](./git-status.png)
+```
+・Remote：远程仓库，托管代码的服务器
+・Repository：仓库区（或版本库），其中HEAD指向最新放入仓库的版本
+・Index／Stage：暂存区（或索引区），用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息
+・Workspace：工作区，就是你平时存放项目代码的地方
+```
+#### １．具体例：下图中的四条命令在「工作区」、「暂存区」、「仓库区」之间复制文件。</description><guid isPermaLink="true">https://blog.grapehut.xyz/post/29.html</guid><pubDate>Sun, 21 Sep 2025 09:19:25 +0000</pubDate></item><item><title>Vol.27 科学上网（自建代理节点）</title><link>https://blog.grapehut.xyz/post/27.html</link><description># 方法一：claw.cloud 部署
 
 ### Claw Cloud爪云）部署 Vless       
 ```
