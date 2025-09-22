@@ -45,8 +45,9 @@ footer {margin-top:64px; text-align: center;font-size: small;}
 
 @media (max-width: 768px) {
     body {padding: 8px;}
+    header{display:flex;flex-direction:column;margin:auto auto 5px auto;}
     .avatar {width:36px;height:36px;}
-    .blogTitle{font-size:16px;}
+    .title-left h1{font-size:16px;}
     .LabelTime{display:none;}
 }
 </style>
@@ -55,9 +56,8 @@ footer {margin-top:64px; text-align: center;font-size: small;}
 
 <body>
     <header>
-<div class="title-left">
-    <img src="../avatar.png" class="avatar circle" id="avatarImg" alt="avatar"><h1><a class="blogTitle">小饅頭の部落格</a></h1></div>
-
+<nav class="title-left">
+    <img src="../avatar.png" class="avatar circle" id="avatarImg" alt="avatar"><h1><a class="blogTitle">小饅頭の部落格</a></h1></nav>
 <nav class="title-right">
     <ul>
     <li><a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
