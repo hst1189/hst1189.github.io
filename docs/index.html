@@ -31,6 +31,7 @@ footer {margin-top:64px; text-align: center;font-size: small;}
 .title-right{display:flex;flex-direction:row;margin:auto 0 0 auto;}
 .title-right button{margin-right:8px;padding:16px;}
 .title-right .circle{padding: 14px 16px;}
+.title-right ul{list-style-type: none;}
 
 .SideNav{min-width: 360px;}
 .SideNav-icon{margin-right: 16px}
@@ -56,44 +57,33 @@ footer {margin-top:64px; text-align: center;font-size: small;}
     <img src="../avatar.png" class="avatar circle" id="avatarImg" alt="avatar"><h1><a class="blogTitle">小饅頭の部落格</a></h1></div>
 
 <div class="title-right">
-    <a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathSearch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-    <nav>
-    <li><a href="https://grapehut.dpdns.org/gmerss" class="btn btn-invisible circle" title="RSS月刊🔖">
-        <svg class="octicon" width="16" height="16" >
-            <path id="RSS月刊🔖" fill-rule="evenodd"></path>
-        </svg>
-    </a><</li><li><a href="https://grapehut.dpdns.org/music" class="btn btn-invisible circle" title="音楽🎶">
-        <svg class="octicon" width="16" height="16" >
-            <path id="音楽🎶" fill-rule="evenodd"></path>
-        </svg>
-    </a><</li><li><a href="https://grapehut.dpdns.org/me" class="btn btn-invisible circle" title="Me💕">
-        <svg class="octicon" width="16" height="16" >
-            <path id="Me💕" fill-rule="evenodd"></path>
-        </svg>
-    </a><</li>
-    </nav>
+    <nav><ul>
+    <li><a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
+        <svg class="octicon" width="16" height="16" ><path id="pathSearch" fill-rule="evenodd"></path></svg>
+    </a></li>   
+    
+    <li><a href="https://grapehut.dpdns.org/gmerss" class="btn btn-invisible circle" id="RSS月刊🔖" title="RSS月刊🔖">
+        <svg class="octicon" width="16" height="16" ><path id="RSS月刊🔖" fill-rule="evenodd"></path></svg>
+    </a></li><li><a href="https://grapehut.dpdns.org/music" class="btn btn-invisible circle" id="音楽🎶" title="音楽🎶">
+        <svg class="octicon" width="16" height="16" ><path id="音楽🎶" fill-rule="evenodd"></path></svg>
+    </a></li><li><a href="https://grapehut.dpdns.org/me" class="btn btn-invisible circle" id="Me💕" title="Me💕">
+        <svg class="octicon" width="16" height="16" ><path id="Me💕" fill-rule="evenodd"></path></svg>
+    </a></li>
     
     
 
-    <a href="https://grapehut.dpdns.org/rss.xml" target="_blank" id="buttonRSS" class="btn btn-invisible circle" title="RSS">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathRSS" fill-rule="evenodd"></path>
-        </svg>
-    </a>
+    <li><a href="https://grapehut.dpdns.org/rss.xml" target="_blank" id="buttonRSS" class="btn btn-invisible circle" title="RSS">
+        <svg class="octicon" width="16" height="16" ><path id="pathRSS" fill-rule="evenodd"></path></svg>
+    </a></li>
 
-    <a class="btn btn-invisible circle" onclick="modeSwitch()" title="切换主题"style="display:none;">
-        <svg class="octicon" width="16" height="16" >
-            <path id="themeSwitch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
+    <li><a class="btn btn-invisible circle" onclick="modeSwitch()" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+    </a></li>
+    </ul></nav>
 </div>
 </header>
     <main id="content">
-<div style="margin-bottom: 16px;">Stay hungry. Stay foolish. --Steve Jobs</div>
+<div style="margin-bottom: 16px;"><h2>Stay hungry. Stay foolish. --Steve Jobs</h2></div>
 <section class="SideNav border">
     <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/35.html">
         <div class="d-flex flex-items-center">
