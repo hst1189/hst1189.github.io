@@ -6,124 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://cdn.jsdelivr.net/npm/@primer/css@21.5.1/dist/primer.min.css' rel='stylesheet' />
     <link rel="icon" href="../favicon.svg">
-<meta name="description" content="# 配置服务器
-
-🔖### 1. 注册aws账号（需要信用卡，验证时会扣除1美元或等值的货币）
-https://aws.amazon.com/cn/campaigns/nc20241101/
-
-🔖### 2. 选择免费额度的配置来创建一个EC2实例
-    名称：任意
-    系统：任意（选择平时常用系统  **Ubuntu**）
-    硬件配置（选择默认的免费）
-    实例类型（默认的**t2.micro**）
-    存储（免费最大30GB）
-    
-　创建密钥（保存为`xxx.pem`，下载到本地， ssh联接用）
-    创建安全组（允许`SSH ✓`，`HTTP ✓`，`HTTPS  ✓`） 
-
-🔖### 3. 确认一下实体配置信息，启动实体
-
-🔖### 4. 进入实体，查看公有IP，进行ssh链接，使用下载到本地的密钥（`xxx.pem`） ，选择Ubuntu的话，默认用户名：`ubuntu
-　　例如：公有IPv4：18.181.184.67
-　　ssh -i 'aws_ubuntu.pem' ubuntu@ec2-18-181-184-67.ap-northeast-1.compute.amazonaws.com
-
-🔖### 5. `sudo -i`  进入root权限
-查看硬件配置
-```
-CPU：lscpu
-内存：free -h
-磁盘容量：df -h
-OS版本：cat /etc/issue
-```
-
-🔖### 6. 安装Docker
-```
-curl -fsSL https://get.docker.com | sh    #安装Docker
-systemctl enable --now docker             #启动Docker服务
-docker -v                                 #查看docker版本，检查是否安装成功
-docker ps -a                            #查看docker中所有容器
-```
-
-
-🔖### 7. 开放端口，设置安全组
-`Gmeek-html<img src='../imgs/aws_security_rull.png'>`
-
-> [!TIP]
-> http 的默认端口: 80
-> https 的默认端口: 433
-> ssh 的默认端口: 22
-> telnet 的默认端口: 23
-> ftp 的默认端口: 20 和 21 ，  20负责连接，21负责传输数据
-> sftp 的默认端口: 22
-
-
-
-
-🔖### 8. 常见问题
-
-《无法ping的解决方案》
-首先Ping只是向服务器发送ICMP的数据包，如果在服务器的防火墙没有允许ICMP协议的数据包的话，那么即使服务器正常运行，那也是ping不同的。">
+<meta name="description" content="小饅頭の部落格">
 <meta property="og:title" content="Vol.22 「白嫖」aws免费一年">
-<meta property="og:description" content="# 配置服务器
-
-🔖### 1. 注册aws账号（需要信用卡，验证时会扣除1美元或等值的货币）
-https://aws.amazon.com/cn/campaigns/nc20241101/
-
-🔖### 2. 选择免费额度的配置来创建一个EC2实例
-    名称：任意
-    系统：任意（选择平时常用系统  **Ubuntu**）
-    硬件配置（选择默认的免费）
-    实例类型（默认的**t2.micro**）
-    存储（免费最大30GB）
-    
-　创建密钥（保存为`xxx.pem`，下载到本地， ssh联接用）
-    创建安全组（允许`SSH ✓`，`HTTP ✓`，`HTTPS  ✓`） 
-
-🔖### 3. 确认一下实体配置信息，启动实体
-
-🔖### 4. 进入实体，查看公有IP，进行ssh链接，使用下载到本地的密钥（`xxx.pem`） ，选择Ubuntu的话，默认用户名：`ubuntu
-　　例如：公有IPv4：18.181.184.67
-　　ssh -i 'aws_ubuntu.pem' ubuntu@ec2-18-181-184-67.ap-northeast-1.compute.amazonaws.com
-
-🔖### 5. `sudo -i`  进入root权限
-查看硬件配置
-```
-CPU：lscpu
-内存：free -h
-磁盘容量：df -h
-OS版本：cat /etc/issue
-```
-
-🔖### 6. 安装Docker
-```
-curl -fsSL https://get.docker.com | sh    #安装Docker
-systemctl enable --now docker             #启动Docker服务
-docker -v                                 #查看docker版本，检查是否安装成功
-docker ps -a                            #查看docker中所有容器
-```
-
-
-🔖### 7. 开放端口，设置安全组
-`Gmeek-html<img src='../imgs/aws_security_rull.png'>`
-
-> [!TIP]
-> http 的默认端口: 80
-> https 的默认端口: 433
-> ssh 的默认端口: 22
-> telnet 的默认端口: 23
-> ftp 的默认端口: 20 和 21 ，  20负责连接，21负责传输数据
-> sftp 的默认端口: 22
-
-
-
-
-🔖### 8. 常见问题
-
-《无法ping的解决方案》
-首先Ping只是向服务器发送ICMP的数据包，如果在服务器的防火墙没有允许ICMP协议的数据包的话，那么即使服务器正常运行，那也是ping不同的。">
+<meta property="og:description" content="小饅頭の部落格">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://grapehut.dpdns.org/post/22.html">
 <meta property="og:image" content="">
+<meta property="og:site_name" content="小饅頭の部落格">
+
 <title>Vol.22 「白嫖」aws免费一年</title>
 
 
