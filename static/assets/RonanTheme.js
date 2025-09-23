@@ -13,10 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
             background-size: cover;
         }
         
-        @media (max-width: 768px) {
-            body {margin:5px auto 30px auto; padding: 8px;}
-        }
-
         /* 主体布局 */
         body {
             min-width: 200px;
@@ -53,6 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
         /* 分页条 */
         .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus, .pagination em:hover, .pagination em:focus {
             border-color: rebeccapurple;
+        
+        @media (max-width: 768px) {
+            body {margin:5px auto 30px auto; padding: 8px;}
+        }
         `;
         document.head.appendChild(style);}
 
@@ -68,10 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
         html {    
             background: url('../home-bg.jpg') no-repeat center center fixed;
             background-size: cover;
-        }
-
-        @media (max-width: 768px) {
-            body {margin:5px auto 30px auto; padding: 8px;}
         }
 
         /* 主体布局 */
@@ -120,6 +116,9 @@ document.addEventListener('DOMContentLoaded', function() {
           border-radius: 8px;
           margin-right: 2px;
         } 
+        @media (max-width: 768px) {
+            body {margin:5px auto 30px auto; padding: 8px;}
+        }
         `;
         document.head.appendChild(style);
     } 
@@ -135,10 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
         html {    
             background: url('../home-bg.jpg') no-repeat center center fixed;
             background-size: cover;
-        }
-
-        @media (max-width: 768px) {
-            body {margin:5px auto 30px auto; padding: 8px;}
         }
 
         /* 主体布局 */
@@ -188,6 +183,9 @@ document.addEventListener('DOMContentLoaded', function() {
         .subnav-search {
             width: unset; 
             height: 36px;
+        }
+        @media (max-width: 768px) {
+            body {margin:5px auto 30px auto; padding: 8px;}
         }
         `;
         document.head.appendChild(style);
