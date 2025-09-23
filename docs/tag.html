@@ -25,8 +25,15 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 
 <style>
 .tagTitle{margin:auto 0;font-size:40px;font-weight:bold;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
-.title-right{display:flex;margin:auto 0 0 auto;}
-.title-right .circle{padding: 14px 16px;margin-right:8px;}
+.avatar {transition: 0.8s;width:64px;height:64px;object-fit: cover;cursor: pointer;}
+.avatar:hover{transform: scale(1.2) rotate(360deg);}
+.title-left{display:flex;flex-direction:row;margin:auto auto 0 0;}
+.title-left a{color:inherit;text-decoration:none;vertical-align: bottom;font-size:40px;font-weight: bold;font-family:Monaco;margin-left:8px;}
+.title-right{display:flex;flex-direction:row;margin:auto 0 0 auto;}
+.title-right button{margin-right:8px;padding:16px;}
+.title-right .circle{padding: 14px 16px;}
+.title-right ul{list-style-type: none;}
+.title-right ul li{display: inline;}
 
 .subnav-search{width:222px;margin-top:8px;margin-right:8px;}
 .subnav-search-input{width:160px;border-top-right-radius:0px;border-bottom-right-radius:0px;}
@@ -42,9 +49,13 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 .listTitle{overflow:hidden;white-space:nowrap;text-overflow: ellipsis;max-width: 100%;}
 .listLabels{white-space:nowrap;}
 
-@media (max-width: 600px) {
-    body { padding: 8px;}
-    .tagTitle{display:none;}
+@media (max-width: 768px) {
+    body {margin:0; padding: 8px;}
+    header{display:flex;flex-direction:column;margin:auto auto 5px auto;}
+    .avatar {width:36px;height:36px;}
+    .title-left{display:flex;flex-direction:row;margin:auto 10px;}
+    .title-left .tagTitle{color:inherit;text-decoration:none;font-size: 24px;font-family:Monaco;padding-left:50px}
+    .title-right{display:flex;flex-direction:row;justify-content: space-evenly; margin:auto 0;}
     .LabelTime{display:none;}
 }
 </style>
@@ -52,8 +63,12 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 
 <body>
     <header>
-<span class="tagTitle"><span>Loading</span><span class="AnimatedEllipsis"></span></span>
-<div class="title-right">
+<nav class="title-left">
+    <img src="../avatar.png" class="avatar circle" id="avatarImg" alt="avatar">
+    <span class="tagTitle"><span>Loading</span><span class="AnimatedEllipsis"></span></span>
+</nav>
+
+<nav class="title-right">
     <div class="subnav-search">
         <input type="search" class="form-control subnav-search-input float-left" aria-label="Search site" value="" style="height:32px;">
         <button class="btn float-left" type="submit" onclick="javascript:searchShow()">搜索🔍</button>
@@ -62,21 +77,17 @@ footer{margin-top:64px; text-align: center;font-size: small;}
         </svg>
     </div>
     <a href="https://grapehut.dpdns.org" id="buttonHome" class="btn btn-invisible circle" title="首页">
-        <svg class="octicon" width="16" height="16">
-            <path id="pathHome" fill-rule="evenodd"></path>
-        </svg>
+        <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
     </a>
     <a class="btn btn-invisible circle" onclick="modeSwitch()" title="切换主题"style="display:none;">
-        <svg class="octicon" width="16" height="16" >
-            <path id="themeSwitch" fill-rule="evenodd"></path>
-        </svg>
+        <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
     </a>
-</div>
+</nav>
 </header>
     <main id="content">
-<div id="taglabel" style="margin-bottom:8px;"></div>
-<nav class="SideNav"></nav>
-<div class="notFind" style="display:none;font-size:24px;margin:8px;">Not Find</div>
+<section id="taglabel" style="margin-bottom:8px;"></section>
+<section class="SideNav"></section>
+<section class="notFind" style="display:none;font-size:24px;margin:8px;">Not Found</section>
 </main>
     <footer><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://grapehut.dpdns.org">小饅頭の部落格</a> All Rights Reserved. </div>
 <div id="footer2"><span id="filingNum"><a href="https://beian.miit.gov.cn/" target="_blank"><a href='https://icp.gov.moe/?keyword=20241189' target='_blank'>萌ICP备20241189号</a></a> • </span>
