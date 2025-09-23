@@ -48,7 +48,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
     header{display:flex;flex-direction:column;margin:auto auto 5px auto;}
     .avatar {width:36px;height:36px;}
     .title-left{display:flex;flex-direction:row;margin:auto 10px;}
-    .title-left h1{color:inherit;text-decoration:none;font-size: 20px;font-family:Monaco;padding-left:50px}
+    .title-left h1{color:inherit;text-decoration:none;font-size: 20px;font-family:Monaco;padding-left:10px}
     .title-right{display:flex;flex-direction:row;justify-content: space-evenly; margin:auto 0;}
 }
 .copy-feedback {
@@ -96,10 +96,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<main>
-    <section style="text-align:right"><p>created at 2025-09-21 09:09<p></section>
-    <section style="text-align:right"><p>updated at 2025-09-21 09:09<p></section>
-    <section class="markdown-body spoiler" id="postBody"><h1>🔖 禁用 SMB1</h1>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2025-09-21 09:09</p></section>
+<section class="markdown-body spoiler" id="postBody"><h1>🔖 禁用 SMB1</h1>
 <p>强烈建议关闭，打开Windows機能面板</p>
 <pre class="notranslate"><code class="notranslate">cmd ⇒ OptionalFeatures.exe
 </code></pre>
@@ -210,12 +208,11 @@ windows设置⇒　安全设置⇒　本地策略⇒　安全选项⇒　已禁�
 <p>查看共享的文件</p>
 <pre class="notranslate"><code class="notranslate">cmd ⇒  net share ＜共有名＞ /d
 </code></pre></section>
-    <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
-    
-    <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
-    <div class="comments" id="comments"></div>
-    
-</main>
+<section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
 </main>
     <footer><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://grapehut.dpdns.org">小饅頭の部落格</a> All Rights Reserved. </div>
 <div id="footer2"><span id="filingNum"><a href="https://beian.miit.gov.cn/" target="_blank"><a href='https://icp.gov.moe/?keyword=20241189' target='_blank'>萌ICP备20241189号</a></a> • </span>
