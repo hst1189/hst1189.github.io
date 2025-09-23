@@ -27,18 +27,31 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </style>
 
 <style>
+.avatar {transition: 0.8s;width:64px;height:64px;object-fit: cover;cursor: pointer;}
+.avatar:hover{transform: scale(1.2) rotate(360deg);}
 .postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
-.title-right{display:flex;margin:auto 0 0 auto;}
-.title-right .circle{padding: 14px 16px;margin-right:8px;}
+.title-left{display:flex;flex-direction:row;margin:auto auto 0 0;}
+.title-left a{color:inherit;text-decoration:none;vertical-align: bottom;font-size:40px;font-weight: bold;font-family:Monaco;margin-left:8px;}
+.title-right{display:flex;flex-direction:row;margin:auto 0 0 auto;}
+.title-right button{margin-right:8px;padding:16px;}
+.title-right .circle{padding: 14px 16px;}
+.title-right ul{list-style-type: none;}
+.title-right ul li{display: inline;}
+    
 #postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
 #postBody hr{height:2px;}
 #cmButton{height:48px;margin-top:48px;}
 #comments{margin-top:64px;}
 .g-emoji{font-size:24px;}
+
 @media (max-width: 768px) {
     body {margin:0; padding: 8px;}
-    .postTitle{font-size:20px;}
     header{display:flex;flex-direction:column;margin:auto auto 5px auto;}
+    .avatar {width:36px;height:36px;}
+    .postTitle{font-size:20px;}
+    .title-left{display:flex;flex-direction:row;margin:auto 10px;}
+    .title-left a{color:inherit;text-decoration:none;font-size: 20px;font-family:Monaco;padding-left:50px}
+    .title-right{display:flex;flex-direction:row;justify-content: space-evenly; margin:auto 0;}
 }
 .copy-feedback {
     display: none;
@@ -59,6 +72,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <body>
     <header>
 <nav class="title-left">
+    <img src="../avatar.png" class="avatar circle" id="avatarImg" alt="avatar">
     <h1 class="postTitle">Vol.04 「建站」网站发布（域名绑定）</h1>
 </nav>
 <nav class="title-right">
