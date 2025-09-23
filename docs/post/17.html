@@ -35,9 +35,10 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 #cmButton{height:48px;margin-top:48px;}
 #comments{margin-top:64px;}
 .g-emoji{font-size:24px;}
-@media (max-width: 600px) {
-    body {padding: 8px;}
-    .postTitle{font-size:24px;}
+@media (max-width: 768px) {
+    body {margin:0; padding: 8px;}
+    .postTitle{font-size:20px;}
+    header{display:flex;flex-direction:column;margin:auto auto 5px auto;}
 }
 .copy-feedback {
     display: none;
@@ -57,31 +58,40 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 
 <body>
     <header>
-<h1 class="postTitle">Vol.17 Omakub 专为开发者设计的 Ubuntu</h1>
-<div class="title-right">
-    <a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathSearch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-    <a href="https://grapehut.dpdns.org" id="buttonHome" class="btn btn-invisible circle" title="首页">
-        <svg class="octicon" width="16" height="16">
-            <path id="pathHome" fill-rule="evenodd"></path>
-        </svg>
-    </a>
+<nav class="title-left">
+    <h1 class="postTitle">Vol.17 Omakub 专为开发者设计的 Ubuntu</h1>
+</nav>
+<nav class="title-right">
+    <ul>
+    <li><a href="https://grapehut.dpdns.org" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
+    </a></li>
+        
+    <li><a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
+        <svg class="octicon" width="16" height="16" ><path id="pathSearch" fill-rule="evenodd"></path></svg>
+    </a></li>
+    
+    <li><a href="https://grapehut.dpdns.org/gmerss" class="btn btn-invisible circle" title="RSS月刊🔖">
+        <svg class="octicon" width="16" height="16" ><path id="RSS月刊🔖" fill-rule="evenodd"></path></svg>
+    </a></li><li><a href="https://grapehut.dpdns.org/music" class="btn btn-invisible circle" title="音楽🎶">
+        <svg class="octicon" width="16" height="16" ><path id="音楽🎶" fill-rule="evenodd"></path></svg>
+    </a></li><li><a href="https://grapehut.dpdns.org/me" class="btn btn-invisible circle" title="Me💕">
+        <svg class="octicon" width="16" height="16" ><path id="Me💕" fill-rule="evenodd"></path></svg>
+    </a></li>
+        
     
 
-    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
-        <svg class="octicon" width="16" height="16" >
-            <path id="themeSwitch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-
-</div>
+    <li><a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+    </a></li>
+    </ul>
+</nav>
 </header>
     <main id="content">
-<nav style="text-align:right">created at 2025-09-21 09:10,　last updated at 2025-09-21 09:11</nav>
-<div class="markdown-body spoiler" id="postBody"><h1>前言</h1>
+<main>
+    <section style="text-align:right"><p>created at 2025-09-21 09:10<p></section>
+    <section style="text-align:right"><p>updated at 2025-09-21 09:11<p></section>
+    <section class="markdown-body spoiler" id="postBody"><h1>前言</h1>
 <p>Omakub 是一个专为开发者设计的 Ubuntu 环境配置项目，由 Ruby on Rails 的创造者 David Heinemeier Hansson（DHH）发起。<br>
 其目标是通过一条命令将全新的 Ubuntu 系统转化为一个配置完备、美观且现代化的 Web 开发系统，简化开发环境的搭建过程。</p>
 <p>官网：<a href="https://omakub.org" rel="nofollow">https://omakub.org</a></p>
@@ -103,12 +113,13 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <pre class="notranslate"><code class="notranslate">wget -qO- https://omakub.org/install | bash
 </code></pre>
 <p>整个安装过程大约需要 30 分钟，具体时间取决于网络状况。<br>
-安装完成后，系统会自动配置所有工具和设置。</p></div>
-<div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
-
-<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
-<div class="comments" id="comments"></div>
-
+安装完成后，系统会自动配置所有工具和设置。</p></section>
+    <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
+    
+    <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+    <div class="comments" id="comments"></div>
+    
+</main>
 </main>
     <footer><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://grapehut.dpdns.org">小饅頭の部落格</a> All Rights Reserved. </div>
 <div id="footer2"><span id="filingNum"><a href="https://beian.miit.gov.cn/" target="_blank"><a href='https://icp.gov.moe/?keyword=20241189' target='_blank'>萌ICP备20241189号</a></a> • </span>

@@ -35,9 +35,10 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 #cmButton{height:48px;margin-top:48px;}
 #comments{margin-top:64px;}
 .g-emoji{font-size:24px;}
-@media (max-width: 600px) {
-    body {padding: 8px;}
-    .postTitle{font-size:24px;}
+@media (max-width: 768px) {
+    body {margin:0; padding: 8px;}
+    .postTitle{font-size:20px;}
+    header{display:flex;flex-direction:column;margin:auto auto 5px auto;}
 }
 
 </style>
@@ -47,31 +48,40 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 
 <body>
     <header>
-<h1 class="postTitle">Vol.28 如何找到Shopify中国卖家网站</h1>
-<div class="title-right">
-    <a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathSearch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-    <a href="https://grapehut.dpdns.org" id="buttonHome" class="btn btn-invisible circle" title="首页">
-        <svg class="octicon" width="16" height="16">
-            <path id="pathHome" fill-rule="evenodd"></path>
-        </svg>
-    </a>
+<nav class="title-left">
+    <h1 class="postTitle">Vol.28 如何找到Shopify中国卖家网站</h1>
+</nav>
+<nav class="title-right">
+    <ul>
+    <li><a href="https://grapehut.dpdns.org" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
+    </a></li>
+        
+    <li><a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
+        <svg class="octicon" width="16" height="16" ><path id="pathSearch" fill-rule="evenodd"></path></svg>
+    </a></li>
+    
+    <li><a href="https://grapehut.dpdns.org/gmerss" class="btn btn-invisible circle" title="RSS月刊🔖">
+        <svg class="octicon" width="16" height="16" ><path id="RSS月刊🔖" fill-rule="evenodd"></path></svg>
+    </a></li><li><a href="https://grapehut.dpdns.org/music" class="btn btn-invisible circle" title="音楽🎶">
+        <svg class="octicon" width="16" height="16" ><path id="音楽🎶" fill-rule="evenodd"></path></svg>
+    </a></li><li><a href="https://grapehut.dpdns.org/me" class="btn btn-invisible circle" title="Me💕">
+        <svg class="octicon" width="16" height="16" ><path id="Me💕" fill-rule="evenodd"></path></svg>
+    </a></li>
+        
     
 
-    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
-        <svg class="octicon" width="16" height="16" >
-            <path id="themeSwitch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-
-</div>
+    <li><a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+    </a></li>
+    </ul>
+</nav>
 </header>
     <main id="content">
-<nav style="text-align:right">created at 2025-09-21 09:18,　last updated at 2025-09-21 09:18</nav>
-<div class="markdown-body spoiler" id="postBody"><h2>你想知道别人的Shopify网站怎么做的吗？</h2>
+<main>
+    <section style="text-align:right"><p>created at 2025-09-21 09:18<p></section>
+    <section style="text-align:right"><p>updated at 2025-09-21 09:18<p></section>
+    <section class="markdown-body spoiler" id="postBody"><h2>你想知道别人的Shopify网站怎么做的吗？</h2>
 <p>一个傻瓜式的方式教大家如何找到Shopify中国卖家的网站（当然也可以找国外的）。</p>
 <p>Shopify有个默认的域名，这个域名是通用型的，几十万用户的网站都有 myshopify.com 这样的网址，只是卖家搭建网站的时候系统自动生成的一个二级域名，也就前缀不一样而已，如123456.myshopify.com。</p>
 <p>接下来方法很简单，科学上网，打开谷歌网站。输入关键词：site:myshopify.com contact us china</p>
@@ -100,12 +110,13 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <h2>不被爬虫收录</h2>
 <p>最后有什么方法可以不让这个页面被谷歌爬虫收录，其实也是有方法的，可以在网站上屏蔽该页面。<br>
 用到的工具：<a href="http://tool.chinaz.com/robots/" rel="nofollow">http://tool.chinaz.com/robots/</a><br>
-新建一个robots.txt文件，内容添加进去。然后上传到你的网站根目录。</p></div>
-<div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
-
-<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
-<div class="comments" id="comments"></div>
-
+新建一个robots.txt文件，内容添加进去。然后上传到你的网站根目录。</p></section>
+    <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
+    
+    <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+    <div class="comments" id="comments"></div>
+    
+</main>
 </main>
     <footer><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://grapehut.dpdns.org">小饅頭の部落格</a> All Rights Reserved. </div>
 <div id="footer2"><span id="filingNum"><a href="https://beian.miit.gov.cn/" target="_blank"><a href='https://icp.gov.moe/?keyword=20241189' target='_blank'>萌ICP备20241189号</a></a> • </span>

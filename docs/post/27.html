@@ -35,9 +35,10 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 #cmButton{height:48px;margin-top:48px;}
 #comments{margin-top:64px;}
 .g-emoji{font-size:24px;}
-@media (max-width: 600px) {
-    body {padding: 8px;}
-    .postTitle{font-size:24px;}
+@media (max-width: 768px) {
+    body {margin:0; padding: 8px;}
+    .postTitle{font-size:20px;}
+    header{display:flex;flex-direction:column;margin:auto auto 5px auto;}
 }
 .copy-feedback {
     display: none;
@@ -57,31 +58,40 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 
 <body>
     <header>
-<h1 class="postTitle">Vol.27 科学上网（自建代理节点）</h1>
-<div class="title-right">
-    <a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathSearch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-    <a href="https://grapehut.dpdns.org" id="buttonHome" class="btn btn-invisible circle" title="首页">
-        <svg class="octicon" width="16" height="16">
-            <path id="pathHome" fill-rule="evenodd"></path>
-        </svg>
-    </a>
+<nav class="title-left">
+    <h1 class="postTitle">Vol.27 科学上网（自建代理节点）</h1>
+</nav>
+<nav class="title-right">
+    <ul>
+    <li><a href="https://grapehut.dpdns.org" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
+    </a></li>
+        
+    <li><a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
+        <svg class="octicon" width="16" height="16" ><path id="pathSearch" fill-rule="evenodd"></path></svg>
+    </a></li>
+    
+    <li><a href="https://grapehut.dpdns.org/gmerss" class="btn btn-invisible circle" title="RSS月刊🔖">
+        <svg class="octicon" width="16" height="16" ><path id="RSS月刊🔖" fill-rule="evenodd"></path></svg>
+    </a></li><li><a href="https://grapehut.dpdns.org/music" class="btn btn-invisible circle" title="音楽🎶">
+        <svg class="octicon" width="16" height="16" ><path id="音楽🎶" fill-rule="evenodd"></path></svg>
+    </a></li><li><a href="https://grapehut.dpdns.org/me" class="btn btn-invisible circle" title="Me💕">
+        <svg class="octicon" width="16" height="16" ><path id="Me💕" fill-rule="evenodd"></path></svg>
+    </a></li>
+        
     
 
-    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
-        <svg class="octicon" width="16" height="16" >
-            <path id="themeSwitch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-
-</div>
+    <li><a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+    </a></li>
+    </ul>
+</nav>
 </header>
     <main id="content">
-<nav style="text-align:right">created at 2025-09-21 09:18,　last updated at 2025-09-21 09:18</nav>
-<div class="markdown-body spoiler" id="postBody"><h1>方法一：claw.cloud 部署</h1>
+<main>
+    <section style="text-align:right"><p>created at 2025-09-21 09:18<p></section>
+    <section style="text-align:right"><p>updated at 2025-09-21 09:18<p></section>
+    <section class="markdown-body spoiler" id="postBody"><h1>方法一：claw.cloud 部署</h1>
 <h3>Claw Cloud爪云）部署 Vless</h3>
 <pre class="notranslate"><code class="notranslate">Docker image：7techlife/seven
 Cpu：0.2
@@ -159,12 +169,13 @@ https://test.cf996.ip-ddns.com/8cda8d90-9c66-4f59-8f98-d433d6238a8c
 <p>3、苹果Ios：Karing、Hiddify Proxy &amp; VPN、Shadowrocket(小火箭)、Streisand、v2box</p>
 <p>4、软路由Openwrt：<a href="https://github.com/kiddin9/openwrt-packages">homeproxy</a>，建议使用系统自带的软件库查找更新</p>
 <p>注意：其他平台客户端未开启分片功能情况下，workers域的6个443系TLS节点是不可用的</p>
-<p>注意：Shadowrocket(小火箭)、v2box、v2rayn、v2rayng客户端对trojan+ws有强制开启TLS问题，造成trojan+ws不通。且clash订阅没有trojan+ws节点。特此说明</p></div>
-<div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
-
-<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
-<div class="comments" id="comments"></div>
-
+<p>注意：Shadowrocket(小火箭)、v2box、v2rayn、v2rayng客户端对trojan+ws有强制开启TLS问题，造成trojan+ws不通。且clash订阅没有trojan+ws节点。特此说明</p></section>
+    <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
+    
+    <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+    <div class="comments" id="comments"></div>
+    
+</main>
 </main>
     <footer><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://grapehut.dpdns.org">小饅頭の部落格</a> All Rights Reserved. </div>
 <div id="footer2"><span id="filingNum"><a href="https://beian.miit.gov.cn/" target="_blank"><a href='https://icp.gov.moe/?keyword=20241189' target='_blank'>萌ICP备20241189号</a></a> • </span>

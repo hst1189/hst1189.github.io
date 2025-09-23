@@ -35,9 +35,10 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 #cmButton{height:48px;margin-top:48px;}
 #comments{margin-top:64px;}
 .g-emoji{font-size:24px;}
-@media (max-width: 600px) {
-    body {padding: 8px;}
-    .postTitle{font-size:24px;}
+@media (max-width: 768px) {
+    body {margin:0; padding: 8px;}
+    .postTitle{font-size:20px;}
+    header{display:flex;flex-direction:column;margin:auto auto 5px auto;}
 }
 .copy-feedback {
     display: none;
@@ -57,31 +58,40 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 
 <body>
     <header>
-<h1 class="postTitle">Vol.23 「白嫖」批量gmail, outlook</h1>
-<div class="title-right">
-    <a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathSearch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-    <a href="https://grapehut.dpdns.org" id="buttonHome" class="btn btn-invisible circle" title="首页">
-        <svg class="octicon" width="16" height="16">
-            <path id="pathHome" fill-rule="evenodd"></path>
-        </svg>
-    </a>
+<nav class="title-left">
+    <h1 class="postTitle">Vol.23 「白嫖」批量gmail, outlook</h1>
+</nav>
+<nav class="title-right">
+    <ul>
+    <li><a href="https://grapehut.dpdns.org" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
+    </a></li>
+        
+    <li><a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
+        <svg class="octicon" width="16" height="16" ><path id="pathSearch" fill-rule="evenodd"></path></svg>
+    </a></li>
+    
+    <li><a href="https://grapehut.dpdns.org/gmerss" class="btn btn-invisible circle" title="RSS月刊🔖">
+        <svg class="octicon" width="16" height="16" ><path id="RSS月刊🔖" fill-rule="evenodd"></path></svg>
+    </a></li><li><a href="https://grapehut.dpdns.org/music" class="btn btn-invisible circle" title="音楽🎶">
+        <svg class="octicon" width="16" height="16" ><path id="音楽🎶" fill-rule="evenodd"></path></svg>
+    </a></li><li><a href="https://grapehut.dpdns.org/me" class="btn btn-invisible circle" title="Me💕">
+        <svg class="octicon" width="16" height="16" ><path id="Me💕" fill-rule="evenodd"></path></svg>
+    </a></li>
+        
     
 
-    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
-        <svg class="octicon" width="16" height="16" >
-            <path id="themeSwitch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-
-</div>
+    <li><a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+    </a></li>
+    </ul>
+</nav>
 </header>
     <main id="content">
-<nav style="text-align:right">created at 2025-09-21 09:14,　last updated at 2025-09-21 09:15</nav>
-<div class="markdown-body spoiler" id="postBody"><h1>📫 Gamil</h1>
+<main>
+    <section style="text-align:right"><p>created at 2025-09-21 09:14<p></section>
+    <section style="text-align:right"><p>updated at 2025-09-21 09:15<p></section>
+    <section class="markdown-body spoiler" id="postBody"><h1>📫 Gamil</h1>
 <p>例如：<a href="mailto:johndoe@gmail.com">johndoe@gmail.com</a></p>
 <ol>
 <li>任意位置添加「.」，都被视为同一个地址</li>
@@ -113,12 +123,13 @@ johndoe+shop@gmail.com
 <div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>无限套娃，白嫖的东西到期之后，释放旧的outlook邮箱别名，生成新的outlook邮箱别名，相当于无限邮箱<br>
 当outlook邮箱泄露后，一键释放别名，可以避免被骚扰<br>
 格局再打开一点，我们在注册一些不太正规网站的时候，用别名邮箱，不想用的时候就删除别名，就不用担心被骚扰了</p>
-</div></div>
-<div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
-
-<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
-<div class="comments" id="comments"></div>
-
+</div></section>
+    <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
+    
+    <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+    <div class="comments" id="comments"></div>
+    
+</main>
 </main>
     <footer><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://grapehut.dpdns.org">小饅頭の部落格</a> All Rights Reserved. </div>
 <div id="footer2"><span id="filingNum"><a href="https://beian.miit.gov.cn/" target="_blank"><a href='https://icp.gov.moe/?keyword=20241189' target='_blank'>萌ICP备20241189号</a></a> • </span>
