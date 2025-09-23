@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
             background: url('../home-bg.jpg') no-repeat center center fixed;
             background-size: cover;
         }
+        
+        @media (max-width: 768px) {
+            body {margin:5px auto 30px auto; padding: 8px;}
+        }
 
         /* 主体布局 */
         body {
@@ -62,8 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
         style.innerHTML = `
 
         html {    
-            background: url('https://pic3.zhimg.com/v2-15f60b69642ba46964509c51d2645202_r.jpg') no-repeat center center fixed;
+            background: url('../home-bg.jpg') no-repeat center center fixed;
             background-size: cover;
+        }
+
+        @media (max-width: 768px) {
+            body {margin:5px auto 30px auto; padding: 8px;}
         }
 
         /* 主体布局 */
@@ -125,8 +133,12 @@ document.addEventListener('DOMContentLoaded', function() {
         style.innerHTML = `
         
         html {    
-            background: url('https://pic3.zhimg.com/v2-15f60b69642ba46964509c51d2645202_r.jpg') no-repeat center center fixed;
+            background: url('../home-bg.jpg') no-repeat center center fixed;
             background-size: cover;
+        }
+
+        @media (max-width: 768px) {
+            body {margin:5px auto 30px auto; padding: 8px;}
         }
 
         /* 主体布局 */
