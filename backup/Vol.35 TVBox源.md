@@ -60,12 +60,18 @@ https://www.yszzq.com/ziyuan/
 ✔️　百万资源　　：https://api.bwzym3u8.com/api.php/provide/vod
 
 
+# 🍃 下载资源
+
+例：
+```
+ffmpeg -i https://play.modujx15.com/20240821/HPThUhEC/index.m3u8 video.mp4
+```
+
+
 ---
 📌 sample：https://www.example.com/api.php/provide/vod
 📌 温馨提示：资源站点可能会不定期更换域名，建议收藏并定期检查更新。部分接口可能需要注册或申请授权。
 
-```
-ffmpeg -i https://play.modujx15.com/20240821/HPThUhEC/index.m3u8 video.mp4
-```
+
 
 
