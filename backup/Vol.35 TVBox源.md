@@ -61,12 +61,10 @@ https://www.yszzq.com/ziyuan/
 
 
 # 🍃 下载资源
-
-例：
+ffmpeg的用法：https://qiita.com/cha84rakanal/items/e84fe4eb6fbe2ae13fd8
 ```
-ffmpeg -i https://play.modujx15.com/20240821/HPThUhEC/index.m3u8 video.mp4
+例：ffmpeg -i https://play.modujx15.com/20240821/HPThUhEC/index.m3u8 video.mp4
 ```
-
 
 ---
 📌 sample：https://www.example.com/api.php/provide/vod

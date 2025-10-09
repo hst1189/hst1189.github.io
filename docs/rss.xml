@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 09 Oct 2025 13:26:36 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.35 TVBox源</title><link>https://grapehut.dpdns.org/post/35.html</link><description># 🚀 资源站列表
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 09 Oct 2025 13:28:28 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.35 TVBox源</title><link>https://grapehut.dpdns.org/post/35.html</link><description># 🚀 资源站列表
 https://www.yszzq.com/ziyuan/
 
 
@@ -62,12 +62,10 @@ https://www.yszzq.com/ziyuan/
 
 
 # 🍃 下载资源
-
-例：
+ffmpeg的用法：https://qiita.com/cha84rakanal/items/e84fe4eb6fbe2ae13fd8
 ```
-ffmpeg -i https://play.modujx15.com/20240821/HPThUhEC/index.m3u8 video.mp4
+例：ffmpeg -i https://play.modujx15.com/20240821/HPThUhEC/index.m3u8 video.mp4
 ```
-
 
 ---
 📌 sample：https://www.example.com/api.php/provide/vod
