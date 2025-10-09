@@ -64,4 +64,8 @@ https://www.yszzq.com/ziyuan/
 📌 sample：https://www.example.com/api.php/provide/vod
 📌 温馨提示：资源站点可能会不定期更换域名，建议收藏并定期检查更新。部分接口可能需要注册或申请授权。
 
+```
+ffmpeg -i https://play.modujx15.com/20240821/HPThUhEC/index.m3u8 video.mp4
+```
+
 
