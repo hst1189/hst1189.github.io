@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark-blue" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://cdn.jsdelivr.net/npm/@primer/css@21.5.1/dist/primer.min.css' rel='stylesheet' />
+    <link rel="icon" href="../favicon.svg">
+<meta name="description" content="小饅頭の部落格">
+<meta property="og:title" content="Vol.36 网络资源">
+<meta property="og:description" content="小饅頭の部落格">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grapehut.dpdns.org/post/36.html">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="小饅頭の部落格">
+
+<title>Vol.36 网络资源</title>
+
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+footer{margin-top:64px; text-align: center;font-size: small;}
+</style>
+
+<style>
+.avatar {transition: 0.8s;width:64px;height:64px;object-fit: cover;cursor: pointer;}
+.avatar:hover{transform: scale(1.2) rotate(360deg);}
+.title-left{display:flex;flex-direction:row;margin:auto auto 0 0;}
+.title-left h1{color:inherit;vertical-align: bottom;font-size:40px;font-weight: bold;font-family:Monaco;margin-left:8px;}
+.title-right{display:flex;flex-direction:row;margin:auto 0 0 auto;}
+.title-right button{margin-right:8px;padding:16px;}
+.title-right .circle{padding: 14px 16px;}
+.title-right ul{list-style-type: none;}
+.title-right ul li{display: inline;}
+.pagination {display: flex; flex-direction: row; justify-content: space-around;}    
+.pagination a {font-size:18px; color:#fff; border: 1px solid #fff;}
+.pagination a:hover {background-color:#FFFFCC; transition-duration: 1s;transform: scale(1.2)}
+    
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+
+@media (max-width: 768px) {
+    body {margin:0; padding: 8px;}
+    header{display:flex;flex-direction:column;margin:auto auto 5px auto;}
+    .avatar {width:36px;height:36px;}
+    .title-left{display:flex;flex-direction:row;margin:auto 10px;}
+    .title-left h1{color:inherit;text-decoration:none;font-size: 20px;font-family:Monaco;padding-left:10px}
+    .title-right{display:flex;flex-direction:row;justify-content: space-evenly; margin:auto 0;}
+    .pagination a {font-size:12px; border: 1px solid #fff;}
+    .pagination a:hover {background-color:#FFFFCC;}
+}
+
+</style>
+
+
+
+
+<body>
+    <header>
+<nav class="title-left">
+    <img src="../avatar.png" class="avatar circle" id="avatarImg" alt="avatar">
+    <h1 class="postTitle">Vol.36 网络资源</h1>
+</nav>
+<nav class="title-right">
+    <ul>
+    <li><a href="https://grapehut.dpdns.org/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索🔍">
+        <svg class="octicon" width="16" height="16" ><path id="pathSearch" fill-rule="evenodd"></path></svg>
+    </a></li>
+        
+    <li><a href="https://grapehut.dpdns.org" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
+    </a></li>
+        
+    
+
+    <li><a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+    </a></li>
+    </ul>
+</nav>
+</header>
+    <main id="content">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-10-10 14:57,updated at 2025-10-10 14:59</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/35.html" aria-label="Next Page">下一篇-Vol.35 TVBox源</a></div>
+</nav>
+
+<section class="markdown-body spoiler" id="postBody"><h2>常用项目</h2>
+<ul>
+<li><a href="https://github.com/dashboard-feed">Github</a></li>
+<li><a href="https://free-for.dev/" rel="nofollow">开发资源索引 Free for Developers</a></li>
+<li><a href="https://www.v2ex.com/" rel="nofollow">V2EX</a></li>
+<li><a href="https://linux.do/" rel="nofollow">Linux.do</a></li>
+<li><a href="https://wannianli.tianqi.com/" rel="nofollow">万年历</a></li>
+<li><a href="https://app.zerossl.com/dashboard" rel="nofollow">ZeroSSL 免费证书</a> 免费账户有3次90天证书机会, 用完可以换账号或者删号重建</li>
+<li><a href="https://whatshub.top/quantumultx" rel="nofollow">qx规则配置</a></li>
+<li><a href="https://central.sonatype.com/" rel="nofollow">Maven 仓库搜索</a></li>
+</ul>
+<h2>在线文档</h2>
+<ul>
+<li><a href="https://devhints.io/" rel="nofollow">cheatsheets</a>  开发工具速查表</li>
+<li><a href="https://devdocs.io/" rel="nofollow">开发文档</a>  编程语言API文档</li>
+<li><a href="https://github.com/Threekiii/Awesome-Redteam/blob/master/README.md">Awesome-Redteam</a>  安全工具集</li>
+<li><a href="https://pdai.tech/" rel="nofollow">Java全栈知识体系</a></li>
+<li><a href="https://help.aliyun.com/zh/sdk/developer-reference/v2-manage-access-credentials" rel="nofollow">阿里云SDK凭据管理</a></li>
+</ul>
+<h3>微信</h3>
+<ul>
+<li><a href="https://mp.weixin.qq.com/" rel="nofollow">微信公众平台</a></li>
+<li><a href="https://developers.weixin.qq.com/doc/" rel="nofollow">微信官方文档</a></li>
+<li><a href="https://open.weixin.qq.com/" rel="nofollow">微信开放平台</a></li>
+<li><a href="https://wohugb.gitbooks.io/wechat/content/authorize/step_four.html" rel="nofollow">微信拉取用户信息</a></li>
+<li><a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=1_1" rel="nofollow">微信支付开发文档</a></li>
+<li><a href="https://work.weixin.qq.com/api/jsapisign" rel="nofollow">企业微信接口签名校验</a></li>
+<li><a href="https://mp.weixin.qq.com/debug/" rel="nofollow">微信公众平台接口调试</a></li>
+</ul>
+<h3>支付宝</h3>
+<ul>
+<li><a href="https://opendocs.alipay.com/open/common/abilitymap" rel="nofollow">支付宝文档中心</a></li>
+</ul>
+<h3>腾讯云</h3>
+<ul>
+<li><a href="https://cloud.tencent.com/document/product" rel="nofollow">腾讯云文档中心</a></li>
+</ul>
+<h2>搜索引擎</h2>
+<ul>
+<li><a href="https://sourcegraph.com/search" rel="nofollow">SourceGraph 源码搜索</a> 支持高级搜索语法</li>
+<li><a href="https://grep.app/" rel="nofollow">grep.app 源码搜索</a> 功能较上面的简单</li>
+<li><a href="https://book.tstrs.me/" rel="nofollow">电子书搜索</a></li>
+<li><a href="https://panyq.com/" rel="nofollow">盘友圈 网盘搜索</a></li>
+<li><a href="https://so.allsharehub.com/" rel="nofollow">ASH搜剧助手</a></li>
+</ul>
+<h2>娱乐资源</h2>
+<ul>
+<li><a href="https://www.minesweeperpro.com/" rel="nofollow">扫雷竞技</a></li>
+<li><a href="https://game.maj-soul.com/1/" rel="nofollow">雀魂麻将👍</a></li>
+<li><a href="https://www.yikm.net/" rel="nofollow">小霸王</a></li>
+<li><a href="https://wangchujiang.com/free-font/" rel="nofollow">免费字体</a></li>
+<li><a href="http://mc.alger.fun/" rel="nofollow">在线音乐🎵</a></li>
+</ul>
+<h2>软件服务</h2>
+<ul>
+<li><a href="https://tools.565676.xyz/" rel="nofollow">注册姬</a></li>
+<li><a href="https://repo.trojan-cdn.com/" rel="nofollow">爬墙工具库</a></li>
+<li><a href="https://stardots.ink/zh" rel="nofollow">星光图床</a></li>
+<li><a href="https://www.cgzy.net/" rel="nofollow">CG资源网 可下Mac版设计软件</a></li>
+</ul>
+<h2>在线工具</h2>
+<ul>
+<li><a href="https://usaddressgen.com/tax-free-address/?state=AK" rel="nofollow">美国地址生成器</a></li>
+<li><a href="https://subway.cuvii.dev/" rel="nofollow">城市地铁线路图</a></li>
+<li><a href="https://json4u.cn/editor" rel="nofollow">JSON在线编辑 支持图表展示</a></li>
+<li><a href="https://www.toolhelper.cn/" rel="nofollow">锤子在线工具网</a></li>
+<li><a href="https://www.freepublicapis.com/" rel="nofollow">免费公共API</a></li>
+<li><a href="https://toolb.cn/publicdns" rel="nofollow">公共DNS大全</a></li>
+<li><a href="https://www.runoob.com/try/try.php?filename=trycss_navbar_vertical&amp;basepath=0" rel="nofollow">Html代码效果展示</a></li>
+<li><a href="https://urlscan.io/" rel="nofollow">URL and website scanner</a></li>
+<li><a href="https://icon-icons.com/zh/" rel="nofollow">免费图标</a></li>
+<li><a href="https://www.aconvert.com/cn/" rel="nofollow">在线文档转换</a>  在线转换各类PDF，文档，电子书，图像，图标，视频，音频和压缩文件</li>
+<li><a href="https://downforeveryoneorjustme.com/" rel="nofollow">墙不墙</a></li>
+<li><a href="https://netcut.cn/" rel="nofollow">网络剪贴板</a></li>
+<li><a href="https://www.explainthis.io/zh-hans/chatgpt" rel="nofollow">ChatGPT指令大全</a></li>
+<li><a href="https://wangchujiang.com/linux-command/" rel="nofollow">Linux命令搜索</a></li>
+<li><a href="https://csr.chinassl.net/ssl-checker.html" rel="nofollow">SSL证书在线检测工具</a></li>
+<li><a href="https://www.dute.org/ssl-validate" rel="nofollow">SSL证书验证工具</a></li>
+<li><a href="http://www.httpbin.org/" rel="nofollow">httpbin</a></li>
+<li><a href="http://m3u8player.org/" rel="nofollow">m3u8在线播放器</a></li>
+<li><a href="https://commandnotfound.cn/" rel="nofollow">command命令帮助</a></li>
+<li><a href="https://www.chahaoba.com/" rel="nofollow">查号吧</a></li>
+<li><a href="http://24log.chacuo.net/" rel="nofollow">查错工具网</a></li>
+<li><a href="https://adzhp.cn/" rel="nofollow">聚合|爱达杂货铺</a></li>
+<li><a href="https://www.jyshare.com/front-end/6210/#f4329c" rel="nofollow">取色器</a></li>
+</ul>
+<h3>IP工具</h3>
+<ul>
+<li><a href="https://ip.skk.moe" rel="nofollow">查看我的IP地址</a></li>
+<li><a href="https://vpng.net/" rel="nofollow">IP归属地查询</a></li>
+<li><a href="https://ipw.cn/ping/" rel="nofollow">域名查IP</a></li>
+<li><a href="https://ipw.cn/dns/" rel="nofollow">DNS查询</a></li>
+<li><a href="https://zh-hans.ipshu.com/" rel="nofollow">IP地址查询工具</a></li>
+<li><a href="https://www.dnsgrep.cn/ip" rel="nofollow">IP反查域名</a></li>
+<li><a href="https://test-ipv6.com/index.html.zh_CN" rel="nofollow">IPv6连接测试</a></li>
+<li><a href="https://ip.ainou.moe/" rel="nofollow">IP查询</a></li>
+<li><a href="http://port.ping.pe/" rel="nofollow">端口连通检测</a></li>
+</ul>
+<h3>临时邮箱</h3>
+<ul>
+<li><a href="https://www.guerrillamail.com/zh/inbox" rel="nofollow">guerrillamail</a></li>
+<li><a href="https://www.emailnator.com/" rel="nofollow">emailnator</a></li>
+<li><a href="https://tempmail100.com/zh-cn/" rel="nofollow">tempmail100</a></li>
+</ul>
+<h3>免费域名</h3>
+<ul>
+<li><a href="https://www.azote.org/index.html" rel="nofollow">azote</a></li>
+</ul>
+<h3>regex 正则表达式</h3>
+<ul>
+<li><a href="https://regex-vis.com/" rel="nofollow">正则可视化</a></li>
+<li><a href="https://regex101.com/" rel="nofollow">正则校验101</a></li>
+<li><a href="https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md">正则表达式文档</a></li>
+</ul>
+<h3>下载工具</h3>
+<ul>
+<li><a href="https://d.serctl.com/" rel="nofollow">下载工具</a> 离线下载文件, 用于本地下载慢的情况</li>
+<li><a href="https://cobalt.tools/" rel="nofollow">视频下载</a> 社交媒体视频下载</li>
+<li><a href="https://wget.alanreed.org/" rel="nofollow">Online Wget</a> 用于在线打开木马文件</li>
+</ul>
+<h3>加密解密</h3>
+<ul>
+<li><a href="https://the-x.cn/cryptography/Rsa.aspx" rel="nofollow">在线RSA加密解密</a></li>
+<li><a href="http://www.metools.info/code/c80.html" rel="nofollow">在线生成公钥私钥对</a></li>
+<li><a href="https://www.md5online.org/md5-encrypt.html" rel="nofollow">MD5加密解密</a></li>
+<li><a href="https://tool.lu/js" rel="nofollow">JS混淆还原工具</a></li>
+<li><a href="https://lelinhtinh.github.io/de4js/" rel="nofollow">JS混淆解码</a></li>
+<li><a href="https://deobfuscate.io/" rel="nofollow">JavaScript Deobfuscator</a>  A simple but powerful deobfuscator to remove common JavaScript obfuscation techniques</li>
+</ul>
+<h3>Chrome&amp;Edge</h3>
+<ul>
+<li><a href="https://www.crx4chrome.com/" rel="nofollow">Crx4Chrome</a> 可下载插件最新版本</li>
+<li><a href="https://crxdl.com/" rel="nofollow">Chrome 插件下载</a> 插件版本不一定是最新的</li>
+</ul>
+<h3>在线订阅转换工具</h3>
+<ul>
+<li><a href="https://suburl.v1.mk/" rel="nofollow">v1.mk</a></li>
+</ul>
+<h3>AI工具</h3>
+<ul>
+<li><a href="https://3min.top" rel="nofollow">3MinTop</a></li>
+<li><a href="https://aistudio.google.com/" rel="nofollow">AI Studio</a></li>
+<li><a href="https://apps.abacus.ai/chatllm" rel="nofollow">Abacus</a></li>
+<li><a href="https://chatgpt.com/" rel="nofollow">ChatGPT</a></li>
+<li><a href="https://www.cici.com/chat/" rel="nofollow">Cici</a></li>
+<li><a href="https://claude.ai/" rel="nofollow">Claude</a></li>
+<li><a href="https://www.coze.com/space" rel="nofollow">Coze</a></li>
+<li><a href="https://devv.ai/" rel="nofollow">DEVV_</a></li>
+<li><a href="https://chat.deepseek.com/" rel="nofollow">DeepSeek</a></li>
+<li><a href="https://cloud.dify.ai/apps" rel="nofollow">Dify</a></li>
+<li><a href="https://duck.ai" rel="nofollow">DuckDuckGo</a></li>
+<li><a href="https://felo.ai/" rel="nofollow">Felo</a></li>
+<li><a href="https://www.flowith.io/" rel="nofollow">Flowith</a></li>
+<li><a href="https://gemini.google.com/" rel="nofollow">Gemini</a></li>
+<li><a href="https://www.genspark.ai/" rel="nofollow">Genspark</a></li>
+<li><a href="https://github.com/copilot">GitHub Copilot</a></li>
+<li><a href="https://grok.com" rel="nofollow">Grok</a></li>
+<li><a href="https://chat.groq.com/" rel="nofollow">Groq</a></li>
+<li><a href="https://hika.fyi/" rel="nofollow">Hika</a></li>
+<li><a href="https://huggingface.co/chat/" rel="nofollow">HuggingChat</a></li>
+<li><a href="https://kimi.moonshot.cn/" rel="nofollow">Kimi</a></li>
+<li><a href="https://lambda.chat/" rel="nofollow">Lambda Chat</a></li>
+<li><a href="https://chat.mistral.ai/chat" rel="nofollow">LeChat</a></li>
+<li><a href="https://monica.im/home/" rel="nofollow">Monica</a></li>
+<li><a href="https://notebooklm.google.com/" rel="nofollow">NotebookLM</a></li>
+<li><a href="https://www.perplexity.ai/" rel="nofollow">Perplexity</a></li>
+<li><a href="https://poe.com" rel="nofollow">Poe</a></li>
+<li><a href="https://qwenlm.ai/" rel="nofollow">QwenLM</a></li>
+<li><a href="https://cloud.siliconflow.cn/playground/chat" rel="nofollow">SiliconFlow</a></li>
+<li><a href="https://xinghuo.xfyun.cn/desk" rel="nofollow">SparkDesk</a></li>
+<li><a href="https://thinkany.ai/" rel="nofollow">ThinkAny</a></li>
+<li><a href="https://copilot.wps.cn/" rel="nofollow">WPS灵犀</a></li>
+<li><a href="https://you.com/" rel="nofollow">You</a></li>
+<li><a href="https://bolt.new/" rel="nofollow">bolt</a></li>
+<li><a href="https://www.wanzhi.com/" rel="nofollow">万知</a></li>
+<li><a href="https://chat.sensetime.com/wb/chat" rel="nofollow">商量</a></li>
+<li><a href="https://www.tiangong.cn/" rel="nofollow">天工AI</a></li>
+<li><a href="https://xiaoyi.huawei.com/chat/" rel="nofollow">小艺</a></li>
+<li><a href="https://yiyan.baidu.com/" rel="nofollow">文心一言</a></li>
+<li><a href="https://chatglm.cn/main/alltoolsdetail" rel="nofollow">智谱清言</a></li>
+<li><a href="https://hailuoai.com/" rel="nofollow">海螺</a></li>
+<li><a href="https://ying.baichuan-ai.com/chat" rel="nofollow">百小应</a></li>
+<li><a href="https://chat.baidu.com/" rel="nofollow">百度AI搜索</a></li>
+<li><a href="https://zhida.zhihu.com/" rel="nofollow">知乎直答</a></li>
+<li><a href="https://metaso.cn/" rel="nofollow">秘塔AI搜索</a></li>
+<li><a href="https://bot.n.cn/" rel="nofollow">纳米AI</a></li>
+<li><a href="https://www.n.cn/" rel="nofollow">纳米AI搜索</a></li>
+<li><a href="https://yuanbao.tencent.com/chat" rel="nofollow">腾讯元宝</a></li>
+<li><a href="https://www.doubao.com/chat/" rel="nofollow">豆包</a></li>
+<li><a href="https://yuewen.cn/chats/new" rel="nofollow">跃问</a></li>
+<li><a href="https://tongyi.aliyun.com/qianwen/" rel="nofollow">通义千问</a></li>
+<li><a href="https://chat.mistral.ai/chat" rel="nofollow">Le Chat - Mistral AI</a></li>
+<li><a href="https://grok.dairoot.cn/admin" rel="nofollow">Grok</a></li>
+</ul>
+<h2>TVbox接口</h2>
+<ul>
+<li><a href="https://www.%E9%A5%AD%E5%A4%AA%E7%A1%AC.com/" rel="nofollow">饭太硬</a></li>
+<li><a href="https://%E8%82%A5%E7%8C%AB.com/" rel="nofollow">肥猫</a></li>
+<li><a href="https://kukuqi666.github.io/TVBoxOS-Mobile/website/" rel="nofollow">酷酷琪</a></li>
+<li><a href="https://ysys.lic10.cn/" rel="nofollow">余生</a></li>
+<li><a href="https://d.n13.club/" rel="nofollow">老猫迷</a></li>
+<li><a href="https://dao.fongmi.eu.org/" rel="nofollow">FongMI</a></li>
+<li><a href="https://www.yxzhi.com/9257.html" rel="nofollow">鸭先知</a></li>
+<li><a href="https://yinghe.app/yingshicang-jiekou/" rel="nofollow">硬核指南</a></li>
+<li><a href="https://www.juwanhezi.com/other/jsonlist" rel="nofollow">聚玩盒子</a></li>
+<li><a href="https://github.com/gaotianliuyun/gao">Gao</a></li>
+<li><a href="https://jinenyy.vip/app/tvbox/" rel="nofollow">进恩</a></li>
+<li><a href="http://ygbhbox.3vfree.club/ygbh/index.html" rel="nofollow">月光宝盒</a></li>
+<li><a href="https://www.iyouhun.com/tv/" rel="nofollow">TvBox接口源</a></li>
+<li><a href="https://xhdwc.tk/" rel="nofollow">影视</a></li>
+<li><a href="http://6080.eu.org/" rel="nofollow">影视备用</a></li>
+</ul>
+<h2>影视资源</h2>
+<ul>
+<li><a href="https://darkvod.cc/" rel="nofollow">黑夜影院</a></li>
+<li><a href="https://www.danmutv.com/" rel="nofollow">鲨鱼TV</a></li>
+<li><a href="https://wantwatch.me/" rel="nofollow">魔法解析 智能解析</a></li>
+<li><a href="https://www.jiaozi.me/" rel="nofollow">饺子影视</a></li>
+<li><a href="https://www.fantuan.vip/" rel="nofollow">饭团影视</a></li>
+<li><a href="https://www.flixflop.com/" rel="nofollow">飞流视频</a></li>
+<li><a href="https://www.yinfans.me/" rel="nofollow">音范丝</a></li>
+<li><a href="https://www.hanjukankan.com/" rel="nofollow">韩剧看看 超清</a></li>
+<li><a href="https://qingwa.org/" rel="nofollow">青蛙电影网</a></li>
+<li><a href="https://www.6umkq9b.com/" rel="nofollow">金牌影视</a></li>
+<li><a href="https://www.qdm8.com" rel="nofollow">趣动漫 超清</a></li>
+<li><a href="https://www.dandanzan.club/" rel="nofollow">蛋蛋赞影院</a></li>
+<li><a href="https://www.dandantu.cc/" rel="nofollow">蛋蛋兔</a></li>
+<li><a href="https://www.5o5k.com/" rel="nofollow">蘑菇影视</a></li>
+<li><a href="https://wdoo.net/" rel="nofollow">聚合搜索</a></li>
+<li><a href="https://juheyingshi.com/" rel="nofollow">聚合影视</a></li>
+<li><a href="https://www.meiyd12.com/" rel="nofollow">美益达影视</a></li>
+<li><a href="https://www.mp4be.com/" rel="nofollow">美柏影视</a></li>
+<li><a href="https://www.ncat1.app/" rel="nofollow">网飞猫</a></li>
+<li><a href="https://www.tyys2.com/" rel="nofollow">统一影视</a></li>
+<li><a href="https://www.subaibaiys.com/" rel="nofollow">素白白影视 超清无广</a></li>
+<li><a href="https://jiandantv.com/" rel="nofollow">简单TV</a></li>
+<li><a href="https://www.1dm2.cc/" rel="nofollow">第一动漫网</a></li>
+<li><a href="https://www.duanju2.com/" rel="nofollow">短剧网</a></li>
+<li><a href="https://www.zhenlang.cc/" rel="nofollow">真狼影视</a></li>
+<li><a href="https://www.kankanwu.cc/" rel="nofollow">看看屋</a></li>
+<li><a href="https://kkw345.com/" rel="nofollow">看看屋</a></li>
+<li><a href="https://www.pipi15.tv/" rel="nofollow">皮皮影视</a></li>
+<li><a href="https://www.yirenmeng.com/" rel="nofollow">番茄影视</a></li>
+<li><a href="https://www.dygang.cc/" rel="nofollow">电影港</a></li>
+<li><a href="https://dianyi.ng/" rel="nofollow">电影先生 高清</a></li>
+<li><a href="https://www.duboku.tv/" rel="nofollow">独播库 超清无广</a></li>
+<li><a href="https://www.kpkuang.one/" rel="nofollow">狂人</a></li>
+<li><a href="https://adys.tv/" rel="nofollow">爱迪影视</a></li>
+<li><a href="https://v.aikanbot.com/" rel="nofollow">爱看机器人</a></li>
+<li><a href="https://www.akys.info/" rel="nofollow">爱看影视</a></li>
+<li><a href="https://www.gs4x7nq4.com/" rel="nofollow">爱电影</a></li>
+<li><a href="https://www.wiys.lol/" rel="nofollow">爱影视</a></li>
+<li><a href="https://www.iyf.lv/" rel="nofollow">爱壹帆</a></li>
+<li><a href="https://www.tdgo.shop/" rel="nofollow">火车太堵</a></li>
+<li><a href="https://www.hainatv.net/" rel="nofollow">海纳TV</a></li>
+<li><a href="https://v.taijuwang.com/" rel="nofollow">泰剧网</a></li>
+<li><a href="https://gaze.run/" rel="nofollow">注视影视</a></li>
+<li><a href="https://www.nivod.vip/" rel="nofollow">泥视频 超清</a></li>
+<li><a href="https://www.paopaoshipin.com/" rel="nofollow">泡泡视频</a></li>
+<li><a href="https://imaple8.co/" rel="nofollow">枫林网</a></li>
+<li><a href="https://hellociqryx6e.com/" rel="nofollow">极光影视</a></li>
+<li><a href="https://lkvod.me/" rel="nofollow">来看点播 超清</a></li>
+<li><a href="https://www.xinjuc.com/" rel="nofollow">新剧坊</a></li>
+<li><a href="https://soupian.one/" rel="nofollow">搜片</a></li>
+<li><a href="https://www.quickvod.cc/" rel="nofollow">快点播</a></li>
+<li><a href="https://www.bugutv.vip/" rel="nofollow">布谷TV</a></li>
+<li><a href="https://www.ziziys.com/" rel="nofollow">子子影视</a></li>
+<li><a href="https://www.netflixgc.com/" rel="nofollow">奈飞工厂</a></li>
+<li><a href="https://ww88.taieea.sbs/" rel="nofollow">太乙电影</a></li>
+<li><a href="https://www.dmxq.fun/" rel="nofollow">大米星球</a></li>
+<li><a href="https://dsxys.pro/" rel="nofollow">大师兄影视</a></li>
+<li><a href="https://www.duoduotv.cc" rel="nofollow">多多视频</a></li>
+<li><a href="https://www.zxzjhd.com/" rel="nofollow">在线之家</a></li>
+<li><a href="https://www.gugu3.com/" rel="nofollow">咕咕番</a></li>
+<li><a href="https://www.kkys03.com/" rel="nofollow">可可影视</a></li>
+<li><a href="https://www.klyingshi2.com/" rel="nofollow">可乐影视</a></li>
+<li><a href="https://www.czzy77.com/" rel="nofollow">厂长资源 超清</a></li>
+<li><a href="https://huaren.live/" rel="nofollow">华人直播 蓝光画质，需科学</a></li>
+<li><a href="https://wyjc.life/" rel="nofollow">午夜剧场</a></li>
+<li><a href="https://jumi.tv/" rel="nofollow">劇迷</a></li>
+<li><a href="https://www.jukankan.tv/" rel="nofollow">剧看看</a></li>
+<li><a href="https://www.juyeye.cc/" rel="nofollow">剧爷爷</a></li>
+<li><a href="https://www.bahaotv.com/" rel="nofollow">八号影院</a></li>
+<li><a href="https://www.xlys01.com/" rel="nofollow">修罗影视</a></li>
+<li><a href="https://ddys.pro/" rel="nofollow">低端影视</a></li>
+<li><a href="https://www.svip1.fun/" rel="nofollow">人人影视</a></li>
+<li><a href="https://www.le.com/" rel="nofollow">乐视视频</a></li>
+<li><a href="https://bttwo.vip/" rel="nofollow">两个BT</a></li>
+<li><a href="https://ygg01.com/" rel="nofollow">yigeG</a></li>
+<li><a href="https://www.ondemandchina.com/" rel="nofollow">ondemand 蓝光画质，需科学</a></li>
+<li><a href="https://gimy.cc/" rel="nofollow">gimy</a></li>
+<li><a href="https://v.warhut.cn/" rel="nofollow">WarHut</a></li>
+<li><a href="https://vidhub.me/" rel="nofollow">VidHub</a></li>
+<li><a href="http://www.hktvyb.vip/" rel="nofollow">TVB云播</a></li>
+<li><a href="https://ww25.soap2day.day/" rel="nofollow">Soap2Day 海外影视站</a></li>
+<li><a href="https://www.ntdm9.com/" rel="nofollow">NT动漫</a></li>
+<li><a href="https://www.novipnoad.net/" rel="nofollow">NO视频</a></li>
+<li><a href="https://www.llyady.com/" rel="nofollow">LLYA</a></li>
+<li><a href="https://www.libvio.vip/" rel="nofollow">LIVIBO</a></li>
+<li><a href="https://kimivod.com/" rel="nofollow">Kimivod 超清</a></li>
+<li><a href="https://www.hdmoli.pro/" rel="nofollow">Hdmoli</a></li>
+<li><a href="https://www.freeok.my/" rel="nofollow">Freeok 超清无广</a></li>
+<li><a href="https://www.freehd.vip/" rel="nofollow">FreeHD</a></li>
+<li><a href="https://ww4.fmovies.co/home/" rel="nofollow">FMOVIES</a></li>
+<li><a href="https://www.chok8.vip/" rel="nofollow">Chok影院</a></li>
+<li><a href="https://cartoonntv2.blogspot.com/" rel="nofollow">Cartoon TV 海外动漫站，无中文字幕</a></li>
+<li><a href="https://cnys.tv/" rel="nofollow">CN影院 蓝光画质，需科学</a></li>
+<li><a href="https://auete.pro/" rel="nofollow">Auete影视</a></li>
+<li><a href="https://www.agedm.org/" rel="nofollow">AGE动漫</a></li>
+<li><a href="https://94itv.app/" rel="nofollow">94影城</a></li>
+<li><a href="https://mjw21.com/" rel="nofollow">91美剧</a></li>
+<li><a href="https://www.duse1.com" rel="nofollow">91毒舌</a></li>
+<li><a href="https://www.69mj.com/" rel="nofollow">69美剧</a></li>
+<li><a href="https://www.duanju55.com/" rel="nofollow">55短剧</a></li>
+<li><a href="https://wu5mz.com/" rel="nofollow">5555电影</a></li>
+<li><a href="https://www.4kvm.tv/" rel="nofollow">4k影视 超清</a></li>
+<li><a href="https://4k-av.com/" rel="nofollow">4K</a></li>
+<li><a href="https://4khdr.cn/" rel="nofollow">4K-HDR</a></li>
+<li><a href="https://sn1817.com/" rel="nofollow">1817</a></li>
+</ul>
+<h2>TTS</h2>
+<ul>
+<li><a href="https://tts.ciallo.de/" rel="nofollow">TTS文本转语音</a></li>
+<li><a href="https://tts.neolovec.com/" rel="nofollow">语音合成</a></li>
+<li><a href="https://t.leftsite.cn/" rel="nofollow">文本转语音</a> 支持导入爱阅记</li>
+</ul>
+<h2>其他</h2>
+<ul>
+<li><a href="https://www.babawar.com" rel="nofollow">简明字帖</a></li>
+<li><a href="https://routinehub.co" rel="nofollow">RoutineHub iOS快捷指令</a></li>
+<li><a href="https://www.jsv9000.app/" rel="nofollow">JS Visualizer 9000</a></li>
+</ul></section>
+
+<section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
+
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</main>
+    <footer><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://grapehut.dpdns.org">小饅頭の部落格</a> All Rights Reserved. </div>
+<div id="footer2"><span id="filingNum"><a href="https://beian.miit.gov.cn/" target="_blank"><a href='https://icp.gov.moe/?keyword=20241189' target='_blank'>萌ICP备20241189号</a></a> • </span>
+    <span>Powered by <a href="https://github.com/Meekdai/Gmeek" target="_blank">Gmeek</a></span><br>
+    <span id="runday"></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML= now.getFullYear();
+
+if("08/31/2024"!=""){
+    var startSite=new Date("08/31/2024");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script>
+
+<script src='../assets/RonanTheme.js'></script><script src='../assets/GmeekVercount.js'><script async src='https://cdn.seline.com/seline.js' data-token='980dcab9ed188b4'></script><script　src='https://app.rybbit.io/api/script.js'　data-site-id='07c1f2ea718b'　defer></script><script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661896697976587' crossorigin='anonymous'></script>
+
+
+    <script src='https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'></script><script src='https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js'></script><script src='https://cdn.jsdelivr.net/gh/hst1189/live2d-widget/autoload.js'></script>
+
+
+
+    <script src='../assets/sakuraPlus.js'></script>
+
+
+</footer>
+</body>
+    
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'search': 'M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+//function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+    cmButton.style.display="none";
+
+    script=document.createElement("script");
+    
+    //script.setAttribute("src","https://giscus.app/client.js");
+    //script.setAttribute("data-repo","hst1189/hst1189.github.io");
+    //script.setAttribute("data-repo-id","R_kgDOMq37aA");
+    //script.setAttribute("data-category","Announcements");
+    //script.setAttribute("data-category-id","DIC_kwDOMq37aM4CkJR");
+    //script.setAttribute("data-mapping","pathname");
+    //script.setAttribute("data-strict","0");
+    //script.setAttribute("data-reactions-enabled","1");
+    //script.setAttribute("data-emit-metadata","0");
+    //script.setAttribute("data-input-position","bottom");
+    //script.setAttribute("data-theme","preferred_color_scheme");
+    //script.setAttribute("data-lang","zh-CN");
+    //script.setAttribute("data-loading","lazy");
+    //script.setAttribute("crossorigin","anonymous");
+    //script.setAttribute("async","");
+    
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","hst1189/hst1189.github.io");
+    script.setAttribute("issue-term","title");
+    
+    script.setAttribute("theme","github-light");
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    
+    cm.appendChild(script);
+    int=self.setInterval("iFrameLoading()",200);
+//}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utteranc');
+    if(utterances.length==1){
+        //if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("Comment Load OK");
+        //}
+    }
+}
+
+
+
+</script>
+<script src='../assets/ArticleTOC.js'></script><script src='../assets/lightbox.js'></script><script>document.querySelectorAll('a').forEach(anchor => {const img = anchor.querySelector('img');if (img && img.hasAttribute('data-canonical-src')) {const canonicalSrc = img.getAttribute('data-canonical-src');anchor.setAttribute('href', canonicalSrc);img.setAttribute('src', canonicalSrc);img.removeAttribute('data-canonical-src');}});</script>
+
+</html>

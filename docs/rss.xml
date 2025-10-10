@@ -1,5 +1,315 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 09 Oct 2025 13:28:28 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.35 TVBox源</title><link>https://grapehut.dpdns.org/post/35.html</link><description># 🚀 资源站列表
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Fri, 10 Oct 2025 14:59:34 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
+## 常用项目
+- [Github](https://github.com/dashboard-feed)
+- [开发资源索引 Free for Developers](https://free-for.dev/)
+- [V2EX](https://www.v2ex.com/)
+- [Linux.do](https://linux.do/)
+- [万年历](https://wannianli.tianqi.com/)
+- [ZeroSSL 免费证书](https://app.zerossl.com/dashboard) 免费账户有3次90天证书机会, 用完可以换账号或者删号重建
+- [qx规则配置](https://whatshub.top/quantumultx)
+- [Maven 仓库搜索](https://central.sonatype.com/)
+
+## 在线文档
+- [cheatsheets](https://devhints.io/)  开发工具速查表
+- [开发文档](https://devdocs.io/)  编程语言API文档
+- [Awesome-Redteam](https://github.com/Threekiii/Awesome-Redteam/blob/master/README.md)  安全工具集
+- [Java全栈知识体系](https://pdai.tech/)
+- [阿里云SDK凭据管理](https://help.aliyun.com/zh/sdk/developer-reference/v2-manage-access-credentials)
+
+### 微信
+- [微信公众平台](https://mp.weixin.qq.com/)
+- [微信官方文档](https://developers.weixin.qq.com/doc/)
+- [微信开放平台](https://open.weixin.qq.com/)
+- [微信拉取用户信息](https://wohugb.gitbooks.io/wechat/content/authorize/step_four.html)
+- [微信支付开发文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=1_1)
+- [企业微信接口签名校验](https://work.weixin.qq.com/api/jsapisign)
+- [微信公众平台接口调试](https://mp.weixin.qq.com/debug/)
+
+### 支付宝
+- [支付宝文档中心](https://opendocs.alipay.com/open/common/abilitymap)
+
+### 腾讯云
+- [腾讯云文档中心](https://cloud.tencent.com/document/product)
+
+## 搜索引擎
+- [SourceGraph 源码搜索](https://sourcegraph.com/search) 支持高级搜索语法
+- [grep.app 源码搜索](https://grep.app/) 功能较上面的简单
+- [电子书搜索](https://book.tstrs.me/)
+- [盘友圈 网盘搜索](https://panyq.com/)
+- [ASH搜剧助手](https://so.allsharehub.com/)
+
+## 娱乐资源
+- [扫雷竞技](https://www.minesweeperpro.com/)
+- [雀魂麻将👍](https://game.maj-soul.com/1/)
+- [小霸王](https://www.yikm.net/)
+- [免费字体](https://wangchujiang.com/free-font/)
+- [在线音乐🎵](http://mc.alger.fun/)
+
+## 软件服务
+- [注册姬](https://tools.565676.xyz/)
+- [爬墙工具库](https://repo.trojan-cdn.com/)
+- [星光图床](https://stardots.ink/zh)
+- [CG资源网 可下Mac版设计软件](https://www.cgzy.net/)
+
+## 在线工具
+- [美国地址生成器](https://usaddressgen.com/tax-free-address/?state=AK)
+- [城市地铁线路图](https://subway.cuvii.dev/)
+- [JSON在线编辑 支持图表展示](https://json4u.cn/editor)
+- [锤子在线工具网](https://www.toolhelper.cn/)
+- [免费公共API](https://www.freepublicapis.com/)
+- [公共DNS大全](https://toolb.cn/publicdns)
+- [Html代码效果展示](https://www.runoob.com/try/try.php?filename=trycss_navbar_vertical&amp;basepath=0)
+- [URL and website scanner](https://urlscan.io/)
+- [免费图标](https://icon-icons.com/zh/)
+- [在线文档转换](https://www.aconvert.com/cn/)  在线转换各类PDF，文档，电子书，图像，图标，视频，音频和压缩文件  
+- [墙不墙](https://downforeveryoneorjustme.com/)
+- [网络剪贴板](https://netcut.cn/)
+- [ChatGPT指令大全](https://www.explainthis.io/zh-hans/chatgpt)
+- [Linux命令搜索](https://wangchujiang.com/linux-command/)
+- [SSL证书在线检测工具](https://csr.chinassl.net/ssl-checker.html)
+- [SSL证书验证工具](https://www.dute.org/ssl-validate)
+- [httpbin](http://www.httpbin.org/)
+- [m3u8在线播放器](http://m3u8player.org/)
+- [command命令帮助](https://commandnotfound.cn/)
+- [查号吧](https://www.chahaoba.com/)
+- [查错工具网](http://24log.chacuo.net/)
+- [聚合|爱达杂货铺](https://adzhp.cn/)
+- [取色器](https://www.jyshare.com/front-end/6210/#f4329c)
+
+### IP工具
+- [查看我的IP地址](https://ip.skk.moe)
+- [IP归属地查询](https://vpng.net/)
+- [域名查IP](https://ipw.cn/ping/)
+- [DNS查询](https://ipw.cn/dns/)
+- [IP地址查询工具](https://zh-hans.ipshu.com/)
+- [IP反查域名](https://www.dnsgrep.cn/ip)
+- [IPv6连接测试](https://test-ipv6.com/index.html.zh_CN)
+- [IP查询](https://ip.ainou.moe/)
+- [端口连通检测](http://port.ping.pe/)
+
+### 临时邮箱
+- [guerrillamail](https://www.guerrillamail.com/zh/inbox)
+- [emailnator](https://www.emailnator.com/)
+- [tempmail100](https://tempmail100.com/zh-cn/)
+
+### 免费域名
+- [azote](https://www.azote.org/index.html)
+
+### regex 正则表达式
+- [正则可视化](https://regex-vis.com/)
+- [正则校验101](https://regex101.com/)
+- [正则表达式文档](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)
+
+### 下载工具
+- [下载工具](https://d.serctl.com/) 离线下载文件, 用于本地下载慢的情况
+- [视频下载](https://cobalt.tools/) 社交媒体视频下载
+- [Online Wget](https://wget.alanreed.org/) 用于在线打开木马文件
+
+### 加密解密
+- [在线RSA加密解密](https://the-x.cn/cryptography/Rsa.aspx)
+- [在线生成公钥私钥对](http://www.metools.info/code/c80.html)
+- [MD5加密解密](https://www.md5online.org/md5-encrypt.html)
+- [JS混淆还原工具](https://tool.lu/js)
+- [JS混淆解码](https://lelinhtinh.github.io/de4js/)
+- [JavaScript Deobfuscator](https://deobfuscate.io/)  A simple but powerful deobfuscator to remove common JavaScript obfuscation techniques
+
+### Chrome&amp;Edge
+- [Crx4Chrome](https://www.crx4chrome.com/) 可下载插件最新版本
+- [Chrome 插件下载](https://crxdl.com/) 插件版本不一定是最新的 
+
+### 在线订阅转换工具
+- [v1.mk](https://suburl.v1.mk/)
+
+### AI工具
+- [3MinTop](https://3min.top)
+- [AI Studio](https://aistudio.google.com/)
+- [Abacus](https://apps.abacus.ai/chatllm)
+- [ChatGPT](https://chatgpt.com/)
+- [Cici](https://www.cici.com/chat/)
+- [Claude](https://claude.ai/)
+- [Coze](https://www.coze.com/space)
+- [DEVV_](https://devv.ai/)
+- [DeepSeek](https://chat.deepseek.com/)
+- [Dify](https://cloud.dify.ai/apps)
+- [DuckDuckGo](https://duck.ai)
+- [Felo](https://felo.ai/)
+- [Flowith](https://www.flowith.io/)
+- [Gemini](https://gemini.google.com/)
+- [Genspark](https://www.genspark.ai/)
+- [GitHub Copilot](https://github.com/copilot)
+- [Grok](https://grok.com)
+- [Groq](https://chat.groq.com/)
+- [Hika](https://hika.fyi/)
+- [HuggingChat](https://huggingface.co/chat/)
+- [Kimi](https://kimi.moonshot.cn/)
+- [Lambda Chat](https://lambda.chat/)
+- [LeChat](https://chat.mistral.ai/chat)
+- [Monica](https://monica.im/home/)
+- [NotebookLM](https://notebooklm.google.com/)
+- [Perplexity](https://www.perplexity.ai/)
+- [Poe](https://poe.com)
+- [QwenLM](https://qwenlm.ai/)
+- [SiliconFlow](https://cloud.siliconflow.cn/playground/chat)
+- [SparkDesk](https://xinghuo.xfyun.cn/desk)
+- [ThinkAny](https://thinkany.ai/)
+- [WPS灵犀](https://copilot.wps.cn/)
+- [You](https://you.com/)
+- [bolt](https://bolt.new/)
+- [万知](https://www.wanzhi.com/)
+- [商量](https://chat.sensetime.com/wb/chat)
+- [天工AI](https://www.tiangong.cn/)
+- [小艺](https://xiaoyi.huawei.com/chat/)
+- [文心一言](https://yiyan.baidu.com/)
+- [智谱清言](https://chatglm.cn/main/alltoolsdetail)
+- [海螺](https://hailuoai.com/)
+- [百小应](https://ying.baichuan-ai.com/chat)
+- [百度AI搜索](https://chat.baidu.com/)
+- [知乎直答](https://zhida.zhihu.com/)
+- [秘塔AI搜索](https://metaso.cn/)
+- [纳米AI](https://bot.n.cn/)
+- [纳米AI搜索](https://www.n.cn/)
+- [腾讯元宝](https://yuanbao.tencent.com/chat)
+- [豆包](https://www.doubao.com/chat/)
+- [跃问](https://yuewen.cn/chats/new)
+- [通义千问](https://tongyi.aliyun.com/qianwen/)
+- [Le Chat - Mistral AI](https://chat.mistral.ai/chat)
+- [Grok](https://grok.dairoot.cn/admin)
+
+## TVbox接口
+  - [饭太硬](https://www.饭太硬.com/)
+  - [肥猫](https://肥猫.com/)
+  - [酷酷琪](https://kukuqi666.github.io/TVBoxOS-Mobile/website/)
+  - [余生](https://ysys.lic10.cn/)
+  - [老猫迷](https://d.n13.club/)
+  - [FongMI](https://dao.fongmi.eu.org/)
+  - [鸭先知](https://www.yxzhi.com/9257.html)
+  - [硬核指南](https://yinghe.app/yingshicang-jiekou/)
+  - [聚玩盒子](https://www.juwanhezi.com/other/jsonlist)
+  - [Gao](https://github.com/gaotianliuyun/gao)
+  - [进恩](https://jinenyy.vip/app/tvbox/)
+  - [月光宝盒](http://ygbhbox.3vfree.club/ygbh/index.html)
+  - [TvBox接口源](https://www.iyouhun.com/tv/)
+  - [影视](https://xhdwc.tk/)
+  - [影视备用](http://6080.eu.org/)
+
+## 影视资源
+  - [黑夜影院](https://darkvod.cc/)
+  - [鲨鱼TV](https://www.danmutv.com/)
+  - [魔法解析 智能解析](https://wantwatch.me/)
+  - [饺子影视](https://www.jiaozi.me/)
+  - [饭团影视](https://www.fantuan.vip/)
+  - [飞流视频](https://www.flixflop.com/)
+  - [音范丝](https://www.yinfans.me/)
+  - [韩剧看看 超清](https://www.hanjukankan.com/)
+  - [青蛙电影网](https://qingwa.org/)
+  - [金牌影视](https://www.6umkq9b.com/)
+  - [趣动漫 超清](https://www.qdm8.com)
+  - [蛋蛋赞影院](https://www.dandanzan.club/)
+  - [蛋蛋兔](https://www.dandantu.cc/)
+  - [蘑菇影视](https://www.5o5k.com/)
+  - [聚合搜索](https://wdoo.net/)
+  - [聚合影视](https://juheyingshi.com/)
+  - [美益达影视](https://www.meiyd12.com/)
+  - [美柏影视](https://www.mp4be.com/)
+  - [网飞猫](https://www.ncat1.app/)
+  - [统一影视](https://www.tyys2.com/)
+  - [素白白影视 超清无广](https://www.subaibaiys.com/)
+  - [简单TV](https://jiandantv.com/)
+  - [第一动漫网](https://www.1dm2.cc/)
+  - [短剧网](https://www.duanju2.com/)
+  - [真狼影视](https://www.zhenlang.cc/)
+  - [看看屋](https://www.kankanwu.cc/)
+  - [看看屋](https://kkw345.com/)
+  - [皮皮影视](https://www.pipi15.tv/)
+  - [番茄影视](https://www.yirenmeng.com/)
+  - [电影港](https://www.dygang.cc/)
+  - [电影先生 高清](https://dianyi.ng/)
+  - [独播库 超清无广](https://www.duboku.tv/)
+  - [狂人](https://www.kpkuang.one/)
+  - [爱迪影视](https://adys.tv/)
+  - [爱看机器人](https://v.aikanbot.com/)
+  - [爱看影视](https://www.akys.info/)
+  - [爱电影](https://www.gs4x7nq4.com/)
+  - [爱影视](https://www.wiys.lol/)
+  - [爱壹帆](https://www.iyf.lv/)
+  - [火车太堵](https://www.tdgo.shop/)
+  - [海纳TV](https://www.hainatv.net/)
+  - [泰剧网](https://v.taijuwang.com/)
+  - [注视影视](https://gaze.run/)
+  - [泥视频 超清](https://www.nivod.vip/)
+  - [泡泡视频](https://www.paopaoshipin.com/)
+  - [枫林网](https://imaple8.co/)
+  - [极光影视](https://hellociqryx6e.com/)
+  - [来看点播 超清](https://lkvod.me/)
+  - [新剧坊](https://www.xinjuc.com/)
+  - [搜片](https://soupian.one/)
+  - [快点播](https://www.quickvod.cc/)
+  - [布谷TV](https://www.bugutv.vip/)
+  - [子子影视](https://www.ziziys.com/)
+  - [奈飞工厂](https://www.netflixgc.com/)
+  - [太乙电影](https://ww88.taieea.sbs/)
+  - [大米星球](https://www.dmxq.fun/)
+  - [大师兄影视](https://dsxys.pro/)
+  - [多多视频](https://www.duoduotv.cc)
+  - [在线之家](https://www.zxzjhd.com/)
+  - [咕咕番](https://www.gugu3.com/)
+  - [可可影视](https://www.kkys03.com/)
+  - [可乐影视](https://www.klyingshi2.com/)
+  - [厂长资源 超清](https://www.czzy77.com/)
+  - [华人直播 蓝光画质，需科学](https://huaren.live/)
+  - [午夜剧场](https://wyjc.life/)
+  - [劇迷](https://jumi.tv/)
+  - [剧看看](https://www.jukankan.tv/)
+  - [剧爷爷](https://www.juyeye.cc/)
+  - [八号影院](https://www.bahaotv.com/)
+  - [修罗影视](https://www.xlys01.com/)
+  - [低端影视](https://ddys.pro/)
+  - [人人影视](https://www.svip1.fun/)
+  - [乐视视频](https://www.le.com/)
+  - [两个BT](https://bttwo.vip/)
+  - [yigeG](https://ygg01.com/)
+  - [ondemand 蓝光画质，需科学](https://www.ondemandchina.com/)
+  - [gimy](https://gimy.cc/)
+  - [WarHut](https://v.warhut.cn/)
+  - [VidHub](https://vidhub.me/)
+  - [TVB云播](http://www.hktvyb.vip/)
+  - [Soap2Day 海外影视站](https://ww25.soap2day.day/)
+  - [NT动漫](https://www.ntdm9.com/)
+  - [NO视频](https://www.novipnoad.net/)
+  - [LLYA](https://www.llyady.com/)
+  - [LIVIBO](https://www.libvio.vip/)
+  - [Kimivod 超清](https://kimivod.com/)
+  - [Hdmoli](https://www.hdmoli.pro/)
+  - [Freeok 超清无广](https://www.freeok.my/)
+  - [FreeHD](https://www.freehd.vip/)
+  - [FMOVIES](https://ww4.fmovies.co/home/)
+  - [Chok影院](https://www.chok8.vip/)
+  - [Cartoon TV 海外动漫站，无中文字幕](https://cartoonntv2.blogspot.com/)
+  - [CN影院 蓝光画质，需科学](https://cnys.tv/)
+  - [Auete影视](https://auete.pro/)
+  - [AGE动漫](https://www.agedm.org/)
+  - [94影城](https://94itv.app/)
+  - [91美剧](https://mjw21.com/)
+  - [91毒舌](https://www.duse1.com)
+  - [69美剧](https://www.69mj.com/)
+  - [55短剧](https://www.duanju55.com/)
+  - [5555电影](https://wu5mz.com/)
+  - [4k影视 超清](https://www.4kvm.tv/)
+  - [4K](https://4k-av.com/)
+  - [4K-HDR](https://4khdr.cn/)
+  - [1817](https://sn1817.com/)
+
+## TTS
+  - [TTS文本转语音](https://tts.ciallo.de/)
+  - [语音合成](https://tts.neolovec.com/)
+  - [文本转语音](https://t.leftsite.cn/) 支持导入爱阅记
+  
+## 其他
+  - [简明字帖](https://www.babawar.com)
+  - [RoutineHub iOS快捷指令](https://routinehub.co)
+  - [JS Visualizer 9000](https://www.jsv9000.app/)
+。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/36.html</guid><pubDate>Fri, 10 Oct 2025 14:57:18 +0000</pubDate></item><item><title>Vol.35 TVBox源</title><link>https://grapehut.dpdns.org/post/35.html</link><description># 🚀 资源站列表
 https://www.yszzq.com/ziyuan/
 
 
