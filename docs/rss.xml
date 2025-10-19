@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Fri, 10 Oct 2025 14:59:34 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 19 Oct 2025 12:43:30 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
 ## 常用项目
 - [Github](https://github.com/dashboard-feed)
 - [开发资源索引 Free for Developers](https://free-for.dev/)
@@ -573,6 +573,7 @@ sudo docker run -d -p 5678:5678 --name n8n -v ./n8n_data:/home/node/.n8n -e N8N_
 
 3. [青龙面板](https://github.com/whyour/qinglong)
 ```
+mkdir ./qinglong_data
 sudo docker run -d -p 5700:5700 --name qinglong -v ./qinglong_data:/ql/data whyour/qinglong:latest
 ```
 
@@ -587,6 +588,12 @@ sudo docker run -d -p 8008:8008 --name cloud-saver -v ./cloudsaver_data:/app/dat
 ```
 [{'name':'115网盘资源分享频道','id':'Lsp115'},{'id':'alyp_1','name':'网盘(高品质)影视'},{'id':'shareAliyun','name':'阿里云盘发布频道'},{'id':'Quark_Movies','name':'夸克云盘综合资源'},{'id':'Aliyun_4K_Movies','name':'阿里云盘4K影视'},{'id':'zaihuayun','name':'阿里云盘资源'},{'id':'PanjClub','name':'盘酱酱Club'},{'id':'tianyirigeng','name':'天翼云盘资源频道'},{'id':'xx123pan','name':'123云盘资源频道'},{'id':'zyzhpd123','name':'123云盘综合频道'},{'id':'cloudtianyi','name':'天翼云盘资源发布频道'},{'id':'tyypzhpd','name':'天翼云盘综合频道'},{'id':'Oscar_4Kmovies','name':'奥斯卡4K蓝光（精品）影视磁力站'},{'id':'ydypzyfx','name':'移动云盘资源分享'},{'id':'bdwpzhpd','name':'百度网盘综合频道'},{'id':'Q66share','name':'阿里云盘吧'},{'id':'BaiduCloudDisk','name':'百度网盘资源分享'},{'id':'yunpan139','name':'网盘资源收藏（移动云盘）'},{'id':'yunpanuc','name':'网盘资源收藏（UC网盘）'},{'id':'qixingzhenren','name':'云盘资源发布频道'},{'id':'duanjucabian','name':'热门短剧/擦边短剧/精选短剧/在线预览'},{'id':'yoyokuakeduanju','name':'YOYO资源|夸克|短剧'},{'id':'Channel_Shares_115','name':'Shares_115_Channel'},{'id':'yeqingjie_GJG666','name':'爷青回动画分享'},{'id':'gotopan','name':'迅雷云盘'},{'id':'oneonefivewpfx','name':'影巢'},{'id':'zhenyingsg','name':'帧影时光'},{'id':'movielover8888_TV','name':'【热门网剧在线】'},{'id':'CBduanju','name':'全网擦边｜电影｜资源分享'},{'id':'ucquark','name':'UC夸克百度迅雷资源分享'},{'id':'weichengduanju666','name':'短剧大全资源'},{'id':'yingxiangkj','name':'影享空间'},{'name':'夸克网盘资源收藏夹','id':'QuarkFree'},{'name':'综艺网盘资源频道','id':'TG654TG'},{'name':'115影视资源分享频道','id':'QukanMovie'},{'name':'夸克丶百度丶迅雷丶4K网盘','id':'WFYSFX02'},{'name':'网盘资源收藏','id':'naclyunpan'},{'name':'综艺网盘资源频道','id':'TG654TG'},{'name':'网盘资源收藏','id':'naclyunpan'},{'name':'夸克丶百度丶迅雷丶4K网盘','id':'WFYSFX02'},{'name':'115影视资源分享频道','id':'QukanMovie'}]
 ```
+
+5. [DeepLX](https://github.com/OwO-Network/DeepLX)
+```
+sudo docker run -d -p 1188:1188 missuo/deeplx:latest
+```
+
 
 。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/32.html</guid><pubDate>Sun, 21 Sep 2025 09:20:37 +0000</pubDate></item><item><title>Vol.31 科学上网（VPN客户端）</title><link>https://grapehut.dpdns.org/post/31.html</link><description># 翻墙回国
 - quick-fox
