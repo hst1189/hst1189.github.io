@@ -173,3 +173,8 @@ sudo docker run -d --restart=always -p 1188:1188 --name deeplx missuo/deeplx:lat
 sudo docker run -d --restart=always -p 3001:3001 --name uptime-kuma -v uptime-kuma:/app/data louislam/uptime-kuma:latest
 ```
 
+7. [excalidraw](https://github.com/excalidraw/excalidraw)
+```
+sudo docker run -d --restart=always -p 5000:5000 --name excalidraw excalidraw/excalidraw:latest
+```
+

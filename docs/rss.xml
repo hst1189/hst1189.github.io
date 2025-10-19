@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 19 Oct 2025 12:50:21 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 19 Oct 2025 13:36:02 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
 ## 常用项目
 - [Github](https://github.com/dashboard-feed)
 - [开发资源索引 Free for Developers](https://free-for.dev/)
@@ -597,6 +597,11 @@ sudo docker run -d --restart=always -p 1188:1188 --name deeplx missuo/deeplx:lat
 6. [uptime-kuma](https://github.com/louislam/uptime-kuma)
 ```
 sudo docker run -d --restart=always -p 3001:3001 --name uptime-kuma -v uptime-kuma:/app/data louislam/uptime-kuma:latest
+```
+
+7. [excalidraw](https://github.com/excalidraw/excalidraw)
+```
+sudo docker run -d --restart=always -p 5000:5000 --name excalidraw excalidraw/excalidraw:latest
 ```
 
 。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/32.html</guid><pubDate>Sun, 21 Sep 2025 09:20:37 +0000</pubDate></item><item><title>Vol.31 科学上网（VPN客户端）</title><link>https://grapehut.dpdns.org/post/31.html</link><description># 翻墙回国
