@@ -1,5 +1,77 @@
 # NodeJS
 
+## nodemon (https://www.npmjs.com/package/nodemon)
+```javascript
+npm install nodemon -g
+nodemon xx.js
+```
+
+## express (https://www.npmjs.com/package/express)
+```javascript
+npm install express
+```
+
+```javascript
+const data = require('./data.json');
+const express = require("express");
+const app = express();
+
+app.get('/', (req, res) => {
+    let html = "";
+    data.map(item => {
+        html += `<h1> ${item.name} </h1><img src='${item.message}' />`;
+    });
+    res.send(html);
+});
+
+app.get('/:id', (req, res) => {
+    let html = "";
+    let id = req.params.id;
+    let result = data.find(item => item.id == id);
+    if (result) {
+        html += `<h1> ${result.name} </h1><img src='${result.message}' />`;
+    } else {
+        html = `<h1>404 Not Found  </h1>`;
+    }
+    res.send(html);
+});
+
+app.listen(80, () => {
+    console.log('Starting on 80')
+});
+```
+
+```json
+[
+    {
+        "id": 1,
+        "name": "weimaraner",
+        "message": "https://images.dog.ceo/breeds/weimaraner/n02092339_4214.jpg",
+        "status": "success"
+    },
+    {
+        "id": 2,
+        "name": "dane-great",
+        "message": "https://images.dog.ceo/breeds/dane-great/n02109047_5936.jpg",
+        "status": "success"
+    },
+    {
+        "id": 3,
+        "name": "pyrenees",
+        "message": "https://images.dog.ceo/breeds/pyrenees/n02111500_4731.jpg",
+        "status": "success"
+    }
+]
+```
+
+
+
+
+## express-generator ()
+```
+npm i express-generator -g
+```
+
 
 ## fs.createReadStreamの基本的な使い方
 ```javascript
