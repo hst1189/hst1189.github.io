@@ -2,30 +2,24 @@
 
 
 ## fs.createReadStreamの基本的な使い方
-fs.createReadStream(path)   ファイルの指定: 読み取るファイルをパスで指定します。
+```
+const fs = require('fs');
+const path = require('path');
+const rs = fs.createReadStream(path.resolve(__dirname, 'test.txt'));
+rs.on('data', chunk => {             // データチャンク（Bufferオブジェクト）
+    console.log(chunk.toString());
+});
+```
+
 イベント処理:
 ```
 on('data', ...): ファイルからデータが読み込まれるたびに発火します。
 on('end', ...): ファイルの読み込みが完了したときに発火します。
 on('error', ...): 読み取り中にエラーが発生した場合に発火します。 
-```
 
-```javascript
-const fs = require('fs');
-const path = require('path');
-const rs= fs.createReadStream(path.resolve(__dirname, 'test.txt'));
-
-rs.on('data', (chunk) => {
-  console.log(`読み込まれたデータ: ${chunk}`); // データチャンク（Bufferオブジェクト）の処理
-});
-
-rs.on('end', () => {
-  console.log('ファイル読み込みが完了しました。');
-});
-
-rs.on('error', (err) => {
-  console.error('エラーが発生しました:', err);
-});
+rs.on('data', (chunk) => { console.log(`読み込まれたデータ: ${chunk}`); });
+rs.on('end', ()           => { console.log('ファイル読み込みが完了しました。'); });
+rs.on('error', (err)     => { console.error('エラーが発生しました:', err);});
 ```
 
 ## fs.createWriteStreamの基本的な使い方

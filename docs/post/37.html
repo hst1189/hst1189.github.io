@@ -97,33 +97,28 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-11 05:26</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-11 05:38</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>NodeJS</h1>
 <h2>fs.createReadStreamの基本的な使い方</h2>
-<p>fs.createReadStream(path)   ファイルの指定: 読み取るファイルをパスで指定します。<br>
-イベント処理:</p>
+<pre class="notranslate"><code class="notranslate">const fs = require('fs');
+const path = require('path');
+const rs = fs.createReadStream(path.resolve(__dirname, 'test.txt'));
+rs.on('data', chunk =&gt; {             // データチャンク（Bufferオブジェクト）
+    console.log(chunk.toString());
+});
+</code></pre>
+<p>イベント処理:</p>
 <pre class="notranslate"><code class="notranslate">on('data', ...): ファイルからデータが読み込まれるたびに発火します。
 on('end', ...): ファイルの読み込みが完了したときに発火します。
 on('error', ...): 読み取り中にエラーが発生した場合に発火します。 
+
+rs.on('data', (chunk) =&gt; { console.log(`読み込まれたデータ: ${chunk}`); });
+rs.on('end', ()           =&gt; { console.log('ファイル読み込みが完了しました。'); });
+rs.on('error', (err)     =&gt; { console.error('エラーが発生しました:', err);});
 </code></pre>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">fs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'fs'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-s1">path</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'path'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-s1">rs</span><span class="pl-c1">=</span> <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createReadStream</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">.</span><span class="pl-en">resolve</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span><span class="pl-kos">,</span> <span class="pl-s">'test.txt'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-
-<span class="pl-s1">rs</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'data'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">chunk</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`読み込まれたデータ: <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">chunk</span><span class="pl-kos">}</span></span>`</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// データチャンク（Bufferオブジェクト）の処理</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-
-<span class="pl-s1">rs</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'end'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'ファイル読み込みが完了しました。'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-
-<span class="pl-s1">rs</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'error'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">'エラーが発生しました:'</span><span class="pl-kos">,</span> <span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h2>fs.createWriteStreamの基本的な使い方</h2>
 <p>fs.createWriteStream(path, options)  のように使用します。<br>
 path: 書き込み先のファイルパスを指定します。<br>
