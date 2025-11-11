@@ -2,7 +2,7 @@
 
 
 ## fs.createReadStreamの基本的な使い方
-```
+```javascript
 const fs = require('fs');
 const path = require('path');
 const rs = fs.createReadStream(path.resolve(__dirname, 'test.txt'));
@@ -12,7 +12,7 @@ rs.on('data', chunk => {             // データチャンク（Bufferオブジ�
 ```
 
 イベント処理:
-```
+```javascript
 on('data', ...): ファイルからデータが読み込まれるたびに発火します。
 on('end', ...): ファイルの読み込みが完了したときに発火します。
 on('error', ...): 読み取り中にエラーが発生した場合に発火します。 
@@ -49,7 +49,7 @@ ws.on('error', (err) => {
 ```
 
 ## 复制文件
-```
+```javascript
 const rs = fs.createReadStream('./test.txt');
 const ws = fs.createWriteStream('./test2.txt');
 
@@ -57,7 +57,7 @@ rs.on('data', chunk => {
     ws.write(chunk);
 });
 ```
-```
+```javascript
 fs.copyFile("test.txt", "test3.txt", err => {
     if (err) { console.log(err); }
 });
