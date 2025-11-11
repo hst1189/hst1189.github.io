@@ -12,12 +12,10 @@ on('error', ...): 読み取り中にエラーが発生した場合に発火し�
 
 ```javascript
 const fs = require('fs');
-
-const rs= fs.createReadStream('path/to/your/file.txt');
+const rs= fs.createReadStream('./test.txt');
 
 rs.on('data', (chunk) => {
-  // データチャンク（Bufferオブジェクト）の処理
-  console.log(`読み込まれたデータ: ${chunk}`);
+  console.log(`読み込まれたデータ: ${chunk}`); // データチャンク（Bufferオブジェクト）の処理
 });
 
 rs.on('end', () => {
@@ -36,13 +34,12 @@ options: 書き込み方法をカスタマイズするためのオプション�
 
 ```javascript
 const fs = require('fs');
-
-// ファイルに書き込むためのストリームを作成
-const ws= fs.createWriteStream('output.txt');
+const ws= fs.createWriteStream('./test.txt');
 
 // データチャンクをストリームに書き込む
 ws.write('これは最初の部分です。\n');
 ws.write('これは2番目の部分です。\n');
+ws.end(); // ストリームを閉じる（これがないとfinishイベントが発火しない場合があります）
 
 // 書き込みが完了したときにイベントを発火
 ws.on('finish', () => {
@@ -53,7 +50,14 @@ ws.on('finish', () => {
 ws.on('error', (err) => {
   console.error('書き込み中にエラーが発生しました:', err);
 });
+```
 
-// ストリームを閉じる（これがないとfinishイベントが発火しない場合があります）
-ws.end();
+## 复制文件
+```
+const rs = fs.createReadStream('./test.txt');
+const ws = fs.createWriteStream('./test2.txt');
+
+rs.on('data', chunk => {
+    ws.write(chunk);
+});
 ```
