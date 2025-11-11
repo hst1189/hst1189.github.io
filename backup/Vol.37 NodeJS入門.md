@@ -61,3 +61,6 @@ rs.on('data', chunk => {
     ws.write(chunk);
 });
 ```
+```
+fs.copyFile("file1.txt","file2.txt");
+```
