@@ -12,7 +12,8 @@ on('error', ...): 読み取り中にエラーが発生した場合に発火し�
 
 ```javascript
 const fs = require('fs');
-const rs= fs.createReadStream('./test.txt');
+const path = require('path');
+const rs= fs.createReadStream(path.resolve(__dirname, 'test.txt'));
 
 rs.on('data', (chunk) => {
   console.log(`読み込まれたデータ: ${chunk}`); // データチャンク（Bufferオブジェクト）の処理
@@ -34,7 +35,8 @@ options: 書き込み方法をカスタマイズするためのオプション�
 
 ```javascript
 const fs = require('fs');
-const ws= fs.createWriteStream('./test.txt');
+const path = require('path');
+const ws= fs.createWriteStream(path.resolve(__dirname, 'test.txt'));
 
 // データチャンクをストリームに書き込む
 ws.write('これは最初の部分です。\n');
