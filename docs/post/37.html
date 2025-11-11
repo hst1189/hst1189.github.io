@@ -97,13 +97,13 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-11 03:57</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-11 03:59</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>NodeJS</h1>
 <h2>createReadStreamの基本的な使い方</h2>
-<p>ファイルの指定: 読み取るファイルをパスで指定します。<br>
+<p>ファイルの指定: fs.createReadStream(path) 読み取るファイルをパスで指定します。<br>
 イベント処理:</p>
 <pre class="notranslate"><code class="notranslate">on('data', ...): ファイルからデータが読み込まれるたびに発火します。
 on('end', ...): ファイルの読み込みが完了したときに発火します。
@@ -132,24 +132,24 @@ options: 書き込み方法をカスタマイズするためのオプション�
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">fs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'fs'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
 <span class="pl-c">// ファイルに書き込むためのストリームを作成</span>
-<span class="pl-k">const</span> <span class="pl-s1">writer</span> <span class="pl-c1">=</span> <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createWriteStream</span><span class="pl-kos">(</span><span class="pl-s">'output.txt'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">ws</span><span class="pl-c1">=</span> <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createWriteStream</span><span class="pl-kos">(</span><span class="pl-s">'output.txt'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
 <span class="pl-c">// データチャンクをストリームに書き込む</span>
-<span class="pl-s1">writer</span><span class="pl-kos">.</span><span class="pl-en">write</span><span class="pl-kos">(</span><span class="pl-s">'これは最初の部分です。\n'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-s1">writer</span><span class="pl-kos">.</span><span class="pl-en">write</span><span class="pl-kos">(</span><span class="pl-s">'これは2番目の部分です。\n'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">ws</span><span class="pl-kos">.</span><span class="pl-en">write</span><span class="pl-kos">(</span><span class="pl-s">'これは最初の部分です。\n'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">ws</span><span class="pl-kos">.</span><span class="pl-en">write</span><span class="pl-kos">(</span><span class="pl-s">'これは2番目の部分です。\n'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
 <span class="pl-c">// 書き込みが完了したときにイベントを発火</span>
-<span class="pl-s1">writer</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'finish'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+<span class="pl-s1">ws</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'finish'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
   <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'ファイルへの書き込みが完了しました。'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
 <span class="pl-c">// エラーが発生した場合にイベントを発火</span>
-<span class="pl-s1">writer</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'error'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+<span class="pl-s1">ws</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'error'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
   <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">'書き込み中にエラーが発生しました:'</span><span class="pl-kos">,</span> <span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
 <span class="pl-c">// ストリームを閉じる（これがないとfinishイベントが発火しない場合があります）</span>
-<span class="pl-s1">writer</span><span class="pl-kos">.</span><span class="pl-en">end</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div></section>
+<span class="pl-s1">ws</span><span class="pl-kos">.</span><span class="pl-en">end</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
 

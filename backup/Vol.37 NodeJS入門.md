@@ -2,7 +2,7 @@
 
 
 ## createReadStreamの基本的な使い方
-ファイルの指定: 読み取るファイルをパスで指定します。
+ファイルの指定: fs.createReadStream(path) 読み取るファイルをパスで指定します。
 イベント処理:
 ```
 on('data', ...): ファイルからデータが読み込まれるたびに発火します。
@@ -38,22 +38,22 @@ options: 書き込み方法をカスタマイズするためのオプション�
 const fs = require('fs');
 
 // ファイルに書き込むためのストリームを作成
-const writer = fs.createWriteStream('output.txt');
+const ws= fs.createWriteStream('output.txt');
 
 // データチャンクをストリームに書き込む
-writer.write('これは最初の部分です。\n');
-writer.write('これは2番目の部分です。\n');
+ws.write('これは最初の部分です。\n');
+ws.write('これは2番目の部分です。\n');
 
 // 書き込みが完了したときにイベントを発火
-writer.on('finish', () => {
+ws.on('finish', () => {
   console.log('ファイルへの書き込みが完了しました。');
 });
 
 // エラーが発生した場合にイベントを発火
-writer.on('error', (err) => {
+ws.on('error', (err) => {
   console.error('書き込み中にエラーが発生しました:', err);
 });
 
 // ストリームを閉じる（これがないとfinishイベントが発火しない場合があります）
-writer.end();
+ws.end();
 ```
