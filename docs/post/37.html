@@ -97,7 +97,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-11 05:16</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-11 05:26</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -154,7 +154,9 @@ rs.on('data', chunk =&gt; {
     ws.write(chunk);
 });
 </code></pre>
-<pre class="notranslate"><code class="notranslate">fs.copyFile("file1.txt","file2.txt");
+<pre class="notranslate"><code class="notranslate">fs.copyFile("test.txt", "test3.txt", err =&gt; {
+    if (err) { console.log(err); }
+});
 </code></pre></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>

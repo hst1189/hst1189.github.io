@@ -64,5 +64,7 @@ rs.on('data', chunk => {
 });
 ```
 ```
-fs.copyFile("file1.txt","file2.txt");
+fs.copyFile("test.txt", "test3.txt", err => {
+    if (err) { console.log(err); }
+});
 ```
