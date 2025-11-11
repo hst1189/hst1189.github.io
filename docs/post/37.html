@@ -97,13 +97,13 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-11 03:59</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-11 04:00</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>NodeJS</h1>
 <h2>createReadStreamの基本的な使い方</h2>
-<p>ファイルの指定: fs.createReadStream(path) 読み取るファイルをパスで指定します。<br>
+<p>fs.createReadStream(path)   ファイルの指定: 読み取るファイルをパスで指定します。<br>
 イベント処理:</p>
 <pre class="notranslate"><code class="notranslate">on('data', ...): ファイルからデータが読み込まれるたびに発火します。
 on('end', ...): ファイルの読み込みが完了したときに発火します。
@@ -126,7 +126,7 @@ on('error', ...): 読み取り中にエラーが発生した場合に発火し�
   <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">'エラーが発生しました:'</span><span class="pl-kos">,</span> <span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h2>createWriteStreamの基本的な使い方</h2>
-<p>fs.createWriteStream(path, options)のように使用します。<br>
+<p>fs.createWriteStream(path, options)  のように使用します。<br>
 path: 書き込み先のファイルパスを指定します。<br>
 options: 書き込み方法をカスタマイズするためのオプションを指定します（例: エンコーディング、モードなど）。</p>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">fs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'fs'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>

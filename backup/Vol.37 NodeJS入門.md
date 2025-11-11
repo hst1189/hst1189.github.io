@@ -2,7 +2,7 @@
 
 
 ## createReadStreamの基本的な使い方
-ファイルの指定: fs.createReadStream(path) 読み取るファイルをパスで指定します。
+fs.createReadStream(path)   ファイルの指定: 読み取るファイルをパスで指定します。
 イベント処理:
 ```
 on('data', ...): ファイルからデータが読み込まれるたびに発火します。
@@ -30,7 +30,7 @@ rs.on('error', (err) => {
 ```
 
 ## createWriteStreamの基本的な使い方
-fs.createWriteStream(path, options)のように使用します。 
+fs.createWriteStream(path, options)  のように使用します。 
 path: 書き込み先のファイルパスを指定します。
 options: 書き込み方法をカスタマイズするためのオプションを指定します（例: エンコーディング、モードなど）。
 
