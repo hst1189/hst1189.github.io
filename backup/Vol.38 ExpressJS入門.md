@@ -1,3 +1,4 @@
+### 定型写法
 ```javascript
 const express = require('express')
 const app = express()
