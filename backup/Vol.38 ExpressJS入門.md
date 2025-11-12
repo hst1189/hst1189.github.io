@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
 app.get('/:id', (req, res) => {
     let id = req.params.id;
     let html = ""
-    let item = data.find(item => { item.id == id });
+    let item = data.find( (item) => { item.id == id });
     if (item) {
         html += `<li>${item.name}</>`
         html += `<img src=${item.message}></img>`

@@ -97,7 +97,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-12 12:05</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-12 12:10</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -152,7 +152,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-k">let</span> <span class="pl-s1">id</span> <span class="pl-c1">=</span> <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">;</span>
     <span class="pl-k">let</span> <span class="pl-s1">html</span> <span class="pl-c1">=</span> <span class="pl-s">""</span>
-    <span class="pl-k">let</span> <span class="pl-s1">item</span> <span class="pl-c1">=</span> <span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-en">find</span><span class="pl-kos">(</span><span class="pl-s1">item</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span> <span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">id</span> <span class="pl-c1">==</span> <span class="pl-s1">id</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">let</span> <span class="pl-s1">item</span> <span class="pl-c1">=</span> <span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-en">find</span><span class="pl-kos">(</span> <span class="pl-kos">(</span><span class="pl-s1">item</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span> <span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">id</span> <span class="pl-c1">==</span> <span class="pl-s1">id</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
     <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">item</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
         <span class="pl-s1">html</span> <span class="pl-c1">+=</span> <span class="pl-s">`&lt;li&gt;<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">name</span><span class="pl-kos">}</span></span>&lt;/&gt;`</span>
         <span class="pl-s1">html</span> <span class="pl-c1">+=</span> <span class="pl-s">`&lt;img src=<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">}</span></span>&gt;&lt;/img&gt;`</span>
