@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:id', (req, res) => {
-  let id =req.parms.id
+  let id =req.params.id;
   res. send('Hello World!')
 })
 
