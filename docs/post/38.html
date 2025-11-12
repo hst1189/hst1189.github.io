@@ -97,13 +97,12 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-12 12:51</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-12 13:43</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h3>定型写法</h3>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./data.json'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-c1">PORT</span> <span class="pl-c1">=</span> <span class="pl-c1">80</span><span class="pl-kos">;</span>
 
@@ -114,21 +113,36 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">PORT</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`server is starting on <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">PORT</span><span class="pl-kos">}</span></span> `</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
-<h3>设置Response Header</h3>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+<h3>全局中间件（例：写日志）</h3>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">fs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'fs'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">path</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'path'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
+<span class="pl-k">function</span> <span class="pl-en">accessLog</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">,</span> <span class="pl-s1">next</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-k">let</span> <span class="pl-kos">{</span> url<span class="pl-kos">,</span> ip <span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-s1">req</span><span class="pl-kos">;</span>  　　　　 <span class="pl-c">//★解构 赋值</span>
+    <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">appendFileSync</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">.</span><span class="pl-en">resolve</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span><span class="pl-kos">,</span> <span class="pl-s">'./access.log'</span><span class="pl-kos">)</span><span class="pl-kos">,</span> <span class="pl-s">`<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">url</span><span class="pl-kos">}</span></span> <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">ip</span><span class="pl-kos">}</span></span>\r\n`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-s1">next</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>　　　 　　　　　　<span class="pl-c">//★全局中间件处理完之后，再调用路由里的方法 </span>
+<span class="pl-kos">}</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">accessLog</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+
+### <span class="pl-en">设置Response</span> <span class="pl-v">Header</span>
+<span class="pl-s">``</span>`<span class="pl-s1">javascript</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+     
+    <span class="pl-c">// 原生</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-c1">statusCode</span> <span class="pl-c1">=</span> <span class="pl-c1">200</span><span class="pl-kos">;</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-c1">statusMessage</span> <span class="pl-c1">=</span> <span class="pl-s">"love u "</span><span class="pl-kos">;</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">setHeader</span><span class="pl-kos">(</span><span class="pl-s">'xxx-code'</span><span class="pl-kos">,</span> <span class="pl-s">'520'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
+    <span class="pl-c">//express方法</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">500</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">set</span><span class="pl-kos">(</span><span class="pl-s">'xxx-code'</span><span class="pl-kos">,</span> <span class="pl-s">'520'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
+     <span class="pl-c">//其他方法</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">redirect</span><span class="pl-kos">(</span><span class="pl-s">'https://google.com'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>       <span class="pl-c">// 重定向</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">download</span><span class="pl-kos">(</span><span class="pl-s1">_dirname</span><span class="pl-c1">+</span><span class="pl-s">'./xxx.json'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  <span class="pl-c">// 下载</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-c1">id</span>:<span class="pl-c1">1</span><span class="pl-kos">,</span><span class="pl-c1">name</span>:<span class="pl-s">"xxyyzz"</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>             <span class="pl-c">// 返回json</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">sendFile</span><span class="pl-kos">(</span><span class="pl-s1">_dirname</span><span class="pl-c1">+</span><span class="pl-s">'./xxx.html'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>    <span class="pl-c">// 返回文件</span>
-
 <span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
 <h3>获取Request Header</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
@@ -146,29 +160,28 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
 <h3>获取路由参数</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-  <span class="pl-k">let</span> <span class="pl-s1">id</span> <span class="pl-c1">=</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">;</span>          <span class="pl-c">// id的定义必须一致</span>
+  <span class="pl-k">let</span> <span class="pl-s1">id</span> <span class="pl-c1">=</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">;</span>          <span class="pl-c">// ★通过req.params获取，id的定义必须一致</span>
   <span class="pl-s1">res</span><span class="pl-kos">.</span> <span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">id</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
 <h3>路由参数練習</h3>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./data.json'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./data.json'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  <span class="pl-c">// 假设有一个json</span>
 <span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-c1">PORT</span> <span class="pl-c1">=</span> <span class="pl-c1">80</span><span class="pl-kos">;</span>
 
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-k">let</span> <span class="pl-s1">html</span> <span class="pl-c1">=</span> <span class="pl-s">""</span>
-    <span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-en">map</span><span class="pl-kos">(</span><span class="pl-s1">item</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-en">map</span><span class="pl-kos">(</span><span class="pl-s1">item</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>                   <span class="pl-c">// 同过map()遍历</span>
         <span class="pl-s1">html</span> <span class="pl-c1">+=</span> <span class="pl-s">`&lt;li&gt;<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">name</span><span class="pl-kos">}</span></span>&lt;/&gt;`</span>
         <span class="pl-s1">html</span> <span class="pl-c1">+=</span> <span class="pl-s">`&lt;img src=<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">}</span></span>&gt;&lt;/img&gt;`</span>
     <span class="pl-kos">}</span><span class="pl-kos">)</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">html</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
 
-
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-k">let</span> <span class="pl-s1">id</span> <span class="pl-c1">=</span> <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">;</span>
     <span class="pl-k">let</span> <span class="pl-s1">html</span> <span class="pl-c1">=</span> <span class="pl-s">""</span>
-    <span class="pl-k">let</span> <span class="pl-s1">item</span> <span class="pl-c1">=</span> <span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-en">find</span><span class="pl-kos">(</span> <span class="pl-kos">(</span><span class="pl-s1">item</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span> <span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">id</span> <span class="pl-c1">==</span> <span class="pl-s1">id</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">let</span> <span class="pl-s1">item</span> <span class="pl-c1">=</span> <span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-en">find</span><span class="pl-kos">(</span> <span class="pl-kos">(</span><span class="pl-s1">item</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span> <span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">id</span> <span class="pl-c1">==</span> <span class="pl-s1">id</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>     <span class="pl-c">// 同过find() 匹配</span>
     <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">item</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
         <span class="pl-s1">html</span> <span class="pl-c1">+=</span> <span class="pl-s">`&lt;li&gt;<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">name</span><span class="pl-kos">}</span></span>&lt;/&gt;`</span>
         <span class="pl-s1">html</span> <span class="pl-c1">+=</span> <span class="pl-s">`&lt;img src=<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">}</span></span>&gt;&lt;/img&gt;`</span>
@@ -178,30 +191,29 @@ footer{margin-top:64px; text-align: center;font-size: small;}
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">html</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
 
-
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">PORT</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`server is starting on <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">PORT</span><span class="pl-kos">}</span></span> `</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
-<div class="highlight highlight-source-json"><pre class="notranslate">[
-    {
-        <span class="pl-ent">"id"</span>: <span class="pl-c1">1</span>,
-        <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>weimaraner<span class="pl-pds">"</span></span>,
-        <span class="pl-ent">"message"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://images.dog.ceo/breeds/weimaraner/n02092339_4214.jpg<span class="pl-pds">"</span></span>,
-        <span class="pl-ent">"status"</span>: <span class="pl-s"><span class="pl-pds">"</span>success<span class="pl-pds">"</span></span>
-    },
-    {
-        <span class="pl-ent">"id"</span>: <span class="pl-c1">2</span>,
-        <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>dane-great<span class="pl-pds">"</span></span>,
-        <span class="pl-ent">"message"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://images.dog.ceo/breeds/dane-great/n02109047_5936.jpg<span class="pl-pds">"</span></span>,
-        <span class="pl-ent">"status"</span>: <span class="pl-s"><span class="pl-pds">"</span>success<span class="pl-pds">"</span></span>
-    },
-    {
-        <span class="pl-ent">"id"</span>: <span class="pl-c1">3</span>,
-        <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>pyrenees<span class="pl-pds">"</span></span>,
-        <span class="pl-ent">"message"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://images.dog.ceo/breeds/pyrenees/n02111500_4731.jpg<span class="pl-pds">"</span></span>,
-        <span class="pl-ent">"status"</span>: <span class="pl-s"><span class="pl-pds">"</span>success<span class="pl-pds">"</span></span>
-    }
-]</pre></div></section>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-kos">[</span>
+    <span class="pl-kos">{</span>
+        <span class="pl-s">"id"</span>: <span class="pl-c1">1</span><span class="pl-kos">,</span>
+        <span class="pl-s">"name"</span>: <span class="pl-s">"weimaraner"</span><span class="pl-kos">,</span>
+        <span class="pl-s">"message"</span>: <span class="pl-s">"https://images.dog.ceo/breeds/weimaraner/n02092339_4214.jpg"</span><span class="pl-kos">,</span>
+        <span class="pl-s">"status"</span>: <span class="pl-s">"success"</span>
+    <span class="pl-kos">}</span><span class="pl-kos">,</span>
+    <span class="pl-kos">{</span>
+        <span class="pl-s">"id"</span>: <span class="pl-c1">2</span><span class="pl-kos">,</span>
+        <span class="pl-s">"name"</span>: <span class="pl-s">"dane-great"</span><span class="pl-kos">,</span>
+        <span class="pl-s">"message"</span>: <span class="pl-s">"https://images.dog.ceo/breeds/dane-great/n02109047_5936.jpg"</span><span class="pl-kos">,</span>
+        <span class="pl-s">"status"</span>: <span class="pl-s">"success"</span>
+    <span class="pl-kos">}</span><span class="pl-kos">,</span>
+    <span class="pl-kos">{</span>
+        <span class="pl-s">"id"</span>: <span class="pl-c1">3</span><span class="pl-kos">,</span>
+        <span class="pl-s">"name"</span>: <span class="pl-s">"pyrenees"</span><span class="pl-kos">,</span>
+        <span class="pl-s">"message"</span>: <span class="pl-s">"https://images.dog.ceo/breeds/pyrenees/n02111500_4731.jpg"</span><span class="pl-kos">,</span>
+        <span class="pl-s">"status"</span>: <span class="pl-s">"success"</span>
+    <span class="pl-kos">}</span>
+<span class="pl-kos">]</span></pre></div></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
 

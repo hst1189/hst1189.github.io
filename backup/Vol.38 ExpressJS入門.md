@@ -1,7 +1,6 @@
 ### 定型写法
 ```javascript
 
-const data = require('./data.json');
 const express = require('express');
 const app = express();
 const PORT = 80;
@@ -15,22 +14,39 @@ app.listen(PORT, () => {
 })
 ```
 
+
+### 全局中间件（例：写日志）
+```javascript
+
+const fs = require('fs');
+const path = require('path');
+
+function accessLog(req, res, next) {
+    let { url, ip } = req;  　　　　 //★解构 赋值
+    fs.appendFileSync(path.resolve(__dirname, './access.log'), `${url} ${ip}\r\n`);
+    next();　　　 　　　　　　//★全局中间件处理完之后，再调用路由里的方法 
+}
+app.use(accessLog);
+
+
 ### 设置Response Header
 ```javascript
 app.get('/', (req, res) => {
-
+     
+    // 原生
     res.statusCode = 200;
     res.statusMessage = "love u ";
     res.setHeader('xxx-code', '520');
 
+    //express方法
     res.status(500);
     res.set('xxx-code', '520');
 
+     //其他方法
     res.redirect('https://google.com');       // 重定向
     res.download(_dirname+'./xxx.json');  // 下载
     res.json({id:1,name:"xxyyzz"});             // 返回json
     res.sendFile(_dirname+'./xxx.html');    // 返回文件
-
 })
 ```
 
@@ -55,32 +71,31 @@ app.get('/', (req, res) => {
 ### 获取路由参数
 ```javascript
 app.get('/:id', (req, res) => {
-  let id =req.params.id;          // id的定义必须一致
+  let id =req.params.id;          // ★通过req.params获取，id的定义必须一致
   res. send(id);
 })
 ```
 
 ### 路由参数練習
 ```javascript
-const data = require('./data.json');
+const data = require('./data.json');  // 假设有一个json
 const express = require('express');
 const app = express();
 const PORT = 80;
 
 app.get('/', (req, res) => {
     let html = ""
-    data.map(item => {
+    data.map(item => {                   // 同过map()遍历
         html += `<li>${item.name}</>`
         html += `<img src=${item.message}></img>`
     })
     res.send(html);
 })
 
-
 app.get('/:id', (req, res) => {
     let id = req.params.id;
     let html = ""
-    let item = data.find( (item) => { item.id == id });
+    let item = data.find( (item) => { item.id == id });     // 同过find() 匹配
     if (item) {
         html += `<li>${item.name}</>`
         html += `<img src=${item.message}></img>`
@@ -90,13 +105,12 @@ app.get('/:id', (req, res) => {
     res.send(html);
 })
 
-
 app.listen(PORT, () => {
     console.log(`server is starting on ${PORT} `);
 })
 ```
 
-```json
+```javascript
 [
     {
         "id": 1,
