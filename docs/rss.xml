@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 12 Nov 2025 13:45:18 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.38 ExpressJS入門</title><link>https://grapehut.dpdns.org/post/38.html</link><description>### 定型写法
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 12 Nov 2025 13:56:24 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.38 ExpressJS入門</title><link>https://grapehut.dpdns.org/post/38.html</link><description>### 定型写法
 ```javascript
 
 const express = require('express');
@@ -22,12 +22,25 @@ app.listen(PORT, () =&gt; {
 const fs = require('fs');
 const path = require('path');
 
-function accessLog(req, res, next) {
-    let { url, ip } = req;  　　　　 //★解构 赋值
-    fs.appendFileSync(path.resolve(__dirname, './access.log'), `${url} ${ip}\r\n`);
-    next();　　　 　　　　　　//★全局中间件处理完之后，再调用路由里的方法 
+function recordLog(req, res, next) {
+    let { url, ip } = req;
+    let now = new Date();
+    let year = now.getFullYear(); // 获取四位年份
+    let month = now.getMonth() + 1; // 月份从0开始，所以+1
+    let day = now.getDate(); // 日期
+    let hours = now.getHours(); // 小时
+    let minutes = now.getMinutes(); // 分钟
+    let seconds = now.getSeconds(); // 秒
+
+    // 格式化为 YYYY-MM-DD HH:mm:ss
+    let formattedTime = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    fs.appendFileSync(path.resolve(__dirname, './access.log'), `${formattedTime} ${url} ${ip}\r\n`);
+    next();
 }
-app.use(accessLog);
+
+app.use(recordLog);
+
 ```
 
 
