@@ -10,8 +10,8 @@ app.get('/', (req, res) => {
   res. send('Hello World!')
 })
 
-app. listen(port, () => {
-  console.log(`Listening port on ${port}`)
+app.listen(PORT, () => {
+    console.log(`server is starting on ${PORT} `);
 })
 ```
 
