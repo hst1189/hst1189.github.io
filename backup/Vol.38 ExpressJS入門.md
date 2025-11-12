@@ -1,1 +1,11 @@
-![Image](https://github.com/user-attachments/assets/6fddb85e-63f0-4169-9515-68ccff3dccc5)
+```javascript
+const express = require('express')
+const app = express()
+const port = 3000
+app.get('/', (req, res) => {
+  res. send('Hello World!')
+})
+app. listen(port, () => {
+  console.log(`Listening port on ${port}`)
+})
+```
