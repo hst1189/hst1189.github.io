@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 12 Nov 2025 08:01:32 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.37 NodeJS入門</title><link>https://grapehut.dpdns.org/post/37.html</link><description># NodeJS
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 12 Nov 2025 08:08:04 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.37 NodeJS入門</title><link>https://grapehut.dpdns.org/post/37.html</link><description># NodeJS
 
 ## cheatsheet
 https://gist.github.com/wle8300/7fe24f89fcdb60269c86
@@ -40,17 +40,23 @@ fs.rmSync(path);
 ### 创建文件夹
 fs.mkdir(path, [mode], callback); 
 fs.mkdirSync(path, [mode]);  
-fs.mkdir('./a/b/c', {recursive:true}, err=&gt;{console.log(err)});    创建子文件 
+fs.mkdir('./a/b/c', {recursive:true}, err=&gt;{console.log(err)});    // 创建子文件 
+
 
 ### 读取文件夹
 fs.readdir(path, callback); 
-fs.readdirSync(path);  
+fs.readdirSync(path);     // 不递归，只读取当前文件夹
 
 
 ### 删除文件夹
 fs.rmdir(path, callback); 
 fs.rmdirSync(path);
-  
+fs.rmdir('./a', {recursive:true}, err=&gt;{console.log(err)});    // 递归删除子文件 
+
+fs.rm(path, callback); 
+fs.rmSync(path);
+fs.rm('./a', {recursive:true}, err=&gt;{console.log(err)});    // 递归删除子文件 
+
 ```
 
 

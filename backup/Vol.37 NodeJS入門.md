@@ -39,17 +39,23 @@ fs.rmSync(path);
 ### 创建文件夹
 fs.mkdir(path, [mode], callback); 
 fs.mkdirSync(path, [mode]);  
-fs.mkdir('./a/b/c', {recursive:true}, err=>{console.log(err)});    创建子文件 
+fs.mkdir('./a/b/c', {recursive:true}, err=>{console.log(err)});    // 创建子文件 
+
 
 ### 读取文件夹
 fs.readdir(path, callback); 
-fs.readdirSync(path);  
+fs.readdirSync(path);     // 不递归，只读取当前文件夹
 
 
 ### 删除文件夹
 fs.rmdir(path, callback); 
 fs.rmdirSync(path);
-  
+fs.rmdir('./a', {recursive:true}, err=>{console.log(err)});    // 递归删除子文件 
+
+fs.rm(path, callback); 
+fs.rmSync(path);
+fs.rm('./a', {recursive:true}, err=>{console.log(err)});    // 递归删除子文件 
+
 ```
 
 
