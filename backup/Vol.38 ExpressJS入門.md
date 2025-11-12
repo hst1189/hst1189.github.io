@@ -1,18 +1,42 @@
 ### 定型写法
 ```javascript
-const express = require('express')
-const app = express()
-const port = 3000
-app.get('/', (req, res) => {
-  res. send('Hello World!')
-})
 
-app.get('/:id', (req, res) => {
-  let id =req.params.id;
+const data = require('./data.json');
+const express = require('express');
+const app = express();
+const PORT = 80;
+
+app.get('/', (req, res) => {
   res. send('Hello World!')
 })
 
 app. listen(port, () => {
   console.log(`Listening port on ${port}`)
+})
+```
+
+
+### 获取请求报文参数
+```javascript
+app.get('/', (req, res) => {
+
+    console.log(req.method);             // GET POST PUT etc.
+    console.log(req.url);                // /根路径后面的部分
+    console.log(req.headers);            //获取全部头
+    console.log(req.get('host'));  //获取某个头
+    console.log(req.get('user-agent'));  //获取某个头
+
+    console.log(req.hostname);           //服务端主机名
+    console.log(req.ip);                 //客户端ip ::ffff:127.0.0.1
+    console.log(req.path);               // /根路径后面的部分
+    console.log(req.query);              // ?后面的部分（例：?a=dadda&b=dasda）
+})
+```
+
+### 获取路由参数
+```javascript
+app.get('/:id', (req, res) => {
+  let id =req.params.id;          // id的定义必须一致
+  res. send(id);
 })
 ```

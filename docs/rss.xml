@@ -1,20 +1,44 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 12 Nov 2025 11:05:10 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.38 ExpressJS入門</title><link>https://grapehut.dpdns.org/post/38.html</link><description>### 定型写法
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 12 Nov 2025 11:39:14 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.38 ExpressJS入門</title><link>https://grapehut.dpdns.org/post/38.html</link><description>### 定型写法
 ```javascript
-const express = require('express')
-const app = express()
-const port = 3000
-app.get('/', (req, res) =&gt; {
-  res. send('Hello World!')
-})
 
-app.get('/:id', (req, res) =&gt; {
-  let id =req.params.id;
+const data = require('./data.json');
+const express = require('express');
+const app = express();
+const PORT = 80;
+
+app.get('/', (req, res) =&gt; {
   res. send('Hello World!')
 })
 
 app. listen(port, () =&gt; {
   console.log(`Listening port on ${port}`)
+})
+```
+
+
+### 获取请求报文参数
+```javascript
+app.get('/', (req, res) =&gt; {
+
+    console.log(req.method);             // GET POST PUT etc.
+    console.log(req.url);                // /根路径后面的部分
+    console.log(req.headers);            //获取全部头
+    console.log(req.get('host'));  //获取某个头
+    console.log(req.get('user-agent'));  //获取某个头
+
+    console.log(req.hostname);           //服务端主机名
+    console.log(req.ip);                 //客户端ip ::ffff:127.0.0.1
+    console.log(req.path);               // /根路径后面的部分
+    console.log(req.query);              // ?后面的部分（例：?a=dadda&amp;b=dasda）
+})
+```
+
+### 获取路由参数
+```javascript
+app.get('/:id', (req, res) =&gt; {
+  let id =req.params.id;          // id的定义必须一致
+  res. send(id);
 })
 ```
 。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/38.html</guid><pubDate>Wed, 12 Nov 2025 09:58:06 +0000</pubDate></item><item><title>Vol.37 NodeJS入門</title><link>https://grapehut.dpdns.org/post/37.html</link><description># NodeJS
