@@ -61,15 +61,19 @@ fs.rm('./a', {recursive:true}, err=>{console.log(err)});    // 递归删除子�
 
 ### 文件状态
 ```javascript
-fs.stat().isFile();
-fs.stat().isDirectory();
+fs.stat('./abc', (err, data) => {
+    if (!err) {
+        if (data.isFile()) { console.log('iFile') }
+        if (data.isDirectory()) { console.log('isDirectory') }
+    }
+});
 ```
 
-## fs.createReadStreamの基本的な使い方
+## fs.createReadStream使い方
 ```javascript
 const fs = require('fs');
 const path = require('path');
-const rs = fs.createReadStream(path.resolve(__dirname, 'test.txt'));
+const rs = fs.createReadStream(path.resolve(__dirname, './test.txt'));
 rs.on('data', (chunk) => { 
     console.log(`読み込まれたデータ: ${chunk}`); 
 });
@@ -86,15 +90,11 @@ on('end', ...): ファイルの読み込みが完了した場合
 on('error', ...): 読み取り中にエラーが発生した場合 
 ```
 
-## fs.createWriteStreamの基本的な使い方
-fs.createWriteStream(path, options)  のように使用します。 
-path: 書き込み先のファイルパスを指定します。
-options: 書き込み方法をカスタマイズするためのオプションを指定します（例: エンコーディング、モードなど）。
-
+## fs.createWriteStream使い方
 ```javascript
 const fs = require('fs');
 const path = require('path');
-const ws= fs.createWriteStream(path.resolve(__dirname, 'test.txt'));
+const ws= fs.createWriteStream(path.resolve(__dirname, './test.txt'));
 ws.write('これは最初の部分です。\n');
 ws.write('これは2番目の部分です。\n');
 ws.end();  // ストリームを閉じる（これがないとfinishイベントが発火しない場合があります）
