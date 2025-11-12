@@ -27,6 +27,7 @@ function accessLog(req, res, next) {
     next();　　　 　　　　　　//★全局中间件处理完之后，再调用路由里的方法 
 }
 app.use(accessLog);
+```
 
 
 ### 设置Response Header
