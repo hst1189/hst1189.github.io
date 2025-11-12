@@ -43,6 +43,12 @@ app.use(recordLog);
 ```
 
 
+### 路由中间件（例：跳转认证）
+```javascript
+
+```
+
+
 ### 设置Response Header
 ```javascript
 app.get('/', (req, res) => {
