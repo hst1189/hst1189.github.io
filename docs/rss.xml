@@ -1,105 +1,39 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Tue, 11 Nov 2025 15:10:23 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.37 NodeJS入門</title><link>https://grapehut.dpdns.org/post/37.html</link><description># NodeJS
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 12 Nov 2025 07:12:16 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.37 NodeJS入門</title><link>https://grapehut.dpdns.org/post/37.html</link><description># NodeJS
 
-![Image](https://github.com/user-attachments/assets/6fddb85e-63f0-4169-9515-68ccff3dccc5)
+## fs  
 
-## xxxx
-
-## nodemon
-## http-server
-## json-server
-## express-generator
-## sass
-## typescript
-## vercel
-## firebase-tools
-
-## nodemon (https://www.npmjs.com/package/nodemon)
+### 读文件
 ```javascript
-npm install nodemon -g
-nodemon xx.js
+fs.readFile(filename, [options], callback);
+fs.readFileSync(filename, [options]); 
+fs.createReadStream(path, [options]);
 ```
 
-## express (https://www.npmjs.com/package/express)
+### 写文件
 ```javascript
-npm install express
+fs.writeFile(filename, data, [options], callback);
+fs.writeFileSync(filename, data, [options]);
+fs.appendFile(filename, data, [options], callback);
+fs.appendFileSync(filename, data, [options]);
+fs.createWriteStream(path, [options]); 
 ```
-
+### 文件状态
 ```javascript
-const data = require('./data.json');
-const express = require('express');
-const app = express();
-
-app.get('/', (req, res) =&gt; {
-    let html = '';
-    data.map(item =&gt; {
-        html += `&lt;h1&gt; ${item.name} &lt;/h1&gt;&lt;img src='${item.message}' /&gt;`;
-    });
-    res.send(html);
-});
-
-app.get('/:id', (req, res) =&gt; {
-    let html = '';
-    let id = req.params.id;
-    let result = data.find(item =&gt; item.id == id);
-    if (result) {
-        html += `&lt;h1&gt; ${result.name} &lt;/h1&gt;&lt;img src='${result.message}' /&gt;`;
-    } else {
-        html = `&lt;h1&gt;404 Not Found  &lt;/h1&gt;`;
-    }
-    res.send(html);
-});
-
-app.listen(80, () =&gt; {
-    console.log('Starting on 80')
-});
+fs.stat().isFile();
+fs.stat().isDirectory();
 ```
-
-```json
-[
-    {
-        'id': 1,
-        'name': 'weimaraner',
-        'message': 'https://images.dog.ceo/breeds/weimaraner/n02092339_4214.jpg',
-        'status': 'success'
-    },
-    {
-        'id': 2,
-        'name': 'dane-great',
-        'message': 'https://images.dog.ceo/breeds/dane-great/n02109047_5936.jpg',
-        'status': 'success'
-    },
-    {
-        'id': 3,
-        'name': 'pyrenees',
-        'message': 'https://images.dog.ceo/breeds/pyrenees/n02111500_4731.jpg',
-        'status': 'success'
-    }
-]
-```
-
-
-
-
-## express-generator ()
-```
-npm i express-generator -g
-```
-
 
 ## fs.createReadStreamの基本的な使い方
 ```javascript
 const fs = require('fs');
 const path = require('path');
 const rs = fs.createReadStream(path.resolve(__dirname, 'test.txt'));
-rs.on('data', chunk =&gt; {             // データチャンク（Bufferオブジェクト）
-    console.log(chunk.toString());
+rs.on('data', (chunk) =&gt; { 
+    console.log(`読み込まれたデータ: ${chunk}`); 
 });
-```
-
-イベント処理:
-```javascript
-on('data', ...): ファイルからデータが読み込まれるたびに発火します。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/37.html</guid><pubDate>Tue, 11 Nov 2025 03:56:53 +0000</pubDate></item><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
+rs.on('end', ()=&gt; { 
+    console.log('ファイル読み込みが完了しました。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/37.html</guid><pubDate>Tue, 11 Nov 2025 03:56:53 +0000</pubDate></item><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
 ## 常用项目
 - [Github](https://github.com/dashboard-feed)
 - [开发资源索引 Free for Developers](https://free-for.dev/)
