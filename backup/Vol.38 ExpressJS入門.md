@@ -21,7 +21,7 @@ app.listen(PORT, () => {
 const fs = require('fs');
 const path = require('path');
 
-function recordLog(req, res, next) {
+function recordLogMiddleware(req, res, next) {
     let { url, ip } = req;
     let now = new Date();
     let year = now.getFullYear(); // 获取四位年份
@@ -38,7 +38,7 @@ function recordLog(req, res, next) {
     next();
 }
 
-app.use(recordLog);
+app.use(recordLogMiddleware);
 
 ```
 
