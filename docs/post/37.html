@@ -97,22 +97,54 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-12 07:11</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-12 08:00</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>NodeJS</h1>
+<h2>cheatsheet</h2>
+<p><a href="https://gist.github.com/wle8300/7fe24f89fcdb60269c86">https://gist.github.com/wle8300/7fe24f89fcdb60269c86</a></p>
 <h2>fs</h2>
-<h3>读文件</h3>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFile</span><span class="pl-kos">(</span><span class="pl-s1">filename</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<h3>文件操作</h3>
+<div class="highlight highlight-source-js"><pre class="notranslate">### <span class="pl-s1">读文件</span>
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFile</span><span class="pl-kos">(</span><span class="pl-s1">filename</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFileSync</span><span class="pl-kos">(</span><span class="pl-s1">filename</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span> 
-<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createReadStream</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
-<h3>写文件</h3>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">writeFile</span><span class="pl-kos">(</span><span class="pl-s1">filename</span><span class="pl-kos">,</span> <span class="pl-s1">data</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createReadStream</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+
+### <span class="pl-s1">写文件</span>
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">writeFile</span><span class="pl-kos">(</span><span class="pl-s1">filename</span><span class="pl-kos">,</span> <span class="pl-s1">data</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">writeFileSync</span><span class="pl-kos">(</span><span class="pl-s1">filename</span><span class="pl-kos">,</span> <span class="pl-s1">data</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">appendFile</span><span class="pl-kos">(</span><span class="pl-s1">filename</span><span class="pl-kos">,</span> <span class="pl-s1">data</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">appendFileSync</span><span class="pl-kos">(</span><span class="pl-s1">filename</span><span class="pl-kos">,</span> <span class="pl-s1">data</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createWriteStream</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span> </pre></div>
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createWriteStream</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span> 
+
+
+### <span class="pl-s1">重命名</span><span class="pl-c1">&amp;</span><span class="pl-s1">移动</span>
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">rename</span><span class="pl-kos">(</span><span class="pl-s1">oldPath</span><span class="pl-kos">,</span> <span class="pl-s1">newPath</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">renameSync</span><span class="pl-kos">(</span><span class="pl-s1">oldPath</span><span class="pl-kos">,</span> <span class="pl-s1">newPath</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+
+### <span class="pl-s1">文件删除</span>
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">unlink</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span>   
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">unlinkSync</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">)</span><span class="pl-kos">;</span> 
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">rm</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span>   
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">rmSync</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">)</span><span class="pl-kos">;</span> </pre></div>
+<h3>文件夹操作</h3>
+<div class="highlight highlight-source-js"><pre class="notranslate">### <span class="pl-s1">创建文件夹</span>
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">mkdir</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">mode</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span> 
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">mkdirSync</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">mode</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">mkdir</span><span class="pl-kos">(</span><span class="pl-s">'./a/b/c'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span><span class="pl-c1">recursive</span>:<span class="pl-c1">true</span><span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-s1">err</span><span class="pl-c1">=&gt;</span><span class="pl-kos">{</span><span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>    <span class="pl-s1">创建子文件</span> 
+
+### <span class="pl-s1">读取文件夹</span>
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readdir</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span> 
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readdirSync</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  
+
+
+### <span class="pl-s1">删除文件夹</span>
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">rmdir</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span> 
+<span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">rmdirSync</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  </pre></div>
 <h3>文件状态</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">stat</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">isFile</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">stat</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">isDirectory</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>

@@ -1,22 +1,58 @@
 # NodeJS
 
+## cheatsheet
+https://gist.github.com/wle8300/7fe24f89fcdb60269c86
+
 ## fs  
+### 文件操作
+
+```javascript
 
 ### 读文件
-```javascript
 fs.readFile(filename, [options], callback);
 fs.readFileSync(filename, [options]); 
 fs.createReadStream(path, [options]);
-```
+
 
 ### 写文件
-```javascript
 fs.writeFile(filename, data, [options], callback);
 fs.writeFileSync(filename, data, [options]);
 fs.appendFile(filename, data, [options], callback);
 fs.appendFileSync(filename, data, [options]);
 fs.createWriteStream(path, [options]); 
+
+
+### 重命名&移动
+fs.rename(oldPath, newPath, callback);  
+fs.renameSync(oldPath, newPath);
+
+
+### 文件删除
+fs.unlink(path, callback);   
+fs.unlinkSync(path); 
+fs.rm(path, callback);   
+fs.rmSync(path); 
 ```
+
+### 文件夹操作
+```javascript
+### 创建文件夹
+fs.mkdir(path, [mode], callback); 
+fs.mkdirSync(path, [mode]);  
+fs.mkdir('./a/b/c', {recursive:true}, err=>{console.log(err)});    创建子文件 
+
+### 读取文件夹
+fs.readdir(path, callback); 
+fs.readdirSync(path);  
+
+
+### 删除文件夹
+fs.rmdir(path, callback); 
+fs.rmdirSync(path);
+  
+```
+
+
 ### 文件状态
 ```javascript
 fs.stat().isFile();
