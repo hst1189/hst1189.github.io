@@ -15,8 +15,27 @@ app.listen(PORT, () => {
 })
 ```
 
+### 设置Response Header
+```javascript
+app.get('/', (req, res) => {
 
-### 获取请求报文参数
+    res.statusCode = 200;
+    res.statusMessage = "love u ";
+    res.setHeader('xxx-code', '520');
+
+    res.status(500);
+    res.set('xxx-code', '520');
+
+    res.redirect('https://google.com');       // 重定向
+    res.download(_dirname+'./xxx.json');  // 下载
+    res.json({id:1,name:"xxyyzz"});             // 返回json
+    res.sendFile(_dirname+'./xxx.html');    // 返回文件
+
+})
+```
+
+
+### 获取Request Header
 ```javascript
 app.get('/', (req, res) => {
 

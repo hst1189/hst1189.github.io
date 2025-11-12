@@ -97,7 +97,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-12 12:10</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-12 12:51</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -114,7 +114,23 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">PORT</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`server is starting on <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">PORT</span><span class="pl-kos">}</span></span> `</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
-<h3>获取请求报文参数</h3>
+<h3>设置Response Header</h3>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-c1">statusCode</span> <span class="pl-c1">=</span> <span class="pl-c1">200</span><span class="pl-kos">;</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-c1">statusMessage</span> <span class="pl-c1">=</span> <span class="pl-s">"love u "</span><span class="pl-kos">;</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">setHeader</span><span class="pl-kos">(</span><span class="pl-s">'xxx-code'</span><span class="pl-kos">,</span> <span class="pl-s">'520'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">500</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">set</span><span class="pl-kos">(</span><span class="pl-s">'xxx-code'</span><span class="pl-kos">,</span> <span class="pl-s">'520'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">redirect</span><span class="pl-kos">(</span><span class="pl-s">'https://google.com'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>       <span class="pl-c">// 重定向</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">download</span><span class="pl-kos">(</span><span class="pl-s1">_dirname</span><span class="pl-c1">+</span><span class="pl-s">'./xxx.json'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  <span class="pl-c">// 下载</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-c1">id</span>:<span class="pl-c1">1</span><span class="pl-kos">,</span><span class="pl-c1">name</span>:<span class="pl-s">"xxyyzz"</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>             <span class="pl-c">// 返回json</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">sendFile</span><span class="pl-kos">(</span><span class="pl-s1">_dirname</span><span class="pl-c1">+</span><span class="pl-s">'./xxx.html'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>    <span class="pl-c">// 返回文件</span>
+
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
+<h3>获取Request Header</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
 
     <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">method</span><span class="pl-kos">)</span><span class="pl-kos">;</span>             <span class="pl-c">// GET POST PUT etc.</span>
