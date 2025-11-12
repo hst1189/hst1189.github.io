@@ -64,6 +64,11 @@ app.get('/setting', checkCodeMiddleware, (req, res) => {  // 声明利用中间�
 
 ```
 
+### 静态资源中间件（例：跳转认证）
+```javascript
+app.use(express.static(__dirname+'./public'));
+```
+
 
 ### 设置Response Header
 ```javascript
