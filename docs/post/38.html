@@ -97,7 +97,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-12 11:39</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-12 12:05</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -132,7 +132,60 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
   <span class="pl-k">let</span> <span class="pl-s1">id</span> <span class="pl-c1">=</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">;</span>          <span class="pl-c">// id的定义必须一致</span>
   <span class="pl-s1">res</span><span class="pl-kos">.</span> <span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">id</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div></section>
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
+<h3>路由参数練習</h3>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./data.json'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-c1">PORT</span> <span class="pl-c1">=</span> <span class="pl-c1">80</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">let</span> <span class="pl-s1">html</span> <span class="pl-c1">=</span> <span class="pl-s">""</span>
+    <span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-en">map</span><span class="pl-kos">(</span><span class="pl-s1">item</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+        <span class="pl-s1">html</span> <span class="pl-c1">+=</span> <span class="pl-s">`&lt;li&gt;<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">name</span><span class="pl-kos">}</span></span>&lt;/&gt;`</span>
+        <span class="pl-s1">html</span> <span class="pl-c1">+=</span> <span class="pl-s">`&lt;img src=<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">}</span></span>&gt;&lt;/img&gt;`</span>
+    <span class="pl-kos">}</span><span class="pl-kos">)</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">html</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span>
+
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">let</span> <span class="pl-s1">id</span> <span class="pl-c1">=</span> <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">;</span>
+    <span class="pl-k">let</span> <span class="pl-s1">html</span> <span class="pl-c1">=</span> <span class="pl-s">""</span>
+    <span class="pl-k">let</span> <span class="pl-s1">item</span> <span class="pl-c1">=</span> <span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-en">find</span><span class="pl-kos">(</span><span class="pl-s1">item</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span> <span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">id</span> <span class="pl-c1">==</span> <span class="pl-s1">id</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">item</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-s1">html</span> <span class="pl-c1">+=</span> <span class="pl-s">`&lt;li&gt;<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">name</span><span class="pl-kos">}</span></span>&lt;/&gt;`</span>
+        <span class="pl-s1">html</span> <span class="pl-c1">+=</span> <span class="pl-s">`&lt;img src=<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">}</span></span>&gt;&lt;/img&gt;`</span>
+    <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+        <span class="pl-s1">html</span> <span class="pl-c1">+=</span> <span class="pl-s">`&lt;h1&gt;404 Not Found&lt;/h1&gt;`</span>
+    <span class="pl-kos">}</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">html</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span>
+
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">PORT</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`server is starting on <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">PORT</span><span class="pl-kos">}</span></span> `</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
+<div class="highlight highlight-source-json"><pre class="notranslate">[
+    {
+        <span class="pl-ent">"id"</span>: <span class="pl-c1">1</span>,
+        <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>weimaraner<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"message"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://images.dog.ceo/breeds/weimaraner/n02092339_4214.jpg<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"status"</span>: <span class="pl-s"><span class="pl-pds">"</span>success<span class="pl-pds">"</span></span>
+    },
+    {
+        <span class="pl-ent">"id"</span>: <span class="pl-c1">2</span>,
+        <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>dane-great<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"message"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://images.dog.ceo/breeds/dane-great/n02109047_5936.jpg<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"status"</span>: <span class="pl-s"><span class="pl-pds">"</span>success<span class="pl-pds">"</span></span>
+    },
+    {
+        <span class="pl-ent">"id"</span>: <span class="pl-c1">3</span>,
+        <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>pyrenees<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"message"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://images.dog.ceo/breeds/pyrenees/n02111500_4731.jpg<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"status"</span>: <span class="pl-s"><span class="pl-pds">"</span>success<span class="pl-pds">"</span></span>
+    }
+]</pre></div></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
 

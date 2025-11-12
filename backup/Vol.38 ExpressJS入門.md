@@ -40,3 +40,63 @@ app.get('/:id', (req, res) => {
   res. send(id);
 })
 ```
+
+### 路由参数練習
+```javascript
+const data = require('./data.json');
+const express = require('express');
+const app = express();
+const PORT = 80;
+
+app.get('/', (req, res) => {
+    let html = ""
+    data.map(item => {
+        html += `<li>${item.name}</>`
+        html += `<img src=${item.message}></img>`
+    })
+    res.send(html);
+})
+
+
+app.get('/:id', (req, res) => {
+    let id = req.params.id;
+    let html = ""
+    let item = data.find(item => { item.id == id });
+    if (item) {
+        html += `<li>${item.name}</>`
+        html += `<img src=${item.message}></img>`
+    } else {
+        html += `<h1>404 Not Found</h1>`
+    }
+    res.send(html);
+})
+
+
+app.listen(PORT, () => {
+    console.log(`server is starting on ${PORT} `);
+})
+```
+
+```json
+[
+    {
+        "id": 1,
+        "name": "weimaraner",
+        "message": "https://images.dog.ceo/breeds/weimaraner/n02092339_4214.jpg",
+        "status": "success"
+    },
+    {
+        "id": 2,
+        "name": "dane-great",
+        "message": "https://images.dog.ceo/breeds/dane-great/n02109047_5936.jpg",
+        "status": "success"
+    },
+    {
+        "id": 3,
+        "name": "pyrenees",
+        "message": "https://images.dog.ceo/breeds/pyrenees/n02111500_4731.jpg",
+        "status": "success"
+    }
+]
+```
+
