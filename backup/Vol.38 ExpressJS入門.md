@@ -35,16 +35,32 @@ function recordLogMiddleware(req, res, next) {
     let formattedTime = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
     fs.appendFileSync(path.resolve(__dirname, './access.log'), `${formattedTime} ${url} ${ip}\r\n`);
-    next();
+    next();                                          // 处理结束后，进入所匹配的路由
 }
 
-app.use(recordLogMiddleware);
+app.use(recordLogMiddleware);      //  声明利用中间件
 
 ```
 
 
 ### 路由中间件（例：跳转认证）
 ```javascript
+function checkCodeMiddleware(req, res, next) {  
+    if (req.query.code === '521') {
+        next();                                   // 处理结束后，跳回所匹配的路由
+    } else {
+        res.send('<h1>没有权限</h1>')
+    }
+}
+
+app.get('/home', checkCodeMiddleware, (req, res) => {  // 声明利用中间件
+})
+
+app.get('/admin', checkCodeMiddleware, (req, res) => {  // 声明利用中间件
+})
+
+app.get('/setting', checkCodeMiddleware, (req, res) => {  // 声明利用中间件
+})
 
 ```
 
