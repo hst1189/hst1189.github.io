@@ -1,3 +1,7 @@
+### 注意点
+- __dirnameは末尾にスラッシュ（/）は含まれません。
+- __dirnameはNode.jsのグローバル変数であり、ブラウザのJavaScriptでは使用できません。
+
 ### 定型写法
 ```javascript
 
