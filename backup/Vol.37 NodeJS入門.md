@@ -7,7 +7,7 @@ https://gist.github.com/wle8300/7fe24f89fcdb60269c86
 
 
 ## npm
-```
+```javascript
 npm init    // 初始化一个新项目，在当前目录创建 package.json 文件
 
 npm install    // 根据 package.json 文件安装项目的所有依赖
@@ -20,6 +20,15 @@ npm uninstall  -g <package-name>    // 全局删除指定package
 npm ls        // 查看当前项目package
 npm ls -g    // 查看全局package
 ```
+
+## 常用第三方库
+```javascript
+npm install express            //ExpressJSフレームワーク
+npm install -g express-generator // 快速构建 ExpressJS项目
+npm install -g json-server   // 快速构建 json REST API  server
+npm install -g http-server   // 快速构建static HTTP server
+```
+
 
 
 

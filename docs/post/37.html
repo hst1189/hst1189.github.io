@@ -97,7 +97,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-13 03:39</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-13 03:58</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -106,18 +106,22 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <h2>cheatsheet</h2>
 <p><a href="https://gist.github.com/wle8300/7fe24f89fcdb60269c86">https://gist.github.com/wle8300/7fe24f89fcdb60269c86</a></p>
 <h2>npm</h2>
-<pre class="notranslate"><code class="notranslate">npm init    // 初始化一个新项目，在当前目录创建 package.json 文件
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">init</span>    <span class="pl-c">// 初始化一个新项目，在当前目录创建 package.json 文件</span>
 
-npm install    // 根据 package.json 文件安装项目的所有依赖
-npm install &lt;package-name&gt;        // 当前项目安装指定package
-npm install  -g &lt;package-name&gt;    // 全局安装指定package
+<span class="pl-s1">npm</span> <span class="pl-s1">install</span>    <span class="pl-c">// 根据 package.json 文件安装项目的所有依赖</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>        <span class="pl-c">// 当前项目安装指定package</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">install</span>  <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>    <span class="pl-c">// 全局安装指定package</span>
 
-npm uninstall &lt;package-name&gt;        // 当前项目删除指定package
-npm uninstall  -g &lt;package-name&gt;    // 全局删除指定package
+<span class="pl-s1">npm</span> <span class="pl-s1">uninstall</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>        <span class="pl-c">// 当前项目删除指定package</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">uninstall</span>  <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>    <span class="pl-c">// 全局删除指定package</span>
 
-npm ls        // 查看当前项目package
-npm ls -g    // 查看全局package
-</code></pre>
+<span class="pl-s1">npm</span> <span class="pl-s1">ls</span>        <span class="pl-c">// 查看当前项目package</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">ls</span> <span class="pl-c1">-</span><span class="pl-s1">g</span>    <span class="pl-c">// 查看全局package</span></pre></div>
+<h2>常用第三方库</h2>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">express</span>            <span class="pl-c">//ExpressJSフレームワーク</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-s1">express</span><span class="pl-c1">-</span><span class="pl-s1">generator</span> <span class="pl-c">// 快速构建 ExpressJS项目</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-s1">json</span><span class="pl-c1">-</span><span class="pl-s1">server</span>   <span class="pl-c">// 快速构建 json REST API  server</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-s1">http</span><span class="pl-c1">-</span><span class="pl-s1">server</span>   <span class="pl-c">// 快速构建static HTTP server</span></pre></div>
 <h2>fs 库</h2>
 <h3>文件操作</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate">### <span class="pl-s1">读文件</span>
