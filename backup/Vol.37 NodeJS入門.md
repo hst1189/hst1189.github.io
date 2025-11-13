@@ -161,3 +161,8 @@ fs.copyFile("test.txt", "test3.txt", err => {
 });
 ```
 
+### 注意点
+- __dirnameは末尾にスラッシュ（/）は含まれません。
+- __dirnameはNode.jsのグローバル変数であり、ブラウザのJavaScriptでは使用できません。
+
+
