@@ -97,15 +97,28 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-12 09:58</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Previous Page">上一篇-Vol.36 网络资源</a><a class="next_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Next Page">下一篇-Vol.38 ExpressJS入門</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-13 03:39</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>NodeJS</h1>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/6fddb85e-63f0-4169-9515-68ccff3dccc5"><img src="https://github.com/user-attachments/assets/6fddb85e-63f0-4169-9515-68ccff3dccc5" alt="Image" style="max-width: 100%;"></a></p>
 <h2>cheatsheet</h2>
 <p><a href="https://gist.github.com/wle8300/7fe24f89fcdb60269c86">https://gist.github.com/wle8300/7fe24f89fcdb60269c86</a></p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/6fddb85e-63f0-4169-9515-68ccff3dccc5"><img src="https://github.com/user-attachments/assets/6fddb85e-63f0-4169-9515-68ccff3dccc5" alt="Image" style="max-width: 100%;"></a></p>
-<h2>fs</h2>
+<h2>npm</h2>
+<pre class="notranslate"><code class="notranslate">npm init    // 初始化一个新项目，在当前目录创建 package.json 文件
+
+npm install    // 根据 package.json 文件安装项目的所有依赖
+npm install &lt;package-name&gt;        // 当前项目安装指定package
+npm install  -g &lt;package-name&gt;    // 全局安装指定package
+
+npm uninstall &lt;package-name&gt;        // 当前项目删除指定package
+npm uninstall  -g &lt;package-name&gt;    // 全局删除指定package
+
+npm ls        // 查看当前项目package
+npm ls -g    // 查看全局package
+</code></pre>
+<h2>fs 库</h2>
 <h3>文件操作</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate">### <span class="pl-s1">读文件</span>
 <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFile</span><span class="pl-kos">(</span><span class="pl-s1">filename</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span>

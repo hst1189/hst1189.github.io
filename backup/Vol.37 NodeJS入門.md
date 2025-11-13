@@ -1,12 +1,31 @@
 # NodeJS
 
+![Image](https://github.com/user-attachments/assets/6fddb85e-63f0-4169-9515-68ccff3dccc5)
+
 ## cheatsheet
 https://gist.github.com/wle8300/7fe24f89fcdb60269c86
 
-![Image](https://github.com/user-attachments/assets/6fddb85e-63f0-4169-9515-68ccff3dccc5)
+
+## npm
+```
+npm init    // 初始化一个新项目，在当前目录创建 package.json 文件
+
+npm install    // 根据 package.json 文件安装项目的所有依赖
+npm install <package-name>        // 当前项目安装指定package
+npm install  -g <package-name>    // 全局安装指定package
+
+npm uninstall <package-name>        // 当前项目删除指定package
+npm uninstall  -g <package-name>    // 全局删除指定package
+
+npm ls        // 查看当前项目package
+npm ls -g    // 查看全局package
+```
 
 
-## fs  
+
+
+
+## fs 库  
 ### 文件操作
 
 ```javascript
