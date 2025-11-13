@@ -23,9 +23,13 @@ npm ls -g    // 查看全局package
 
 ## 常用第三方库
 ```javascript
+
 npm install express            //ExpressJSフレームワーク
 npm install -g express-generator // 快速构建 ExpressJS项目
+
 npm install -g json-server   // 快速构建 json REST API  server
+json-server --watch abc.json
+
 npm install -g http-server   // 快速构建static HTTP server
 ```
 
