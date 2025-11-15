@@ -23,3 +23,22 @@ app.get('/list/:id', (req, res) => {
         .catch(error => console.log(error))
 });
 ```
+
+
+```html
+    <ul id="bbb"></ul>
+    <script>
+        const ul_user = document.getElementById("bbb");
+        fetch('https://dummyjson.com/users')
+            .then(response => response.json())
+            .then(data => {
+                data.users.forEach(element => {
+                    ul_user.innerHTML += `<li><img src='${element.image}'/>${element.firstName} ${element.age}</li>`;
+
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching dog image:', error);
+            });
+    </script>
+```
