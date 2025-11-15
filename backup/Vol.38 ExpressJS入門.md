@@ -17,7 +17,7 @@ app.listen(PORT, () => {
 ### 获取路由参数
 ```javascript
 app.get('/:id', (req, res) => {
-  let id =req.params.id;          // ★通过req.params获取，id的定义必须一致
+  let id =req.params.id;          // ★通过req.params获取，「.id」的定义必须一致
   res. send(id);
 })
 ```
@@ -174,3 +174,15 @@ app.get('/setting', checkCodeMiddleware, (req, res) => {  // 声明利用中间�
 ```javascript
 app.use(express.static(__dirname+'./public'));
 ```
+
+
+
+
+```
+
+### 路由设置
+```
+```
+
+
+
