@@ -1,5 +1,54 @@
+### 服务器端：
+```
+import express from "express";          //express 方式下
+import { createServer } from "http";
+import { Server } from "socket.io";　 //导入socket.io
+
+const app = express();
+const httpServer = createServer(app);
+const io = new Server(httpServer);    // 生成io
+
+io.on('connection', function(socket){  //开启io监听
+
+    socket.on('chat', function(msg){   // 第1引数の「chat」，同客户端定义一致
+        io.emit('chat', msg);        // 服务器端socket.emit()   第1引数の「chat」，同客户端定义一致
+    });
+
+});
+
+// 通过路由返回一个html
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
+```
+
+
+### 客户端：
+```
+form.btn.addEventListener('click', function(e) {   // 发送时间
+    e.preventDefault();　// 不让画面reload
+    socket.emit('chat', form.text.value);   // 客户端socket.emit()     第1引数の「chat」，同服务器端定义一致
+    form.text.value = '';   // 发送结束后，清空输入框
+})
+
+socket.on('chat', function(msg){
+    var li = document.createElement('li');
+
+    li.textContent = msg;
+    message.appendChild(li);
+});
+
+
+```
+
+
+
+
+例：
+
 ```javascript
 sever.js
+
 import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
