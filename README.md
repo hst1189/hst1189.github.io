@@ -6,8 +6,8 @@
 - [高级篇](https://grapehut.dpdns.org/post/3) 
 - [域名绑定](https://grapehut.dpdns.org/post/4) 
 ## 博客信息：
-- 投稿：📜 [38](https://grapehut.dpdns.org) 
-- 字数：✏️ 181201 
+- 投稿：📜 [39](https://grapehut.dpdns.org) 
+- 字数：✏️ 186264 
 - 评论：💬 0 
-- 更新日期：⏰ 2025-11-15 14:57:02 
+- 更新日期：⏰ 2025-11-15 15:13:42 
 - Copyright ©️2024-2025 小饅頭の部落格 All Rights Reserved. Powered by [Gmeek](https://github.com/hst1189/Gmeek)

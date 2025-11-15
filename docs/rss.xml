@@ -1,5 +1,62 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 15 Nov 2025 06:57:02 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.38 ExpressJS入門</title><link>https://grapehut.dpdns.org/post/38.html</link><description>### 定型写法
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 15 Nov 2025 07:13:42 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.39 Socket.io入門</title><link>https://grapehut.dpdns.org/post/39.html</link><description>```javascript
+sever.js
+import express from 'express';
+import { createServer } from 'http';
+import { Server } from 'socket.io';
+import { DatabaseSync } from 'node:sqlite';
+
+const __dirname = import.meta.dirname;
+const __filename = import.meta.filename;
+
+const app = express();
+const httpServer = createServer(app);
+const io = new Server(httpServer);
+
+const db = new DatabaseSync(__dirname + '/chat.db');
+db.exec(`
+  CREATE TABLE IF NOT EXISTS messages (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      client_ip TEXT,
+      msg TEXT
+  );
+`);
+
+
+
+let client_ip = '';
+
+app.get('/', (req, res) =&gt; {
+  client_ip = req.ip || req.headers['x-forwarded-for'];
+  console.log(client_ip)
+  res.sendFile(__dirname + '/index.html');
+});
+
+io.on('connection', (socket) =&gt; {
+
+  socket.on('chat message', async (msg) =&gt; {
+    try {
+      const insert = db.prepare('INSERT INTO messages (client_ip,msg) VALUES (?, ?)');
+      insert.run(client_ip, msg);
+      io.emit('chat message', client_ip, msg);
+    } catch (e) {
+      console.error(e);
+    }
+  });
+
+  socket.on('history', async () =&gt; {
+    let result;
+    try {
+      result = db.prepare('select * from messages ORDER BY id');
+      console.log(result.all());
+      io.emit('history', result.all());
+    } catch (e) {
+      console.error(e);
+    }
+  });
+});
+
+// 在这里 app.listen(3000)将不起作用，因为它创建一个新的 HTTP 服务器。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/39.html</guid><pubDate>Sat, 15 Nov 2025 07:13:12 +0000</pubDate></item><item><title>Vol.38 ExpressJS入門</title><link>https://grapehut.dpdns.org/post/38.html</link><description>### 定型写法
 ```javascript
 
 const express = require('express');
