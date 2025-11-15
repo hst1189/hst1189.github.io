@@ -1,13 +1,13 @@
 官方文档：https://socket.io/zh-CN/docs/v4/server-socket-instance/
 `Gmeek-html<img src="https://socket.io/zh-CN/images/bidirectional-communication-socket.png">`
 
-客户端　通过 socket.emit("key1", input.value)  发送表单内容
+① 客户端　通过 socket.emit("key1", input.value)  发送表单内容
 ↓　　
-服务器端　通过 socket.on('key1',  (引数) => {  DB 或者其他处理 } )　接收内容
+② 服务器端　通过 socket.on('key1',  (引数) => {  DB 或者其他处理 } )　接收内容
 ↓
-服务器端　通过 io.emit('key2', 内容);　发送内容
+③ 服务器端　通过 io.emit('key2', 内容);　发送内容
 ↓
-客户端　通过 socket.on("key2", (引数) => { 画面处理 } )  接收内容
+④ 客户端　通过 socket.on("key2", (引数) => { 画面处理 } )  接收内容
 
 
 
