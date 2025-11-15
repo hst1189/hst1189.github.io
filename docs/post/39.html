@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 07:13,updated at 2025-11-15 08:45</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 07:13,updated at 2025-11-15 08:59</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Next Page">下一篇-Vol.38 ExpressJS入門</a></div>
 </nav>
 
@@ -146,8 +146,8 @@ const io = new Server(httpServer);    // 生成io
 
 io.on('connection', (socket)=&gt; {  //开启io监听
 
-    socket.on('chat', (msg)=&gt;{   // 第1引数の「chat」，同「客户端」一致
-        io.emit('chat', msg);        // 服务器端socket.emit()   第1引数の「chat」，同「客户端」一致
+    socket.on('key1', (msg)=&gt;{   // 接收内容、第1引数の「key1」，同「客户端」一致
+        io.emit('key2', msg);        // 发送内容、第1引数の「key2」，同「客户端」一致
     });
 
 });
@@ -161,24 +161,23 @@ app.get('/', (req, res) =&gt; {
 <pre class="notranslate"><code class="notranslate">&lt;script src="/socket.io/socket.io.js"&gt;&lt;/script&gt;  // 导入socket.io
 
     let socket = io();    //开启socket 
-    
-    socket.on("chat", function (引数) {  // 第1引数の「chat」，同「服务器端」一致　
-　　　获取Dom，设置innerHTML
-    });
 
     form.addEventListener("click", function (e) {
       e.preventDefault();
       if (input.value) {
-        socket.emit("chat", input.value); // 客户端socket.emit()     第1引数の「chat」，同服务器端定义一致
+        socket.emit("key1", input.value);  // 发送内容、第1引数の「key1」，同「服务器端」一致
         input.value = "";  // 发送结束后，清空输入框
       }
     });
+    
+    socket.on("key2", function (引数) {  // 接收内容、第1引数の「key2」，同「服务器端」一致
+　　　接收内容，设置Dom，innerHTML
+    });
 
 </code></pre>
-<p>完整例：</p>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">sever</span><span class="pl-kos">.</span><span class="pl-c1">js</span>
-
-<span class="pl-k">import</span> <span class="pl-s1">express</span> <span class="pl-k">from</span> <span class="pl-s">"express"</span><span class="pl-kos">;</span>
+<p>完整例：<br>
+server.js</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">import</span> <span class="pl-s1">express</span> <span class="pl-k">from</span> <span class="pl-s">"express"</span><span class="pl-kos">;</span>
 <span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-s1">createServer</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">"http"</span><span class="pl-kos">;</span>
 <span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-v">Server</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">"socket.io"</span><span class="pl-kos">;</span>
 <span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-v">DatabaseSync</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'node:sqlite'</span><span class="pl-kos">;</span>
@@ -200,22 +199,19 @@ app.get('/', (req, res) =&gt; {
 <span class="pl-s">`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
 
-
-<span class="pl-k">let</span> <span class="pl-s1">client_ip</span> <span class="pl-c1">=</span> <span class="pl-s">""</span><span class="pl-kos">;</span>
-
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-  <span class="pl-s1">client_ip</span> <span class="pl-c1">=</span> <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">ip</span> <span class="pl-c1">||</span> <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">headers</span><span class="pl-kos">[</span><span class="pl-s">'x-forwarded-for'</span><span class="pl-kos">]</span><span class="pl-kos">;</span>
-  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">client_ip</span><span class="pl-kos">)</span>
   <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">sendFile</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span> <span class="pl-c1">+</span> <span class="pl-s">'/index.html'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
 <span class="pl-s1">io</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'connection'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">socket</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-
+  <span class="pl-k">let</span> <span class="pl-s1">ip</span> <span class="pl-c1">=</span> <span class="pl-s1">socket</span><span class="pl-kos">.</span><span class="pl-c1">handshake</span><span class="pl-kos">.</span><span class="pl-c1">address</span><span class="pl-kos">;</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">socket</span><span class="pl-kos">.</span><span class="pl-c1">handshake</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">socket</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
   <span class="pl-s1">socket</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'chat message'</span><span class="pl-kos">,</span> <span class="pl-k">async</span> <span class="pl-kos">(</span><span class="pl-s1">msg</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-k">try</span> <span class="pl-kos">{</span>
       <span class="pl-k">const</span> <span class="pl-s1">insert</span> <span class="pl-c1">=</span> <span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-en">prepare</span><span class="pl-kos">(</span><span class="pl-s">'INSERT INTO messages (client_ip,msg) VALUES (?, ?)'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-      <span class="pl-s1">insert</span><span class="pl-kos">.</span><span class="pl-en">run</span><span class="pl-kos">(</span><span class="pl-s1">client_ip</span><span class="pl-kos">,</span> <span class="pl-s1">msg</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-      <span class="pl-s1">io</span><span class="pl-kos">.</span><span class="pl-en">emit</span><span class="pl-kos">(</span><span class="pl-s">'chat message'</span><span class="pl-kos">,</span> <span class="pl-s1">client_ip</span><span class="pl-kos">,</span> <span class="pl-s1">msg</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-s1">insert</span><span class="pl-kos">.</span><span class="pl-en">run</span><span class="pl-kos">(</span><span class="pl-s1">ip</span><span class="pl-kos">,</span> <span class="pl-s1">msg</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-s1">io</span><span class="pl-kos">.</span><span class="pl-en">emit</span><span class="pl-kos">(</span><span class="pl-s">'chat message'</span><span class="pl-kos">,</span> <span class="pl-s1">ip</span><span class="pl-kos">,</span> <span class="pl-s1">msg</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
     <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">e</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
       <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s1">e</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
     <span class="pl-kos">}</span>
@@ -225,7 +221,6 @@ app.get('/', (req, res) =&gt; {
     <span class="pl-k">let</span> <span class="pl-s1">result</span><span class="pl-kos">;</span>
     <span class="pl-k">try</span> <span class="pl-kos">{</span>
       <span class="pl-s1">result</span> <span class="pl-c1">=</span> <span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-en">prepare</span><span class="pl-kos">(</span><span class="pl-s">'select * from messages ORDER BY id'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-      <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">result</span><span class="pl-kos">.</span><span class="pl-en">all</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
       <span class="pl-s1">io</span><span class="pl-kos">.</span><span class="pl-en">emit</span><span class="pl-kos">(</span><span class="pl-s">'history'</span><span class="pl-kos">,</span> <span class="pl-s1">result</span><span class="pl-kos">.</span><span class="pl-en">all</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
     <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">e</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
       <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s1">e</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
@@ -236,10 +231,10 @@ app.get('/', (req, res) =&gt; {
 <span class="pl-c">// 在这里 app.listen(3000)将不起作用，因为它创建一个新的 HTTP 服务器。</span>
 <span class="pl-s1">httpServer</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">3000</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
   <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'server running at http://localhost:3000'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
-<pre class="notranslate"><code class="notranslate">client.html
-
-&lt;!DOCTYPE html&gt;
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+</pre></div>
+<p>client.html</p>
+<pre class="notranslate"><code class="notranslate">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
 &lt;head&gt;
@@ -402,7 +397,6 @@ app.get('/', (req, res) =&gt; {
 &lt;/body&gt;
 
 &lt;/html&gt;
-
 </code></pre></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>

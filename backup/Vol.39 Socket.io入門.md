@@ -53,8 +53,8 @@ const io = new Server(httpServer);    // 生成io
 
 io.on('connection', (socket)=> {  //开启io监听
 
-    socket.on('chat', (msg)=>{   // 第1引数の「chat」，同「客户端」一致
-        io.emit('chat', msg);        // 服务器端socket.emit()   第1引数の「chat」，同「客户端」一致
+    socket.on('key1', (msg)=>{   // 接收内容、第1引数の「key1」，同「客户端」一致
+        io.emit('key2', msg);        // 发送内容、第1引数の「key2」，同「客户端」一致
     });
 
 });
@@ -71,17 +71,17 @@ app.get('/', (req, res) => {
 <script src="/socket.io/socket.io.js"></script>  // 导入socket.io
 
     let socket = io();    //开启socket 
-    
-    socket.on("chat", function (引数) {  // 第1引数の「chat」，同「服务器端」一致　
-　　　获取Dom，设置innerHTML
-    });
 
     form.addEventListener("click", function (e) {
       e.preventDefault();
       if (input.value) {
-        socket.emit("chat", input.value); // 客户端socket.emit()     第1引数の「chat」，同服务器端定义一致
+        socket.emit("key1", input.value);  // 发送内容、第1引数の「key1」，同「服务器端」一致
         input.value = "";  // 发送结束后，清空输入框
       }
+    });
+    
+    socket.on("key2", function (引数) {  // 接收内容、第1引数の「key2」，同「服务器端」一致
+　　　接收内容，设置Dom，innerHTML
     });
 
 ```
@@ -90,10 +90,9 @@ app.get('/', (req, res) => {
 
 
 完整例：
+server.js
 
 ```javascript
-sever.js
-
 import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
@@ -116,22 +115,19 @@ db.exec(`
 `);
 
 
-
-let client_ip = "";
-
 app.get('/', (req, res) => {
-  client_ip = req.ip || req.headers['x-forwarded-for'];
-  console.log(client_ip)
   res.sendFile(__dirname + '/index.html');
 });
 
 io.on('connection', (socket) => {
-
+  let ip = socket.handshake.address;
+  console.log(socket.handshake);
+  console.log(socket.id);
   socket.on('chat message', async (msg) => {
     try {
       const insert = db.prepare('INSERT INTO messages (client_ip,msg) VALUES (?, ?)');
-      insert.run(client_ip, msg);
-      io.emit('chat message', client_ip, msg);
+      insert.run(ip, msg);
+      io.emit('chat message', ip, msg);
     } catch (e) {
       console.error(e);
     }
@@ -141,7 +137,6 @@ io.on('connection', (socket) => {
     let result;
     try {
       result = db.prepare('select * from messages ORDER BY id');
-      console.log(result.all());
       io.emit('history', result.all());
     } catch (e) {
       console.error(e);
@@ -154,11 +149,11 @@ httpServer.listen(3000, () => {
   console.log('server running at http://localhost:3000');
 });
 
-```
 
 ```
+
 client.html
-
+```
 <!DOCTYPE html>
 <html>
 
@@ -322,6 +317,5 @@ client.html
 </body>
 
 </html>
-
 ```
 
