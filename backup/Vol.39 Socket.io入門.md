@@ -1,6 +1,36 @@
 官方文档：https://socket.io/zh-CN/docs/v4/server-socket-instance/
 `Gmeek-html<img src="https://socket.io/zh-CN/images/bidirectional-communication-socket.png">`
 
+## socket.id
+```
+// server-side
+io.on("connection", (socket) => {
+  console.log(socket.id); // ojIckSD2jqNzOqIrAGzL   //此标识符与客户端的值同步。
+});
+
+// client-side
+socket.on("connect", () => {
+  console.log(socket.id); // ojIckSD2jqNzOqIrAGzL   //此标识符与客户端的值同步。
+});
+```
+
+## Socket#handshake
+```
+使用方法：const clinet_ip = socket.handshake.address;
+
+{
+  headers: /* the headers of the initial request */
+  query: /* the query params of the initial request */
+  auth: /* the authentication payload */
+  time: /* the date of creation (as string) */
+  issued: /* the date of creation (unix timestamp) */
+  url: /* the request URL string */
+  address: /* the ip of the client */
+  xdomain: /* whether the connection is cross-domain */
+  secure: /* whether the connection is secure */
+}
+```
+
 ### 服务器端：
 ```
 import express from "express";          //导入express
