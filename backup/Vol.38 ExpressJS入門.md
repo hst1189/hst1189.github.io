@@ -24,7 +24,7 @@ app.listen(PORT, () => {
 ```
 
 
-### 路由実例１
+### 路由变量実例１
 ```javascript
 const data = require('./data.json');   // 导入json对象
 const express = require('express');
@@ -78,7 +78,7 @@ app.listen(PORT, () => {
 ]
 ```
 
-### 路由実例２
+### 路由变量実例２
 ```javascript
 const fs = require('fs');
 const path = require('path');
