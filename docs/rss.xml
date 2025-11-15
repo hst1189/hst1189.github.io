@@ -1,5 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 15 Nov 2025 09:50:16 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.39 Socket.io入門</title><link>https://grapehut.dpdns.org/post/39.html</link><description>官方文档：https://socket.io/zh-CN/docs/v4/server-socket-instance/
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 15 Nov 2025 09:52:27 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.40 fetch</title><link>https://grapehut.dpdns.org/post/40.html</link><description>### fetch
+```javascript
+app.get('/list', (req, res) =&gt; {
+    fetch('https://dummyjson.com/recipes')
+        .then(response =&gt; response.json())
+        .then(data =&gt; {
+            console.log(data.recipes);
+            res.json(data.recipes);
+        })
+        .catch(error =&gt; console.log(error))
+});
+```
+
+```javascript
+app.get('/list/:id', (req, res) =&gt; {
+    fetch('https://dummyjson.com/recipes')
+        .then(response =&gt; response.json())
+        .then(data =&gt; {
+            const item = data.recipes.find(item =&gt; item.id == req.params.id);
+            console.log(item);
+            res.json(item);
+        })
+        .catch(error =&gt; console.log(error))
+});
+```。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/40.html</guid><pubDate>Sat, 15 Nov 2025 09:51:55 +0000</pubDate></item><item><title>Vol.39 Socket.io入門</title><link>https://grapehut.dpdns.org/post/39.html</link><description>官方文档：https://socket.io/zh-CN/docs/v4/server-socket-instance/
 `Gmeek-html&lt;img src='https://socket.io/zh-CN/images/bidirectional-communication-socket.png'&gt;`
 
 ① 客户端　通过 socket.emit('key1', input.value)  发送表单内容
