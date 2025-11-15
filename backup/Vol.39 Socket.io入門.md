@@ -1,5 +1,5 @@
 官方文档：https://socket.io/zh-CN/docs/v4/server-socket-instance/
-https://socket.io/zh-CN/images/bidirectional-communication-socket.png
+`Gmeek-html<img src="https://socket.io/zh-CN/images/bidirectional-communication-socket.png">`
 
 ### 服务器端：
 ```
