@@ -24,7 +24,7 @@ app.listen(PORT, () => {
 ```
 
 
-### 路由变量実例１
+### 実例１
 ```javascript
 const data = require('./data.json');   // 导入json对象
 const express = require('express');
@@ -78,7 +78,7 @@ app.listen(PORT, () => {
 ]
 ```
 
-### 路由变量実例２
+### 実例２
 ```javascript
 const fs = require('fs');
 const path = require('path');
@@ -86,7 +86,7 @@ const express = require('express');
 const app = express();
 const port = 80;
 
-function accessLog(req, res, next) {
+function accessLog(req, res, next) {     // access.log 全局中间件
     let { url, ip } = req;
     let now = new Date();
     let year = now.getFullYear(); // 获取四位年份
