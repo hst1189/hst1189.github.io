@@ -38,10 +38,16 @@ http://localhost:8080/
 
 
 
-
-
-
 ## fs 库  
+
+### 注意点
+- __dirnameは末尾にスラッシュ（/）は含まれません。
+- __dirnameはNode.jsのグローバル変数であり、ブラウザのJavaScriptでは使用できません。
+- 在ESmodule下，需 import定义
+const __dirname = import.meta.dirname;
+const __filename = import.meta.filename;
+
+
 ### 文件操作
 
 ```javascript
@@ -160,9 +166,4 @@ fs.copyFile("test.txt", "test3.txt", err => {
     if (err) { console.log(err); }
 });
 ```
-
-### 注意点
-- __dirnameは末尾にスラッシュ（/）は含まれません。
-- __dirnameはNode.jsのグローバル変数であり、ブラウザのJavaScriptでは使用できません。
-
 

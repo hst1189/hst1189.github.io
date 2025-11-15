@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 13 Nov 2025 14:31:25 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.38 ExpressJS入門</title><link>https://grapehut.dpdns.org/post/38.html</link><description>### 定型写法
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 15 Nov 2025 06:57:02 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.38 ExpressJS入門</title><link>https://grapehut.dpdns.org/post/38.html</link><description>### 定型写法
 ```javascript
 
 const express = require('express');
@@ -215,85 +215,10 @@ http://localhost:8080/
 
 
 
-
-
-
 ## fs 库  
-### 文件操作
 
-```javascript
-
-### 读文件
-fs.readFile(filename, [options], callback);
-fs.readFileSync(filename, [options]); 
-fs.createReadStream(path, [options]);
-
-
-### 写文件
-fs.writeFile(filename, data, [options], callback);
-fs.writeFileSync(filename, data, [options]);
-fs.appendFile(filename, data, [options], callback);
-fs.appendFileSync(filename, data, [options]);
-fs.createWriteStream(path, [options]); 
-
-
-### 重命名&amp;移动
-fs.rename(oldPath, newPath, callback);  
-fs.renameSync(oldPath, newPath);
-
-
-### 文件删除
-fs.unlink(path, callback);   
-fs.unlinkSync(path); 
-fs.rm(path, callback);   
-fs.rmSync(path); 
-```
-
-### 文件夹操作
-```javascript
-### 创建文件夹
-fs.mkdir(path, [mode], callback); 
-fs.mkdirSync(path, [mode]);  
-fs.mkdir('./a/b/c', {recursive:true}, err=&gt;{console.log(err)});    // 创建子文件 
-
-
-### 读取文件夹
-fs.readdir(path, callback); 
-fs.readdirSync(path);     // 不递归，只读取当前文件夹
-
-
-### 删除文件夹
-fs.rmdir(path, callback); 
-fs.rmdirSync(path);
-fs.rmdir('./a', {recursive:true}, err=&gt;{console.log(err)});    // 递归删除子文件 
-
-fs.rm(path, callback); 
-fs.rmSync(path);
-fs.rm('./a', {recursive:true}, err=&gt;{console.log(err)});    // 递归删除子文件 
-
-```
-
-
-### 文件状态
-```javascript
-fs.stat('./abc', (err, data) =&gt; {
-    if (!err) {
-        if (data.isFile()) { console.log('iFile') }
-        if (data.isDirectory()) { console.log('isDirectory') }
-    }
-});
-```
-
-## fs.createReadStream使い方
-```javascript
-const fs = require('fs');
-const path = require('path');
-const rs = fs.createReadStream(path.resolve(__dirname, './test.txt'));
-rs.on('data', (chunk) =&gt; { 
-    console.log(`読み込まれたデータ: ${chunk}`); 
-});
-rs.on('end', ()=&gt; { 
-    console.log('ファイル読み込みが完了しました。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/37.html</guid><pubDate>Tue, 11 Nov 2025 03:56:53 +0000</pubDate></item><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
+### 注意点
+- __dirnameは末尾にスラッシュ（/）は含まれません。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/37.html</guid><pubDate>Tue, 11 Nov 2025 03:56:53 +0000</pubDate></item><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
 ## 常用项目
 - [Github](https://github.com/dashboard-feed)
 - [开发资源索引 Free for Developers](https://free-for.dev/)
