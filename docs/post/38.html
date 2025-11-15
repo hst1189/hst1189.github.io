@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-15 10:19</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-15 11:04</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -293,21 +293,31 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/home'</span><span class="pl-kos">,</span> <span class="pl-s1">checkCodeMiddleware</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>  <span class="pl-c">// 声明利用中间件</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
-
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/admin'</span><span class="pl-kos">,</span> <span class="pl-s1">checkCodeMiddleware</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>  <span class="pl-c">// 声明利用中间件</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
-
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/setting'</span><span class="pl-kos">,</span> <span class="pl-s1">checkCodeMiddleware</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>  <span class="pl-c">// 声明利用中间件</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
-<h3>静态资源中间件</h3>
+<h3>静态资源中间件express.static()</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">express</span><span class="pl-kos">.</span><span class="pl-en">static</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span><span class="pl-c1">+</span><span class="pl-s">'./public'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
-<pre class="notranslate"><code class="notranslate">
-### 路由设置
-</code></pre>
-<pre class="notranslate"><code class="notranslate">
+<h3>路由express.Router()</h3>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">router</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">.</span><span class="pl-en">Router</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>    <span class="pl-c">//声明router</span>
 
+<span class="pl-s1">router</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">html</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span>
 
-</code></pre></section>
+<span class="pl-s1">router</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">html</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span>
+
+<span class="pl-smi">module</span><span class="pl-kos">.</span><span class="pl-c1">exports</span> <span class="pl-c1">=</span> <span class="pl-s1">router</span><span class="pl-kos">;</span>    <span class="pl-c">// 最后暴露出去</span></pre></div>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">userRouter</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./userRouter '</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  <span class="pl-c">// 利用侧导入</span>
+<span class="pl-k">const</span> <span class="pl-s1">foodRouter</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./foodRouter '</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  <span class="pl-c">// 利用侧导入</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s">"/user"</span><span class="pl-kos">,</span> <span class="pl-s1">userRouter</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s">"/food"</span><span class="pl-kos">,</span> <span class="pl-s1">foodRouter</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+...  <span class="pl-s1">etc</span><span class="pl-kos">.</span></pre></div></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
 

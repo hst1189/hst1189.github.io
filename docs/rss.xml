@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 15 Nov 2025 10:19:41 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.40 fetch</title><link>https://grapehut.dpdns.org/post/40.html</link><description>### fetch
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 15 Nov 2025 11:05:19 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.40 fetch</title><link>https://grapehut.dpdns.org/post/40.html</link><description>### fetch
 ```javascript
 app.get('/list', (req, res) =&gt; {
     fetch('https://dummyjson.com/recipes')
@@ -267,17 +267,15 @@ function checkCodeMiddleware(req, res, next) {
 
 app.get('/home', checkCodeMiddleware, (req, res) =&gt; {  // 声明利用中间件
 })
-
 app.get('/admin', checkCodeMiddleware, (req, res) =&gt; {  // 声明利用中间件
 })
-
 app.get('/setting', checkCodeMiddleware, (req, res) =&gt; {  // 声明利用中间件
 })
 
 ```
 
 
-### 静态资源中间件
+### 静态资源中间件express.static()
 ```javascript
 app.use(express.static(__dirname+'./public'));
 ```
@@ -285,10 +283,32 @@ app.use(express.static(__dirname+'./public'));
 
 
 
+
+### 路由express.Router()
+```javascript
+const express = require('express');
+const router = express.Router();    //声明router
+
+router.get('/', (req, res) =&gt; {
+    res.send(html);
+})
+
+router.get('/:id', (req, res) =&gt; {
+    res.send(html);
+})
+
+module.exports = router;    // 最后暴露出去
 ```
 
-### 路由设置
-```
+```javascript
+
+const userRouter = require('./userRouter ');  // 利用侧导入
+const foodRouter = require('./foodRouter ');  // 利用侧导入
+
+app.use('/user', userRouter );
+app.use('/food', foodRouter );
+...  etc.
+
 ```
 
 
