@@ -1,11 +1,5 @@
 # NodeJS
 
-![Image](https://github.com/user-attachments/assets/6fddb85e-63f0-4169-9515-68ccff3dccc5)
-
-## cheatsheet
-https://gist.github.com/wle8300/7fe24f89fcdb60269c86
-
-
 ## npm
 ```javascript
 npm init    // 初始化一个新项目，在当前目录创建 package.json 文件
@@ -40,12 +34,13 @@ http://localhost:8080/
 
 ## fs 库  
 
-### 注意点
-- __dirnameは末尾にスラッシュ（/）は含まれません。
-- __dirnameはNode.jsのグローバル変数であり、ブラウザのJavaScriptでは使用できません。
-- 在ESmodule下，需 import定义
-const __dirname = import.meta.dirname;
-const __filename = import.meta.filename;
+> [!TIP]
+> 关于__dirname、__filename
+> 末尾にスラッシュ（/）は含まれません。
+> Node.jsのグローバル変数であり、ブラウザのJavaScriptでは使用できません。
+> 在ESmodule下，需 import定义
+> const __dirname = import.meta.dirname;
+> const __filename = import.meta.filename;
 
 
 ### 文件操作
