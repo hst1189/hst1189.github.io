@@ -24,7 +24,7 @@ app.listen(PORT, () => {
 ```
 
 
-### 路由実例
+### 路由実例１
 ```javascript
 const data = require('./data.json');   // 导入json对象
 const express = require('express');
@@ -77,6 +77,70 @@ app.listen(PORT, () => {
     }
 ]
 ```
+
+### 路由実例２
+```javascript
+const fs = require('fs');
+const path = require('path');
+const express = require('express');
+const app = express();
+const port = 80;
+
+function accessLog(req, res, next) {
+    let { url, ip } = req;
+    let now = new Date();
+    let year = now.getFullYear(); // 获取四位年份
+    let month = now.getMonth() + 1; // 月份从0开始，所以+1
+    let day = now.getDate(); // 日期
+    let hours = now.getHours(); // 小时
+    let minutes = now.getMinutes(); // 分钟
+    let seconds = now.getSeconds(); // 秒
+
+    // 格式化为 YYYY-MM-DD HH:mm:ss
+    let formattedTime = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    fs.appendFileSync(path.resolve(__dirname, './access.log'), `${formattedTime} ${ip} ${url}\r\n`);
+    next();
+}
+
+app.use(accessLog);
+
+app.get('/', (req, res) => {
+    res.send(`${req.ip} ${req.get("user-agent")}`);
+});
+
+
+app.get('/list', (req, res) => {
+    fetch('https://dummyjson.com/recipes')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.recipes);
+            res.json(data.recipes);
+        })
+        .catch(error => console.log(error))
+});
+
+app.get('/list/:id', (req, res) => {
+    let id = req.params.id;
+    fetch('https://dummyjson.com/recipes')
+        .then(response => response.json())
+        .then(data => {
+            const item = data.recipes.find(item => item.id == id);
+            console.log(item);
+            res.json(item);
+        })
+        .catch(error => console.log(error))
+});
+
+
+app.listen(port, () => {
+    console.log('serve in on port 80');
+})
+```
+
+
+
+
 
 
 ### 获取Request Header
