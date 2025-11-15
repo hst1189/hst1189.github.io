@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 15 Nov 2025 07:41:32 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.39 Socket.io入門</title><link>https://grapehut.dpdns.org/post/39.html</link><description>### 服务器端：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 15 Nov 2025 07:55:47 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.39 Socket.io入門</title><link>https://grapehut.dpdns.org/post/39.html</link><description>### 服务器端：
 ```
-import express from 'express';          //express 方式下
+import express from 'express';          //导入express
 import { createServer } from 'http';
 import { Server } from 'socket.io';　 //导入socket.io
 
 const app = express();
-const httpServer = createServer(app);
+const httpServer = createServer(app);  //？为什么要过一层原生http的createServer？
 const io = new Server(httpServer);    // 生成io
 
-io.on('connection', function(socket){  //开启io监听
+io.on('connection', (socket)=&gt; {  //开启io监听
 
-    socket.on('chat', function(msg){   // 第1引数の「chat」，同客户端定义一致
-        io.emit('chat', msg);        // 服务器端socket.emit()   第1引数の「chat」，同客户端定义一致
+    socket.on('chat', (msg)=&gt;{   // 第1引数の「chat」，同客户端定义一致
+        io.emit('chat', msg);        // 服务器端socket.emit()   第1引数の「chat」，同「客户端」一致
     });
 
 });
@@ -26,26 +26,28 @@ app.get('/', (req, res) =&gt; {
 
 ### 客户端：
 ```
-form.btn.addEventListener('click', function(e) {   // 发送时间
-    e.preventDefault();　// 不让画面reload
-    socket.emit('chat', form.text.value);   // 客户端socket.emit()     第1引数の「chat」，同服务器端定义一致
-    form.text.value = '';   // 发送结束后，清空输入框
-})
+&lt;script src='/socket.io/socket.io.js'&gt;&lt;/script&gt;  // 导入socket.io
 
-socket.on('chat', function(msg){
-    var li = document.createElement('li');
+    let socket = io();    //开启socket 
+    
+    socket.on('chat', function (引数) {  // 第1引数の「chat」，同「服务器端」一致　
+　　　获取Dom，设置innerHTML
+    });
 
-    li.textContent = msg;
-    message.appendChild(li);
-});
-
+    form.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit('chat', input.value); // 客户端socket.emit()     第1引数の「chat」，同服务器端定义一致
+        input.value = '';  // 发送结束后，清空输入框
+      }
+    });
 
 ```
 
 
 
 
-例：
+完整例：
 
 ```javascript
 sever.js

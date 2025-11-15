@@ -96,23 +96,23 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 07:13,updated at 2025-11-15 07:40</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 07:13,updated at 2025-11-15 07:55</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Next Page">下一篇-Vol.38 ExpressJS入門</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h3>服务器端：</h3>
-<pre class="notranslate"><code class="notranslate">import express from "express";          //express 方式下
+<pre class="notranslate"><code class="notranslate">import express from "express";          //导入express
 import { createServer } from "http";
 import { Server } from "socket.io";　 //导入socket.io
 
 const app = express();
-const httpServer = createServer(app);
+const httpServer = createServer(app);  //？为什么要过一层原生http的createServer？
 const io = new Server(httpServer);    // 生成io
 
-io.on('connection', function(socket){  //开启io监听
+io.on('connection', (socket)=&gt; {  //开启io监听
 
-    socket.on('chat', function(msg){   // 第1引数の「chat」，同客户端定义一致
-        io.emit('chat', msg);        // 服务器端socket.emit()   第1引数の「chat」，同客户端定义一致
+    socket.on('chat', (msg)=&gt;{   // 第1引数の「chat」，同客户端定义一致
+        io.emit('chat', msg);        // 服务器端socket.emit()   第1引数の「chat」，同「客户端」一致
     });
 
 });
@@ -123,22 +123,24 @@ app.get('/', (req, res) =&gt; {
 });
 </code></pre>
 <h3>客户端：</h3>
-<pre class="notranslate"><code class="notranslate">form.btn.addEventListener('click', function(e) {   // 发送时间
-    e.preventDefault();　// 不让画面reload
-    socket.emit('chat', form.text.value);   // 客户端socket.emit()     第1引数の「chat」，同服务器端定义一致
-    form.text.value = '';   // 发送结束后，清空输入框
-})
+<pre class="notranslate"><code class="notranslate">&lt;script src="/socket.io/socket.io.js"&gt;&lt;/script&gt;  // 导入socket.io
 
-socket.on('chat', function(msg){
-    var li = document.createElement('li');
+    let socket = io();    //开启socket 
+    
+    socket.on("chat", function (引数) {  // 第1引数の「chat」，同「服务器端」一致　
+　　　获取Dom，设置innerHTML
+    });
 
-    li.textContent = msg;
-    message.appendChild(li);
-});
-
+    form.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit("chat", input.value); // 客户端socket.emit()     第1引数の「chat」，同服务器端定义一致
+        input.value = "";  // 发送结束后，清空输入框
+      }
+    });
 
 </code></pre>
-<p>例：</p>
+<p>完整例：</p>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">sever</span><span class="pl-kos">.</span><span class="pl-c1">js</span>
 
 <span class="pl-k">import</span> <span class="pl-s1">express</span> <span class="pl-k">from</span> <span class="pl-s">"express"</span><span class="pl-kos">;</span>

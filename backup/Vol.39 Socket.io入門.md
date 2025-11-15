@@ -1,17 +1,17 @@
 ### 服务器端：
 ```
-import express from "express";          //express 方式下
+import express from "express";          //导入express
 import { createServer } from "http";
 import { Server } from "socket.io";　 //导入socket.io
 
 const app = express();
-const httpServer = createServer(app);
+const httpServer = createServer(app);  //？为什么要过一层原生http的createServer？
 const io = new Server(httpServer);    // 生成io
 
-io.on('connection', function(socket){  //开启io监听
+io.on('connection', (socket)=> {  //开启io监听
 
-    socket.on('chat', function(msg){   // 第1引数の「chat」，同客户端定义一致
-        io.emit('chat', msg);        // 服务器端socket.emit()   第1引数の「chat」，同客户端定义一致
+    socket.on('chat', (msg)=>{   // 第1引数の「chat」，同客户端定义一致
+        io.emit('chat', msg);        // 服务器端socket.emit()   第1引数の「chat」，同「客户端」一致
     });
 
 });
@@ -25,26 +25,28 @@ app.get('/', (req, res) => {
 
 ### 客户端：
 ```
-form.btn.addEventListener('click', function(e) {   // 发送时间
-    e.preventDefault();　// 不让画面reload
-    socket.emit('chat', form.text.value);   // 客户端socket.emit()     第1引数の「chat」，同服务器端定义一致
-    form.text.value = '';   // 发送结束后，清空输入框
-})
+<script src="/socket.io/socket.io.js"></script>  // 导入socket.io
 
-socket.on('chat', function(msg){
-    var li = document.createElement('li');
+    let socket = io();    //开启socket 
+    
+    socket.on("chat", function (引数) {  // 第1引数の「chat」，同「服务器端」一致　
+　　　获取Dom，设置innerHTML
+    });
 
-    li.textContent = msg;
-    message.appendChild(li);
-});
-
+    form.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit("chat", input.value); // 客户端socket.emit()     第1引数の「chat」，同服务器端定义一致
+        input.value = "";  // 发送结束后，清空输入框
+      }
+    });
 
 ```
 
 
 
 
-例：
+完整例：
 
 ```javascript
 sever.js
