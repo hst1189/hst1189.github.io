@@ -9,22 +9,24 @@ app.get('/', (req, res) => {
   res. send('Hello World!')
 })
 
+app.post('/', (req, res) => {      // GET POST 可以相同路由
+  res. send('Hello World!')
+})
+
+app.get('/:id', (req, res) => {   // 获取路由参数 
+  let id =req.params.id;     // 通过req.params获取，req.params 的「.id」定义必须一致
+  res. send(id);
+})
+
 app.listen(PORT, () => {
     console.log(`server is starting on ${PORT} `);
 })
 ```
 
-### 获取路由参数
-```javascript
-app.get('/:id', (req, res) => {
-  let id =req.params.id;          // ★通过req.params获取，「.id」的定义必须一致
-  res. send(id);
-})
-```
 
-### 路由参数練習
+### 路由実例
 ```javascript
-const data = require('./data.json');  // 假设有一个json
+const data = require('./data.json');   // 导入json对象
 const express = require('express');
 const app = express();
 const PORT = 80;
@@ -32,19 +34,16 @@ const PORT = 80;
 app.get('/', (req, res) => {
     let html = ""
     data.map(item => {                   // 同过map()遍历
-        html += `<li>${item.name}</>`
-        html += `<img src=${item.message}></img>`
+        html += `<li>${item.name}</li><img src=${item.message}/>`
     })
     res.send(html);
 })
 
 app.get('/:id', (req, res) => {
-    let id = req.params.id;
     let html = ""
-    let item = data.find( (item) => { item.id == id });     // 同过find() 匹配
+    let item = data.find( (item) =>  item.id == req.params.id );     // 同过find() 匹配
     if (item) {
-        html += `<li>${item.name}</>`
-        html += `<img src=${item.message}></img>`
+        html += `<li>${item.name}</li><img src=${item.message} />`
     } else {
         html += `<h1>404 Not Found</h1>`
     }
@@ -84,14 +83,16 @@ app.listen(PORT, () => {
 ```javascript
 app.get('/', (req, res) => {
 
-    console.log(req.method);             // GET POST PUT etc.
-    console.log(req.url);                // /根路径后面的部分
-    console.log(req.headers);            //获取全部头
-    console.log(req.get('host'));  //获取某个头
-    console.log(req.get('user-agent'));  //获取某个头
+    res.send(`${req.ip} ${req.get("user-agent")}`);   // 返回clientIP 和 user-agent 
 
-    console.log(req.hostname);           //服务端主机名
+    console.log(req.method);             // GET POST PUT etc.
+    console.log(req.headers);            //获取全部头
+    console.log(req.get('host'));  //获取主机名
+    console.log(req.get('user-agent'));  //获取user-agent
+
+    console.log(req.hostname);           //获取主机名
     console.log(req.ip);                 //客户端ip ::ffff:127.0.0.1
+    console.log(req.url);                // /根路径后面的部分
     console.log(req.path);               // /根路径后面的部分
     console.log(req.query);              // ?后面的部分（例：?a=dadda&b=dasda）
 })
