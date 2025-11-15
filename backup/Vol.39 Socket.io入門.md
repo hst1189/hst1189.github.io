@@ -1,3 +1,6 @@
+官方文档：https://socket.io/zh-CN/docs/v4/server-socket-instance/
+https://socket.io/zh-CN/images/bidirectional-communication-socket.png
+
 ### 服务器端：
 ```
 import express from "express";          //导入express
@@ -10,7 +13,7 @@ const io = new Server(httpServer);    // 生成io
 
 io.on('connection', (socket)=> {  //开启io监听
 
-    socket.on('chat', (msg)=>{   // 第1引数の「chat」，同客户端定义一致
+    socket.on('chat', (msg)=>{   // 第1引数の「chat」，同「客户端」一致
         io.emit('chat', msg);        // 服务器端socket.emit()   第1引数の「chat」，同「客户端」一致
     });
 
