@@ -96,12 +96,19 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 07:13,updated at 2025-11-15 08:28</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 07:13,updated at 2025-11-15 08:45</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Next Page">下一篇-Vol.38 ExpressJS入門</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><p>官方文档：<a href="https://socket.io/zh-CN/docs/v4/server-socket-instance/" rel="nofollow">https://socket.io/zh-CN/docs/v4/server-socket-instance/</a><br>
 <img src="https://socket.io/zh-CN/images/bidirectional-communication-socket.png"></p>
+<p>客户端　通过 socket.emit("key1", input.value)  发送表单内容<br>
+↓　　<br>
+服务器端　通过 socket.on('key1',  (引数) =&gt; {  DB 或者其他处理 } )　接收内容<br>
+↓<br>
+服务器端　通过 io.emit('key2', 内容);　发送内容<br>
+↓<br>
+客户端　通过 socket.on("key2", (引数) =&gt; { 画面处理 } )  接收内容</p>
 <h2>socket.id</h2>
 <pre class="notranslate"><code class="notranslate">// server-side
 io.on("connection", (socket) =&gt; {
