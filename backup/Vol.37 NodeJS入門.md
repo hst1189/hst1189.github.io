@@ -39,6 +39,15 @@ File URL in Imports | required for local files | import for local files
 > ②浏览器不支持
 
 
+
+> [!TIP]
+>import require 能加载什么文件
+> 1、.js文件： 通过module.exports 或者 exports 导出模块文件
+> 2、.json文件：通过JSON.parse解析,它会把 JSON 文件解析成一个 JavaScript 对象。
+> 3、any文件：其他任意文件都会当作js文件解析
+
+
+
 > [!TIP]
 >JSON.stringify( )　　Obj⇒JSON文字列
 >例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30} 
