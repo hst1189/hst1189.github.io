@@ -114,6 +114,8 @@ npm install -g express-generator // 快速构建 ExpressJS项目
 
 npm install morgan    // HTTPリクエストのログを記録するミドルウェア
 
+npm install http-proxy-middleware    // 代理
+
 npm install @apollo/server graphql  //GraphQL Server
 
 npm install -g json-server   // 快速构建 json REST API  server
