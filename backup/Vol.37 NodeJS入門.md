@@ -31,19 +31,21 @@ File URL in Imports | required for local files | import for local files
 
 > [!TIP]
 >ESmodule： 
-> ①模块导出   export  default xxx |  模块导入  import xxx from 'xxx'
-> ②浏览器支持
+> ①模块导出   export / export default
+> ②模块导入  import
+> ③浏览器支持
 >
 >CommonJS：   
-> ①模块导出  module.exports = xxx  | 模块导入  require(xxx) 
-> ②浏览器不支持
+> ①模块导出  module.exports / exports
+> ②模块导入  require() 
+> ③浏览器不支持
 
 
 
 > [!TIP]
->import require 能加载什么文件
+>import、 require()  能加载什么文件
 > 1、.js文件： 通过module.exports 或者 exports 导出模块文件
-> 2、.json文件：通过JSON.parse解析,它会把 JSON 文件解析成一个 JavaScript 对象。
+> 2、.json文件：通过JSON.parse解析、把 JSON 文件解析成一个 JavaScript 对象
 > 3、any文件：其他任意文件都会当作js文件解析
 
 
