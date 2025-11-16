@@ -241,11 +241,6 @@ app.get('/', (req, res) => {
 
 
 
-
-
-
-
-
 ## 🚀Middleware in Express
 
 >[!TIP]
@@ -430,6 +425,31 @@ app.listen(port, () => {
 
 
 
+## 🚀CORS 設定
+```javascript
+const express = require('express');
+const helmet = require('helmet');
+const cors = require('cors');
+const app = express();
+
+// Security middleware
+app.use(helmet());
+
+// CORS configuration
+app.use(cors({
+  origin: 'https://example.com',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// Other middleware and routes
+// ...
+
+```
+
+
+
+
 ### 全局中间件（例：写日志）
 ```javascript
 
@@ -477,32 +497,3 @@ app.get('/setting', checkCodeMiddleware, (req, res) => {  // 声明利用中间�
 
 ```
 
-
-
-
-### 路由express.Router()
-```javascript
-const express = require('express');
-const router = express.Router();    //声明router
-
-router.get('/', (req, res) => {
-    res.send(html);
-})
-
-router.get('/:id', (req, res) => {
-    res.send(html);
-})
-
-module.exports = router;    // 最后暴露出去
-```
-
-```javascript
-
-const userRouter = require('./userRouter ');  // 利用侧导入
-const foodRouter = require('./foodRouter ');  // 利用侧导入
-
-app.use("/user", userRouter );
-app.use("/food", foodRouter );
-...  etc.
-
-```

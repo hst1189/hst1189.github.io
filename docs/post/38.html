@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-16 15:32</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-16 15:42</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -463,6 +463,24 @@ express.Router( ) - Create modular route handlers</p>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-s1">port</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
   <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`Example app listening at http://localhost:<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">port</span><span class="pl-kos">}</span></span>`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<h2>🚀CORS 設定</h2>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">helmet</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'helmet'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">cors</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'cors'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Security middleware</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">helmet</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// CORS configuration</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">cors</span><span class="pl-kos">(</span><span class="pl-kos">{</span>
+  <span class="pl-c1">origin</span>: <span class="pl-s">'https://example.com'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">methods</span>: <span class="pl-kos">[</span><span class="pl-s">'GET'</span><span class="pl-kos">,</span> <span class="pl-s">'POST'</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
+  <span class="pl-c1">allowedHeaders</span>: <span class="pl-kos">[</span><span class="pl-s">'Content-Type'</span><span class="pl-kos">,</span> <span class="pl-s">'Authorization'</span><span class="pl-kos">]</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Other middleware and routes</span>
+<span class="pl-c">// ...</span></pre></div>
 <h3>全局中间件（例：写日志）</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">fs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'fs'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">path</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'path'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
@@ -499,26 +517,7 @@ express.Router( ) - Create modular route handlers</p>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/admin'</span><span class="pl-kos">,</span> <span class="pl-s1">checkCodeMiddleware</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>  <span class="pl-c">// 声明利用中间件</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/setting'</span><span class="pl-kos">,</span> <span class="pl-s1">checkCodeMiddleware</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>  <span class="pl-c">// 声明利用中间件</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
-<h3>路由express.Router()</h3>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-s1">router</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">.</span><span class="pl-en">Router</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>    <span class="pl-c">//声明router</span>
-
-<span class="pl-s1">router</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">html</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span>
-
-<span class="pl-s1">router</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">html</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span>
-
-<span class="pl-smi">module</span><span class="pl-kos">.</span><span class="pl-c1">exports</span> <span class="pl-c1">=</span> <span class="pl-s1">router</span><span class="pl-kos">;</span>    <span class="pl-c">// 最后暴露出去</span></pre></div>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">userRouter</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./userRouter '</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  <span class="pl-c">// 利用侧导入</span>
-<span class="pl-k">const</span> <span class="pl-s1">foodRouter</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./foodRouter '</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  <span class="pl-c">// 利用侧导入</span>
-
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s">"/user"</span><span class="pl-kos">,</span> <span class="pl-s1">userRouter</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s">"/food"</span><span class="pl-kos">,</span> <span class="pl-s1">foodRouter</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
-...  <span class="pl-s1">etc</span><span class="pl-kos">.</span></pre></div></section>
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
 
