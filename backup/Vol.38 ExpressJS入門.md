@@ -219,10 +219,155 @@ app.listen(port, () => {
 >express.Router( ) - Create modular route handlers
 
 
-### 静态资源中间件express.static()
 ```javascript
-app.use(express.static(__dirname+'./public'));
+const express = require('express');
+const app = express();
+const port = 8080;
+
+// Middleware to parse JSON request bodies
+app.use(express.json());
+
+// Middleware to parse URL-encoded request bodies
+app.use(express.urlencoded({ extended: true }));
+
+// Middleware to serve static files from a directory
+app.use(express.static('public'));
+
+
+// POST route that uses JSON middleware
+app.post('/api/users', (req, res) => {
+  // req.body contains the parsed JSON data
+  console.log(req.body);
+  res.status(201).json({ message: 'User created', user: req.body });
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
 ```
+
+
+## 🚀Error Handling in Express
+```javascript
+const express = require('express');
+const app = express();
+const port = 8080;
+
+// Route that may throw an error
+app.get('/error', (req, res) => {
+  // Simulating an error
+  throw new Error('Something went wrong!');
+});
+
+// Route that uses next(error) for asynchronous code
+app.get('/async-error', (req, res, next) => {
+  // Simulating an asynchronous operation that fails
+  setTimeout(() => {
+    try {
+      // Something that might fail
+      const result = nonExistentFunction(); // This will throw an error
+      res.send(result);
+    }
+    catch (error) {
+      next(error); // Pass errors to Express
+    }
+    }, 100);
+});
+
+// Custom error handling middleware
+// Must have four parameters to be recognized as an error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+
+```
+
+
+
+## 🚀Serving Static Files
+```javascript
+const express = require('express');
+const path = require('path');
+const app = express();
+const port = 8080;
+
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
+
+// You can also specify a virtual path prefix
+app.use('/static', express.static('public'));
+
+// Using absolute path (recommended)
+app.use('/assets', express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.send(`
+    <h1>Static Files Example</h1>
+    <img src="/images/logo.png" alt="Logo">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
+  `);
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+
+```
+
+
+## 🚀Routing in Separate Files
+```javascript
+
+routes/users.js
+
+const express = require('express');
+const router = express.Router();
+
+// Middleware specific to this router
+router.use((req, res, next) => {
+  console.log('Users Router Time:', Date.now());
+  next();
+});
+
+// Define routes
+router.get('/', (req, res) => {
+  res.send('Users home page');
+});
+
+router.get('/:id', (req, res) => {
+  res.send(`User profile for ID: ${req.params.id}`);
+});
+
+module.exports = router;
+```
+
+```javascript
+
+routes/products.js
+
+const express = require('express');
+const router = express.Router();
+
+// Define routes
+router.get('/', (req, res) => {
+  res.send('Products list');
+});
+
+router.get('/:id', (req, res) => {
+  res.send(`Product details for ID: ${req.params.id}`);
+});
+
+module.exports = router;
+```
+
+
+
 
 
 ### 全局中间件（例：写日志）
