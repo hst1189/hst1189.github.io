@@ -1,13 +1,4 @@
-
-# 搭建  普通node项目
-```
-npm inti  　　　　　　※生成　package.json
-npm install lodash 　　※lodash導入
-
-
-```
-
-# 搭建 Vite 项目
+## 搭建 Vite 项目
 ```
 npm create vite@latest
 
