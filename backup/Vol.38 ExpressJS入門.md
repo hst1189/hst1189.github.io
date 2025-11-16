@@ -25,6 +25,13 @@ app.listen(PORT, () => {
 })
 ```
 
+>[!TIP]
+>app.get( ) - Handle GET requests
+>app.post( ) - Handle POST requests
+>app.put( ) - Handle PUT requests
+>app.delete( ) - Handle DELETE requests
+>app.all( ) - Handle all HTTP methods
+
 
 ### 获取Request Header
 ```javascript
