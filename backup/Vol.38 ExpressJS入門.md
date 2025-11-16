@@ -426,6 +426,8 @@ app.listen(port, () => {
 
 
 ## 🚀CORS 設定
+https://expressjs.com/en/resources/middleware/cors.html
+
 ```javascript
 const express = require('express');
 const helmet = require('helmet');
