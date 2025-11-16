@@ -20,8 +20,13 @@ app.get('/:id', (req, res) => {    // 获取路由参数
   res.send(id);
 })
 
-app.get('/users/:userId/books/:bookId', (req, res) => {    // Route with parameters
+app.get('/users/:userId/books/:bookId', (req, res) => {    // 获取路由参数 
   res.send(`User ID: ${req.params.userId}, Book ID: ${req.params.bookId}`);
+});
+
+app.get('/search', (req, res) => {     // 获取请求参数  http://example.com/search?q=express&page=2
+  const { q, page} = req.query;
+  res.send(`Search query: ${q}, Category: ${page || 'none'}`);
 });
 
 app.all('*', (req, res) => {    // Catch all other routes
