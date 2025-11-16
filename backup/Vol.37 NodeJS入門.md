@@ -92,16 +92,15 @@ https://www.w3schools.com/nodejs/nodejs_path.asp
 
 > [!TIP]
 > 关于__dirname、__filename
-> 末尾にスラッシュ（/）は含まれません。
-> Node.jsのグローバル変数であり、ブラウザのJavaScriptでは使用できません。
+> 末尾にスラッシュ（/）は含まれません。Node.jsのグローバル変数であり、ブラウザでは使用できません。
+>
 > 在ESmodule下，需 import定义
 > const __dirname = import.meta.dirname;
 > const __filename = import.meta.filename;
 
 
-
 ### fs 库  
-
+https://www.w3schools.com/nodejs/nodejs_filesystem.asp
 
 
 ### 文件操作
