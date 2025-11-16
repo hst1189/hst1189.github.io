@@ -11,14 +11,18 @@ app.get('/', (req, res) => {
   res. send('Hello World!')
 })
 
-app.post('/', (req, res) => {      // GET POST 可以相同路由
+app.post('/', (req, res) => {    // GET POST 可以相同路由
   res. send('Hello World!')
 })
 
-app.get('/:id', (req, res) => {   // 获取路由参数 
+app.get('/:id', (req, res) => {    // 获取路由参数 
   let id =req.params.id;     // 通过req.params获取，req.params 的「.id」定义必须一致
   res. send(id);
 })
+
+app.all('*', (req, res) => {    // Catch all other routes
+  res.status(404).send("404 - Page not found");
+});
 
 app.listen(PORT, () => {
     console.log(`server is starting on ${PORT} `);

@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-16 14:20</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-16 14:22</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -110,14 +110,18 @@ footer{margin-top:64px; text-align: center;font-size: small;}
   <span class="pl-s1">res</span><span class="pl-kos">.</span> <span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'Hello World!'</span><span class="pl-kos">)</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
 
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>      <span class="pl-c">// GET POST 可以相同路由</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>    <span class="pl-c">// GET POST 可以相同路由</span>
   <span class="pl-s1">res</span><span class="pl-kos">.</span> <span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'Hello World!'</span><span class="pl-kos">)</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
 
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>   <span class="pl-c">// 获取路由参数 </span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>    <span class="pl-c">// 获取路由参数 </span>
   <span class="pl-k">let</span> <span class="pl-s1">id</span> <span class="pl-c1">=</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">;</span>     <span class="pl-c">// 通过req.params获取，req.params 的「.id」定义必须一致</span>
   <span class="pl-s1">res</span><span class="pl-kos">.</span> <span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">id</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">all</span><span class="pl-kos">(</span><span class="pl-s">'*'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>    <span class="pl-c">// Catch all other routes</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">404</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">"404 - Page not found"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">PORT</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`server is starting on <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">PORT</span><span class="pl-kos">}</span></span> `</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
