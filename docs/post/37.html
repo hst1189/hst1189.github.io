@@ -96,8 +96,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-15 12:56</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Previous Page">上一篇-Vol.36 网络资源</a><a class="next_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Next Page">下一篇-Vol.38 ExpressJS入門</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-16 07:07</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>NodeJS</h1>
@@ -112,7 +112,14 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <span class="pl-s1">npm</span> <span class="pl-s1">uninstall</span>  <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>    <span class="pl-c">// 全局删除指定package</span>
 
 <span class="pl-s1">npm</span> <span class="pl-s1">ls</span>        <span class="pl-c">// 查看当前项目package</span>
-<span class="pl-s1">npm</span> <span class="pl-s1">ls</span> <span class="pl-c1">-</span><span class="pl-s1">g</span>    <span class="pl-c">// 查看全局package</span></pre></div>
+<span class="pl-s1">npm</span> <span class="pl-s1">ls</span> <span class="pl-c1">-</span><span class="pl-s1">g</span>    <span class="pl-c">// 查看全局package</span>
+
+<span class="pl-s1">npm</span><span class="pl-kos"></span> <span class="pl-s1">view</span>        <span class="pl-c">// 查看当前项目所有依赖项的最新版本</span>
+<span class="pl-s1">npm</span><span class="pl-kos"></span> <span class="pl-s1">outdated</span>    <span class="pl-c">// 仅列出当前项目已过时的依赖项</span>
+
+<span class="pl-s1">npm</span> <span class="pl-s1">update</span> <span class="pl-s1">lodash</span>    <span class="pl-c">// 当前项目更新指定package</span>
+<span class="pl-s1">npm</span><span class="pl-kos"></span> <span class="pl-s1">update</span>        <span class="pl-c">// 根据 package.json 文件更新项目的所有依赖</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">update</span> <span class="pl-c1">-</span><span class="pl-s1">g</span>    <span class="pl-c">// 更新package</span></pre></div>
 <h2>常用第三方库</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">express</span>            <span class="pl-c">//ExpressJSフレームワーク</span>
 <span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-s1">express</span><span class="pl-c1">-</span><span class="pl-s1">generator</span> <span class="pl-c">// 快速构建 ExpressJS项目</span>
