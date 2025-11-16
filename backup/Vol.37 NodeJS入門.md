@@ -121,6 +121,49 @@ https://www.w3schools.com/nodejs/nodejs_path.asp
 > const __dirname = import.meta.dirname;
 > const __filename = import.meta.filename;
 
+```javascript
+const os = require('os');
+const path = require('path');
+
+// Basic system information
+console.log(`OS Platform: ${os.platform()}`);
+console.log(`OS Type: ${os.type()}`);
+console.log(`OS Release: ${os.release()}`);
+console.log(`Kernel Version: ${os.version()}`);
+console.log(`CPU Architecture: ${os.arch()}`);
+console.log(`Hostname: ${os.hostname()}`);
+
+// Memory information
+const totalMemGB = (os.totalmem() / (1024 * 1024 * 1024)).toFixed(2);
+const freeMemGB = (os.freemem() / (1024 * 1024 * 1024)).toFixed(2);
+console.log(`Memory: ${freeMemGB}GB free of ${totalMemGB}GB`);
+
+// User information
+const user = os.userInfo();
+console.log('User Information:');
+console.log(`- Username: ${user.username}`);
+console.log(`- User ID: ${user.uid}`);
+console.log(`- Group ID: ${user.gid}`);
+
+// On Windows, you can also get the user's domain
+if (os.platform() === 'win32') {
+    console.log(`- Domain: ${user.domain || 'N/A'}`);
+}
+// Note: user.shell is only available on POSIX platforms
+if (user.shell) {
+    console.log(`- Default Shell: ${user.shell}`);
+}
+
+
+// Get the home directory
+const homeDir = os.homedir();
+console.log(`Home Directory: ${homeDir}`);
+
+// Get the system default temp dir
+console.log(`Temporary Directory: ${os.tmpdir()}`);
+```
+
+
 
 ### fs 库  
 https://www.w3schools.com/nodejs/nodejs_filesystem.asp
