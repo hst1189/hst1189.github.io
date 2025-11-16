@@ -1,6 +1,6 @@
 # NodeJS
 
-### Comparison Table
+### 🚀Node.js vs Browser
 
 https://www.w3schools.com/nodejs/nodejs_vs_browser.asp
 
@@ -16,6 +16,18 @@ Security | Full OS access | Sandboxed
 Package Management | npm/yarn | CDN/Bundler
 
 
+
+### 🚀CommonJS vs ES Modules
+https://www.w3schools.com/nodejs/nodejs_modules_esm.asp
+
+Feature | CommonJS | ES Modules
+-- | -- | --
+File Extension | .js (default) | .mjs (or .js with proper config)
+Import Syntax | require() | import
+Export Syntax | module.exports / exports | export / export default
+Import Timing | Dynamic (runtime) | Static (parsed before execution)
+Top-level Await | Not supported | Supported
+File URL in Imports | required for local files | import for local files
 
 > [!TIP]
 >ESmodule： 
