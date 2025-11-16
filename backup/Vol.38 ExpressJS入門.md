@@ -1,5 +1,13 @@
-### 定型写法
+## 🚀 基本写法
 https://www.w3schools.com/nodejs/nodejs_express.asp
+
+>[!TIP]
+>app.get( ) - Handle GET requests
+>app.post( ) - Handle POST requests
+>app.put( ) - Handle PUT requests
+>app.delete( ) - Handle DELETE requests
+>app.all( ) - Handle all HTTP methods
+
 
 ```javascript
 
@@ -38,12 +46,6 @@ app.listen(PORT, () => {
 })
 ```
 
->[!TIP]
->app.get( ) - Handle GET requests
->app.post( ) - Handle POST requests
->app.put( ) - Handle PUT requests
->app.delete( ) - Handle DELETE requests
->app.all( ) - Handle all HTTP methods
 
 
 ### 获取Request Header
@@ -208,9 +210,7 @@ app.listen(port, () => {
 
 
 
-
-
-### 全局中间件（例：写日志）
+## 🚀Middleware in Express
 
 >[!TIP]
 >express.json( ) - Parse JSON request bodies
@@ -219,7 +219,13 @@ app.listen(port, () => {
 >express.Router( ) - Create modular route handlers
 
 
+### 静态资源中间件express.static()
+```javascript
+app.use(express.static(__dirname+'./public'));
+```
 
+
+### 全局中间件（例：写日志）
 ```javascript
 
 const fs = require('fs');
@@ -267,13 +273,6 @@ app.get('/setting', checkCodeMiddleware, (req, res) => {  // 声明利用中间�
 ```
 
 
-### 静态资源中间件express.static()
-```javascript
-app.use(express.static(__dirname+'./public'));
-```
-
-
-
 
 
 ### 路由express.Router()
@@ -302,6 +301,3 @@ app.use("/food", foodRouter );
 ...  etc.
 
 ```
-
-
-
