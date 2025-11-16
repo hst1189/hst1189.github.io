@@ -1,5 +1,17 @@
 # NodeJS
 
+
+> [!TIP]
+> 
+>JSON.stringify( )　　Obj⇒JSON文字列
+>例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30} 
+> 
+>JSON.parse( )　　JSON文字列⇒Obj
+>例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }
+>
+>※JSON文字列：key 和value 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去
+
+
 ## npm
 ```javascript
 npm init    // 初始化一个新项目，在当前目录创建 package.json 文件
