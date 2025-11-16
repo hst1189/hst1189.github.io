@@ -20,6 +20,10 @@ app.get('/:id', (req, res) => {    // 获取路由参数
   res.send(id);
 })
 
+app.get('/users/:userId/books/:bookId', (req, res) => {    // Route with parameters
+  res.send(`User ID: ${req.params.userId}, Book ID: ${req.params.bookId}`);
+});
+
 app.all('*', (req, res) => {    // Catch all other routes
   res.status(404).send("404 - Page not found");
 });
