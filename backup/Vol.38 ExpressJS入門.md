@@ -438,11 +438,21 @@ const app = express();
 app.use(helmet());
 
 // CORS configuration
-app.use(cors({
+app.use(cors(
+{
   origin: 'https://example.com',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
-}));
+}
+
+// 默认配置相当于：
+{
+  origin: "*",
+  methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+}
+));
 
 // Other middleware and routes
 // ...
