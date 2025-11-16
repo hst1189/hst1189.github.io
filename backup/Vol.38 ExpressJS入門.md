@@ -1,3 +1,38 @@
+## 🚀 快速构建express项目
+```
+npm install -g express-generator
+express myapp
+cd myapp
+npm install
+npm start
+http://localhost:3000/
+
+
+├── bin
+│   └── www（実行ファイル）
+├── node_modules
+│   ├── express
+│   ├── ... etc
+├── public
+│   ├── images（空）
+│   ├── javascripts（空）
+│   └── stylesheets
+│       └── style.css
+├── routes
+│   ├── index.js
+│   └── users.js
+└── views
+    ├── error.pug
+    ├── index.pug
+    └── layout.pug
+├── app.js
+├── package.json
+
+7 directories, 9 files
+
+
+```
+
 ## 🚀 基本写法
 https://www.w3schools.com/nodejs/nodejs_express.asp
 
