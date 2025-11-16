@@ -96,13 +96,72 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-16 08:20</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-16 10:07</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>NodeJS</h1>
-<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p>
-<p>JSON.stringify( )　　Obj⇒JSON文字列<br>
+<h3>Comparison Table</h3>
+<p><a href="https://www.w3schools.com/nodejs/nodejs_vs_browser.asp" rel="nofollow">https://www.w3schools.com/nodejs/nodejs_vs_browser.asp</a></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Feature</th>
+<th>Node.js</th>
+<th>Browser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File System Access</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Networking (TCP/UDP)</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>DOM Access</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Global Object</td>
+<td>global</td>
+<td>window/self</td>
+</tr>
+<tr>
+<td>Modules</td>
+<td>CommonJS/ESM</td>
+<td>ESM/Scripts</td>
+</tr>
+<tr>
+<td>Environment Variables</td>
+<td>Yes (process.env)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Full OS access</td>
+<td>Sandboxed</td>
+</tr>
+<tr>
+<td>Package Management</td>
+<td>npm/yarn</td>
+<td>CDN/Bundler</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>ESmodule：<br>
+①模块导出   export  default xxx |  模块导入  import xxx from 'xxx'<br>
+②浏览器支持</p>
+<p>CommonJS：<br>
+①模块导出  module.exports = xxx  | 模块导入  require(xxx)<br>
+②浏览器不支持</p>
+</div>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>JSON.stringify( )　　Obj⇒JSON文字列<br>
 例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30}</p>
 <p>JSON.parse( )　　JSON文字列⇒Obj<br>
 例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }</p>
@@ -140,7 +199,11 @@ http:<span class="pl-c">//localhost:3000</span>
 <span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-s1">http</span><span class="pl-c1">-</span><span class="pl-s1">server</span>   <span class="pl-c">// 快速构建static HTTP server</span>
 <span class="pl-s1">http</span><span class="pl-c1">-</span><span class="pl-s1">server</span>
 http:<span class="pl-c">//localhost:8080/</span><span class="pl-kos"></span></pre></div>
-<h2>fs 库</h2>
+<h2>core 库</h2>
+<h3>os 库</h3>
+<p><a href="https://www.w3schools.com/nodejs/nodejs_os.asp" rel="nofollow">https://www.w3schools.com/nodejs/nodejs_os.asp</a></p>
+<h3>path 库</h3>
+<p><a href="https://www.w3schools.com/nodejs/nodejs_path.asp" rel="nofollow">https://www.w3schools.com/nodejs/nodejs_path.asp</a></p>
 <div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>关于__dirname、__filename<br>
 末尾にスラッシュ（/）は含まれません。<br>
 Node.jsのグローバル変数であり、ブラウザのJavaScriptでは使用できません。<br>
@@ -148,6 +211,7 @@ Node.jsのグローバル変数であり、ブラウザのJavaScriptでは使用
 const __dirname = import.meta.dirname;<br>
 const __filename = import.meta.filename;</p>
 </div>
+<h3>fs 库</h3>
 <h3>文件操作</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate">### <span class="pl-s1">读文件</span>
 <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFile</span><span class="pl-kos">(</span><span class="pl-s1">filename</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">options</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-s1">callback</span><span class="pl-kos">)</span><span class="pl-kos">;</span>

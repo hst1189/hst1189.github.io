@@ -1,8 +1,33 @@
 # NodeJS
 
+### Comparison Table
+
+https://www.w3schools.com/nodejs/nodejs_vs_browser.asp
+
+Feature | Node.js | Browser
+-- | -- | --
+File System Access | Yes | No
+Networking (TCP/UDP) | Yes | No
+DOM Access | No | Yes
+Global Object | global | window/self
+Modules | CommonJS/ESM | ESM/Scripts
+Environment Variables | Yes (process.env) | No
+Security | Full OS access | Sandboxed
+Package Management | npm/yarn | CDN/Bundler
+
+
 
 > [!TIP]
-> 
+>ESmodule： 
+> ①模块导出   export  default xxx |  模块导入  import xxx from 'xxx'
+> ②浏览器支持
+>
+>CommonJS：   
+> ①模块导出  module.exports = xxx  | 模块导入  require(xxx) 
+> ②浏览器不支持
+
+
+> [!TIP]
 >JSON.stringify( )　　Obj⇒JSON文字列
 >例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30} 
 > 
@@ -10,6 +35,10 @@
 >例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }
 >
 >※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去
+
+
+
+
 
 
 ## npm
@@ -53,9 +82,13 @@ http-server
 http://localhost:8080/
 ```
 
+## core 库
 
+### os 库  
+https://www.w3schools.com/nodejs/nodejs_os.asp
 
-## fs 库  
+### path 库  
+https://www.w3schools.com/nodejs/nodejs_path.asp
 
 > [!TIP]
 > 关于__dirname、__filename
@@ -64,6 +97,11 @@ http://localhost:8080/
 > 在ESmodule下，需 import定义
 > const __dirname = import.meta.dirname;
 > const __filename = import.meta.filename;
+
+
+
+### fs 库  
+
 
 
 ### 文件操作
