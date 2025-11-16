@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 16 Nov 2025 15:43:12 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 16 Nov 2025 15:54:42 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
 
 `Gmeek-html&lt;img src='https://i.gyazo.com/d9294ea53005e7d0500899a46e6b2b50.png'&gt;`
 
@@ -608,82 +608,9 @@ File URL in Imports | required for local files | import for local files
 
 
 
-&gt; [!TIP]
-&gt;import、 require()  能加载什么文件
-&gt; 1、.js文件： 通过module.exports 或者 exports 导出模块文件
-&gt; 2、.json文件：通过JSON.parse解析、把 JSON 文件解析成一个 JavaScript 对象
-&gt; 3、any文件：其他任意文件都会当作js文件解析
+### 🚀路径分析： 依据标识符确定模块位置
 
-
-
-&gt; [!TIP]
-&gt;JSON.stringify( )　　Obj⇒JSON文字列
-&gt;例: JSON.stringify({ name: 'Taro', age: 30 }) は  {'name':'Taro','age':30} 
-&gt; 
-&gt;JSON.parse( )　　JSON文字列⇒Obj
-&gt;例: JSON.parse({'name':'Taro','age':30}) は { name: 'Taro', age: 30 }
-&gt;
-&gt;※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去
-
-
-
-
-
-
-## npm
-```javascript
-npm init    // 初始化一个新项目，在当前目录创建 package.json 文件
-
-npm install    // 根据 package.json 文件安装项目的所有依赖
-npm install &lt;package-name&gt;        // 当前项目安装指定package
-npm install -g &lt;package-name&gt;    // 全局安装指定package
-
-npm uninstall &lt;package-name&gt;        // 当前项目删除指定package
-npm uninstall -g &lt;package-name&gt;    // 全局删除指定package
-
-npm ls        // 查看当前项目package
-npm ls -g    // 查看全局package
-
-npm view        // 查看当前项目所有依赖项的最新版本
-npm outdated    // 仅列出当前项目已过时的依赖项
-
-npm update  &lt;package-name&gt;    // 当前项目更新指定package
-npm update                    // 根据 package.json 文件更新项目的所有依赖
-npm update -g &lt;package-name&gt;  // 更新package
-
-```
-
-
-## 常用第三方库
-```javascript
-
-npm install express            //ExpressJSフレームワーク
-npm install -g express-generator // 快速构建 ExpressJS项目
-
-npm install morgan    // HTTPリクエストのログを記録するミドルウェア
-
-npm install @apollo/server graphql  //GraphQL Server
-
-npm install -g json-server   // 快速构建 json REST API  server
-json-server --watch abc.json
-http://localhost:3000
-
-npm install -g http-server   // 快速构建static HTTP server
-http-server
-http://localhost:8080/
-```
-
-## core 库
-
-### os 库  
-https://www.w3schools.com/nodejs/nodejs_os.asp
-
-### path 库  
-https://www.w3schools.com/nodejs/nodejs_path.asp
-
-&gt; [!TIP]
-&gt; 关于__dirname、__filename
-&gt; 末尾にスラッシュ（/）は含まれません。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/37.html</guid><pubDate>Tue, 11 Nov 2025 03:56:53 +0000</pubDate></item><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
+1. 优先加载内置模块，即使有同名文件，也会优先使用内置模块。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/37.html</guid><pubDate>Tue, 11 Nov 2025 03:56:53 +0000</pubDate></item><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
 ## 常用项目
 - [Github](https://github.com/dashboard-feed)
 - [开发资源索引 Free for Developers](https://free-for.dev/)

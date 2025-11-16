@@ -42,6 +42,24 @@ File URL in Imports | required for local files | import for local files
 
 
 
+### 🚀路径分析： 依据标识符确定模块位置
+
+1. 优先加载内置模块，即使有同名文件，也会优先使用内置模块。
+2. 不是内置模块，先去缓存找。
+3. 缓存没有就去找对应路径的文件。
+4. 不存在对应的文件，就将这个路径作为文件夹加载。
+5. 对应的文件和文件夹都找不到就去node_modules下面找。
+6. 还找不到就报错了。
+
+文件夹加载，前提是找不到文件，但是不可能将整个文件夹都加载进来，加载文件夹的时候也是有一个加载顺序的：
+
+7. 先看看这个文件夹下面有没有package.json，如果有就找里面的main字段，main字段有值就加载对应的文件
+8. 如果没有package.json或者package.json里面没有main，就找index文件
+9. 如果这两步都找不到就报错了。
+
+
+
+
 > [!TIP]
 >import、 require()  能加载什么文件
 > 1、.js文件： 通过module.exports 或者 exports 导出模块文件
