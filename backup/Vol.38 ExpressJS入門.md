@@ -211,6 +211,15 @@ app.listen(port, () => {
 
 
 ### 全局中间件（例：写日志）
+
+>[!TIP]
+>express.json( ) - Parse JSON request bodies
+>express.urlencoded( ) - Parse URL-encoded request bodies
+>express.static( ) - Serve static files
+>express.Router( ) - Create modular route handlers
+
+
+
 ```javascript
 
 const fs = require('fs');
