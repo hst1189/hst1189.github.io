@@ -9,7 +9,7 @@
 >JSON.parse( )　　JSON文字列⇒Obj
 >例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }
 >
->※JSON文字列：key 和value 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去
+>※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去
 
 
 ## npm
