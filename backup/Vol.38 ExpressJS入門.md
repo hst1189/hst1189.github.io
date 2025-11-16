@@ -47,50 +47,6 @@ app.listen(PORT, () => {
 ```
 
 
-
-### 获取Request Header
-```javascript
-app.get('/', (req, res) => {
-
-    res.send(`${req.ip} ${req.get("user-agent")}`);   // 返回clientIP 和 user-agent 
-
-    console.log(req.method);             // GET POST PUT etc.
-    console.log(req.headers);            //获取全部头
-    console.log(req.get('host'));  //获取主机名
-    console.log(req.get('user-agent'));  //获取user-agent
-
-    console.log(req.hostname);           //获取主机名
-    console.log(req.ip);                 //客户端ip ::ffff:127.0.0.1
-    console.log(req.url);                // /根路径后面的部分
-    console.log(req.path);               // /根路径后面的部分
-    console.log(req.query);              // ?后面的部分（例：?a=dadda&b=dasda）
-})
-```
-
-
-### 设置Response Header
-```javascript
-app.get('/', (req, res) => {
-     
-    // 原生
-    res.statusCode = 200;
-    res.statusMessage = "love u ";
-    res.setHeader('xxx-code', '520');
-
-    //express方法
-    res.status(500);
-    res.set('xxx-code', '520');
-
-     //其他方法
-    res.redirect('https://google.com');       // 重定向
-    res.download(_dirname+'./xxx.json');  // 下载
-    res.json({id:1,name:"xxyyzz"});             // 返回json
-    res.sendFile(_dirname+'./xxx.html');    // 返回文件
-})
-```
-
-
-
 ### 実例１
 ```javascript
 const data = require('./data.json');   // 导入json对象
@@ -204,6 +160,51 @@ app.listen(port, () => {
     console.log('serve in on port 80');
 })
 ```
+
+
+
+## 🚀获取Request Header
+```javascript
+app.get('/', (req, res) => {
+
+    res.send(`${req.ip} ${req.get("user-agent")}`);   // 返回clientIP 和 user-agent 
+
+    console.log(req.method);             // GET POST PUT etc.
+    console.log(req.headers);            //获取全部头
+    console.log(req.get('host'));  //获取主机名
+    console.log(req.get('user-agent'));  //获取user-agent
+
+    console.log(req.hostname);           //获取主机名
+    console.log(req.ip);                 //客户端ip ::ffff:127.0.0.1
+    console.log(req.url);                // /根路径后面的部分
+    console.log(req.path);               // /根路径后面的部分
+    console.log(req.query);              // ?后面的部分（例：?a=dadda&b=dasda）
+})
+```
+
+
+## 🚀设置Response Header
+```javascript
+app.get('/', (req, res) => {
+     
+    // 原生
+    res.statusCode = 200;
+    res.statusMessage = "love u ";
+    res.setHeader('xxx-code', '520');
+
+    //express方法
+    res.status(500);
+    res.set('xxx-code', '520');
+
+     //其他方法
+    res.redirect('https://google.com');       // 重定向
+    res.download(_dirname+'./xxx.json');  // 下载
+    res.json({id:1,name:"xxyyzz"});             // 返回json
+    res.sendFile(_dirname+'./xxx.html');    // 返回文件
+})
+```
+
+
 
 
 
