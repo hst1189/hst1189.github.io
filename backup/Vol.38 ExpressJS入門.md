@@ -481,7 +481,7 @@ app.listen(3000, () => {
 ```
 
 
-#### すべてのAPIをCORS許可したい場合
+#### 全路由を適用
 ```javascript
 const express = require('express')
 const cors = require('cors')
@@ -501,7 +501,7 @@ app.get('/user/:userId', function (req, res, next) {
 })
 ```
 
-#### ルートごとに設定する
+#### 個別路由を適用
 ```javascript
 const express = require('express')
 const cors = require('cors')
