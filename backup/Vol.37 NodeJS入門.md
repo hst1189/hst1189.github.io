@@ -123,7 +123,7 @@ fetch(' url ')    // 可以跨域请求
     .catch(error => console.log(error))
 
 
-例：
+＜GETリクエストの例＞
 fetch('https://example.com/api/data', {
   method: 'GET',
   credentials: 'include' // クッキーや認証情報を含める場合
@@ -131,6 +131,32 @@ fetch('https://example.com/api/data', {
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error:', error));
+
+
+＜GETリクエストの例＞
+fetch('https://example.com/api/data?id=123')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // レスポンスをJSONとしてパース
+  })
+
+
+＜POSTリクエストの例＞
+const postData = {
+  name: 'John Doe',
+  age: 30
+};
+
+fetch('https://example.com/api/users', {
+  method: 'POST', // methodを'POST'に設定
+  headers: {
+    'Content-Type': 'application/json' // 送信するデータの形式を指定
+  },
+  body: JSON.stringify(postData) // データをJSON文字列に変換してbodyに設定 [1]
+})
+
 ```
 
 ##### 実例１（Express内使用）

@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-17 17:13</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-17 17:20</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -271,14 +271,39 @@ footer{margin-top:64px; text-align: center;font-size: small;}
     <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">error</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
 
 
-<span class="pl-s1">例：</span>
+<span class="pl-s1">＜GETリクエストの例＞</span>
 <span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">'https://example.com/api/data'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
   <span class="pl-c1">method</span>: <span class="pl-s">'GET'</span><span class="pl-kos">,</span>
   <span class="pl-c1">credentials</span>: <span class="pl-s">'include'</span> <span class="pl-c">// クッキーや認証情報を含める場合</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
   <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">response</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
   <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">data</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
-  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">error</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">'Error:'</span><span class="pl-kos">,</span> <span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">error</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">'Error:'</span><span class="pl-kos">,</span> <span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+
+<span class="pl-s1">＜GETリクエストの例＞</span>
+<span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">'https://example.com/api/data?id=123'</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">response</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-c1">!</span><span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-c1">ok</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+      <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-v">Error</span><span class="pl-kos">(</span><span class="pl-s">'Network response was not ok'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+    <span class="pl-k">return</span> <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// レスポンスをJSONとしてパース</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span>
+
+
+<span class="pl-s1">＜POSTリクエストの例＞</span>
+<span class="pl-k">const</span> <span class="pl-s1">postData</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">name</span>: <span class="pl-s">'John Doe'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">age</span>: <span class="pl-c1">30</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">'https://example.com/api/users'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">method</span>: <span class="pl-s">'POST'</span><span class="pl-kos">,</span> <span class="pl-c">// methodを'POST'に設定</span>
+  <span class="pl-c1">headers</span>: <span class="pl-kos">{</span>
+    <span class="pl-s">'Content-Type'</span>: <span class="pl-s">'application/json'</span> <span class="pl-c">// 送信するデータの形式を指定</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+  <span class="pl-c1">body</span>: <span class="pl-c1">JSON</span><span class="pl-kos">.</span><span class="pl-en">stringify</span><span class="pl-kos">(</span><span class="pl-s1">postData</span><span class="pl-kos">)</span> <span class="pl-c">// データをJSON文字列に変換してbodyに設定 [1]</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
 <h5>実例１（Express内使用）</h5>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/list'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">'https://dummyjson.com/recipes'</span><span class="pl-kos">)</span>
