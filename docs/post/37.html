@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-17 12:27</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-17 13:00</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -231,7 +231,11 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 2、.json文件：通过JSON.parse解析、把 JSON 文件解析成一个 JavaScript 对象<br>
 3、any文件：其他任意文件都会当作js文件解析</p>
 </div>
-<h3>fetch</h3>
+<h3>加载.json文件</h3>
+<pre class="notranslate"><code class="notranslate">方法①：const data = require("./data.json");
+方法②：import data from "./data.json" with { type: "json" };
+</code></pre>
+<h3>fetch（请求跨域文件）</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">' url '</span><span class="pl-kos">)</span>    <span class="pl-c">// 可以跨域请求</span>
     <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">response</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span>   <span class="pl-c">// 返回一个Promiss对象，使用它的.json() 获取json对象</span>
     <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">data</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>

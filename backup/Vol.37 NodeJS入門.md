@@ -67,7 +67,15 @@ File URL in Imports | required for local files | import for local files
 > 2、.json文件：通过JSON.parse解析、把 JSON 文件解析成一个 JavaScript 对象
 > 3、any文件：其他任意文件都会当作js文件解析
 
-### fetch
+### 加载.json文件
+```
+方法①：const data = require("./data.json");
+方法②：import data from "./data.json" with { type: "json" };
+```
+
+
+
+### fetch（请求跨域文件）
 ```javascript
 fetch(' url ')    // 可以跨域请求
     .then(response => response.json())   // 返回一个Promiss对象，使用它的.json() 获取json对象
