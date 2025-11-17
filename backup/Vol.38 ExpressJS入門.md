@@ -228,14 +228,17 @@ app.get('/', (req, res) => {
     res.setHeader('xxx-code', '520');
 
     //express方法
-    res.status(500);
-    res.set('xxx-code', '520');
-
-     //其他方法
-    res.redirect('https://google.com');       // 重定向
-    res.download(_dirname+'./xxx.json');  // 下载
-    res.json({id:1,name:"xxyyzz"});             // 返回json
-    res.sendFile(_dirname+'./xxx.html');    // 返回文件
+– res.send ( )，返回多种形式数据。
+–  res.status(500);
+–  res.set('xxx-code', '520');
+– res.end ( )，结束响应。
+– res.redirect ( 'https://google.com')，重定向请求。
+– res.render ( )，渲染模板。
+– res. download(_dirname+'./xxx.json' )，弹出文件下载。
+– res.json( id:1,name:"xxyyzz"} )，返回json。
+– res.jsonp( )，返回 jsonp。
+– res.sendFile  (_dirname+'./xxx.html' )，返回文件。
+– res.sendStatus( )，返回状态。
 })
 ```
 
