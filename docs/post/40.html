@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 09:51,updated at 2025-11-17 16:53</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 09:51,updated at 2025-11-17 16:58</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Previous Page">上一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a><a class="next_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Next Page">下一篇-Vol.39 Socket.io入門</a></div>
 </nav>
 
@@ -107,16 +107,10 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <h4>Configuring CORS</h4>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">corsOptions</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
   <span class="pl-c1">origin</span>: <span class="pl-kos">[</span><span class="pl-s">"http://example1.com"</span><span class="pl-kos">,</span> <span class="pl-pds"><span class="pl-c1">/</span><span class="pl-cce">\.</span><span class="pl-s">e</span><span class="pl-s">x</span><span class="pl-s">a</span><span class="pl-s">m</span><span class="pl-s">p</span><span class="pl-s">l</span><span class="pl-s">e</span><span class="pl-s">2</span><span class="pl-cce">\.</span><span class="pl-s">c</span><span class="pl-s">o</span><span class="pl-s">m</span><span class="pl-cce">$</span><span class="pl-c1">/</span></span><span class="pl-kos">]</span><span class="pl-kos">,</span>
-  <span class="pl-c1">methods</span>: <span class="pl-kos">[</span><span class="pl-s">'GET'</span><span class="pl-kos">,</span> <span class="pl-s">'PUT'</span><span class="pl-kos">,</span> <span class="pl-s">'POST'</span><span class="pl-kos">]</span>
-  <span class="pl-s1">optionsSuccessStatus</span>: <span class="pl-c1">200</span> <span class="pl-c">// some legacy browsers (IE11, various SmartTVs) choke on 204</span>
-  <span class="pl-s1">credentials</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span>            <span class="pl-c">// Enable cookies and credentials</span>
-
-  <span class="pl-s">"origin"</span>: <span class="pl-s">"*"</span><span class="pl-kos">,</span>
-  <span class="pl-s">"methods"</span>: <span class="pl-s">"GET,HEAD,PUT,PATCH,POST,DELETE"</span><span class="pl-kos">,</span>
-  <span class="pl-s">"preflightContinue"</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span>
-  <span class="pl-s">"optionsSuccessStatus"</span>: <span class="pl-c1">204</span>
-    <span class="pl-kos">}</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span>
+  <span class="pl-c1">methods</span>: <span class="pl-kos">[</span><span class="pl-s">'GET'</span><span class="pl-kos">,</span> <span class="pl-s">'PUT'</span><span class="pl-kos">,</span> <span class="pl-s">'POST'</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
+  <span class="pl-c1">optionsSuccessStatus</span>: <span class="pl-c1">200</span><span class="pl-kos">,</span> <span class="pl-c">// some legacy browsers (IE11, various SmartTVs) choke on 204</span>
+  <span class="pl-c1">credentials</span>: <span class="pl-c1">true</span>            <span class="pl-c">// Enable cookies and credentials</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
 
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-en">cors</span><span class="pl-kos">(</span><span class="pl-s1">corsOptions</span> <span class="pl-kos">)</span><span class="pl-kos">)</span></pre></div>
 <h4>Simple Usage (Enable All CORS Requests)</h4>

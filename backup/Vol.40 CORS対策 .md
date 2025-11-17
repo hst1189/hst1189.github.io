@@ -10,16 +10,10 @@ npm install cors
 ```javascript
 const corsOptions = {
   origin: ["http://example1.com", /\.example2\.com$/],
-  methods: ['GET', 'PUT', 'POST']
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  credentials: true,            // Enable cookies and credentials
-
-  "origin": "*",
-  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-  "preflightContinue": false,
-  "optionsSuccessStatus": 204
-    };
-}
+  methods: ['GET', 'PUT', 'POST'],
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  credentials: true            // Enable cookies and credentials
+};
 
 app.use(cors(corsOptions ))
 ```
