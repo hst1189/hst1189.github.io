@@ -30,15 +30,16 @@ Top-level Await | Not supported | Supported
 File URL in Imports | required for local files | import for local files
 
 > [!TIP]
->ESmodule： 
-> ①模块导出   export / export default
-> ②模块导入  import
-> ③浏览器支持
->
 >CommonJS：   
 > ①模块导出  module.exports / exports
 > ②模块导入  require() 
 > ③浏览器不支持
+> 
+>ESmodule： 
+> ①模块导出   export / export default
+> ②模块导入  import
+> ③浏览器支持
+
 
 
 
