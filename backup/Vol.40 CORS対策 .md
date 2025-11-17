@@ -2,7 +2,7 @@
 https://expressjs.com/en/resources/middleware/cors.html
 
 ###  app.use(cors()); 　middlewareを利用
-```
+```javascript
 npm install cors
 ```
 
@@ -52,7 +52,7 @@ app.listen(80, function () {
 ```
 
 #### Enabling CORS Pre-Flight
-```
+```javascript
 app.options('/products/:id', cors()) // enable pre-flight request for DELETE request
 app.del('/products/:id', cors(), function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for all origins!'})
