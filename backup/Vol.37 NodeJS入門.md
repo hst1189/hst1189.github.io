@@ -76,7 +76,7 @@ File URL in Imports | required for local files | import for local files
         .catch(error => console.log(error))
 ```
 
-##### 実例１
+##### 実例１（Express内使用）
 ```javascript
 app.get('/list', (req, res) => {
     fetch('https://dummyjson.com/recipes')
@@ -99,7 +99,7 @@ app.get('/list/:id', (req, res) => {
 });
 ```
 
-##### 実例２
+##### 実例２（HTML内使用）
 ```html
     <ul id="bbb"></ul>
     <script>
