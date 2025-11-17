@@ -167,6 +167,8 @@ npm install morgan    // HTTPリクエストのログを記録するミドルウ
 
 npm install http-proxy-middleware    // 代理
 
+npm install cheerio // 网页爬虫
+
 npm install @apollo/server graphql  //GraphQL Server
 
 npm install -g json-server   // 快速构建 json REST API  server
