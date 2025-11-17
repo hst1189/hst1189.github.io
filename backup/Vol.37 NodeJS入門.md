@@ -60,16 +60,66 @@ File URL in Imports | required for local files | import for local files
 
 
 
-
 > [!TIP]
 >import、 require()  能加载什么文件
 > 1、.js文件： 通过module.exports 或者 exports 导出模块文件
 > 2、.json文件：通过JSON.parse解析、把 JSON 文件解析成一个 JavaScript 对象
 > 3、any文件：其他任意文件都会当作js文件解析
 
+### fetch
+```javascript
+    fetch(' url ')    // 可以跨域请求
+        .then(response => response.json())   // 返回一个Promiss对象，使用它的.json() 获取json对象
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.log(error))
+```
+
+##### 実例１
+```javascript
+app.get('/list', (req, res) => {
+    fetch('https://dummyjson.com/recipes')
+        .then(response => response.json())
+        .then(data => {
+            res.json(data.recipes);　　// res.json() 返回json对象
+        })
+        .catch(error => console.log(error))
+});
+
+app.get('/list/:id', (req, res) => {
+    fetch('https://dummyjson.com/recipes')
+        .then(response => response.json())
+        .then(data => {
+            const item = data.recipes.find(item => item.id == req.params.id);
+            console.log(item);
+            res.json(item);
+        })
+        .catch(error => console.log(error))
+});
+```
+
+##### 実例２
+```html
+    <ul id="bbb"></ul>
+    <script>
+        const ul_user = document.getElementById("bbb");
+        fetch('https://dummyjson.com/users')
+            .then(response => response.json())
+            .then(data => {
+                data.users.forEach(element => {
+                    ul_user.innerHTML += `<li><img src='${element.image}'/>${element.firstName} ${element.age}</li>`;
+                });
+            })
+            .catch(error => console.error(error))
+    </script>
+```
+
 
 
 > [!TIP]
+> 除了res.json( )、下面方法可以转换
+>
 >JSON.stringify( )　　Obj⇒JSON文字列
 >例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30} 
 > 
