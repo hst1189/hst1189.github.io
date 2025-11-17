@@ -205,6 +205,17 @@ npm update -g <package-name>  // 更新package
 
 ```
 
+フロントとサーバーを立ち上げる際、1つのコマンドを起動させる方法
+>[!TIP]
+>
+>"scripts": {
+>  "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+>  "dev:server": "サーバー立ち上げコマンド",
+>  "dev:client": "フロント立ち上げコマンド"
+>  }
+>↓
+>npm run dev // どちらも立ち上がる
+
 
 ## 常用第三方库
 ```javascript
