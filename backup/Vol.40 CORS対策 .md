@@ -9,10 +9,10 @@ npm install cors
 #### Configuring CORS
 ```javascript
 const corsOptions = {
-  origin: ["http://example1.com", /\.example2\.com$/],
-  methods: ['GET', 'PUT', 'POST'],
+  origin: ["http://example1.com", /\.example2\.com$/],  // 許可するオリジン
+  methods: ['GET', 'PUT', 'POST'],    // 許可するHTTPメソッド
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  credentials: true            // Enable cookies and credentials
+  credentials: true            // 認証情報を含むリクエストを許可
 };
 
 app.use(cors(corsOptions ))
