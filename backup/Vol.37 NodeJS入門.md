@@ -236,20 +236,8 @@ http://localhost:8080/
 ### os 库  
 https://www.w3schools.com/nodejs/nodejs_os.asp
 
-### path 库  
-https://www.w3schools.com/nodejs/nodejs_path.asp
-
-> [!TIP]
-> 关于__dirname、__filename
-> 末尾にスラッシュ（/）は含まれません。Node.jsのグローバル変数であり、ブラウザでは使用できません。
->
-> 在ESmodule下，需 import定义
-> const __dirname = import.meta.dirname;
-> const __filename = import.meta.filename;
-
 ```javascript
 const os = require('os');
-const path = require('path');
 
 // Basic system information
 console.log(`OS Platform: ${os.platform()}`);
@@ -282,12 +270,24 @@ if (user.shell) {
 
 
 // Get the home directory
-const homeDir = os.homedir();
-console.log(`Home Directory: ${homeDir}`);
+console.log(`Home Directory: ${os.homedir()}`);
 
 // Get the system default temp dir
 console.log(`Temporary Directory: ${os.tmpdir()}`);
 ```
+
+### path 库  
+https://www.w3schools.com/nodejs/nodejs_path.asp
+
+> [!TIP]
+> 关于__dirname、__filename
+> 末尾にスラッシュ（/）は含まれません。Node.jsのグローバル変数であり、ブラウザでは使用できません。
+>
+> 在ESmodule下，需 import定义
+> const __dirname = import.meta.dirname;
+> const __filename = import.meta.filename;
+
+
 
 
 
