@@ -126,20 +126,38 @@ fetch('https://example.com/api/data?id=123')   // URL引数を含める場合
 
 
 ＜POSTリクエストの例＞
-const postData = {
-  name: 'John Doe',
-  age: 30
-};
-
-fetch('https://example.com/api/users', {
-  method: 'POST',     // methodを'POST'に設定
+fetch("https://jsonplaceholder.typicode.com/posts", {
+  method: "POST",
+  body: JSON.stringify({
+    title: "Hello World",
+    body: "My POST request",
+    userId: 900,
+  }),
   headers: {
-    'Content-Type': 'application/json'     // 送信するデータの形式を指定
+    "Content-type": "application/json; charset=UTF-8",
   },
-  body: JSON.stringify(postData) // データをJSON文字列に変換してbodyに設定
 })
+.then((response) => response.json())
+.then((json) => console.log(json));
 
+
+＜PUTリクエストの例＞
+fetch("https://jsonplaceholder.typicode.com/posts/1", {
+  method: "PUT",
+  body: JSON.stringify({
+    id: 1,
+    title: "My PUT request",
+    body: "Updating the entire object",
+    userId: 1,
+  }),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+  },
+})
+.then((response) => response.json())
+.then((json) => console.log(json));
 ```
+
 
 ##### 実例１（Express内使用）
 ```javascript
