@@ -25,7 +25,7 @@ Feature | CommonJS | ES Modules
 -- | -- | --
 File Extension | .js (default) | .mjs (or .js with proper config)
 Import Syntax | require() | import
-Export Syntax | module.exports / exports | export / export default
+Export Syntax | module.exports 或者 exports | export 或者 export default
 Import Timing | Dynamic (runtime) | Static (parsed before execution)
 Top-level Await | Not supported | Supported
 File URL in Imports | required for local files | import for local files
