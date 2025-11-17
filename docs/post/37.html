@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-17 13:00</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-17 15:00</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -282,6 +282,35 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }</p>
 <p>※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去</p>
 </div>
+<h2>同步&amp;异步</h2>
+<h4>Callback Hell</h4>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">user</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-en">getOrders</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">orders</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-en">processOrders</span><span class="pl-kos">(</span><span class="pl-s1">orders</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+      <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'All done!'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<h4>Use Promises</h4>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">user</span> <span class="pl-c1">=&gt;</span> <span class="pl-en">getOrders</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">orders</span> <span class="pl-c1">=&gt;</span> <span class="pl-en">processOrders</span><span class="pl-kos">(</span><span class="pl-s1">orders</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'All done!'</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">handleError</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<h4>Async/Await</h4>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">processUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">try</span> <span class="pl-kos">{</span>
+    <span class="pl-k">const</span> <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">const</span> <span class="pl-s1">orders</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-en">getOrders</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">await</span> <span class="pl-en">processOrders</span><span class="pl-kos">(</span><span class="pl-s1">orders</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'All done!'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span></pre></div>
 <h2>npm</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">init</span>    <span class="pl-c">// 初始化一个新项目，在当前目录创建 package.json 文件</span>
 

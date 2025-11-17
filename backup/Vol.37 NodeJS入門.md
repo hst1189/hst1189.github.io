@@ -138,6 +138,46 @@ app.get('/list/:id', (req, res) => {
 >※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去
 
 
+## 同步&异步
+#### Callback Hell
+```javascript
+getUser(userId, (err, user) => {
+  if (err) return handleError(err);
+  getOrders(user.id, (err, orders) => {
+    if (err) return handleError(err);
+    processOrders(orders, (err) => {
+      if (err) return handleError(err);
+      console.log('All done!');
+    });
+  });
+});
+```
+
+#### Use Promises
+```javascript
+getUser(userId)
+  .then(user => getOrders(user.id))
+  .then(orders => processOrders(orders))
+  .then(() => console.log('All done!'))
+  .catch(handleError);
+```
+
+#### Async/Await
+```javascript
+async function processUser(userId) {
+  try {
+    const user = await getUser(userId);
+    const orders = await getOrders(user.id);
+    await processOrders(orders);
+    console.log('All done!');
+  } catch (err) {
+    handleError(err);
+  }
+}
+```
+
+
+
 
 
 
