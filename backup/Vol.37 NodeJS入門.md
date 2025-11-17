@@ -268,13 +268,13 @@ if (user.shell) {
     console.log(`- Default Shell: ${user.shell}`);
 }
 
-
 // Get the home directory
 console.log(`Home Directory: ${os.homedir()}`);
 
 // Get the system default temp dir
 console.log(`Temporary Directory: ${os.tmpdir()}`);
 ```
+
 
 ### path 库  
 https://www.w3schools.com/nodejs/nodejs_path.asp
@@ -286,6 +286,45 @@ https://www.w3schools.com/nodejs/nodejs_path.asp
 > 在ESmodule下，需 import定义
 > const __dirname = import.meta.dirname;
 > const __filename = import.meta.filename;
+
+```javascript
+// Ensure directories exist
+async function ensureDirectories() {
+  try {
+    await Promise.all([
+      fs.mkdir(paths.logs, { recursive: true }),
+      fs.mkdir(paths.public, { recursive: true }),
+      fs.mkdir(paths.uploads, { recursive: true, mode: 0o755 })
+    ]);
+    console.log('All directories ready');
+  } catch (error) {
+    console.error('Error creating directories:', error);
+  }
+}
+
+// Example: Load configuration
+async function loadConfig() {
+  try {
+    const configData = await fs.readFile(paths.config, 'utf8');
+    return JSON.parse(configData);
+  } catch (error) {
+    console.error('Error loading config:', error.message);
+    return {};
+  }
+}
+
+// Example: Log to application log
+async function logToFile(message) {
+  try {
+    const logFile = path.join(paths.logs, `${new Date().toISOString().split('T')[0]}.log`);
+    const logMessage = `[${new Date().toISOString()}] ${message}\n`;
+    await fs.appendFile(logFile, logMessage, 'utf8');
+  } catch (error) {
+    console.error('Error writing to log:', error);
+  }
+}
+```
+
 
 
 
