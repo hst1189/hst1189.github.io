@@ -119,10 +119,18 @@ async function processUser(userId) {
 ```javascript
 fetch(' url ')    // 可以跨域请求
     .then(response => response.json())   // 返回一个Promiss对象，使用它的.json() 获取json对象
-    .then(data => {
-        console.log(data);
-    })
+    .then(data => console.log(data))
     .catch(error => console.log(error))
+
+
+例：
+fetch('https://example.com/api/data', {
+  method: 'GET',
+  credentials: 'include' // クッキーや認証情報を含める場合
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
 ```
 
 ##### 実例１（Express内使用）
