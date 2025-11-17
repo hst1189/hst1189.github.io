@@ -9,9 +9,10 @@ Feature | Node.js | Browser
 File System Access | Yes | No
 Networking (TCP/UDP) | Yes | No
 DOM Access | No | Yes
-Global Object | global | window/self
-Modules | CommonJS/ESM | ESM/Scripts
+Global Object | Node.js uses global | browsers use window or self
+Modules | CommonJS (require) 或者 ES modules (import); | ES modules 或者 plain <script> tags
 Environment Variables | Yes (process.env) | No
+Event Loop | Both environments use an event loop, but Node.js has additional APIs for timers, process, etc. | |
 Security | Full OS access | Sandboxed
 Package Management | npm/yarn | CDN/Bundler
 

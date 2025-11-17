@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-17 11:30</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-17 11:46</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -129,18 +129,23 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 <tr>
 <td>Global Object</td>
-<td>global</td>
-<td>window/self</td>
+<td>Node.js uses global</td>
+<td>browsers use window or self</td>
 </tr>
 <tr>
 <td>Modules</td>
-<td>CommonJS/ESM</td>
-<td>ESM/Scripts</td>
+<td>CommonJS (require) 或者 ES modules (import);</td>
+<td>ES modules 或者 plain &lt;script&gt; tags</td>
 </tr>
 <tr>
 <td>Environment Variables</td>
 <td>Yes (process.env)</td>
 <td>No</td>
+</tr>
+<tr>
+<td>Event Loop</td>
+<td>Both environments use an event loop, but Node.js has additional APIs for timers, process, etc.</td>
+<td></td>
 </tr>
 <tr>
 <td>Security</td>
