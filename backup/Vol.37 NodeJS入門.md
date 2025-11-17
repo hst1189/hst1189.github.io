@@ -1,6 +1,6 @@
 # NodeJS
 
-### 🚀Node.js vs Browser
+## 🚀Node.js vs Browser
 
 https://www.w3schools.com/nodejs/nodejs_vs_browser.asp
 
@@ -18,7 +18,7 @@ Package Management | npm/yarn | CDN/Bundler
 
 
 
-### 🚀CommonJS vs ES Modules
+## 🚀CommonJS vs ES Modules
 https://www.w3schools.com/nodejs/nodejs_modules_esm.asp
 
 Feature | CommonJS | ES Modules
@@ -44,7 +44,7 @@ File URL in Imports | required for local files | import for local files
 
 
 
-### 🚀路径分析： 依据标识符确定模块位置
+## 🚀路径分析： 依据标识符确定模块位置
 
 1. 优先加载内置模块，即使有同名文件，也会优先使用内置模块。
 2. 不是内置模块，先去缓存找。
@@ -67,51 +67,33 @@ File URL in Imports | required for local files | import for local files
 > 2、.json文件：通过JSON.parse解析、把 JSON 文件解析成一个 JavaScript 对象
 > 3、any文件：其他任意文件都会当作js文件解析
 
-### 加载.json文件
+
+
+## 🚀加载.json文件
 ```
-方法①：const data = require("./data.json");
-方法②：import data from "./data.json" with { type: "json" };
-```
+方法①（静的なファイル）：const data = require("./data.json");
 
+方法②（静的なファイル）：import data from "./data.json" with { type: "json" };
 
-
-## 同步&异步
-#### Callback Hell
-```javascript
-getUser(userId, (err, user) => {
-  if (err) return handleError(err);
-  getOrders(user.id, (err, orders) => {
-    if (err) return handleError(err);
-    processOrders(orders, (err) => {
-      if (err) return handleError(err);
-      console.log('All done!');
-    });
+方法③（サーバー経由）：
+fetch('/path/to/data.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
   });
-});
 ```
 
-#### Promises
-```javascript
-getUser(userId)
-  .then(user => getOrders(user.id))
-  .then(orders => processOrders(orders))
-  .then(() => console.log('All done!'))
-  .catch(handleError);
-```
+JSON文字列をObjに変換 
+> [!TIP]
+>
+> JSON.parse( )　　JSON文字列⇒Obj
+> 例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }
+> 
+> JSON.stringify( )　　Obj⇒JSON文字列
+> 例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30} 
+> 
+> ※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去
 
-#### Async/Await
-```javascript
-async function processUser(userId) {
-  try {
-    const user = await getUser(userId);
-    const orders = await getOrders(user.id);
-    await processOrders(orders);
-    console.log('All done!');
-  } catch (err) {
-    handleError(err);
-  }
-}
-```
 
 
 
@@ -126,7 +108,7 @@ fetch(' url ')    // 可以跨域请求
 ＜GETリクエストの例＞
 fetch('https://example.com/api/data', {
   method: 'GET',
-  credentials: 'include' // クッキーや認証情報を含める場合
+  credentials: 'include'               // クッキーや認証情報を含める場合
 })
   .then(response => response.json())
   .then(data => console.log(data))
@@ -134,12 +116,12 @@ fetch('https://example.com/api/data', {
 
 
 ＜GETリクエストの例＞
-fetch('https://example.com/api/data?id=123')
+fetch('https://example.com/api/data?id=123')   // URL引数を含める場合
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
-    return response.json(); // レスポンスをJSONとしてパース
+    return response.json();     // レスポンスをJSONとしてパース
   })
 
 
@@ -150,11 +132,11 @@ const postData = {
 };
 
 fetch('https://example.com/api/users', {
-  method: 'POST', // methodを'POST'に設定
+  method: 'POST',     // methodを'POST'に設定
   headers: {
-    'Content-Type': 'application/json' // 送信するデータの形式を指定
+    'Content-Type': 'application/json'     // 送信するデータの形式を指定
   },
-  body: JSON.stringify(postData) // データをJSON文字列に変換してbodyに設定 [1]
+  body: JSON.stringify(postData) // データをJSON文字列に変換してbodyに設定
 })
 
 ```
@@ -199,22 +181,50 @@ app.get('/list/:id', (req, res) => {
 ```
 
 
+## 🚀同步&异步
+#### Callback Hell
+```javascript
+getUser(userId, (err, user) => {
+  if (err) return handleError(err);
+  getOrders(user.id, (err, orders) => {
+    if (err) return handleError(err);
+    processOrders(orders, (err) => {
+      if (err) return handleError(err);
+      console.log('All done!');
+    });
+  });
+});
+```
 
-> [!TIP]
-> 除了res.json( )、下面方法可以转换Obj⇔JSON文字列
->
->JSON.stringify( )　　Obj⇒JSON文字列
->例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30} 
-> 
->JSON.parse( )　　JSON文字列⇒Obj
->例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }
->
->※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去
+#### Promises
+```javascript
+getUser(userId)
+  .then(user => getOrders(user.id))
+  .then(orders => processOrders(orders))
+  .then(() => console.log('All done!'))
+  .catch(handleError);
+```
+
+#### Async/Await
+```javascript
+async function processUser(userId) {
+  try {
+    const user = await getUser(userId);
+    const orders = await getOrders(user.id);
+    await processOrders(orders);
+    console.log('All done!');
+  } catch (err) {
+    handleError(err);
+  }
+}
+```
 
 
 
 
-## npm
+
+
+## 🚀npm
 ```javascript
 npm init    // 初始化一个新项目，在当前目录创建 package.json 文件
 
@@ -237,19 +247,20 @@ npm update -g <package-name>  // 更新package
 
 ```
 
-フロントとサーバーを立ち上げる際、1つのコマンドを起動させる方法
->[!TIP]
->
->"scripts": {
->  "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
->  "dev:server": "サーバー立ち上げコマンド",
->  "dev:client": "フロント立ち上げコマンド"
+package.json小技巧： 一个命令同时开启前端/后端２个服务器
+> [!TIP]
+> "scripts": {
+>    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+>    "dev:server": "サーバー立ち上げコマンド",
+>    "dev:client": "フロント立ち上げコマンド"
 >  }
->↓
->npm run dev // どちらも立ち上がる
+>
+> npm run dev // どちらも立ち上がる
 
 
-## 常用第三方库
+
+
+## 🚀常用第三方库
 ```javascript
 
 npm install express            //ExpressJSフレームワーク
@@ -272,7 +283,7 @@ http-server
 http://localhost:8080/
 ```
 
-## core 库  Core Built-in Modules
+## 🚀core 库  Core Built-in Modules
 
 <img width="1230" height="268" alt="Image" src="https://github.com/user-attachments/assets/6f4aed76-1267-4eee-9476-6289dca19f76" />
 
@@ -442,7 +453,7 @@ fs.stat('./abc', (err, data) => {
 });
 ```
 
-## fs.createReadStream使い方
+### fs.createReadStream使い方
 ```javascript
 const fs = require('fs');
 const path = require('path');
@@ -463,7 +474,7 @@ on('end', ...): ファイルの読み込みが完了した場合
 on('error', ...): 読み取り中にエラーが発生した場合 
 ```
 
-## fs.createWriteStream使い方
+### fs.createWriteStream使い方
 ```javascript
 const fs = require('fs');
 const path = require('path');
@@ -481,7 +492,7 @@ ws.on('error', (err) => {
 ```
 
 
-## 复制文件
+### 复制文件
 ```javascript
 const rs = fs.createReadStream('./test.txt');
 const ws = fs.createWriteStream('./test2.txt');

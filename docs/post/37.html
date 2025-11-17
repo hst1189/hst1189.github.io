@@ -96,12 +96,12 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-17 17:20</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-17 23:38</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>NodeJS</h1>
-<h3>🚀Node.js vs Browser</h3>
+<h2>🚀Node.js vs Browser</h2>
 <p><a href="https://www.w3schools.com/nodejs/nodejs_vs_browser.asp" rel="nofollow">https://www.w3schools.com/nodejs/nodejs_vs_browser.asp</a></p>
 <markdown-accessiblity-table><table role="table">
 <thead>
@@ -159,7 +159,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<h3>🚀CommonJS vs ES Modules</h3>
+<h2>🚀CommonJS vs ES Modules</h2>
 <p><a href="https://www.w3schools.com/nodejs/nodejs_modules_esm.asp" rel="nofollow">https://www.w3schools.com/nodejs/nodejs_modules_esm.asp</a></p>
 <markdown-accessiblity-table><table role="table">
 <thead>
@@ -211,7 +211,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 ②模块导入  import<br>
 ③浏览器支持</p>
 </div>
-<h3>🚀路径分析： 依据标识符确定模块位置</h3>
+<h2>🚀路径分析： 依据标识符确定模块位置</h2>
 <ol>
 <li>优先加载内置模块，即使有同名文件，也会优先使用内置模块。</li>
 <li>不是内置模块，先去缓存找。</li>
@@ -231,39 +231,26 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 2、.json文件：通过JSON.parse解析、把 JSON 文件解析成一个 JavaScript 对象<br>
 3、any文件：其他任意文件都会当作js文件解析</p>
 </div>
-<h3>加载.json文件</h3>
-<pre class="notranslate"><code class="notranslate">方法①：const data = require("./data.json");
-方法②：import data from "./data.json" with { type: "json" };
+<h2>🚀加载.json文件</h2>
+<pre class="notranslate"><code class="notranslate">方法①（静的なファイル）：const data = require("./data.json");
+
+方法②（静的なファイル）：import data from "./data.json" with { type: "json" };
+
+方法③（サーバー経由）：
+fetch('/path/to/data.json')
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });
 </code></pre>
-<h2>同步&amp;异步</h2>
-<h4>Callback Hell</h4>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">user</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-  <span class="pl-en">getOrders</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">orders</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-    <span class="pl-en">processOrders</span><span class="pl-kos">(</span><span class="pl-s1">orders</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-      <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-      <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'All done!'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-    <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
-<h4>Promises</h4>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span>
-  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">user</span> <span class="pl-c1">=&gt;</span> <span class="pl-en">getOrders</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
-  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">orders</span> <span class="pl-c1">=&gt;</span> <span class="pl-en">processOrders</span><span class="pl-kos">(</span><span class="pl-s1">orders</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
-  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'All done!'</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
-  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">handleError</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
-<h4>Async/Await</h4>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">processUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
-  <span class="pl-k">try</span> <span class="pl-kos">{</span>
-    <span class="pl-k">const</span> <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-    <span class="pl-k">const</span> <span class="pl-s1">orders</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-en">getOrders</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-    <span class="pl-k">await</span> <span class="pl-en">processOrders</span><span class="pl-kos">(</span><span class="pl-s1">orders</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'All done!'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-  <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
-    <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-  <span class="pl-kos">}</span>
-<span class="pl-kos">}</span></pre></div>
+<p>JSON文字列をObjに変換</p>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p>
+<p>JSON.parse( )　　JSON文字列⇒Obj<br>
+例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }</p>
+<p>JSON.stringify( )　　Obj⇒JSON文字列<br>
+例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30}</p>
+<p>※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去</p>
+</div>
 <h3>fetch（请求跨域文件）</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">' url '</span><span class="pl-kos">)</span>    <span class="pl-c">// 可以跨域请求</span>
     <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">response</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span>   <span class="pl-c">// 返回一个Promiss对象，使用它的.json() 获取json对象</span>
@@ -274,7 +261,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <span class="pl-s1">＜GETリクエストの例＞</span>
 <span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">'https://example.com/api/data'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
   <span class="pl-c1">method</span>: <span class="pl-s">'GET'</span><span class="pl-kos">,</span>
-  <span class="pl-c1">credentials</span>: <span class="pl-s">'include'</span> <span class="pl-c">// クッキーや認証情報を含める場合</span>
+  <span class="pl-c1">credentials</span>: <span class="pl-s">'include'</span>               <span class="pl-c">// クッキーや認証情報を含める場合</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
   <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">response</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
   <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">data</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
@@ -282,12 +269,12 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 
 
 <span class="pl-s1">＜GETリクエストの例＞</span>
-<span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">'https://example.com/api/data?id=123'</span><span class="pl-kos">)</span>
+<span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">'https://example.com/api/data?id=123'</span><span class="pl-kos">)</span>   <span class="pl-c">// URL引数を含める場合</span>
   <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">response</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-c1">!</span><span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-c1">ok</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
       <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-v">Error</span><span class="pl-kos">(</span><span class="pl-s">'Network response was not ok'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
     <span class="pl-kos">}</span>
-    <span class="pl-k">return</span> <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// レスポンスをJSONとしてパース</span>
+    <span class="pl-k">return</span> <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>     <span class="pl-c">// レスポンスをJSONとしてパース</span>
   <span class="pl-kos">}</span><span class="pl-kos">)</span>
 
 
@@ -298,11 +285,11 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <span class="pl-kos">}</span><span class="pl-kos">;</span>
 
 <span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">'https://example.com/api/users'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
-  <span class="pl-c1">method</span>: <span class="pl-s">'POST'</span><span class="pl-kos">,</span> <span class="pl-c">// methodを'POST'に設定</span>
+  <span class="pl-c1">method</span>: <span class="pl-s">'POST'</span><span class="pl-kos">,</span>     <span class="pl-c">// methodを'POST'に設定</span>
   <span class="pl-c1">headers</span>: <span class="pl-kos">{</span>
-    <span class="pl-s">'Content-Type'</span>: <span class="pl-s">'application/json'</span> <span class="pl-c">// 送信するデータの形式を指定</span>
+    <span class="pl-s">'Content-Type'</span>: <span class="pl-s">'application/json'</span>     <span class="pl-c">// 送信するデータの形式を指定</span>
   <span class="pl-kos">}</span><span class="pl-kos">,</span>
-  <span class="pl-c1">body</span>: <span class="pl-c1">JSON</span><span class="pl-kos">.</span><span class="pl-en">stringify</span><span class="pl-kos">(</span><span class="pl-s1">postData</span><span class="pl-kos">)</span> <span class="pl-c">// データをJSON文字列に変換してbodyに設定 [1]</span>
+  <span class="pl-c1">body</span>: <span class="pl-c1">JSON</span><span class="pl-kos">.</span><span class="pl-en">stringify</span><span class="pl-kos">(</span><span class="pl-s1">postData</span><span class="pl-kos">)</span> <span class="pl-c">// データをJSON文字列に変換してbodyに設定</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
 <h5>実例１（Express内使用）</h5>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/list'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
@@ -337,14 +324,36 @@ footer{margin-top:64px; text-align: center;font-size: small;}
         <span class="pl-kos">}</span><span class="pl-kos">)</span>
         <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">error</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
 <span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span></pre></div>
-<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>除了res.json( )、下面方法可以转换Obj⇔JSON文字列</p>
-<p>JSON.stringify( )　　Obj⇒JSON文字列<br>
-例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30}</p>
-<p>JSON.parse( )　　JSON文字列⇒Obj<br>
-例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }</p>
-<p>※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去</p>
-</div>
-<h2>npm</h2>
+<h2>🚀同步&amp;异步</h2>
+<h4>Callback Hell</h4>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">user</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-en">getOrders</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">orders</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-en">processOrders</span><span class="pl-kos">(</span><span class="pl-s1">orders</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+      <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'All done!'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<h4>Promises</h4>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">user</span> <span class="pl-c1">=&gt;</span> <span class="pl-en">getOrders</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">orders</span> <span class="pl-c1">=&gt;</span> <span class="pl-en">processOrders</span><span class="pl-kos">(</span><span class="pl-s1">orders</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'All done!'</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">handleError</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<h4>Async/Await</h4>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">processUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">try</span> <span class="pl-kos">{</span>
+    <span class="pl-k">const</span> <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">const</span> <span class="pl-s1">orders</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-en">getOrders</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">await</span> <span class="pl-en">processOrders</span><span class="pl-kos">(</span><span class="pl-s1">orders</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'All done!'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span></pre></div>
+<h2>🚀npm</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">init</span>    <span class="pl-c">// 初始化一个新项目，在当前目录创建 package.json 文件</span>
 
 <span class="pl-s1">npm</span> <span class="pl-s1">install</span>    <span class="pl-c">// 根据 package.json 文件安装项目的所有依赖</span>
@@ -363,17 +372,15 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <span class="pl-s1">npm</span> <span class="pl-s1">update</span>  <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>    <span class="pl-c">// 当前项目更新指定package</span>
 <span class="pl-s1">npm</span> <span class="pl-s1">update</span>                    <span class="pl-c">// 根据 package.json 文件更新项目的所有依赖</span>
 <span class="pl-s1">npm</span> <span class="pl-s1">update</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>  <span class="pl-c">// 更新package</span></pre></div>
-<p>フロントとサーバーを立ち上げる際、1つのコマンドを起動させる方法</p>
-<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p>
-<p>"scripts": {<br>
+<p>package.json小技巧： 一个命令同时开启前端/后端２个服务器</p>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>"scripts": {<br>
 "dev": "concurrently "npm run dev:server" "npm run dev:client"",<br>
 "dev:server": "サーバー立ち上げコマンド",<br>
 "dev:client": "フロント立ち上げコマンド"<br>
-}<br>
-↓<br>
-npm run dev // どちらも立ち上がる</p>
+}</p>
+<p>npm run dev // どちらも立ち上がる</p>
 </div>
-<h2>常用第三方库</h2>
+<h2>🚀常用第三方库</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">express</span>            <span class="pl-c">//ExpressJSフレームワーク</span>
 <span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-s1">express</span><span class="pl-c1">-</span><span class="pl-s1">generator</span> <span class="pl-c">// 快速构建 ExpressJS项目</span>
 
@@ -392,7 +399,7 @@ http:<span class="pl-c">//localhost:3000</span>
 <span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-s1">http</span><span class="pl-c1">-</span><span class="pl-s1">server</span>   <span class="pl-c">// 快速构建static HTTP server</span>
 <span class="pl-s1">http</span><span class="pl-c1">-</span><span class="pl-s1">server</span>
 http:<span class="pl-c">//localhost:8080/</span><span class="pl-kos"></span></pre></div>
-<h2>core 库  Core Built-in Modules</h2>
+<h2>🚀core 库  Core Built-in Modules</h2>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/6f4aed76-1267-4eee-9476-6289dca19f76"><img width="1230" height="268" alt="Image" src="https://github.com/user-attachments/assets/6f4aed76-1267-4eee-9476-6289dca19f76" style="max-width: 100%; height: auto; max-height: 268px;"></a></p>
 <h3>os 库</h3>
 <p><a href="https://www.w3schools.com/nodejs/nodejs_os.asp" rel="nofollow">https://www.w3schools.com/nodejs/nodejs_os.asp</a></p>
@@ -529,7 +536,7 @@ const __filename = import.meta.filename;</p>
         <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-en">isDirectory</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'isDirectory'</span><span class="pl-kos">)</span> <span class="pl-kos">}</span>
     <span class="pl-kos">}</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
-<h2>fs.createReadStream使い方</h2>
+<h3>fs.createReadStream使い方</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">fs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'fs'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">path</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'path'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">rs</span> <span class="pl-c1">=</span> <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createReadStream</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">.</span><span class="pl-en">resolve</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span><span class="pl-kos">,</span> <span class="pl-s">'./test.txt'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
@@ -547,7 +554,7 @@ const __filename = import.meta.filename;</p>
 <span class="pl-s1">on</span><span class="pl-kos">(</span><span class="pl-s">'data'</span><span class="pl-kos">,</span> ...<span class="pl-kos">)</span>: <span class="pl-s1">ファイルからデータが読み込まれる場合</span>
 <span class="pl-s1">on</span><span class="pl-kos">(</span><span class="pl-s">'end'</span><span class="pl-kos">,</span> ...<span class="pl-kos">)</span>: <span class="pl-s1">ファイルの読み込みが完了した場合</span>
 <span class="pl-s1">on</span><span class="pl-kos">(</span><span class="pl-s">'error'</span><span class="pl-kos">,</span> ...<span class="pl-kos">)</span>: <span class="pl-s1">読み取り中にエラーが発生した場合</span> </pre></div>
-<h2>fs.createWriteStream使い方</h2>
+<h3>fs.createWriteStream使い方</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">fs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'fs'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">path</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'path'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">ws</span><span class="pl-c1">=</span> <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createWriteStream</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">.</span><span class="pl-en">resolve</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span><span class="pl-kos">,</span> <span class="pl-s">'./test.txt'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
@@ -561,7 +568,7 @@ const __filename = import.meta.filename;</p>
 <span class="pl-s1">ws</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'error'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
   <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">'書き込み中にエラーが発生しました:'</span><span class="pl-kos">,</span> <span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
-<h2>复制文件</h2>
+<h3>复制文件</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">rs</span> <span class="pl-c1">=</span> <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createReadStream</span><span class="pl-kos">(</span><span class="pl-s">'./test.txt'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">ws</span> <span class="pl-c1">=</span> <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createWriteStream</span><span class="pl-kos">(</span><span class="pl-s">'./test2.txt'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
