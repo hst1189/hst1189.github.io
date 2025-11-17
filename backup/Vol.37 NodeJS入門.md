@@ -118,7 +118,7 @@ app.get('/list/:id', (req, res) => {
 
 
 > [!TIP]
-> 除了res.json( )、下面方法可以转换
+> 除了res.json( )、下面方法可以转换Obj⇔JSON文字列
 >
 >JSON.stringify( )　　Obj⇒JSON文字列
 >例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30} 
