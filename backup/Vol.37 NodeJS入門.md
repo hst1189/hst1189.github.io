@@ -153,7 +153,7 @@ getUser(userId, (err, user) => {
 });
 ```
 
-#### Use Promises
+#### Promises
 ```javascript
 getUser(userId)
   .then(user => getOrders(user.id))
