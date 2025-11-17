@@ -181,7 +181,9 @@ http-server
 http://localhost:8080/
 ```
 
-## core 库
+## core 库  Core Built-in Modules
+
+<img width="1230" height="268" alt="Image" src="https://github.com/user-attachments/assets/6f4aed76-1267-4eee-9476-6289dca19f76" />
 
 ### os 库  
 https://www.w3schools.com/nodejs/nodejs_os.asp
