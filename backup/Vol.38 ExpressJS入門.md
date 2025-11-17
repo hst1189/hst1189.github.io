@@ -1,3 +1,14 @@
+>[!TIP]
+>フロントとサーバーを立ち上げる際、1つのコマンドを起動させる方法
+>
+>"scripts": {
+>  "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+>  "dev:server": "サーバー立ち上げコマンド",
+>  "dev:client": "フロント立ち上げコマンド"
+>  }
+>↓
+>npm run dev // どちらも立ち上がる
+
 ## 🚀 快速构建express项目
 ```
 npm install -g express-generator
@@ -431,36 +442,83 @@ app.listen(port, () => {
 ## 🚀CORS 設定
 https://expressjs.com/en/resources/middleware/cors.html
 
+
+### 方法1. optionsメソッドを実装
+
+```javascript
+const app = express()
+const allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Content-Type, Authorization, access_token'
+  )
+
+  // intercept OPTIONS method
+  if ('OPTIONS' === req.method) {
+    res.send(200)
+  } else {
+    next()
+  }
+}
+app.use(allowCrossDomain)
+```
+
+### 方法2. cors　middlewareを利用
+
+### 全てのオリジンを許可する
 ```javascript
 const express = require('express');
-const helmet = require('helmet');
 const cors = require('cors');
 const app = express();
 
-// Security middleware
-app.use(helmet());
+app.use(cors()); // 全てのオリジンを許可
 
-// CORS configuration
-app.use(cors(
-{
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+```
+
+
+#### すべてのAPIをCORS許可したい場合
+```javascript
+const express = require('express')
+const cors = require('cors')
+const app = express()
+
+const corsOptions = {
   origin: 'https://example.com',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // 許可するHTTPメソッド
+  allowedHeaders: 'Content-Type,Authorization' // 許可するヘッダー
+  optionsSuccessStatus: 200 
 }
 
-// 默认配置相当于：
-{
-  origin: "*",
-  methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
-  preflightContinue: false,
-  optionsSuccessStatus: 204
-}
-));
+app.use(cors(corsOptions ))
 
-// Other middleware and routes
-// ...
+app.get('/user/:userId', function (req, res, next) {
+  res.json({result: '任意のオリジンからすべてのAPIがアクセスOK'})
+})
+```
+
+#### ルートごとに設定する
+```javascript
+const express = require('express')
+const cors = require('cors')
+const app = express()
+
+const corsOptions = {
+  origin: 'http://example.com',
+  optionsSuccessStatus: 200 
+}
+
+app.get('/user/:userId', cors(corsOptions ), function (req, res, next) {
+  res.json({result: '任意のオリジンからこのAPIのみアクセスOK'})
+})
 
 ```
+
+
 
 
 ## 🚀http-proxy-middleware

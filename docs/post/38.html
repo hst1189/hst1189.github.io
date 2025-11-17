@@ -96,11 +96,20 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-17 08:54</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-17 16:08</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
-<section class="markdown-body spoiler" id="postBody"><h2>🚀 快速构建express项目</h2>
+<section class="markdown-body spoiler" id="postBody"><div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>フロントとサーバーを立ち上げる際、1つのコマンドを起動させる方法</p>
+<p>"scripts": {<br>
+"dev": "concurrently "npm run dev:server" "npm run dev:client"",<br>
+"dev:server": "サーバー立ち上げコマンド",<br>
+"dev:client": "フロント立ち上げコマンド"<br>
+}<br>
+↓<br>
+npm run dev // どちらも立ち上がる</p>
+</div>
+<h2>🚀 快速构建express项目</h2>
 <pre class="notranslate"><code class="notranslate">npm install -g express-generator
 express myapp
 cd myapp
@@ -468,33 +477,65 @@ express.Router( ) - Create modular route handlers</p>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h2>🚀CORS 設定</h2>
 <p><a href="https://expressjs.com/en/resources/middleware/cors.html" rel="nofollow">https://expressjs.com/en/resources/middleware/cors.html</a></p>
+<h3>方法1. optionsメソッドを実装</h3>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-en">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span>
+<span class="pl-k">const</span> <span class="pl-en">allowCrossDomain</span> <span class="pl-c1">=</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">,</span> <span class="pl-s1">next</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">header</span><span class="pl-kos">(</span><span class="pl-s">'Access-Control-Allow-Origin'</span><span class="pl-kos">,</span> <span class="pl-s">'*'</span><span class="pl-kos">)</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">header</span><span class="pl-kos">(</span><span class="pl-s">'Access-Control-Allow-Methods'</span><span class="pl-kos">,</span> <span class="pl-s">'GET,PUT,POST,DELETE'</span><span class="pl-kos">)</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">header</span><span class="pl-kos">(</span>
+    <span class="pl-s">'Access-Control-Allow-Headers'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'Content-Type, Authorization, access_token'</span>
+  <span class="pl-kos">)</span>
+
+  <span class="pl-c">// intercept OPTIONS method</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s">'OPTIONS'</span> <span class="pl-c1">===</span> <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">method</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-c1">200</span><span class="pl-kos">)</span>
+  <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">next</span><span class="pl-kos">(</span><span class="pl-kos">)</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-en">allowCrossDomain</span><span class="pl-kos">)</span></pre></div>
+<h3>方法2. cors　middlewareを利用</h3>
+<h3>全てのオリジンを許可する</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-s1">helmet</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'helmet'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">cors</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'cors'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-<span class="pl-c">// Security middleware</span>
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">helmet</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">cors</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 全てのオリジンを許可</span>
 
-<span class="pl-c">// CORS configuration</span>
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">cors</span><span class="pl-kos">(</span>
-<span class="pl-kos">{</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">3000</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'Server running on port 3000'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<h4>すべてのAPIをCORS許可したい場合</h4>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span>
+<span class="pl-k">const</span> <span class="pl-s1">cors</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'cors'</span><span class="pl-kos">)</span>
+<span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">corsOptions</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
   <span class="pl-c1">origin</span>: <span class="pl-s">'https://example.com'</span><span class="pl-kos">,</span>
-  <span class="pl-c1">methods</span>: <span class="pl-kos">[</span><span class="pl-s">'GET'</span><span class="pl-kos">,</span> <span class="pl-s">'POST'</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
-  <span class="pl-c1">allowedHeaders</span>: <span class="pl-kos">[</span><span class="pl-s">'Content-Type'</span><span class="pl-kos">,</span> <span class="pl-s">'Authorization'</span><span class="pl-kos">]</span>
+  <span class="pl-c1">methods</span>: <span class="pl-s">'GET,HEAD,PUT,PATCH,POST,DELETE'</span><span class="pl-kos">,</span> <span class="pl-c">// 許可するHTTPメソッド</span>
+  <span class="pl-c1">allowedHeaders</span>: <span class="pl-s">'Content-Type,Authorization'</span> <span class="pl-c">// 許可するヘッダー</span>
+  <span class="pl-s1">optionsSuccessStatus</span>: <span class="pl-c1">200</span> 
 <span class="pl-kos">}</span>
 
-<span class="pl-c">// 默认配置相当于：</span>
-<span class="pl-kos">{</span>
-  <span class="pl-c1">origin</span>: <span class="pl-s">"*"</span><span class="pl-kos">,</span>
-  <span class="pl-c1">methods</span>: <span class="pl-kos">[</span><span class="pl-s">'GET'</span><span class="pl-kos">,</span><span class="pl-s">'HEAD'</span><span class="pl-kos">,</span><span class="pl-s">'PUT'</span><span class="pl-kos">,</span><span class="pl-s">'PATCH'</span><span class="pl-kos">,</span><span class="pl-s">'POST'</span><span class="pl-kos">,</span><span class="pl-s">'DELETE'</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
-  <span class="pl-c1">preflightContinue</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span>
-  <span class="pl-c1">optionsSuccessStatus</span>: <span class="pl-c1">204</span>
-<span class="pl-kos">}</span>
-<span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">cors</span><span class="pl-kos">(</span><span class="pl-s1">corsOptions</span> <span class="pl-kos">)</span><span class="pl-kos">)</span>
 
-<span class="pl-c">// Other middleware and routes</span>
-<span class="pl-c">// ...</span></pre></div>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user/:userId'</span><span class="pl-kos">,</span> <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">,</span> <span class="pl-s1">next</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-c1">result</span>: <span class="pl-s">'任意のオリジンからすべてのAPIがアクセスOK'</span><span class="pl-kos">}</span><span class="pl-kos">)</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
+<h4>ルートごとに設定する</h4>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span>
+<span class="pl-k">const</span> <span class="pl-s1">cors</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'cors'</span><span class="pl-kos">)</span>
+<span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">corsOptions</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">origin</span>: <span class="pl-s">'http://example.com'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">optionsSuccessStatus</span>: <span class="pl-c1">200</span> 
+<span class="pl-kos">}</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user/:userId'</span><span class="pl-kos">,</span> <span class="pl-s1">cors</span><span class="pl-kos">(</span><span class="pl-s1">corsOptions</span> <span class="pl-kos">)</span><span class="pl-kos">,</span> <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">,</span> <span class="pl-s1">next</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-c1">result</span>: <span class="pl-s">'任意のオリジンからこのAPIのみアクセスOK'</span><span class="pl-kos">}</span><span class="pl-kos">)</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
 <h2>🚀http-proxy-middleware</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">import</span> <span class="pl-s1">express</span> <span class="pl-k">from</span> <span class="pl-s">'express'</span><span class="pl-kos">;</span>
 <span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-s1">createProxyMiddleware</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'http-proxy-middleware'</span><span class="pl-kos">;</span>
