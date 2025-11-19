@@ -49,6 +49,14 @@ https://www.yszzq.com/ziyuan/
 
 
 # 🚚 老司机资源（ 🔞NSFW）
+✔️　X资源联盟　https://www.xzylm.com/
+✔️　美少女资源站 https://www.msnii.com/api/json.php
+✔️　淫水机资源站 https://www.xrbsp.com/api/json.php
+✔️　香奶儿资源站 https://www.gdlsp.com/api/json.php
+✔️　白嫖资源站 https://www.kxgav.com/api/json.php
+✔️　小湿妹资源站 https://www.afasu.com/api/json.php
+✔️　黄AV资源站 https://www.pgxdy.com/api/json.php
+
 ✔️　大奶子资源　：https://apidanaizi.com/api.php/provide/vod |  https://www.danaizizy1~5.com
 ✔️　CK资源　　　：https://ckzy.me/api.php/provide/vod | 备用域名：ckzy.me | www.ckzy1.com　
 ✔️　jkun资源　 　：https://jkunzyapi.com/api.php/provide/vod | 备用域名：jkzyuan.cc | jkunzy.com | jkunzy.cc | jkunzy.vip | jkunzy.live | jkunzy.top
