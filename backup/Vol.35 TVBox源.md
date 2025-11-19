@@ -49,6 +49,7 @@ https://www.yszzq.com/ziyuan/
 
 
 # 🚚 老司机资源（ 🔞NSFW）
+✔️　鲨鱼资源   https://shayuapi.com/
 ✔️　X资源联盟　https://www.xzylm.com/
 ✔️　美少女资源站 https://www.msnii.com/api/json.php
 ✔️　淫水机资源站 https://www.xrbsp.com/api/json.php
