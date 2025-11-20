@@ -1,9 +1,14 @@
-# 🚀CORS 設定
+# CORS 設定
 https://expressjs.com/en/resources/middleware/cors.html
 
-###  app.use(cors()); 　middlewareを利用
+## 🚀JSONP（不推荐）
+
+
+## 🚀cors.js（middlewareを利用）
+
 ```javascript
 npm install cors
+app.use(cors());
 ```
 
 #### Configuring CORS

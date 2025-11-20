@@ -96,14 +96,16 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 09:51,updated at 2025-11-17 17:11</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 09:51,updated at 2025-11-20 07:19</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Previous Page">上一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a><a class="next_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Next Page">下一篇-Vol.39 Socket.io入門</a></div>
 </nav>
 
-<section class="markdown-body spoiler" id="postBody"><h1>🚀CORS 設定</h1>
+<section class="markdown-body spoiler" id="postBody"><h1>CORS 設定</h1>
 <p><a href="https://expressjs.com/en/resources/middleware/cors.html" rel="nofollow">https://expressjs.com/en/resources/middleware/cors.html</a></p>
-<h3>app.use(cors()); 　middlewareを利用</h3>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">cors</span></pre></div>
+<h2>🚀JSONP（不推荐）</h2>
+<h2>🚀cors.js（middlewareを利用）</h2>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">cors</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-en">cors</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h4>Configuring CORS</h4>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">corsOptions</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
   <span class="pl-c1">origin</span>: <span class="pl-kos">[</span><span class="pl-s">"http://example1.com"</span><span class="pl-kos">,</span> <span class="pl-pds"><span class="pl-c1">/</span><span class="pl-cce">\.</span><span class="pl-s">e</span><span class="pl-s">x</span><span class="pl-s">a</span><span class="pl-s">m</span><span class="pl-s">p</span><span class="pl-s">l</span><span class="pl-s">e</span><span class="pl-s">2</span><span class="pl-cce">\.</span><span class="pl-s">c</span><span class="pl-s">o</span><span class="pl-s">m</span><span class="pl-cce">$</span><span class="pl-c1">/</span></span><span class="pl-kos">]</span><span class="pl-kos">,</span>  <span class="pl-c">// 許可するオリジン</span>

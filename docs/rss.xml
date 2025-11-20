@@ -1,16 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 20 Nov 2025 07:12:10 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 20 Nov 2025 07:20:10 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
 
 `Gmeek-html&lt;img src='https://i.gyazo.com/d9294ea53005e7d0500899a46e6b2b50.png'&gt;`
 
 
 
-。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/41.html</guid><pubDate>Sat, 15 Nov 2025 14:51:55 +0000</pubDate></item><item><title>Vol.40 CORS対策 </title><link>https://grapehut.dpdns.org/post/40.html</link><description># 🚀CORS 設定
+。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/41.html</guid><pubDate>Sat, 15 Nov 2025 14:51:55 +0000</pubDate></item><item><title>Vol.40 CORS対策 </title><link>https://grapehut.dpdns.org/post/40.html</link><description># CORS 設定
 https://expressjs.com/en/resources/middleware/cors.html
 
-###  app.use(cors()); 　middlewareを利用
+## 🚀JSONP（不推荐）
+
+
+## 🚀cors.js（middlewareを利用）
+
 ```javascript
 npm install cors
+app.use(cors());
 ```
 
 #### Configuring CORS
