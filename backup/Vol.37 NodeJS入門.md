@@ -82,7 +82,7 @@ File System Access | Yes | No
 Networking (TCP/UDP) | Yes | No
 DOM Access | No | Yes
 Global Object | Node.js uses global | browsers use window or self
-Modules | CommonJS (require) 或者 ES modules (import); | ES modules 或者 plain <script> tags
+Modules | CommonJS (require) / ES modules (import); | ES modules (import) / <script> tags 引用
 Environment Variables | Yes (process.env) | No
 Security | Full OS access | Sandboxed
 Package Management | npm/yarn | CDN/Bundler
