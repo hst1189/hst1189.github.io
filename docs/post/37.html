@@ -96,11 +96,56 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 03:49</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 04:44</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>NodeJS</h1>
+<p>Node.js web site: <a href="https://nodejs.org/" rel="nofollow">https://nodejs.org/</a><br>
+Node.js is a free, <strong>open-source JavaScript runtime</strong> that runs on Windows, Mac, Linux, and more.<br>
+Built on <strong>Chrome's V8 JavaScript engine</strong>. it lets you <strong>execute JavaScript code outside of a web browser, enabling server-side</strong>.<br>
+Node.js uses an <strong>event-driven</strong>, <strong>non-blocking</strong> model. makes it <strong>highly efficient for I/O-heavy workloads</strong>.</p>
+<p>you can build with Node.js:</p>
+<ul>
+<li><strong>Web Servers</strong>: Create fast, scalable network applications</li>
+<li><strong>File Operations</strong>: Read, write, and manage files on the server</li>
+<li><strong>Database Interaction</strong>: Work with databases like MongoDB, MySQL, and more</li>
+<li><strong>APIs</strong>: Build RESTful services and GraphQL APIs</li>
+<li><strong>Real-time</strong>: Handle WebSockets for live applications</li>
+<li><strong>CLI Tools</strong>: Create command-line applications</li>
+<li><strong>IoT</strong>: Hardware control</li>
+</ul>
+<h2>🚀Run Node.js Code</h2>
+<pre class="notranslate"><code class="notranslate">node app.js
+</code></pre>
+<h2>🚀JavaScript Concepts</h2>
+<ul>
+<li><strong>Variables</strong>: let (mutable), const (immutable), var (legacy)</li>
+<li><strong>Functions</strong>: Regular, arrow functions, and methods</li>
+<li><strong>Objects &amp; Arrays</strong>: Data structures for organizing data</li>
+<li><strong>Modules</strong>: require() (CommonJS) and import/export (ES6)</li>
+<li><strong>Error Handling</strong>: try/catch blocks</li>
+</ul>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// Variables (let, const, var)</span>
+<span class="pl-k">var</span> <span class="pl-s1">aaa</span><span class="pl-c1">=</span><span class="pl-c1">true</span><span class="pl-kos">;</span>
+<span class="pl-k">let</span> <span class="pl-s1">name</span> <span class="pl-c1">=</span> <span class="pl-s">'Node.js'</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">version</span> <span class="pl-c1">=</span> <span class="pl-c1">20</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Array</span>
+<span class="pl-k">const</span> <span class="pl-s1">colors</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span><span class="pl-s">'red'</span><span class="pl-kos">,</span> <span class="pl-s">'green'</span><span class="pl-kos">,</span> <span class="pl-s">'blue'</span><span class="pl-kos">]</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Object</span>
+<span class="pl-k">const</span> <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">name</span>: <span class="pl-s">'Alice'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">age</span>: <span class="pl-c1">25</span><span class="pl-kos">,</span>
+  <span class="pl-en">greet</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`Hi, I'm <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-smi">this</span><span class="pl-kos">.</span><span class="pl-c1">name</span><span class="pl-kos">}</span></span>`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Destructuring &amp; Template Literals (ES6+)</span>
+<span class="pl-k">const</span> <span class="pl-kos">{</span> name <span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-s1">user</span><span class="pl-kos">;</span>
+<span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`Hello, <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">name</span><span class="pl-kos">}</span></span>!`</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h2>🚀Node.js vs Browser</h2>
 <p><a href="https://www.w3schools.com/nodejs/nodejs_vs_browser.asp" rel="nofollow">https://www.w3schools.com/nodejs/nodejs_vs_browser.asp</a></p>
 <markdown-accessiblity-table><table role="table">
