@@ -128,3 +128,45 @@ app.listen(3000);
 // proxy and keep the same base path "/api"
 // http://127.0.0.1:3000/api/foo/bar -> http://www.example.org/api/foo/bar
 ```
+
+#### 
+```
+import express from 'express';
+import { createProxyMiddleware } from 'http-proxy-middleware';
+const app = express();
+
+const PORT = 3000;
+const HOST = "localhost";
+const API_SERVICE_URL = "https://jsonplaceholder.typicode.com";
+
+// Authorization
+app.use('', (req, res, next) => {
+  if (req.headers.authorization) {
+    next();
+  } else {
+    res.sendStatus(403);
+  }
+});
+
+// Proxy endpoints
+app.use('/json_placeholder', createProxyMiddleware({
+  target: API_SERVICE_URL,
+  changeOrigin: true,
+  pathRewrite: {
+    [`^/json_placeholder`]: '',  //APIに転送される際に/json_placeholderが省略されるように、pathRewriteを定義します。
+  },
+}));   
+//例えば、localhost:3000/json_placeholder/posts/1にリクエストを送ると、リクエスト先のURLはhttps://jsonplaceholder.typicode.com/posts/1に上書きされます。
+
+// Info GET endpoint
+app.get('/info', (req, res, next) => {
+  res.send('Billing APIとAccount APIへのプロキシサービスです。');
+});
+
+// Start the Proxy
+app.listen(PORT, HOST, () => {
+  console.log(`Starting Proxy at ${HOST}:${PORT}`);
+});
+
+```
+
