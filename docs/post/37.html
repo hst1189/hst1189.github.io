@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 04:49</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 04:53</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -119,8 +119,8 @@ Node.js uses an <strong>event-driven</strong>, <strong>non-blocking</strong> mod
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">node</span> <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-c1">js</span></pre></div>
 <h2>🚀Debugging Node.js Applications</h2>
 <ol>
-<li>Start your application with node --inspect app.js</li>
-<li>Open Chrome and navigate to chrome://inspect</li>
+<li>Start your application with <strong>node --inspect app.js</strong></li>
+<li>Open Chrome and navigate to <strong>chrome://inspect</strong></li>
 <li>Click on "Open dedicated DevTools for Node"</li>
 <li>Set breakpoints and debug your application</li>
 </ol>
@@ -459,15 +459,16 @@ SSL_CERT_PATH=./cert.pem
 <span class="pl-s1">npm</span> <span class="pl-s1">uninstall</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>        <span class="pl-c">// 当前项目删除指定package</span>
 <span class="pl-s1">npm</span> <span class="pl-s1">uninstall</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>    <span class="pl-c">// 全局删除指定package</span>
 
+<span class="pl-s1">npm</span> <span class="pl-s1">update</span>                    <span class="pl-c">// 根据 package.json 文件更新项目的所有依赖</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">update</span>  <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>    <span class="pl-c">// 当前项目更新指定package</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">update</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>  <span class="pl-c">// 更新package</span>
+
 <span class="pl-s1">npm</span> <span class="pl-s1">ls</span>        <span class="pl-c">// 查看当前项目package</span>
 <span class="pl-s1">npm</span> <span class="pl-s1">ls</span> <span class="pl-c1">-</span><span class="pl-s1">g</span>    <span class="pl-c">// 查看全局package</span>
 
 <span class="pl-s1">npm</span><span class="pl-kos"></span> <span class="pl-s1">view</span>        <span class="pl-c">// 查看当前项目所有依赖项的最新版本</span>
 <span class="pl-s1">npm</span><span class="pl-kos"></span> <span class="pl-s1">outdated</span>    <span class="pl-c">// 仅列出当前项目已过时的依赖项</span>
-
-<span class="pl-s1">npm</span> <span class="pl-s1">update</span>  <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>    <span class="pl-c">// 当前项目更新指定package</span>
-<span class="pl-s1">npm</span> <span class="pl-s1">update</span>                    <span class="pl-c">// 根据 package.json 文件更新项目的所有依赖</span>
-<span class="pl-s1">npm</span> <span class="pl-s1">update</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>  <span class="pl-c">// 更新package</span></pre></div>
+<span class="pl-s1">npm</span><span class="pl-kos"></span> <span class="pl-s1">audit</span>   <span class="pl-c">// 检查脆弱性</span></pre></div>
 <p>package.json小技巧： 一个命令同时开启前端/后端２个服务器</p>
 <div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>"scripts": {<br>
 "dev": "concurrently "npm run dev:server" "npm run dev:client"",<br>

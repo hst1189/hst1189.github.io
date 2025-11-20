@@ -20,8 +20,8 @@ node app.js
 ```
 
 ## 🚀Debugging Node.js Applications
-1. Start your application with node --inspect app.js
-2. Open Chrome and navigate to chrome://inspect
+1. Start your application with **node --inspect app.js**
+2. Open Chrome and navigate to **chrome://inspect**
 3. Click on "Open dedicated DevTools for Node"
 4. Set breakpoints and debug your application
 
@@ -347,16 +347,16 @@ npm install -g <package-name>    // 全局安装指定package
 npm uninstall <package-name>        // 当前项目删除指定package
 npm uninstall -g <package-name>    // 全局删除指定package
 
+npm update                    // 根据 package.json 文件更新项目的所有依赖
+npm update  <package-name>    // 当前项目更新指定package
+npm update -g <package-name>  // 更新package
+
 npm ls        // 查看当前项目package
 npm ls -g    // 查看全局package
 
 npm view        // 查看当前项目所有依赖项的最新版本
 npm outdated    // 仅列出当前项目已过时的依赖项
-
-npm update  <package-name>    // 当前项目更新指定package
-npm update                    // 根据 package.json 文件更新项目的所有依赖
-npm update -g <package-name>  // 更新package
-
+npm audit   // 检查脆弱性
 ```
 
 package.json小技巧： 一个命令同时开启前端/后端２个服务器
