@@ -23,7 +23,7 @@ node app.js
 
 ## 🚀JavaScript Concepts
 - **Variables**: let (mutable), const (immutable), var (legacy)
-- **Functions**: Regular, arrow functions, and methods
+- **Functions**: Regular, **arrow functions**, and methods
 - **Objects & Arrays**: Data structures for organizing data
 - **Modules**: require() (CommonJS) and import/export (ES6)
 - **Error Handling**: try/catch blocks
