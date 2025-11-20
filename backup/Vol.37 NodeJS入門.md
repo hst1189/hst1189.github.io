@@ -83,22 +83,9 @@ fetch('/path/to/data.json')
   });
 ```
 
-JSON文字列をObjに変換 
-> [!TIP]
->
-> JSON.parse( )　　JSON文字列⇒Obj
-> 例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }
-> 
-> JSON.stringify( )　　Obj⇒JSON文字列
-> 例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30} 
-> 
-> ※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去
-
-
-
-
 ### fetch（请求跨域文件）
 ```javascript
+
 fetch(' url ')    // 可以跨域请求
     .then(response => response.json())   // 返回一个Promiss对象，使用它的.json() 获取json对象
     .then(data => console.log(data))
@@ -197,6 +184,41 @@ app.get('/list/:id', (req, res) => {
         .catch(error => console.error(error))
 </script>
 ```
+
+
+JSON文字列をObjに変換 
+> [!TIP]
+>
+> JSON.parse( )　　JSON文字列⇒Obj
+> 例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }
+> 
+> JSON.stringify( )　　Obj⇒JSON文字列
+> 例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30} 
+> 
+> ※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去
+
+
+### .env file
+```
+PORT=3000
+HOST=0.0.0.0
+SSL_KEY_PATH=./key.pem
+SSL_CERT_PATH=./cert.pem
+```
+```javascript
+require('dotenv').config();
+
+// Access environment variables
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || '0.0.0.0';
+const sslOptions = {
+  key: fs.readFileSync(process.env.SSL_KEY_PATH),
+  cert: fs.readFileSync(process.env.SSL_CERT_PATH)
+  // ... other options
+};
+```
+
+
 
 
 ## 🚀同步&异步

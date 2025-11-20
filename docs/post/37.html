@@ -96,8 +96,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-17 23:45</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Previous Page">上一篇-Vol.36 网络资源</a><a class="next_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Next Page">下一篇-Vol.38 ExpressJS入門</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 03:49</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>NodeJS</h1>
@@ -243,14 +243,6 @@ fetch('/path/to/data.json')
     console.log(data);
   });
 </code></pre>
-<p>JSON文字列をObjに変換</p>
-<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p>
-<p>JSON.parse( )　　JSON文字列⇒Obj<br>
-例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }</p>
-<p>JSON.stringify( )　　Obj⇒JSON文字列<br>
-例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30}</p>
-<p>※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去</p>
-</div>
 <h3>fetch（请求跨域文件）</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">' url '</span><span class="pl-kos">)</span>    <span class="pl-c">// 可以跨域请求</span>
     <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">response</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span>   <span class="pl-c">// 返回一个Promiss对象，使用它的.json() 获取json对象</span>
@@ -342,6 +334,30 @@ fetch('/path/to/data.json')
         <span class="pl-kos">}</span><span class="pl-kos">)</span>
         <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">error</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
 <span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span></pre></div>
+<p>JSON文字列をObjに変換</p>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p>
+<p>JSON.parse( )　　JSON文字列⇒Obj<br>
+例: JSON.parse({"name":"Taro","age":30}) は { name: "Taro", age: 30 }</p>
+<p>JSON.stringify( )　　Obj⇒JSON文字列<br>
+例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30}</p>
+<p>※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去</p>
+</div>
+<h3>.env file</h3>
+<pre class="notranslate"><code class="notranslate">PORT=3000
+HOST=0.0.0.0
+SSL_KEY_PATH=./key.pem
+SSL_CERT_PATH=./cert.pem
+</code></pre>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'dotenv'</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">config</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Access environment variables</span>
+<span class="pl-k">const</span> <span class="pl-c1">PORT</span> <span class="pl-c1">=</span> <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">PORT</span> <span class="pl-c1">||</span> <span class="pl-c1">3000</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-c1">HOST</span> <span class="pl-c1">=</span> <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">HOST</span> <span class="pl-c1">||</span> <span class="pl-s">'0.0.0.0'</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">sslOptions</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">key</span>: <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFileSync</span><span class="pl-kos">(</span><span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">SSL_KEY_PATH</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+  <span class="pl-c1">cert</span>: <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFileSync</span><span class="pl-kos">(</span><span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">SSL_CERT_PATH</span><span class="pl-kos">)</span>
+  <span class="pl-c">// ... other options</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
 <h2>🚀同步&amp;异步</h2>
 <h4>Callback Hell</h4>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">user</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
