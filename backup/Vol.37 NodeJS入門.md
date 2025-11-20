@@ -59,6 +59,23 @@ node --inspect=9222 app.js
 node --inspect=0.0.0.0:9229 app.js
 ```
 
+## 🚀环境变量
+```
+# Install dotenv package
+npm install dotenv
+
+// Load environment variables from .env file
+require('dotenv').config();
+
+// Get a specific environment variable
+const apiKey = process.env.API_KEY;
+const port = process.env.PORT || 3000;
+const isProduction = process.env.NODE_ENV === 'production';
+
+// List all environment variables
+console.log('Environment variables:', process.env);
+```
+
 
 ## 🚀JavaScript Concepts
 - **Variables**: let (mutable), const (immutable), var (legacy)
@@ -68,7 +85,6 @@ node --inspect=0.0.0.0:9229 app.js
 - **Error Handling**: try/catch blocks
 ```javascript
 // Variables (let, const, var)
-var aaa=true;
 let name = 'Node.js';
 const version = 20;
 
@@ -84,9 +100,24 @@ const user = {
   }
 };
 
-// Destructuring & Template Literals (ES6+)
-const { name } = user;
+// Arrow Functions
+const addArrow = (a, b) => a + b;
+const double = num => num * 2;
+
+// Destructuring  (ES6+)
+const user = { name: 'Alice', age: 30, location: 'New York' };
+const { name, age } = user;
+console.log(name, age);
+
+// Template Literals  (ES6+)
+const name = 'Alice';
 console.log(`Hello, ${name}!`);
+
+// Array spread - combining arrays
+const numbers = [1, 2, 3];
+const moreNumbers = [4, 5, 6];
+const combined = [...numbers, ...moreNumbers];
+console.log(combined);
 ```
 
 
