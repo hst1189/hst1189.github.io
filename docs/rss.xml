@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 19 Nov 2025 06:27:59 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 20 Nov 2025 03:42:40 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
 
 `Gmeek-html&lt;img src='https://i.gyazo.com/d9294ea53005e7d0500899a46e6b2b50.png'&gt;`
 
@@ -165,6 +165,7 @@ const express = require('express');
 const app = express();
 const PORT = 80;
 
+// Routes
 app.get('/', (req, res) =&gt; {
   res.send('Hello World!')
 })
@@ -196,154 +197,19 @@ app.listen(PORT, () =&gt; {
 })
 ```
 
-
-### 実例１
-```javascript
-const data = require('./data.json');   // 导入json对象
+## 🚀 进阶写法
+```
 const express = require('express');
-const app = express();
-const PORT = 80;
-
-app.get('/', (req, res) =&gt; {
-    let html = ''
-    data.map(item =&gt; {                   // 同过map()遍历
-        html += `&lt;li&gt;${item.name}&lt;/li&gt;&lt;img src=${item.message}/&gt;`
-    })
-    res.send(html);
-})
-
-app.get('/:id', (req, res) =&gt; {
-    let html = ''
-    let item = data.find( (item) =&gt;  item.id == req.params.id );     // 同过find() 匹配
-    if (item) {
-        html += `&lt;li&gt;${item.name}&lt;/li&gt;&lt;img src=${item.message} /&gt;`
-    } else {
-        html += `&lt;h1&gt;404 Not Found&lt;/h1&gt;`
-    }
-    res.send(html);
-})
-
-app.listen(PORT, () =&gt; {
-    console.log(`server is starting on ${PORT} `);
-})
-```
-
-```javascript
-[
-    {
-        'id': 1,
-        'name': 'weimaraner',
-        'message': 'https://images.dog.ceo/breeds/weimaraner/n02092339_4214.jpg',
-        'status': 'success'
-    },
-    {
-        'id': 2,
-        'name': 'dane-great',
-        'message': 'https://images.dog.ceo/breeds/dane-great/n02109047_5936.jpg',
-        'status': 'success'
-    },
-    {
-        'id': 3,
-        'name': 'pyrenees',
-        'message': 'https://images.dog.ceo/breeds/pyrenees/n02111500_4731.jpg',
-        'status': 'success'
-    }
-]
-```
-
-### 実例２
-```javascript
+const https = require('https');
 const fs = require('fs');
 const path = require('path');
-const express = require('express');
+const helmet = require('helmet');   // ★Security middleware
+
+// Create Express app
 const app = express();
-const port = 80;
 
-function accessLog(req, res, next) {     // access.log 全局中间件
-    let { url, ip } = req;
-    let now = new Date();
-    let year = now.getFullYear(); // 获取四位年份
-    let month = now.getMonth() + 1; // 月份从0开始，所以+1
-    let day = now.getDate(); // 日期
-    let hours = now.getHours(); // 小时
-    let minutes = now.getMinutes(); // 分钟
-    let seconds = now.getSeconds(); // 秒
-
-    // 格式化为 YYYY-MM-DD HH:mm:ss
-    let formattedTime = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-    fs.appendFileSync(path.resolve(__dirname, './access.log'), `${formattedTime} ${ip} ${url}\r\n`);
-    next();
-}
-
-app.use(accessLog);
-
-app.get('/', (req, res) =&gt; {
-    res.send(`${req.ip} ${req.get('user-agent')}`);
-});
-
-
-app.get('/list', (req, res) =&gt; {
-    fetch('https://dummyjson.com/recipes')
-        .then(response =&gt; response.json())
-        .then(data =&gt; {
-            console.log(data.recipes);
-            res.json(data.recipes);
-        })
-        .catch(error =&gt; console.log(error))
-});
-
-app.get('/list/:id', (req, res) =&gt; {
-    let id = req.params.id;
-    fetch('https://dummyjson.com/recipes')
-        .then(response =&gt; response.json())
-        .then(data =&gt; {
-            const item = data.recipes.find(item =&gt; item.id == id);
-            console.log(item);
-            res.json(item);
-        })
-        .catch(error =&gt; console.log(error))
-});
-
-
-app.listen(port, () =&gt; {
-    console.log('serve in on port 80');
-})
-```
-
-
-
-## 🚀获取Request Header
-```javascript
-app.get('/', (req, res) =&gt; {
-
-    res.send(`${req.ip} ${req.get('user-agent')}`);   // 返回clientIP 和 user-agent 
-
-    console.log(req.method);             // GET POST PUT etc.
-    console.log(req.headers);            //获取全部头
-    console.log(req.get('host'));  //获取主机名
-    console.log(req.get('user-agent'));  //获取user-agent
-
-    console.log(req.hostname);           //获取主机名
-    console.log(req.ip);                 //客户端ip ::ffff:127.0.0.1
-    console.log(req.url);                // /根路径后面的部分
-    console.log(req.path);               // /根路径后面的部分
-    console.log(req.query);              // ?后面的部分（例：?a=dadda&amp;b=dasda）
-})
-```
-
-
-## 🚀设置Response Header
-```javascript
-app.get('/', (req, res) =&gt; {
-     
-    // 原生
-    res.statusCode = 200;
-    res.statusMessage = 'love u ';
-    res.setHeader('xxx-code', '520');
-
-    //express方法
-– res.send ( )，返回多种形式数据。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/38.html</guid><pubDate>Wed, 12 Nov 2025 09:58:06 +0000</pubDate></item><item><title>Vol.37 NodeJS入門</title><link>https://grapehut.dpdns.org/post/37.html</link><description># NodeJS
+// Security middleware
+app.use(helmet());　　// 「app.use(helmet())」と指定すれば、デフォルトの設定がされます。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/38.html</guid><pubDate>Wed, 12 Nov 2025 09:58:06 +0000</pubDate></item><item><title>Vol.37 NodeJS入門</title><link>https://grapehut.dpdns.org/post/37.html</link><description># NodeJS
 
 ## 🚀Node.js vs Browser
 

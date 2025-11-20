@@ -96,8 +96,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-17 16:29</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Previous Page">上一篇-Vol.37 NodeJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Next Page">下一篇-Vol.39 Socket.io入門</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-20 03:42</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h2>🚀 快速构建express项目</h2>
@@ -145,6 +145,7 @@ app.all( ) - Handle all HTTP methods</p>
 <span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-c1">PORT</span> <span class="pl-c1">=</span> <span class="pl-c1">80</span><span class="pl-kos">;</span>
 
+<span class="pl-c">// Routes</span>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
   <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'Hello World!'</span><span class="pl-kos">)</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
@@ -174,6 +175,130 @@ app.all( ) - Handle all HTTP methods</p>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">PORT</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`server is starting on <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">PORT</span><span class="pl-kos">}</span></span> `</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
+<h2>🚀 进阶写法</h2>
+<pre class="notranslate"><code class="notranslate">const express = require('express');
+const https = require('https');
+const fs = require('fs');
+const path = require('path');
+const helmet = require('helmet');   // ★Security middleware
+
+// Create Express app
+const app = express();
+
+// Security middleware
+app.use(helmet());　　// 「app.use(helmet())」と指定すれば、デフォルトの設定がされます。
+
+// Parse JSON and URL-encoded bodies
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from 'public' directory
+app.use(express.static(path.join(__dirname, 'public'), {
+  dotfiles: 'ignore',
+  etag: true,
+  extensions: ['html', 'htm'],
+  index: 'index.html',
+  maxAge: '1d',
+  redirect: true
+}));
+
+
+// Routes
+app.get('/', (req, res) =&gt; {
+  res.send('&lt;h1&gt;Welcome to Secure Express Server&lt;/h1&gt;');
+});
+
+app.get('/api/status', (req, res) =&gt; {
+  res.json({
+    status: 'operational',
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development',
+    nodeVersion: process.version
+  });
+});
+
+// Error handling middleware
+app.use((err, req, res, next) =&gt; {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something went wrong!' });
+});
+
+// 404 handler
+app.use((req, res) =&gt; {
+  res.status(404).json({ error: 'Not Found' });
+});
+
+// SSL/TLS options
+const sslOptions = {
+  key: fs.readFileSync(path.join(__dirname, 'key.pem')),
+  cert: fs.readFileSync(path.join(__dirname, 'cert.pem')),
+  // Enable HTTP/2 if available
+  allowHTTP1: true,
+  // Recommended security options
+  minVersion: 'TLSv1.2',
+  ciphers: [
+    'TLS_AES_256_GCM_SHA384',
+    'TLS_CHACHA20_POLY1305_SHA256',
+    'TLS_AES_128_GCM_SHA256',
+    'ECDHE-RSA-AES128-GCM-SHA256',
+    '!DSS',
+    '!aNULL',
+    '!eNULL',
+    '!EXPORT',
+    '!DES',
+    '!RC4',
+    '!3DES',
+    '!MD5',
+    '!PSK'
+  ].join(':'),
+  honorCipherOrder: true
+};
+
+// Create HTTPS server
+const PORT = process.env.PORT || 3000;
+const server = https.createServer(sslOptions, app);
+
+// Handle unhandled promise rejections
+process.on('unhandledRejection', (reason, promise) =&gt; {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
+// Handle uncaught exceptions
+process.on('uncaughtException', (error) =&gt; {
+  console.error('Uncaught Exception:', error);
+  // Perform cleanup and exit if needed
+  process.exit(1);
+});
+
+// Graceful shutdown
+const gracefulShutdown = (signal) =&gt; {
+  console.log(`\nReceived ${signal}. Shutting down gracefully...`);
+
+  server.close(() =&gt; {
+    console.log('HTTP server closed.');
+    // Close database connections, etc.
+    process.exit(0);
+  });
+
+  // Force close server after 10 seconds
+  setTimeout(() =&gt; {
+    console.error('Forcing shutdown...');
+    process.exit(1);
+  }, 10000);
+};
+
+// Listen for shutdown signals
+process.on('SIGTERM', gracefulShutdown);
+process.on('SIGINT', gracefulShutdown);
+
+// Start the server
+const HOST = process.env.HOST || '0.0.0.0';
+server.listen(PORT, HOST, () =&gt; {
+  console.log(`Express server running at https://${HOST}:${PORT}`);
+  console.log('Environment:', process.env.NODE_ENV || 'development');
+  console.log('Press Ctrl+C to stop the server');
+});
+</code></pre>
 <h3>実例１</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./data.json'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>   <span class="pl-c">// 导入json对象</span>
 <span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
