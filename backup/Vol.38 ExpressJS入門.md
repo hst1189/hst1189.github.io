@@ -1,35 +1,37 @@
+## 🚀 Framework Comparison
+Framework | Type | Performance | Learning Curve | TypeScript Support | Best Used For
+-- | -- | -- | -- | -- | --
+Express.js | Minimalist | Good | Low | Partial | General-purpose web apps, APIs
+Nest.js | Full-featured | Good | High | Excellent | Enterprise apps, complex APIs
+Fastify | Minimalist | Excellent | Medium | Good | High-performance APIs
+Koa.js | Minimalist | Very Good | Medium | Good | Modern, async-focused apps
+Hapi.js | Full-featured | Good | Medium | Good | Enterprise apps, configuration-driven
+Adonis.js | Full-stack MVC | Good | High | Excellent | Full-stack applications
+Restify | API-focused | Good | Low | Partial | RESTful APIs
+Meteor | Full-stack | Moderate | Medium | Good | Reactive full-stack apps
+Loopback | API-focused | Good | Medium | Excellent | API generation with minimal coding
+Strapi | Headless CMS | Good | Low (UI) | Good | Content management, API creation
+
+
+
 ## 🚀 快速构建express项目
 ```
-npm install -g express-generator
-express myapp
-cd myapp
-npm install
-npm start
-http://localhost:3000/
-
-
-├── bin
-│   └── www（実行ファイル）
-├── node_modules
-│   ├── express
-│   ├── ... etc
-├── public
-│   ├── images（空）
-│   ├── javascripts（空）
-│   └── stylesheets
-│       └── style.css
-├── routes
-│   ├── index.js
-│   └── users.js
-└── views
-    ├── error.pug
-    ├── index.pug
-    └── layout.pug
-├── app.js
-├── package.json
-
-7 directories, 9 files
-
+Project Structure 
+myapp/
+├── node_modules/ # Dependencies
+├── config/ # Configuration files
+│ ├── db.js # Database configuration
+│ └── env.js # Environment variables
+├── controllers/ # Route controllers
+├── models/ # Database models
+├── routes/ # Route definitions
+├── middleware/ # Custom middleware
+├── public/ # Static files
+├── tests/ # Test files
+├── .env # Environment variables
+├── .gitignore # Git ignore file
+├── app.js # Application entry point
+└── package.json # Project configuration
 
 ```
 

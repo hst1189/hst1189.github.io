@@ -96,41 +96,122 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-20 06:59</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-20 12:10</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
-<section class="markdown-body spoiler" id="postBody"><h2>🚀 快速构建express项目</h2>
-<pre class="notranslate"><code class="notranslate">npm install -g express-generator
-express myapp
-cd myapp
-npm install
-npm start
-http://localhost:3000/
-
-
-├── bin
-│   └── www（実行ファイル）
-├── node_modules
-│   ├── express
-│   ├── ... etc
-├── public
-│   ├── images（空）
-│   ├── javascripts（空）
-│   └── stylesheets
-│       └── style.css
-├── routes
-│   ├── index.js
-│   └── users.js
-└── views
-    ├── error.pug
-    ├── index.pug
-    └── layout.pug
-├── app.js
-├── package.json
-
-7 directories, 9 files
-
+<section class="markdown-body spoiler" id="postBody"><h2>🚀 Framework Comparison</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Framework</th>
+<th>Type</th>
+<th>Performance</th>
+<th>Learning Curve</th>
+<th>TypeScript Support</th>
+<th>Best Used For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Express.js</td>
+<td>Minimalist</td>
+<td>Good</td>
+<td>Low</td>
+<td>Partial</td>
+<td>General-purpose web apps, APIs</td>
+</tr>
+<tr>
+<td>Nest.js</td>
+<td>Full-featured</td>
+<td>Good</td>
+<td>High</td>
+<td>Excellent</td>
+<td>Enterprise apps, complex APIs</td>
+</tr>
+<tr>
+<td>Fastify</td>
+<td>Minimalist</td>
+<td>Excellent</td>
+<td>Medium</td>
+<td>Good</td>
+<td>High-performance APIs</td>
+</tr>
+<tr>
+<td>Koa.js</td>
+<td>Minimalist</td>
+<td>Very Good</td>
+<td>Medium</td>
+<td>Good</td>
+<td>Modern, async-focused apps</td>
+</tr>
+<tr>
+<td>Hapi.js</td>
+<td>Full-featured</td>
+<td>Good</td>
+<td>Medium</td>
+<td>Good</td>
+<td>Enterprise apps, configuration-driven</td>
+</tr>
+<tr>
+<td>Adonis.js</td>
+<td>Full-stack MVC</td>
+<td>Good</td>
+<td>High</td>
+<td>Excellent</td>
+<td>Full-stack applications</td>
+</tr>
+<tr>
+<td>Restify</td>
+<td>API-focused</td>
+<td>Good</td>
+<td>Low</td>
+<td>Partial</td>
+<td>RESTful APIs</td>
+</tr>
+<tr>
+<td>Meteor</td>
+<td>Full-stack</td>
+<td>Moderate</td>
+<td>Medium</td>
+<td>Good</td>
+<td>Reactive full-stack apps</td>
+</tr>
+<tr>
+<td>Loopback</td>
+<td>API-focused</td>
+<td>Good</td>
+<td>Medium</td>
+<td>Excellent</td>
+<td>API generation with minimal coding</td>
+</tr>
+<tr>
+<td>Strapi</td>
+<td>Headless CMS</td>
+<td>Good</td>
+<td>Low (UI)</td>
+<td>Good</td>
+<td>Content management, API creation</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>🚀 快速构建express项目</h2>
+<pre class="notranslate"><code class="notranslate">Project Structure 
+myapp/
+├── node_modules/ # Dependencies
+├── config/ # Configuration files
+│ ├── db.js # Database configuration
+│ └── env.js # Environment variables
+├── controllers/ # Route controllers
+├── models/ # Database models
+├── routes/ # Route definitions
+├── middleware/ # Custom middleware
+├── public/ # Static files
+├── tests/ # Test files
+├── .env # Environment variables
+├── .gitignore # Git ignore file
+├── app.js # Application entry point
+└── package.json # Project configuration
 
 </code></pre>
 <h2>🚀 基本写法</h2>
