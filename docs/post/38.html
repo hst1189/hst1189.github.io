@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-20 12:10</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-20 13:28</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -215,6 +215,48 @@ myapp/
 
 </code></pre>
 <h2>🚀 基本写法</h2>
+<p><a href="https://www.w3schools.com/nodejs/nodejs_express.asp" rel="nofollow">https://www.w3schools.com/nodejs/nodejs_express.asp</a></p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-c1">PORT</span> <span class="pl-c1">=</span> <span class="pl-c1">80</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Routes</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'Hello World!'</span><span class="pl-kos">)</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>    <span class="pl-c">// GET POST 可以相同路由</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'Hello World!'</span><span class="pl-kos">)</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>    <span class="pl-c">// 获取路由参数 </span>
+  <span class="pl-k">let</span> <span class="pl-s1">id</span> <span class="pl-c1">=</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">;</span>     <span class="pl-c">// 通过req.params获取，req.params 的「.id」定义必须一致</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">id</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/users/:userId/books/:bookId'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>    <span class="pl-c">// 获取路由参数 </span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">`User ID: <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">userId</span><span class="pl-kos">}</span></span>, Book ID: <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">bookId</span><span class="pl-kos">}</span></span>`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/search'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>     <span class="pl-c">// 获取请求参数  http://example.com/search?q=express&amp;page=2</span>
+  <span class="pl-k">const</span> <span class="pl-kos">{</span> q<span class="pl-kos">,</span> page<span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">query</span><span class="pl-kos">;</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">`Search query: <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">q</span><span class="pl-kos">}</span></span>, Category: <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">page</span> <span class="pl-c1">||</span> <span class="pl-s">'none'</span><span class="pl-kos">}</span></span>`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">all</span><span class="pl-kos">(</span><span class="pl-s">'*'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>    <span class="pl-c">// Catch all other routes</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">404</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">"404 - Page not found"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">PORT</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`server is starting on <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">PORT</span><span class="pl-kos">}</span></span> `</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>app.get( ) - Handle GET requests<br>
+app.post( ) - Handle POST requests<br>
+app.put( ) - Handle PUT requests<br>
+app.delete( ) - Handle DELETE requests<br>
+app.all( ) - Handle all HTTP methods</p>
+</div>
+<h2>🚀 进阶写法</h2>
 <p><a href="https://www.w3schools.com/nodejs/nodejs_https.asp" rel="nofollow">https://www.w3schools.com/nodejs/nodejs_https.asp</a></p>
 <pre class="notranslate"><code class="notranslate">const express = require('express');
 const https = require('https');
@@ -349,171 +391,128 @@ HOST=0.0.0.0
 SSL_KEY_PATH=./key.pem
 SSL_CERT_PATH=./cert.pem
 </code></pre>
-<p><a href="https://www.w3schools.com/nodejs/nodejs_express.asp" rel="nofollow">https://www.w3schools.com/nodejs/nodejs_express.asp</a></p>
-<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>app.get( ) - Handle GET requests<br>
-app.post( ) - Handle POST requests<br>
-app.put( ) - Handle PUT requests<br>
-app.delete( ) - Handle DELETE requests<br>
-app.all( ) - Handle all HTTP methods</p>
-</div>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">https</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'https'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">fs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'fs'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">path</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'path'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">helmet</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'helmet'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>   <span class="pl-c">// ★Security middleware</span>
+
+<span class="pl-c">// Create Express app</span>
 <span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-c1">PORT</span> <span class="pl-c1">=</span> <span class="pl-c1">80</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Security middleware</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">helmet</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>　　<span class="pl-c">// 「app.use(helmet())」と指定すれば、デフォルトの設定がされます。</span>
+
+<span class="pl-c">// Parse JSON and URL-encoded bodies</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">express</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">express</span><span class="pl-kos">.</span><span class="pl-en">urlencoded</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">extended</span>: <span class="pl-c1">true</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Serve static files from 'public' directory</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">express</span><span class="pl-kos">.</span><span class="pl-en">static</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">.</span><span class="pl-en">join</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span><span class="pl-kos">,</span> <span class="pl-s">'public'</span><span class="pl-kos">)</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">dotfiles</span>: <span class="pl-s">'ignore'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">etag</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span>
+  <span class="pl-c1">extensions</span>: <span class="pl-kos">[</span><span class="pl-s">'html'</span><span class="pl-kos">,</span> <span class="pl-s">'htm'</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
+  <span class="pl-c1">index</span>: <span class="pl-s">'index.html'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">maxAge</span>: <span class="pl-s">'1d'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">redirect</span>: <span class="pl-c1">true</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
 
 <span class="pl-c">// Routes</span>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'Hello World!'</span><span class="pl-kos">)</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span>
-
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>    <span class="pl-c">// GET POST 可以相同路由</span>
-  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'Hello World!'</span><span class="pl-kos">)</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span>
-
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>    <span class="pl-c">// 获取路由参数 </span>
-  <span class="pl-k">let</span> <span class="pl-s1">id</span> <span class="pl-c1">=</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">;</span>     <span class="pl-c">// 通过req.params获取，req.params 的「.id」定义必须一致</span>
-  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">id</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span>
-
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/users/:userId/books/:bookId'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>    <span class="pl-c">// 获取路由参数 </span>
-  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">`User ID: <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">userId</span><span class="pl-kos">}</span></span>, Book ID: <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">bookId</span><span class="pl-kos">}</span></span>`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'&lt;h1&gt;Welcome to Secure Express Server&lt;/h1&gt;'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/search'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>     <span class="pl-c">// 获取请求参数  http://example.com/search?q=express&amp;page=2</span>
-  <span class="pl-k">const</span> <span class="pl-kos">{</span> q<span class="pl-kos">,</span> page<span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">query</span><span class="pl-kos">;</span>
-  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">`Search query: <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">q</span><span class="pl-kos">}</span></span>, Category: <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">page</span> <span class="pl-c1">||</span> <span class="pl-s">'none'</span><span class="pl-kos">}</span></span>`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/api/status'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span>
+    <span class="pl-c1">status</span>: <span class="pl-s">'operational'</span><span class="pl-kos">,</span>
+    <span class="pl-c1">timestamp</span>: <span class="pl-k">new</span> <span class="pl-v">Date</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">toISOString</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+    <span class="pl-c1">environment</span>: <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">NODE_ENV</span> <span class="pl-c1">||</span> <span class="pl-s">'development'</span><span class="pl-kos">,</span>
+    <span class="pl-c1">nodeVersion</span>: <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">version</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">all</span><span class="pl-kos">(</span><span class="pl-s">'*'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>    <span class="pl-c">// Catch all other routes</span>
-  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">404</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">"404 - Page not found"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-c">// Error handling middleware</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">,</span> <span class="pl-s1">next</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">.</span><span class="pl-c1">stack</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">500</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">error</span>: <span class="pl-s">'Something went wrong!'</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">PORT</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`server is starting on <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">PORT</span><span class="pl-kos">}</span></span> `</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
-<h2>🚀 进阶写法</h2>
-<pre class="notranslate"><code class="notranslate">const express = require('express');
-const https = require('https');
-const fs = require('fs');
-const path = require('path');
-const helmet = require('helmet');   // ★Security middleware
+<span class="pl-c">// 404 handler</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">404</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">error</span>: <span class="pl-s">'Not Found'</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-// Create Express app
-const app = express();
+<span class="pl-c">// SSL/TLS options</span>
+<span class="pl-k">const</span> <span class="pl-s1">sslOptions</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">key</span>: <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFileSync</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">.</span><span class="pl-en">join</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span><span class="pl-kos">,</span> <span class="pl-s">'key.pem'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+  <span class="pl-c1">cert</span>: <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFileSync</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">.</span><span class="pl-en">join</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span><span class="pl-kos">,</span> <span class="pl-s">'cert.pem'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+  <span class="pl-c">// Enable HTTP/2 if available</span>
+  <span class="pl-c1">allowHTTP1</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span>
+  <span class="pl-c">// Recommended security options</span>
+  <span class="pl-c1">minVersion</span>: <span class="pl-s">'TLSv1.2'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">ciphers</span>: <span class="pl-kos">[</span>
+    <span class="pl-s">'TLS_AES_256_GCM_SHA384'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'TLS_CHACHA20_POLY1305_SHA256'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'TLS_AES_128_GCM_SHA256'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'ECDHE-RSA-AES128-GCM-SHA256'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'!DSS'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'!aNULL'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'!eNULL'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'!EXPORT'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'!DES'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'!RC4'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'!3DES'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'!MD5'</span><span class="pl-kos">,</span>
+    <span class="pl-s">'!PSK'</span>
+  <span class="pl-kos">]</span><span class="pl-kos">.</span><span class="pl-en">join</span><span class="pl-kos">(</span><span class="pl-s">':'</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+  <span class="pl-c1">honorCipherOrder</span>: <span class="pl-c1">true</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
 
-// Security middleware
-app.use(helmet());　　// 「app.use(helmet())」と指定すれば、デフォルトの設定がされます。
+<span class="pl-c">// Create HTTPS server</span>
+<span class="pl-k">const</span> <span class="pl-c1">PORT</span> <span class="pl-c1">=</span> <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">PORT</span> <span class="pl-c1">||</span> <span class="pl-c1">3000</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">server</span> <span class="pl-c1">=</span> <span class="pl-s1">https</span><span class="pl-kos">.</span><span class="pl-en">createServer</span><span class="pl-kos">(</span><span class="pl-s1">sslOptions</span><span class="pl-kos">,</span> <span class="pl-s1">app</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-// Parse JSON and URL-encoded bodies
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+<span class="pl-c">// Handle unhandled promise rejections</span>
+<span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'unhandledRejection'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">reason</span><span class="pl-kos">,</span> <span class="pl-s1">promise</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">'Unhandled Rejection at:'</span><span class="pl-kos">,</span> <span class="pl-s1">promise</span><span class="pl-kos">,</span> <span class="pl-s">'reason:'</span><span class="pl-kos">,</span> <span class="pl-s1">reason</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-// Serve static files from 'public' directory
-app.use(express.static(path.join(__dirname, 'public'), {
-  dotfiles: 'ignore',
-  etag: true,
-  extensions: ['html', 'htm'],
-  index: 'index.html',
-  maxAge: '1d',
-  redirect: true
-}));
+<span class="pl-c">// Handle uncaught exceptions</span>
+<span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'uncaughtException'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">'Uncaught Exception:'</span><span class="pl-kos">,</span> <span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-c">// Perform cleanup and exit if needed</span>
+  <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-en">exit</span><span class="pl-kos">(</span><span class="pl-c1">1</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
+<span class="pl-c">// Graceful shutdown</span>
+<span class="pl-k">const</span> <span class="pl-en">gracefulShutdown</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-s1">signal</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`\nReceived <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">signal</span><span class="pl-kos">}</span></span>. Shutting down gracefully...`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-// Routes
-app.get('/', (req, res) =&gt; {
-  res.send('&lt;h1&gt;Welcome to Secure Express Server&lt;/h1&gt;');
-});
+  <span class="pl-s1">server</span><span class="pl-kos">.</span><span class="pl-en">close</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'HTTP server closed.'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-c">// Close database connections, etc.</span>
+    <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-en">exit</span><span class="pl-kos">(</span><span class="pl-c1">0</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-app.get('/api/status', (req, res) =&gt; {
-  res.json({
-    status: 'operational',
-    timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'development',
-    nodeVersion: process.version
-  });
-});
+  <span class="pl-c">// Force close server after 10 seconds</span>
+  <span class="pl-en">setTimeout</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">'Forcing shutdown...'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-en">exit</span><span class="pl-kos">(</span><span class="pl-c1">1</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-c1">10000</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
 
-// Error handling middleware
-app.use((err, req, res, next) =&gt; {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
-});
+<span class="pl-c">// Listen for shutdown signals</span>
+<span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'SIGTERM'</span><span class="pl-kos">,</span> <span class="pl-en">gracefulShutdown</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'SIGINT'</span><span class="pl-kos">,</span> <span class="pl-en">gracefulShutdown</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-// 404 handler
-app.use((req, res) =&gt; {
-  res.status(404).json({ error: 'Not Found' });
-});
-
-// SSL/TLS options
-const sslOptions = {
-  key: fs.readFileSync(path.join(__dirname, 'key.pem')),
-  cert: fs.readFileSync(path.join(__dirname, 'cert.pem')),
-  // Enable HTTP/2 if available
-  allowHTTP1: true,
-  // Recommended security options
-  minVersion: 'TLSv1.2',
-  ciphers: [
-    'TLS_AES_256_GCM_SHA384',
-    'TLS_CHACHA20_POLY1305_SHA256',
-    'TLS_AES_128_GCM_SHA256',
-    'ECDHE-RSA-AES128-GCM-SHA256',
-    '!DSS',
-    '!aNULL',
-    '!eNULL',
-    '!EXPORT',
-    '!DES',
-    '!RC4',
-    '!3DES',
-    '!MD5',
-    '!PSK'
-  ].join(':'),
-  honorCipherOrder: true
-};
-
-// Create HTTPS server
-const PORT = process.env.PORT || 3000;
-const server = https.createServer(sslOptions, app);
-
-// Handle unhandled promise rejections
-process.on('unhandledRejection', (reason, promise) =&gt; {
-  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
-});
-
-// Handle uncaught exceptions
-process.on('uncaughtException', (error) =&gt; {
-  console.error('Uncaught Exception:', error);
-  // Perform cleanup and exit if needed
-  process.exit(1);
-});
-
-// Graceful shutdown
-const gracefulShutdown = (signal) =&gt; {
-  console.log(`\nReceived ${signal}. Shutting down gracefully...`);
-
-  server.close(() =&gt; {
-    console.log('HTTP server closed.');
-    // Close database connections, etc.
-    process.exit(0);
-  });
-
-  // Force close server after 10 seconds
-  setTimeout(() =&gt; {
-    console.error('Forcing shutdown...');
-    process.exit(1);
-  }, 10000);
-};
-
-// Listen for shutdown signals
-process.on('SIGTERM', gracefulShutdown);
-process.on('SIGINT', gracefulShutdown);
-
-// Start the server
-const HOST = process.env.HOST || '0.0.0.0';
-server.listen(PORT, HOST, () =&gt; {
-  console.log(`Express server running at https://${HOST}:${PORT}`);
-  console.log('Environment:', process.env.NODE_ENV || 'development');
-  console.log('Press Ctrl+C to stop the server');
-});
-</code></pre>
+<span class="pl-c">// Start the server</span>
+<span class="pl-k">const</span> <span class="pl-c1">HOST</span> <span class="pl-c1">=</span> <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">HOST</span> <span class="pl-c1">||</span> <span class="pl-s">'0.0.0.0'</span><span class="pl-kos">;</span>
+<span class="pl-s1">server</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">PORT</span><span class="pl-kos">,</span> <span class="pl-c1">HOST</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`Express server running at https://<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">HOST</span><span class="pl-kos">}</span></span>:<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">PORT</span><span class="pl-kos">}</span></span>`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'Environment:'</span><span class="pl-kos">,</span> <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">NODE_ENV</span> <span class="pl-c1">||</span> <span class="pl-s">'development'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'Press Ctrl+C to stop the server'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h3>実例１</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./data.json'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>   <span class="pl-c">// 导入json对象</span>
 <span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>

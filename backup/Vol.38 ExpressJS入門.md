@@ -36,6 +36,56 @@ myapp/
 ```
 
 ## 🚀 基本写法
+https://www.w3schools.com/nodejs/nodejs_express.asp
+
+```javascript
+
+const express = require('express');
+const app = express();
+const PORT = 80;
+
+// Routes
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.post('/', (req, res) => {    // GET POST 可以相同路由
+  res.send('Hello World!')
+})
+
+app.get('/:id', (req, res) => {    // 获取路由参数 
+  let id =req.params.id;     // 通过req.params获取，req.params 的「.id」定义必须一致
+  res.send(id);
+})
+
+app.get('/users/:userId/books/:bookId', (req, res) => {    // 获取路由参数 
+  res.send(`User ID: ${req.params.userId}, Book ID: ${req.params.bookId}`);
+});
+
+app.get('/search', (req, res) => {     // 获取请求参数  http://example.com/search?q=express&page=2
+  const { q, page} = req.query;
+  res.send(`Search query: ${q}, Category: ${page || 'none'}`);
+});
+
+app.all('*', (req, res) => {    // Catch all other routes
+  res.status(404).send("404 - Page not found");
+});
+
+app.listen(PORT, () => {
+    console.log(`server is starting on ${PORT} `);
+})
+```
+
+>[!TIP]
+>app.get( ) - Handle GET requests
+>app.post( ) - Handle POST requests
+>app.put( ) - Handle PUT requests
+>app.delete( ) - Handle DELETE requests
+>app.all( ) - Handle all HTTP methods
+
+
+
+## 🚀 进阶写法
 https://www.w3schools.com/nodejs/nodejs_https.asp
 
 ```
@@ -166,6 +216,7 @@ server.listen(PORT, HOST, () => {
   console.log('Press Ctrl+C to stop the server');
 });
 ```
+
 .env file:
 ```
 NODE_ENV=development PORT=3000
@@ -177,57 +228,7 @@ SSL_CERT_PATH=./cert.pem
 
 
 
-
-https://www.w3schools.com/nodejs/nodejs_express.asp
-
->[!TIP]
->app.get( ) - Handle GET requests
->app.post( ) - Handle POST requests
->app.put( ) - Handle PUT requests
->app.delete( ) - Handle DELETE requests
->app.all( ) - Handle all HTTP methods
-
-
 ```javascript
-
-const express = require('express');
-const app = express();
-const PORT = 80;
-
-// Routes
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.post('/', (req, res) => {    // GET POST 可以相同路由
-  res.send('Hello World!')
-})
-
-app.get('/:id', (req, res) => {    // 获取路由参数 
-  let id =req.params.id;     // 通过req.params获取，req.params 的「.id」定义必须一致
-  res.send(id);
-})
-
-app.get('/users/:userId/books/:bookId', (req, res) => {    // 获取路由参数 
-  res.send(`User ID: ${req.params.userId}, Book ID: ${req.params.bookId}`);
-});
-
-app.get('/search', (req, res) => {     // 获取请求参数  http://example.com/search?q=express&page=2
-  const { q, page} = req.query;
-  res.send(`Search query: ${q}, Category: ${page || 'none'}`);
-});
-
-app.all('*', (req, res) => {    // Catch all other routes
-  res.status(404).send("404 - Page not found");
-});
-
-app.listen(PORT, () => {
-    console.log(`server is starting on ${PORT} `);
-})
-```
-
-## 🚀 进阶写法
-```
 const express = require('express');
 const https = require('https');
 const fs = require('fs');
