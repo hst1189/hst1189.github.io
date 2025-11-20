@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 05:18</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 05:26</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -432,7 +432,8 @@ SSL_CERT_PATH=./cert.pem
   <span class="pl-c1">cert</span>: <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFileSync</span><span class="pl-kos">(</span><span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">SSL_CERT_PATH</span><span class="pl-kos">)</span>
   <span class="pl-c">// ... other options</span>
 <span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
-<h2>🚀同步&amp;异步（Sync vs Async）</h2>
+<h2>🚀同步&amp;异步（<strong>Async/Await</strong> vs <strong>Promises</strong> vs <strong>Callbacks</strong>）</h2>
+<p><a href="https://www.w3schools.com/nodejs/nodejs_async_await.asp" rel="nofollow">https://www.w3schools.com/nodejs/nodejs_async_await.asp</a></p>
 <h4>Callback Hell</h4>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">user</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
   <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
@@ -446,21 +447,22 @@ SSL_CERT_PATH=./cert.pem
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h4>Promises</h4>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span>
-  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">user</span> <span class="pl-c1">=&gt;</span> <span class="pl-en">getOrders</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
-  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">orders</span> <span class="pl-c1">=&gt;</span> <span class="pl-en">processOrders</span><span class="pl-kos">(</span><span class="pl-s1">orders</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
-  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'All done!'</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
-  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">handleError</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
-<h4>Async/Await</h4>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">processUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">result</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">result</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">error</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">finally</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'Operation completed'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<h4>Async/Await (推薦)</h4>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">readFiles</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
   <span class="pl-k">try</span> <span class="pl-kos">{</span>
-    <span class="pl-k">const</span> <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-    <span class="pl-k">const</span> <span class="pl-s1">orders</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-en">getOrders</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-    <span class="pl-k">await</span> <span class="pl-en">processOrders</span><span class="pl-kos">(</span><span class="pl-s1">orders</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'All done!'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-  <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
-    <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'1. Starting to read files...'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">const</span> <span class="pl-s1">data1</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFile</span><span class="pl-kos">(</span><span class="pl-s">'file1.txt'</span><span class="pl-kos">,</span> <span class="pl-s">'utf8'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">const</span> <span class="pl-s1">data2</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFile</span><span class="pl-kos">(</span><span class="pl-s">'file2.txt'</span><span class="pl-kos">,</span> <span class="pl-s">'utf8'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'2. Files read successfully!'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">return</span> <span class="pl-kos">{</span> data1<span class="pl-kos">,</span> data2 <span class="pl-kos">}</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">'Error reading files:'</span><span class="pl-kos">,</span> <span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
   <span class="pl-kos">}</span>
-<span class="pl-kos">}</span></pre></div>
+<span class="pl-kos">}</span>
+<span class="pl-en">readFiles</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h2>🚀npm</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">init</span>    <span class="pl-c">// 初始化一个新项目，在当前目录创建 package.json 文件</span>
 

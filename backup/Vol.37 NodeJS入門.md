@@ -312,7 +312,9 @@ const sslOptions = {
 
 
 
-## 🚀同步&异步（Sync vs Async）
+## 🚀同步&异步（**Async/Await** vs **Promises** vs **Callbacks**）
+https://www.w3schools.com/nodejs/nodejs_async_await.asp
+
 #### Callback Hell
 ```javascript
 getUser(userId, (err, user) => {
@@ -330,24 +332,25 @@ getUser(userId, (err, user) => {
 #### Promises
 ```javascript
 getUser(userId)
-  .then(user => getOrders(user.id))
-  .then(orders => processOrders(orders))
-  .then(() => console.log('All done!'))
-  .catch(handleError);
+  .then(result => console.log(result))
+  .catch(error => console.error(error))
+  .finally(() => console.log('Operation completed'));
 ```
 
-#### Async/Await
+#### Async/Await (推薦)
 ```javascript
-async function processUser(userId) {
+async function readFiles() {
   try {
-    const user = await getUser(userId);
-    const orders = await getOrders(user.id);
-    await processOrders(orders);
-    console.log('All done!');
-  } catch (err) {
-    handleError(err);
+    console.log('1. Starting to read files...');
+    const data1 = await fs.readFile('file1.txt', 'utf8');
+    const data2 = await fs.readFile('file2.txt', 'utf8');
+    console.log('2. Files read successfully!');
+    return { data1, data2 };
+  } catch (error) {
+    console.error('Error reading files:', error);
   }
 }
+readFiles();
 ```
 
 
