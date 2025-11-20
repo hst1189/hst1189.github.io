@@ -1,7 +1,7 @@
 # NodeJS
 Node.js web site: https://nodejs.org/
 Node.js is a free, **open-source JavaScript runtime** that runs on Windows, Mac, Linux, and more. 
-Built on **Chrome's V8 JavaScript engine**. it lets you **execute JavaScript code outside of a web browser, enabling server-side**. 
+Built on **Chrome's V8 JavaScript engine**. it lets you execute JavaScript code **outside of a web browser**, **enabling server-side**. 
 Node.js uses an **Non-blocking I/O**, **event-driven**, **single-threaded** with **event loop** model. 
 
 #### 🎉you can build with Node.js:
@@ -109,6 +109,54 @@ Package Management | npm/yarn | CDN/Bundler
 
 
 
+
+## 🚀Non-blocking 同步&异步（**Async/Await** vs **Promises** vs **Callbacks**）
+https://www.w3schools.com/nodejs/nodejs_async_await.asp
+
+#### Callback Hell
+```javascript
+getUser(userId, (err, user) => {
+  if (err) return handleError(err);
+  getOrders(user.id, (err, orders) => {
+    if (err) return handleError(err);
+    processOrders(orders, (err) => {
+      if (err) return handleError(err);
+      console.log('All done!');
+    });
+  });
+});
+```
+
+#### Promises
+```javascript
+getUser(userId)
+  .then(result => console.log(result))
+  .catch(error => console.error(error))
+  .finally(() => console.log('Operation completed'));
+```
+
+#### Async/Await (推薦)
+```javascript
+async function readFiles() {
+  try {
+    console.log('1. Starting to read files...');
+    const data1 = await fs.readFile('file1.txt', 'utf8');
+    const data2 = await fs.readFile('file2.txt', 'utf8');
+    console.log('2. Files read successfully!');
+    return { data1, data2 };
+  } catch (error) {
+    console.error('Error reading files:', error);
+  }
+}
+readFiles();
+```
+
+
+
+
+
+# Node.js Modules
+
 ## 🚀CommonJS vs ES Modules
 https://www.w3schools.com/nodejs/nodejs_modules_esm.asp
 
@@ -116,26 +164,20 @@ Feature | CommonJS | ES Modules
 -- | -- | --
 File Extension | .js (default) | .mjs (or .js with proper config)
 Import Syntax | require() | import
-Export Syntax | module.exports 或者 exports | export 或者 export default
+Export Syntax | module.exports |  export default / export
 Import Timing | Dynamic (runtime) | Static (parsed before execution)
 Top-level Await | Not supported | Supported
 File URL in Imports | required for local files | import for local files
-
-> [!TIP]
->CommonJS：   
-> ①模块导出  module.exports / exports
-> ②模块导入  require() 
-> ③浏览器不支持
-> 
->ESmodule： 
-> ①模块导出   export / export default
-> ②模块导入  import
-> ③浏览器支持
+浏览器 |  不支持 |  支持
+package.json | ー | "type": "module"
 
 
+## 🚀Module Loading and Caching（路径分析：确定模块位置）
+When you require a module, Node.js looks for it in this order:
 
-
-## 🚀路径分析： 依据标识符确定模块位置
+1. Core Node.js modules (like fs, http)
+2. Node modules in node_modules folders
+3. Local files (using ./ or ../ prefix)
 
 1. 优先加载内置模块，即使有同名文件，也会优先使用内置模块。
 2. 不是内置模块，先去缓存找。
@@ -159,9 +201,8 @@ File URL in Imports | required for local files | import for local files
 > 3、any文件：其他任意文件都会当作js文件解析
 
 
-
-## 🚀加载.json文件
-```
+### 🚀加载.json文件
+```javascript
 方法①（静的なファイル）：const data = require("./data.json");
 
 方法②（静的なファイル）：import data from "./data.json" with { type: "json" };
@@ -169,19 +210,11 @@ File URL in Imports | required for local files | import for local files
 方法③（サーバー経由）：
 fetch('/path/to/data.json')
   .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  });
+  .then(data => console.log(data)
 ```
 
-### fetch（请求跨域文件）
+### 🚀fetch（请求跨域文件）
 ```javascript
-
-fetch(' url ')    // 可以跨域请求
-    .then(response => response.json())   // 返回一个Promiss对象，使用它的.json() 获取json对象
-    .then(data => console.log(data))
-    .catch(error => console.log(error))
-
 
 ＜GETリクエストの例＞
 fetch('https://example.com/api/data', {
@@ -234,11 +267,9 @@ fetch("https://jsonplaceholder.typicode.com/posts/1", {
 })
 .then((response) => response.json())
 .then((json) => console.log(json));
-```
 
 
-##### 実例１（Express内使用）
-```javascript
+＜Express内使用実例１＞
 app.get('/list', (req, res) => {
     fetch('https://dummyjson.com/recipes')
         .then(response => response.json())
@@ -248,6 +279,8 @@ app.get('/list', (req, res) => {
         .catch(error => console.log(error))
 });
 
+
+＜Express内使用実例２＞
 app.get('/list/:id', (req, res) => {
     fetch('https://dummyjson.com/recipes')
         .then(response => response.json())
@@ -258,10 +291,9 @@ app.get('/list/:id', (req, res) => {
         })
         .catch(error => console.log(error))
 });
-```
 
-##### 実例２（HTML内使用）
-```html
+
+＜HTML内使用実例１＞
 <ul id="bbb"></ul>
 <script>
     const ul_user = document.getElementById("bbb");
@@ -312,46 +344,6 @@ const sslOptions = {
 
 
 
-## 🚀同步&异步（**Async/Await** vs **Promises** vs **Callbacks**）
-https://www.w3schools.com/nodejs/nodejs_async_await.asp
-
-#### Callback Hell
-```javascript
-getUser(userId, (err, user) => {
-  if (err) return handleError(err);
-  getOrders(user.id, (err, orders) => {
-    if (err) return handleError(err);
-    processOrders(orders, (err) => {
-      if (err) return handleError(err);
-      console.log('All done!');
-    });
-  });
-});
-```
-
-#### Promises
-```javascript
-getUser(userId)
-  .then(result => console.log(result))
-  .catch(error => console.error(error))
-  .finally(() => console.log('Operation completed'));
-```
-
-#### Async/Await (推薦)
-```javascript
-async function readFiles() {
-  try {
-    console.log('1. Starting to read files...');
-    const data1 = await fs.readFile('file1.txt', 'utf8');
-    const data2 = await fs.readFile('file2.txt', 'utf8');
-    console.log('2. Files read successfully!');
-    return { data1, data2 };
-  } catch (error) {
-    console.error('Error reading files:', error);
-  }
-}
-readFiles();
-```
 
 
 

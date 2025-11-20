@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 20 Nov 2025 05:18:42 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 20 Nov 2025 05:54:40 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
 
 `Gmeek-html&lt;img src='https://i.gyazo.com/d9294ea53005e7d0500899a46e6b2b50.png'&gt;`
 
@@ -212,7 +212,7 @@ const app = express();
 app.use(helmet());　　// 「app.use(helmet())」と指定すれば、デフォルトの設定がされます。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/38.html</guid><pubDate>Wed, 12 Nov 2025 09:58:06 +0000</pubDate></item><item><title>Vol.37 NodeJS入門</title><link>https://grapehut.dpdns.org/post/37.html</link><description># NodeJS
 Node.js web site: https://nodejs.org/
 Node.js is a free, **open-source JavaScript runtime** that runs on Windows, Mac, Linux, and more. 
-Built on **Chrome's V8 JavaScript engine**. it lets you **execute JavaScript code outside of a web browser, enabling server-side**. 
+Built on **Chrome's V8 JavaScript engine**. it lets you execute JavaScript code **outside of a web browser**, **enabling server-side**. 
 Node.js uses an **Non-blocking I/O**, **event-driven**, **single-threaded** with **event loop** model. 
 
 #### 🎉you can build with Node.js:
@@ -320,6 +320,54 @@ Package Management | npm/yarn | CDN/Bundler
 
 
 
+
+## 🚀Non-blocking 同步&amp;异步（**Async/Await** vs **Promises** vs **Callbacks**）
+https://www.w3schools.com/nodejs/nodejs_async_await.asp
+
+#### Callback Hell
+```javascript
+getUser(userId, (err, user) =&gt; {
+  if (err) return handleError(err);
+  getOrders(user.id, (err, orders) =&gt; {
+    if (err) return handleError(err);
+    processOrders(orders, (err) =&gt; {
+      if (err) return handleError(err);
+      console.log('All done!');
+    });
+  });
+});
+```
+
+#### Promises
+```javascript
+getUser(userId)
+  .then(result =&gt; console.log(result))
+  .catch(error =&gt; console.error(error))
+  .finally(() =&gt; console.log('Operation completed'));
+```
+
+#### Async/Await (推薦)
+```javascript
+async function readFiles() {
+  try {
+    console.log('1. Starting to read files...');
+    const data1 = await fs.readFile('file1.txt', 'utf8');
+    const data2 = await fs.readFile('file2.txt', 'utf8');
+    console.log('2. Files read successfully!');
+    return { data1, data2 };
+  } catch (error) {
+    console.error('Error reading files:', error);
+  }
+}
+readFiles();
+```
+
+
+
+
+
+# Node.js Modules
+
 ## 🚀CommonJS vs ES Modules
 https://www.w3schools.com/nodejs/nodejs_modules_esm.asp
 
@@ -327,26 +375,20 @@ Feature | CommonJS | ES Modules
 -- | -- | --
 File Extension | .js (default) | .mjs (or .js with proper config)
 Import Syntax | require() | import
-Export Syntax | module.exports 或者 exports | export 或者 export default
+Export Syntax | module.exports |  export default / export
 Import Timing | Dynamic (runtime) | Static (parsed before execution)
 Top-level Await | Not supported | Supported
 File URL in Imports | required for local files | import for local files
-
-&gt; [!TIP]
-&gt;CommonJS：   
-&gt; ①模块导出  module.exports / exports
-&gt; ②模块导入  require() 
-&gt; ③浏览器不支持
-&gt; 
-&gt;ESmodule： 
-&gt; ①模块导出   export / export default
-&gt; ②模块导入  import
-&gt; ③浏览器支持
+浏览器 |  不支持 |  支持
+package.json | ー | 'type': 'module'
 
 
+## 🚀Module Loading and Caching（路径分析：确定模块位置）
+When you require a module, Node.js looks for it in this order:
 
-
-## 🚀路径分析： 依据标识符确定模块位置
+1. Core Node.js modules (like fs, http)
+2. Node modules in node_modules folders
+3. Local files (using ./ or ../ prefix)
 
 1. 优先加载内置模块，即使有同名文件，也会优先使用内置模块。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/37.html</guid><pubDate>Tue, 11 Nov 2025 03:56:53 +0000</pubDate></item><item><title>Vol.36 网络资源</title><link>https://grapehut.dpdns.org/post/36.html</link><description>
 ## 常用项目
