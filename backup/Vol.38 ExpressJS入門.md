@@ -76,6 +76,7 @@ app.listen(PORT, () => {
 })
 ```
 
+Basic Routing
 >[!TIP]
 >app.get( ) - Handle GET requests
 >app.post( ) - Handle POST requests
