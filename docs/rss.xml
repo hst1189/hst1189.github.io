@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 20 Nov 2025 07:10:17 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 20 Nov 2025 07:12:10 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
 
 `Gmeek-html&lt;img src='https://i.gyazo.com/d9294ea53005e7d0500899a46e6b2b50.png'&gt;`
 
@@ -357,7 +357,7 @@ Node.js is a free, **open-source JavaScript runtime** that runs on Windows, Mac,
 Built on **Chrome's V8 JavaScript engine**. it lets you execute JavaScript code **outside of a web browser**, **enabling server-side**. 
 Node.js uses an **Non-blocking I/O**, **event-driven**, **single-threaded** with **event loop** model. 
 
-#### 🎉you can build with Node.js:
+#### 🎉you can build with Node.js（Node.js的应用场景）
 
 - **Web Servers**: Create fast, scalable network applications
 - **File Operations**: Read, write, and manage files on the server
@@ -368,7 +368,7 @@ Node.js uses an **Non-blocking I/O**, **event-driven**, **single-threaded** with
 - **IoT**: Hardware control
 
 
-#### 🎉How the Event Loop Works
+#### 🎉How the Event Loop Works（Node.js的事件循环是如何工作的）
 
 1. Execute the main script (synchronous code)
 2. Process any microtasks (Promises, process.nextTick)

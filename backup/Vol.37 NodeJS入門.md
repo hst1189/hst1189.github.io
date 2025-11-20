@@ -4,7 +4,7 @@ Node.js is a free, **open-source JavaScript runtime** that runs on Windows, Mac,
 Built on **Chrome's V8 JavaScript engine**. it lets you execute JavaScript code **outside of a web browser**, **enabling server-side**. 
 Node.js uses an **Non-blocking I/O**, **event-driven**, **single-threaded** with **event loop** model. 
 
-#### 🎉you can build with Node.js:
+#### 🎉you can build with Node.js（Node.js的应用场景）
 
 - **Web Servers**: Create fast, scalable network applications
 - **File Operations**: Read, write, and manage files on the server
@@ -15,7 +15,7 @@ Node.js uses an **Non-blocking I/O**, **event-driven**, **single-threaded** with
 - **IoT**: Hardware control
 
 
-#### 🎉How the Event Loop Works
+#### 🎉How the Event Loop Works（Node.js的事件循环是如何工作的）
 
 1. Execute the main script (synchronous code)
 2. Process any microtasks (Promises, process.nextTick)
