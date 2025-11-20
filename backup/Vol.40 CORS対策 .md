@@ -19,7 +19,7 @@ function getData(data) {
 </html>
 
 例：<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-サーバーサイドとの事前の取り決めがない場合は異なるドメインの壁を超えることができないが、、
+
 <script>タグのsrc属性でドメイン指定で、異なるドメインのjsファイルを読み込むことができます。
 JSONPはこの仕組を利用します。
 ```
