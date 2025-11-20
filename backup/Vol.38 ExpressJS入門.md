@@ -42,7 +42,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const helmet = require('helmet'); // Security middleware
-require('dotenv').config();
+require('dotenv').config();  // Load environment variables from .env file
 
 // Create Express app
 const app = express();
