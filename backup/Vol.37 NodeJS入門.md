@@ -179,6 +179,7 @@ When you require a module, Node.js looks for it in this order:
 2. Node modules in node_modules folders
 3. Local files (using ./ or ../ prefix)
 
+
 1. 优先加载内置模块，即使有同名文件，也会优先使用内置模块。
 2. 不是内置模块，先去缓存找。
 3. 缓存没有就去找对应路径的文件。
