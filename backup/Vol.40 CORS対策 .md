@@ -29,7 +29,7 @@ app.get('/api/data' ,(req,res)=>{
 }) 
 
 app.get('/api/data' ,(req,res)=>{ 
-    return `req.query.callback({"name": "Yamada", "age": 26})`   //这里的return，会被当作js处理
+    return getData({"name": "Yamada", "age": 26})   //这里的return，会被当作js处理
 }) 
 ```
 

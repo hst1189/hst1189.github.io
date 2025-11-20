@@ -124,7 +124,7 @@ function getData(data) <span class="pl-kos">{</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span> 
 
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/api/data'</span> <span class="pl-kos">,</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span><span class="pl-s1">res</span><span class="pl-kos">)</span><span class="pl-c1">=&gt;</span><span class="pl-kos">{</span> 
-    <span class="pl-k">return</span> <span class="pl-s">`req.query.callback({"name": "Yamada", "age": 26})`</span>   <span class="pl-c">//这里的return，会被当作js处理</span>
+    <span class="pl-k">return</span> <span class="pl-en">getData</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-s">"name"</span>: <span class="pl-s">"Yamada"</span><span class="pl-kos">,</span> <span class="pl-s">"age"</span>: <span class="pl-c1">26</span><span class="pl-kos">}</span><span class="pl-kos">)</span>   <span class="pl-c">//这里的return，会被当作js处理</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span> </pre></div>
 <h2>🚀cors.js（middlewareを利用）</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">cors</span>
