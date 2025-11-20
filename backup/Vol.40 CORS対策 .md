@@ -2,9 +2,6 @@
 https://expressjs.com/en/resources/middleware/cors.html
 
 ## 🚀JSONP（不推荐）
-例：<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-サーバーサイドとの事前の取り決めがない場合は異なるドメインの壁を超えることができないが、<script>タグのsrc属性での異なるドメインの指定で、異なるドメインのjsファイルを読み込むことができます。JSONPはこの仕組を利用します。
-
 
 #### client →domainA:8080　→ domainB:3000
 ```javascript
@@ -20,6 +17,11 @@ function getData(data) {
 </script src='http://domainB:3000/api/data' />     // 服务器端的返回值会直接执行
 </script src='http://domainB:3000/api/data?callback=getData' />  // 
 </html>
+
+例：<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+サーバーサイドとの事前の取り決めがない場合は異なるドメインの壁を超えることができないが、、
+<script>タグのsrc属性でドメイン指定で、異なるドメインのjsファイルを読み込むことができます。
+JSONPはこの仕組を利用します。
 ```
 
 #### サーバ側 domainB:3000 
