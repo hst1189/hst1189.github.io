@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 20 Nov 2025 04:56:31 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 20 Nov 2025 05:12:30 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
 
 `Gmeek-html&lt;img src='https://i.gyazo.com/d9294ea53005e7d0500899a46e6b2b50.png'&gt;`
 
@@ -213,9 +213,29 @@ app.use(helmet());　　// 「app.use(helmet())」と指定すれば、デフォ
 Node.js web site: https://nodejs.org/
 Node.js is a free, **open-source JavaScript runtime** that runs on Windows, Mac, Linux, and more. 
 Built on **Chrome's V8 JavaScript engine**. it lets you **execute JavaScript code outside of a web browser, enabling server-side**. 
-Node.js uses an **event-driven**, **non-blocking** model. makes it **highly efficient for I/O-heavy workloads**.
+Node.js uses an **Non-blocking I/O**, **event-driven**, **single-threaded** with **event loop** model. 
 
-you can build with Node.js:
+#### 🎉How the Event Loop Works
+
+1. Execute the main script (synchronous code)
+2. Process any microtasks (Promises, process.nextTick)
+3. Execute timers (setTimeout, setInterval)
+4. Run I/O callbacks (file system, network operations)
+5. Process setImmediate callbacks
+6. Handle close events (like socket.on('close'))
+```javascript
+console.log('1. Start');
+process.nextTick(() =&gt; console.log('2. Next tick'));
+Promise.resolve().then(() =&gt; console.log('3. Promise'));
+setTimeout(() =&gt; console.log('4. Timeout'), 0);
+setImmediate(() =&gt; console.log('5. Immediate'));
+console.log('6. End');
+
+The output will be：1.Start &gt; 6.End &gt; 2.Next tick &gt; 3.Promise &gt; 4.Timeout &gt; 5.Immediate
+```
+
+
+#### 🎉you can build with Node.js:
 
 - **Web Servers**: Create fast, scalable network applications
 - **File Operations**: Read, write, and manage files on the server

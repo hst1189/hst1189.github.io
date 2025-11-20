@@ -2,9 +2,29 @@
 Node.js web site: https://nodejs.org/
 Node.js is a free, **open-source JavaScript runtime** that runs on Windows, Mac, Linux, and more. 
 Built on **Chrome's V8 JavaScript engine**. it lets you **execute JavaScript code outside of a web browser, enabling server-side**. 
-Node.js uses an **event-driven**, **non-blocking** model. makes it **highly efficient for I/O-heavy workloads**.
+Node.js uses an **Non-blocking I/O**, **event-driven**, **single-threaded** with **event loop** model. 
 
-you can build with Node.js:
+#### 🎉How the Event Loop Works
+
+1. Execute the main script (synchronous code)
+2. Process any microtasks (Promises, process.nextTick)
+3. Execute timers (setTimeout, setInterval)
+4. Run I/O callbacks (file system, network operations)
+5. Process setImmediate callbacks
+6. Handle close events (like socket.on('close'))
+```javascript
+console.log('1. Start');
+process.nextTick(() => console.log('2. Next tick'));
+Promise.resolve().then(() => console.log('3. Promise'));
+setTimeout(() => console.log('4. Timeout'), 0);
+setImmediate(() => console.log('5. Immediate'));
+console.log('6. End');
+
+The output will be：1.Start > 6.End > 2.Next tick > 3.Promise > 4.Timeout > 5.Immediate
+```
+
+
+#### 🎉you can build with Node.js:
 
 - **Web Servers**: Create fast, scalable network applications
 - **File Operations**: Read, write, and manage files on the server
