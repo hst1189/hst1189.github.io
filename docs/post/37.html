@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 05:55</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 06:51</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -468,22 +468,6 @@ Node.js uses an <strong>Non-blocking I/O</strong>, <strong>event-driven</strong>
 例: JSON.stringify({ name: "Taro", age: 30 }) は  {"name":"Taro","age":30}</p>
 <p>※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去</p>
 </div>
-<h3>.env file</h3>
-<pre class="notranslate"><code class="notranslate">PORT=3000
-HOST=0.0.0.0
-SSL_KEY_PATH=./key.pem
-SSL_CERT_PATH=./cert.pem
-</code></pre>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'dotenv'</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">config</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-
-<span class="pl-c">// Access environment variables</span>
-<span class="pl-k">const</span> <span class="pl-c1">PORT</span> <span class="pl-c1">=</span> <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">PORT</span> <span class="pl-c1">||</span> <span class="pl-c1">3000</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-c1">HOST</span> <span class="pl-c1">=</span> <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">HOST</span> <span class="pl-c1">||</span> <span class="pl-s">'0.0.0.0'</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-s1">sslOptions</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
-  <span class="pl-c1">key</span>: <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFileSync</span><span class="pl-kos">(</span><span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">SSL_KEY_PATH</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
-  <span class="pl-c1">cert</span>: <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFileSync</span><span class="pl-kos">(</span><span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">SSL_CERT_PATH</span><span class="pl-kos">)</span>
-  <span class="pl-c">// ... other options</span>
-<span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
 <h2>🚀npm</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">init</span>    <span class="pl-c">// 初始化一个新项目，在当前目录创建 package.json 文件</span>
 
@@ -516,7 +500,9 @@ SSL_CERT_PATH=./cert.pem
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">express</span>            <span class="pl-c">//ExpressJSフレームワーク</span>
 <span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-s1">express</span><span class="pl-c1">-</span><span class="pl-s1">generator</span> <span class="pl-c">// 快速构建 ExpressJS项目</span>
 
-<span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">morgan</span>    <span class="pl-c">// HTTPリクエストのログを記録するミドルウェア</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">helmet</span>    <span class="pl-c">// Security middleware</span>
+
+<span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">log4js</span>    <span class="pl-c">// ログを記録するミドルウェア</span>
 
 <span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">http</span><span class="pl-c1">-</span><span class="pl-s1">proxy</span><span class="pl-c1">-</span><span class="pl-s1">middleware</span>    <span class="pl-c">// 代理</span>
 

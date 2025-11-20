@@ -322,33 +322,6 @@ JSON文字列をObjに変換
 > ※JSON文字列：key 必须双引号，只保存属性，不保存方法，如果 Obj里有方法，转换后会失去
 
 
-### .env file
-```
-PORT=3000
-HOST=0.0.0.0
-SSL_KEY_PATH=./key.pem
-SSL_CERT_PATH=./cert.pem
-```
-```javascript
-require('dotenv').config();
-
-// Access environment variables
-const PORT = process.env.PORT || 3000;
-const HOST = process.env.HOST || '0.0.0.0';
-const sslOptions = {
-  key: fs.readFileSync(process.env.SSL_KEY_PATH),
-  cert: fs.readFileSync(process.env.SSL_CERT_PATH)
-  // ... other options
-};
-```
-
-
-
-
-
-
-
-
 
 
 ## 🚀npm
@@ -393,7 +366,9 @@ package.json小技巧： 一个命令同时开启前端/后端２个服务器
 npm install express            //ExpressJSフレームワーク
 npm install -g express-generator // 快速构建 ExpressJS项目
 
-npm install morgan    // HTTPリクエストのログを記録するミドルウェア
+npm install helmet    // Security middleware
+
+npm install log4js    // ログを記録するミドルウェア
 
 npm install http-proxy-middleware    // 代理
 
