@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 04:45</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 04:49</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -116,8 +116,25 @@ Node.js uses an <strong>event-driven</strong>, <strong>non-blocking</strong> mod
 <li><strong>IoT</strong>: Hardware control</li>
 </ul>
 <h2>🚀Run Node.js Code</h2>
-<pre class="notranslate"><code class="notranslate">node app.js
-</code></pre>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">node</span> <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-c1">js</span></pre></div>
+<h2>🚀Debugging Node.js Applications</h2>
+<ol>
+<li>Start your application with node --inspect app.js</li>
+<li>Open Chrome and navigate to chrome://inspect</li>
+<li>Click on "Open dedicated DevTools for Node"</li>
+<li>Set breakpoints and debug your application</li>
+</ol>
+<div class="highlight highlight-source-js"><pre class="notranslate"># <span class="pl-v">Start</span> <span class="pl-s1">with</span> <span class="pl-en">inspector</span> <span class="pl-kos">(</span><span class="pl-s1">listens</span> <span class="pl-s1">on</span> <span class="pl-k">default</span> <span class="pl-s1">port</span> <span class="pl-c1">9229</span><span class="pl-kos">)</span>
+<span class="pl-s1">node</span> <span class="pl-c1">--</span><span class="pl-s1">inspect</span> <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-c1">js</span>
+
+# <span class="pl-v">Break</span> <span class="pl-s1">on</span> <span class="pl-s1">first</span> <span class="pl-s1">line</span> <span class="pl-k">of</span> <span class="pl-s1">application</span>
+<span class="pl-s1">node</span> <span class="pl-c1">--</span><span class="pl-s1">inspect</span><span class="pl-c1">-</span><span class="pl-s1">brk</span><span class="pl-kos"></span> <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-c1">js</span>
+
+# <span class="pl-v">Specify</span> <span class="pl-s1">a</span> <span class="pl-s1">custom</span> <span class="pl-s1">port</span>
+<span class="pl-s1">node</span> <span class="pl-c1">--</span><span class="pl-kos"></span><span class="pl-s1">inspect</span><span class="pl-c1">=</span><span class="pl-c1">9222</span> <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-c1">js</span>
+
+# <span class="pl-v">Enable</span> <span class="pl-s1">remote</span> <span class="pl-s1">debugging</span> <span class="pl-kos">(</span><span class="pl-s1">be</span> <span class="pl-s1">careful</span> <span class="pl-k">with</span> <span class="pl-smi">this</span> <span class="pl-k">in</span> <span class="pl-s1">production</span><span class="pl-kos">)</span>
+<span class="pl-s1">node</span> <span class="pl-c1">--</span><span class="pl-s1">inspect</span><span class="pl-c1">=</span><span class="pl-c1">0.0</span><span class="pl-c1">.0</span><span class="pl-c1">.0</span>:<span class="pl-c1">9229</span> <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-c1">js</span></pre></div>
 <h2>🚀JavaScript Concepts</h2>
 <ul>
 <li><strong>Variables</strong>: let (mutable), const (immutable), var (legacy)</li>

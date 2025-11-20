@@ -15,10 +15,29 @@ you can build with Node.js:
 - **IoT**: Hardware control
 
 ## 🚀Run Node.js Code
-```
+```javascript
 node app.js
 ```
 
+## 🚀Debugging Node.js Applications
+1. Start your application with node --inspect app.js
+2. Open Chrome and navigate to chrome://inspect
+3. Click on "Open dedicated DevTools for Node"
+4. Set breakpoints and debug your application
+
+```javascript
+# Start with inspector (listens on default port 9229)
+node --inspect app.js
+
+# Break on first line of application
+node --inspect-brk app.js
+
+# Specify a custom port
+node --inspect=9222 app.js
+
+# Enable remote debugging (be careful with this in production)
+node --inspect=0.0.0.0:9229 app.js
+```
 
 
 ## 🚀JavaScript Concepts
