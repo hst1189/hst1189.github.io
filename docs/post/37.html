@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 07:11</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 07:14</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -400,10 +400,7 @@ console.log('Environment variables:', process.env);
   <span class="pl-kos">.</span><span class="pl-c1">then</span><span class="pl-kos">(</span><span class="pl-s1">data</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">)</span></pre></div>
 <h3>🚀fetch（请求跨域文件）</h3>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">＜GETリクエストの例＞</span>
-<span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">'https://example.com/api/data'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
-  <span class="pl-c1">method</span>: <span class="pl-s">'GET'</span><span class="pl-kos">,</span>
-  <span class="pl-c1">credentials</span>: <span class="pl-s">'include'</span>               <span class="pl-c">// クッキーや認証情報を含める場合</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span>
+<span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">'https://example.com/api/data'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>  <span class="pl-c1">method</span>: <span class="pl-s">'GET'</span><span class="pl-kos">,</span>  <span class="pl-c1">credentials</span>: <span class="pl-s">'include'</span>  <span class="pl-kos">}</span><span class="pl-kos">)</span>  <span class="pl-c">// クッキーや認証情報を含める場合</span>
   <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">response</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
   <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">data</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
   <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">error</span> <span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">'Error:'</span><span class="pl-kos">,</span> <span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>

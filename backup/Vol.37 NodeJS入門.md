@@ -249,10 +249,7 @@ fetch('/path/to/data.json')
 ```javascript
 
 ＜GETリクエストの例＞
-fetch('https://example.com/api/data', {
-  method: 'GET',
-  credentials: 'include'               // クッキーや認証情報を含める場合
-})
+fetch('https://example.com/api/data', {  method: 'GET',  credentials: 'include'  })  // クッキーや認証情報を含める場合
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error:', error));
