@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 09:51,updated at 2025-11-20 09:28</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 09:51,updated at 2025-11-20 09:29</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Previous Page">上一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a><a class="next_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Next Page">下一篇-Vol.39 Socket.io入門</a></div>
 </nav>
 
@@ -197,45 +197,43 @@ JSONPはこの仕組を利用します。</pre></div>
 
 <span class="pl-c">// proxy and keep the same base path "/api"</span>
 <span class="pl-c">// http://127.0.0.1:3000/api/foo/bar -&gt; http://www.example.org/api/foo/bar</span></pre></div>
-<h4></h4>
-<pre class="notranslate"><code class="notranslate">import express from 'express';
-import { createProxyMiddleware } from 'http-proxy-middleware';
-const app = express();
+<h4>プロキシ作成</h4>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">import</span> <span class="pl-s1">express</span> <span class="pl-k">from</span> <span class="pl-s">'express'</span><span class="pl-kos">;</span>
+<span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-s1">createProxyMiddleware</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'http-proxy-middleware'</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-en">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-const PORT = 3000;
-const HOST = "localhost";
-const API_SERVICE_URL = "https://jsonplaceholder.typicode.com";
+<span class="pl-k">const</span> <span class="pl-c1">PORT</span> <span class="pl-c1">=</span> <span class="pl-c1">3000</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-c1">HOST</span> <span class="pl-c1">=</span> <span class="pl-s">"localhost"</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-c1">API_SERVICE_URL</span> <span class="pl-c1">=</span> <span class="pl-s">"https://jsonplaceholder.typicode.com"</span><span class="pl-kos">;</span>
 
-// Authorization
-app.use('', (req, res, next) =&gt; {
-  if (req.headers.authorization) {
-    next();
-  } else {
-    res.sendStatus(403);
-  }
-});
+<span class="pl-c">// Authorization</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s">''</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">,</span> <span class="pl-s1">next</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">headers</span><span class="pl-kos">.</span><span class="pl-c1">authorization</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">next</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">sendStatus</span><span class="pl-kos">(</span><span class="pl-c1">403</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-// Proxy endpoints
-app.use('/json_placeholder', createProxyMiddleware({
-  target: API_SERVICE_URL,
-  changeOrigin: true,
-  pathRewrite: {
-    [`^/json_placeholder`]: '',  //APIに転送される際に/json_placeholderが省略されるように、pathRewriteを定義します。
-  },
-}));   
-//例えば、localhost:3000/json_placeholder/posts/1にリクエストを送ると、リクエスト先のURLはhttps://jsonplaceholder.typicode.com/posts/1に上書きされます。
+<span class="pl-c">// Proxy endpoints</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s">'/json_placeholder'</span><span class="pl-kos">,</span> <span class="pl-en">createProxyMiddleware</span><span class="pl-kos">(</span><span class="pl-kos">{</span>
+  <span class="pl-c1">target</span>: <span class="pl-c1">API_SERVICE_URL</span><span class="pl-kos">,</span>
+  <span class="pl-c1">changeOrigin</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span>
+  <span class="pl-c1">pathRewrite</span>: <span class="pl-kos">{</span>
+    <span class="pl-kos">[</span><span class="pl-s">`^/json_placeholder`</span><span class="pl-kos">]</span>: <span class="pl-s">''</span><span class="pl-kos">,</span>  <span class="pl-c">//APIに転送される際に/json_placeholderが省略されるように、pathRewriteを定義します。</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>   
+<span class="pl-c">//例えば、localhost:3000/json_placeholder/posts/1にリクエストを送ると、リクエスト先のURLはhttps://jsonplaceholder.typicode.com/posts/1に上書きされます。</span>
 
-// Info GET endpoint
-app.get('/info', (req, res, next) =&gt; {
-  res.send('Billing APIとAccount APIへのプロキシサービスです。');
-});
+<span class="pl-c">// Info GET endpoint</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/info'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">,</span> <span class="pl-s1">next</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'Billing APIとAccount APIへのプロキシサービスです。'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-// Start the Proxy
-app.listen(PORT, HOST, () =&gt; {
-  console.log(`Starting Proxy at ${HOST}:${PORT}`);
-});
-
-</code></pre></section>
+<span class="pl-c">// Start the Proxy</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">PORT</span><span class="pl-kos">,</span> <span class="pl-c1">HOST</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">`Starting Proxy at <span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">HOST</span><span class="pl-kos">}</span></span>:<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-c1">PORT</span><span class="pl-kos">}</span></span>`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
 

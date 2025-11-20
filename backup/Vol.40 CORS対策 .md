@@ -129,8 +129,8 @@ app.listen(3000);
 // http://127.0.0.1:3000/api/foo/bar -> http://www.example.org/api/foo/bar
 ```
 
-#### 
-```
+#### プロキシ作成
+```javascript
 import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 const app = express();
