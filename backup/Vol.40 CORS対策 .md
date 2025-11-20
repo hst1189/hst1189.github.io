@@ -8,8 +8,8 @@ https://expressjs.com/en/resources/middleware/cors.html
 <script>タグのsrc属性での異なるドメインの指定で、異なるドメインのjsファイルを読み込むことができます。
 JSONPはこの仕組を利用します。
 
-client →domainA:8080　→ domainB:3000 
 
+#### client →domainA:8080　→ domainB:3000 
 ```javascript
 <!DOCTYPE html>  domainA:8080
 <html>
@@ -25,7 +25,7 @@ function getData(data) {
 </html>
 ```
 
-サーバ側 domainB:3000 
+#### サーバ側 domainB:3000 
 ```javascript
 app.get('/api/data' ,(req,res)=>{ 
     return `req.query.callback({"name": "Yamada", "age": 26})`   //这里的return，会被当作js处理
