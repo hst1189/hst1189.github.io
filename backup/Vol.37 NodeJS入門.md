@@ -4,6 +4,17 @@ Node.js is a free, **open-source JavaScript runtime** that runs on Windows, Mac,
 Built on **Chrome's V8 JavaScript engine**. it lets you **execute JavaScript code outside of a web browser, enabling server-side**. 
 Node.js uses an **Non-blocking I/O**, **event-driven**, **single-threaded** with **event loop** model. 
 
+#### 🎉you can build with Node.js:
+
+- **Web Servers**: Create fast, scalable network applications
+- **File Operations**: Read, write, and manage files on the server
+- **Database Interaction**: Work with databases like MongoDB, MySQL, and more
+- **APIs**: Build RESTful services and GraphQL APIs
+- **Real-time**: Handle WebSockets for live applications
+- **CLI Tools**: Create command-line applications
+- **IoT**: Hardware control
+
+
 #### 🎉How the Event Loop Works
 
 1. Execute the main script (synchronous code)
@@ -22,17 +33,6 @@ console.log('6. End');
 
 The output will be：1.Start > 6.End > 2.Next tick > 3.Promise > 4.Timeout > 5.Immediate
 ```
-
-
-#### 🎉you can build with Node.js:
-
-- **Web Servers**: Create fast, scalable network applications
-- **File Operations**: Read, write, and manage files on the server
-- **Database Interaction**: Work with databases like MongoDB, MySQL, and more
-- **APIs**: Build RESTful services and GraphQL APIs
-- **Real-time**: Handle WebSockets for live applications
-- **CLI Tools**: Create command-line applications
-- **IoT**: Hardware control
 
 ## 🚀Run Node.js Code
 ```javascript
@@ -312,7 +312,7 @@ const sslOptions = {
 
 
 
-## 🚀同步&异步
+## 🚀同步&异步（Sync vs Async）
 #### Callback Hell
 ```javascript
 getUser(userId, (err, user) => {

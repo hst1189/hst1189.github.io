@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 05:11</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-11-20 05:18</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -105,6 +105,16 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 Node.js is a free, <strong>open-source JavaScript runtime</strong> that runs on Windows, Mac, Linux, and more.<br>
 Built on <strong>Chrome's V8 JavaScript engine</strong>. it lets you <strong>execute JavaScript code outside of a web browser, enabling server-side</strong>.<br>
 Node.js uses an <strong>Non-blocking I/O</strong>, <strong>event-driven</strong>, <strong>single-threaded</strong> with <strong>event loop</strong> model.</p>
+<h4>🎉you can build with Node.js:</h4>
+<ul>
+<li><strong>Web Servers</strong>: Create fast, scalable network applications</li>
+<li><strong>File Operations</strong>: Read, write, and manage files on the server</li>
+<li><strong>Database Interaction</strong>: Work with databases like MongoDB, MySQL, and more</li>
+<li><strong>APIs</strong>: Build RESTful services and GraphQL APIs</li>
+<li><strong>Real-time</strong>: Handle WebSockets for live applications</li>
+<li><strong>CLI Tools</strong>: Create command-line applications</li>
+<li><strong>IoT</strong>: Hardware control</li>
+</ul>
 <h4>🎉How the Event Loop Works</h4>
 <ol>
 <li>Execute the main script (synchronous code)</li>
@@ -122,16 +132,6 @@ Node.js uses an <strong>Non-blocking I/O</strong>, <strong>event-driven</strong>
 <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'6. End'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
 <span class="pl-v">The</span> <span class="pl-s1">output</span> <span class="pl-s1">will</span> <span class="pl-s1">be：1</span><span class="pl-kos">.</span><span class="pl-c1">Start</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">6.</span><span class="pl-v">End</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">2.</span><span class="pl-v">Next</span> <span class="pl-s1">tick</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">3.</span><span class="pl-v">Promise</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">4.</span><span class="pl-v">Timeout</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">5.</span><span class="pl-v">Immediate</span></pre></div>
-<h4>🎉you can build with Node.js:</h4>
-<ul>
-<li><strong>Web Servers</strong>: Create fast, scalable network applications</li>
-<li><strong>File Operations</strong>: Read, write, and manage files on the server</li>
-<li><strong>Database Interaction</strong>: Work with databases like MongoDB, MySQL, and more</li>
-<li><strong>APIs</strong>: Build RESTful services and GraphQL APIs</li>
-<li><strong>Real-time</strong>: Handle WebSockets for live applications</li>
-<li><strong>CLI Tools</strong>: Create command-line applications</li>
-<li><strong>IoT</strong>: Hardware control</li>
-</ul>
 <h2>🚀Run Node.js Code</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">node</span> <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-c1">js</span></pre></div>
 <h2>🚀Debugging Node.js Applications</h2>
@@ -432,7 +432,7 @@ SSL_CERT_PATH=./cert.pem
   <span class="pl-c1">cert</span>: <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFileSync</span><span class="pl-kos">(</span><span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">SSL_CERT_PATH</span><span class="pl-kos">)</span>
   <span class="pl-c">// ... other options</span>
 <span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
-<h2>🚀同步&amp;异步</h2>
+<h2>🚀同步&amp;异步（Sync vs Async）</h2>
 <h4>Callback Hell</h4>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">userId</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">user</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
   <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">handleError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
