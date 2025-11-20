@@ -117,7 +117,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const app = express();
 
-const proxyMiddleware = createProxyMiddleware<Request, Response>({
+const proxyMiddleware = createProxyMiddleware({
   target: 'http://www.example.org/api',
   changeOrigin: true,
 });
