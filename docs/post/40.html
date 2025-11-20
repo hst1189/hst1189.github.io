@@ -96,13 +96,37 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 09:51,updated at 2025-11-20 07:19</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 09:51,updated at 2025-11-20 08:20</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Previous Page">上一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a><a class="next_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Next Page">下一篇-Vol.39 Socket.io入門</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>CORS 設定</h1>
 <p><a href="https://expressjs.com/en/resources/middleware/cors.html" rel="nofollow">https://expressjs.com/en/resources/middleware/cors.html</a></p>
 <h2>🚀JSONP（不推荐）</h2>
+<p>例：&lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;<br>
+サーバーサイドとの事前の取り決めがない場合は異なるドメインの壁を超えることができないが、</p>
+&lt;script&gt;タグのsrc属性での異なるドメインの指定で、異なるドメインのjsファイルを読み込むことができます。
+JSONPはこの仕組を利用します。
+
+client →domainA:8080　→ domainB:3000 
+
+```javascript
+  domainA:8080
+
+&lt;script&gt;
+function getData(data) {
+    console.log(data.name);
+    console.log(data.age);
+}
+&lt;/script&gt;
+<p>&lt;/script src='<a href="http://domainB:3000/api/data" rel="nofollow">http://domainB:3000/api/data</a>' /&gt;     // 服务器端的返回值会直接执行<br>
+&lt;/script src='<a href="http://domainB:3000/api/data?callback=getData" rel="nofollow">http://domainB:3000/api/data?callback=getData</a>' /&gt;  //</p>
+
+```
+<p>サーバ側 domainB:3000</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/api/data'</span> <span class="pl-kos">,</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span><span class="pl-s1">res</span><span class="pl-kos">)</span><span class="pl-c1">=&gt;</span><span class="pl-kos">{</span> 
+    <span class="pl-k">return</span> <span class="pl-s">`req.query.callback({"name": "Yamada", "age": 26})`</span>   <span class="pl-c">//这里的return，会被当作js处理</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span> </pre></div>
 <h2>🚀cors.js（middlewareを利用）</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-s1">cors</span>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-en">cors</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
