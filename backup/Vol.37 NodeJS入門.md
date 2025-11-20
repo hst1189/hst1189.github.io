@@ -394,6 +394,8 @@ package.json小技巧： 一个命令同时开启前端/后端２个服务器
 npm install express            //ExpressJSフレームワーク
 npm install -g express-generator // 快速构建 ExpressJS项目
 
+npm install cors    // CORS
+
 npm install helmet    // Security middleware
 
 npm install log4js    // ログを記録するミドルウェア
