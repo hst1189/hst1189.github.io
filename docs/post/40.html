@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 09:51,updated at 2025-11-20 08:24</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-15 09:51,updated at 2025-11-20 08:25</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Previous Page">上一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a><a class="next_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Next Page">下一篇-Vol.39 Socket.io入門</a></div>
 </nav>
 
@@ -120,6 +120,10 @@ function getData(data) <span class="pl-kos">{</span>
 &lt;/<span class="pl-s1">html</span><span class="pl-c1">&gt;</span></pre></div>
 <h4>サーバ側 domainB:3000</h4>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/api/data'</span> <span class="pl-kos">,</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span><span class="pl-s1">res</span><span class="pl-kos">)</span><span class="pl-c1">=&gt;</span><span class="pl-kos">{</span> 
+    <span class="pl-k">return</span> <span class="pl-s">`hello world`</span>   <span class="pl-c">//这里的return，会被当作js处理</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span> 
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/api/data'</span> <span class="pl-kos">,</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span><span class="pl-s1">res</span><span class="pl-kos">)</span><span class="pl-c1">=&gt;</span><span class="pl-kos">{</span> 
     <span class="pl-k">return</span> <span class="pl-s">`req.query.callback({"name": "Yamada", "age": 26})`</span>   <span class="pl-c">//这里的return，会被当作js处理</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span> </pre></div>
 <h2>🚀cors.js（middlewareを利用）</h2>

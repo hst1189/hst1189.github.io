@@ -25,6 +25,10 @@ function getData(data) {
 #### サーバ側 domainB:3000 
 ```javascript
 app.get('/api/data' ,(req,res)=>{ 
+    return `hello world`   //这里的return，会被当作js处理
+}) 
+
+app.get('/api/data' ,(req,res)=>{ 
     return `req.query.callback({"name": "Yamada", "age": 26})`   //这里的return，会被当作js处理
 }) 
 ```
