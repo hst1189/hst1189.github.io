@@ -205,6 +205,13 @@ res.status(201).cookie('token', `${token}`, {
 > app.use(express.static('public')); // 静态文件
 > const router=express.Router();   // 生成路由
 
+Common Third-party Middleware:
+- helmet (security)
+- cors (cross-origin resource sharing)
+- cookie-parser (cookie handling)
+- compression (response compression)
+
+
 ```javascript
 const mid = function (req, res, next) {    // ミドルウェア定義
     console.log({ msg: `${new Date()} ${req.method} ${req.originalUrl}` })
@@ -240,11 +247,7 @@ app.listen(port, () => {
 });
 
 ```
-Common Third-party Middleware:
-- helmet (security)
-- cors (cross-origin resource sharing)
-- cookie-parser (cookie handling)
-- compression (response compression)
+
 
 
 
