@@ -16,14 +16,6 @@ Strapi | Headless CMS | Good | Low (UI) | Good | Content management, API creatio
 ## 🚀 基本写法
 https://www.w3schools.com/nodejs/nodejs_express.asp
 
->[!TIP]
->app.get('/',(req,res)=>{  } )
->app.post('/',(req,res)=>{  } )
->app.put('/:id',(req,res)=>{  } )
->app.delete('/:id',(req,res)=>{  } )
->app.all('*', (req, res)=>{  })
->app.use()  // ミドルウェア
-
 ```javascript
 
 import express from 'express';
@@ -35,7 +27,11 @@ const mid = function (req, res, next) {    // ミドルウェア定義
 }
 app.use(mid);  // ミドルウェア
 
-app.use(express.static('public', { maxAge: 86400000 }));  //静的ファイルのキャッシュ機能、1日間キャッシュを有効化
+app.use(express.static('public', { maxAge: 86400000 }));  // 静的ファイルのキャッシュ機能、1日間キャッシュを有効化
+
+app.get('/image', (req, res) => {    // 静的ファイル
+  res.sendFile(path.join(__dirname, 'public','images','test.png'));
+});
 
 app.get('/', (req, res) => {
     res.status(200).send({ msg: "get OK" });
@@ -63,6 +59,27 @@ app.listen(3000, (err) => {
 })
 ```
 
+>[!TIP]
+>app.get('/',(req,res)=>{  } )
+>app.post('/',(req,res)=>{  } )
+>app.put('/:id',(req,res)=>{  } )
+>app.delete('/:id',(req,res)=>{  } )
+>app.all('*', (req, res)=>{  })
+>app.use()  // ミドルウェア
+
+```javascript
+curl -X GET http://localhost:3000/
+> {"msg":"GET OK"}
+
+curl -X POST http://localhost:3000/
+> {"msg":"POST OK"}        
+
+curl -X PUT http://localhost:3000/123
+> {"id":"123","msg":"PUT OK"}
+
+curl -X DELETE http://localhost:3000/123
+> {"id":"123","msg":"DELETE OK"}
+```
 
 
 ## 🚀 进阶写法
