@@ -129,8 +129,6 @@ app.get('/', (req, res) => {
     req.headers            //获取全部头
     req.get('content-type')  // 获取content-type
     req.get('user-agent')   // 获取user-agent
-
-    req.cookies()  // //获取cookie
 })
 ```
 
@@ -167,15 +165,35 @@ app.get('/', (req, res) => {
     
     res.cookie(name [, options])  // cookie
     res.clearCookie(name [, options])
-    
-    res.status(201).cookie('access_token', `Bearer ${token}`, {
-        expires: new Date(Date.now() + 8 * 3600000)  // cookie will be removed after 8 hours
-      })
-      .cookie('test', 'test')
-      .redirect(301, '/admin')
+
 })
 ```
 
+## 🚀cookie
+```javascript
+npm install cookie-parser
+
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const app = express();
+
+app.use(cookieParser());
+
+app.get('/', (req, res) => {
+
+    const token = req.cookies.token;
+    const allCookies = req.cookies;
+});
+app.get('/profile', (req, res) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.status(401).send('認証されていません');
+  }
+});
+
+res.status(201).cookie('token', `${token}`, {expires: new Date(Date.now() + 8 * 3600000)  // cookie will be removed after 8 hours
+}).redirect(301, '/admin')
+```
 
 
 ## 🚀Middleware in Express
