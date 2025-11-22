@@ -110,7 +110,7 @@ curl -X PUT http://localhost:3000/123
 curl -X DELETE http://localhost:3000/123
 > {"id":"123","msg":"DELETE OK"}
 
-curl -X POST -H "Content-Type: application/json" -d '{"name":"太郎", "age":"30"}' http://localhost:3000/
+curl -X POST -H "Content-Type: application/json" -d '{"name":"太郎", "age":"30"}'  http://localhost:3000/
 ```
 
 
@@ -123,10 +123,10 @@ app.get('/', (req, res) => {
     req.ip                 // 客户端ip ::ffff:127.0.0.1
     req.method             // HTTP method of the request: GET, POST, PUT, and so on
     req.originalUrl    // /根路径后面的部分
-    req.headers            //获取全部头
     req.params        // 路由参数（例：/:id）
     req.query              // url 参数  ?后面的部分（例：?a=dadda&b=dasda）
 
+    req.headers            //获取全部头
     req.get('content-type')  // 获取content-type
     req.get('user-agent')   // 获取user-agent
 })
