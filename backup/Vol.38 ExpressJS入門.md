@@ -16,6 +16,18 @@ Strapi | Headless CMS | Good | Low (UI) | Good | Content management, API creatio
 ## 🚀 基本写法
 https://www.w3schools.com/nodejs/nodejs_express.asp
 
+安装：
+```javascript
+npm init -y
+npm install express
+npm install typescript
+npm install @types/node
+npm install @types/express
+
+或者：npm install express typescript @types/node @types/express
+```
+
+
 ```javascript
 
 import express from 'express';
