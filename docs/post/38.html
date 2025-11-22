@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-22 15:34</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-22 15:37</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -490,12 +490,20 @@ SSL_CERT_PATH=./cert.pem
 <span class="pl-k">const</span> <span class="pl-s1">fs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'fs'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">path</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'path'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">helmet</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'helmet'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>   <span class="pl-c">// ★Security middleware</span>
+<span class="pl-k">const</span> <span class="pl-s1">cors</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'cors'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-<span class="pl-c">// Create Express app</span>
 <span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
 <span class="pl-c">// Security middleware</span>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">helmet</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>　　<span class="pl-c">// 「app.use(helmet())」と指定すれば、デフォルトの設定がされます。</span>
+
+<span class="pl-c">// CORS configuration</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">cors</span><span class="pl-kos">(</span><span class="pl-kos">{</span>
+  <span class="pl-c1">origin</span>: <span class="pl-s">'https://example.com'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">methods</span>: <span class="pl-kos">[</span><span class="pl-s">'GET'</span><span class="pl-kos">,</span> <span class="pl-s">'POST'</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
+  <span class="pl-c1">allowedHeaders</span>: <span class="pl-kos">[</span><span class="pl-s">'Content-Type'</span><span class="pl-kos">,</span> <span class="pl-s">'Authorization'</span><span class="pl-kos">]</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
 
 <span class="pl-c">// Parse JSON and URL-encoded bodies</span>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">express</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>

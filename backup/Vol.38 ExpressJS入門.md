@@ -378,12 +378,20 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const helmet = require('helmet');   // ★Security middleware
+const cors = require('cors');
 
-// Create Express app
 const app = express();
 
 // Security middleware
 app.use(helmet());　　// 「app.use(helmet())」と指定すれば、デフォルトの設定がされます。
+
+// CORS configuration
+app.use(cors({
+  origin: 'https://example.com',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 
 // Parse JSON and URL-encoded bodies
 app.use(express.json());
