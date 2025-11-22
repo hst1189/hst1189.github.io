@@ -222,6 +222,32 @@ app.get('/home', recordLogMiddleware, (req, res) => { }) // 局部利用
 app.get('/setting', checkCodeMiddleware, (req, res) => { }) // 局部利用
 ```
 
+```javascript
+// Authentication middleware
+function authenticate(req, res, next) {
+  const authHeader = req.headers.authorization;
+  
+  if (!authHeader) {
+    return res.status(401).send('Authentication required');
+  }
+  
+  const token = authHeader.split(' ')[1];
+  
+  // Verify the token (simplified)
+  if (token === 'secret-token') {
+    // Authentication successful
+    req.user = { id: 123, username: 'john' };
+    next();
+  } else {
+    res.status(403).send('Invalid token');
+  }
+}
+
+// Apply to specific routes
+app.get('/api/protected', authenticate, (req, res) => {
+  res.json({ message: 'Protected data', user: req.user });
+});
+```
 ## 🚀Serving Static Files
 ```javascript
 

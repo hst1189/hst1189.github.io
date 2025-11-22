@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-22 16:12</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-22 16:16</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -370,6 +370,30 @@ const router=express.Router();   // 生成路由</p>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-en">mid</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  <span class="pl-c">// ミドルウェア //  全局利用</span>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/home'</span><span class="pl-kos">,</span> <span class="pl-s1">recordLogMiddleware</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span> <span class="pl-kos">}</span><span class="pl-kos">)</span> <span class="pl-c">// 局部利用</span>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/setting'</span><span class="pl-kos">,</span> <span class="pl-s1">checkCodeMiddleware</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span> <span class="pl-kos">}</span><span class="pl-kos">)</span> <span class="pl-c">// 局部利用</span></pre></div>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// Authentication middleware</span>
+<span class="pl-k">function</span> <span class="pl-en">authenticate</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">,</span> <span class="pl-s1">next</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">const</span> <span class="pl-s1">authHeader</span> <span class="pl-c1">=</span> <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">headers</span><span class="pl-kos">.</span><span class="pl-c1">authorization</span><span class="pl-kos">;</span>
+  
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-c1">!</span><span class="pl-s1">authHeader</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-k">return</span> <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">401</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'Authentication required'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+  
+  <span class="pl-k">const</span> <span class="pl-s1">token</span> <span class="pl-c1">=</span> <span class="pl-s1">authHeader</span><span class="pl-kos">.</span><span class="pl-en">split</span><span class="pl-kos">(</span><span class="pl-s">' '</span><span class="pl-kos">)</span><span class="pl-kos">[</span><span class="pl-c1">1</span><span class="pl-kos">]</span><span class="pl-kos">;</span>
+  
+  <span class="pl-c">// Verify the token (simplified)</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">token</span> <span class="pl-c1">===</span> <span class="pl-s">'secret-token'</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// Authentication successful</span>
+    <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">user</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span> <span class="pl-c1">id</span>: <span class="pl-c1">123</span><span class="pl-kos">,</span> <span class="pl-c1">username</span>: <span class="pl-s">'john'</span> <span class="pl-kos">}</span><span class="pl-kos">;</span>
+    <span class="pl-s1">next</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">403</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'Invalid token'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span>
+
+<span class="pl-c">// Apply to specific routes</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/api/protected'</span><span class="pl-kos">,</span> <span class="pl-s1">authenticate</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">message</span>: <span class="pl-s">'Protected data'</span><span class="pl-kos">,</span> <span class="pl-c1">user</span>: <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">user</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h2>🚀Serving Static Files</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">express</span><span class="pl-kos">.</span><span class="pl-en">static</span><span class="pl-kos">(</span><span class="pl-s">'public'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>   <span class="pl-c">// Serve static files from the 'public' directory</span>
 
