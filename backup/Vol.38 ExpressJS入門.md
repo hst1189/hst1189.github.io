@@ -184,19 +184,16 @@ const app = express();
 app.use(cookieParser());
 
 app.get('/', (req, res) => {
-
-    const token = req.cookies.token;
     const allCookies = req.cookies;
-});
-app.get('/profile', (req, res) => {
-  const token = req.cookies.token;
-  if (!token) {
-    return res.status(401).send('認証されていません');
-  }
+    const token = req.cookies.token;
 });
 
-res.status(201).cookie('token', `${token}`, {expires: new Date(Date.now() + 8 * 3600000)  // cookie will be removed after 8 hours
-}).redirect(301, '/admin')
+// set cookies
+res.status(201).cookie('token', `${token}`, {
+    expires: new Date(Date.now() + 8 * 3600000)  // cookie will be removed after 8 hours
+})
+.redirect(301, '/admin')
+
 ```
 
 
