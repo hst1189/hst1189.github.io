@@ -200,37 +200,19 @@ res.status(201).cookie('token', `${token}`, {
 ## 🚀Middleware in Express
 
 >[!TIP]
->express.json( ) - Parse JSON request bodies
->express.urlencoded( ) - Parse URL-encoded request bodies
->express.static( ) - Serve static files
->express.Router( ) - Create modular route handlers
+> app.use(express.json()); // Middleware to parse JSON request bodies
+> app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded request bodies
+>app.use(express.static('public')); // Middleware to serve static files from a directory
 
 
 ```javascript
-const express = require('express');
-const app = express();
-const port = 8080;
 
-// Middleware to parse JSON request bodies
-app.use(express.json());
+const mid = function (req, res, next) {    // ミドルウェア定義
+    console.log({ msg: `${new Date()} ${req.method} ${req.originalUrl}` })
+    next();
+}
+app.use(mid);  // ミドルウェア
 
-// Middleware to parse URL-encoded request bodies
-app.use(express.urlencoded({ extended: true }));
-
-// Middleware to serve static files from a directory
-app.use(express.static('public'));
-
-
-// POST route that uses JSON middleware
-app.post('/api/users', (req, res) => {
-  // req.body contains the parsed JSON data
-  console.log(req.body);
-  res.status(201).json({ message: 'User created', user: req.body });
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
 ```
 
 
