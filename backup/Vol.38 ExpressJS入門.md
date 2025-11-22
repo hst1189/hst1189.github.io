@@ -41,6 +41,10 @@ app.get('/', (req, res) => {
     res.status(200).send({ msg: "get OK" });
 })
 
+app.post('/', (req, res) => {    // POST 和 GET 可以匹配同一路由
+    res.status(200).send({ msg: "post OK" });
+})
+
 app.get('/search', (req, res) => {  // 使用${req.query}获取值    http://127.0.0.1:3000/search?q=express&page=2
     res.status(200).send({ search: `${req.query.q}`, page: `${req.query.page}` });
 })
