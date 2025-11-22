@@ -16,6 +16,9 @@ Strapi | Headless CMS | Good | Low (UI) | Good | Content management, API creatio
 ## 🚀 基本写法
 https://www.w3schools.com/nodejs/nodejs_express.asp
 
+https://expressjs.com/5x/api.html
+https://expressjs.com/en/guide/writing-middleware.html
+
 安装：
 ```javascript
 npm init -y　// NodeJSプロジェクト初期化
