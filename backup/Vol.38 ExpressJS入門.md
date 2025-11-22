@@ -102,13 +102,15 @@ curl -X GET http://localhost:3000/
 > {"msg":"GET OK"}
 
 curl -X POST http://localhost:3000/
-> {"msg":"POST OK"}        
+> {"msg":"POST OK"}   
 
 curl -X PUT http://localhost:3000/123
 > {"id":"123","msg":"PUT OK"}
 
 curl -X DELETE http://localhost:3000/123
 > {"id":"123","msg":"DELETE OK"}
+
+curl -X POST -H "Content-Type: application/json" -d '{"name":"太郎", "age":"30"}' http://localhost:3000/
 ```
 
 
