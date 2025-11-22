@@ -129,6 +129,8 @@ app.get('/', (req, res) => {
     req.headers            //获取全部头
     req.get('content-type')  // 获取content-type
     req.get('user-agent')   // 获取user-agent
+
+    req.cookies()  // //获取cookie
 })
 ```
 
