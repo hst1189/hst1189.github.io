@@ -26,7 +26,8 @@ npm install @types/node
 npm install @types/express
 或者：npm install express typescript @types/node @types/express
 
-tsc --init　// TypeScript初期化
+npx tsc --init　// TypeScript初期化
+npx tsc
 
 ```
 
