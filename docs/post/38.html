@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-22 10:13</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-22 10:28</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -316,8 +316,8 @@ app.listen( port,  ()=&gt;{  })</p>
     
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">render</span><span class="pl-kos">(</span> <span class="pl-kos">)</span>    <span class="pl-c">// 渲染模板</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">redirect</span><span class="pl-kos">(</span> <span class="pl-s">'https://google.com'</span><span class="pl-kos">)</span>  <span class="pl-c">// 重定向请求</span>
-    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">download</span><span class="pl-kos">(</span><span class="pl-s1">path·</span><span class="pl-kos">.</span><span class="pl-en">join</span><span class="pl-kos">(</span><span class="pl-s1">_dirname</span><span class="pl-kos">,</span> <span class="pl-s">'data.json'</span> <span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-c">// 弹出文件下载</span>
-    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">sendFile</span><span class="pl-kos">(</span><span class="pl-s1">path·</span><span class="pl-kos">.</span><span class="pl-en">join</span><span class="pl-kos">(</span><span class="pl-s1">_dirname</span><span class="pl-kos">,</span> <span class="pl-s">'index.html'</span> <span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-c">// 返回文件</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">download</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">.</span><span class="pl-en">join</span><span class="pl-kos">(</span><span class="pl-s1">_dirname</span><span class="pl-kos">,</span> <span class="pl-s">'data.json'</span> <span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-c">// 弹出文件下载</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">sendFile</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">.</span><span class="pl-en">join</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span><span class="pl-kos">,</span> <span class="pl-s">'public'</span><span class="pl-kos">,</span> <span class="pl-s">'index.html'</span><span class="pl-kos">)</span><span class="pl-kos">)</span>  <span class="pl-c">// 返回文件</span>
     
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">type</span><span class="pl-kos">(</span><span class="pl-s">'application/json'</span><span class="pl-kos">)</span> <span class="pl-c">// set Content-Type</span>
     

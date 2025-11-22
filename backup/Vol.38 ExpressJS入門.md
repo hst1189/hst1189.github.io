@@ -156,8 +156,8 @@ app.get('/', (req, res) => {
     
     res.render( )    // 渲染模板
     res.redirect( 'https://google.com')  // 重定向请求
-    res.download(path·.join(_dirname, 'data.json' )) // 弹出文件下载
-    res.sendFile(path·.join(_dirname, 'index.html' )) // 返回文件
+    res.download(path.join(_dirname, 'data.json' )) // 弹出文件下载
+    res.sendFile(path.join(__dirname, 'public', 'index.html'))  // 返回文件
     
     res.type('application/json') // set Content-Type
     
