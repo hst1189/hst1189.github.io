@@ -81,8 +81,8 @@ app.get('/:id/book/:bookID', (req, res) => {    // 使用${req.params}获取值 
     res.status(200).send({ ID: `${req.params.id}`, bookID: `${req.params.bookID}` });
 })
 
-app.all('*', (req, res) => {
-    res.status(404).send({ msg: "404 Not Found" });
+app.all('/*splat', (req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 })
 
 app.listen(3000, (err) => {
