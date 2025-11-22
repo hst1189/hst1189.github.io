@@ -13,13 +13,17 @@ Loopback | API-focused | Good | Medium | Excellent | API generation with minimal
 Strapi | Headless CMS | Good | Low (UI) | Good | Content management, API creation
 
 
+## 🚀 API文档
+https://expressjs.com/5x/api.html
+https://expressjs.com/5x/api.html#req.app
+https://expressjs.com/5x/api.html#res.app
+https://expressjs.com/guide/writing-middleware.html
+
+
 ## 🚀 基本写法
 https://www.w3schools.com/nodejs/nodejs_express.asp
 
-https://expressjs.com/5x/api.html
-https://expressjs.com/en/guide/writing-middleware.html
-
-安装：
+事前准备：install
 ```javascript
 npm init -y　// NodeJSプロジェクト初期化
 
@@ -42,7 +46,7 @@ import express from 'express';
 const app = express();
 
 const mid = function (req, res, next) {    // ミドルウェア定義
-    console.log({ msg: `${new Date()} ${req.method} ${req.url}` })
+    console.log({ msg: `${new Date()} ${req.method} ${req.originalUrl}` })
     next();
 }
 app.use(mid);  // ミドルウェア
@@ -106,6 +110,304 @@ curl -X PUT http://localhost:3000/123
 curl -X DELETE http://localhost:3000/123
 > {"id":"123","msg":"DELETE OK"}
 ```
+
+
+## 🚀ExpressRequest
+```javascript
+app.get('/', (req, res) => {
+
+    req.host              // 主机名 'example.com:3000'
+    req.hostname           //主机名 'example.com'
+    req.ip                 // 客户端ip ::ffff:127.0.0.1
+    req.method             // HTTP method of the request: GET, POST, PUT, and so on
+    req.originalUrl    // /根路径后面的部分
+    req.headers            //获取全部头
+    req.params        // 路由参数（例：/:id）
+    req.query              // url 参数  ?后面的部分（例：?a=dadda&b=dasda）
+
+    req.get('content-type')  // 获取content-type
+    req.get('user-agent')   // 获取user-agent
+})
+```
+
+
+## 🚀ExpressResponse
+```javascript
+app.get('/', (req, res) => {
+
+    res.status(403).end()
+    res.status(400).send('Bad Request')
+    res.status(404).sendFile('/absolute/path/to/404.png')
+    res.status(200).json( {id:1,name:"Peter"}) 
+    
+    - res.status()   // 返回状态
+    - res.send()    // 返回多种形式数据
+    - res.end()    // 结束响应
+    - res.json()    // 返回json
+    
+    res.set('Content-Type', 'text/plain')
+    res.set('Content-Type', 'text/html')
+    res.set('Content-Type', 'application/json')
+    res.set('Content-Type', 'application/pdf')
+    res.set('xxx-code', '520')  // 可以任意设置
+    res.append(key , value)
+    
+    res.render( )    // 渲染模板
+    res.redirect( 'https://google.com')  // 重定向请求
+    res.download(path·.join(_dirname, 'data.json' )) // 弹出文件下载
+    res.sendFile(path·.join(_dirname, 'index.html' )) // 返回文件
+    
+    res.type('application/json') // set Content-Type
+    
+    res.jsonp( )    // 返回 jsonp
+    
+    res.cookie(name [, options])  // cookie
+    res.clearCookie(name [, options])
+    
+    res.status(201).cookie('access_token', `Bearer ${token}`, {
+        expires: new Date(Date.now() + 8 * 3600000)  // cookie will be removed after 8 hours
+      })
+      .cookie('test', 'test')
+      .redirect(301, '/admin')
+})
+```
+
+
+
+## 🚀Middleware in Express
+
+>[!TIP]
+>express.json( ) - Parse JSON request bodies
+>express.urlencoded( ) - Parse URL-encoded request bodies
+>express.static( ) - Serve static files
+>express.Router( ) - Create modular route handlers
+
+
+```javascript
+const express = require('express');
+const app = express();
+const port = 8080;
+
+// Middleware to parse JSON request bodies
+app.use(express.json());
+
+// Middleware to parse URL-encoded request bodies
+app.use(express.urlencoded({ extended: true }));
+
+// Middleware to serve static files from a directory
+app.use(express.static('public'));
+
+
+// POST route that uses JSON middleware
+app.post('/api/users', (req, res) => {
+  // req.body contains the parsed JSON data
+  console.log(req.body);
+  res.status(201).json({ message: 'User created', user: req.body });
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+```
+
+
+## 🚀Error Handling in Express
+```javascript
+const express = require('express');
+const app = express();
+const port = 8080;
+
+// Route that may throw an error
+app.get('/error', (req, res) => {
+  // Simulating an error
+  throw new Error('Something went wrong!');
+});
+
+// Route that uses next(error) for asynchronous code
+app.get('/async-error', (req, res, next) => {
+  // Simulating an asynchronous operation that fails
+  setTimeout(() => {
+    try {
+      // Something that might fail
+      const result = nonExistentFunction(); // This will throw an error
+      res.send(result);
+    }
+    catch (error) {
+      next(error); // Pass errors to Express
+    }
+    }, 100);
+});
+
+// Custom error handling middleware
+// Must have four parameters to be recognized as an error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+
+```
+
+
+
+## 🚀Serving Static Files
+```javascript
+const express = require('express');
+const path = require('path');
+const app = express();
+const port = 8080;
+
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
+
+// You can also specify a virtual path prefix
+app.use('/static', express.static('public'));
+
+// Using absolute path (recommended)
+app.use('/assets', express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.send(`
+    <h1>Static Files Example</h1>
+    <img src="/images/logo.png" alt="Logo">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
+  `);
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+
+```
+
+
+## 🚀Routing in Separate Files
+```javascript
+
+routes/users.js
+
+const express = require('express');
+const router = express.Router();
+
+// Middleware specific to this router
+router.use((req, res, next) => {
+  console.log('Users Router Time:', Date.now());
+  next();
+});
+
+// Define routes
+router.get('/', (req, res) => {
+  res.send('Users home page');
+});
+
+router.get('/:id', (req, res) => {
+  res.send(`User profile for ID: ${req.params.id}`);
+});
+
+module.exports = router;
+```
+
+```javascript
+
+routes/products.js
+
+const express = require('express');
+const router = express.Router();
+
+// Define routes
+router.get('/', (req, res) => {
+  res.send('Products list');
+});
+
+router.get('/:id', (req, res) => {
+  res.send(`Product details for ID: ${req.params.id}`);
+});
+
+module.exports = router;
+```
+
+```javascript
+
+app.js (main file)
+
+const express = require('express');
+const usersRouter = require('./routes/users');    //★
+const productsRouter = require('./routes/products');    //★
+
+const app = express();
+const port = 8080;
+
+// Use the routers
+app.use('/users', usersRouter);    //★
+app.use('/products', productsRouter);    //★
+
+app.get('/', (req, res) => {
+  res.send('Main application home page');
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+```
+
+
+
+### 全局中间件（例：写日志）
+```javascript
+
+const fs = require('fs');
+const path = require('path');
+
+function recordLogMiddleware(req, res, next) {
+    let { url, ip } = req;
+    let now = new Date();
+    let year = now.getFullYear(); // 获取四位年份
+    let month = now.getMonth() + 1; // 月份从0开始，所以+1
+    let day = now.getDate(); // 日期
+    let hours = now.getHours(); // 小时
+    let minutes = now.getMinutes(); // 分钟
+    let seconds = now.getSeconds(); // 秒
+
+    // 格式化为 YYYY-MM-DD HH:mm:ss
+    let formattedTime = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    fs.appendFileSync(path.resolve(__dirname, './access.log'), `${formattedTime} ${url} ${ip}\r\n`);
+    next();                                          // 处理结束后，进入所匹配的路由
+}
+
+app.use(recordLogMiddleware);      //  声明利用中间件
+
+```
+
+
+### 路由中间件（例：跳转认证）
+```javascript
+function checkCodeMiddleware(req, res, next) {  
+    if (req.query.code === '521') {
+        next();                                   // 处理结束后，跳回所匹配的路由
+    } else {
+        res.send('<h1>没有权限</h1>')
+    }
+}
+
+app.get('/home', checkCodeMiddleware, (req, res) => {  // 声明利用中间件
+})
+app.get('/admin', checkCodeMiddleware, (req, res) => {  // 声明利用中间件
+})
+app.get('/setting', checkCodeMiddleware, (req, res) => {  // 声明利用中间件
+})
+
+```
+
+
+
+
+
+
 
 
 ## 🚀 进阶写法
@@ -364,278 +666,4 @@ app.listen(port, () => {
 
 
 
-## 🚀获取Request Header
-```javascript
-app.get('/', (req, res) => {
-
-    res.send(`${req.ip} ${req.get("user-agent")}`);   // 返回clientIP 和 user-agent 
-
-    console.log(req.method);             // GET POST PUT etc.
-    console.log(req.headers);            //获取全部头
-    console.log(req.get('host'));  //获取主机名
-    console.log(req.get('user-agent'));  //获取user-agent
-
-    console.log(req.hostname);           //获取主机名
-    console.log(req.ip);                 //客户端ip ::ffff:127.0.0.1
-    console.log(req.url);                // /根路径后面的部分
-    console.log(req.path);               // /根路径后面的部分
-    console.log(req.query);              // ?后面的部分（例：?a=dadda&b=dasda）
-})
-```
-
-
-## 🚀设置Response Header
-```javascript
-app.get('/', (req, res) => {
-     
-    // 原生
-    res.statusCode = 200;
-    res.statusMessage = "love u ";
-    res.setHeader('xxx-code', '520');
-
-    //express方法
-– res.send ( )，返回多种形式数据。
-–  res.status(500);
-–  res.set('xxx-code', '520');
-– res.end ( )，结束响应。
-– res.redirect ( 'https://google.com')，重定向请求。
-– res.render ( )，渲染模板。
-– res. download(_dirname+'./xxx.json' )，弹出文件下载。
-– res.json( id:1,name:"xxyyzz"} )，返回json。
-– res.jsonp( )，返回 jsonp。
-– res.sendFile  (_dirname+'./xxx.html' )，返回文件。
-– res.sendStatus( )，返回状态。
-})
-```
-
-
-
-## 🚀Middleware in Express
-
->[!TIP]
->express.json( ) - Parse JSON request bodies
->express.urlencoded( ) - Parse URL-encoded request bodies
->express.static( ) - Serve static files
->express.Router( ) - Create modular route handlers
-
-
-```javascript
-const express = require('express');
-const app = express();
-const port = 8080;
-
-// Middleware to parse JSON request bodies
-app.use(express.json());
-
-// Middleware to parse URL-encoded request bodies
-app.use(express.urlencoded({ extended: true }));
-
-// Middleware to serve static files from a directory
-app.use(express.static('public'));
-
-
-// POST route that uses JSON middleware
-app.post('/api/users', (req, res) => {
-  // req.body contains the parsed JSON data
-  console.log(req.body);
-  res.status(201).json({ message: 'User created', user: req.body });
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
-```
-
-
-## 🚀Error Handling in Express
-```javascript
-const express = require('express');
-const app = express();
-const port = 8080;
-
-// Route that may throw an error
-app.get('/error', (req, res) => {
-  // Simulating an error
-  throw new Error('Something went wrong!');
-});
-
-// Route that uses next(error) for asynchronous code
-app.get('/async-error', (req, res, next) => {
-  // Simulating an asynchronous operation that fails
-  setTimeout(() => {
-    try {
-      // Something that might fail
-      const result = nonExistentFunction(); // This will throw an error
-      res.send(result);
-    }
-    catch (error) {
-      next(error); // Pass errors to Express
-    }
-    }, 100);
-});
-
-// Custom error handling middleware
-// Must have four parameters to be recognized as an error handler
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
-
-```
-
-
-
-## 🚀Serving Static Files
-```javascript
-const express = require('express');
-const path = require('path');
-const app = express();
-const port = 8080;
-
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
-
-// You can also specify a virtual path prefix
-app.use('/static', express.static('public'));
-
-// Using absolute path (recommended)
-app.use('/assets', express.static(path.join(__dirname, 'public')));
-
-app.get('/', (req, res) => {
-  res.send(`
-    <h1>Static Files Example</h1>
-    <img src="/images/logo.png" alt="Logo">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script.js"></script>
-  `);
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
-
-```
-
-
-## 🚀Routing in Separate Files
-```javascript
-
-routes/users.js
-
-const express = require('express');
-const router = express.Router();
-
-// Middleware specific to this router
-router.use((req, res, next) => {
-  console.log('Users Router Time:', Date.now());
-  next();
-});
-
-// Define routes
-router.get('/', (req, res) => {
-  res.send('Users home page');
-});
-
-router.get('/:id', (req, res) => {
-  res.send(`User profile for ID: ${req.params.id}`);
-});
-
-module.exports = router;
-```
-
-```javascript
-
-routes/products.js
-
-const express = require('express');
-const router = express.Router();
-
-// Define routes
-router.get('/', (req, res) => {
-  res.send('Products list');
-});
-
-router.get('/:id', (req, res) => {
-  res.send(`Product details for ID: ${req.params.id}`);
-});
-
-module.exports = router;
-```
-
-```javascript
-
-app.js (main file)
-
-const express = require('express');
-const usersRouter = require('./routes/users');    //★
-const productsRouter = require('./routes/products');    //★
-
-const app = express();
-const port = 8080;
-
-// Use the routers
-app.use('/users', usersRouter);    //★
-app.use('/products', productsRouter);    //★
-
-app.get('/', (req, res) => {
-  res.send('Main application home page');
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
-```
-
-
-
-### 全局中间件（例：写日志）
-```javascript
-
-const fs = require('fs');
-const path = require('path');
-
-function recordLogMiddleware(req, res, next) {
-    let { url, ip } = req;
-    let now = new Date();
-    let year = now.getFullYear(); // 获取四位年份
-    let month = now.getMonth() + 1; // 月份从0开始，所以+1
-    let day = now.getDate(); // 日期
-    let hours = now.getHours(); // 小时
-    let minutes = now.getMinutes(); // 分钟
-    let seconds = now.getSeconds(); // 秒
-
-    // 格式化为 YYYY-MM-DD HH:mm:ss
-    let formattedTime = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-    fs.appendFileSync(path.resolve(__dirname, './access.log'), `${formattedTime} ${url} ${ip}\r\n`);
-    next();                                          // 处理结束后，进入所匹配的路由
-}
-
-app.use(recordLogMiddleware);      //  声明利用中间件
-
-```
-
-
-### 路由中间件（例：跳转认证）
-```javascript
-function checkCodeMiddleware(req, res, next) {  
-    if (req.query.code === '521') {
-        next();                                   // 处理结束后，跳回所匹配的路由
-    } else {
-        res.send('<h1>没有权限</h1>')
-    }
-}
-
-app.get('/home', checkCodeMiddleware, (req, res) => {  // 声明利用中间件
-})
-app.get('/admin', checkCodeMiddleware, (req, res) => {  // 声明利用中间件
-})
-app.get('/setting', checkCodeMiddleware, (req, res) => {  // 声明利用中间件
-})
-
-```
 
