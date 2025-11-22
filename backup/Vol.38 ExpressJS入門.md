@@ -45,6 +45,10 @@ npx tsc    // 编译 .ts → .js
 import express from 'express';
 const app = express();
 
+import path from 'path';
+const __dirname = import.meta.dirname;
+
+
 const mid = function (req, res, next) {    // ミドルウェア定義
     console.log({ msg: `${new Date()} ${req.method} ${req.originalUrl}` })
     next();
