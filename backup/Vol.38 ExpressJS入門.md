@@ -39,7 +39,7 @@ npx tsc    // 编译 .ts → .js
 
 ```
 
-
+基本例
 ```javascript
 
 import express from 'express';
