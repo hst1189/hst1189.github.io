@@ -53,6 +53,10 @@ app.get('/:id/book/:bookID', (req, res) => {    // 使用${req.params}获取值 
     res.status(200).send({ ID: `${req.params.id}`, bookID: `${req.params.bookID}` });
 })
 
+app.all('*', (req, res) => {
+    res.status(404).send({ msg: "404 Not Found" });
+})
+
 app.listen(3000, (err) => {
     if (err) console.log(err);
     console.log("Server is run on 3000");
@@ -65,7 +69,8 @@ app.listen(3000, (err) => {
 >app.put('/:id',(req,res)=>{  } )
 >app.delete('/:id',(req,res)=>{  } )
 >app.all('*', (req, res)=>{  })
->app.use()  // ミドルウェア
+>app.use( (req,res,next)=>{  }) 
+
 
 ```javascript
 curl -X GET http://localhost:3000/
