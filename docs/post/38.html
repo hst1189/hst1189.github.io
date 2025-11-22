@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-22 09:56</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-22 10:13</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -278,7 +278,7 @@ app.listen( port,  ()=&gt;{  })</p>
 <span class="pl-s1">curl</span> <span class="pl-c1">-</span><span class="pl-v">X</span> <span class="pl-c1">DELETE</span> <span class="pl-s1">http</span>:<span class="pl-c1">/</span><span class="pl-c1">/</span><span class="pl-s1">localhost</span>:<span class="pl-c1">3000</span><span class="pl-c1">/</span><span class="pl-c1">123</span>
 <span class="pl-c1">&gt;</span> <span class="pl-kos">{</span><span class="pl-s">"id"</span>:<span class="pl-s">"123"</span><span class="pl-kos">,</span><span class="pl-s">"msg"</span>:<span class="pl-s">"DELETE OK"</span><span class="pl-kos">}</span>
 
-<span class="pl-s1">curl</span> <span class="pl-c1">-</span><span class="pl-v">X</span> <span class="pl-c1">POST</span> <span class="pl-c1">-</span><span class="pl-v">H</span> <span class="pl-s">"Content-Type: application/json"</span> <span class="pl-c1">-</span><span class="pl-s1">d</span> <span class="pl-s">'{"name":"太郎", "age":"30"}'</span><span class="pl-kos"></span>  http:<span class="pl-c">//localhost:3000/</span><span class="pl-kos"></span></pre></div>
+<span class="pl-s1">curl</span> <span class="pl-c1">-</span><span class="pl-v">X</span> <span class="pl-c1">POST</span> <span class="pl-c1">-</span><span class="pl-v">H</span> <span class="pl-s">"Content-Type: application/json"</span> <span class="pl-c1">-</span><span class="pl-s1">d</span> "<span class="pl-kos">{</span><span class="pl-s">"name"</span>:<span class="pl-s">"太郎"</span><span class="pl-kos">,</span> <span class="pl-s">"age"</span>:<span class="pl-s">"30"</span><span class="pl-kos">}</span>"  http://localhost:3000/api/v1/users</pre></div>
 <h2>🚀ExpressRequest</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
 

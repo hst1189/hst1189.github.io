@@ -110,7 +110,7 @@ curl -X PUT http://localhost:3000/123
 curl -X DELETE http://localhost:3000/123
 > {"id":"123","msg":"DELETE OK"}
 
-curl -X POST -H "Content-Type: application/json" -d '{"name":"太郎", "age":"30"}'  http://localhost:3000/
+curl -X POST -H "Content-Type: application/json" -d "{"name":"太郎", "age":"30"}"  http://localhost:3000/api/v1/users
 ```
 
 
