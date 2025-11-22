@@ -27,6 +27,7 @@ npm install @types/express
 或者：npm install express typescript @types/node @types/express
 
 npx tsc --init　// TypeScript初期化
+tsconfig.json     // 入力出力設定
 npx tsc    // 编译 .ts → .js
 
 ```
