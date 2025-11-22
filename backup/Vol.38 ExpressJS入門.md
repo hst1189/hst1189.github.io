@@ -200,10 +200,10 @@ res.status(201).cookie('token', `${token}`, {
 ## 🚀Middleware in Express
 
 >[!TIP]
-> app.use(express.json()); // Middleware to parse JSON request bodies
-> app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded request bodies
->app.use(express.static('public')); // Middleware to serve static files from a directory
-
+> app.use(express.json());     //  解析request里的 json， 放入res.body
+> app.use(express.urlencoded({ extended: true }));  //  解析表单数据， 放入res.body
+> app.use(express.static('public')); // 静态文件
+> const router=express.Router();   // 生成路由
 
 ```javascript
 const mid = function (req, res, next) {    // ミドルウェア定義
@@ -211,11 +211,33 @@ const mid = function (req, res, next) {    // ミドルウェア定義
     next();
 }
 app.use(mid);  // ミドルウェア //  全局利用
+app.get('/home', recordLogMiddleware, (req, res) => { }) // 局部利用
+app.get('/setting', checkCodeMiddleware, (req, res) => { }) // 局部利用
+```
 
-app.get('/home', recordLogMiddleware, (req, res) => {  // 局部利用
-})
-app.get('/setting', checkCodeMiddleware, (req, res) => {  // 局部利用
-})
+## 🚀Serving Static Files
+```javascript
+
+app.use(express.static('public'));   // Serve static files from the 'public' directory
+
+app.use('/static', express.static('public'));  // You can also specify a virtual path prefix
+
+app.use('/static', express.static('public'))），来访问 public 目录下的文件时需要加上 /static 前缀，如 http://localhost:5000/static/style.css
+
+app.use('/assets', express.static(path.join(__dirname, 'public')));  // Using absolute path (recommended)
+
+app.get('/', (req, res) => {
+  res.send(`
+    <h1>Static Files Example</h1>
+    <img src="/images/logo.png" alt="Logo">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
+  `);
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
 
 ```
 
@@ -265,36 +287,6 @@ app.listen(port, () => {
 
 
 
-## 🚀Serving Static Files
-```javascript
-const express = require('express');
-const path = require('path');
-const app = express();
-const port = 8080;
-
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
-
-// You can also specify a virtual path prefix
-app.use('/static', express.static('public'));
-
-// Using absolute path (recommended)
-app.use('/assets', express.static(path.join(__dirname, 'public')));
-
-app.get('/', (req, res) => {
-  res.send(`
-    <h1>Static Files Example</h1>
-    <img src="/images/logo.png" alt="Logo">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script.js"></script>
-  `);
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
-
-```
 
 
 ## 🚀Routing in Separate Files
