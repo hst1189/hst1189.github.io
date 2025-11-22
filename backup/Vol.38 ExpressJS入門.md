@@ -13,76 +13,51 @@ Loopback | API-focused | Good | Medium | Excellent | API generation with minimal
 Strapi | Headless CMS | Good | Low (UI) | Good | Content management, API creation
 
 
-
-## 🚀 快速构建express项目
-```
-Project Structure 
-myapp/
-├── node_modules/ # Dependencies
-├── config/ # Configuration files
-│ ├── db.js # Database configuration
-│ └── env.js # Environment variables
-├── controllers/ # Route controllers
-├── models/ # Database models
-├── routes/ # Route definitions
-├── middleware/ # Custom middleware
-├── public/ # Static files
-├── tests/ # Test files
-├── .env # Environment variables
-├── .gitignore # Git ignore file
-├── app.js # Application entry point
-└── package.json # Project configuration
-
-```
-
 ## 🚀 基本写法
 https://www.w3schools.com/nodejs/nodejs_express.asp
 
+>[!TIP]
+>app.get('/',(req,res)=>{  } )
+>app.post('/',(req,res)=>{  } )
+>app.put('/:id',(req,res)=>{  } )
+>app.delete('/:id',(req,res)=>{  } )
+>app.all('*', (req, res)=>{  })
+>app.use()  // ミドルウェア
+
 ```javascript
 
-const express = require('express');
+import express from 'express';
 const app = express();
-const PORT = 80;
 
-// Routes
+const mid = function (req, res, next) {    // ミドルウェア定義
+    console.log({ msg: `${new Date()} ${req.method} ${req.url}` })
+    next();
+}
+app.use(mid);  // ミドルウェア
+
+app.use(express.static('public', { maxAge: 86400000 }));  //静的ファイルのキャッシュ機能、1日間キャッシュを有効化
+
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+    res.status(200).send({ msg: "get OK" });
 })
 
-app.post('/', (req, res) => {    // GET POST 可以相同路由
-  res.send('Hello World!')
+app.get('/search', (req, res) => {  // 使用${req.query}获取值    http://127.0.0.1:3000/search?q=express&page=2
+    res.status(200).send({ search: `${req.query.q}`, page: `${req.query.page}` });
 })
 
-app.get('/:id', (req, res) => {    // 获取路由参数 
-  let id =req.params.id;     // 通过req.params获取，req.params 的「.id」定义必须一致
-  res.send(id);
+app.get('/:id', (req, res) => {  // 使用${req.params}获取值    http://127.0.0.1:3000/9527
+    res.status(200).send({ ID: `${req.params.id}` });
 })
 
-app.get('/users/:userId/books/:bookId', (req, res) => {    // 获取路由参数 
-  res.send(`User ID: ${req.params.userId}, Book ID: ${req.params.bookId}`);
-});
+app.get('/:id/book/:bookID', (req, res) => {    // 使用${req.params}获取值    http://127.0.0.1:3000/9527/book/aaaa
+    res.status(200).send({ ID: `${req.params.id}`, bookID: `${req.params.bookID}` });
+})
 
-app.get('/search', (req, res) => {     // 获取请求参数  http://example.com/search?q=express&page=2
-  const { q, page} = req.query;
-  res.send(`Search query: ${q}, Category: ${page || 'none'}`);
-});
-
-app.all('*', (req, res) => {    // Catch all other routes
-  res.status(404).send("404 - Page not found");
-});
-
-app.listen(PORT, () => {
-    console.log(`server is starting on ${PORT} `);
+app.listen(3000, (err) => {
+    if (err) console.log(err);
+    console.log("Server is run on 3000");
 })
 ```
-
-Basic Routing
->[!TIP]
->app.get( ) - Handle GET requests
->app.post( ) - Handle POST requests
->app.put( ) - Handle PUT requests
->app.delete( ) - Handle DELETE requests
->app.all( ) - Handle all HTTP methods
 
 
 

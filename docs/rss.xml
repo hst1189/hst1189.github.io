@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 20 Nov 2025 14:02:08 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 22 Nov 2025 04:52:31 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
 
 `Gmeek-html&lt;img src='https://i.gyazo.com/d9294ea53005e7d0500899a46e6b2b50.png'&gt;`
 
@@ -59,76 +59,51 @@ Loopback | API-focused | Good | Medium | Excellent | API generation with minimal
 Strapi | Headless CMS | Good | Low (UI) | Good | Content management, API creation
 
 
-
-## 🚀 快速构建express项目
-```
-Project Structure 
-myapp/
-├── node_modules/ # Dependencies
-├── config/ # Configuration files
-│ ├── db.js # Database configuration
-│ └── env.js # Environment variables
-├── controllers/ # Route controllers
-├── models/ # Database models
-├── routes/ # Route definitions
-├── middleware/ # Custom middleware
-├── public/ # Static files
-├── tests/ # Test files
-├── .env # Environment variables
-├── .gitignore # Git ignore file
-├── app.js # Application entry point
-└── package.json # Project configuration
-
-```
-
 ## 🚀 基本写法
 https://www.w3schools.com/nodejs/nodejs_express.asp
 
+&gt;[!TIP]
+&gt;app.get('/',(req,res)=&gt;{  } )
+&gt;app.post('/',(req,res)=&gt;{  } )
+&gt;app.put('/:id',(req,res)=&gt;{  } )
+&gt;app.delete('/:id',(req,res)=&gt;{  } )
+&gt;app.all('*', (req, res)=&gt;{  })
+&gt;app.use()  // ミドルウェア
+
 ```javascript
 
-const express = require('express');
+import express from 'express';
 const app = express();
-const PORT = 80;
 
-// Routes
+const mid = function (req, res, next) {    // ミドルウェア定義
+    console.log({ msg: `${new Date()} ${req.method} ${req.url}` })
+    next();
+}
+app.use(mid);  // ミドルウェア
+
+app.use(express.static('public', { maxAge: 86400000 }));  //静的ファイルのキャッシュ機能、1日間キャッシュを有効化
+
 app.get('/', (req, res) =&gt; {
-  res.send('Hello World!')
+    res.status(200).send({ msg: 'get OK' });
 })
 
-app.post('/', (req, res) =&gt; {    // GET POST 可以相同路由
-  res.send('Hello World!')
+app.get('/search', (req, res) =&gt; {  // 使用${req.query}获取值    http://127.0.0.1:3000/search?q=express&amp;page=2
+    res.status(200).send({ search: `${req.query.q}`, page: `${req.query.page}` });
 })
 
-app.get('/:id', (req, res) =&gt; {    // 获取路由参数 
-  let id =req.params.id;     // 通过req.params获取，req.params 的「.id」定义必须一致
-  res.send(id);
+app.get('/:id', (req, res) =&gt; {  // 使用${req.params}获取值    http://127.0.0.1:3000/9527
+    res.status(200).send({ ID: `${req.params.id}` });
 })
 
-app.get('/users/:userId/books/:bookId', (req, res) =&gt; {    // 获取路由参数 
-  res.send(`User ID: ${req.params.userId}, Book ID: ${req.params.bookId}`);
-});
+app.get('/:id/book/:bookID', (req, res) =&gt; {    // 使用${req.params}获取值    http://127.0.0.1:3000/9527/book/aaaa
+    res.status(200).send({ ID: `${req.params.id}`, bookID: `${req.params.bookID}` });
+})
 
-app.get('/search', (req, res) =&gt; {     // 获取请求参数  http://example.com/search?q=express&amp;page=2
-  const { q, page} = req.query;
-  res.send(`Search query: ${q}, Category: ${page || 'none'}`);
-});
-
-app.all('*', (req, res) =&gt; {    // Catch all other routes
-  res.status(404).send('404 - Page not found');
-});
-
-app.listen(PORT, () =&gt; {
-    console.log(`server is starting on ${PORT} `);
+app.listen(3000, (err) =&gt; {
+    if (err) console.log(err);
+    console.log('Server is run on 3000');
 })
 ```
-
-Basic Routing
-&gt;[!TIP]
-&gt;app.get( ) - Handle GET requests
-&gt;app.post( ) - Handle POST requests
-&gt;app.put( ) - Handle PUT requests
-&gt;app.delete( ) - Handle DELETE requests
-&gt;app.all( ) - Handle all HTTP methods
 
 
 
