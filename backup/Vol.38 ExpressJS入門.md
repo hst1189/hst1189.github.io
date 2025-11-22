@@ -18,13 +18,16 @@ https://www.w3schools.com/nodejs/nodejs_express.asp
 
 安装：
 ```javascript
-npm init -y
+npm init -y　// NodeJSプロジェクト初期化
+
 npm install express
 npm install typescript
 npm install @types/node
 npm install @types/express
-
 或者：npm install express typescript @types/node @types/express
+
+tsc --init　// TypeScript初期化
+
 ```
 
 
