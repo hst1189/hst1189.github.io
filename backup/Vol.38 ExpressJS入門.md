@@ -240,6 +240,13 @@ app.listen(port, () => {
 });
 
 ```
+Common Third-party Middleware:
+- helmet (security)
+- cors (cross-origin resource sharing)
+- cookie-parser (cookie handling)
+- compression (response compression)
+
+
 
 
 
