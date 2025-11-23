@@ -174,6 +174,7 @@ app.get('/', (req, res) => {
     req.originalUrl    // /根路径后面的部分
     req.params        // 路由参数（例：/:id）
     req.query              // url 参数  ?后面的部分（例：?a=dadda&b=dasda）
+    req.body               // 配合app.use(express.json())、获取·json
 
     req.headers            //获取全部头
     req.get('content-type')  // 获取content-type
