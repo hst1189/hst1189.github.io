@@ -272,26 +272,23 @@ app.get('/api/protected', authenticate, (req, res) => {
 ## 🚀Serving Static Files
 ```javascript
 
-app.use(express.static('public'));   // Serve static files from the 'public' directory
+app.use('/assets', express.static(path.join(__dirname, 'public')))，来访问 public 目录下的文件时需要加上 /static 前缀，如 http://localhost:5000/assets/style.css
 
-app.use('/static', express.static('public'));  // You can also specify a virtual path prefix
+app.use('/assets/css', express.static(path.join(__dirname, 'public')))，来访问 public 目录下的文件时需要加上 /static 前缀，如 http://localhost:5000/assets/css/style.css
 
-app.use('/static', express.static('public'))），来访问 public 目录下的文件时需要加上 /static 前缀，如 http://localhost:5000/static/style.css
 
-app.use('/assets', express.static(path.join(__dirname, 'public')));  // Using absolute path (recommended)
-
-app.get('/', (req, res) => {
-  res.send(`
-    <h1>Static Files Example</h1>
-    <img src="/images/logo.png" alt="Logo">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script.js"></script>
-  `);
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+app.use(express.static(path.join(__dirname, 'public'), options))
+const options = {
+  dotfiles: 'ignore',
+  etag: false,
+  extensions: ['htm', 'html'],
+  index: false,
+  maxAge: '1d',
+  redirect: false,
+  setHeaders (res, path, stat) {
+    res.set('x-timestamp', Date.now())
+  }
+}
 
 ```
 
