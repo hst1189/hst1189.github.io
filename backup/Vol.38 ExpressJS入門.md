@@ -45,6 +45,16 @@ npx tsc --watch    // 编译 .ts → .js
 ```
 
 基本例
+
+>[!TIP]
+>app.get('/', (req,res)=>{  } )
+>app.post('/', (req,res)=>{  } )
+>app.put('/:id', (req,res)=>{  } )
+>app.delete('/:id', (req,res)=>{  } )
+>app.all('*',  (req, res)=>{  })
+>app.use( (req,res,next)=>{ next(); })  // 中间件
+>app.listen( port,  ()=>{  }) 
+
 ```javascript
 
 import path from 'path';
@@ -134,16 +144,6 @@ app.listen(3000, (err) => {
     console.log("Server is run on 3000");
 })
 ```
-
->[!TIP]
->app.get('/', (req,res)=>{  } )
->app.post('/', (req,res)=>{  } )
->app.put('/:id', (req,res)=>{  } )
->app.delete('/:id', (req,res)=>{  } )
->app.all('*',  (req, res)=>{  })
->app.use( (req,res,next)=>{ next(); }) 
->app.listen( port,  ()=>{  }) 
-
 
 ```javascript
 curl -X GET http://localhost:3000/api/users
