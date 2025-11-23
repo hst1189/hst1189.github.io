@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 23 Nov 2025 05:10:00 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 23 Nov 2025 05:57:38 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
 
 `Gmeek-html&lt;img src='https://i.gyazo.com/d9294ea53005e7d0500899a46e6b2b50.png'&gt;`
 
@@ -347,18 +347,21 @@ const options = {
 
 ## 🚀Error Handling in Express
 ```javascript
-const express = require('express');
-const app = express();
-const port = 8080;
+app.use((err, req, res, next) =&gt; {     // 捕捉err
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+```
 
-// Route that may throw an error
-app.get('/error', (req, res) =&gt; {
+```javascript
+
+app.get('/error', (req, res) =&gt; {      // Route that may throw an error
   // Simulating an error
-  throw new Error('Something went wrong!');
+  throw new Error('Something went wrong!');    // 抛出err
 });
 
-// Route that uses next(error) for asynchronous code
-app.get('/async-error', (req, res, next) =&gt; {
+
+app.get('/async-error', (req, res, next) =&gt; {    // Route that uses next(error) for asynchronous code
   // Simulating an asynchronous operation that fails
   setTimeout(() =&gt; {
     try {
@@ -367,21 +370,18 @@ app.get('/async-error', (req, res, next) =&gt; {
       res.send(result);
     }
     catch (error) {
-      next(error); // Pass errors to Express
+      next(error);                          // 抛出err
     }
     }, 100);
 });
 
-// Custom error handling middleware
-// Must have four parameters to be recognized as an error handler
-app.use((err, req, res, next) =&gt; {
+
+app.use(errorHandle);
+ 
+function errorHandle(err, req, res, next){ // 捕捉err
   console.error(err.stack);
   res.status(500).send('Something broke!');
-});
-
-app.listen(port, () =&gt; {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+}
 
 ```
 

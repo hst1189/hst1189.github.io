@@ -301,18 +301,21 @@ const options = {
 
 ## 🚀Error Handling in Express
 ```javascript
-const express = require('express');
-const app = express();
-const port = 8080;
+app.use((err, req, res, next) => {     // 捕捉err
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+```
 
-// Route that may throw an error
-app.get('/error', (req, res) => {
+```javascript
+
+app.get('/error', (req, res) => {      // Route that may throw an error
   // Simulating an error
-  throw new Error('Something went wrong!');
+  throw new Error('Something went wrong!');    // 抛出err
 });
 
-// Route that uses next(error) for asynchronous code
-app.get('/async-error', (req, res, next) => {
+
+app.get('/async-error', (req, res, next) => {    // Route that uses next(error) for asynchronous code
   // Simulating an asynchronous operation that fails
   setTimeout(() => {
     try {
@@ -321,21 +324,18 @@ app.get('/async-error', (req, res, next) => {
       res.send(result);
     }
     catch (error) {
-      next(error); // Pass errors to Express
+      next(error);                          // 抛出err
     }
     }, 100);
 });
 
-// Custom error handling middleware
-// Must have four parameters to be recognized as an error handler
-app.use((err, req, res, next) => {
+
+app.use(errorHandle);
+ 
+function errorHandle(err, req, res, next){ // 捕捉err
   console.error(err.stack);
   res.status(500).send('Something broke!');
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+}
 
 ```
 
