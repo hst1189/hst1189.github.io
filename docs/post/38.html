@@ -96,8 +96,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-22 16:16</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Previous Page">上一篇-Vol.37 NodeJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Next Page">下一篇-Vol.39 Socket.io入門</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-23 03:04</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h2>🚀 Framework Comparison</h2>
@@ -213,7 +213,12 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 
 <span class="pl-s1">npx</span> <span class="pl-s1">tsc</span> <span class="pl-c1">--</span><span class="pl-s1">init</span>　<span class="pl-c">// TypeScript初期化</span>
 <span class="pl-s1">tsconfig</span><span class="pl-kos">.</span><span class="pl-c1">json</span>     <span class="pl-c">// 入力出力設定</span>
-<span class="pl-s1">npx</span><span class="pl-kos"></span> <span class="pl-s1">tsc</span>    <span class="pl-c">// 编译 .ts → .js</span></pre></div>
+    <span class="pl-s">"compilerOptions"</span>: <span class="pl-kos">{</span>
+    <span class="pl-c">// File Layout</span>
+    <span class="pl-s">"rootDir"</span>: <span class="pl-s">"./src"</span><span class="pl-kos">,</span>
+    <span class="pl-s">"outDir"</span>: <span class="pl-s">"./dist"</span><span class="pl-kos">,</span>
+<span class="pl-c1">npx</span> <span class="pl-s1">tsc</span> <span class="pl-c1">--</span>watch    <span class="pl-c">// 编译 .ts → .js</span>
+<span class="pl-c">// 自動编译：VS Code のメニューから [ターミナル] -&gt; [タスクの実行...] を選択、「tsc: watch - tsconfig.json」を入力</span></pre></div>
 <p>基本例</p>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">import</span> <span class="pl-s1">express</span> <span class="pl-k">from</span> <span class="pl-s">'express'</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-en">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>

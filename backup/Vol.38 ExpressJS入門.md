@@ -35,7 +35,12 @@ npm install @types/express
 
 npx tsc --init　// TypeScript初期化
 tsconfig.json     // 入力出力設定
-npx tsc    // 编译 .ts → .js
+    "compilerOptions": {
+    // File Layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+npx tsc --watch    // 编译 .ts → .js
+// 自動编译：VS Code のメニューから [ターミナル] -> [タスクの実行...] を選択、「tsc: watch - tsconfig.json」を入力
 
 ```
 
