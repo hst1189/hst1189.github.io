@@ -749,90 +749,167 @@ app.listen(port, () => {
 ```
 
 
-- app.js # Main application file
-- routes/ # Route definitions
-  - users.js
-  - products.js
-- controllers/ # Request handlers
-  - userController.js
-  - productController.js
-- models/ # Data models
-  - User.js
-  - Product.js
-- middleware/ # Custom middleware
-  - auth.js
-  - validation.js
-- config/ # Configuration files
-  - db.js
-  - env.js
-- utils/ # Utility functions
-  - errorHandler.js
-
-```javascript
-// routes/users.js
-const express = require('express');
-const router = express.Router();
-const { getUsers, getUserById, createUser, updateUser, deleteUser } = require('../controllers/userController');
-
-router.get('/', getUsers);
-router.get('/:id', getUserById);
-router.post('/', createUser);
-router.put('/:id', updateUser);
-router.delete('/:id', deleteUser);
-
-module.exports = router;
-```
+## 🚀Express 项目架构
+my-express-app/
+├── node_modules/ # Dependencies
+├── config/ # Configuration files
+│ ├── db.js # Database configuration
+│ └── env.js # Environment variables
+├── controllers/ # Route controllers
+├── models/ # Database models
+├── routes/ # Route definitions
+├── middleware/ # Custom middleware
+├── public/ # Static files
+├── tests/ # Test files
+├── .env # Environment variables
+├── .gitignore # Git ignore file
+├── app.js # Application entry point
+└── package.json # Project configuration
 
 ```javascript
 // app.js
-const express = require('express');
+import path from 'path';
+const __dirname = import.meta.dirname;
+
+import userRouter from './routes/userRouter.js';
+import logPrint from './utils/logger.js';
+import errorHandler from './utils/errorHandler.js';
+
+import express from 'express';
 const app = express();
-const userRoutes = require('./routes/users');
 
+app.use(errorHandler);
+app.use(logPrint);
 app.use(express.json());
-app.use('/api/users', userRoutes);
+app.use('/api/users', userRouter);
 
-app.listen(8080, () => {
-  console.log('Server is running on port 8080');
-});
+app.use((req, res) => {
+    console.log(path.join(__dirname, '../public', '404.html'));
+    res.status(404).sendFile(path.join(__dirname, '../public', '404.html'));
+})
+
+app.listen(3000, () => {
+    console.log('Server is running on 3000');
+})
 ```
 
 ```javascript
-// controllers/userController.js
-const User = require('../models/User');
+// routes/userRouter.js
+import express from 'express';
+const userRouter = express.Router();
+import { getUsers, getUserById, updateUser, deleteUser, createUser, searchUser } from '../controllers/userController.js';
 
-const getUsers = async (req, res) => {
+userRouter.get('/', getUsers);
+userRouter.get('/:id', getUserById);
+userRouter.post('/', createUser);
+userRouter.put('/:id', updateUser);
+userRouter.delete('/:id', deleteUser);
+
+// Filtering and pagination
+userRouter.get('/search', searchUser); ///search?category=electronics&sort=price&limit=10&page=2'
+
+export default userRouter;```
+
+```javascript
+// controllers/userController.js
+import User from '../models/User.js';
+
+async function getUsers(req, res) {
   try {
     const users = await User.findAll();
+    if (!users) {
+      return res.status(404).json({ message: 'User not found' });
+    }
     res.status(200).json(users);
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving users', error: error.message });
   }
 };
 
-const getUserById = async (req, res) => {
+async function getUserById(req, res) {
   try {
     const user = await User.findById(req.params.id);
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-    res.status(200).json(user);
+    res.status(200).send(user);
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving user', error: error.message });
   }
 };
 
-const createUser = async (req, res) => {
+async function updateUser(req, res) {
   try {
-    const user = await User.create(req.body);
-    res.status(201).json(user);
+    const user = await User.updateById(req.params.id, req.body);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.status(200).send(user);
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving user', error: error.message });
+  }
+};
+
+async function deleteUser(req, res) {
+  try {
+    // const user = await User.deleteById(req.params.id);
+    // if (!user) {
+    //   return res.status(404).json({ message: 'User not found' });
+    // }
+    res.status(200).send('deleteUser');
+
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving user', error: error.message });
+  }
+};
+
+async function createUser(req, res) {
+  try {
+    // const user = await User.create(req.body);
+    res.status(200).send('createUser');
   } catch (error) {
     res.status(400).json({ message: 'Error creating user', error: error.message });
   }
 };
 
-module.exports = { getUsers, getUserById, createUser };
+export { getUsers, getUserById, updateUser, deleteUser, createUser, searchUser  };
 ```
+
+```javascript
+// models/User.js
+import data from "./data.json" with { type: "json" };
+
+const findAll = () => data;
+const findById = (id) => data.find(u => u.id === parseInt(id));
+const updateById = (id, userInfo) => {
+    const user = data.find(u => u.id === parseInt(id))
+    if (user) {
+        console.log(user);
+        if (userInfo.name) user.name = userInfo.name;
+        if (userInfo.message) user.message = userInfo.message;
+        if (userInfo.status) user.status = userInfo.status;
+        console.log(user);
+        return user;
+    }
+}
+const deleteById = () => data;
+const create = () => data;
+
+const User = {
+    findAll: findAll,
+    findById: findById,
+    updateById: updateById,
+    deleteById: deleteById,
+    create: create
+}
+
+export default User;
+
+```
+
+
+
+##🚀Error Handling
 
 ```javascript
 // utils/errorHandler.js
@@ -848,9 +925,7 @@ class AppError extends Error {
 }
 
 module.exports = { AppError };
-```
 
-```javascript
 // middleware/errorMiddleware.js
 const errorHandler = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
@@ -883,9 +958,7 @@ const errorHandler = (err, req, res, next) => {
 };
 
 module.exports = { errorHandler };
-```
 
-```javascript
 // Usage in app.js
 const { errorHandler } = require('./middleware/errorMiddleware');
 const { AppError } = require('./utils/errorHandler');
@@ -897,6 +970,7 @@ app.get('/api/error-demo', (req, res, next) => {
 
 // Error handling middleware (must be last)
 app.use(errorHandler);
+
 ```
 
 
@@ -1009,8 +1083,6 @@ describe('User API', () => {
 
 ```
 
-
-
 ## 🚀API Versioning
 - URI Path Versioning: /api/v1/users
 - Query Parameter: /api/users?version=1
@@ -1030,10 +1102,4 @@ app.use('/api/v2/users', v2UserRoutes);
 
 app.listen(8080);
 ```
-
-
-
-
-
-
 

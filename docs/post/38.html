@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-23 08:48</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-12 09:58,updated at 2025-11-23 14:39</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/39.html" aria-label="Previous Page">上一篇-Vol.39 Socket.io入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/37.html" aria-label="Next Page">下一篇-Vol.37 NodeJS入門</a></div>
 </nav>
 
@@ -829,101 +829,154 @@ SSL_CERT_PATH=./cert.pem
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-s1">port</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'serve in on port 80'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
-<ul>
-<li>app.js # Main application file</li>
-<li>routes/ # Route definitions
-<ul>
-<li>users.js</li>
-<li>products.js</li>
-</ul>
-</li>
-<li>controllers/ # Request handlers
-<ul>
-<li>userController.js</li>
-<li>productController.js</li>
-</ul>
-</li>
-<li>models/ # Data models
-<ul>
-<li>User.js</li>
-<li>Product.js</li>
-</ul>
-</li>
-<li>middleware/ # Custom middleware
-<ul>
-<li>auth.js</li>
-<li>validation.js</li>
-</ul>
-</li>
-<li>config/ # Configuration files
-<ul>
-<li>db.js</li>
-<li>env.js</li>
-</ul>
-</li>
-<li>utils/ # Utility functions
-<ul>
-<li>errorHandler.js</li>
-</ul>
-</li>
-</ul>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// routes/users.js</span>
-<span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-s1">router</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">.</span><span class="pl-en">Router</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-kos">{</span> getUsers<span class="pl-kos">,</span> getUserById<span class="pl-kos">,</span> createUser<span class="pl-kos">,</span> updateUser<span class="pl-kos">,</span> deleteUser <span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'../controllers/userController'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-
-<span class="pl-s1">router</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-s1">getUsers</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-s1">router</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-s1">getUserById</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-s1">router</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-s1">createUser</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-s1">router</span><span class="pl-kos">.</span><span class="pl-en">put</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-s1">updateUser</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-s1">router</span><span class="pl-kos">.</span><span class="pl-en">delete</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-s1">deleteUser</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-
-<span class="pl-smi">module</span><span class="pl-kos">.</span><span class="pl-c1">exports</span> <span class="pl-c1">=</span> <span class="pl-s1">router</span><span class="pl-kos">;</span></pre></div>
+<h2>🚀Express 项目架构</h2>
+<p>my-express-app/<br>
+├── node_modules/ # Dependencies<br>
+├── config/ # Configuration files<br>
+│ ├── db.js # Database configuration<br>
+│ └── env.js # Environment variables<br>
+├── controllers/ # Route controllers<br>
+├── models/ # Database models<br>
+├── routes/ # Route definitions<br>
+├── middleware/ # Custom middleware<br>
+├── public/ # Static files<br>
+├── tests/ # Test files<br>
+├── .env # Environment variables<br>
+├── .gitignore # Git ignore file<br>
+├── app.js # Application entry point<br>
+└── package.json # Project configuration</p>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// app.js</span>
-<span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-k">const</span> <span class="pl-s1">userRoutes</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./routes/users'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">import</span> <span class="pl-s1">path</span> <span class="pl-k">from</span> <span class="pl-s">'path'</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">__dirname</span> <span class="pl-c1">=</span> <span class="pl-k">import</span><span class="pl-kos">.</span>meta<span class="pl-kos">.</span><span class="pl-c1">dirname</span><span class="pl-kos">;</span>
 
+<span class="pl-k">import</span> <span class="pl-s1">userRouter</span> <span class="pl-k">from</span> <span class="pl-s">'./routes/userRouter.js'</span><span class="pl-kos">;</span>
+<span class="pl-k">import</span> <span class="pl-s1">logPrint</span> <span class="pl-k">from</span> <span class="pl-s">'./utils/logger.js'</span><span class="pl-kos">;</span>
+<span class="pl-k">import</span> <span class="pl-s1">errorHandler</span> <span class="pl-k">from</span> <span class="pl-s">'./utils/errorHandler.js'</span><span class="pl-kos">;</span>
+
+<span class="pl-k">import</span> <span class="pl-s1">express</span> <span class="pl-k">from</span> <span class="pl-s">'express'</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-en">express</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">errorHandler</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">logPrint</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">express</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s">'/api/users'</span><span class="pl-kos">,</span> <span class="pl-s1">userRoutes</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s">'/api/users'</span><span class="pl-kos">,</span> <span class="pl-s1">userRouter</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">8080</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
-  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'Server is running on port 8080'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// controllers/userController.js</span>
-<span class="pl-k">const</span> <span class="pl-v">User</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'../models/User'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">.</span><span class="pl-en">join</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span><span class="pl-kos">,</span> <span class="pl-s">'../public'</span><span class="pl-kos">,</span> <span class="pl-s">'404.html'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">404</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">sendFile</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">.</span><span class="pl-en">join</span><span class="pl-kos">(</span><span class="pl-s1">__dirname</span><span class="pl-kos">,</span> <span class="pl-s">'../public'</span><span class="pl-kos">,</span> <span class="pl-s">'404.html'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span>
 
-<span class="pl-k">const</span> <span class="pl-en">getUsers</span> <span class="pl-c1">=</span> <span class="pl-k">async</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">listen</span><span class="pl-kos">(</span><span class="pl-c1">3000</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'Server is running on 3000'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// routes/userRouter.js</span>
+<span class="pl-k">import</span> <span class="pl-s1">express</span> <span class="pl-k">from</span> <span class="pl-s">'express'</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">userRouter</span> <span class="pl-c1">=</span> <span class="pl-s1">express</span><span class="pl-kos">.</span><span class="pl-en">Router</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-s1">getUsers</span><span class="pl-kos">,</span> <span class="pl-s1">getUserById</span><span class="pl-kos">,</span> <span class="pl-s1">updateUser</span><span class="pl-kos">,</span> <span class="pl-s1">deleteUser</span><span class="pl-kos">,</span> <span class="pl-s1">createUser</span><span class="pl-kos">,</span> <span class="pl-s1">searchUser</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'../controllers/userController.js'</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">userRouter</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-s1">getUsers</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">userRouter</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-s1">getUserById</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">userRouter</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'/'</span><span class="pl-kos">,</span> <span class="pl-s1">createUser</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">userRouter</span><span class="pl-kos">.</span><span class="pl-en">put</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-s1">updateUser</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">userRouter</span><span class="pl-kos">.</span><span class="pl-en">delete</span><span class="pl-kos">(</span><span class="pl-s">'/:id'</span><span class="pl-kos">,</span> <span class="pl-s1">deleteUser</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Filtering and pagination</span>
+<span class="pl-s1">userRouter</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/search'</span><span class="pl-kos">,</span> <span class="pl-s1">searchUser</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">///search?category=electronics&amp;sort=price&amp;limit=10&amp;page=2'</span>
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-s1">userRouter</span><span class="pl-kos">;</span><span class="pl-s">``</span><span class="pl-s">`</span>
+<span class="pl-s"></span>
+<span class="pl-s">`</span><span class="pl-s">``</span><span class="pl-kos"></span><span class="pl-s1">javascript</span>
+<span class="pl-c">// controllers/userController.js</span>
+<span class="pl-k">import</span> <span class="pl-v">User</span> <span class="pl-k">from</span> <span class="pl-s">'../models/User.js'</span><span class="pl-kos">;</span>
+
+<span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">getUsers</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
   <span class="pl-k">try</span> <span class="pl-kos">{</span>
     <span class="pl-k">const</span> <span class="pl-s1">users</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-v">User</span><span class="pl-kos">.</span><span class="pl-en">findAll</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-c1">!</span><span class="pl-s1">users</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+      <span class="pl-k">return</span> <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">404</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">message</span>: <span class="pl-s">'User not found'</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">200</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-s1">users</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
   <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">500</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">message</span>: <span class="pl-s">'Error retrieving users'</span><span class="pl-kos">,</span> <span class="pl-c1">error</span>: <span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">message</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
   <span class="pl-kos">}</span>
 <span class="pl-kos">}</span><span class="pl-kos">;</span>
 
-<span class="pl-k">const</span> <span class="pl-en">getUserById</span> <span class="pl-c1">=</span> <span class="pl-k">async</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+<span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">getUserById</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
   <span class="pl-k">try</span> <span class="pl-kos">{</span>
     <span class="pl-k">const</span> <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-v">User</span><span class="pl-kos">.</span><span class="pl-en">findById</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
     <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-c1">!</span><span class="pl-s1">user</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
       <span class="pl-k">return</span> <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">404</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">message</span>: <span class="pl-s">'User not found'</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
     <span class="pl-kos">}</span>
-    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">200</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">200</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
   <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">500</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">message</span>: <span class="pl-s">'Error retrieving user'</span><span class="pl-kos">,</span> <span class="pl-c1">error</span>: <span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">message</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
   <span class="pl-kos">}</span>
 <span class="pl-kos">}</span><span class="pl-kos">;</span>
 
-<span class="pl-k">const</span> <span class="pl-en">createUser</span> <span class="pl-c1">=</span> <span class="pl-k">async</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+<span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">updateUser</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
   <span class="pl-k">try</span> <span class="pl-kos">{</span>
-    <span class="pl-k">const</span> <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-v">User</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">body</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">201</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">const</span> <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-v">User</span><span class="pl-kos">.</span><span class="pl-en">updateById</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">params</span><span class="pl-kos">.</span><span class="pl-c1">id</span><span class="pl-kos">,</span> <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">body</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-c1">!</span><span class="pl-s1">user</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+      <span class="pl-k">return</span> <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">404</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">message</span>: <span class="pl-s">'User not found'</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">200</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">500</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">message</span>: <span class="pl-s">'Error retrieving user'</span><span class="pl-kos">,</span> <span class="pl-c1">error</span>: <span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">message</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">deleteUser</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">try</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// const user = await User.deleteById(req.params.id);</span>
+    <span class="pl-c">// if (!user) {</span>
+    <span class="pl-c">//   return res.status(404).json({ message: 'User not found' });</span>
+    <span class="pl-c">// }</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">200</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'deleteUser'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+  <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">500</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">message</span>: <span class="pl-s">'Error retrieving user'</span><span class="pl-kos">,</span> <span class="pl-c1">error</span>: <span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">message</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">createUser</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">try</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// const user = await User.create(req.body);</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">200</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'createUser'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
   <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
     <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">400</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">message</span>: <span class="pl-s">'Error creating user'</span><span class="pl-kos">,</span> <span class="pl-c1">error</span>: <span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">message</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
   <span class="pl-kos">}</span>
 <span class="pl-kos">}</span><span class="pl-kos">;</span>
 
-<span class="pl-smi">module</span><span class="pl-kos">.</span><span class="pl-c1">exports</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span> getUsers<span class="pl-kos">,</span> getUserById<span class="pl-kos">,</span> createUser <span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
+<span class="pl-k">export</span> <span class="pl-kos">{</span> <span class="pl-s1">getUsers</span><span class="pl-kos">,</span> <span class="pl-s1">getUserById</span><span class="pl-kos">,</span> <span class="pl-s1">updateUser</span><span class="pl-kos">,</span> <span class="pl-s1">deleteUser</span><span class="pl-kos">,</span> <span class="pl-s1">createUser</span><span class="pl-kos">,</span> <span class="pl-s1">searchUser</span>  <span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// models/User.js</span>
+<span class="pl-k">import</span> <span class="pl-s1">data</span> <span class="pl-k">from</span> <span class="pl-s">"./data.json"</span> <span class="pl-k">with</span> <span class="pl-kos">{</span> <span class="pl-c1">type</span>: <span class="pl-s">"json"</span> <span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-en">findAll</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">data</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-en">findById</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-s1">id</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-en">find</span><span class="pl-kos">(</span><span class="pl-s1">u</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">u</span><span class="pl-kos">.</span><span class="pl-c1">id</span> <span class="pl-c1">===</span> <span class="pl-en">parseInt</span><span class="pl-kos">(</span><span class="pl-s1">id</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-en">updateById</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-s1">id</span><span class="pl-kos">,</span> <span class="pl-s1">userInfo</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">const</span> <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-en">find</span><span class="pl-kos">(</span><span class="pl-s1">u</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">u</span><span class="pl-kos">.</span><span class="pl-c1">id</span> <span class="pl-c1">===</span> <span class="pl-en">parseInt</span><span class="pl-kos">(</span><span class="pl-s1">id</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">userInfo</span><span class="pl-kos">.</span><span class="pl-c1">name</span><span class="pl-kos">)</span> <span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">name</span> <span class="pl-c1">=</span> <span class="pl-s1">userInfo</span><span class="pl-kos">.</span><span class="pl-c1">name</span><span class="pl-kos">;</span>
+        <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">userInfo</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">)</span> <span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">message</span> <span class="pl-c1">=</span> <span class="pl-s1">userInfo</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">;</span>
+        <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">userInfo</span><span class="pl-kos">.</span><span class="pl-c1">status</span><span class="pl-kos">)</span> <span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">status</span> <span class="pl-c1">=</span> <span class="pl-s1">userInfo</span><span class="pl-kos">.</span><span class="pl-c1">status</span><span class="pl-kos">;</span>
+        <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">user</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-k">return</span> <span class="pl-s1">user</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+<span class="pl-kos">}</span>
+<span class="pl-k">const</span> <span class="pl-en">deleteById</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">data</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-en">create</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">data</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-v">User</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+    <span class="pl-c1">findAll</span>: <span class="pl-en">findAll</span><span class="pl-kos">,</span>
+    <span class="pl-c1">findById</span>: <span class="pl-en">findById</span><span class="pl-kos">,</span>
+    <span class="pl-c1">updateById</span>: <span class="pl-en">updateById</span><span class="pl-kos">,</span>
+    <span class="pl-c1">deleteById</span>: <span class="pl-en">deleteById</span><span class="pl-kos">,</span>
+    <span class="pl-c1">create</span>: <span class="pl-en">create</span>
+<span class="pl-kos">}</span>
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-v">User</span><span class="pl-kos">;</span></pre></div>
+<p>##🚀Error Handling</p>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// utils/errorHandler.js</span>
 <span class="pl-k">class</span> <span class="pl-v">AppError</span> <span class="pl-k">extends</span> <span class="pl-v">Error</span> <span class="pl-kos">{</span>
   <span class="pl-en">constructor</span><span class="pl-kos">(</span><span class="pl-s1">statusCode</span><span class="pl-kos">,</span> <span class="pl-s1">message</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
@@ -936,8 +989,9 @@ SSL_CERT_PATH=./cert.pem
   <span class="pl-kos">}</span>
 <span class="pl-kos">}</span>
 
-<span class="pl-smi">module</span><span class="pl-kos">.</span><span class="pl-c1">exports</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span> AppError <span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// middleware/errorMiddleware.js</span>
+<span class="pl-smi">module</span><span class="pl-kos">.</span><span class="pl-c1">exports</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span> AppError <span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// middleware/errorMiddleware.js</span>
 <span class="pl-k">const</span> <span class="pl-en">errorHandler</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">,</span> <span class="pl-s1">next</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
   <span class="pl-s1">err</span><span class="pl-kos">.</span><span class="pl-c1">statusCode</span> <span class="pl-c1">=</span> <span class="pl-s1">err</span><span class="pl-kos">.</span><span class="pl-c1">statusCode</span> <span class="pl-c1">||</span> <span class="pl-c1">500</span><span class="pl-kos">;</span>
   <span class="pl-s1">err</span><span class="pl-kos">.</span><span class="pl-c1">status</span> <span class="pl-c1">=</span> <span class="pl-s1">err</span><span class="pl-kos">.</span><span class="pl-c1">status</span> <span class="pl-c1">||</span> <span class="pl-s">'error'</span><span class="pl-kos">;</span>
@@ -968,8 +1022,9 @@ SSL_CERT_PATH=./cert.pem
   <span class="pl-kos">}</span>
 <span class="pl-kos">}</span><span class="pl-kos">;</span>
 
-<span class="pl-smi">module</span><span class="pl-kos">.</span><span class="pl-c1">exports</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span> errorHandler <span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// Usage in app.js</span>
+<span class="pl-smi">module</span><span class="pl-kos">.</span><span class="pl-c1">exports</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span> errorHandler <span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Usage in app.js</span>
 <span class="pl-k">const</span> <span class="pl-kos">{</span> errorHandler <span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./middleware/errorMiddleware'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-kos">{</span> AppError <span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'./utils/errorHandler'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
@@ -979,7 +1034,7 @@ SSL_CERT_PATH=./cert.pem
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
 <span class="pl-c">// Error handling middleware (must be last)</span>
-<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">errorHandler</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-en">errorHandler</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h2>🚀API Documentation</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">express</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'express'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-k">const</span> <span class="pl-s1">swaggerJsDoc</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'swagger-jsdoc'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
