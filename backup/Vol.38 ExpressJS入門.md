@@ -91,8 +91,8 @@ app.get('/api/users/:id/book/:bookID', (req, res) => {    // 使用${req.params}
     res.status(200).send({ ID: `${req.params.id}`, bookID: `${req.params.bookID}` });
 })
 
-app.get('/api/users/search', (req, res) => {  // 使用${req.query}获取值    /api/users/search?q=express&page=2
-    res.status(200).send({ search: `${req.query.q}`, page: `${req.query.page}` });
+app.get('/api/search', (req, res) => {  // 使用${req.query}获取值    /api/search?id=express&mail=2
+    res.status(200).send({ id:`${req.query.id}`, mail: `${req.query.mail}` });
 })
 
 // POST - Create a new user
