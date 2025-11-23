@@ -47,13 +47,14 @@ npx tsc --watch    // 编译 .ts → .js
 基本例
 
 >[!TIP]
+> import express from 'express';
+> const app=express();
 >app.get('/', (req,res)=>{  } )
 >app.post('/', (req,res)=>{  } )
 >app.put('/:id', (req,res)=>{  } )
 >app.delete('/:id', (req,res)=>{  } )
->app.all('*',  (req, res)=>{  })
 >app.use( (req,res,next)=>{ next(); })  // 中间件
->app.listen( port,  ()=>{  }) 
+>app.listen( 3000,  ()=>{ console.log('Server is running on 3000') }) 
 
 ```javascript
 
