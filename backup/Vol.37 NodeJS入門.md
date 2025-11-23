@@ -611,20 +611,3 @@ ws.on('error', (err) => {
   console.error('書き込み中にエラーが発生しました:', err);
 });
 ```
-
-
-### 复制文件
-```javascript
-const rs = fs.createReadStream('./test.txt');
-const ws = fs.createWriteStream('./test2.txt');
-
-rs.on('data', chunk => {
-    ws.write(chunk);
-});
-```
-```javascript
-fs.copyFile("test.txt", "test3.txt", err => {
-    if (err) { console.log(err); }
-});
-```
-
