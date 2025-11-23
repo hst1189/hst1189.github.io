@@ -124,8 +124,9 @@ app.delete('/api/users/:id', (req, res) => {
 });
 
 
-app.all('/*splat', (req, res) => {
-    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+app.use((req, res) => {
+    console.log(path.join(__dirname, '../public', '404.html'));
+    res.status(404).sendFile(path.join(__dirname, '../public', '404.html'));
 })
 
 app.listen(3000, (err) => {
