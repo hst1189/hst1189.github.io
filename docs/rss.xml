@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 23 Nov 2025 06:05:05 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 23 Nov 2025 07:56:20 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
 
 `Gmeek-html&lt;img src='https://i.gyazo.com/d9294ea53005e7d0500899a46e6b2b50.png'&gt;`
 
@@ -93,12 +93,14 @@ npx tsc --watch    // 编译 .ts → .js
 基本例
 ```javascript
 
-import express from 'express';
-const app = express();
-
 import path from 'path';
 const __dirname = import.meta.dirname;
 
+import express from 'express';
+const app = express();
+
+// Middleware for parsing JSON
+app.use(express.json());
 
 const mid = function (req, res, next) {    // ミドルウェア定義
     console.log({ msg: `${new Date()} ${req.method} ${req.originalUrl}` })
@@ -106,31 +108,67 @@ const mid = function (req, res, next) {    // ミドルウェア定義
 }
 app.use(mid);  // ミドルウェア
 
-app.use(express.static('public', { maxAge: 86400000 }));  // 静的ファイルのキャッシュ機能、1日間キャッシュを有効化
+app.use(express.static(__dirname, 'public', { maxAge: 86400000 }));  // 静的ファイルのキャッシュ機能(1日間キャッシュ有効)
 
 app.get('/image', (req, res) =&gt; {    // 静的ファイル
   res.sendFile(path.join(__dirname, 'public','images','test.png'));
 });
 
-app.get('/', (req, res) =&gt; {
-    res.status(200).send({ msg: 'get OK' });
+
+let users = [
+  { id: 1, name: 'John Doe', email: 'john@example.com' },
+  { id: 2, name: 'Jane Smith', email: 'jane@example.com' }
+];
+
+// GET - Retrieve all users
+app.get('/api/users', (req, res) =&gt; { 
+  if (!users) return res.status(404).json({ message: 'User not found' });
+  res.json(users);
+});
+
+// GET - Retrieve a specific user
+app.get('/api/users/:id', (req, res) =&gt; {  // 使用${req.query}获取值    /api/users/123
+  const user = users.find(u =&gt; u.id === parseInt(req.params.id));
+  if (!user) return res.status(404).json({ message: 'User not found' });
+  res.json(user);
+});
+
+app.get('/api/users/:id/book/:bookID', (req, res) =&gt; {    // 使用${req.params}获取值    /api/users/123/book/aaaa
+    res.status(200).send({ ID: `${req.params.id}`, bookID: `${req.params.bookID}` });
 })
 
-app.post('/', (req, res) =&gt; {    // POST 和 GET 可以匹配同一路由
-    res.status(200).send({ msg: 'post OK' });
-})
-
-app.get('/search', (req, res) =&gt; {  // 使用${req.query}获取值    http://127.0.0.1:3000/search?q=express&amp;page=2
+app.get('/api/users/search', (req, res) =&gt; {  // 使用${req.query}获取值    /api/users/search?q=express&amp;page=2
     res.status(200).send({ search: `${req.query.q}`, page: `${req.query.page}` });
 })
 
-app.get('/:id', (req, res) =&gt; {  // 使用${req.params}获取值    http://127.0.0.1:3000/9527
-    res.status(200).send({ ID: `${req.params.id}` });
-})
+// POST - Create a new user
+app.post('/api/users', (req, res) =&gt; {  // POST 和 GET 可以匹配同一路由
+  const newUser = {
+    id: users.length + 1,
+    name: req.body.name,
+    email: req.body.email
+  };
+  users.push(newUser);
+  res.status(201).json(newUser);
+});
 
-app.get('/:id/book/:bookID', (req, res) =&gt; {    // 使用${req.params}获取值    http://127.0.0.1:3000/9527/book/aaaa
-    res.status(200).send({ ID: `${req.params.id}`, bookID: `${req.params.bookID}` });
-})
+// PUT - Update a user completely
+app.put('/api/users/:id', (req, res) =&gt; {
+  const user = users.find(u =&gt; u.id === parseInt(req.params.id));
+  if (!user) return res.status(404).json({ message: 'User not found' });
+  user.name = req.body.name;
+  user.email = req.body.email;
+  res.json(user);
+});
+
+// DELETE - Remove a user
+app.delete('/api/users/:id', (req, res) =&gt; {
+  const userIndex = users.findIndex(u =&gt; u.id === parseInt(req.params.id));
+  if (userIndex === -1) return res.status(404).json({ message: 'User not found' });
+  const deletedUser = users.splice(userIndex, 1);
+  res.json(deletedUser[0]);
+});
+
 
 app.all('/*splat', (req, res) =&gt; {
     res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
@@ -153,19 +191,19 @@ app.listen(3000, (err) =&gt; {
 
 
 ```javascript
-curl -X GET http://localhost:3000/
+curl -X GET http://localhost:3000/api/users
 &gt; {'msg':'GET OK'}
 
-curl -X POST http://localhost:3000/
+curl -X POST http://localhost:3000/api/users
 &gt; {'msg':'POST OK'}   
 
-curl -X PUT http://localhost:3000/123
+curl -X PUT http://localhost:3000/api/users/123
 &gt; {'id':'123','msg':'PUT OK'}
 
-curl -X DELETE http://localhost:3000/123
+curl -X DELETE http://localhost:3000/api/users/123
 &gt; {'id':'123','msg':'DELETE OK'}
 
-curl -X POST -H 'Content-Type: application/json' -d '{'name':'太郎', 'age':'30'}'  http://localhost:3000/api/v1/users
+curl -X POST http://localhost:3000/api/users  -H 'Content-Type: application/json' -d '{'name':'太郎', 'age':'30'}'  
 ```
 
 

@@ -47,12 +47,14 @@ npx tsc --watch    // 编译 .ts → .js
 基本例
 ```javascript
 
-import express from 'express';
-const app = express();
-
 import path from 'path';
 const __dirname = import.meta.dirname;
 
+import express from 'express';
+const app = express();
+
+// Middleware for parsing JSON
+app.use(express.json());
 
 const mid = function (req, res, next) {    // ミドルウェア定義
     console.log({ msg: `${new Date()} ${req.method} ${req.originalUrl}` })
@@ -60,31 +62,67 @@ const mid = function (req, res, next) {    // ミドルウェア定義
 }
 app.use(mid);  // ミドルウェア
 
-app.use(express.static('public', { maxAge: 86400000 }));  // 静的ファイルのキャッシュ機能、1日間キャッシュを有効化
+app.use(express.static(__dirname, 'public', { maxAge: 86400000 }));  // 静的ファイルのキャッシュ機能(1日間キャッシュ有効)
 
 app.get('/image', (req, res) => {    // 静的ファイル
   res.sendFile(path.join(__dirname, 'public','images','test.png'));
 });
 
-app.get('/', (req, res) => {
-    res.status(200).send({ msg: "get OK" });
+
+let users = [
+  { id: 1, name: 'John Doe', email: 'john@example.com' },
+  { id: 2, name: 'Jane Smith', email: 'jane@example.com' }
+];
+
+// GET - Retrieve all users
+app.get('/api/users', (req, res) => { 
+  if (!users) return res.status(404).json({ message: 'User not found' });
+  res.json(users);
+});
+
+// GET - Retrieve a specific user
+app.get('/api/users/:id', (req, res) => {  // 使用${req.query}获取值    /api/users/123
+  const user = users.find(u => u.id === parseInt(req.params.id));
+  if (!user) return res.status(404).json({ message: 'User not found' });
+  res.json(user);
+});
+
+app.get('/api/users/:id/book/:bookID', (req, res) => {    // 使用${req.params}获取值    /api/users/123/book/aaaa
+    res.status(200).send({ ID: `${req.params.id}`, bookID: `${req.params.bookID}` });
 })
 
-app.post('/', (req, res) => {    // POST 和 GET 可以匹配同一路由
-    res.status(200).send({ msg: "post OK" });
-})
-
-app.get('/search', (req, res) => {  // 使用${req.query}获取值    http://127.0.0.1:3000/search?q=express&page=2
+app.get('/api/users/search', (req, res) => {  // 使用${req.query}获取值    /api/users/search?q=express&page=2
     res.status(200).send({ search: `${req.query.q}`, page: `${req.query.page}` });
 })
 
-app.get('/:id', (req, res) => {  // 使用${req.params}获取值    http://127.0.0.1:3000/9527
-    res.status(200).send({ ID: `${req.params.id}` });
-})
+// POST - Create a new user
+app.post('/api/users', (req, res) => {  // POST 和 GET 可以匹配同一路由
+  const newUser = {
+    id: users.length + 1,
+    name: req.body.name,
+    email: req.body.email
+  };
+  users.push(newUser);
+  res.status(201).json(newUser);
+});
 
-app.get('/:id/book/:bookID', (req, res) => {    // 使用${req.params}获取值    http://127.0.0.1:3000/9527/book/aaaa
-    res.status(200).send({ ID: `${req.params.id}`, bookID: `${req.params.bookID}` });
-})
+// PUT - Update a user completely
+app.put('/api/users/:id', (req, res) => {
+  const user = users.find(u => u.id === parseInt(req.params.id));
+  if (!user) return res.status(404).json({ message: 'User not found' });
+  user.name = req.body.name;
+  user.email = req.body.email;
+  res.json(user);
+});
+
+// DELETE - Remove a user
+app.delete('/api/users/:id', (req, res) => {
+  const userIndex = users.findIndex(u => u.id === parseInt(req.params.id));
+  if (userIndex === -1) return res.status(404).json({ message: 'User not found' });
+  const deletedUser = users.splice(userIndex, 1);
+  res.json(deletedUser[0]);
+});
+
 
 app.all('/*splat', (req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
@@ -107,19 +145,19 @@ app.listen(3000, (err) => {
 
 
 ```javascript
-curl -X GET http://localhost:3000/
+curl -X GET http://localhost:3000/api/users
 > {"msg":"GET OK"}
 
-curl -X POST http://localhost:3000/
+curl -X POST http://localhost:3000/api/users
 > {"msg":"POST OK"}   
 
-curl -X PUT http://localhost:3000/123
+curl -X PUT http://localhost:3000/api/users/123
 > {"id":"123","msg":"PUT OK"}
 
-curl -X DELETE http://localhost:3000/123
+curl -X DELETE http://localhost:3000/api/users/123
 > {"id":"123","msg":"DELETE OK"}
 
-curl -X POST -H "Content-Type: application/json" -d "{"name":"太郎", "age":"30"}"  http://localhost:3000/api/v1/users
+curl -X POST http://localhost:3000/api/users  -H 'Content-Type: application/json' -d '{"name":"太郎", "age":"30"}'  
 ```
 
 
@@ -726,6 +764,272 @@ app.listen(port, () => {
   - env.js
 - utils/ # Utility functions
   - errorHandler.js
+
+```javascript
+// routes/users.js
+const express = require('express');
+const router = express.Router();
+const { getUsers, getUserById, createUser, updateUser, deleteUser } = require('../controllers/userController');
+
+router.get('/', getUsers);
+router.get('/:id', getUserById);
+router.post('/', createUser);
+router.put('/:id', updateUser);
+router.delete('/:id', deleteUser);
+
+module.exports = router;
+```
+
+```javascript
+// app.js
+const express = require('express');
+const app = express();
+const userRoutes = require('./routes/users');
+
+app.use(express.json());
+app.use('/api/users', userRoutes);
+
+app.listen(8080, () => {
+  console.log('Server is running on port 8080');
+});
+```
+
+```javascript
+// controllers/userController.js
+const User = require('../models/User');
+
+const getUsers = async (req, res) => {
+  try {
+    const users = await User.findAll();
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving users', error: error.message });
+  }
+};
+
+const getUserById = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving user', error: error.message });
+  }
+};
+
+const createUser = async (req, res) => {
+  try {
+    const user = await User.create(req.body);
+    res.status(201).json(user);
+  } catch (error) {
+    res.status(400).json({ message: 'Error creating user', error: error.message });
+  }
+};
+
+module.exports = { getUsers, getUserById, createUser };
+```
+
+```javascript
+// utils/errorHandler.js
+class AppError extends Error {
+  constructor(statusCode, message) {
+    super(message);
+    this.statusCode = statusCode;
+    this.status = `${statusCode}`.startsWith('4') ? 'fail' : 'error';
+    this.isOperational = true;
+
+    Error.captureStackTrace(this, this.constructor);
+  }
+}
+
+module.exports = { AppError };
+```
+
+```javascript
+// middleware/errorMiddleware.js
+const errorHandler = (err, req, res, next) => {
+  err.statusCode = err.statusCode || 500;
+  err.status = err.status || 'error';
+
+  // Different error responses for development and production
+  if (process.env.NODE_ENV === 'development') {
+    res.status(err.statusCode).json({
+      status: err.status,
+      message: err.message,
+      stack: err.stack,
+      error: err
+    });
+  } else {
+    // Production: don't leak error details
+    if (err.isOperational) {
+      res.status(err.statusCode).json({
+        status: err.status,
+        message: err.message
+      });
+    } else {
+      // Programming or unknown errors
+      console.error('ERROR 💥', err);
+      res.status(500).json({
+        status: 'error',
+        message: 'Something went wrong'
+      });
+    }
+  }
+};
+
+module.exports = { errorHandler };
+```
+
+```javascript
+// Usage in app.js
+const { errorHandler } = require('./middleware/errorMiddleware');
+const { AppError } = require('./utils/errorHandler');
+
+// This route throws a custom error
+app.get('/api/error-demo', (req, res, next) => {
+  next(new AppError(404, 'Resource not found'));
+});
+
+// Error handling middleware (must be last)
+app.use(errorHandler);
+```
+
+
+
+## 🚀API Documentation
+```javascript
+const express = require('express');
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
+const app = express();
+
+// Swagger configuration
+const swaggerOptions = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'User API',
+      version: '1.0.0',
+      description: 'A simple Express User API'
+    },
+    servers: [
+      {
+        url: 'http://localhost:8080',
+        description: 'Development server'
+      }
+    ]
+  },
+  apis: ['./routes/*.js'] // Path to the API routes folders
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+/**
+* @swagger
+* /api/users:
+* get:
+* summary: Returns a list of users
+* description: Retrieve a list of all users
+* responses:
+* 200:
+* description: A list of users
+* content:
+* application/json:
+* schema:
+* type: array
+* items:
+* type: object
+* properties:
+* id:
+* type: integer
+* name:
+* type: string
+* email:
+* type: string
+*/
+app.get('/api/users', (req, res) => {
+  // Handler implementation
+});
+
+app.listen(8080);
+```
+
+
+## 🚀Testing APIs
+- Jest
+- Mocha
+- Supertest
+
+```javascript
+// tests/users.test.js
+const request = require('supertest');
+const app = require('../app');
+
+describe('User API', () => {
+  describe('GET /api/users', () => {
+    it('should return all users', async () => {
+      const res = await request(app).get('/api/users');
+      expect(res.statusCode).toBe(200);
+      expect(Array.isArray(res.body)).toBeTruthy();
+    });
+  });
+  describe('POST /api/users', () => {
+    it('should create a new user', async () => {
+      const userData = {
+        name: 'Test User',
+        email: 'test@example.com'
+      };
+      const res = await request(app)
+        .post('/api/users')
+        .send(userData);
+
+      expect(res.statusCode).toBe(201);
+      expect(res.body).toHaveProperty('id');
+      expect(res.body.name).toBe(userData.name);
+    });
+    it('should validate request data', async () => {
+      const invalidData = {
+        email: 'not-an-email'
+      };
+      const res = await request(app)
+        .post('/api/users')
+        .send(invalidData);
+
+      expect(res.statusCode).toBe(400);
+    });
+  });
+});
+
+```
+
+
+
+## 🚀API Versioning
+- URI Path Versioning: /api/v1/users
+- Query Parameter: /api/users?version=1
+- Custom Header: X-API-Version: 1
+- Accept Header: Accept: application/vnd.myapi.v1+json
+```
+const express = require('express');
+const app = express();
+
+// Version 1 routes
+const v1UserRoutes = require('./routes/v1/users');
+app.use('/api/v1/users', v1UserRoutes);
+
+// Version 2 routes with new features
+const v2UserRoutes = require('./routes/v2/users');
+app.use('/api/v2/users', v2UserRoutes);
+
+app.listen(8080);
+```
+
+
+
 
 
 
