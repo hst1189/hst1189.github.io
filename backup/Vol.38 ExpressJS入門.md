@@ -339,6 +339,36 @@ function errorHandle(err, req, res, next){ // 捕捉err
 
 ```
 
+### 🚀Example: Recommended Order
+```javascript
+
+// 1. Application-wide middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(helmet());
+app.use(cors());
+
+
+// 2. Route-specific middleware
+app.use('/api', authenticate);
+
+// 3. Routes
+app.use('/api/users', userRoutes);
+app.use('/api/products', productRoutes);
+
+// 4. 404 handler
+app.use((req, res) => {
+  res.status(404).json({ message: 'Not found' });
+});
+
+// 5. Error handler (always last)
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ message: 'Server error' });
+});
+```
+
 
 
 
