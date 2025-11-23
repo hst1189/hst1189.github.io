@@ -708,5 +708,25 @@ app.listen(port, () => {
 ```
 
 
+- app.js # Main application file
+- routes/ # Route definitions
+  - users.js
+  - products.js
+- controllers/ # Request handlers
+  - userController.js
+  - productController.js
+- models/ # Data models
+  - User.js
+  - Product.js
+- middleware/ # Custom middleware
+  - auth.js
+  - validation.js
+- config/ # Configuration files
+  - db.js
+  - env.js
+- utils/ # Utility functions
+  - errorHandler.js
+
+
 
 
