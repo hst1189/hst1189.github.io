@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 26 Nov 2025 11:09:30 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 26 Nov 2025 12:36:30 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
 
 `Gmeek-html&lt;img src='https://i.gyazo.com/d9294ea53005e7d0500899a46e6b2b50.png'&gt;`
 
@@ -383,6 +383,29 @@ const version = 20;
 
 // Array
 const colors = ['red', 'green', 'blue'];
+
+例：
+const obj = [
+    { name: 'apples', quantity: 2 },
+    { name: 'bananas', quantity: 0 },
+    { name: 'cherries', quantity: 5 },
+];
+const apples = obj.find(i =&gt; i.name === 'apples');   　//{ name: 'apples', quantity: 2 } 抽出
+const aaa = obj.filter(i =&gt; i.quantity &gt;= 2);  // [ { name: 'apples', quantity: 2 }, { name: 'cherries', quantity: 5 } ]  抽出
+obj.map(i =&gt; i.quantity=== 'apples');   　//改变原有obj 　
+
+push(element1, ..., elementN): 配列の末尾に要素を追加
+pop(): 配列の末尾から要素を削除し、その値を返す
+unshift(element1, ..., elementN): 配列の先頭に要素を追加
+shift(): 配列の先頭から要素を削除し、その値を返す
+
+find( ): callback条件を満たす配列内の**最初の要素**を返す、見つからない場合は undefined を返す
+filter( ):  callback条件を満たす配列内の**すべての要素**を返す、見つからない場合は 「」 を返す
+reduce(function (previous, current, index, array):  配列要素の隣同士を演算して要素の初めから終わりまで繰り返す
+map( ): 遍历数组，返り値あり
+forEach(): 遍历数组， 返り値なし
+
+
 
 // Object
 const user = {
