@@ -241,6 +241,23 @@ res.status(201).cookie('token', `${token}`, {
 .redirect(301, '/admin')
 
 ```
+
+
+Property | Type | Description
+-- | -- | --
+domain | String | cookie 的域名。默认为应用程序的域名。
+path | String | cookie 的路径。默认为“/”。
+expires | Date| cookie 的过期日期（GMT 时间）。如果未指定或设置为 0，则创建会话 cookie。
+maxAge | Number| 方便地设置相对于当前时间的过期时间（以毫秒为单位）。
+httpOnly | Boolean | 将此 cookie 标记为仅供 Web 服务器访问。
+secure | Boolean | 将此 cookie 标记为仅用于 HTTPS。
+signed | Boolean | 指示是否应该对 cookie 进行加密。
+encode | Function| 用于 cookie 值编码的同步函数。默认为encodeURIComponent.
+partitioned | Boolean | 表示该 Cookie 应使用分区存储。有关更多详细信息，请参阅“具有独立分区状态的 Cookie (CHIPS)” 。
+priority | String | “Priority” Set-Cookie属性的值。
+sameSite | Boolean or String | “SameSite” Set-Cookie属性的值。更多信息请访问https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00#section-4.1.1。
+
+
 > [!TIP]
 > LocalStorage、Cookieの差異
 > 
@@ -1103,3 +1120,15 @@ app.use('/api/v2/users', v2UserRoutes);
 app.listen(8080);
 ```
 
+财产	类型	描述
+domain	细绳	cookie 的域名。默认为应用程序的域名。
+encode	功能	用于 cookie 值编码的同步函数。默认为encodeURIComponent.
+expires	日期	cookie 的过期日期（GMT 时间）。如果未指定或设置为 0，则创建会话 cookie。
+httpOnly	布尔值	将此 cookie 标记为仅供 Web 服务器访问。
+maxAge	数字	方便地设置相对于当前时间的过期时间（以毫秒为单位）。
+path	细绳	cookie 的路径。默认为“/”。
+partitioned	布尔值	表示该 Cookie 应使用分区存储。有关更多详细信息，请参阅[“具有独立分区状态的 Cookie (CHIPS)” 。](https://developer.mozilla.org/en-US/docs/Web/Privacy/Partitioned_cookies)
+priority	细绳	“Priority” Set-Cookie属性的值。
+secure	布尔值	将此 cookie 标记为仅用于 HTTPS。
+signed	布尔值	指示是否应该对 cookie 进行签名。
+sameSite	布尔值或字符串	“SameSite” Set-Cookie属性的值。更多信息请访问https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00#section-4.1.1。
