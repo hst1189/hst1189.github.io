@@ -404,7 +404,6 @@ npm audit   // 检查脆弱性
 ```javascript
 
 npm install express            //ExpressJSフレームワーク
-npm install -g express-generator // 快速构建 ExpressJS项目
 
 npm install cors    // CORS
 
