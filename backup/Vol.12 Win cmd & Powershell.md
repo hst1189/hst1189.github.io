@@ -29,8 +29,8 @@ fonts　|字体
 ## 查看IP
 ```
 内网　ipconfig
-公网　curl ipinfo.io
-网络诊断　tracert www.google.com
+公网　curl ipinfo.io  or  curl https://ipinfo.io/目的ip
+网络诊断  tracert -w 3000 -h 30 目的ip   例：tracert -w 3000 -h 30 www.google.com
 ```
 
 ## WIFI密码
