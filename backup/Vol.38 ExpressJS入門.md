@@ -39,8 +39,10 @@ tsconfig.json     // 入力出力設定
     // File Layout
     "rootDir": "./src",
     "outDir": "./dist",
-npx tsc --watch    // 编译 .ts → .js
-// 自動编译：VS Code のメニューから [ターミナル] -> [タスクの実行...] を選択、「tsc: watch - tsconfig.json」を入力
+
+自動编译：
+①npx tsc --watch    // 编译 .ts → .js
+②VS Code のメニューから [ターミナル] -> [タスクの実行...] を選択、「tsc: watch - tsconfig.json」を入力
 
 ```
 
