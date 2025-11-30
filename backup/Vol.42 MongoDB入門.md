@@ -80,7 +80,7 @@ Commands |  備考
 ---|---
 db.users.getIndexes()                                     | 获得所有index
 db.users.createIndex({name:1})                      | 添加index         
-db.users.createIndex({name:1,home:-1})        | 添加 联合index         
+db.users.createIndex({name:1,home:-1})        | 添加 联合index         1:升序  -1:降序
 db.users.dropIndex("index_name")                | 删除index
 db.users.dropIndexes()                                   | 删除所有index
 db.users.totalIndexSize()                                | total size of all indexes of collection
