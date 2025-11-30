@@ -85,6 +85,12 @@ db.users.dropIndexes()                                   | 删除所有index
 db.users.totalIndexSize()                                | total size of all indexes of collection
 
 
+### ⚜️Aggregate
+Commands |  備考
+---|---
+das | sdasd
+
+
 
 
 # 🚀设计模式
