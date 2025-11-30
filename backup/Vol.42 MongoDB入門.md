@@ -118,9 +118,8 @@ skip  | $skip                            |   { $skip:3 }   //  跳过3件
 count | $count                       |  { $count:'count'}  //  显示件数
  ー |  $unwind                        |  将数组拆分为单独的文档
 
->🔹[!TIP]
-> group阶段的内存限制为100M。默认情况下超过此限制，group将产生错误。
-> 要允许处理大型数据集，请将allowDiskUse选项设置为true以启用$group操作以写入临时文件。
+> [!TIP]
+> 🔹group阶段的内存限制为100M。默认情况下超过此限制，group将产生错误。要允许处理大型数据集，请将allowDiskUse选项设置为true以启用$group操作以写入临时文件。
 
 
 ### ⚜️accumulator操作符
