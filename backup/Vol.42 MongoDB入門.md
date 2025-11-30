@@ -19,7 +19,7 @@ show profile | Print the five most recent operations that took 1 millisecond or 
 Commands | 備考
 ---|---
 db.users.insert({ name: “Kyle” }) | 插入单条
-db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  要以数组形式　
+db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  插入多条，要以数组形式　
 
 ## ⚜️Read
 Commands |  備考
