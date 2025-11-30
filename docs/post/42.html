@@ -86,7 +86,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 07:59</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 08:13</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -271,7 +271,15 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </thead>
 <tbody>
 <tr>
-<td>db.users.updateOne({ age: 20 }, { $set: { age: 21 } })</td>
+<td>db.users.update({ age: 20 }, { $set: { age: 21 } })</td>
+<td></td>
+</tr>
+<tr>
+<td>db.users.update({ age: 12 }, { $set: { name: “Hi” } })</td>
+<td></td>
+</tr>
+<tr>
+<td>db.users.updateO({ age: 12 }, { $unset: { age: “” } })</td>
 <td></td>
 </tr>
 <tr>
@@ -311,19 +319,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <th>備考</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>db.users.updateOne({ age: 12 }, { $set: { name: “Hi” } })</td>
-<td></td>
-</tr>
-<tr>
-<td>db.users.updateOne({ age: 12 }, { $unset: { age: “” } })</td>
-<td></td>
-</tr>
-</tbody>
 </table></markdown-accessiblity-table>
-<p>db.users.updateOne({ age: 12 }, { $inc: { age: 2 } })</p>
-<p>db.scores.insertOne( { _id: 1,highScore: 800, lowScore: 200 } )<br>
+<p>db.users.updateOne({ age: 12 }, { $inc: { age: 2 } })<br>
 db.scores.updateOne( { _id: 1 }, {$min: { lowScore: 150 } } )<br>
 db.scores.updateOne( { _id: 1 }, {$max: { highScore: 1000 } } )</p>
 <p>db.users.updateMany({}, { $rename: { age: “years” } })</p>

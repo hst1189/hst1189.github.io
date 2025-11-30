@@ -54,9 +54,11 @@ db.users.find().sort({ name: 1, age: -1 })                 | 排序，order by n
 ### ⚜️Update
 Commands |  備考
 ---|---
-db.users.updateOne({ age: 20 }, { $set: { age: 21 } })
-db.users.updateMany({ age: 12 }, { $inc: { age: 3 } })
-db.users.replaceOne({ age: 12 }, { age: 13 })
+db.users.update({ age: 20 }, { $set: { age: 21 } })         |
+db.users.update({ age: 12 }, { $set: { name: “Hi” } })    | 
+db.users.updateO({ age: 12 }, { $unset: { age: “” } })   |
+db.users.updateMany({ age: 12 }, { $inc: { age: 3 } })  |
+db.users.replaceOne({ age: 12 }, { age: 13 })               |
 
 
 ### ⚜️Delete
@@ -69,12 +71,8 @@ db.users.deleteMany({ age: 12 })
 ### ⚜️Complex Update Object
 Commands |  備考
 ---|---
-db.users.updateOne({ age: 12 }, { $set: { name: “Hi” } })
-db.users.updateOne({ age: 12 }, { $unset: { age: “” } })
 
 db.users.updateOne({ age: 12 }, { $inc: { age: 2 } })
-
-db.scores.insertOne( { _id: 1,highScore: 800, lowScore: 200 } )
 db.scores.updateOne( { _id: 1 }, {$min: { lowScore: 150 } } )
 db.scores.updateOne( { _id: 1 }, {$max: { highScore: 1000 } } )
 
