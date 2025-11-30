@@ -86,6 +86,19 @@ db.users.totalIndexSize()                                | total size of all ind
 ### ⚜️Aggregate
 `Gmeek-html<img src="https://images2018.cnblogs.com/blog/476931/201806/476931-20180619212647050-925796422.png">`
 
+SQL 操作/函数 | mongodb聚合操作|凡例
+-- | --| --
+select | **$project**               |  { $project:{_id: 0 ,cust_id:1,status:1,amount:1} }  //1:显示字段  0: 不显示字段
+join | **$lookup**                   |  
+where/having | **$match**    |  { $match:{amount:{$gte:50}} }
+group by | **$group**  🔹    |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
+order by | $sort                      |  { $sort:{_id:1} }    // 1:升序  -1:降序
+limit | $limit                            |  { $limit:1 }   //  仅显示1件
+skip  | $skip                            |   { $skip:3 }   //  跳过3件
+count | $count                       |  { $count:'count'}  //  显示件数
+ ー |  $unwind                        |  将数组拆分为单独的文档
+
+
 事例：
 ```javascript
 
@@ -106,17 +119,6 @@ db.orders.aggregate([
    {$group: { _id: null, total: { $sum: "$price" }}}　//全表价格总和
 ])
 ```
-SQL 操作/函数 | mongodb聚合操作|凡例
--- | --| --
-select | **$project**               |  { $project:{_id: 0 ,cust_id:1,status:1,amount:1} }  //1:显示字段  0: 不显示字段
-join | **$lookup**                   |  
-where/having | **$match**    |  { $match:{amount:{$gte:50}} }
-group by | **$group**  🔹    |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
-order by | $sort                      |  { $sort:{_id:1} }    // 1:升序  -1:降序
-limit | $limit                            |  { $limit:1 }   //  仅显示1件
-skip  | $skip                            |   { $skip:3 }   //  跳过3件
-count | $count                       |  { $count:'count'}  //  显示件数
- ー |  $unwind                        |  将数组拆分为单独的文档
 
 > [!TIP]
 > 🔹group阶段的内存限制为100M。默认情况下超过此限制，group将产生错误。要允许处理大型数据集，请将allowDiskUse选项设置为true以启用$group操作以写入临时文件。
