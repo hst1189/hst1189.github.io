@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 12:49</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 12:51</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -427,6 +427,13 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
+<pre class="notranslate"><code class="notranslate">db.users.aggregate([
+  {$match:{access:"valid"}},
+  {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
+  {$sort:{total:-1}}
+])
+</code></pre>
+<h3>⚜️accumulator操作符</h3>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
@@ -488,12 +495,6 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<pre class="notranslate"><code class="notranslate">db.users.aggregate([
-  {$match:{access:"valid"}},
-  {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
-  {$sort:{total:-1}}
-])
-</code></pre>
 <h1>🚀设计模式</h1>
 <p><a href="https://www.mongodb.com/zh-cn/docs/manual/data-modeling/" rel="nofollow">https://www.mongodb.com/zh-cn/docs/manual/data-modeling/</a></p>
 <h1>🚀mongoose</h1>

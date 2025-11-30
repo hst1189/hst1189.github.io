@@ -96,7 +96,16 @@ order by | $sort                      |  { $sort:{_id:1} }
 limit | $limit                            |  { $limit:1 }
 sum()/count() | $sum             |
 
+```
+db.users.aggregate([
+  {$match:{access:"valid"}},
+  {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
+  {$sort:{total:-1}}
+])
+```
 
+
+### ⚜️accumulator操作符
 名称 | 描述 | 类比sql
 -- | -- | --
 $avg | 计算均值 | avg
@@ -110,13 +119,6 @@ $sum | 计算总和 | sum
 $stdDevPop | 返回输入值的总体标准偏差（population standard deviation） | -
 $stdDevSamp | 返回输入值的样本标准偏差（the sample standard deviation） | -
 
-```
-db.users.aggregate([
-  {$match:{access:"valid"}},
-  {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
-  {$sort:{total:-1}}
-])
-```
 
 
 
