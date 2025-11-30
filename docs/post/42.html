@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 12:51</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 12:55</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -293,14 +293,6 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <td>第一条、年龄12的数据， 清空年龄</td>
 </tr>
 <tr>
-<td>db.scores.update( { _id: 1 }, {$min: { lowScore: 150 }})</td>
-<td>第一条、compares, if less than 200, will update lowScore to 150</td>
-</tr>
-<tr>
-<td>db.scores.update( { _id: 1 }, {$max: { highScore: 1000 }})</td>
-<td>第一条、compares,if more than 800,will update highScore to 1000</td>
-</tr>
-<tr>
 <td>db.users.updateMany({}, { $set: { school: "new collage" }})</td>
 <td>★所有数据，添加新项目{ school: "new collage" }</td>
 </tr>
@@ -337,11 +329,11 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <tbody>
 <tr>
 <td>db.users.deleteOne({ age: 20 })</td>
-<td></td>
+<td>删除第一条 年龄20的数据</td>
 </tr>
 <tr>
 <td>db.users.deleteMany({ age: 12 })</td>
-<td></td>
+<td>删除所有 年龄12的数据</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
@@ -443,6 +435,11 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>$sum</td>
+<td>合计值</td>
+<td>sum</td>
+</tr>
 <tr>
 <td>$avg</td>
 <td>计算均值</td>

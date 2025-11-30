@@ -57,8 +57,6 @@ Commands |  備考
 db.users.update({age:16},{$set:{age:20}})  |  第一条、年龄20的数据，更新为 21，注意要写 set，不写set的话，整条数据将被替换 
 db.users.update({ age: 12 }, { $set: { name: "Hi" }})              | 第一条、年龄12的数据，name更新为 Hi 
 db.users.update({ age: 12 }, { $unset: { age: "" }})                | 第一条、年龄12的数据， 清空年龄 
-db.scores.update( { _id: 1 }, {$min: { lowScore: 150 }})        | 第一条、compares, if less than 200, will update lowScore to 150
-db.scores.update( { _id: 1 }, {$max: { highScore: 1000 }})    | 第一条、compares,if more than 800,will update highScore to 1000
 db.users.updateMany({}, { $set: { school: "new collage" }}) | ★所有数据，添加新项目{ school: "new collage" }
 db.users.updateMany({}, { $unset: { school: "" }})　            | ★所有数据，删除项目{ school: "new collage" }
 db.users.updateMany({}, { $push: { friends: "John" }})         | ★所有数据，添加一个数组{ friends: “John” }
@@ -70,8 +68,8 @@ db.users.updateMany({ age: 12 }, { $inc: { age: 2 }})           | 所有数据�
 ### ⚜️Delete
 Commands |  備考
 ---|---
-db.users.deleteOne({ age: 20 })                   |
-db.users.deleteMany({ age: 12 })                 |
+db.users.deleteOne({ age: 20 })                   | 删除第一条 年龄20的数据
+db.users.deleteMany({ age: 12 })                 | 删除所有 年龄12的数据
 
 
 ### ⚜️Index
@@ -108,6 +106,7 @@ db.users.aggregate([
 ### ⚜️accumulator操作符
 名称 | 描述 | 类比sql
 -- | -- | --
+$sum | 合计值 | sum
 $avg | 计算均值 | avg
 $first | 返回每组第一个文档，如果有排序，按照排序，如果没有按照默认的存储的顺序的第一个文档。 | limit 0,1
 $last | 返回每组最后一个文档，如果有排序，按照排序，如果没有按照默认的存储的顺序的最后个文档。 | -
