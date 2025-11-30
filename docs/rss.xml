@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 30 Nov 2025 06:58:23 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 30 Nov 2025 07:01:00 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
 https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet
 
 # 🚀MongoDB CRUD 操作
@@ -7,13 +7,13 @@ https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-she
 Commands |  凡例
 ---|---
 mongosh | mongosh 'mongodb+srv://cluster0.t34zxhe.mongodb.net/' --apiVersion 1 --username dnUser
-show dbs  |  list of all databases on the server.
-use \&lt;dbname\&gt;  | Switch current database to &lt;db&gt;. 
-db | Show current database name
-show collections |  list of all collections for the current database.
-show users | list of users for the current database.
-show roles |  list of all roles, both user-defined and built-in, for the current database.
-show profile | Print the five most recent operations that took 1 millisecond or more on databases with profiling enabled.
+show dbs  |  显示全部DB
+use \&lt;dbname\&gt;  | 切换DB 
+db | 显示现在所在DB
+show collections |  显示当前DB里全部collections 
+show users | 显示当前DB里全部users
+show roles |  显示当前DB里全部角色
+show profile | 显示profile
 
 
 ## ⚜️Create
