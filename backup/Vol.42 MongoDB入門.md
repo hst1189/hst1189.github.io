@@ -54,7 +54,24 @@ db.users.find({ name: { $exists: true } })                      | exist
 db.users.find({ $expr: { $gt: [“$balance”, “$debt”] } })  | expr
 
 
-## /⚜️Complex Update Object
+## ⚜️Update
+Commands |  備考
+---|---
+db.users.updateOne({ age: 20 }, { $set: { age: 21 } })
+db.users.updateMany({ age: 12 }, { $inc: { age: 3 } })
+db.users.replaceOne({ age: 12 }, { age: 13 })
+
+
+## ⚜️Delete
+Commands |  備考
+---|---
+db.users.deleteOne({ age: 20 })
+db.users.deleteMany({ age: 12 })
+
+
+## ⚜️Complex Update Object
+Commands |  備考
+---|---
 db.users.updateOne({ age: 12 }, { $set: { name: “Hi” } })
 db.users.updateOne({ age: 12 }, { $unset: { age: “” } })
 
@@ -65,6 +82,7 @@ db.scores.updateOne( { _id: 1 }, {$min: { lowScore: 150 } } )
 db.scores.updateOne( { _id: 1 }, {$max: { highScore: 1000 } } )
 
 db.users.updateMany({}, { $rename: { age: “years” } })
+
 db.users.updateMany({}, { $push: { friends: “John” } })
 db.users.updateMany({}, { $pull: { friends: “Mike” } })
 
