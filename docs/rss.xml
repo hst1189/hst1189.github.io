@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 30 Nov 2025 08:13:47 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 30 Nov 2025 08:27:09 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
 https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet
 
 # 🚀MongoDB CRUD 操作
@@ -55,11 +55,17 @@ db.users.find().sort({ name: 1, age: -1 })                 | 排序，order by n
 ### ⚜️Update
 Commands |  備考
 ---|---
-db.users.update({ age: 20 }, { $set: { age: 21 } })         |
-db.users.update({ age: 12 }, { $set: { name: “Hi” } })    | 
-db.users.updateO({ age: 12 }, { $unset: { age: “” } })   |
-db.users.updateMany({ age: 12 }, { $inc: { age: 3 } })  |
-db.users.replaceOne({ age: 12 }, { age: 13 })               |
+db.users.update({ age: 20 }, { $set: { age: 21 } })               |  注意要写 set，
+db.users.update({ age: 12 }, { $set: { name: “Hi” } })          | 不写set的话，整条数据将被替换
+db.users.update({ age: 12 }, { $unset: { age: “” } })             |
+db.users.update({ age: 12 }, { $inc: { age: 2 } })                  |
+db.users.updateMany({ age: 12 }, { $inc: { age: 3 } })          |
+db.scores.update( { _id: 1 }, {$min: { lowScore: 150 } } )     |
+db.scores.update( { _id: 1 }, {$max: { highScore: 1000 } } ) |
+db.users.updateMany({}, { $rename: { age: 12 } })              |
+db.users.updateMany({}, { $push: { friends: “John” } })       | 添加一条到最后
+db.users.updateMany({}, { $pull: { friends: “Mike” } })         | 
+db.users.replace({ age: 12 }, { age: 13 })                             |
 
 
 ### ⚜️Delete
@@ -67,24 +73,6 @@ Commands |  備考
 ---|---
 db.users.deleteOne({ age: 20 })
 db.users.deleteMany({ age: 12 })
-
-
-### ⚜️Complex Update Object
-Commands |  備考
----|---
-
-db.users.updateOne({ age: 12 }, { $inc: { age: 2 } })
-db.scores.updateOne( { _id: 1 }, {$min: { lowScore: 150 } } )
-db.scores.updateOne( { _id: 1 }, {$max: { highScore: 1000 } } )
-
-db.users.updateMany({}, { $rename: { age: “years” } })
-
-db.users.updateMany({}, { $push: { friends: “John” } })
-db.users.updateMany({}, { $pull: { friends: “Mike” } })
-
-
-
-
 
 
 

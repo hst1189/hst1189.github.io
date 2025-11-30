@@ -54,11 +54,17 @@ db.users.find().sort({ name: 1, age: -1 })                 | 排序，order by n
 ### ⚜️Update
 Commands |  備考
 ---|---
-db.users.update({ age: 20 }, { $set: { age: 21 } })         |
-db.users.update({ age: 12 }, { $set: { name: “Hi” } })    | 
-db.users.updateO({ age: 12 }, { $unset: { age: “” } })   |
-db.users.updateMany({ age: 12 }, { $inc: { age: 3 } })  |
-db.users.replaceOne({ age: 12 }, { age: 13 })               |
+db.users.update({ age: 20 }, { $set: { age: 21 } })               |  注意要写 set，
+db.users.update({ age: 12 }, { $set: { name: “Hi” } })          | 不写set的话，整条数据将被替换
+db.users.update({ age: 12 }, { $unset: { age: “” } })             |
+db.users.update({ age: 12 }, { $inc: { age: 2 } })                  |
+db.users.updateMany({ age: 12 }, { $inc: { age: 3 } })          |
+db.scores.update( { _id: 1 }, {$min: { lowScore: 150 } } )     |
+db.scores.update( { _id: 1 }, {$max: { highScore: 1000 } } ) |
+db.users.updateMany({}, { $rename: { age: 12 } })              |
+db.users.updateMany({}, { $push: { friends: “John” } })       | 添加一条到最后
+db.users.updateMany({}, { $pull: { friends: “Mike” } })         | 
+db.users.replace({ age: 12 }, { age: 13 })                             |
 
 
 ### ⚜️Delete
@@ -66,24 +72,6 @@ Commands |  備考
 ---|---
 db.users.deleteOne({ age: 20 })
 db.users.deleteMany({ age: 12 })
-
-
-### ⚜️Complex Update Object
-Commands |  備考
----|---
-
-db.users.updateOne({ age: 12 }, { $inc: { age: 2 } })
-db.scores.updateOne( { _id: 1 }, {$min: { lowScore: 150 } } )
-db.scores.updateOne( { _id: 1 }, {$max: { highScore: 1000 } } )
-
-db.users.updateMany({}, { $rename: { age: “years” } })
-
-db.users.updateMany({}, { $push: { friends: “John” } })
-db.users.updateMany({}, { $pull: { friends: “Mike” } })
-
-
-
-
 
 
 

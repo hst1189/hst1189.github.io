@@ -86,7 +86,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 08:13</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 08:26</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -272,14 +272,18 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <tbody>
 <tr>
 <td>db.users.update({ age: 20 }, { $set: { age: 21 } })</td>
-<td></td>
+<td>注意要写 set，</td>
 </tr>
 <tr>
 <td>db.users.update({ age: 12 }, { $set: { name: “Hi” } })</td>
+<td>不写set的话，整条数据将被替换</td>
+</tr>
+<tr>
+<td>db.users.update({ age: 12 }, { $unset: { age: “” } })</td>
 <td></td>
 </tr>
 <tr>
-<td>db.users.updateO({ age: 12 }, { $unset: { age: “” } })</td>
+<td>db.users.update({ age: 12 }, { $inc: { age: 2 } })</td>
 <td></td>
 </tr>
 <tr>
@@ -287,7 +291,27 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <td></td>
 </tr>
 <tr>
-<td>db.users.replaceOne({ age: 12 }, { age: 13 })</td>
+<td>db.scores.update( { _id: 1 }, {$min: { lowScore: 150 } } )</td>
+<td></td>
+</tr>
+<tr>
+<td>db.scores.update( { _id: 1 }, {$max: { highScore: 1000 } } )</td>
+<td></td>
+</tr>
+<tr>
+<td>db.users.updateMany({}, { $rename: { age: 12 } })</td>
+<td></td>
+</tr>
+<tr>
+<td>db.users.updateMany({}, { $push: { friends: “John” } })</td>
+<td>添加一条到最后</td>
+</tr>
+<tr>
+<td>db.users.updateMany({}, { $pull: { friends: “Mike” } })</td>
+<td></td>
+</tr>
+<tr>
+<td>db.users.replace({ age: 12 }, { age: 13 })</td>
 <td></td>
 </tr>
 </tbody>
@@ -311,21 +335,6 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<h3>⚜️Complex Update Object</h3>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>Commands</th>
-<th>備考</th>
-</tr>
-</thead>
-</table></markdown-accessiblity-table>
-<p>db.users.updateOne({ age: 12 }, { $inc: { age: 2 } })<br>
-db.scores.updateOne( { _id: 1 }, {$min: { lowScore: 150 } } )<br>
-db.scores.updateOne( { _id: 1 }, {$max: { highScore: 1000 } } )</p>
-<p>db.users.updateMany({}, { $rename: { age: “years” } })</p>
-<p>db.users.updateMany({}, { $push: { friends: “John” } })<br>
-db.users.updateMany({}, { $pull: { friends: “Mike” } })</p>
 <h1>🚀设计模式</h1>
 <p><a href="https://www.mongodb.com/zh-cn/docs/manual/data-modeling/" rel="nofollow">https://www.mongodb.com/zh-cn/docs/manual/data-modeling/</a></p>
 <h1>🚀mongoose</h1>
