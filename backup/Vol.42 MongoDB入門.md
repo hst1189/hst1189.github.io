@@ -86,15 +86,15 @@ db.users.totalIndexSize()                                | total size of all ind
 
 
 ### ⚜️Aggregate
-SQL 操作/函数 | mongodb聚合操作
--- | --
-select | **$project**
-join | **$lookup** 
-where/having | **$match**
-group by | **$group**
-order by | $sort
-limit | $limit
-sum()/count() | $sum
+SQL 操作/函数 | mongodb聚合操作|凡例
+-- | --| --
+select | **$project**               |  db.orders.aggregate( [ {$project:{cust_id:1,status:1,amount:1}} ] )
+join | **$lookup**                   |
+where/having | **$match**    |
+group by | **$group**           |
+order by | $sort                      |
+limit | $limit                            |
+sum()/count() | $sum             |
 
 
 ```

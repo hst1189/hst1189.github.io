@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 11:30</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 12:06</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -386,36 +386,44 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <tr>
 <th>SQL 操作/函数</th>
 <th>mongodb聚合操作</th>
+<th>凡例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>select</td>
 <td><strong>$project</strong></td>
+<td>db.orders.aggregate( [ {$project:{cust_id:1,status:1,amount:1}} ] )</td>
 </tr>
 <tr>
 <td>join</td>
 <td><strong>$lookup</strong> </td>
+<td></td>
 </tr>
 <tr>
 <td>where/having</td>
 <td><strong>$match</strong></td>
+<td></td>
 </tr>
 <tr>
 <td>group by</td>
 <td><strong>$group</strong></td>
+<td></td>
 </tr>
 <tr>
 <td>order by</td>
 <td>$sort</td>
+<td></td>
 </tr>
 <tr>
 <td>limit</td>
 <td>$limit</td>
+<td></td>
 </tr>
 <tr>
 <td>sum()/count()</td>
 <td>$sum</td>
+<td></td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
