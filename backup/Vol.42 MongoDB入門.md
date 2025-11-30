@@ -59,13 +59,13 @@ db.users.update({ age: 12 }, { $set: { name: “Hi” } })          | 不写set�
 db.users.update({ age: 12 }, { $unset: { age: “” } })             |
 db.users.update({ age: 12 }, { $inc: { age: 2 } })                  |
 db.users.updateMany({ age: 12 }, { $inc: { age: 3 } })          |
-db.scores.update( { _id: 1 }, {$min: { lowScore: 150 } } )     |
-db.scores.update( { _id: 1 }, {$max: { highScore: 1000 } } ) |
-db.users.updateMany({}, { $rename: { age: 12 } })              |
+db.scores.update( { _id: 1 }, {$min: { lowScore: 150 } } )     | compares, if less than 200, will update lowScore to 150
+db.scores.update( { _id: 1 }, {$max: { highScore: 1000 } } ) | compares,if more than 800,will update highScore to 1000
+
 db.users.updateMany({}, { $push: { friends: “John” } })       | 添加一条到最后
 db.users.updateMany({}, { $pull: { friends: “Mike” } })         | 
 db.users.replace({ age: 12 }, { age: 13 })                             |
-
+db.scores.update({$rename:{'highScore':'high'})              |  ★項目名所変更, Renames the field ‘highScores’ to ‘high’
 
 ### ⚜️Delete
 Commands |  備考
