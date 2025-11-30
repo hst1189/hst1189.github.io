@@ -113,8 +113,9 @@ join | **$lookup**                   |
 where/having | **$match**    |  { $match:{amount:{$gte:50}} }
 group by | **$group**           |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
 order by | $sort                      |  { $sort:{_id:1} }    // 1:升序  -1:降序
-limit | $limit                            |  { $limit:1 }   //  显示件数
-skip  | $skip                            |   { $skip:3 }   //  跳过件数
+limit | $limit                            |  { $limit:1 }   //  仅显示1件
+skip  | $skip                            |   { $skip:3 }   //  跳过3件
+count | $count                       |  { $count:'count'}  //  显示件数
 -  $unwind                             |  将数组拆分为单独的文档
 
 
