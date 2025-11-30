@@ -45,7 +45,6 @@ db.users.find({ name: { $exists: true } })                      | exist
 db.users.find({ $expr: { $gt: [“$balance”, “$debt”] } })  | expr
 db.users.find({ name: “Kyle” }, { name: 1, age: 1 })  |  获取{ name: “Kyle” }的数据，但只返回  name, age 2个项目
 db.users.find({}, { age: 0 })                                      | 获取全部数据，但只返回  除 age 以外的项目
-db.users.findOne()                                                 | 获取第1条
 db.users.find().limit(1)                                            | 获取第1条
 db.users.find().skip(4)                                             | 跳过4条后，获取剩下全部数据
 db.users.find().skip(2).limit(3)                                 | 跳过2条后，获取3条
