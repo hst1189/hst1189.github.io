@@ -26,11 +26,13 @@ db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  �
 Commands |  備考
 ---|---
 db.users.find()                                                        | 获取全部数据
-db.users.find({ name: “Kyle” })                                | 获取{ name: “Kyle” }的数据
 db.users.find({ “address.street”: “123 Main St” })   | 获取{ “address.street”: “123 Main St” }的数据
-db.users.find({ name: { $eq: “Kyle” } })                        | 等于，获取{ name: “Kyle” }的数据
-db.users.find({ name: { $ne: “Kyle” } })                        | 不等于，获取{ name: “Kyle” }以外的数据
-db.users.find({ name: { $not: { $eq: “Kyle” } } })          | not，获取{ name: “Kyle” }以外的数据
+db.users.find({ name: “Kyle” })                                | 获取{ name: “Kyle” }的数据
+db.users.find({ name: /Kyle/ })                                | 获取包含“Kyle” 的数据
+db.users.find({ name: /^Kyle/ })                                | 获取“Kyle”开头 的数据
+db.users.find({ name: { $eq: “Kyle” } })                        | =，获取{ name: “Kyle” }的数据
+db.users.find({ name: { $ne: “Kyle” } })                        | <>，获取{ name: “Kyle” }以外的数据
+db.users.find({ name: { $not: { $eq: “Kyle” } } })          | not =，获取{ name: “Kyle” }以外的数据
 db.users.find({ age: { $gt: 12 } })                                 | >
 db.users.find({ age: { $gte: 15 } })                               | >=
 db.users.find({ age: { $lt: 12 } })                                  | <

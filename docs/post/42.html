@@ -86,7 +86,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 07:27</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 07:54</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -168,24 +168,32 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <td>获取全部数据</td>
 </tr>
 <tr>
-<td>db.users.find({ name: “Kyle” })</td>
-<td>获取{ name: “Kyle” }的数据</td>
-</tr>
-<tr>
 <td>db.users.find({ “address.street”: “123 Main St” })</td>
 <td>获取{ “address.street”: “123 Main St” }的数据</td>
 </tr>
 <tr>
+<td>db.users.find({ name: “Kyle” })</td>
+<td>获取{ name: “Kyle” }的数据</td>
+</tr>
+<tr>
+<td>db.users.find({ name: /Kyle/ })</td>
+<td>获取包含“Kyle” 的数据</td>
+</tr>
+<tr>
+<td>db.users.find({ name: /^Kyle/ })</td>
+<td>获取“Kyle”开头 的数据</td>
+</tr>
+<tr>
 <td>db.users.find({ name: { $eq: “Kyle” } })</td>
-<td>等于，获取{ name: “Kyle” }的数据</td>
+<td>=，获取{ name: “Kyle” }的数据</td>
 </tr>
 <tr>
 <td>db.users.find({ name: { $ne: “Kyle” } })</td>
-<td>不等于，获取{ name: “Kyle” }以外的数据</td>
+<td>&lt;&gt;，获取{ name: “Kyle” }以外的数据</td>
 </tr>
 <tr>
 <td>db.users.find({ name: { $not: { $eq: “Kyle” } } })</td>
-<td>not，获取{ name: “Kyle” }以外的数据</td>
+<td>not =，获取{ name: “Kyle” }以外的数据</td>
 </tr>
 <tr>
 <td>db.users.find({ age: { $gt: 12 } })</td>
