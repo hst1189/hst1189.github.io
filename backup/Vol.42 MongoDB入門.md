@@ -21,6 +21,7 @@ Commands | 備考
 db.users.insert({ name: “Kyle” }) | 插入单条
 db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  插入多条，要以数组形式　
 
+
 ### ⚜️Read
 Commands |  備考
 ---|---
@@ -47,12 +48,6 @@ db.users.find().limit(1)                                            | 获取第1
 db.users.find().skip(4)                                             | 跳过4条后，获取剩下全部数据
 db.users.find().skip(2).limit(3)                                 | 跳过2条后，获取3条
 db.users.find().sort({ name: 1, age: -1 })                 | 排序，order by name acs , age desc
-
-
-### ⚜️Complex Filter Object
-Commands |  備考
----|---
-
 
 
 ### ⚜️Update
