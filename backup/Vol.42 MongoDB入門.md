@@ -90,7 +90,7 @@ db.users.aggregate([
   {$project:{cust_id:1,status:1,amount:1} },
   {$match:{access:"valid"}},
   {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
-  {$sort:{total:-1}}
+  {$sort:{total:-1}}            // 1:升序  -1:降序
 ])
 ```
 SQL 操作/函数 | mongodb聚合操作|凡例
