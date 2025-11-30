@@ -68,9 +68,18 @@ db.scores.update({$rename:{'highScore':'high'})              |  ★項目名所�
 ### ⚜️Delete
 Commands |  備考
 ---|---
-db.users.deleteOne({ age: 20 })
-db.users.deleteMany({ age: 12 })
+db.users.deleteOne({ age: 20 })                   |
+db.users.deleteMany({ age: 12 })                 |
 
+
+### ⚜️Index
+db.users.getIndexes()                                     | 获得所有index
+db.users.createIndex({"name":1})                   | 添加index         
+db.users.createIndex({"name":1, "age":-1})    | 添加 联合index         
+db.users.dropIndex({"name"})                        | 删除index
+db.users.dropIndexes({"name"},{"age"})         | 删除多个index
+db.users.dropIndexes()                                   | 删除所有index
+db.users.totalIndexSize()                                | total size of all indexes of collection
 
 
 
