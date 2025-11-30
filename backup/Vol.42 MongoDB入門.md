@@ -88,6 +88,9 @@ db.users.totalIndexSize()                                | total size of all ind
 
 事例：
 ```javascript
+
+db.collection.aggregate([])　不会报错，且会和find一样返回所有文档
+
 db.users.aggregate([
   {$project:{cust_id:1,status:1,amount:1} },
   {$match:{access:"valid"}},

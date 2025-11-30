@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 13:35</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 13:49</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -375,7 +375,9 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <h3>⚜️Aggregate</h3>
 <p><img src="https://images2018.cnblogs.com/blog/476931/201806/476931-20180619212647050-925796422.png"></p>
 <p>事例：</p>
-<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-c1">users</span><span class="pl-kos">.</span><span class="pl-en">aggregate</span><span class="pl-kos">(</span><span class="pl-kos">[</span>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-c1">collection</span><span class="pl-kos">.</span><span class="pl-en">aggregate</span><span class="pl-kos">(</span><span class="pl-kos">[</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos"></span>　<span class="pl-s1">不会报错，且会和find一样返回所有文档</span>
+
+<span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-c1">users</span><span class="pl-kos">.</span><span class="pl-en">aggregate</span><span class="pl-kos">(</span><span class="pl-kos">[</span>
   <span class="pl-kos">{</span><span class="pl-c1">$project</span>:<span class="pl-kos">{</span><span class="pl-c1">cust_id</span>:<span class="pl-c1">1</span><span class="pl-kos">,</span><span class="pl-c1">status</span>:<span class="pl-c1">1</span><span class="pl-kos">,</span><span class="pl-c1">amount</span>:<span class="pl-c1">1</span><span class="pl-kos">}</span> <span class="pl-kos">}</span><span class="pl-kos">,</span>
   <span class="pl-kos">{</span><span class="pl-c1">$match</span>:<span class="pl-kos">{</span><span class="pl-c1">access</span>:<span class="pl-s">"valid"</span><span class="pl-kos">}</span><span class="pl-kos">}</span><span class="pl-kos">,</span>
   <span class="pl-kos">{</span><span class="pl-c1">$group</span>:<span class="pl-kos">{</span><span class="pl-c1">_id</span>:<span class="pl-s">"$cust_id"</span><span class="pl-kos">,</span><span class="pl-c1">total</span>:<span class="pl-kos">{</span><span class="pl-c1">$sum</span>:<span class="pl-s">"$amount"</span><span class="pl-kos">}</span><span class="pl-kos">}</span><span class="pl-kos">}</span><span class="pl-kos">,</span>
