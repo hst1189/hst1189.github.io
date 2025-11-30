@@ -86,11 +86,74 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 06:06</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 06:23</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
-<section class="markdown-body spoiler" id="postBody"></section>
+<section class="markdown-body spoiler" id="postBody"><p>cheatsheet<br>
+<a href="https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet" rel="nofollow">https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet</a></p>
+<h1>MongoDB CRUD 操作</h1>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Commands</th>
+<th>凡例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mongosh</td>
+<td>mongosh "mongodb+srv://cluster0.t34zxhe.mongodb.net/" --apiVersion 1 --username dnUser</td>
+</tr>
+<tr>
+<td>show dbs</td>
+<td>list of all databases on the server.</td>
+</tr>
+<tr>
+<td>use &lt;dbname&gt;</td>
+<td>Switch current database to .</td>
+</tr>
+<tr>
+<td>db</td>
+<td>Show current database name</td>
+</tr>
+<tr>
+<td>show collections</td>
+<td>list of all collections for the current database.</td>
+</tr>
+<tr>
+<td>show users</td>
+<td>list of users for the current database.</td>
+</tr>
+<tr>
+<td>show roles</td>
+<td>list of all roles, both user-defined and built-in, for the current database.</td>
+</tr>
+<tr>
+<td>show profile</td>
+<td>Print the five most recent operations that took 1 millisecond or more on databases with profiling enabled.</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>Create</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Commands</th>
+<th>凡例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>insertOne</td>
+<td>db.users.insertOne({ name: “Kyle” })</td>
+</tr>
+<tr>
+<td>insertMany</td>
+<td>db.users.insertMany([{ age: 26 }, { age: 20 }])</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
 
