@@ -86,7 +86,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 06:25</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 06:41</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -154,6 +154,57 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <td>insertMany</td>
 <td>db.users.insertMany([{ age: 26 }, { age: 20 }])</td>
 <td>insertMany( [ {},{},{} ] )  要以数组形式　</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>Read</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Commands</th>
+<th>凡例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>db.users.find()</td>
+<td>获取全部数据</td>
+</tr>
+<tr>
+<td>db.users.find({ name: “Kyle” })</td>
+<td>获取{ name: “Kyle” }的数据</td>
+</tr>
+<tr>
+<td>db.users.find({ “address.street”: “123 Main St” })</td>
+<td>获取{ “address.street”: “123 Main St” }的数据</td>
+</tr>
+<tr>
+<td>db.users.find({ name: “Kyle” }, { name: 1, age: 1 })</td>
+<td>获取{ name: “Kyle” }的数据，但只返回  name, age 2个项目</td>
+</tr>
+<tr>
+<td>db.users.find({}, { age: 0 })</td>
+<td>获取全部数据，但只返回  除 age 以外的项目</td>
+</tr>
+<tr>
+<td>db.users.findOne()</td>
+<td>获取第1条</td>
+</tr>
+<tr>
+<td>db.users.find().limit(1)</td>
+<td>获取第1条</td>
+</tr>
+<tr>
+<td>db.users.find().skip(4)</td>
+<td>跳过4条后，全部数据</td>
+</tr>
+<tr>
+<td>db.users.find().skip(2).limit(3)</td>
+<td>跳过2条后，获取3条</td>
+</tr>
+<tr>
+<td>db.users.find().sort({ name: 1, age: -1 })</td>
+<td>name acs排序 ，age desc排序</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table></section>
