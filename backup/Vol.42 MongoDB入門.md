@@ -92,7 +92,7 @@ select | **$project**               |  { $project:{cust_id:1,status:1,amount:1} 
 join | **$lookup**                   |  
 where/having | **$match**    |  { $match:{amount:{$gte:50}} }
 group by | **$group**           |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
-order by | $sort                      |
+order by | $sort                      |  { $sort:{_id:1} }
 limit | $limit                            |
 sum()/count() | $sum             |
 
