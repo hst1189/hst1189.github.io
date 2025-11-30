@@ -92,7 +92,6 @@ where/having | **$match**    |  { $match:{amount:{$gte:50}} }
 group by | **$group**           |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
 order by | $sort                      |  { $sort:{_id:1} }
 limit | $limit                            |  { $limit:1 }
-sum()/count() | $sum             |
 
 ```
 db.users.aggregate([
@@ -114,7 +113,6 @@ $max | 根据分组，获取集合中所有文档对应值得最大值。 | max
 $min | 根据分组，获取集合中所有文档对应值得最小值。 | min
 $push | 将指定的表达式的值添加到一个数组中。 | -
 $addToSet | 将表达式的值添加到一个集合中（无重复值，无序）。 | -
-$sum | 计算总和 | sum
 $stdDevPop | 返回输入值的总体标准偏差（population standard deviation） | -
 $stdDevSamp | 返回输入值的样本标准偏差（the sample standard deviation） | -
 
