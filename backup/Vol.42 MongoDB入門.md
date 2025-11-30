@@ -54,7 +54,6 @@ db.users.find().sort({ name: 1, age: -1 })                 | 排序，order by n
 ### ⚜️Update
 Commands |  備考
 ---|---
-db.users.replace({ age: 12 }, { age: 13 })    |第一条、年龄12的数据，替换为 13
 db.users.update({age:16},{$set:{age:20}})  |  第一条、年龄20的数据，更新为 21，注意要写 set，不写set的话，整条数据将被替换 
 db.users.update({ age: 12 }, { $set: { name: "Hi" }})              | 第一条、年龄12的数据，name更新为 Hi 
 db.users.update({ age: 12 }, { $unset: { age: "" }})                | 第一条、年龄12的数据， 清空年龄 
