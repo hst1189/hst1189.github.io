@@ -91,7 +91,7 @@ SQL 操作/函数 | mongodb聚合操作|凡例
 select | **$project**               |  { $project:{cust_id:1,status:1,amount:1} }
 join | **$lookup**                   |  
 where/having | **$match**    |  { $match:{amount:{$gte:50}} }
-group by | **$group**           |
+group by | **$group**           |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
 order by | $sort                      |
 limit | $limit                            |
 sum()/count() | $sum             |
