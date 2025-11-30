@@ -92,6 +92,14 @@ db.users.aggregate([
   {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
   {$sort:{total:-1}}            // 1:升序  -1:降序
 ])
+
+db.orders.aggregate([
+   {$group: {_id: null,count: { $sum: 1 }}}  //全表件数
+])
+
+db.orders.aggregate([
+   {$group: { _id: null, total: { $sum: "$price" }}}　//全表价格总和
+])
 ```
 SQL 操作/函数 | mongodb聚合操作|凡例
 -- | --| --
