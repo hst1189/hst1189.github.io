@@ -87,6 +87,7 @@ db.users.totalIndexSize()                                | total size of all ind
 事例：
 ```javascript
 db.users.aggregate([
+  {$project:{cust_id:1,status:1,amount:1} },
   {$match:{access:"valid"}},
   {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
   {$sort:{total:-1}}
