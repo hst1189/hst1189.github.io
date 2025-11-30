@@ -27,31 +27,32 @@ Commands |  備考
 db.users.find()                                                        | 获取全部数据
 db.users.find({ name: “Kyle” })                                | 获取{ name: “Kyle” }的数据
 db.users.find({ “address.street”: “123 Main St” })   | 获取{ “address.street”: “123 Main St” }的数据
-db.users.find({ name: “Kyle” }, { name: 1, age: 1 })  |  获取{ name: “Kyle” }的数据，但只返回  name, age 2个项目
-db.users.find({}, { age: 0 })                                      | 获取全部数据，但只返回  除 age 以外的项目
-db.users.findOne()                                                 | 获取第1条
-db.users.find().limit(1)                                            | 获取第1条
-db.users.find().skip(4)                                             | 跳过4条后，全部数据
-db.users.find().skip(2).limit(3)                                 | 跳过2条后，获取3条
-db.users.find().sort({ name: 1, age: -1 })                 | name acs排序 ，age desc排序
-
-
-### ⚜️Complex Filter Object
-Commands |  備考
----|---
-db.users.find({ name: { $eq: “Kyle” } })                        | 等于
-db.users.find({ name: { $ne: “Kyle” } })                        | 不等于
-db.users.find({ name: { $not: { $eq: “Kyle” } } })          | not 等于
-db.users.find({ age: { $gt: 12 } })                                 | 大于
-db.users.find({ age: { $gte: 15 } })                               | 大于等于
-db.users.find({ age: { $lt: 12 } })                                  | 小于
-db.users.find({ age: { $lte: 15 } })                                | 小于等于
+db.users.find({ name: { $eq: “Kyle” } })                        | 等于，获取{ name: “Kyle” }的数据
+db.users.find({ name: { $ne: “Kyle” } })                        | 不等于，获取{ name: “Kyle” }以外的数据
+db.users.find({ name: { $not: { $eq: “Kyle” } } })          | not，获取{ name: “Kyle” }以外的数据
+db.users.find({ age: { $gt: 12 } })                                 | >
+db.users.find({ age: { $gte: 15 } })                               | >=
+db.users.find({ age: { $lt: 12 } })                                  | <
+db.users.find({ age: { $lte: 15 } })                                | <=
 db.users.find({ name: { $in: [“Kyle”, “Mike”] } })          | in
 db.users.find({ name: { $nin: [“Kyle”, “Mike”] } })        | not in
 db.users.find({ $and: [{ age: 12 }, { name: “Kyle” }] })  | and
 db.users.find({ $or: [{ age: 12 }, { name: “Kyle” }] })     | or
 db.users.find({ name: { $exists: true } })                      | exist
 db.users.find({ $expr: { $gt: [“$balance”, “$debt”] } })  | expr
+db.users.find({ name: “Kyle” }, { name: 1, age: 1 })  |  获取{ name: “Kyle” }的数据，但只返回  name, age 2个项目
+db.users.find({}, { age: 0 })                                      | 获取全部数据，但只返回  除 age 以外的项目
+db.users.findOne()                                                 | 获取第1条
+db.users.find().limit(1)                                            | 获取第1条
+db.users.find().skip(4)                                             | 跳过4条后，获取剩下全部数据
+db.users.find().skip(2).limit(3)                                 | 跳过2条后，获取3条
+db.users.find().sort({ name: 1, age: -1 })                 | 排序，order by name acs , age desc
+
+
+### ⚜️Complex Filter Object
+Commands |  備考
+---|---
+
 
 
 ### ⚜️Update
