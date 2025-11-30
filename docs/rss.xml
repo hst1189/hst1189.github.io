@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 30 Nov 2025 07:14:08 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 30 Nov 2025 07:14:49 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
 https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet
 
 # 🚀MongoDB CRUD 操作
@@ -16,13 +16,13 @@ show roles |  显示当前DB里全部角色
 show profile | 显示profile
 
 
-## ⚜️Create
+### ⚜️Create
 Commands | 備考
 ---|---
 db.users.insert({ name: “Kyle” }) | 插入单条
 db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  插入多条，要以数组形式　
 
-## ⚜️Read
+### ⚜️Read
 Commands |  備考
 ---|---
 db.users.find()                                                        | 获取全部数据
@@ -37,7 +37,7 @@ db.users.find().skip(2).limit(3)                                 | 跳过2条后
 db.users.find().sort({ name: 1, age: -1 })                 | name acs排序 ，age desc排序
 
 
-## ⚜️Complex Filter Object
+### ⚜️Complex Filter Object
 Commands |  備考
 ---|---
 db.users.find({ name: { $eq: “Kyle” } })                        | 等于
@@ -55,7 +55,7 @@ db.users.find({ name: { $exists: true } })                      | exist
 db.users.find({ $expr: { $gt: [“$balance”, “$debt”] } })  | expr
 
 
-## ⚜️Update
+### ⚜️Update
 Commands |  備考
 ---|---
 db.users.updateOne({ age: 20 }, { $set: { age: 21 } })
@@ -63,14 +63,14 @@ db.users.updateMany({ age: 12 }, { $inc: { age: 3 } })
 db.users.replaceOne({ age: 12 }, { age: 13 })
 
 
-## ⚜️Delete
+### ⚜️Delete
 Commands |  備考
 ---|---
 db.users.deleteOne({ age: 20 })
 db.users.deleteMany({ age: 12 })
 
 
-## ⚜️Complex Update Object
+### ⚜️Complex Update Object
 Commands |  備考
 ---|---
 db.users.updateOne({ age: 12 }, { $set: { name: “Hi” } })

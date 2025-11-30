@@ -15,13 +15,13 @@ show roles |  显示当前DB里全部角色
 show profile | 显示profile
 
 
-## ⚜️Create
+### ⚜️Create
 Commands | 備考
 ---|---
 db.users.insert({ name: “Kyle” }) | 插入单条
 db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  插入多条，要以数组形式　
 
-## ⚜️Read
+### ⚜️Read
 Commands |  備考
 ---|---
 db.users.find()                                                        | 获取全部数据
@@ -36,7 +36,7 @@ db.users.find().skip(2).limit(3)                                 | 跳过2条后
 db.users.find().sort({ name: 1, age: -1 })                 | name acs排序 ，age desc排序
 
 
-## ⚜️Complex Filter Object
+### ⚜️Complex Filter Object
 Commands |  備考
 ---|---
 db.users.find({ name: { $eq: “Kyle” } })                        | 等于
@@ -54,7 +54,7 @@ db.users.find({ name: { $exists: true } })                      | exist
 db.users.find({ $expr: { $gt: [“$balance”, “$debt”] } })  | expr
 
 
-## ⚜️Update
+### ⚜️Update
 Commands |  備考
 ---|---
 db.users.updateOne({ age: 20 }, { $set: { age: 21 } })
@@ -62,14 +62,14 @@ db.users.updateMany({ age: 12 }, { $inc: { age: 3 } })
 db.users.replaceOne({ age: 12 }, { age: 13 })
 
 
-## ⚜️Delete
+### ⚜️Delete
 Commands |  備考
 ---|---
 db.users.deleteOne({ age: 20 })
 db.users.deleteMany({ age: 12 })
 
 
-## ⚜️Complex Update Object
+### ⚜️Complex Update Object
 Commands |  備考
 ---|---
 db.users.updateOne({ age: 12 }, { $set: { name: “Hi” } })
