@@ -90,6 +90,13 @@ Commands |  備考
 ---|---
 das | sdasd
 
+```
+db.users.aggregate([
+  {$match:{access:"valid"}},
+  {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
+  {$sort:{total:-1}}
+])
+```
 
 
 
