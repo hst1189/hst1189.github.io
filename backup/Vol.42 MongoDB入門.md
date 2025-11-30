@@ -99,8 +99,8 @@ select | **$project**               |  { $project:{cust_id:1,status:1,amount:1} 
 join | **$lookup**                   |  
 where/having | **$match**    |  { $match:{amount:{$gte:50}} }
 group by | **$group**           |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
-order by | $sort                      |  { $sort:{_id:1} }
-limit | $limit                            |  { $limit:1 }   // 1:升序  -1:降序
+order by | $sort                      |  { $sort:{_id:1} }    // 1:升序  -1:降序
+limit | $limit                            |  { $limit:1 }   //  显示件数
 skip  | $skip                            |   { $skip:3 }   //  跳过件数
 
 
