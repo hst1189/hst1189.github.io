@@ -96,6 +96,20 @@ order by | $sort                      |  { $sort:{_id:1} }
 limit | $limit                            |  { $limit:1 }
 sum()/count() | $sum             |
 
+
+名称 | 描述 | 类比sql
+-- | -- | --
+$avg | 计算均值 | avg
+$first | 返回每组第一个文档，如果有排序，按照排序，如果没有按照默认的存储的顺序的第一个文档。 | limit 0,1
+$last | 返回每组最后一个文档，如果有排序，按照排序，如果没有按照默认的存储的顺序的最后个文档。 | -
+$max | 根据分组，获取集合中所有文档对应值得最大值。 | max
+$min | 根据分组，获取集合中所有文档对应值得最小值。 | min
+$push | 将指定的表达式的值添加到一个数组中。 | -
+$addToSet | 将表达式的值添加到一个集合中（无重复值，无序）。 | -
+$sum | 计算总和 | sum
+$stdDevPop | 返回输入值的总体标准偏差（population standard deviation） | -
+$stdDevSamp | 返回输入值的样本标准偏差（the sample standard deviation） | -
+
 ```
 db.users.aggregate([
   {$match:{access:"valid"}},

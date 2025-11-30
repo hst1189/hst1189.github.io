@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 12:39</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 12:49</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -424,6 +424,67 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <td>sum()/count()</td>
 <td>$sum</td>
 <td></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>类比sql</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$avg</td>
+<td>计算均值</td>
+<td>avg</td>
+</tr>
+<tr>
+<td>$first</td>
+<td>返回每组第一个文档，如果有排序，按照排序，如果没有按照默认的存储的顺序的第一个文档。</td>
+<td>limit 0,1</td>
+</tr>
+<tr>
+<td>$last</td>
+<td>返回每组最后一个文档，如果有排序，按照排序，如果没有按照默认的存储的顺序的最后个文档。</td>
+<td>-</td>
+</tr>
+<tr>
+<td>$max</td>
+<td>根据分组，获取集合中所有文档对应值得最大值。</td>
+<td>max</td>
+</tr>
+<tr>
+<td>$min</td>
+<td>根据分组，获取集合中所有文档对应值得最小值。</td>
+<td>min</td>
+</tr>
+<tr>
+<td>$push</td>
+<td>将指定的表达式的值添加到一个数组中。</td>
+<td>-</td>
+</tr>
+<tr>
+<td>$addToSet</td>
+<td>将表达式的值添加到一个集合中（无重复值，无序）。</td>
+<td>-</td>
+</tr>
+<tr>
+<td>$sum</td>
+<td>计算总和</td>
+<td>sum</td>
+</tr>
+<tr>
+<td>$stdDevPop</td>
+<td>返回输入值的总体标准偏差（population standard deviation）</td>
+<td>-</td>
+</tr>
+<tr>
+<td>$stdDevSamp</td>
+<td>返回输入值的样本标准偏差（the sample standard deviation）</td>
+<td>-</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
