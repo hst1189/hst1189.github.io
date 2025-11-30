@@ -108,7 +108,7 @@ db.orders.aggregate([
 ```
 SQL 操作/函数 | mongodb聚合操作|凡例
 -- | --| --
-select | **$project**               |  { $project:{cust_id:1,status:1,amount:1} }
+select | **$project**               |  { $project:{cust_id:1,status:1,amount:1} }     { $project: { _id: 0 } }   //1:显示字段  0: 不显示字段
 join | **$lookup**                   |  
 where/having | **$match**    |  { $match:{amount:{$gte:50}} }
 group by | **$group**           |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
