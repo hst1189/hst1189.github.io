@@ -16,13 +16,13 @@ show profile | Print the five most recent operations that took 1 millisecond or 
 
 
 ## ⚜️Create
-Commands |  凡例　| 備考
----|---|--- 
-insertOne | db.users.insertOne({ name: “Kyle” }) |
-insertMany | db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  要以数组形式　
+Commands | 備考
+---|---
+db.users.insert({ name: “Kyle” }) | 插入单条
+db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  要以数组形式　
 
 ## ⚜️Read
-Commands |  凡例
+Commands |  備考
 ---|---
 db.users.find()                                                        | 获取全部数据
 db.users.find({ name: “Kyle” })                                | 获取{ name: “Kyle” }的数据
@@ -37,7 +37,7 @@ db.users.find().sort({ name: 1, age: -1 })                 | name acs排序 ，a
 
 
 ## ⚜️Complex Filter Object
-Commands |  凡例
+Commands |  備考
 ---|---
 db.users.find({ name: { $eq: “Kyle” } })                        | 等于
 db.users.find({ name: { $ne: “Kyle” } })                        | 不等于
