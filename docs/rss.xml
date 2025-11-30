@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 30 Nov 2025 06:41:37 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 30 Nov 2025 06:56:13 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
 https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet
 
-# MongoDB CRUD 操作
+# 🚀MongoDB CRUD 操作
 
 Commands |  凡例
 ---|---
@@ -16,13 +16,13 @@ show roles |  list of all roles, both user-defined and built-in, for the current
 show profile | Print the five most recent operations that took 1 millisecond or more on databases with profiling enabled.
 
 
-## Create
+## ⚜️Create
 Commands |  凡例　| 備考
 ---|---|--- 
 insertOne | db.users.insertOne({ name: “Kyle” }) |
 insertMany | db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  要以数组形式　
 
-## Read
+## ⚜️Read
 Commands |  凡例
 ---|---
 db.users.find()                                                        | 获取全部数据
@@ -37,7 +37,33 @@ db.users.find().skip(2).limit(3)                                 | 跳过2条后
 db.users.find().sort({ name: 1, age: -1 })                 | name acs排序 ，age desc排序
 
 
+## ⚜️Complex Filter Object
+Commands |  凡例
+---|---
+db.users.find({ name: { $eq: “Kyle” } })                        | 等于
+db.users.find({ name: { $ne: “Kyle” } })                        | 不等于
+db.users.find({ name: { $not: { $eq: “Kyle” } } })          | not 等于
+db.users.find({ age: { $gt: 12 } })                                 | 大于
+db.users.find({ age: { $gte: 15 } })                               | 大于等于
+db.users.find({ age: { $lt: 12 } })                                  | 小于
+db.users.find({ age: { $lte: 15 } })                                | 小于等于
+db.users.find({ name: { $in: [“Kyle”, “Mike”] } })          | in
+db.users.find({ name: { $nin: [“Kyle”, “Mike”] } })        | not in
+db.users.find({ $and: [{ age: 12 }, { name: “Kyle” }] })  | and
+db.users.find({ $or: [{ age: 12 }, { name: “Kyle” }] })     | or
+db.users.find({ name: { $exists: true } })                      | exist
+db.users.find({ $expr: { $gt: [“$balance”, “$debt”] } })  | expr
 
+
+
+
+
+# 🚀设计模式
+https://www.mongodb.com/zh-cn/docs/manual/data-modeling/
+
+
+# 🚀mongoose
+https://mongoose.node.org.cn/docs/schematypes.html
 
 
 

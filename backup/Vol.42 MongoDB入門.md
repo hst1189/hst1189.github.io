@@ -1,7 +1,7 @@
 cheatsheet
 https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet
 
-# MongoDB CRUD 操作
+# 🚀MongoDB CRUD 操作
 
 Commands |  凡例
 ---|---
@@ -15,13 +15,13 @@ show roles |  list of all roles, both user-defined and built-in, for the current
 show profile | Print the five most recent operations that took 1 millisecond or more on databases with profiling enabled.
 
 
-## Create
+## ⚜️Create
 Commands |  凡例　| 備考
 ---|---|--- 
 insertOne | db.users.insertOne({ name: “Kyle” }) |
 insertMany | db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  要以数组形式　
 
-## Read
+## ⚜️Read
 Commands |  凡例
 ---|---
 db.users.find()                                                        | 获取全部数据
@@ -36,7 +36,33 @@ db.users.find().skip(2).limit(3)                                 | 跳过2条后
 db.users.find().sort({ name: 1, age: -1 })                 | name acs排序 ，age desc排序
 
 
+## ⚜️Complex Filter Object
+Commands |  凡例
+---|---
+db.users.find({ name: { $eq: “Kyle” } })                        | 等于
+db.users.find({ name: { $ne: “Kyle” } })                        | 不等于
+db.users.find({ name: { $not: { $eq: “Kyle” } } })          | not 等于
+db.users.find({ age: { $gt: 12 } })                                 | 大于
+db.users.find({ age: { $gte: 15 } })                               | 大于等于
+db.users.find({ age: { $lt: 12 } })                                  | 小于
+db.users.find({ age: { $lte: 15 } })                                | 小于等于
+db.users.find({ name: { $in: [“Kyle”, “Mike”] } })          | in
+db.users.find({ name: { $nin: [“Kyle”, “Mike”] } })        | not in
+db.users.find({ $and: [{ age: 12 }, { name: “Kyle” }] })  | and
+db.users.find({ $or: [{ age: 12 }, { name: “Kyle” }] })     | or
+db.users.find({ name: { $exists: true } })                      | exist
+db.users.find({ $expr: { $gt: [“$balance”, “$debt”] } })  | expr
 
+
+
+
+
+# 🚀设计模式
+https://www.mongodb.com/zh-cn/docs/manual/data-modeling/
+
+
+# 🚀mongoose
+https://mongoose.node.org.cn/docs/schematypes.html
 
 
 
