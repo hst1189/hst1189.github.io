@@ -84,6 +84,8 @@ db.users.totalIndexSize()                                | total size of all ind
 
 
 ### ⚜️Aggregate
+`Gmeek-html<img src="https://images2018.cnblogs.com/blog/476931/201806/476931-20180619212647050-925796422.png">`
+
 事例：
 ```javascript
 db.users.aggregate([
