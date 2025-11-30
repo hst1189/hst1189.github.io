@@ -84,6 +84,14 @@ db.users.totalIndexSize()                                | total size of all ind
 
 
 ### ⚜️Aggregate
+事例：
+```javascript
+db.users.aggregate([
+  {$match:{access:"valid"}},
+  {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
+  {$sort:{total:-1}}
+])
+```
 SQL 操作/函数 | mongodb聚合操作|凡例
 -- | --| --
 select | **$project**               |  { $project:{cust_id:1,status:1,amount:1} }
@@ -92,14 +100,6 @@ where/having | **$match**    |  { $match:{amount:{$gte:50}} }
 group by | **$group**           |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
 order by | $sort                      |  { $sort:{_id:1} }
 limit | $limit                            |  { $limit:1 }
-
-```
-db.users.aggregate([
-  {$match:{access:"valid"}},
-  {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
-  {$sort:{total:-1}}
-])
-```
 
 
 ### ⚜️accumulator操作符
