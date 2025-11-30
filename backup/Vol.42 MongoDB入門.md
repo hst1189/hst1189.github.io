@@ -54,17 +54,15 @@ db.users.find().sort({ name: 1, age: -1 })                 | 排序，order by n
 ### ⚜️Update
 Commands |  備考
 ---|---
-db.users.update({ age: 20 }, { $set: { age: 21 } })               |  注意要写 set，
-db.users.update({ age: 12 }, { $set: { name: “Hi” } })          | 不写set的话，整条数据将被替换
-db.users.update({ age: 12 }, { $unset: { age: “” } })             |
-db.users.update({ age: 12 }, { $inc: { age: 2 } })                  |
-db.users.updateMany({ age: 12 }, { $inc: { age: 3 } })          |
+db.users.update({ age: 20 }, { $set: { age: 21 } })               |  年龄20的数据，更新为 21，注意要写 set，不写set的话，整条数据将被替换 
+db.users.replace({ age: 12 }, { age: 13 })                             |年龄12的数据，替换为 13
+db.users.update({ age: 12 }, { $set: { name: “Hi” } })          | 年龄12的数据，name更新为 Hi 
+db.users.update({ age: 12 }, { $unset: { age: “” } })             | 年龄12的数据， 清空年龄
+db.users.update({ age: 12 }, { $inc: { age: 2 } })                  | 年龄12的数据， 增加 2 
 db.scores.update( { _id: 1 }, {$min: { lowScore: 150 } } )     | compares, if less than 200, will update lowScore to 150
 db.scores.update( { _id: 1 }, {$max: { highScore: 1000 } } ) | compares,if more than 800,will update highScore to 1000
-
 db.users.updateMany({}, { $push: { friends: “John” } })       | 添加一条到最后
 db.users.updateMany({}, { $pull: { friends: “Mike” } })         | 
-db.users.replace({ age: 12 }, { age: 13 })                             |
 db.scores.update({$rename:{'highScore':'high'})              |  ★項目名所変更, Renames the field ‘highScores’ to ‘high’
 
 ### ⚜️Delete
