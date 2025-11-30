@@ -54,6 +54,25 @@ db.users.find({ name: { $exists: true } })                      | exist
 db.users.find({ $expr: { $gt: [“$balance”, “$debt”] } })  | expr
 
 
+## /⚜️Complex Update Object
+db.users.updateOne({ age: 12 }, { $set: { name: “Hi” } })
+db.users.updateOne({ age: 12 }, { $unset: { age: “” } })
+
+db.users.updateOne({ age: 12 }, { $inc: { age: 2 } })
+
+db.scores.insertOne( { _id: 1,highScore: 800, lowScore: 200 } )
+db.scores.updateOne( { _id: 1 }, {$min: { lowScore: 150 } } )
+db.scores.updateOne( { _id: 1 }, {$max: { highScore: 1000 } } )
+
+db.users.updateMany({}, { $rename: { age: “years” } })
+db.users.updateMany({}, { $push: { friends: “John” } })
+db.users.updateMany({}, { $pull: { friends: “Mike” } })
+
+
+
+
+
+
 
 
 
