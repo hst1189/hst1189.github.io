@@ -100,7 +100,8 @@ join | **$lookup**                   |
 where/having | **$match**    |  { $match:{amount:{$gte:50}} }
 group by | **$group**           |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
 order by | $sort                      |  { $sort:{_id:1} }
-limit | $limit                            |  { $limit:1 }
+limit | $limit                            |  { $limit:1 }   // 1:升序  -1:降序
+skip  | $skip                            |   { $skip:3 }   //  跳过件数
 
 
 ### ⚜️accumulator操作符
