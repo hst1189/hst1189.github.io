@@ -86,7 +86,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 10:30</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 10:44</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -340,13 +340,40 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tbody>
 </table></markdown-accessiblity-table>
 <h3>⚜️Index</h3>
-<p>db.users.getIndexes()                                     | 获得所有index<br>
-db.users.createIndex({"name":1})                   | 添加index<br>
-db.users.createIndex({"name":1, "age":-1})    | 添加 联合index<br>
-db.users.dropIndex({"name"})                        | 删除index<br>
-db.users.dropIndexes({"name"},{"age"})         | 删除多个index<br>
-db.users.dropIndexes()                                   | 删除所有index<br>
-db.users.totalIndexSize()                                | total size of all indexes of collection</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Commands</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>db.users.getIndexes()</td>
+<td>获得所有index</td>
+</tr>
+<tr>
+<td>db.users.createIndex({name:1})</td>
+<td>添加index</td>
+</tr>
+<tr>
+<td>db.users.createIndex({name:1,home:-1})</td>
+<td>添加 联合index</td>
+</tr>
+<tr>
+<td>db.users.dropIndex("index_name")</td>
+<td>删除index</td>
+</tr>
+<tr>
+<td>db.users.dropIndexes()</td>
+<td>删除所有index</td>
+</tr>
+<tr>
+<td>db.users.totalIndexSize()</td>
+<td>total size of all indexes of collection</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
 <h1>🚀设计模式</h1>
 <p><a href="https://www.mongodb.com/zh-cn/docs/manual/data-modeling/" rel="nofollow">https://www.mongodb.com/zh-cn/docs/manual/data-modeling/</a></p>
 <h1>🚀mongoose</h1>
