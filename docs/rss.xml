@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 30 Nov 2025 14:06:38 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 30 Nov 2025 14:07:14 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
 https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet
 
 # 🚀MongoDB CRUD 操作
@@ -117,7 +117,7 @@ order by | $sort                      |  { $sort:{_id:1} }    // 1:升序  -1:�
 limit | $limit                            |  { $limit:1 }   //  仅显示1件
 skip  | $skip                            |   { $skip:3 }   //  跳过3件
 count | $count                       |  { $count:'count'}  //  显示件数
- - |  $unwind                          |  将数组拆分为单独的文档
+ ー |  $unwind                        |  将数组拆分为单独的文档
 
 &gt;[!TIP]
 &gt; group阶段的内存限制为100M。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/42.html</guid><pubDate>Sun, 30 Nov 2025 06:06:40 +0000</pubDate></item><item><title>Vol.41 GraphQL（apollo-server-express-mongodb）</title><link>https://grapehut.dpdns.org/post/41.html</link><description>https://shinagawa-web.com/blogs/typescript-apollo-server-express-mongodb-guide
