@@ -16,10 +16,10 @@ show profile | Print the five most recent operations that took 1 millisecond or 
 
 
 ## Create
-Commands |  凡例
----|---
-insertOne | db.users.insertOne({ name: “Kyle” })
-insertMany | db.users.insertMany([{ age: 26 }, { age: 20 }])
+Commands |  凡例　| 備考
+---|---|--- 
+insertOne | db.users.insertOne({ name: “Kyle” }) |
+insertMany | db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  要以数组形式　
 
 
 
