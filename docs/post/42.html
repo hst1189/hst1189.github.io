@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-02 14:03</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-02 14:21</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -385,55 +385,65 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
-<th>SQL 操作/函数</th>
-<th>mongodb聚合操作</th>
+<th>聚合操作</th>
+<th>作用</th>
+<th>SQL</th>
 <th>凡例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>select</td>
-<td><strong>$project</strong></td>
-<td>{ $project:{_id: 0 ,cust_id:1,status:1,amount:1} }  //1:显示字段  0: 不显示字段</td>
-</tr>
-<tr>
-<td>join</td>
-<td><strong>$lookup</strong> </td>
-<td></td>
-</tr>
-<tr>
-<td>where/having</td>
 <td><strong>$match</strong></td>
+<td>过滤</td>
+<td>where/having</td>
 <td>{ $match:{amount:{$gte:50}} }</td>
 </tr>
 <tr>
+<td><strong>$project</strong></td>
+<td>投影</td>
+<td>select</td>
+<td>{ $project:{_id: 0 ,cust_id:1,status:1} }  //1:显示字段  0: 不显示字段</td>
+</tr>
+<tr>
+<td><strong>$group</strong> 🔹</td>
+<td>分组</td>
 <td>group by</td>
-<td><strong>$group</strong>  🔹</td>
 <td>{ $group:{_id:'$cust_id',total:{$sum:'$amount'}} }</td>
 </tr>
 <tr>
-<td>order by</td>
+<td><strong>$lookup</strong></td>
+<td>左外连接</td>
+<td>left outer join</td>
+<td></td>
+</tr>
+<tr>
 <td>$sort</td>
+<td>排序</td>
+<td>order by</td>
 <td>{ $sort:{_id:1} }    // 1:升序  -1:降序</td>
 </tr>
 <tr>
-<td>limit</td>
 <td>$limit</td>
+<td>结果限制</td>
+<td>limit</td>
 <td>{ $limit:1 }   //  仅显示1件</td>
 </tr>
 <tr>
-<td>skip</td>
 <td>$skip</td>
+<td>结果限制</td>
+<td>skip</td>
 <td>{ $skip:3 }   //  跳过3件</td>
 </tr>
 <tr>
-<td>count</td>
 <td>$count</td>
+<td>件数</td>
+<td>count</td>
 <td>{ $count:'count'}  //  显示件数</td>
 </tr>
 <tr>
-<td>ー</td>
 <td>$unwind</td>
+<td></td>
+<td>ー</td>
 <td>将数组拆分为单独的文档</td>
 </tr>
 </tbody>

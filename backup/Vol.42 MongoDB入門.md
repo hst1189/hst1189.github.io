@@ -88,17 +88,17 @@ db.users.totalIndexSize()                                | total size of all ind
 ### ⚜️Aggregate
 `Gmeek-html<img src="https://images2018.cnblogs.com/blog/476931/201806/476931-20180619212647050-925796422.png">`
 
-SQL 操作/函数 | mongodb聚合操作|凡例
--- | --| --
-select | **$project**               |  { $project:{_id: 0 ,cust_id:1,status:1,amount:1} }  //1:显示字段  0: 不显示字段
-join | **$lookup**                   |  
-where/having | **$match**    |  { $match:{amount:{$gte:50}} }
-group by | **$group**  🔹    |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
-order by | $sort                      |  { $sort:{_id:1} }    // 1:升序  -1:降序
-limit | $limit                            |  { $limit:1 }   //  仅显示1件
-skip  | $skip                            |   { $skip:3 }   //  跳过3件
-count | $count                       |  { $count:'count'}  //  显示件数
- ー |  $unwind                        |  将数组拆分为单独的文档
+聚合操作 | 作用 | SQL | 凡例
+-- | --| -- | --
+**$match**  | 过滤 | where/having         | { $match:{amount:{$gte:50}} }
+**$project** | 投影 | select                     |  { $project:{_id: 0 ,cust_id:1,status:1} }  //1:显示字段  0: 不显示字段
+**$group** 🔹| 分组 | group by            |  { $group:{_id:'$cust_id',total:{$sum:'$amount'}} }
+**$lookup** | 左外连接 | left outer join |  
+$sort            | 排序         | order by         |  { $sort:{_id:1} }    // 1:升序  -1:降序
+$limit           | 结果限制  |  limit              |  { $limit:1 }   //  仅显示1件
+$skip           | 结果限制  | skip                |   { $skip:3 }   //  跳过3件
+$count        | 件数         | count             |  { $count:'count'}  //  显示件数
+$unwind     |                  | ー                   |  将数组拆分为单独的文档
 
 
 事例：
