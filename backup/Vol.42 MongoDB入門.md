@@ -26,7 +26,7 @@ db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  �
 Commands |  備考
 ---|---
 db.users.find()                                                            | 获取全部数据
-db.users.find({ “address.street”: “123 Main St” })       | 查询子文档 { “address.street”}的数据
+db.users.find({ “name.nickname”: “123 Main St” })    | ★查询子文档 { “name.nickname”}的数据
 db.users.find({ name: “Kyle” })                                    | 查询 {name: “Kyle” }的数据
 db.users.find({ name: /Kyle/ })                                    | 查询包含“Kyle” 的数据
 db.users.find({ name: /^Kyle/ })                                 | 查询 “Kyle”开头 的数据
@@ -55,15 +55,15 @@ db.users.find().sort({ name: 1, age: -1 })                    | 排序，相当�
 ### ⚜️Update
 Commands |  備考
 ---|---
-db.users.update({age:16},{$set:{age:20}})  |  第一条、年龄20的数据，更新为 21，注意要写 set，不写set的话，整条数据将被替换 
-db.users.update({ age: 12 }, { $set: { name: "Hi" }})              | 第一条、年龄12的数据，name更新为 Hi 
+db.users.update({age:16},{$set:{age:20}})                            |  第一条、年龄20的数据更新为 21，如果不写set，整条数据将被替换 
+db.users.update({ age: 12 }, { $set: { name: "Hi" }})              | ★添加字段  { name: "Hi" } 
 db.users.update({ age: 12 }, { $unset: { age: "" }})                | 第一条、年龄12的数据， 清空年龄 
 db.users.updateMany({}, { $set: { school: "new collage" }}) | ★所有数据，添加新项目{ school: "new collage" }
 db.users.updateMany({}, { $unset: { school: "" }})　            | ★所有数据，删除项目{ school: "new collage" }
 db.users.updateMany({}, { $push: { friends: "John" }})         | ★所有数据，添加一个数组{ friends: “John” }
 db.users.updateMany({}, { $pull: { friends: "Mike" }})          | ★所有数据，从数组中删除一个项目{ friends: “Mike” }
-db.users.updateMany({},{$rename:{'school':'home'}})        | ★所有数据、項目名変更 'school' → 'home'
-db.users.updateMany({ age: 12 }, { $inc: { age: 2 }})           | 所有数据、年龄12的数据， 年龄+ 2
+db.users.updateMany({}, {$rename:{'school':'home'}})        | ★所有数据、項目名変更 'school' → 'home'
+db.users.updateMany({ age: 12 }, { $inc: { age: 2 }})            | 所有数据、年龄12的数据， 年龄+ 2
 
 
 ### ⚜️Delete
