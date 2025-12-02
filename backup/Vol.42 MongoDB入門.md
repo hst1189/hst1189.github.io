@@ -98,7 +98,7 @@ $sort            | 排序         | order by         |  { $sort:{_id:1} }    // 
 $limit           | 结果限制  |  limit              |  { $limit:1 }   //  仅显示1件
 $skip           | 结果限制  | skip                |   { $skip:3 }   //  跳过3件
 $count        | 件数         | count             |  { $count:'count'}  //  显示件数
-$unwind     |                  | ー                   |  将数组拆分为单独的文档
+$unwind     | 展开数组  | ー                   |  将数组拆分为单独的文档
 
 
 事例：
