@@ -25,30 +25,31 @@ db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  �
 ### ⚜️Read
 Commands |  備考
 ---|---
-db.users.find()                                                        | 获取全部数据
-db.users.find({ “address.street”: “123 Main St” })   | 获取{ “address.street”: “123 Main St” }的数据
-db.users.find({ name: “Kyle” })                                | 获取{ name: “Kyle” }的数据
-db.users.find({ name: /Kyle/ })                                | 获取包含“Kyle” 的数据
-db.users.find({ name: /^Kyle/ })                                | 获取“Kyle”开头 的数据
-db.users.find({ name: { $eq: “Kyle” } })                        | =，获取{ name: “Kyle” }的数据
-db.users.find({ name: { $ne: “Kyle” } })                        | <>，获取{ name: “Kyle” }以外的数据
-db.users.find({ name: { $not: { $eq: “Kyle” } } })          | not =，获取{ name: “Kyle” }以外的数据
-db.users.find({ age: { $gt: 12 } })                                 | >
-db.users.find({ age: { $gte: 15 } })                               | >=
-db.users.find({ age: { $lt: 12 } })                                  | <
-db.users.find({ age: { $lte: 15 } })                                | <=
-db.users.find({ name: { $in: [“Kyle”, “Mike”] } })          | in
-db.users.find({ name: { $nin: [“Kyle”, “Mike”] } })        | not in
-db.users.find({ $and: [{ age: 12 }, { name: “Kyle” }] })  | and
-db.users.find({ $or: [{ age: 12 }, { name: “Kyle” }] })     | or
-db.users.find({ name: { $exists: true } })                      | exist
-db.users.find({ $expr: { $gt: [“$balance”, “$debt”] } })  | expr
-db.users.find({ name: “Kyle” }, { name: 1, age: 1 })  |  获取{ name: “Kyle” }的数据，但只返回  name, age 2个项目
-db.users.find({}, { age: 0 })                                      | 获取全部数据，但只返回  除 age 以外的项目
-db.users.find().limit(1)                                            | 获取第1条
-db.users.find().skip(4)                                             | 跳过4条后，获取剩下全部数据
-db.users.find().skip(2).limit(3)                                 | 跳过2条后，获取3条
-db.users.find().sort({ name: 1, age: -1 })                 | 排序，order by name acs , age desc
+db.users.find()                                                            | 获取全部数据
+db.users.find({ “address.street”: “123 Main St” })       | 查询子文档 { “address.street”}的数据
+db.users.find({ name: “Kyle” })                                    | 查询 {name: “Kyle” }的数据
+db.users.find({ name: /Kyle/ })                                    | 查询包含“Kyle” 的数据
+db.users.find({ name: /^Kyle/ })                                 | 查询 “Kyle”开头 的数据
+db.users.find({ name: { $eq: “Kyle” } })                        | 相当于=
+db.users.find({ name: { $ne: “Kyle” } })                        | 相当于!=
+db.users.find({ name: { $not: { $eq: “Kyle” } } })          | 相当于not 
+db.users.find({ age: { $gt: 12 } })                                 | 相当于>
+db.users.find({ age: { $gte: 15 } })                               | 相当于>=
+db.users.find({ age: { $lt: 12 } })                                  | 相当于<
+db.users.find({ age: { $lte: 15 } })                                | 相当于<=
+db.users.find({ name: { $in: [“Kyle”, “Mike”] } })          | 相当于in
+db.users.find({ name: { $nin: [“Kyle”, “Mike”] } })        | 相当于not in
+db.users.find({ $and: [{ age: 12 }, { name: “Kyle” }] })  | 相当于and
+db.users.find({ $or: [{ age: 12 }, { name: “Kyle” }] })     | 相当于or
+db.users.find({ name: { $exists: true } })                      | 相当于exist     
+db.users.find({ name: { $exists: false} })                      | 相当于name is null  
+db.users.find({ $expr: { $gt: [“$balance”, “$debt”] } }) | 相当于expr
+db.users.find({ name: “Kyle” }, { name: 1, age: 1 })      |  获取{ name: “Kyle” }的数据，但只返回  name, age 2个项目
+db.users.find({}, { age: 0 })                                          | 获取全部数据，但只返回  除 age 以外的项目
+db.users.find().limit(1)                                                | 获取第1条
+db.users.find().skip(4)                                                | 跳过4条后，获取剩下全部数据
+db.users.find().skip(2).limit(3)                                    | 跳过2条后，获取3条
+db.users.find().sort({ name: 1, age: -1 })                    | 排序，相当于 order by name acs , age desc
 
 
 ### ⚜️Update

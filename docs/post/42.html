@@ -96,8 +96,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-11-30 14:13</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Previous Page">上一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a><a class="next_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Next Page">下一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-02 13:41</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><p>cheatsheet<br>
@@ -179,71 +179,75 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 <tr>
 <td>db.users.find({ “address.street”: “123 Main St” })</td>
-<td>获取{ “address.street”: “123 Main St” }的数据</td>
+<td>查询子文档 { “address.street”}的数据</td>
 </tr>
 <tr>
 <td>db.users.find({ name: “Kyle” })</td>
-<td>获取{ name: “Kyle” }的数据</td>
+<td>查询 {name: “Kyle” }的数据</td>
 </tr>
 <tr>
 <td>db.users.find({ name: /Kyle/ })</td>
-<td>获取包含“Kyle” 的数据</td>
+<td>查询包含“Kyle” 的数据</td>
 </tr>
 <tr>
 <td>db.users.find({ name: /^Kyle/ })</td>
-<td>获取“Kyle”开头 的数据</td>
+<td>查询 “Kyle”开头 的数据</td>
 </tr>
 <tr>
 <td>db.users.find({ name: { $eq: “Kyle” } })</td>
-<td>=，获取{ name: “Kyle” }的数据</td>
+<td>相当于=</td>
 </tr>
 <tr>
 <td>db.users.find({ name: { $ne: “Kyle” } })</td>
-<td>&lt;&gt;，获取{ name: “Kyle” }以外的数据</td>
+<td>相当于!=</td>
 </tr>
 <tr>
 <td>db.users.find({ name: { $not: { $eq: “Kyle” } } })</td>
-<td>not =，获取{ name: “Kyle” }以外的数据</td>
+<td>相当于not</td>
 </tr>
 <tr>
 <td>db.users.find({ age: { $gt: 12 } })</td>
-<td>&gt;</td>
+<td>相当于&gt;</td>
 </tr>
 <tr>
 <td>db.users.find({ age: { $gte: 15 } })</td>
-<td>&gt;=</td>
+<td>相当于&gt;=</td>
 </tr>
 <tr>
 <td>db.users.find({ age: { $lt: 12 } })</td>
-<td>&lt;</td>
+<td>相当于&lt;</td>
 </tr>
 <tr>
 <td>db.users.find({ age: { $lte: 15 } })</td>
-<td>&lt;=</td>
+<td>相当于&lt;=</td>
 </tr>
 <tr>
 <td>db.users.find({ name: { $in: [“Kyle”, “Mike”] } })</td>
-<td>in</td>
+<td>相当于in</td>
 </tr>
 <tr>
 <td>db.users.find({ name: { $nin: [“Kyle”, “Mike”] } })</td>
-<td>not in</td>
+<td>相当于not in</td>
 </tr>
 <tr>
 <td>db.users.find({ $and: [{ age: 12 }, { name: “Kyle” }] })</td>
-<td>and</td>
+<td>相当于and</td>
 </tr>
 <tr>
 <td>db.users.find({ $or: [{ age: 12 }, { name: “Kyle” }] })</td>
-<td>or</td>
+<td>相当于or</td>
 </tr>
 <tr>
 <td>db.users.find({ name: { $exists: true } })</td>
-<td>exist</td>
+<td>相当于exist</td>
+</tr>
+<tr>
+<td>db.users.find({ name: { $exists: false} })</td>
+<td>相当于name is null</td>
 </tr>
 <tr>
 <td>db.users.find({ $expr: { $gt: [“$balance”, “$debt”] } })</td>
-<td>expr</td>
+<td>相当于expr</td>
 </tr>
 <tr>
 <td>db.users.find({ name: “Kyle” }, { name: 1, age: 1 })</td>
@@ -267,7 +271,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 <tr>
 <td>db.users.find().sort({ name: 1, age: -1 })</td>
-<td>排序，order by name acs , age desc</td>
+<td>排序，相当于 order by name acs , age desc</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
