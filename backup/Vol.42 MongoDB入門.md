@@ -120,6 +120,20 @@ db.orders.aggregate([
 db.orders.aggregate([
    {$group: { _id: null, total: { $sum: "$price" }}}　//全表价格总和
 ])
+
+db.students.aggregate({$unwind:"$score"})
+{
+name:"张三",
+score:[
+    {subject:"语文",score:84},
+    {subject:"数学",score:94},
+    {subject:"英语",score:74}]
+}
+
+{name:"张三",score: {subject:"语文",score:84}}
+{name:"张三",score: {subject:"数学",score:94}}
+{name:"张三",score: {subject:"英语",score:74}}
+
 ```
 
 > [!TIP]
