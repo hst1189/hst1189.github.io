@@ -134,6 +134,17 @@ score:[
 {name:"张三",score: {subject:"数学",score:94}}
 {name:"张三",score: {subject:"英语",score:74}}
 
+db.products.aggregate({
+    $bucket:{
+        groupBy:"$price",
+        boundaries:[10,20,30,40],
+        default:"other",
+        output:{"count":{$sum:1}}
+    }
+})
+
+
+
 ```
 
 > [!TIP]
