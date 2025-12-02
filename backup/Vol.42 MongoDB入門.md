@@ -143,6 +143,17 @@ db.products.aggregate({
     }
 })
 
+db.products.aggregate({
+    $facet:{
+        price:{
+            $bucket:{ }
+        },
+        year:{
+            $bucket:{ }
+        }
+    }
+})
+
 
 
 ```

@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-02 14:47</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-02 14:50</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -485,6 +485,17 @@ footer{margin-top:64px; text-align: center;font-size: small;}
         <span class="pl-c1">boundaries</span>:<span class="pl-kos">[</span><span class="pl-c1">10</span><span class="pl-kos">,</span><span class="pl-c1">20</span><span class="pl-kos">,</span><span class="pl-c1">30</span><span class="pl-kos">,</span><span class="pl-c1">40</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
         <span class="pl-c1">default</span>:<span class="pl-s">"other"</span><span class="pl-kos">,</span>
         <span class="pl-c1">output</span>:<span class="pl-kos">{</span><span class="pl-s">"count"</span>:<span class="pl-kos">{</span><span class="pl-c1">$sum</span>:<span class="pl-c1">1</span><span class="pl-kos">}</span><span class="pl-kos">}</span>
+    <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span>
+
+<span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-c1">products</span><span class="pl-kos">.</span><span class="pl-en">aggregate</span><span class="pl-kos">(</span><span class="pl-kos">{</span>
+    <span class="pl-c1">$facet</span>:<span class="pl-kos">{</span>
+        <span class="pl-c1">price</span>:<span class="pl-kos">{</span>
+            <span class="pl-c1">$bucket</span>:<span class="pl-kos">{</span> <span class="pl-kos">}</span>
+        <span class="pl-kos">}</span><span class="pl-kos">,</span>
+        <span class="pl-c1">year</span>:<span class="pl-kos">{</span>
+            <span class="pl-c1">$bucket</span>:<span class="pl-kos">{</span> <span class="pl-kos">}</span>
+        <span class="pl-kos">}</span>
     <span class="pl-kos">}</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span>
 
