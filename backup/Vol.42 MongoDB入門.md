@@ -224,7 +224,7 @@ mongorestore -h 127.0.0.1:27017 -d <DB名>  -c <Collection名>  xxx.bson
 https://www.mongodb.com/zh-cn/docs/manual/data-modeling/
 模式 | 应用场景| 优点
 -- | -- | --
-分桶模式 |  实时数据  365*24 |  大量减少文档数量、大量减少index占用空间 
+分桶模式 |  实时数据  365*24  飞机飞行数据等 |  利用文档内嵌，将一段时间数据聚集到一个文档，大量减少文档数量、大量减少index占用空间 
 
 
 # 🚀mongoose
