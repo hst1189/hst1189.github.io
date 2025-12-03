@@ -16,13 +16,6 @@ show roles |  显示当前DB里全部角色
 show profile | 显示profile
 
 
-### ⚜️Create
-Commands | 備考
----|---
-db.users.insert({ name: “Kyle” }) | 插入单条
-db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  插入多条，要以数组形式　
-
-
 ### ⚜️Read
 Commands |  備考
 ---|---
@@ -53,12 +46,21 @@ db.users.find().skip(2).limit(3)                                    | 跳过2条
 db.users.find().sort({ name: 1, age: -1 })                    | 排序，相当于 order by name acs , age desc
 
 
+### ⚜️Create
+Commands | 備考
+---|---
+db.users.insert( { } )  | 插入单条 / 多条
+db.users.insertOne({ name: “Kyle” }) | 插入单条
+db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  插入多条，数组形式　
+
+
 ### ⚜️Update
 Commands |  備考
 ---|---
-db.users.update({age:16},{$set:{age:20}})                            |  第一条、年龄20的数据更新为 21，如果不写set，整条数据将被替换 
-db.users.update({ age: 12 }, { $set: { name: "Hi" }})              | ★添加字段  { name: "Hi" } 
-db.users.update({ age: 12 }, { $unset: { age: "" }})                | 第一条、年龄12的数据， 清空年龄 
+db.users.update( {更新条件}, {$set:{ 更新内容}})                 | 不指定mutil 的话，只插入一条
+db.users.updateOne({age:16},{$set:{age:20}})                     | 年龄20的数据更新为 21，如果不写set，整条数据将被替换 
+db.users.updateOne({ age: 12 }, { $set: { name: "Hi" }})       | ★不存在的字段就添加  { name: "Hi" } 
+db.users.updateOne({ age: 12 }, { $unset: { age: "" }})         | 第一条、年龄12的数据， 清空年龄 
 db.users.updateMany({}, { $set: { school: "new collage" }}) | ★所有数据，添加新项目{ school: "new collage" }
 db.users.updateMany({}, { $unset: { school: "" }})　            | ★所有数据，删除项目{ school: "new collage" }
 db.users.updateMany({}, { $push: { friends: "John" }})         | ★所有数据，添加一个数组{ friends: “John” }
