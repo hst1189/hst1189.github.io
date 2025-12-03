@@ -111,14 +111,7 @@ $unwind     | 展开数组  | ー                   |  将数组拆分为单独�
 事例：
 ```javascript
 
-db.collection.aggregate([])　不会报错，且会和find一样返回所有文档
-
-db.users.aggregate([
-  {$project:{cust_id:1,status:1,amount:1} },
-  {$match:{access:"valid"}},
-  {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
-  {$sort:{total:-1}}            // 1:升序  -1:降序
-])
+db.collection.aggregate()　不会报错，且会和find一样返回所有文档
 
 db.orders.aggregate([
    {$group: {_id: null,count: { $sum: 1 }}}  //全表件数
@@ -128,6 +121,15 @@ db.orders.aggregate([
    {$group: { _id: null, total: { $sum: "$price" }}}　//全表价格总和
 ])
 
+db.users.aggregate([
+  {$match:{access:"valid"}},
+  {$group:{_id:"$cust_id",total:{$sum:"$amount"}}},
+  {$project:{_id:1,status:1,amount:1} },
+  {$sort:{total:-1}}            // 1:升序  -1:降序
+])
+
+
+// 展开数组
 db.students.aggregate({$unwind:"$score"})
 {
 name:"张三",
@@ -141,6 +143,15 @@ score:[
 {name:"张三",score: {subject:"数学",score:94}}
 {name:"张三",score: {subject:"英语",score:74}}
 
+
+// 展开2层数组
+db.students.aggregate(
+    {$unwind:"$hobbies"},
+    {$unwind:"$hobbies.type"}
+)
+
+
+// $bucket用法
 db.products.aggregate({
     $bucket:{
         groupBy:"$price",
@@ -150,6 +161,7 @@ db.products.aggregate({
     }
 })
 
+// $facet用法
 db.products.aggregate({
     $facet:{
         price:{
@@ -160,8 +172,6 @@ db.products.aggregate({
         }
     }
 })
-
-
 
 ```
 
