@@ -21,8 +21,8 @@ Commands |  凡例
 ---|---
 db.users.count() | 查看件数
 db.users.distinct("tags") |  查看tags 所有值
-db.users.findOne() | 查看表结构
 db.users.stats() |  查看表状态
+db.users.findOne() | 取一条查看表结构
 schema(db.test) | 查看表结构 https://github.com/mongodb-labs/mongosh-snippets
 
 <img width="707" height="515" alt="Image" src="https://github.com/user-attachments/assets/db4b49ea-558a-41ad-bcf1-dcb2874cf0be" />
