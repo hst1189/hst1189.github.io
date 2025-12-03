@@ -6,6 +6,7 @@ https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-she
 Commands |  凡例
 ---|---
 mongosh | mongosh "mongodb+srv://cluster0.t34zxhe.mongodb.net/" --apiVersion 1 --username dnUser
+db.version() | 显示DB版本
 show dbs  |  显示全部DB
 use \<dbname\>  | 切换DB 
 db | 显示现在所在DB
