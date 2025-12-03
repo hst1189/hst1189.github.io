@@ -225,6 +225,7 @@ https://www.mongodb.com/zh-cn/docs/manual/data-modeling/
 模式 | 应用场景| 优点
 -- | -- | --
 分桶模式 |  实时数据  365*24  飞机飞行数据等 |  利用文档内嵌，将一段时间数据聚集到一个文档，大量减少文档数量、大量减少index占用空间 
+列传行 | 产品属性 color, size ， 多语言（国家） |  转换为数组 一个索引解决
 
 
 # 🚀mongoose
