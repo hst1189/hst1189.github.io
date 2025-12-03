@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-03 05:57</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-03 06:08</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -153,6 +153,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
+<p>db.users.count()<br>
+db.users.distinct("tags")</p>
 <h3>⚜️Read</h3>
 <markdown-accessiblity-table><table role="table">
 <thead>
@@ -573,6 +575,33 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <td>$stdDevSamp</td>
 <td>返回输入值的样本标准偏差（the sample standard deviation）</td>
 <td>-</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>⚜️ReplicationCommands</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rs.add()</td>
+<td>添加从机</td>
+</tr>
+<tr>
+<td>rs.conf()</td>
+<td>编辑conf</td>
+</tr>
+<tr>
+<td>rs.status()</td>
+<td>查看状态</td>
+</tr>
+<tr>
+<td>re.remove()</td>
+<td>删除从机</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>

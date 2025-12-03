@@ -17,6 +17,10 @@ show roles |  显示当前DB里全部角色
 show profile | 显示profile
 
 
+db.users.count()
+db.users.distinct("tags")
+
+
 ### ⚜️Read
 Commands |  備考
 ---|---
@@ -178,6 +182,16 @@ $push | 将指定的表达式的值添加到一个数组中。 | -
 $addToSet | 将表达式的值添加到一个集合中（无重复值，无序）。 | -
 $stdDevPop | 返回输入值的总体标准偏差（population standard deviation） | -
 $stdDevSamp | 返回输入值的样本标准偏差（the sample standard deviation） | -
+
+
+### ⚜️ReplicationCommands
+名称 | 描述 
+-- | -- 
+rs.add() | 添加从机
+rs.conf() | 编辑conf
+rs.status() | 查看状态
+re.remove() | 删除从机
+
 
 
 
