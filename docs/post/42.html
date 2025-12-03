@@ -96,8 +96,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-03 01:10</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Previous Page">上一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a><a class="next_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Next Page">下一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-03 02:47</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><p>cheatsheet<br>
@@ -310,27 +310,27 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 <tr>
 <td>db.users.updateMany({}, { $set: { school: "new collage" }})</td>
-<td>★所有数据，添加新项目{ school: "new collage" }</td>
+<td>$set，添加新项目{ school: "new collage" }</td>
 </tr>
 <tr>
 <td>db.users.updateMany({}, { $unset: { school: "" }})　</td>
-<td>★所有数据，删除项目{ school: "new collage" }</td>
+<td>$unset，删除项目{ school: "new collage" }</td>
 </tr>
 <tr>
 <td>db.users.updateMany({}, { $push: { friends: "John" }})</td>
-<td>★所有数据，添加一个数组{ friends: “John” }</td>
+<td>$push，添加一个数组{ friends: “John” }</td>
 </tr>
 <tr>
 <td>db.users.updateMany({}, { $pull: { friends: "Mike" }})</td>
-<td>★所有数据，从数组中删除一个项目{ friends: “Mike” }</td>
+<td>$pull，从数组中删除一个项目{ friends: “Mike” }</td>
 </tr>
 <tr>
 <td>db.users.updateMany({}, {$rename:{'school':'home'}})</td>
-<td>★所有数据、項目名変更 'school' → 'home'</td>
+<td>$rename、項目名変更 'school' → 'home'</td>
 </tr>
 <tr>
 <td>db.users.updateMany({ age: 12 }, { $inc: { age: 2 }})</td>
-<td>所有数据、年龄12的数据， 年龄+ 2</td>
+<td>$inc、年龄12的数据， 年龄+ 2</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>

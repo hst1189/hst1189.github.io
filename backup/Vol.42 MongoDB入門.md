@@ -61,12 +61,12 @@ db.users.update( {更新条件}, {$set:{ 更新内容}})                 | 不�
 db.users.updateOne({age:16},{$set:{age:20}})                     | 年龄20的数据更新为 21，如果不写set，整条数据将被替换 
 db.users.updateOne({ age: 12 }, { $set: { name: "Hi" }})       | ★不存在的字段就添加  { name: "Hi" } 
 db.users.updateOne({ age: 12 }, { $unset: { age: "" }})         | 第一条、年龄12的数据， 清空年龄 
-db.users.updateMany({}, { $set: { school: "new collage" }}) | ★所有数据，添加新项目{ school: "new collage" }
-db.users.updateMany({}, { $unset: { school: "" }})　            | ★所有数据，删除项目{ school: "new collage" }
-db.users.updateMany({}, { $push: { friends: "John" }})         | ★所有数据，添加一个数组{ friends: “John” }
-db.users.updateMany({}, { $pull: { friends: "Mike" }})          | ★所有数据，从数组中删除一个项目{ friends: “Mike” }
-db.users.updateMany({}, {$rename:{'school':'home'}})        | ★所有数据、項目名変更 'school' → 'home'
-db.users.updateMany({ age: 12 }, { $inc: { age: 2 }})            | 所有数据、年龄12的数据， 年龄+ 2
+db.users.updateMany({}, { $set: { school: "new collage" }}) | $set，添加新项目{ school: "new collage" }
+db.users.updateMany({}, { $unset: { school: "" }})　            | $unset，删除项目{ school: "new collage" }
+db.users.updateMany({}, { $push: { friends: "John" }})         | $push，添加一个数组{ friends: “John” }
+db.users.updateMany({}, { $pull: { friends: "Mike" }})          | $pull，从数组中删除一个项目{ friends: “Mike” }
+db.users.updateMany({}, {$rename:{'school':'home'}})        | $rename、項目名変更 'school' → 'home'
+db.users.updateMany({ age: 12 }, { $inc: { age: 2 }})            | $inc、年龄12的数据， 年龄+ 2
 
 
 ### ⚜️Delete
