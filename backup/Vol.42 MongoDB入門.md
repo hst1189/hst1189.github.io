@@ -17,8 +17,13 @@ show roles |  显示当前DB里全部角色
 show profile | 显示profile
 
 
-db.users.count()
-db.users.distinct("tags")
+### ⚜️有用的命令
+Commands |  凡例
+---|---
+db.users.count() | 查看件数
+db.users.distinct("tags") |  查看tags 所有值
+db.collection.findOne() | 查看表结构
+db.collection.stats() |  查看表状态
 
 
 ### ⚜️Read
