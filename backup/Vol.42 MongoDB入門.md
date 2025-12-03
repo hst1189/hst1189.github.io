@@ -229,6 +229,10 @@ https://www.mongodb.com/zh-cn/docs/manual/data-modeling/
 版本字段 | 文档模型格式多，不知道合理性 | 增加一个版本字段，快速过滤掉旧版本
 预聚合字段 | 业绩排名 热销榜 电影排名 |  事先准备聚合字段，每次跟新  {$inc:{quantity:-1, daily_sales:1, weekly_sales:1, monthly_sales:1 } }
 
+保险公司的实例：
+<img width="942" height="657" alt="Image" src="https://github.com/user-attachments/assets/01fde730-0285-4d59-b058-2916015ef10c" />
+<img width="932" height="517" alt="Image" src="https://github.com/user-attachments/assets/558a13b4-8683-4794-baec-790872fc59a7" />
+
 
 # 🚀mongoose
 https://mongoose.node.org.cn/docs/schematypes.html
