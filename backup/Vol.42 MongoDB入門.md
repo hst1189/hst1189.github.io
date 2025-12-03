@@ -12,9 +12,7 @@ use \<dbname\>  | 切换DB
 db | 显示现在所在DB
 show collections / show tables |  显示当前DB里全部collections
 db.getCollectionInfos() |  显示当前DB里全部collections的信息
-show users | 显示当前DB里全部users
-show roles |  显示当前DB里全部角色
-show profile | 显示profile
+
 
 
 ### ⚜️有用的命令
