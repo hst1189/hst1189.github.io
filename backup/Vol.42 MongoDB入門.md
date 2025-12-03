@@ -25,7 +25,7 @@ db.users.stats() |  查看表状态
 db.users.findOne() | 取一条查看表结构
 schema(db.test) | 查看表结构 https://github.com/mongodb-labs/mongosh-snippets
 
-<img width="707" height="515" alt="Image" src="https://github.com/user-attachments/assets/db4b49ea-558a-41ad-bcf1-dcb2874cf0be" />
+<img width="707" height="515" alt="Image" src="https://github.com/user-attachments/assets/02ab760c-ed74-44bd-8a14-6b6b82e30c13" />
 
 
 ### ⚜️Read
