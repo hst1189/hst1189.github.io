@@ -8,9 +8,10 @@ Commands |  凡例
 mongosh | mongosh "mongodb+srv://cluster0.t34zxhe.mongodb.net/" --apiVersion 1 --username dnUser
 db.version() | 显示DB版本
 show dbs  |  显示全部DB
+show collections |  显示当前DB里全部collections 
+show tables |  显示当前DB里全部collections
 use \<dbname\>  | 切换DB 
 db | 显示现在所在DB
-show collections / show tables |  显示当前DB里全部collections
 db.getCollectionInfos() |  显示当前DB里全部collections的信息
 
 
