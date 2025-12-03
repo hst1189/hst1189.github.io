@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 03 Dec 2025 02:47:50 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 03 Dec 2025 02:48:36 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
 https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet
 
 # 🚀MongoDB CRUD 操作
@@ -58,10 +58,10 @@ db.users.insertMany([{ age: 26 }, { age: 20 }]) |  insertMany( [ {},{},{} ] )  �
 ### ⚜️Update
 Commands |  備考
 ---|---
-db.users.update( {更新条件}, {$set:{ 更新内容}})                 | 不指定mutil 的话，只插入一条
+db.users.update( {更新条件}, {$set:{ 更新内容}})                 | 不指定mutil 的话，只更新一条
 db.users.updateOne({age:16},{$set:{age:20}})                     | 年龄20的数据更新为 21，如果不写set，整条数据将被替换 
 db.users.updateOne({ age: 12 }, { $set: { name: 'Hi' }})       | ★不存在的字段就添加  { name: 'Hi' } 
-db.users.updateOne({ age: 12 }, { $unset: { age: '' }})         | 第一条、年龄12的数据， 清空年龄 
+db.users.updateOne({ age: 12 }, { $unset: { age: '' }})         | 年龄12的数据， 清空年龄 
 db.users.updateMany({}, { $set: { school: 'new collage' }}) | $set，添加新项目{ school: 'new collage' }
 db.users.updateMany({}, { $unset: { school: '' }})　            | $unset，删除项目{ school: 'new collage' }
 db.users.updateMany({}, { $push: { friends: 'John' }})         | $push，添加一个数组{ friends: “John” }

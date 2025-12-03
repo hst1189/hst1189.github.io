@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-03 02:47</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-03 02:48</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -294,7 +294,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <tbody>
 <tr>
 <td>db.users.update( {更新条件}, {$set:{ 更新内容}})</td>
-<td>不指定mutil 的话，只插入一条</td>
+<td>不指定mutil 的话，只更新一条</td>
 </tr>
 <tr>
 <td>db.users.updateOne({age:16},{$set:{age:20}})</td>
@@ -306,7 +306,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 <tr>
 <td>db.users.updateOne({ age: 12 }, { $unset: { age: "" }})</td>
-<td>第一条、年龄12的数据， 清空年龄</td>
+<td>年龄12的数据， 清空年龄</td>
 </tr>
 <tr>
 <td>db.users.updateMany({}, { $set: { school: "new collage" }})</td>
