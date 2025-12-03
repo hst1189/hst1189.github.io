@@ -10,8 +10,7 @@ db.version() | 显示DB版本
 show dbs  |  显示全部DB
 use \<dbname\>  | 切换DB 
 db | 显示现在所在DB
-show collections |  显示当前DB里全部collections 
-show tables |  显示当前DB里全部collections 
+show collections / show tables |  显示当前DB里全部collections 
 show users | 显示当前DB里全部users
 show roles |  显示当前DB里全部角色
 show profile | 显示profile
