@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-03 11:53</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-30 06:06,updated at 2025-12-03 12:03</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/41.html" aria-label="Next Page">下一篇-Vol.41 GraphQL（apollo-server-express-mongodb）</a></div>
 </nav>
 
@@ -666,6 +666,11 @@ mongorestore -h 127.0.0.1:27017 -d &lt;DB名&gt;  -c &lt;Collection名&gt;  xxx.
 <td>版本字段</td>
 <td>文档模型格式多，不知道合理性</td>
 <td>增加一个版本字段，快速过滤掉旧版本</td>
+</tr>
+<tr>
+<td>预聚合字段</td>
+<td>业绩排名 热销榜 电影排名</td>
+<td>事先准备聚合字段，每次跟新  $inc:{quantity:-1, daily_sales:1,weekly_sales:1,monthly_sales:1}</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
