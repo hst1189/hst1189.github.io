@@ -181,6 +181,13 @@ $stdDevSamp | 返回输入值的样本标准偏差（the sample standard deviati
 
 
 
+# 🚀MongoDB Backup/Dump 操作
+```
+mongodump -h 127.0.0.1:27017 -d <DB名>  -c <Collection名>
+mongorestore -h 127.0.0.1:27017 -d <DB名>  -c <Collection名>  xxx.bson
+```
+
+
 
 # 🚀设计模式
 https://www.mongodb.com/zh-cn/docs/manual/data-modeling/
