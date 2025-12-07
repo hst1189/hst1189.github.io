@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="小饅頭の部落格">
 
 <title>Vol.24 「白嫖」cloudflare无限企业邮箱</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 
@@ -96,23 +96,23 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:15,updated at 2025-09-21 09:15</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/23.html" aria-label="Previous Page">上一篇-Vol.23 「白嫖」批量gmail, outlook</a><a class="next_page" href="https://grapehut.dpdns.org/post/25.html" aria-label="Next Page">下一篇-Vol.25 「白嫖」大語言模型LLM</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:15,updated at 2025-12-07 06:06</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/25.html" aria-label="Previous Page">上一篇-Vol.25 「白嫖」大語言模型LLM</a><a class="next_page" href="https://grapehut.dpdns.org/post/23.html" aria-label="Next Page">下一篇-Vol.23 「白嫖」批量gmail, outlook</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>白嫖cloudflare无限企业邮箱</h1>
-<h2>收邮件</h2>
+<h2>🎉收邮件</h2>
 <ol>
 <li>进入cloudflare，选择一个已绑定的域名</li>
 <li>启用email routing，自动生成５条DNS记录（３个MX，２个TXT），添加结果可以在DNS面板里看到</li>
 <li>设置email routing规则，编辑Catch-All绑定一个転送邮箱，通过邮箱验证后，転送状态变为可用</li>
 </ol>
-<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>邮箱「任意字符@ 上述绑定的域名」， 所接受到的邮件 都会転送到Catch-All绑定的邮箱<br>
-例如：绑定域名 grapehut.xyz， 发送至：任意@grapehut.xyz  的邮件，会転送到Catch-All 绑定邮箱</p>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>邮箱「<strong>任意字符</strong>@ <strong>上述绑定的域名</strong>」， 所接受到的邮件 都会転送到Catch-All<br>
+例：发送至：<strong>任意</strong>@<strong>grapehut.xyz</strong>  的邮件，会転送到Catch-All 绑定邮箱</p>
 </div>
-<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>cloudflare邮件设置的概要栏里，可以查看所有転送的邮件</p>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>cloudflare邮件设置的概要栏里可以查看，所有收到的邮件</p>
 </div>
-<h2>发邮件</h2>
+<h2>🎉发邮件</h2>
 <p>通过resend.com的API服务  <a href="https://resend.com/onboarding" rel="nofollow">https://resend.com/onboarding</a></p>
 <ol>
 <li>
@@ -125,16 +125,24 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </li>
 </ol>
 <h4>测试</h4>
-<pre class="notranslate"><code class="notranslate">curl -X POST 'https://api.resend.com/emails' \
- -H 'Authorization: Bearer re_123456789' \
- -H 'Content-Type: application/json' \
- -d $'{
-  "from": "Acme &lt;onboarding@resend.dev&gt;",
-  "to": ["delivered@resend.dev"],
-  "subject": "hello world",
-  "html": "&lt;p&gt;it works!&lt;/p&gt;"
-}'
-</code></pre></section>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-v">Resend</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'resend'</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">resend</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-v">Resend</span><span class="pl-kos">(</span><span class="pl-s">'re_xxxxxxx'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-kos">(</span><span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">const</span> <span class="pl-kos">{</span> data<span class="pl-kos">,</span> error <span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">resend</span><span class="pl-kos">.</span><span class="pl-c1">emails</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-kos">{</span>
+    <span class="pl-c1">from</span>: <span class="pl-s">'Acme &lt;任意@grapehut.xyz&gt;'</span><span class="pl-kos">,</span>
+    <span class="pl-c1">to</span>: <span class="pl-kos">[</span><span class="pl-s">'目标邮箱@outlook.com'</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
+    <span class="pl-c1">subject</span>: <span class="pl-s">'Hello World'</span><span class="pl-kos">,</span>
+    <span class="pl-c1">html</span>: <span class="pl-s">'&lt;strong&gt;It works!&lt;/strong&gt;'</span><span class="pl-kos">,</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-k">return</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-kos">{</span> error <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-kos">{</span> data <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
 
