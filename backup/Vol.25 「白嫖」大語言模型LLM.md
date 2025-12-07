@@ -12,8 +12,8 @@ https://api-proxy.me/
 
 
 # 🔖 Gemini API生态  （国内无法直接访问，需代理）
-https://gemini.google.com/
-https://aistudio.google.com/
+https://gemini.google.com/   （面向普通用户）
+https://aistudio.google.com/   (面向开发人员)
 https://notebooklm.google.com/
 
 ### APIキー
