@@ -1,9 +1,9 @@
-# 关于 WSL（Windows Subsystem for Linux）
+# 🎉关于 WSL（Windows Subsystem for Linux）
 Windows 的一项功能，可用于在 Windows 计算机上运行 Linux 环境，而无需单独的虚拟机或双引导。 
 WSL 旨在为希望同时使用 Windows 和 Linux 的开发人员提供无缝高效的体验。
 
 
-# 前提条件
+# 🎉前提条件
 开启以下2个功能 （系统 > 附加功能 > 其他功能 ） 
 - WSL（Windows Subsystem for Linux）
 - 虚拟机平台
@@ -16,13 +16,14 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 `Gmeek-html<img src="https://zmkk.fun/upload/6b94eebcc31ff147de71f46108847851.png">`
 
 
-# 微软官网
+# 🎉微软官网
 > https://learn.microsoft.com/ja-jp/windows/wsl/install-manual
 > https://learn.microsoft.com/ja-jp/windows/wsl/basic-commands
 
 
-# WSL命令
-### 查看wsl版本
+# 🎉WSL命令
+
+### 🌸查看版本
 ```
 $ wsl --version
 
@@ -35,7 +36,7 @@ DXCore バージョン: 10.0.26100.1-240331-1435.ge-release
 Windows バージョン: 10.0.26100.863
 ```
 
-### 查看wsl状態
+### 🌸查看状態
 ```
 $ wsl --status
 
@@ -43,24 +44,24 @@ $ wsl --status
 既定のバージョン: 2
 ```
 
-### 帮助
+### 🌸查看帮助
 ```
 $ wsl --help
 ```
 
-### 安装 WSL
+### 🌸安装 WSL
 ```
 $ wsl --install　                       ※默认安装Ubuntu  
 $ wsl --install -d <DistributionName>   ※指定系统
 ```
 
-### 查看已安装系统
+### 🌸查看已安装系统
 ```
 $ wsl --list --verbose    或者  $ wsl -l -v　
 ```
 
 
-### 查看可安装系统
+### 🌸查看可安装系统
 https://raw.githubusercontent.com/microsoft/WSL/master/distributions/DistributionInfo.json
 ```
 $ wsl --list --online   或者   $ wsl -l -o　
@@ -84,40 +85,45 @@ $ wsl --list --online   或者   $ wsl -l -o　
 |openSUSE-Tumbleweed             |openSUSE Tumbleweed||
 
 
-
-### 设置默认系统
+### 🌸设置默认系统
 ```
 $ wsl --set-default <Distribution Name>    或者      $ wsl -s <DistributionName>
 ```
 
-### 切换系统
+### 🌸切换系统
 ```
 $ wsl --set-version <distribution name> <versionNumber>　
 ```
 
-
-### 启动wsl
+### 🌸启动wsl
 ```
 $ wsl 　                     ※启动默认版本
 $ wsl ~　                    ※ユーザーのホーム ディレクトリから開始
 $ wsl -d <DistributionName>　※指定版本
 ```
 
-
-
-### 关闭wsl
+### 🌸关闭wsl
 ```
 $ wsl --shutdown 　                    ※关闭所有wsl      
 $ wsl --terminate <DistributionName> 　※关闭指定Linux版本
 ```
 
-### 卸载系统
+### 🌸导入Linux
+```
+$ wsl --import <DistributionName> <Install-Location> xxx.tar
+```
+
+### 🌸卸载Linux
 ```
 $ wsl --unregister <DistributionName>
 ```
 
+### 🌸备份Linux
+```
+$ wsl --export <DistributionName> xxx.tar
+```
 
-### マウント
+### 🌸マウント
 >https://learn.microsoft.com/ja-jp/windows/wsl/wsl2-mount-disk
 
 ```
@@ -125,26 +131,7 @@ $ wsl --mount <DiskPath>　※マウント　　　
 $ wsl --unmount <DiskPath>　※マウント解除
 ```
 
-
-
-### 备份Linux
-```
-$ wsl --export <DistributionName> xxx.tar
-```
-
-### 导入Linux
-```
-$ wsl --import <DistributionName> <Install-Location> xxx.tar
-```
-
-### 卸载Linux
-```
-$ wsl --unregister <DistributionName>
-```
-
-
-
-### 查看IP
+### 🌸查看IP
 - Linux ディストリビューションの IP アドレスを返します (WSL 2 VM アドレス)
 ```
 $ wsl hostname -I
@@ -157,18 +144,22 @@ $ ip route show | grep -i default | awk '{ print $3}'
 
 
 
-# WSL 詳細設定の構成
+# 🎉WSL 詳細設定の構成
 https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config
 
-### wsl.conf 
-[wsl.conf](https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config#wslconf) ファイル`/etc/wsl.conf`は、ディストリビューションごとに詳細設定オプションを構成する。
+### 🌸wsl.conf 
+[wsl.conf](https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config#wslconf) 
 
-### .wslconfig
- [.wslconfig](https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config#wslconfig) ファイル`%UserProfile% ディレクトリに格納`は、すべての WSL 2 ディストリビューション全体で詳細設定オプションを構成する。
+ファイル`/etc/wsl.conf`は、ディストリビューションごとに詳細設定オプションを構成する。
+
+### 🌸.wslconfig
+ [.wslconfig](https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config#wslconfig) 
+
+ファイル`%UserProfile% ディレクトリに格納`は、すべての WSL 2 ディストリビューション全体で詳細設定オプションを構成する。
 
 
-### wsl.conf ファイルの例
-```
+### 🌸wsl.conf ファイルの例
+```javascript
 # Automatically mount Windows drive when the distribution is launched
 [automount]
 
@@ -210,8 +201,8 @@ command = service docker start
 
 
 
-#### .wslconfig ファイルの例
-```
+#### 🌸.wslconfig ファイルの例
+```javascript
 # Settings apply across all Linux distros running on WSL 2
 [wsl2]
 
@@ -251,16 +242,14 @@ sparseVhd=true
 ```
 
 
-
-
-### systemd サポート
+### 🌸systemd サポート
 テキスト エディターで `wsl.conf` ファイルを開き、`/etc/wsl.conf` にこれらの行を追加します
 ```
 [boot]
 systemd=true
 ```
 
-### IP同步（window 与wsl 同一IP）
+### 🌸IP同步（window 与wsl 同一IP）
 テキスト エディターで `.wslconfig` ファイルを開き、`%UserProfile%/.wslconfig` にこれらの行を追加します
 ```
 [wsl2]
@@ -268,7 +257,7 @@ networkingMode=mirrored
 ```
 
 
-# window 与 wsl 相互调用命令
+# 🎉window 与 wsl 相互调用命令
 ・在wsl 可以调用 `notepad.exe`  、`explorer.exe` 等
 ・在cmd 可以调用  `dir  | wsl grep` 等
 

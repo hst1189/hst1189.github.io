@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="小饅頭の部落格">
 
 <title>Vol.09 WSL（Windows Subsystem for Linux）</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 
@@ -96,14 +96,14 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:06,updated at 2025-12-07 06:33</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:06,updated at 2025-12-07 06:54</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/10.html" aria-label="Previous Page">上一篇-Vol.10 WinPE工具</a><a class="next_page" href="https://grapehut.dpdns.org/post/8.html" aria-label="Next Page">下一篇-Vol.08 Window虚拟机(HyperV)</a></div>
 </nav>
 
-<section class="markdown-body spoiler" id="postBody"><h1>关于 WSL（Windows Subsystem for Linux）</h1>
+<section class="markdown-body spoiler" id="postBody"><h1>🎉关于 WSL（Windows Subsystem for Linux）</h1>
 <p>Windows 的一项功能，可用于在 Windows 计算机上运行 Linux 环境，而无需单独的虚拟机或双引导。<br>
 WSL 旨在为希望同时使用 Windows 和 Linux 的开发人员提供无缝高效的体验。</p>
-<h1>前提条件</h1>
+<h1>🎉前提条件</h1>
 <p>开启以下2个功能 （系统 &gt; 附加功能 &gt; 其他功能 ）</p>
 <ul>
 <li>WSL（Windows Subsystem for Linux）</li>
@@ -114,13 +114,13 @@ WSL 旨在为希望同时使用 Windows 和 Linux 的开发人员提供无缝高
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 </code></pre>
 <p><img src="https://zmkk.fun/upload/6b94eebcc31ff147de71f46108847851.png"></p>
-<h1>微软官网</h1>
+<h1>🎉微软官网</h1>
 <blockquote>
 <p><a href="https://learn.microsoft.com/ja-jp/windows/wsl/install-manual" rel="nofollow">https://learn.microsoft.com/ja-jp/windows/wsl/install-manual</a><br>
 <a href="https://learn.microsoft.com/ja-jp/windows/wsl/basic-commands" rel="nofollow">https://learn.microsoft.com/ja-jp/windows/wsl/basic-commands</a></p>
 </blockquote>
-<h1>WSL命令</h1>
-<h3>查看wsl版本</h3>
+<h1>🎉WSL命令</h1>
+<h3>🌸查看版本</h3>
 <pre class="notranslate"><code class="notranslate">$ wsl --version
 
 WSL バージョン: 2.3.26.0
@@ -131,23 +131,23 @@ Direct3D バージョン: 1.611.1-81528511
 DXCore バージョン: 10.0.26100.1-240331-1435.ge-release
 Windows バージョン: 10.0.26100.863
 </code></pre>
-<h3>查看wsl状態</h3>
+<h3>🌸查看状態</h3>
 <pre class="notranslate"><code class="notranslate">$ wsl --status
 
 既定のディストリビューション: Ubuntu
 既定のバージョン: 2
 </code></pre>
-<h3>帮助</h3>
+<h3>🌸查看帮助</h3>
 <pre class="notranslate"><code class="notranslate">$ wsl --help
 </code></pre>
-<h3>安装 WSL</h3>
+<h3>🌸安装 WSL</h3>
 <pre class="notranslate"><code class="notranslate">$ wsl --install　                       ※默认安装Ubuntu  
 $ wsl --install -d &lt;DistributionName&gt;   ※指定系统
 </code></pre>
-<h3>查看已安装系统</h3>
+<h3>🌸查看已安装系统</h3>
 <pre class="notranslate"><code class="notranslate">$ wsl --list --verbose    或者  $ wsl -l -v　
 </code></pre>
-<h3>查看可安装系统</h3>
+<h3>🌸查看可安装系统</h3>
 <p><a href="https://raw.githubusercontent.com/microsoft/WSL/master/distributions/DistributionInfo.json" rel="nofollow">https://raw.githubusercontent.com/microsoft/WSL/master/distributions/DistributionInfo.json</a></p>
 <pre class="notranslate"><code class="notranslate">$ wsl --list --online   或者   $ wsl -l -o　
 </code></pre>
@@ -232,41 +232,38 @@ $ wsl --install -d &lt;DistributionName&gt;   ※指定系统
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<h3>设置默认系统</h3>
+<h3>🌸设置默认系统</h3>
 <pre class="notranslate"><code class="notranslate">$ wsl --set-default &lt;Distribution Name&gt;    或者      $ wsl -s &lt;DistributionName&gt;
 </code></pre>
-<h3>切换系统</h3>
+<h3>🌸切换系统</h3>
 <pre class="notranslate"><code class="notranslate">$ wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;　
 </code></pre>
-<h3>启动wsl</h3>
+<h3>🌸启动wsl</h3>
 <pre class="notranslate"><code class="notranslate">$ wsl 　                     ※启动默认版本
 $ wsl ~　                    ※ユーザーのホーム ディレクトリから開始
 $ wsl -d &lt;DistributionName&gt;　※指定版本
 </code></pre>
-<h3>关闭wsl</h3>
+<h3>🌸关闭wsl</h3>
 <pre class="notranslate"><code class="notranslate">$ wsl --shutdown 　                    ※关闭所有wsl      
 $ wsl --terminate &lt;DistributionName&gt; 　※关闭指定Linux版本
 </code></pre>
-<h3>卸载系统</h3>
+<h3>🌸导入Linux</h3>
+<pre class="notranslate"><code class="notranslate">$ wsl --import &lt;DistributionName&gt; &lt;Install-Location&gt; xxx.tar
+</code></pre>
+<h3>🌸卸载Linux</h3>
 <pre class="notranslate"><code class="notranslate">$ wsl --unregister &lt;DistributionName&gt;
 </code></pre>
-<h3>マウント</h3>
+<h3>🌸备份Linux</h3>
+<pre class="notranslate"><code class="notranslate">$ wsl --export &lt;DistributionName&gt; xxx.tar
+</code></pre>
+<h3>🌸マウント</h3>
 <blockquote>
 <p><a href="https://learn.microsoft.com/ja-jp/windows/wsl/wsl2-mount-disk" rel="nofollow">https://learn.microsoft.com/ja-jp/windows/wsl/wsl2-mount-disk</a></p>
 </blockquote>
 <pre class="notranslate"><code class="notranslate">$ wsl --mount &lt;DiskPath&gt;　※マウント　　　
 $ wsl --unmount &lt;DiskPath&gt;　※マウント解除
 </code></pre>
-<h3>备份Linux</h3>
-<pre class="notranslate"><code class="notranslate">$ wsl --export &lt;DistributionName&gt; xxx.tar
-</code></pre>
-<h3>导入Linux</h3>
-<pre class="notranslate"><code class="notranslate">$ wsl --import &lt;DistributionName&gt; &lt;Install-Location&gt; xxx.tar
-</code></pre>
-<h3>卸载Linux</h3>
-<pre class="notranslate"><code class="notranslate">$ wsl --unregister &lt;DistributionName&gt;
-</code></pre>
-<h3>查看IP</h3>
+<h3>🌸查看IP</h3>
 <ul>
 <li>Linux ディストリビューションの IP アドレスを返します (WSL 2 VM アドレス)</li>
 </ul>
@@ -277,100 +274,100 @@ $ wsl --unmount &lt;DiskPath&gt;　※マウント解除
 </ul>
 <pre class="notranslate"><code class="notranslate">$ ip route show | grep -i default | awk '{ print $3}'
 </code></pre>
-<h1>WSL 詳細設定の構成</h1>
+<h1>🎉WSL 詳細設定の構成</h1>
 <p><a href="https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config" rel="nofollow">https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config</a></p>
-<h3>wsl.conf</h3>
-<p><a href="https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config#wslconf" rel="nofollow">wsl.conf</a> ファイル<code class="notranslate">/etc/wsl.conf</code>は、ディストリビューションごとに詳細設定オプションを構成する。</p>
-<h3>.wslconfig</h3>
-<p><a href="https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config#wslconfig" rel="nofollow">.wslconfig</a> ファイル<code class="notranslate">%UserProfile% ディレクトリに格納</code>は、すべての WSL 2 ディストリビューション全体で詳細設定オプションを構成する。</p>
-<h3>wsl.conf ファイルの例</h3>
-<pre class="notranslate"><code class="notranslate"># Automatically mount Windows drive when the distribution is launched
-[automount]
+<h3>🌸wsl.conf</h3>
+<p><a href="https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config#wslconf" rel="nofollow">wsl.conf</a></p>
+<p>ファイル<code class="notranslate">/etc/wsl.conf</code>は、ディストリビューションごとに詳細設定オプションを構成する。</p>
+<h3>🌸.wslconfig</h3>
+<p><a href="https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config#wslconfig" rel="nofollow">.wslconfig</a></p>
+<p>ファイル<code class="notranslate">%UserProfile% ディレクトリに格納</code>は、すべての WSL 2 ディストリビューション全体で詳細設定オプションを構成する。</p>
+<h3>🌸wsl.conf ファイルの例</h3>
+<div class="highlight highlight-source-js"><pre class="notranslate"># <span class="pl-v">Automatically</span> <span class="pl-s1">mount</span> <span class="pl-v">Windows</span> <span class="pl-s1">drive</span> <span class="pl-s1">when</span> <span class="pl-s1">the</span> <span class="pl-s1">distribution</span> <span class="pl-s1">is</span> <span class="pl-s1">launched</span>
+<span class="pl-kos">[</span><span class="pl-s1">automount</span><span class="pl-kos">]</span>
 
-# Set to true will automount fixed drives (C:/ or D:/) with DrvFs under the root directory set above. Set to false means drives won't be mounted automatically, but need to be mounted manually or with fstab.
-enabled = true
+# <span class="pl-v">Set</span> <span class="pl-s1">to</span> <span class="pl-c1">true</span> <span class="pl-s1">will</span> <span class="pl-s1">automount</span> <span class="pl-s1">fixed</span> <span class="pl-en">drives</span> <span class="pl-kos">(</span><span class="pl-v">C</span>:<span class="pl-c1">/</span> <span class="pl-s1">or</span> <span class="pl-v">D</span>:<span class="pl-c1">/</span><span class="pl-kos">)</span> <span class="pl-s1">with</span> <span class="pl-v">DrvFs</span> <span class="pl-s1">under</span> <span class="pl-s1">the</span> <span class="pl-s1">root</span> <span class="pl-s1">directory</span> <span class="pl-s1">set</span> <span class="pl-s1">above</span><span class="pl-kos">.</span> <span class="pl-c1">Set</span> <span class="pl-s1">to</span> <span class="pl-c1">false</span> <span class="pl-s1">means</span> <span class="pl-s1">drives</span> <span class="pl-s1">won</span>'t be mounted automatically, but need to be mounted manually or with fstab.
+<span class="pl-s1">enabled</span> <span class="pl-c1">=</span> <span class="pl-c1">true</span>
 
-# Sets the directory where fixed drives will be automatically mounted. This example changes the mount location, so your C-drive would be /c, rather than the default /mnt/c. 
-root = /
+# <span class="pl-v">Sets</span> <span class="pl-s1">the</span> <span class="pl-s1">directory</span> <span class="pl-s1">where</span> <span class="pl-s1">fixed</span> <span class="pl-s1">drives</span> <span class="pl-s1">will</span> <span class="pl-s1">be</span> <span class="pl-s1">automatically</span> <span class="pl-s1">mounted</span><span class="pl-kos">.</span> <span class="pl-c1">This</span> <span class="pl-s1">example</span> <span class="pl-s1">changes</span> <span class="pl-s1">the</span> <span class="pl-s1">mount</span> <span class="pl-s1">location</span><span class="pl-kos">,</span> <span class="pl-s1">so</span> <span class="pl-s1">your</span> <span class="pl-v">C</span><span class="pl-c1">-</span><span class="pl-s1">drive</span> <span class="pl-s1">would</span> <span class="pl-s1">be</span> <span class="pl-c1">/</span><span class="pl-s1">c</span><span class="pl-kos">,</span> <span class="pl-s1">rather</span> <span class="pl-s1">than</span> <span class="pl-s1">the</span> <span class="pl-k">default</span> <span class="pl-c1">/</span><span class="pl-s1">mnt</span><span class="pl-c1">/</span><span class="pl-s1">c</span><span class="pl-kos">.</span> 
+<span class="pl-c1">root</span> <span class="pl-c1">=</span> <span class="pl-c1">/</span>
 
-# DrvFs-specific options can be specified.  
-options = "metadata,uid=1003,gid=1003,umask=077,fmask=11,case=off"
+# <span class="pl-v">DrvFs</span><span class="pl-c1">-</span><span class="pl-s1">specific</span> <span class="pl-s1">options</span> <span class="pl-s1">can</span> <span class="pl-s1">be</span> <span class="pl-s1">specified</span><span class="pl-kos">.</span>  
+<span class="pl-c1">options</span> <span class="pl-c1">=</span> <span class="pl-s">"metadata,uid=1003,gid=1003,umask=077,fmask=11,case=off"</span>
 
-# Sets the `/etc/fstab` file to be processed when a WSL distribution is launched.
-mountFsTab = true
-
-
-# Network host settings that enable the DNS server used by WSL 2. This example changes the hostname, sets generateHosts to false, preventing WSL from the default behavior of auto-generating /etc/hosts, and sets generateResolvConf to false, preventing WSL from auto-generating /etc/resolv.conf, so that you can create your own (ie. nameserver 1.1.1.1).
-[network]
-hostname = DemoHost
-generateHosts = false
-generateResolvConf = false
+# <span class="pl-v">Sets</span> <span class="pl-s1">the</span> <span class="pl-s">`/etc/fstab`</span> <span class="pl-s1">file</span> <span class="pl-s1">to</span> <span class="pl-s1">be</span> <span class="pl-s1">processed</span> <span class="pl-s1">when</span> <span class="pl-s1">a</span> <span class="pl-c1">WSL</span> <span class="pl-s1">distribution</span> <span class="pl-s1">is</span> <span class="pl-s1">launched</span><span class="pl-kos">.</span>
+<span class="pl-c1">mountFsTab</span> <span class="pl-c1">=</span> <span class="pl-c1">true</span>
 
 
-# Set whether WSL supports interop processes like launching Windows apps and adding path variables. Setting these to false will block the launch of Windows processes and block adding $PATH environment variables.
-[interop]
-enabled = false
-appendWindowsPath = false
+# <span class="pl-v">Network</span> <span class="pl-s1">host</span> <span class="pl-s1">settings</span> <span class="pl-s1">that</span> <span class="pl-s1">enable</span> <span class="pl-s1">the</span> <span class="pl-c1">DNS</span> <span class="pl-s1">server</span> <span class="pl-s1">used</span> <span class="pl-s1">by</span> <span class="pl-c1">WSL</span> <span class="pl-c1">2.</span> <span class="pl-v">This</span> <span class="pl-s1">example</span> <span class="pl-s1">changes</span> <span class="pl-s1">the</span> <span class="pl-s1">hostname</span><span class="pl-kos">,</span> <span class="pl-s1">sets</span> <span class="pl-s1">generateHosts</span> <span class="pl-s1">to</span> <span class="pl-c1">false</span><span class="pl-kos">,</span> <span class="pl-s1">preventing</span> <span class="pl-c1">WSL</span> <span class="pl-k">from</span> <span class="pl-s1">the</span> <span class="pl-k">default</span> <span class="pl-s1">behavior</span> <span class="pl-k">of</span> <span class="pl-s1">auto</span><span class="pl-c1">-</span><span class="pl-s1">generating</span> <span class="pl-c1">/</span><span class="pl-s1">etc</span><span class="pl-c1">/</span><span class="pl-s1">hosts</span><span class="pl-kos">,</span> <span class="pl-s1">and</span> <span class="pl-s1">sets</span> <span class="pl-s1">generateResolvConf</span> <span class="pl-s1">to</span> <span class="pl-c1">false</span><span class="pl-kos">,</span> <span class="pl-s1">preventing</span> <span class="pl-c1">WSL</span> <span class="pl-k">from</span> <span class="pl-s1">auto</span><span class="pl-c1">-</span><span class="pl-s1">generating</span> <span class="pl-c1">/</span><span class="pl-s1">etc</span><span class="pl-c1">/</span><span class="pl-s1">resolv</span><span class="pl-kos">.</span><span class="pl-c1">conf</span><span class="pl-kos">,</span> <span class="pl-s1">so</span> <span class="pl-s1">that</span> <span class="pl-s1">you</span> <span class="pl-s1">can</span> <span class="pl-s1">create</span> <span class="pl-s1">your</span> <span class="pl-en">own</span> <span class="pl-kos">(</span><span class="pl-s1">ie</span><span class="pl-kos">.</span> <span class="pl-c1">nameserver</span> <span class="pl-c1">1.1</span><span class="pl-c1">.1</span><span class="pl-c1">.1</span><span class="pl-kos">)</span><span class="pl-kos">.</span>
+<span class="pl-kos">[</span><span class="pl-s1">network</span><span class="pl-kos">]</span>
+<span class="pl-s1">hostname</span> <span class="pl-c1">=</span> <span class="pl-v">DemoHost</span>
+<span class="pl-s1">generateHosts</span> <span class="pl-c1">=</span> <span class="pl-c1">false</span>
+<span class="pl-s1">generateResolvConf</span> <span class="pl-c1">=</span> <span class="pl-c1">false</span>
 
 
-# Set the user when launching a distribution with WSL.
-[user]
-default = DemoUser
+# <span class="pl-v">Set</span> <span class="pl-s1">whether</span> <span class="pl-c1">WSL</span> <span class="pl-s1">supports</span> <span class="pl-s1">interop</span> <span class="pl-s1">processes</span> <span class="pl-s1">like</span> <span class="pl-s1">launching</span> <span class="pl-v">Windows</span> <span class="pl-s1">apps</span> <span class="pl-s1">and</span> <span class="pl-s1">adding</span> <span class="pl-s1">path</span> <span class="pl-s1">variables</span><span class="pl-kos">.</span> <span class="pl-c1">Setting</span> <span class="pl-s1">these</span> <span class="pl-s1">to</span> <span class="pl-s1">false</span> <span class="pl-s1">will</span> <span class="pl-s1">block</span> <span class="pl-s1">the</span> <span class="pl-s1">launch</span> <span class="pl-k">of</span> <span class="pl-v">Windows</span> <span class="pl-s1">processes</span> <span class="pl-s1">and</span> <span class="pl-s1">block</span> <span class="pl-s1">adding</span> <span class="pl-s1">$PATH</span> <span class="pl-s1">environment</span> <span class="pl-s1">variables</span><span class="pl-kos">.</span>
+<span class="pl-kos">[</span><span class="pl-s1">interop</span><span class="pl-kos">]</span>
+<span class="pl-s1">enabled</span> <span class="pl-c1">=</span> <span class="pl-c1">false</span>
+<span class="pl-s1">appendWindowsPath</span> <span class="pl-c1">=</span> <span class="pl-c1">false</span>
 
 
-# Set a command to run when a new WSL instance launches. This example starts the Docker container service.
-[boot]
-command = service docker start
-</code></pre>
-<h4>.wslconfig ファイルの例</h4>
-<pre class="notranslate"><code class="notranslate"># Settings apply across all Linux distros running on WSL 2
-[wsl2]
+# <span class="pl-v">Set</span> <span class="pl-s1">the</span> <span class="pl-s1">user</span> <span class="pl-s1">when</span> <span class="pl-s1">launching</span> <span class="pl-s1">a</span> <span class="pl-s1">distribution</span> <span class="pl-s1">with</span> <span class="pl-c1">WSL</span><span class="pl-kos">.</span>
+<span class="pl-kos">[</span><span class="pl-s1">user</span><span class="pl-kos">]</span>
+<span class="pl-s1">default</span> <span class="pl-c1">=</span> <span class="pl-v">DemoUser</span>
 
-# Limits VM memory to use no more than 4 GB, this can be set as whole numbers using GB or MB
-memory=4GB 
 
-# Sets the VM to use two virtual processors
-processors=2
+# <span class="pl-v">Set</span> <span class="pl-s1">a</span> <span class="pl-s1">command</span> <span class="pl-s1">to</span> <span class="pl-s1">run</span> <span class="pl-s1">when</span> <span class="pl-s1">a</span> <span class="pl-s1">new</span> <span class="pl-c1">WSL</span> <span class="pl-s1">instance</span> <span class="pl-s1">launches</span><span class="pl-kos">.</span> <span class="pl-c1">This</span> <span class="pl-s1">example</span> <span class="pl-s1">starts</span> <span class="pl-s1">the</span> <span class="pl-v">Docker</span> <span class="pl-s1">container</span> <span class="pl-s1">service</span><span class="pl-kos">.</span>
+<span class="pl-kos">[</span><span class="pl-s1">boot</span><span class="pl-kos">]</span>
+<span class="pl-s1">command</span> <span class="pl-c1">=</span> <span class="pl-s1">service</span> <span class="pl-s1">docker</span> <span class="pl-s1">start</span></pre></div>
+<h4>🌸.wslconfig ファイルの例</h4>
+<div class="highlight highlight-source-js"><pre class="notranslate"># <span class="pl-v">Settings</span> <span class="pl-s1">apply</span> <span class="pl-s1">across</span> <span class="pl-s1">all</span> <span class="pl-v">Linux</span> <span class="pl-s1">distros</span> <span class="pl-s1">running</span> <span class="pl-s1">on</span> <span class="pl-c1">WSL</span> <span class="pl-c1">2</span>
+<span class="pl-kos">[</span><span class="pl-s1">wsl2</span><span class="pl-kos">]</span>
 
-# Specify a custom Linux kernel to use with your installed distros. The default kernel used can be found at https://github.com/microsoft/WSL2-Linux-Kernel
-kernel=C:\\temp\\myCustomKernel
+# <span class="pl-v">Limits</span> <span class="pl-c1">VM</span> <span class="pl-s1">memory</span> <span class="pl-s1">to</span> <span class="pl-s1">use</span> <span class="pl-s1">no</span> <span class="pl-s1">more</span> <span class="pl-s1">than</span> <span class="pl-c1">4</span> <span class="pl-c1">GB</span><span class="pl-kos">,</span> <span class="pl-smi">this</span> <span class="pl-s1">can</span> <span class="pl-s1">be</span> <span class="pl-k">set</span> <span class="pl-k">as</span> <span class="pl-s1">whole</span> <span class="pl-s1">numbers</span> <span class="pl-s1">using</span> <span class="pl-c1">GB</span> <span class="pl-s1">or</span> <span class="pl-c1">MB</span>
+<span class="pl-s1">memory</span><span class="pl-c1">=</span><span class="pl-c1">4</span><span class="pl-c1">GB</span> 
 
-# Sets additional kernel parameters, in this case enabling older Linux base images such as Centos 6
-kernelCommandLine = vsyscall=emulate
+# <span class="pl-v">Sets</span> <span class="pl-s1">the</span> <span class="pl-c1">VM</span> <span class="pl-s1">to</span> <span class="pl-s1">use</span> <span class="pl-s1">two</span> <span class="pl-s1">virtual</span> <span class="pl-s1">processors</span>
+<span class="pl-s1">processors</span><span class="pl-c1">=</span><span class="pl-c1">2</span>
 
-# Sets amount of swap storage space to 8GB, default is 25% of available RAM
-swap=8GB
+# <span class="pl-v">Specify</span> <span class="pl-s1">a</span> <span class="pl-s1">custom</span> <span class="pl-v">Linux</span> <span class="pl-s1">kernel</span> <span class="pl-s1">to</span> <span class="pl-s1">use</span> <span class="pl-s1">with</span> <span class="pl-s1">your</span> <span class="pl-s1">installed</span> <span class="pl-s1">distros</span><span class="pl-kos">.</span> <span class="pl-c1">The</span> <span class="pl-s1">default</span> <span class="pl-s1">kernel</span> <span class="pl-s1">used</span> <span class="pl-s1">can</span> <span class="pl-s1">be</span> <span class="pl-s1">found</span> <span class="pl-s1">at</span> https:<span class="pl-c">//github.com/microsoft/WSL2-Linux-Kernel</span>
+<span class="pl-s1">kernel</span><span class="pl-c1">=</span><span class="pl-v">C</span>:\\<span class="pl-s1">temp</span>\\<span class="pl-s1">myCustomKernel</span>
 
-# Sets swapfile path location, default is %USERPROFILE%\AppData\Local\Temp\swap.vhdx
-swapfile=C:\\temp\\wsl-swap.vhdx
+# <span class="pl-v">Sets</span> <span class="pl-s1">additional</span> <span class="pl-s1">kernel</span> <span class="pl-s1">parameters</span><span class="pl-kos">,</span> <span class="pl-s1">in</span> <span class="pl-s1">this</span> <span class="pl-k">case</span> <span class="pl-s1">enabling</span> <span class="pl-s1">older</span> <span class="pl-v">Linux</span> <span class="pl-s1">base</span> <span class="pl-s1">images</span> <span class="pl-s1">such</span> <span class="pl-k">as</span> <span class="pl-v">Centos</span> <span class="pl-c1">6</span>
+<span class="pl-s1">kernelCommandLine</span> <span class="pl-c1">=</span> <span class="pl-s1">vsyscall</span><span class="pl-c1">=</span><span class="pl-s1">emulate</span>
 
-# Disable page reporting so WSL retains all allocated memory claimed from Windows and releases none back when free
-pageReporting=false
+# <span class="pl-v">Sets</span> <span class="pl-s1">amount</span> <span class="pl-k">of</span> <span class="pl-s1">swap</span> <span class="pl-s1">storage</span> <span class="pl-s1">space</span> <span class="pl-s1">to</span> <span class="pl-c1">8</span><span class="pl-c1">GB</span><span class="pl-kos">,</span> <span class="pl-s1">default</span> <span class="pl-s1">is</span> <span class="pl-c1">25</span><span class="pl-c1">%</span> <span class="pl-s1">of</span> <span class="pl-s1">available</span> <span class="pl-c1">RAM</span>
+<span class="pl-s1">swap</span><span class="pl-c1">=</span><span class="pl-c1">8</span><span class="pl-c1">GB</span>
 
-# Turn on default connection to bind WSL 2 localhost to Windows localhost. Setting is ignored when networkingMode=mirrored
-localhostforwarding=true
+# <span class="pl-v">Sets</span> <span class="pl-s1">swapfile</span> <span class="pl-s1">path</span> <span class="pl-s1">location</span><span class="pl-kos">,</span> <span class="pl-s1">default</span> <span class="pl-s1">is</span> <span class="pl-c1">%</span><span class="pl-c1">USERPROFILE</span><span class="pl-c1">%</span>\A<span class="pl-s1">ppData</span>\L<span class="pl-s1">ocal</span>\T<span class="pl-s1">emp</span>\s<span class="pl-s1">wap</span><span class="pl-kos">.</span><span class="pl-c1">vhdx</span>
+<span class="pl-s1">swapfile</span><span class="pl-c1">=</span><span class="pl-v">C</span>:\\<span class="pl-s1">temp</span>\\<span class="pl-s1">wsl</span><span class="pl-c1">-</span><span class="pl-s1">swap</span><span class="pl-kos">.</span><span class="pl-c1">vhdx</span>
 
-# Disables nested virtualization
-nestedVirtualization=false
+# <span class="pl-v">Disable</span> <span class="pl-s1">page</span> <span class="pl-s1">reporting</span> <span class="pl-s1">so</span> <span class="pl-c1">WSL</span> <span class="pl-s1">retains</span> <span class="pl-s1">all</span> <span class="pl-s1">allocated</span> <span class="pl-s1">memory</span> <span class="pl-s1">claimed</span> <span class="pl-k">from</span> <span class="pl-v">Windows</span> <span class="pl-s1">and</span> <span class="pl-s1">releases</span> <span class="pl-s1">none</span> <span class="pl-s1">back</span> <span class="pl-s1">when</span> <span class="pl-s1">free</span>
+<span class="pl-s1">pageReporting</span><span class="pl-c1">=</span><span class="pl-c1">false</span>
 
-# Turns on output console showing contents of dmesg when opening a WSL 2 distro for debugging
-debugConsole=true
+# <span class="pl-v">Turn</span> <span class="pl-s1">on</span> <span class="pl-k">default</span> <span class="pl-s1">connection</span> <span class="pl-s1">to</span> <span class="pl-s1">bind</span> <span class="pl-c1">WSL</span> <span class="pl-c1">2</span> <span class="pl-s1">localhost</span> <span class="pl-s1">to</span> <span class="pl-v">Windows</span> <span class="pl-s1">localhost</span><span class="pl-kos">.</span> <span class="pl-c1">Setting</span> <span class="pl-s1">is</span> <span class="pl-s1">ignored</span> <span class="pl-s1">when</span> <span class="pl-s1">networkingMode</span><span class="pl-c1">=</span><span class="pl-s1">mirrored</span>
+<span class="pl-s1">localhostforwarding</span><span class="pl-c1">=</span><span class="pl-c1">true</span>
 
-# Enable experimental features
-[experimental]
-sparseVhd=true
-</code></pre>
-<h3>systemd サポート</h3>
+# <span class="pl-v">Disables</span> <span class="pl-s1">nested</span> <span class="pl-s1">virtualization</span>
+<span class="pl-s1">nestedVirtualization</span><span class="pl-c1">=</span><span class="pl-c1">false</span>
+
+# <span class="pl-v">Turns</span> <span class="pl-s1">on</span> <span class="pl-s1">output</span> <span class="pl-smi">console</span> <span class="pl-s1">showing</span> <span class="pl-s1">contents</span> <span class="pl-k">of</span> <span class="pl-s1">dmesg</span> <span class="pl-s1">when</span> <span class="pl-s1">opening</span> <span class="pl-s1">a</span> <span class="pl-c1">WSL</span> <span class="pl-c1">2</span> <span class="pl-s1">distro</span> <span class="pl-s1">for</span> <span class="pl-s1">debugging</span>
+<span class="pl-s1">debugConsole</span><span class="pl-c1">=</span><span class="pl-c1">true</span>
+
+# <span class="pl-v">Enable</span> <span class="pl-s1">experimental</span> <span class="pl-s1">features</span>
+<span class="pl-kos">[</span><span class="pl-s1">experimental</span><span class="pl-kos">]</span>
+<span class="pl-s1">sparseVhd</span><span class="pl-c1">=</span><span class="pl-c1">true</span></pre></div>
+<h3>🌸systemd サポート</h3>
 <p>テキスト エディターで <code class="notranslate">wsl.conf</code> ファイルを開き、<code class="notranslate">/etc/wsl.conf</code> にこれらの行を追加します</p>
 <pre class="notranslate"><code class="notranslate">[boot]
 systemd=true
 </code></pre>
-<h3>IP同步（window 与wsl 同一IP）</h3>
+<h3>🌸IP同步（window 与wsl 同一IP）</h3>
 <p>テキスト エディターで <code class="notranslate">.wslconfig</code> ファイルを開き、<code class="notranslate">%UserProfile%/.wslconfig</code> にこれらの行を追加します</p>
 <pre class="notranslate"><code class="notranslate">[wsl2]
 networkingMode=mirrored
 </code></pre>
-<h1>window 与 wsl 相互调用命令</h1>
+<h1>🎉window 与 wsl 相互调用命令</h1>
 <p>・在wsl 可以调用 <code class="notranslate">notepad.exe</code>  、<code class="notranslate">explorer.exe</code> 等<br>
 ・在cmd 可以调用  <code class="notranslate">dir  | wsl grep</code> 等</p></section>
 
