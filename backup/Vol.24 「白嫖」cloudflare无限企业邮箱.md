@@ -15,7 +15,8 @@
 
 
 ## 🎉发邮件
-通过resend.com的API服务  https://resend.com/onboarding
+resend.com的API服务  
+https://resend.com/onboarding
 
 1. Add Domain，自动生成3条DNS（1条MX，2条TXT）
 `Gmeek-html<img src="../imgs/resend/resend1.PNG">`
@@ -26,6 +27,8 @@
 
 
 #### 测试
+https://resend.com/docs/send-with-nodejs
+
 ```javascript
 import { Resend } from 'resend';
 
