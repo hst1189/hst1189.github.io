@@ -158,7 +158,7 @@ https://learn.microsoft.com/ja-jp/windows/wsl/wsl-config
 ファイル`%UserProfile% ディレクトリに格納`は、すべての WSL 2 ディストリビューション全体で詳細設定オプションを構成する。
 
 
-### 🌸wsl.conf ファイルの例
+#### 🌸wsl.conf ファイルの例
 ```javascript
 # Automatically mount Windows drive when the distribution is launched
 [automount]
