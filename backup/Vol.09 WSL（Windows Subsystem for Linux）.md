@@ -61,6 +61,7 @@ $ wsl --list --verbose    或者  $ wsl -l -v　
 
 
 ### 查看可安装系统
+https://raw.githubusercontent.com/microsoft/WSL/master/distributions/DistributionInfo.json
 ```
 $ wsl --list --online   或者   $ wsl -l -o　
 ```
