@@ -97,20 +97,23 @@ const obj = [
     { name: "bananas", quantity: 0 },
     { name: "cherries", quantity: 5 },
 ];
-const apples = obj.find(i => i.name === 'apples');   　//{ name: "apples", quantity: 2 } 抽出
-const aaa = obj.filter(i => i.quantity >= 2);  // [ { name: 'apples', quantity: 2 }, { name: 'cherries', quantity: 5 } ]  抽出
-obj.map(i => i.quantity=== 'apples');   　//改变原有obj 　
 
+◆改变原本数组
 push(element1, ..., elementN): 配列の末尾に要素を追加
 pop(): 配列の末尾から要素を削除し、その値を返す
 unshift(element1, ..., elementN): 配列の先頭に要素を追加
 shift(): 配列の先頭から要素を削除し、その値を返す
 
+◆不改变原本数组
 find( ): callback条件を満たす配列内の**最初の要素**を返す、見つからない場合は undefined を返す
 filter( ):  callback条件を満たす配列内の**すべての要素**を返す、見つからない場合は 「」 を返す
 reduce(function (previous, current, index, array):  配列要素の隣同士を演算して要素の初めから終わりまで繰り返す
 map( ): 遍历数组，返り値あり
 forEach(): 遍历数组， 返り値なし
+
+const apples = obj.find(i => i.name === 'apples');   　//{ name: "apples", quantity: 2 } 抽出
+const aaa = obj.filter(i => i.quantity >= 2);  // [ { name: 'apples', quantity: 2 }, { name: 'cherries', quantity: 5 } ]  抽出
+obj.map(i => i.quantity=== 'apples');   　//改变原有obj 　
 
 
 
