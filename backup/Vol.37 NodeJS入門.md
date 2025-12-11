@@ -120,6 +120,7 @@ filter( ):  callback条件を満たす配列内の**すべての要素**を返�
 reduce(function (previous, current, index, array):  配列要素の隣同士を演算して要素の初めから終わりまで繰り返す
 map( ): 遍历数组，返り値あり
 forEach(): 遍历数组， 返り値なし
+slice(开始位置,  截取到位置(不包括该为)): 返り値あり
 
 const apples = obj.find(i => i.name === 'apples');   　//{ name: "apples", quantity: 2 } 抽出
 const aaa = obj.filter(i => i.quantity >= 2);  // [ { name: 'apples', quantity: 2 }, { name: 'cherries', quantity: 5 } ]  抽出
