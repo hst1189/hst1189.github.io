@@ -103,6 +103,16 @@ push(element1, ..., elementN): 配列の末尾に要素を追加
 pop(): 配列の末尾から要素を削除し、その値を返す
 unshift(element1, ..., elementN): 配列の先頭に要素を追加
 shift(): 配列の先頭から要素を削除し、その値を返す
+splice(开始位置,  削除数(０的话不删除),  element1, ..., elementN): 
+
+splice() 例：
+const myMusic = ['piano', 'guitar', 'violin', 'orchestra'];
+myMusic.splice(2, 0, 'drum');  
+myMusic is [piano', 'guitar', 'drum', 'guitar', 'violin', 'orchestra']  // 添加drum
+
+const myMusic = ['piano', 'guitar', 'drum', 'violin', 'orchestra']
+myMusic.splice(3, 1, 'sax');
+myMusic is ['piano', 'guitar', 'drum', 'sax', 'orchestra']   // violin删除 替换成sax
 
 ◆不改变原本数组
 find( ): callback条件を満たす配列内の**最初の要素**を返す、見つからない場合は undefined を返す

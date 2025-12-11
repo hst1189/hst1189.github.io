@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-12-11 03:09</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2025-12-11 03:30</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -194,6 +194,16 @@ console.log('Environment variables:', process.env);
 <span class="pl-en">pop</span><span class="pl-kos">(</span><span class="pl-kos">)</span>: <span class="pl-s1">配列の末尾から要素を削除し、その値を返す</span>
 <span class="pl-en">unshift</span><span class="pl-kos">(</span><span class="pl-s1">element1</span><span class="pl-kos">,</span> ...<span class="pl-kos">,</span> <span class="pl-s1">elementN</span><span class="pl-kos">)</span>: <span class="pl-s1">配列の先頭に要素を追加</span>
 <span class="pl-en">shift</span><span class="pl-kos">(</span><span class="pl-kos">)</span>: <span class="pl-s1">配列の先頭から要素を削除し、その値を返す</span>
+<span class="pl-en">splice</span><span class="pl-kos">(</span><span class="pl-s1">开始位置</span><span class="pl-kos">,</span>  <span class="pl-en">削除数</span><span class="pl-kos">(</span><span class="pl-s1">０的话不删除</span><span class="pl-kos">)</span><span class="pl-kos">,</span>  <span class="pl-s1">element1</span><span class="pl-kos">,</span> ...<span class="pl-kos">,</span> <span class="pl-s1">elementN</span><span class="pl-kos">)</span>: 
+
+<span class="pl-s1">splice</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos"></span> <span class="pl-s1">例：</span>
+<span class="pl-k">const</span> <span class="pl-s1">myMusic</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span><span class="pl-s">'piano'</span><span class="pl-kos">,</span> <span class="pl-s">'guitar'</span><span class="pl-kos">,</span> <span class="pl-s">'violin'</span><span class="pl-kos">,</span> <span class="pl-s">'orchestra'</span><span class="pl-kos">]</span><span class="pl-kos">;</span>
+<span class="pl-s1">myMusic</span><span class="pl-kos">.</span><span class="pl-en">splice</span><span class="pl-kos">(</span><span class="pl-c1">2</span><span class="pl-kos">,</span> <span class="pl-c1">0</span><span class="pl-kos">,</span> <span class="pl-s">'drum'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  
+<span class="pl-s1">myMusic</span> <span class="pl-s1">is</span> <span class="pl-kos">[</span><span class="pl-s1">piano</span>'<span class="pl-kos">,</span> <span class="pl-s">'guitar'</span><span class="pl-kos">,</span> <span class="pl-s">'drum'</span><span class="pl-kos">,</span> <span class="pl-s">'guitar'</span><span class="pl-kos">,</span> <span class="pl-s">'violin'</span><span class="pl-kos">,</span> <span class="pl-s">'orchestra'</span><span class="pl-kos">]</span>  <span class="pl-c">// 添加drum</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">myMusic</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span><span class="pl-s">'piano'</span><span class="pl-kos">,</span> <span class="pl-s">'guitar'</span><span class="pl-kos">,</span> <span class="pl-s">'drum'</span><span class="pl-kos">,</span> <span class="pl-s">'violin'</span><span class="pl-kos">,</span> <span class="pl-s">'orchestra'</span><span class="pl-kos">]</span>
+<span class="pl-s1">myMusic</span><span class="pl-kos">.</span><span class="pl-en">splice</span><span class="pl-kos">(</span><span class="pl-c1">3</span><span class="pl-kos">,</span> <span class="pl-c1">1</span><span class="pl-kos">,</span> <span class="pl-s">'sax'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">myMusic</span> <span class="pl-s1">is</span> <span class="pl-kos">[</span><span class="pl-s">'piano'</span><span class="pl-kos">,</span> <span class="pl-s">'guitar'</span><span class="pl-kos">,</span> <span class="pl-s">'drum'</span><span class="pl-kos">,</span> <span class="pl-s">'sax'</span><span class="pl-kos">,</span> <span class="pl-s">'orchestra'</span><span class="pl-kos">]</span>   <span class="pl-c">// violin删除 替换成sax</span>
 
 <span class="pl-s1">◆不改变原本数组</span>
 <span class="pl-en">find</span><span class="pl-kos">(</span> <span class="pl-kos">)</span>: <span class="pl-s1">callback条件を満たす配列内の</span><span class="pl-c1">**</span><span class="pl-s1">最初の要素</span><span class="pl-c1">**</span><span class="pl-s1">を返す、見つからない場合は</span> <span class="pl-s1">undefined</span> <span class="pl-s1">を返す</span>

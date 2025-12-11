@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 11 Dec 2025 03:09:50 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Thu, 11 Dec 2025 03:31:18 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
 https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet
 
 # 🚀MongoDB CRUD 操作
@@ -583,6 +583,16 @@ push(element1, ..., elementN): 配列の末尾に要素を追加
 pop(): 配列の末尾から要素を削除し、その値を返す
 unshift(element1, ..., elementN): 配列の先頭に要素を追加
 shift(): 配列の先頭から要素を削除し、その値を返す
+splice(开始位置,  削除数(０的话不删除),  element1, ..., elementN): 
+
+splice() 例：
+const myMusic = ['piano', 'guitar', 'violin', 'orchestra'];
+myMusic.splice(2, 0, 'drum');  
+myMusic is [piano', 'guitar', 'drum', 'guitar', 'violin', 'orchestra']  // 添加drum
+
+const myMusic = ['piano', 'guitar', 'drum', 'violin', 'orchestra']
+myMusic.splice(3, 1, 'sax');
+myMusic is ['piano', 'guitar', 'drum', 'sax', 'orchestra']   // violin删除 替换成sax
 
 ◆不改变原本数组
 find( ): callback条件を満たす配列内の**最初の要素**を返す、見つからない場合は undefined を返す
