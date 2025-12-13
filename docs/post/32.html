@@ -96,8 +96,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:20,updated at 2025-10-19 13:35</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/31.html" aria-label="Previous Page">上一篇-Vol.31 科学上网（VPN客户端）</a><a class="next_page" href="https://grapehut.dpdns.org/post/33.html" aria-label="Next Page">下一篇-Vol.33 Vite + React入門</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:20,updated at 2025-12-13 02:06</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/33.html" aria-label="Previous Page">上一篇-Vol.33 Vite + React入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/31.html" aria-label="Next Page">下一篇-Vol.31 科学上网（VPN客户端）</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>🎉CheatSheet</h1>
@@ -236,6 +236,16 @@ sudo docker run -d --restart=always -p 8008:8008 --name cloud-saver -v ./cloudsa
 <li><a href="https://github.com/excalidraw/excalidraw">excalidraw</a></li>
 </ol>
 <pre class="notranslate"><code class="notranslate">sudo docker run -d --restart=always -p 5000:5000 --name excalidraw excalidraw/excalidraw:latest
+</code></pre>
+<ol start="8">
+<li><a href="https://github.com/komari-monitor/komari">komari</a></li>
+</ol>
+<pre class="notranslate"><code class="notranslate">mkdir ./komari_data
+sudo docker run -d --restart=always -p 25774:25774 --name komari -v ./komari_data:/app/data  ghcr.io/komari-monitor/komari:latest
+
+docker logs komari
+
+http://&lt;your_server_ip&gt;:25774
 </code></pre></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>

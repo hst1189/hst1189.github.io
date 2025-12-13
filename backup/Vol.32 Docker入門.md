@@ -178,3 +178,12 @@ sudo docker run -d --restart=always -p 3001:3001 --name uptime-kuma -v uptime-ku
 sudo docker run -d --restart=always -p 5000:5000 --name excalidraw excalidraw/excalidraw:latest
 ```
 
+8. [komari](https://github.com/komari-monitor/komari)
+```
+mkdir ./komari_data
+sudo docker run -d --restart=always -p 25774:25774 --name komari -v ./komari_data:/app/data  ghcr.io/komari-monitor/komari:latest
+
+docker logs komari
+
+http://<your_server_ip>:25774
+```
