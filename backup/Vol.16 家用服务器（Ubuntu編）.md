@@ -2,13 +2,85 @@
 Linux发行版Ubuntu24.04LTS　　※LTS的意思是"长期支持"
 https://ubuntu.com/
 
-查看硬件配置
+・查看硬件配置
 ```
+OS版本：cat /etc/issue
 CPU：lscpu
 内存：free -h
 磁盘容量：df -h
-OS版本：cat /etc/issue
 ```
+
+・系统清理
+```
+sudo apt autoremove  ※自动删除无用软件包
+sudo apt autoclean　　※自动清除软件包缓存
+```
+
+・系统更新
+```
+sudo apt update
+sudo apt upgrade
+```
+
+```
+sudo systemctl list-unit-files -t service | grep enabled　※起動時に有効化されるサービスの一覧
+sudo systemctl list-unit-files -t service | grep disabled　※起動時に無効化されるサービスの一覧
+```
+
+・查看端口
+```
+sudo netstat -tunlp   查看端口是否使用
+```
+
+・配置防火墙 ufw
+```
+sudo ufw status　　　※status: inactive
+sudo ufw allow ssh   ※重要！有効化前にSSHを許可
+sudo ufw enable
+sudo ufw status　　　※status: active
+
+◆Defaultポリシー
+　sudo ufw default deny incoming
+　sudo ufw default allow outgoing
+
+◆基本コマンド
+　＜enable＞sudo ufw enable
+　＜disable＞sudo ufw disable
+
+　＜allow＞sudo ufw allow 80　※TCP/UDPポート80を許可 (デフォルトTCP
+　＜deny＞sudo ufw deny 23　※ポート23(telnet)拒否
+　＜delete＞sudo ufw delete allow 80　※ALLOWしたルールを削除
+　＜status＞sudo ufw status verbose　※現在のルール一覧と詳細
+```
+
+
+```javascript
+#!/bin/bash
+# Ubuntu系统维护脚本
+
+# 1. 更新软件包列表并升级所有软件包
+echo "更新软件包列表..."
+sudo apt update && sudo apt upgrade -y
+
+# 2. 清理无用软件包及缓存
+echo "清理无用软件包..."
+sudo apt autoremove -y
+echo "清理软件包缓存..."
+sudo apt autoclean
+
+# 3. (可选) 进行ClamAV病毒扫描（需先安装ClamAV）
+# echo "启动ClamAV扫描..."
+# sudo clamscan -r --remove /home
+
+# 4. (可选) 清理过大的日志文件（如大于50M的日志）
+echo "检查并清理过大的日志文件..."
+find /var/log -type f -name "*.log" -size +50M -exec sudo truncate -s 0 {} \;
+
+echo "系统维护任务已完成。"
+```
+
+
+
 
 # 2. 绑定静态IP🔖
 打开路由器设置--->局域网设置-->DHCP静态IP设置，分配一个固定IP，比如192.168.0.100。配置完成后记得重启路由器。

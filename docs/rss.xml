@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 13 Dec 2025 02:06:53 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 07 Feb 2026 10:59:15 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
 https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet
 
 # 🚀MongoDB CRUD 操作
@@ -2146,16 +2146,81 @@ Omakub 是一个专为开发者设计的 Ubuntu 环境配置项目，由 Ruby on
 Linux发行版Ubuntu24.04LTS　　※LTS的意思是'长期支持'
 https://ubuntu.com/
 
-查看硬件配置
+・查看硬件配置
 ```
+OS版本：cat /etc/issue
 CPU：lscpu
 内存：free -h
 磁盘容量：df -h
-OS版本：cat /etc/issue
 ```
 
-# 2. 绑定静态IP🔖
-打开路由器设置---&gt;局域网设置--&gt;DHCP静态IP设置，分配一个固定IP，比如192.168.0.100。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/16.html</guid><pubDate>Sun, 21 Sep 2025 09:09:57 +0000</pubDate></item><item><title>Vol.15 Win开启SMB安全共享</title><link>https://grapehut.dpdns.org/post/15.html</link><description># 🔖 禁用 SMB1
+・系统清理
+```
+sudo apt autoremove  ※自动删除无用软件包
+sudo apt autoclean　　※自动清除软件包缓存
+```
+
+・系统更新
+```
+sudo apt update
+sudo apt upgrade
+```
+
+```
+sudo systemctl list-unit-files -t service | grep enabled　※起動時に有効化されるサービスの一覧
+sudo systemctl list-unit-files -t service | grep disabled　※起動時に無効化されるサービスの一覧
+```
+
+・查看端口
+```
+sudo netstat -tunlp   查看端口是否使用
+```
+
+・配置防火墙 ufw
+```
+sudo ufw status　　　※status: inactive
+sudo ufw allow ssh   ※重要！有効化前にSSHを許可
+sudo ufw enable
+sudo ufw status　　　※status: active
+
+◆Defaultポリシー
+　sudo ufw default deny incoming
+　sudo ufw default allow outgoing
+
+◆基本コマンド
+　＜enable＞sudo ufw enable
+　＜disable＞sudo ufw disable
+
+　＜allow＞sudo ufw allow 80　※TCP/UDPポート80を許可 (デフォルトTCP
+　＜deny＞sudo ufw deny 23　※ポート23(telnet)拒否
+　＜delete＞sudo ufw delete allow 80　※ALLOWしたルールを削除
+　＜status＞sudo ufw status verbose　※現在のルール一覧と詳細
+```
+
+
+```javascript
+#!/bin/bash
+# Ubuntu系统维护脚本
+
+# 1. 更新软件包列表并升级所有软件包
+echo '更新软件包列表...'
+sudo apt update &amp;&amp; sudo apt upgrade -y
+
+# 2. 清理无用软件包及缓存
+echo '清理无用软件包...'
+sudo apt autoremove -y
+echo '清理软件包缓存...'
+sudo apt autoclean
+
+# 3. (可选) 进行ClamAV病毒扫描（需先安装ClamAV）
+# echo '启动ClamAV扫描...'
+# sudo clamscan -r --remove /home
+
+# 4. (可选) 清理过大的日志文件（如大于50M的日志）
+echo '检查并清理过大的日志文件...'
+find /var/log -type f -name '*.log' -size +50M -exec sudo truncate -s 0 {} \;
+
+echo '系统维护任务已完成。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/16.html</guid><pubDate>Sun, 21 Sep 2025 09:09:57 +0000</pubDate></item><item><title>Vol.15 Win开启SMB安全共享</title><link>https://grapehut.dpdns.org/post/15.html</link><description># 🔖 禁用 SMB1
 强烈建议关闭，打开Windows機能面板
 ```
 cmd ⇒ OptionalFeatures.exe

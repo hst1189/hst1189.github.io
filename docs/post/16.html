@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="小饅頭の部落格">
 
 <title>Vol.16 家用服务器（Ubuntu編）</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 
@@ -96,19 +96,74 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2025-09-21 09:09</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/15.html" aria-label="Previous Page">上一篇-Vol.15 Win开启SMB安全共享</a><a class="next_page" href="https://grapehut.dpdns.org/post/17.html" aria-label="Next Page">下一篇-Vol.17 Omakub 专为开发者设计的 Ubuntu</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2026-02-07 10:58</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/17.html" aria-label="Previous Page">上一篇-Vol.17 Omakub 专为开发者设计的 Ubuntu</a><a class="next_page" href="https://grapehut.dpdns.org/post/15.html" aria-label="Next Page">下一篇-Vol.15 Win开启SMB安全共享</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>1. 安装Ubuntu系统🔖</h1>
 <p>Linux发行版Ubuntu24.04LTS　　※LTS的意思是"长期支持"<br>
 <a href="https://ubuntu.com/" rel="nofollow">https://ubuntu.com/</a></p>
-<p>查看硬件配置</p>
-<pre class="notranslate"><code class="notranslate">CPU：lscpu
+<p>・查看硬件配置</p>
+<pre class="notranslate"><code class="notranslate">OS版本：cat /etc/issue
+CPU：lscpu
 内存：free -h
 磁盘容量：df -h
-OS版本：cat /etc/issue
 </code></pre>
+<p>・系统清理</p>
+<pre class="notranslate"><code class="notranslate">sudo apt autoremove  ※自动删除无用软件包
+sudo apt autoclean　　※自动清除软件包缓存
+</code></pre>
+<p>・系统更新</p>
+<pre class="notranslate"><code class="notranslate">sudo apt update
+sudo apt upgrade
+</code></pre>
+<pre class="notranslate"><code class="notranslate">sudo systemctl list-unit-files -t service | grep enabled　※起動時に有効化されるサービスの一覧
+sudo systemctl list-unit-files -t service | grep disabled　※起動時に無効化されるサービスの一覧
+</code></pre>
+<p>・查看端口</p>
+<pre class="notranslate"><code class="notranslate">sudo netstat -tunlp   查看端口是否使用
+</code></pre>
+<p>・配置防火墙 ufw</p>
+<pre class="notranslate"><code class="notranslate">sudo ufw status　　　※status: inactive
+sudo ufw allow ssh   ※重要！有効化前にSSHを許可
+sudo ufw enable
+sudo ufw status　　　※status: active
+
+◆Defaultポリシー
+　sudo ufw default deny incoming
+　sudo ufw default allow outgoing
+
+◆基本コマンド
+　＜enable＞sudo ufw enable
+　＜disable＞sudo ufw disable
+
+　＜allow＞sudo ufw allow 80　※TCP/UDPポート80を許可 (デフォルトTCP
+　＜deny＞sudo ufw deny 23　※ポート23(telnet)拒否
+　＜delete＞sudo ufw delete allow 80　※ALLOWしたルールを削除
+　＜status＞sudo ufw status verbose　※現在のルール一覧と詳細
+</code></pre>
+<div class="highlight highlight-source-js"><pre class="notranslate">#!/bin/bash
+# <span class="pl-v">Ubuntu系统维护脚本</span>
+
+# <span class="pl-c1">1.</span> <span class="pl-s1">更新软件包列表并升级所有软件包</span>
+<span class="pl-s1">echo</span> <span class="pl-s">"更新软件包列表..."</span>
+<span class="pl-s1">sudo</span> <span class="pl-s1">apt</span> <span class="pl-s1">update</span> <span class="pl-c1">&amp;&amp;</span> <span class="pl-s1">sudo</span> <span class="pl-s1">apt</span> <span class="pl-s1">upgrade</span> <span class="pl-c1">-</span><span class="pl-s1">y</span>
+
+# <span class="pl-c1">2.</span> <span class="pl-s1">清理无用软件包及缓存</span>
+<span class="pl-s1">echo</span><span class="pl-kos"></span> <span class="pl-s">"清理无用软件包..."</span>
+<span class="pl-s1">sudo</span> <span class="pl-s1">apt</span> <span class="pl-s1">autoremove</span> <span class="pl-c1">-</span><span class="pl-s1">y</span>
+<span class="pl-s1">echo</span><span class="pl-kos"></span> <span class="pl-s">"清理软件包缓存..."</span>
+<span class="pl-s1">sudo</span> <span class="pl-s1">apt</span> <span class="pl-s1">autoclean</span>
+
+# <span class="pl-c1">3.</span> <span class="pl-kos">(</span><span class="pl-s1">可选</span><span class="pl-kos">)</span> <span class="pl-s1">进行ClamAV病毒扫描（需先安装ClamAV）</span>
+# <span class="pl-s1">echo</span><span class="pl-kos"></span> <span class="pl-s">"启动ClamAV扫描..."</span>
+# <span class="pl-s1">sudo</span> <span class="pl-s1">clamscan</span> <span class="pl-c1">-</span><span class="pl-s1">r</span> <span class="pl-c1">--</span><span class="pl-s1">remove</span> <span class="pl-c1">/</span><span class="pl-s1">home</span>
+
+# <span class="pl-c1">4.</span> <span class="pl-kos">(</span><span class="pl-s1">可选</span><span class="pl-kos">)</span> <span class="pl-s1">清理过大的日志文件（如大于50M的日志）</span>
+<span class="pl-s1">echo</span><span class="pl-kos"></span> <span class="pl-s">"检查并清理过大的日志文件..."</span>
+<span class="pl-s1">find</span> <span class="pl-c1">/</span><span class="pl-s1">var</span><span class="pl-c1">/</span><span class="pl-s1">log</span> <span class="pl-c1">-</span><span class="pl-s1">type</span> <span class="pl-s1">f</span> <span class="pl-c1">-</span><span class="pl-s1">name</span> <span class="pl-s">"*.log"</span> <span class="pl-c1">-</span><span class="pl-s1">size</span> <span class="pl-c1">+</span><span class="pl-c1">50</span><span class="pl-v">M</span> <span class="pl-c1">-</span><span class="pl-s1">exec</span> <span class="pl-s1">sudo</span> <span class="pl-s1">truncate</span> <span class="pl-c1">-</span><span class="pl-s1">s</span> <span class="pl-c1">0</span> <span class="pl-kos">{</span><span class="pl-kos">}</span> \<span class="pl-kos">;</span>
+
+<span class="pl-s1">echo</span><span class="pl-kos"></span> <span class="pl-s">"系统维护任务已完成。"</span></pre></div>
 <h1>2. 绑定静态IP🔖</h1>
 <p>打开路由器设置---&gt;局域网设置--&gt;DHCP静态IP设置，分配一个固定IP，比如192.168.0.100。配置完成后记得重启路由器。<br>
 这样即使重启服务器或者路由器，IP地址就不会变来变去了。</p>
