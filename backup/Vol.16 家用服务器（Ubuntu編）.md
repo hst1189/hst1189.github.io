@@ -71,11 +71,14 @@ status | sudo ufw status |　現在のルール一覧と詳細
 ```
 sudo systemctl list-unit-files -t service | grep enabled　※起動時に有効化されるサービスの一覧
 sudo systemctl list-unit-files -t service | grep disabled　※起動時に無効化されるサービスの一覧
+
+
 ```
 
 操作 | コマンド
 -- | --
-サービスステータス表示 | systemctl status
+サービスステータス表示（全体） | systemctl status
+サービスステータス表示（個別） | sudo systemctl status docker
 サービス自動起動有効 | systemctl enable
 サービス自動起動無効 | systemctl disable
 サービス起動 | systemctl start
