@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2026-02-07 10:58</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2026-02-07 11:02</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/17.html" aria-label="Previous Page">上一篇-Vol.17 Omakub 专为开发者设计的 Ubuntu</a><a class="next_page" href="https://grapehut.dpdns.org/post/15.html" aria-label="Next Page">下一篇-Vol.15 Win开启SMB安全共享</a></div>
 </nav>
 
@@ -117,9 +117,52 @@ sudo apt autoclean　　※自动清除软件包缓存
 <pre class="notranslate"><code class="notranslate">sudo apt update
 sudo apt upgrade
 </code></pre>
+<p>・サービス一覧</p>
 <pre class="notranslate"><code class="notranslate">sudo systemctl list-unit-files -t service | grep enabled　※起動時に有効化されるサービスの一覧
 sudo systemctl list-unit-files -t service | grep disabled　※起動時に無効化されるサービスの一覧
 </code></pre>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>操作</th>
+<th>コマンド</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>サービス起動</td>
+<td>systemctl start</td>
+</tr>
+<tr>
+<td>サービス停止</td>
+<td>systemctl stop</td>
+</tr>
+<tr>
+<td>サービス再起動</td>
+<td>systemctl restart</td>
+</tr>
+<tr>
+<td>サービスリロード</td>
+<td>systemctl reload</td>
+</tr>
+<tr>
+<td>サービスステータス表示</td>
+<td>systemctl status</td>
+</tr>
+<tr>
+<td>サービス自動起動有効</td>
+<td>systemctl enable</td>
+</tr>
+<tr>
+<td>サービス自動起動無効</td>
+<td>systemctl disable</td>
+</tr>
+<tr>
+<td>サービス一覧</td>
+<td>systemctl list-unit-files --t service</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
 <p>・查看端口</p>
 <pre class="notranslate"><code class="notranslate">sudo netstat -tunlp   查看端口是否使用
 </code></pre>

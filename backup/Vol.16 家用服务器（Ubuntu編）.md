@@ -16,16 +16,32 @@ sudo apt autoremove  ※自动删除无用软件包
 sudo apt autoclean　　※自动清除软件包缓存
 ```
 
+
 ・系统更新
 ```
 sudo apt update
 sudo apt upgrade
 ```
 
+
+・サービス一覧
 ```
 sudo systemctl list-unit-files -t service | grep enabled　※起動時に有効化されるサービスの一覧
 sudo systemctl list-unit-files -t service | grep disabled　※起動時に無効化されるサービスの一覧
 ```
+
+操作 | コマンド
+-- | --
+サービス起動 | systemctl start
+サービス停止 | systemctl stop
+サービス再起動 | systemctl restart 
+サービスリロード | systemctl reload
+サービスステータス表示 | systemctl status
+サービス自動起動有効 | systemctl enable
+サービス自動起動無効 | systemctl disable
+サービス一覧 | systemctl list-unit-files --t service
+
+
 
 ・查看端口
 ```

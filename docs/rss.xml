@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 07 Feb 2026 10:59:15 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 07 Feb 2026 11:02:57 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.42 MongoDB入門</title><link>https://grapehut.dpdns.org/post/42.html</link><description>cheatsheet
 https://learn.mongodb.com/learn/course/mongodb-shell-cheatsheet/main/mongodb-shell-cheatsheet
 
 # 🚀MongoDB CRUD 操作
@@ -2160,16 +2160,32 @@ sudo apt autoremove  ※自动删除无用软件包
 sudo apt autoclean　　※自动清除软件包缓存
 ```
 
+
 ・系统更新
 ```
 sudo apt update
 sudo apt upgrade
 ```
 
+
+・サービス一覧
 ```
 sudo systemctl list-unit-files -t service | grep enabled　※起動時に有効化されるサービスの一覧
 sudo systemctl list-unit-files -t service | grep disabled　※起動時に無効化されるサービスの一覧
 ```
+
+操作 | コマンド
+-- | --
+サービス起動 | systemctl start
+サービス停止 | systemctl stop
+サービス再起動 | systemctl restart 
+サービスリロード | systemctl reload
+サービスステータス表示 | systemctl status
+サービス自動起動有効 | systemctl enable
+サービス自動起動無効 | systemctl disable
+サービス一覧 | systemctl list-unit-files --t service
+
+
 
 ・查看端口
 ```
