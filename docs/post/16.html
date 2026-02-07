@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2026-02-07 12:34</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2026-02-07 12:42</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/17.html" aria-label="Previous Page">上一篇-Vol.17 Omakub 专为开发者设计的 Ubuntu</a><a class="next_page" href="https://grapehut.dpdns.org/post/15.html" aria-label="Next Page">下一篇-Vol.15 Win开启SMB安全共享</a></div>
 </nav>
 
@@ -139,6 +139,25 @@ sudo apt upgrade
 <span class="pl-s1">find</span> <span class="pl-c1">/</span><span class="pl-s1">var</span><span class="pl-c1">/</span><span class="pl-s1">log</span> <span class="pl-c1">-</span><span class="pl-s1">type</span> <span class="pl-s1">f</span> <span class="pl-c1">-</span><span class="pl-s1">name</span> <span class="pl-s">"*.log"</span> <span class="pl-c1">-</span><span class="pl-s1">size</span> <span class="pl-c1">+</span><span class="pl-c1">50</span><span class="pl-v">M</span> <span class="pl-c1">-</span><span class="pl-s1">exec</span> <span class="pl-s1">sudo</span> <span class="pl-s1">truncate</span> <span class="pl-c1">-</span><span class="pl-s1">s</span> <span class="pl-c1">0</span> <span class="pl-kos">{</span><span class="pl-kos">}</span> \<span class="pl-kos">;</span>
 
 <span class="pl-s1">echo</span><span class="pl-kos"></span> <span class="pl-s">"系统维护任务已完成。"</span></pre></div>
+<h4>・配置防火墙 ufw</h4>
+<pre class="notranslate"><code class="notranslate">sudo ufw status　　　※status: inactive
+sudo ufw allow ssh   ※重要！有効化前にSSHを許可
+sudo ufw enable
+sudo ufw status　　　※status: active
+
+◆Defaultポリシー
+　sudo ufw default deny incoming
+　sudo ufw default allow outgoing
+
+◆基本コマンド
+　＜enable＞sudo ufw enable
+　＜disable＞sudo ufw disable
+
+　＜allow＞sudo ufw allow 80　※TCP/UDPポート80を許可 (デフォルトTCP
+　＜deny＞sudo ufw deny 23　※ポート23(telnet)拒否
+　＜delete＞sudo ufw delete allow 80　※ALLOWしたルールを削除
+　＜status＞sudo ufw status verbose　※現在のルール一覧と詳細
+</code></pre>
 <h4>・サービス一覧</h4>
 <pre class="notranslate"><code class="notranslate">sudo systemctl list-unit-files -t service | grep enabled　※起動時に有効化されるサービスの一覧
 sudo systemctl list-unit-files -t service | grep disabled　※起動時に無効化されるサービスの一覧

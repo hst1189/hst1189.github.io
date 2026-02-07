@@ -48,6 +48,26 @@ echo "系统维护任务已完成。"
 ```
 
 
+#### ・配置防火墙 ufw
+```
+sudo ufw status　　　※status: inactive
+sudo ufw allow ssh   ※重要！有効化前にSSHを許可
+sudo ufw enable
+sudo ufw status　　　※status: active
+
+◆Defaultポリシー
+　sudo ufw default deny incoming
+　sudo ufw default allow outgoing
+
+◆基本コマンド
+　＜enable＞sudo ufw enable
+　＜disable＞sudo ufw disable
+
+　＜allow＞sudo ufw allow 80　※TCP/UDPポート80を許可 (デフォルトTCP
+　＜deny＞sudo ufw deny 23　※ポート23(telnet)拒否
+　＜delete＞sudo ufw delete allow 80　※ALLOWしたルールを削除
+　＜status＞sudo ufw status verbose　※現在のルール一覧と詳細
+```
 
 
 #### ・サービス一覧
