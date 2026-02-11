@@ -34,7 +34,7 @@ console.log('6. End');
 The output will be：1.Start > 6.End > 2.Next tick > 3.Promise > 4.Timeout > 5.Immediate
 ```
 
-## 🚀Install Node.js
+## 🚀 安装Node.js
 Ubuntu/Debian:
 ```
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
@@ -56,9 +56,10 @@ node -v  # 应显示 v18.x.x
 npm -v   # 应显示 9.x.x 或更高
 ```
 
-## 🚀Run Node.js Code
+## 🚀 运行Node.js 程序
 ```javascript
 node app.js
+npm run xxx（.package.json里定义）
 ```
 
 ## 🚀Debugging Node.js Applications
