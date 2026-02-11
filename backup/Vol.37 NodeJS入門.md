@@ -34,6 +34,28 @@ console.log('6. End');
 The output will be：1.Start > 6.End > 2.Next tick > 3.Promise > 4.Timeout > 5.Immediate
 ```
 
+## 🚀Install Node.js
+Ubuntu/Debian:
+```
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+CentOS/RHEL:
+```
+curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
+sudo yum install -y nodejs
+```
+macOS (使用 Homebrew):
+```
+brew install node@18
+```
+Windows: 
+```
+下载安装包：https://nodejs.org/
+node -v  # 应显示 v18.x.x
+npm -v   # 应显示 9.x.x 或更高
+```
+
 ## 🚀Run Node.js Code
 ```javascript
 node app.js
