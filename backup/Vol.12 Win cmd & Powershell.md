@@ -30,8 +30,8 @@ fonts　|字体
 ```
 内网ip：　ipconfig
 
-公网ip：　curl ipinfo.io 
 公网ip：　curl ip-api.com
+公网ip：　curl ipinfo.io 
 公网ip：　curl ip.network/more
 公网ip：　curl api.myip.com
 公网ip：　curl ip9.com.cn/get
