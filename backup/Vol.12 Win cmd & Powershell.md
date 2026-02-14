@@ -28,10 +28,19 @@ fonts　|字体
 
 ## 查看IP
 ```
-内网　ipconfig
-公网　curl ipinfo.io  or  curl https://ipinfo.io/目的ip
-公网　curl http://ip-api.com/json/
-网络诊断  tracert -w 3000 -h 30 目的ip   例：tracert -w 3000 -h 30 www.google.com
+内网ip：　ipconfig
+
+公网ip：　curl ipinfo.io 
+公网ip：　curl ip-api.com
+公网ip：　curl ip.network/more
+公网ip：　curl api.myip.com
+公网ip：　curl ip9.com.cn/get
+
+指定ip：　curl https://ipinfo.io/目的ip
+指定ip：　curl https://ip9.com.cn/get?ip=目的ip
+指定ip：　curl http://ip-api.com/json/目的ip
+
+网络诊断：  tracert -w 3000 -h 30 目的ip   例：tracert -w 3000 -h 30 www.google.com
 ```
 
 ## WIFI密码
