@@ -36,9 +36,9 @@ fonts　|字体
 公网ip：　curl api.myip.com
 公网ip：　curl ip9.com.cn/get
 
+指定ip：　curl http://ip-api.com/json/目的ip
 指定ip：　curl https://ipinfo.io/目的ip
 指定ip：　curl https://ip9.com.cn/get?ip=目的ip
-指定ip：　curl http://ip-api.com/json/目的ip
 
 网络诊断：  tracert -w 3000 -h 30 目的ip   例：tracert -w 3000 -h 30 www.google.com
 ```
