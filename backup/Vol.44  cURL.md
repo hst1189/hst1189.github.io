@@ -1,15 +1,6 @@
 ## 查看版本
 curl --version 
 
-## 获取内容
-curl http://example.com
-
-## 例
-curl -X GET http://example.com
-curl -X POST     -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
-curl -X PUT       -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
-curl -X DELETE  -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
-
 ## オプション 
 オプション | 説明
 -- | --
@@ -17,10 +8,35 @@ curl -X DELETE  -H "Content-Type: application/json" -d '{"name": "John", "age": 
 -H | リクエストヘッダーの追加
 -d | POSTリクエストで送信するデータ
 -I | ヘッダーのみを表示
--o | 出力をファイルに保存
--O | リモートファイル名を使用して保存
+-O | ファイル名をそのままダウンロード
+-o | 自定义出力ファイル名
 -u | ユーザー名とパスワードの指定
 -L | リダイレクトを追跡
+
+## 例
+```
+curl -X GET http://example.com
+```
+```
+curl -X POST -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
+```
+```
+curl -X PUT -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
+```
+```
+curl -X DELETE -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
+```
+```
+curl -I http://example.com
+```
+```
+curl -O https://cdn-ak.f.st-hatena.com/images/fotolife/p/pixiv_corp/20220804/20220804131307.png
+```
+```
+curl -o aaa.png https://cdn-ak.f.st-hatena.com/images/fotolife/p/pixiv_corp/20220804/20220804131307.png
+```
+
+
 
 ## curl vs wget
 - curl:
