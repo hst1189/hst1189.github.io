@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Tue, 03 Mar 2026 13:14:27 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.44  cURL</title><link>https://grapehut.dpdns.org/post/45.html</link><description>## 查看版本
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Tue, 03 Mar 2026 13:17:14 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.44  cURL</title><link>https://grapehut.dpdns.org/post/45.html</link><description>## 查看版本
 curl --version 
 
 ## オプション 
@@ -36,6 +36,10 @@ curl -O https://cdn-ak.f.st-hatena.com/images/fotolife/p/pixiv_corp/20220804/202
 ```
 curl -o aaa.png https://cdn-ak.f.st-hatena.com/images/fotolife/p/pixiv_corp/20220804/20220804131307.png
 ```
+```
+curl -L https://www.bilibili.com
+```
+
 
 
 
