@@ -12,6 +12,7 @@ curl --version
 -o | 自定义出力ファイル名
 -u | ユーザー名とパスワードの指定
 -L | リダイレクトを追跡
+-v | 连接信息
 
 ## 例
 ```
@@ -37,6 +38,9 @@ curl -o aaa.png https://cdn-ak.f.st-hatena.com/images/fotolife/p/pixiv_corp/2022
 ```
 ```
 curl -L https://www.bilibili.com
+```
+```
+curl -v -L https://www.bilibili.com
 ```
 
 
