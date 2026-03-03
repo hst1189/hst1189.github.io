@@ -14,7 +14,7 @@ curl --version
 -u | -u 用户名:密码
 -L | リダイレクトを追跡
 -v | 连接信息
---proxy |  代理服务器
+--proxy |  代理服务器  --proxy http://用户名:密码@127.0.0.1:端口
 
 ## 例
 ```
@@ -45,7 +45,7 @@ curl -L https://www.bilibili.com
 curl -v -L https://www.bilibili.com
 ```
 ```
-curl --proxy "http://用户名:密码@127.0.0.1:433"  https://www.bilibili.com
+curl --proxy http://用户名:密码@127.0.0.1:433  https://www.bilibili.com
 ```
 
 
