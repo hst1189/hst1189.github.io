@@ -40,7 +40,11 @@ fonts　|字体
 指定ip：　curl https://ipinfo.io/目的ip
 指定ip：　curl https://ip9.com.cn/get?ip=目的ip
 
-网络诊断：  tracert -w 3000 -h 30 目的ip   例：tracert -w 3000 -h 30 www.google.com
+网络路由：  tracert -d  目的ip   例：tracert -d www.google.com
+-d：   提速，不解析dns
+注意点:
+    * * * と表示される箇所は、ルーターがファイアウォールでブロックされているか、応答を返さない設定になっている
+    Linux/Macの「traceroute」（UDP経由）と異なり、Windowsの「tracert」はICMP（ping）を使用して経路を調査 
 ```
 
 ## WIFI密码
