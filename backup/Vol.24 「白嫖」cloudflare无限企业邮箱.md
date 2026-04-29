@@ -58,7 +58,7 @@ project\_link | ❌ | 隐藏登录界面项目链接 (true显示 false隐藏)
 
 
 ### 初始化数据库
-浏览器输入 `https://你的worker自定义域/api/init/你的jwt_secret` 初始化数据库
+浏览器输入 `https://worker自定义域/api/init/你的jwt_secret`
 `Gmeek-html<img src="https://doc.skymail.ink/assets/10.DVYtU_xR.png">`
 
 
@@ -73,15 +73,30 @@ project\_link | ❌ | 隐藏登录界面项目链接 (true显示 false隐藏)
 > [!IMPORTANT]
 > Cloudflare 目前不支持发件，封禁25端口，只能使用第三方服务
 
-resend.com的API服务  
+### 设置resend
+注册resend.com，并添加域名，完成DNS验证 
 https://resend.com/domains
 
 1. Add Domain，自动生成3条DNS（1条MX，3条TXT）
+`Gmeek-html<img src="https://doc.skymail.ink/assets/1.DwYi9syY.png">`
 `Gmeek-html<img src="../imgs/resend/resend3.png">`
 
 2. 添加回 cloudflare
 `Gmeek-html<img src="../imgs/resend/resend4.png">`
 `Gmeek-html<img src="../imgs/resend/resend5.png">`
+
+3. 设置webhooks `https://worker自定义域/api/webhooks`
+`Gmeek-html<img src="https://doc.skymail.ink/assets/2.FAyxtFE4.png">`
+`Gmeek-html<img src="https://doc.skymail.ink/assets/4.B6iEcvcq.png">`
+
+
+### 绑定resend.comAPI
+1. 创建 API Key
+`Gmeek-html<img src="https://doc.skymail.ink/assets/3.C6CYekPc.png">`
+
+2. 绑定API
+`Gmeek-html<img src="https://doc.skymail.ink/assets/5.DXbq-DgO.png">`
+
 
 
 #### 测试

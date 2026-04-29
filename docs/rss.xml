@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 29 Apr 2026 05:28:26 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.44  cURL</title><link>https://grapehut.dpdns.org/post/45.html</link><description>## 查看版本
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 29 Apr 2026 05:51:06 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.44  cURL</title><link>https://grapehut.dpdns.org/post/45.html</link><description>## 查看版本
 curl --version 
 
 ## オプション 
@@ -2638,7 +2638,7 @@ project\_link | ❌ | 隐藏登录界面项目链接 (true显示 false隐藏)
 
 
 ### 初始化数据库
-浏览器输入 `https://你的worker自定义域/api/init/你的jwt_secret` 初始化数据库
+浏览器输入 `https://worker自定义域/api/init/你的jwt_secret`
 `Gmeek-html&lt;img src='https://doc.skymail.ink/assets/10.DVYtU_xR.png'&gt;`
 
 
@@ -2653,15 +2653,30 @@ project\_link | ❌ | 隐藏登录界面项目链接 (true显示 false隐藏)
 &gt; [!IMPORTANT]
 &gt; Cloudflare 目前不支持发件，封禁25端口，只能使用第三方服务
 
-resend.com的API服务  
+### 设置resend
+注册resend.com，并添加域名，完成DNS验证 
 https://resend.com/domains
 
 1. Add Domain，自动生成3条DNS（1条MX，3条TXT）
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/1.DwYi9syY.png'&gt;`
 `Gmeek-html&lt;img src='../imgs/resend/resend3.png'&gt;`
 
 2. 添加回 cloudflare
 `Gmeek-html&lt;img src='../imgs/resend/resend4.png'&gt;`
 `Gmeek-html&lt;img src='../imgs/resend/resend5.png'&gt;`
+
+3. 设置webhooks `https://worker自定义域/api/webhooks`
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/2.FAyxtFE4.png'&gt;`
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/4.B6iEcvcq.png'&gt;`
+
+
+### 绑定resend.comAPI
+1. 创建 API Key
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/3.C6CYekPc.png'&gt;`
+
+2. 绑定API
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/5.DXbq-DgO.png'&gt;`
+
 
 
 #### 测试
