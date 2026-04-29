@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 29 Apr 2026 08:13:51 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.45 「白嫖」无限企业邮箱（larksuite篇）</title><link>https://grapehut.dpdns.org/post/46.html</link><guid isPermaLink="true">https://grapehut.dpdns.org/post/46.html</guid><pubDate>Wed, 29 Apr 2026 08:13:19 +0000</pubDate></item><item><title>Vol.44  cURL</title><link>https://grapehut.dpdns.org/post/45.html</link><description>## 查看版本
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 29 Apr 2026 08:14:43 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.45 「白嫖」无限企业邮箱（larksuite篇）</title><link>https://grapehut.dpdns.org/post/46.html</link><guid isPermaLink="true">https://grapehut.dpdns.org/post/46.html</guid><pubDate>Wed, 29 Apr 2026 08:13:19 +0000</pubDate></item><item><title>Vol.44  cURL</title><link>https://grapehut.dpdns.org/post/45.html</link><description>## 查看版本
 curl --version 
 
 ## オプション 
@@ -2578,7 +2578,7 @@ API地址： https://api.chatanywhere.tech (国内中转，延时更低)
  　×text-开头系列模型，例如：text-davinci（免费版已取消text系列模型）
  　×gpt-4全系列（只定期限量开放）
  　×付费版API支持OpenAI所有模型，包括（联网、绘画、聊天、向量、图片分析、文件分析、GPTs等）
- 　×付费版API支持Midjourney专业绘画、Suno音乐生成、PPT生成、多种视频模型。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/25.html</guid><pubDate>Sun, 21 Sep 2025 09:16:05 +0000</pubDate></item><item><title>Vol.24 「白嫖」cloudflare无限企业邮箱</title><link>https://grapehut.dpdns.org/post/24.html</link><description># 白嫖cloudflare无限企业邮箱
+ 　×付费版API支持Midjourney专业绘画、Suno音乐生成、PPT生成、多种视频模型。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/25.html</guid><pubDate>Sun, 21 Sep 2025 09:16:05 +0000</pubDate></item><item><title>Vol.24 「白嫖」无限企业邮箱（cloudflare＋resend 篇）</title><link>https://grapehut.dpdns.org/post/24.html</link><description># 白嫖cloudflare无限企业邮箱
 
 ## 🎉收邮件（简易模式）
 1. 进入cloudflare，选择一个域名
