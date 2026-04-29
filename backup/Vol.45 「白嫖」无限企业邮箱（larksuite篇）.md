@@ -99,7 +99,7 @@
 ![用户功能权限中开启第三方邮箱客户端的界面](https://cos.files.maozhishi.com/data/web/web-files/img/20241213170645.png)
 
 
-### 2. 生成专用密码
+### 2. 生成登录密码（需要Lark 客户端）
 
 #### ① 下载并登录 Lark 客户端
 要生成专用密码，我们需要在 Lark 的电脑客户端上操作。
@@ -114,7 +114,7 @@
 ![Lark客户端中邮箱设置入口示意图](https://cos.files.maozhishi.com/data/web/web-files/img/20241213172519.png)
 
 
-#### ③ 生成专用密码
+#### ③ 生成密码
 1️⃣ 在"第三方邮箱客户端登录"这里，点击 【立即设置】。
 2️⃣ 给这个密码起个名字（比如"Foxmail专用"），然后点击 【生成】。
 ![生成专用密码的操作界面](https://cos.files.maozhishi.com/data/web/web-files/img/20241213172717.png)
