@@ -67,7 +67,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
     font-size: 12px;
 }
 </style>
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}</style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}</style><style>.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}</style>
 
 
 
@@ -96,33 +96,113 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:15,updated at 2025-12-07 06:14</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/23.html" aria-label="Previous Page">上一篇-Vol.23 「白嫖」批量gmail, outlook</a><a class="next_page" href="https://grapehut.dpdns.org/post/25.html" aria-label="Next Page">下一篇-Vol.25 「白嫖」大語言模型LLM</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:15,updated at 2026-04-29 05:27</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/25.html" aria-label="Previous Page">上一篇-Vol.25 「白嫖」大語言模型LLM</a><a class="next_page" href="https://grapehut.dpdns.org/post/23.html" aria-label="Next Page">下一篇-Vol.23 「白嫖」批量gmail, outlook</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>白嫖cloudflare无限企业邮箱</h1>
-<h2>🎉收邮件</h2>
+<h2>🎉收邮件（简易模式）</h2>
 <ol>
-<li>进入cloudflare，选择一个已绑定的域名</li>
-<li>启用email routing，自动生成５条DNS记录（３个MX，２个TXT），添加结果可以在DNS面板里看到</li>
-<li>设置email routing规则，编辑Catch-All绑定一个転送邮箱，通过邮箱验证后，転送状态变为可用</li>
+<li>进入cloudflare，选择一个域名</li>
+<li>启用 Email Routing，自动生成５条DNS记录（３个MX，２个TXT），添加结果可以在DNS面板里看到<br>
+<img src="../imgs/resend/resend1.png"></li>
+<li>设置 Email Routing 规则，编辑Catch-All绑定一个転送邮箱，<strong>通过邮箱验证后，転送状态变为可用</strong><br>
+<img src="../imgs/resend/resend2.png"></li>
 </ol>
-<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>邮箱「<strong>任意字符</strong>@ <strong>上述绑定的域名</strong>」， 所接受到的邮件 都会転送到Catch-All<br>
-例：发送至：<strong>任意</strong>@<strong>grapehut.xyz</strong>  的邮件，会転送到Catch-All 绑定邮箱</p>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>１．发送至：<strong>任意字符</strong>@<strong>xxx.com</strong>  的邮件，都会転送到Catch-All 绑定邮箱<br>
+２．Email Routing邮件设置的概要栏里，可以查看所有收到的邮件</p>
 </div>
-<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>cloudflare邮件设置的概要栏里可以查看，所有收到的邮件</p>
-</div>
-<h2>🎉发邮件</h2>
-<p>resend.com的API服务<br>
-<a href="https://resend.com/onboarding" rel="nofollow">https://resend.com/onboarding</a></p>
+<h2>🎉收邮件（高级模式，通过worker存储在D1 KV里）</h2>
+<p>部署手册：<a href="https://doc.skymail.ink/guide/dashboard.html" rel="nofollow">https://doc.skymail.ink/guide/dashboard.html</a></p>
+<h3>创建worker</h3>
 <ol>
 <li>
-<p>Add Domain，自动生成3条DNS（1条MX，2条TXT）<br>
-<img src="../imgs/resend/resend1.PNG"></p>
+<p>克隆GitHub仓库<br>
+<img src="https://doc.skymail.ink/assets/0.BgZTtVBn.png"></p>
+</li>
+<li>
+<p>进入cloudflare, 创建worker<br>
+<img src="https://doc.skymail.ink/assets/1.C_OKFTJq.png"></p>
+</li>
+<li>
+<p>选择从GitHub导入<br>
+<img src="https://doc.skymail.ink/assets/2.yrULln52.png"></p>
+</li>
+<li>
+<p>部署<br>
+设置目录 <code class="notranslate">mail-worker</code>，其余都默认设置<br>
+<img src="https://doc.skymail.ink/assets/3.BlAKorP8.png"></p>
+</li>
+<li>
+<p>worker设置自定义域，添加环境变量</p>
+</li>
+</ol>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>变量名</th>
+<th>必需</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>domain</td>
+<td>✅</td>
+<td>邮箱域名,多域名用（例如 <code class="notranslate">["example.com","example2.com"]</code>）</td>
+</tr>
+<tr>
+<td>admin</td>
+<td>✅</td>
+<td>管理员邮箱地址（例如 <code class="notranslate">admin@example.com</code>）</td>
+</tr>
+<tr>
+<td>jwt_secret</td>
+<td>✅</td>
+<td>JWT密钥 随便输入一串字符串，不要输入特殊字符</td>
+</tr>
+<tr>
+<td>project_link</td>
+<td>❌</td>
+<td>隐藏登录界面项目链接 (true显示 false隐藏)</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><img src="https://doc.skymail.ink/assets/5.CX5wLrGh.png"></p>
+<h3>Email Routing设置转发</h3>
+<p><img src="https://doc.skymail.ink/assets/7.Bm0YMP0b.png"><br>
+<img src="https://doc.skymail.ink/assets/8.jfYabKoj.png"></p>
+<h3>KV和D1</h3>
+<ol>
+<li>
+<p>创建KV和D1数据库<br>
+<img src="https://doc.skymail.ink/assets/4-4.Ddg5IGmI.png"></p>
+</li>
+<li>
+<p>添加绑定，变量名必须为<strong>kv</strong>和<strong>db</strong><br>
+<img src="https://doc.skymail.ink/assets/4.d1DzXNm-.png"></p>
+</li>
+</ol>
+<h3>初始化数据库</h3>
+<p>浏览器输入 <code class="notranslate">https://你的worker自定义域/api/init/你的jwt_secret</code> 初始化数据库<br>
+<img src="https://doc.skymail.ink/assets/10.DVYtU_xR.png"></p>
+<h3>登录网站</h3>
+<p>浏览器输入自定义域名，注册管理员账号，登录网站<br>
+<img src="https://doc.skymail.ink/assets/9.UpdVuA4A.png"></p>
+<h2>🎉发邮件</h2>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>Cloudflare 目前不支持发件，封禁25端口，只能使用第三方服务</p>
+</div>
+<p>resend.com的API服务<br>
+<a href="https://resend.com/domains" rel="nofollow">https://resend.com/domains</a></p>
+<ol>
+<li>
+<p>Add Domain，自动生成3条DNS（1条MX，3条TXT）<br>
+<img src="../imgs/resend/resend3.png"></p>
 </li>
 <li>
 <p>添加回 cloudflare<br>
-<img src="../imgs/resend/resend2.PNG"></p>
+<img src="../imgs/resend/resend4.png"><br>
+<img src="../imgs/resend/resend5.png"></p>
 </li>
 </ol>
 <h4>测试</h4>
@@ -133,7 +213,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 
 <span class="pl-kos">(</span><span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
   <span class="pl-k">const</span> <span class="pl-kos">{</span> data<span class="pl-kos">,</span> error <span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">resend</span><span class="pl-kos">.</span><span class="pl-c1">emails</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-kos">{</span>
-    <span class="pl-c1">from</span>: <span class="pl-s">'Acme &lt;任意@grapehut.xyz&gt;'</span><span class="pl-kos">,</span>
+    <span class="pl-c1">from</span>: <span class="pl-s">'Acme &lt;任意@xxx.com&gt;'</span><span class="pl-kos">,</span>
     <span class="pl-c1">to</span>: <span class="pl-kos">[</span><span class="pl-s">'目标邮箱@outlook.com'</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
     <span class="pl-c1">subject</span>: <span class="pl-s">'Hello World'</span><span class="pl-kos">,</span>
     <span class="pl-c1">html</span>: <span class="pl-s">'&lt;strong&gt;It works!&lt;/strong&gt;'</span><span class="pl-kos">,</span>

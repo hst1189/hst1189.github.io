@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Mon, 16 Mar 2026 03:28:55 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.44  cURL</title><link>https://grapehut.dpdns.org/post/45.html</link><description>## 查看版本
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 29 Apr 2026 05:28:26 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.44  cURL</title><link>https://grapehut.dpdns.org/post/45.html</link><description>## 查看版本
 curl --version 
 
 ## オプション 
@@ -2580,30 +2580,88 @@ API地址： https://api.chatanywhere.tech (国内中转，延时更低)
  　×付费版API支持OpenAI所有模型，包括（联网、绘画、聊天、向量、图片分析、文件分析、GPTs等）
  　×付费版API支持Midjourney专业绘画、Suno音乐生成、PPT生成、多种视频模型。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/25.html</guid><pubDate>Sun, 21 Sep 2025 09:16:05 +0000</pubDate></item><item><title>Vol.24 「白嫖」cloudflare无限企业邮箱</title><link>https://grapehut.dpdns.org/post/24.html</link><description># 白嫖cloudflare无限企业邮箱
 
-## 🎉收邮件
-1. 进入cloudflare，选择一个已绑定的域名
-2. 启用email routing，自动生成５条DNS记录（３个MX，２个TXT），添加结果可以在DNS面板里看到
-3. 设置email routing规则，编辑Catch-All绑定一个転送邮箱，通过邮箱验证后，転送状态变为可用
+## 🎉收邮件（简易模式）
+1. 进入cloudflare，选择一个域名
+2. 启用 Email Routing，自动生成５条DNS记录（３个MX，２个TXT），添加结果可以在DNS面板里看到
+`Gmeek-html&lt;img src='../imgs/resend/resend1.png'&gt;`
+3. 设置 Email Routing 规则，编辑Catch-All绑定一个転送邮箱，**通过邮箱验证后，転送状态变为可用**
+`Gmeek-html&lt;img src='../imgs/resend/resend2.png'&gt;`
 
 &gt; [!TIP]
-&gt; 邮箱「**任意字符**@ **上述绑定的域名**」， 所接受到的邮件 都会転送到Catch-All
-&gt; 例：发送至：**任意**@**grapehut.xyz**  的邮件，会転送到Catch-All 绑定邮箱
+&gt; １．发送至：**任意字符**@**xxx.com**  的邮件，都会転送到Catch-All 绑定邮箱
+&gt; ２．Email Routing邮件设置的概要栏里，可以查看所有收到的邮件
 
-&gt; [!TIP]
-&gt; cloudflare邮件设置的概要栏里可以查看，所有收到的邮件
+
+
+## 🎉收邮件（高级模式，通过worker存储在D1 KV里）
+
+部署手册：https://doc.skymail.ink/guide/dashboard.html
+
+
+### 创建worker
+1.  克隆GitHub仓库
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/0.BgZTtVBn.png'&gt;`
+
+2.  进入cloudflare, 创建worker
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/1.C_OKFTJq.png'&gt;`
+
+3.  选择从GitHub导入
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/2.yrULln52.png'&gt;`
+
+4.  部署
+ 设置目录 `mail-worker`，其余都默认设置
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/3.BlAKorP8.png'&gt;`
+
+5.  worker设置自定义域，添加环境变量
+
+变量名 | 必需 | 用途
+---|---|---
+domain | ✅| 邮箱域名,多域名用（例如 `['example.com','example2.com']`）
+admin | ✅ | 管理员邮箱地址（例如 `admin@example.com`）
+jwt\_secret | ✅| JWT密钥 随便输入一串字符串，不要输入特殊字符
+project\_link | ❌ | 隐藏登录界面项目链接 (true显示 false隐藏)
+
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/5.CX5wLrGh.png'&gt;`
+
+
+###  Email Routing设置转发
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/7.Bm0YMP0b.png'&gt;`
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/8.jfYabKoj.png'&gt;`
+
+
+### KV和D1
+1.  创建KV和D1数据库
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/4-4.Ddg5IGmI.png'&gt;`
+
+3.  添加绑定，变量名必须为**kv**和**db**
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/4.d1DzXNm-.png'&gt;`
+
+
+### 初始化数据库
+浏览器输入 `https://你的worker自定义域/api/init/你的jwt_secret` 初始化数据库
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/10.DVYtU_xR.png'&gt;`
+
+
+### 登录网站
+浏览器输入自定义域名，注册管理员账号，登录网站
+`Gmeek-html&lt;img src='https://doc.skymail.ink/assets/9.UpdVuA4A.png'&gt;`
+
 
 
 
 ## 🎉发邮件
+&gt; [!IMPORTANT]
+&gt; Cloudflare 目前不支持发件，封禁25端口，只能使用第三方服务
+
 resend.com的API服务  
-https://resend.com/onboarding
+https://resend.com/domains
 
-1. Add Domain，自动生成3条DNS（1条MX，2条TXT）
-`Gmeek-html&lt;img src='../imgs/resend/resend1.PNG'&gt;`
-
+1. Add Domain，自动生成3条DNS（1条MX，3条TXT）
+`Gmeek-html&lt;img src='../imgs/resend/resend3.png'&gt;`
 
 2. 添加回 cloudflare
-`Gmeek-html&lt;img src='../imgs/resend/resend2.PNG'&gt;`
+`Gmeek-html&lt;img src='../imgs/resend/resend4.png'&gt;`
+`Gmeek-html&lt;img src='../imgs/resend/resend5.png'&gt;`
 
 
 #### 测试
@@ -2616,7 +2674,7 @@ const resend = new Resend('re_xxxxxxx');
 
 (async function () {
   const { data, error } = await resend.emails.send({
-    from: 'Acme &lt;任意@grapehut.xyz&gt;',
+    from: 'Acme &lt;任意@xxx.com&gt;',
     to: ['目标邮箱@outlook.com'],
     subject: 'Hello World',
     html: '&lt;strong&gt;It works!&lt;/strong&gt;',
