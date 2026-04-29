@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 29 Apr 2026 06:03:11 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.44  cURL</title><link>https://grapehut.dpdns.org/post/45.html</link><description>## 查看版本
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 29 Apr 2026 06:07:59 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.44  cURL</title><link>https://grapehut.dpdns.org/post/45.html</link><description>## 查看版本
 curl --version 
 
 ## オプション 
@@ -2583,9 +2583,9 @@ API地址： https://api.chatanywhere.tech (国内中转，延时更低)
 ## 🎉收邮件（简易模式）
 1. 进入cloudflare，选择一个域名
 2. 启用 Email Routing，自动生成５条DNS记录（３个MX，２个TXT），添加结果可以在DNS面板里看到
-`Gmeek-html&lt;img src='../imgs/resend/resend1.png'&gt;`
+`Gmeek-html&lt;img src='../imgs/resend/resend1.PNG'&gt;`
 3. 设置 Email Routing 规则，编辑Catch-All绑定一个転送邮箱，**通过邮箱验证后，転送状态变为可用**
-`Gmeek-html&lt;img src='../imgs/resend/resend2.png'&gt;`
+`Gmeek-html&lt;img src='../imgs/resend/resend2.PNG'&gt;`
 
 &gt; [!TIP]
 &gt; １．发送至：**任意字符**@**xxx.com**  的邮件，都会転送到Catch-All 绑定邮箱

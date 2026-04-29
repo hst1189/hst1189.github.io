@@ -3,9 +3,9 @@
 ## 🎉收邮件（简易模式）
 1. 进入cloudflare，选择一个域名
 2. 启用 Email Routing，自动生成５条DNS记录（３个MX，２个TXT），添加结果可以在DNS面板里看到
-`Gmeek-html<img src="../imgs/resend/resend1.png">`
+`Gmeek-html<img src="../imgs/resend/resend1.PNG">`
 3. 设置 Email Routing 规则，编辑Catch-All绑定一个転送邮箱，**通过邮箱验证后，転送状态变为可用**
-`Gmeek-html<img src="../imgs/resend/resend2.png">`
+`Gmeek-html<img src="../imgs/resend/resend2.PNG">`
 
 > [!TIP]
 > １．发送至：**任意字符**@**xxx.com**  的邮件，都会転送到Catch-All 绑定邮箱
