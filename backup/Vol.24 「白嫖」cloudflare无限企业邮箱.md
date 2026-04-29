@@ -77,7 +77,7 @@ project\_link | ❌ | 隐藏登录界面项目链接 (true显示 false隐藏)
 注册resend.com，并添加域名，完成DNS验证 
 https://resend.com/domains
 
-1. Add Domain，自动生成3条DNS（1条MX，3条TXT）
+1. Add Domain，自动生成４条DNS（１条MX，３条TXT）
 `Gmeek-html<img src="https://doc.skymail.ink/assets/1.DwYi9syY.png">`
 `Gmeek-html<img src="../imgs/resend/resend3.png">`
 
