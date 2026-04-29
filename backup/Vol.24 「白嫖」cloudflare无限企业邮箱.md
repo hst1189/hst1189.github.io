@@ -29,7 +29,7 @@
 `Gmeek-html<img src="https://doc.skymail.ink/assets/2.yrULln52.png">`
 
 4.  部署
- 设置目录 `mail-worker`，其余都默认设置
+ 设置目录 `/mail-worker`，其余都默认设置
 `Gmeek-html<img src="https://doc.skymail.ink/assets/3.BlAKorP8.png">`
 
 5.  worker设置自定义域，添加环境变量
