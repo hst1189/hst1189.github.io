@@ -19,6 +19,9 @@ npm install -g @anthropic-ai/claude-code
 # 配置文件
 ```
 ~\.claude.json
+"hasCompletedOnboarding": true,　　#跳过官方登入
+
+
 ~\.claude\settings.json
 ```
 
