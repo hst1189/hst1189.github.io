@@ -27,7 +27,6 @@ npm install -g @anthropic-ai/claude-code
 
 # 命令
 ```
-/init           プロジェクト用の CLAUDE.md を作成する
-/agents     カスタム subagent を設定するのに役立ちます
-/doctor      インストールの一般的な問題を診断します
+/init           CLAUDE.md 初期化
+/model      切换LLM
 ```
