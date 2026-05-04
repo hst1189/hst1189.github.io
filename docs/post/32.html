@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:20,updated at 2026-05-04 07:45</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:20,updated at 2026-05-04 07:53</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/33.html" aria-label="Previous Page">上一篇-Vol.33 Vite + React入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/31.html" aria-label="Next Page">下一篇-Vol.31 科学上网（VPN客户端）</a></div>
 </nav>
 
@@ -140,6 +140,13 @@ sudo run -d  -p 80:8080  -v aaa:/data  image_name:lastest     #用挂载卷启�
 sudo docker volume inspect volume_name                                #查看挂载卷的目录
 sudo docker volume list                                               #查看所有挂载卷
 sudo docker volume rm volume_name                                     #删除挂载卷
+</code></pre>
+<h3>🪄添加参数</h3>
+<pre class="notranslate"><code class="notranslate">sudo docker run -d \ 
+-p 27017:27017 \
+-e MONGO_INITDB_ROOT_USERNAME=user \
+-e MONGO_INITDB_ROOT_PASSWORD=password \
+mongo
 </code></pre>
 <h3>🪄image管理</h3>
 <pre class="notranslate"><code class="notranslate">sudo docker images                       #查看docker中所有image

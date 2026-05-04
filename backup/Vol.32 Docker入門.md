@@ -52,6 +52,16 @@ sudo docker volume list                                               #查看所
 sudo docker volume rm volume_name                                     #删除挂载卷
 ```
 
+### 🪄添加参数
+```
+sudo docker run -d \ 
+-p 27017:27017 \
+-e MONGO_INITDB_ROOT_USERNAME=user \
+-e MONGO_INITDB_ROOT_PASSWORD=password \
+mongo
+```
+
+
 ### 🪄image管理
 ```
 sudo docker images                       #查看docker中所有image
