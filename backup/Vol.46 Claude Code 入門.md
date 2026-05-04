@@ -35,3 +35,8 @@ npm install -g @anthropic-ai/claude-code
 1. superpowers
 2. cLaude-hud
 3. skill-creator
+
+1. Skillsmp：[https://skillsmp.com](https://skillsmp.com)
+2. skills.sh：[https://skills.sh](https://skills.sh)
+3. agentskill.sh：[https://agentskill.sh](https://agentskill.sh)
+4. Lobehub Skills：[https://lobehub.com/skills](https://lobehub.com/skills)
