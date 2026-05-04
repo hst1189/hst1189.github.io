@@ -96,19 +96,20 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-04 13:56</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-04 13:59</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/46.html" aria-label="Next Page">下一篇-Vol.45 「白嫖」无限企业邮箱（larksuite篇）</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>安装</h1>
-<p>macOS, Linux, WSL:</p>
+<p>・macOS, Linux, WSL</p>
 <pre class="notranslate"><code class="notranslate">curl -fsSL https://claude.ai/install.sh | bash
 </code></pre>
-<p>Windows PowerShell:</p>
+<p>・Windows</p>
 <pre class="notranslate"><code class="notranslate">irm https://claude.ai/install.ps1 | iex
+curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd
 </code></pre>
-<p>Windows CMD</p>
-<pre class="notranslate"><code class="notranslate">curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd
+<p>・npm（Node.js 18以上）</p>
+<pre class="notranslate"><code class="notranslate">npm install -g @anthropic-ai/claude-code
 </code></pre>
 <h1>配置文件</h1>
 <pre class="notranslate"><code class="notranslate">~\.claude.json
