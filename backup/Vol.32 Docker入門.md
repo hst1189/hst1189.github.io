@@ -32,10 +32,10 @@ docker run   #每次从image 创建新容器及运行
 
 sudo docker run -d  -p 80:8080  -v /data:/data  image_name:lastest      
                 ↑　　　↑　　　　　　↑               ↑
-           -d 后台运行  80（host内）:8080（docker内）
-           -p 端口映射 
-           -v 目录映射   　/data（host内）:/data（docker内）
-           image_name:lastest  （版本省略的话，默认最新）
+           -d 后台运行
+           -p 端口映射  80:8080（容器外：容器内）
+           -v 目录映射  /data:/data（容器外：容器内）
+           image_name:lastest （版本省略的话，默认最新）
 ```
 
 ### 🪄进入容器
