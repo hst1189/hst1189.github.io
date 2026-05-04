@@ -86,6 +86,9 @@ sudo docker run -d --restart always  image_name
 ```
 sudo docker exec  container_id/container_name  ps -ef   #查看容器里面的进程
 sudo docker exec -it  container_id/container_name  /bin/sh  #进入容器，执行命令
+命令确实的情况下，查看下系统版本   cat /etc/os-release     apt install  进行安装软件
+
+
 ```
 
 ### 🪄查看容器日志
