@@ -96,67 +96,63 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:20,updated at 2026-02-07 15:08</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/31.html" aria-label="Previous Page">上一篇-Vol.31 科学上网（VPN客户端）</a><a class="next_page" href="https://grapehut.dpdns.org/post/33.html" aria-label="Next Page">下一篇-Vol.33 Vite + React入門</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:20,updated at 2026-05-04 07:25</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/33.html" aria-label="Previous Page">上一篇-Vol.33 Vite + React入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/31.html" aria-label="Next Page">下一篇-Vol.31 科学上网（VPN客户端）</a></div>
 </nav>
 
-<section class="markdown-body spoiler" id="postBody"><p><iframe style='border-radius:12px' width="100%" height="200px" src="https://www.youtube.com/embed/RzYO_cGqrAY?si=qO64_ABMM0jyvNUi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-<h1>🎉CheatSheet</h1>
+<section class="markdown-body spoiler" id="postBody"><h1>🎉CheatSheet</h1>
 <p><a href="/imgs/DockerCheatSheet.pdf">CheatSheet</a></p>
 <p><img src="/imgs/DockerCheatSheet.png"></p>
 <h1>🎉安装Docker</h1>
 <pre class="notranslate"><code class="notranslate">sudo curl -fsSL https://get.docker.com | sh    #安装Docker
 sudo systemctl enable --now docker             #启动Docker服务
 sudo docker -v                                 #查看docker版本，检查是否安装成功
+
+sudo service docker restart                                 #重启docker
 </code></pre>
 <h1>🎉一些Docker常用命令</h1>
-<pre class="notranslate"><code class="notranslate">🪄拉取image
-sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
+<h3>🪄拉取image</h3>
+<pre class="notranslate"><code class="notranslate">sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
                                ↑            ↑
                      空间（官方空间可省略）  image（版本省略的话，默认最新）
 
 例：　sudo docker pull nginx　#省略写法表示，从官网拉取nginx的最新版本
 </code></pre>
-<pre class="notranslate"><code class="notranslate">🪄运行image
-
-docker run   #每次从image 创建新容器及运行
+<h3>🪄运行image</h3>
+<pre class="notranslate"><code class="notranslate">docker run   #每次从image 创建新容器及运行
 
 sudo docker run -d  -p 80:8080  -v /data:/data  image_name:lastest      
                 ↑　　　↑　　　　　　↑               ↑
            -d 后台运行 -p 端口映射 -v 目录映射   image（版本省略的话，默认最新）
            host内:docker内　host内:docker内
 </code></pre>
-<pre class="notranslate"><code class="notranslate">🪄进入容器
-sudo run -it  image_name 
+<h3>🪄进入容器</h3>
+<pre class="notranslate"><code class="notranslate">sudo run -it  image_name 
           ↑
      -it 进入容器后
 </code></pre>
-<pre class="notranslate"><code class="notranslate">🪄挂载卷
-sudo docker volume create  volume_name                                #创建挂载卷
+<h3>🪄挂载卷</h3>
+<pre class="notranslate"><code class="notranslate">sudo docker volume create  volume_name                                #创建挂载卷
 sudo run -d  -p 80:8080  -v volume_name:/data  image_name:lastest     #用挂载卷启动容器
 
 sudo docker volume inspect volume_name                                #查看挂载卷的真是目录
 sudo docker volume list                                               #查看所有挂载卷
 sudo docker volume rm volume_name                                     #删除挂载卷
 </code></pre>
-<pre class="notranslate"><code class="notranslate">🪄image管理
-sudo docker images                       #查看docker中所有image
+<h3>🪄image管理</h3>
+<pre class="notranslate"><code class="notranslate">sudo docker images                       #查看docker中所有image
 sudo docker rmi image_id/image_name      #删除image
 </code></pre>
-<pre class="notranslate"><code class="notranslate">🪄container管理
+<pre class="notranslate"><code class="notranslate">### 🪄container管理
 sudo docker ps -a                             #查看docker中所有容器
 sudo docker rm  container_id/container_name   #删除容器
 </code></pre>
-<pre class="notranslate"><code class="notranslate">🪄container管理
-sudo docker ps -a                             #查看docker中所有容器
-sudo docker rm  container_id/container_name   #删除容器
-</code></pre>
-<pre class="notranslate"><code class="notranslate">🪄启动停止container
-sudo docker start container_id/container_name   #启动容器
+<h3>🪄启动停止container</h3>
+<pre class="notranslate"><code class="notranslate">sudo docker start container_id/container_name   #启动容器
 sudo docker stop container_id/container_name   #停止容器
 </code></pre>
-<pre class="notranslate"><code class="notranslate">🪄查看docker内network
-sudo docker network ls
+<h3>🪄查看docker内network</h3>
+<pre class="notranslate"><code class="notranslate">sudo docker network ls
 ・bridge 
 ・host 
 ・null

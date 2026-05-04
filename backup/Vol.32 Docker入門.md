@@ -1,6 +1,3 @@
-`Gmeek-html<iframe style='border-radius:12px' width="100%" height="200px" src="https://www.youtube.com/embed/RzYO_cGqrAY?si=qO64_ABMM0jyvNUi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
-
-
 # 🎉CheatSheet
 [CheatSheet](/imgs/DockerCheatSheet.pdf)
 
@@ -13,11 +10,14 @@
 sudo curl -fsSL https://get.docker.com | sh    #安装Docker
 sudo systemctl enable --now docker             #启动Docker服务
 sudo docker -v                                 #查看docker版本，检查是否安装成功
+
+sudo service docker restart                                 #重启docker
 ```
 
 # 🎉一些Docker常用命令
+
+### 🪄拉取image
 ```
-🪄拉取image
 sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
                                ↑            ↑
                      空间（官方空间可省略）  image（版本省略的话，默认最新）
@@ -25,9 +25,8 @@ sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
 例：　sudo docker pull nginx　#省略写法表示，从官网拉取nginx的最新版本
  ```
 
+### 🪄运行image
 ```
-🪄运行image
-
 docker run   #每次从image 创建新容器及运行
 
 sudo docker run -d  -p 80:8080  -v /data:/data  image_name:lastest      
@@ -36,16 +35,15 @@ sudo docker run -d  -p 80:8080  -v /data:/data  image_name:lastest
            host内:docker内　host内:docker内
 ```
 
+### 🪄进入容器
 ```
-🪄进入容器
 sudo run -it  image_name 
           ↑
      -it 进入容器后
 ```
 
-
+### 🪄挂载卷
 ```
-🪄挂载卷
 sudo docker volume create  volume_name                                #创建挂载卷
 sudo run -d  -p 80:8080  -v volume_name:/data  image_name:lastest     #用挂载卷启动容器
 
@@ -54,32 +52,26 @@ sudo docker volume list                                               #查看所
 sudo docker volume rm volume_name                                     #删除挂载卷
 ```
 
+### 🪄image管理
 ```
-🪄image管理
 sudo docker images                       #查看docker中所有image
 sudo docker rmi image_id/image_name      #删除image
 ```
 
 ```
-🪄container管理
+### 🪄container管理
 sudo docker ps -a                             #查看docker中所有容器
 sudo docker rm  container_id/container_name   #删除容器
 ```
 
+### 🪄启动停止container
 ```
-🪄container管理
-sudo docker ps -a                             #查看docker中所有容器
-sudo docker rm  container_id/container_name   #删除容器
-```
-
-```
-🪄启动停止container
 sudo docker start container_id/container_name   #启动容器
 sudo docker stop container_id/container_name   #停止容器
 ```
 
+### 🪄查看docker内network
 ```
-🪄查看docker内network
 sudo docker network ls
 ・bridge 
 ・host 

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 29 Apr 2026 08:50:56 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.45 「白嫖」无限企业邮箱（larksuite篇）</title><link>https://grapehut.dpdns.org/post/46.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Mon, 04 May 2026 07:26:15 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.45 「白嫖」无限企业邮箱（larksuite篇）</title><link>https://grapehut.dpdns.org/post/46.html</link><description>
   ✨ 免费企业邮箱之Lark （飞书海外版）
 =================
 
@@ -1888,10 +1888,7 @@ function Question() {
     &lt;/h3&gt;
   );
 }
-```。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/33.html</guid><pubDate>Sun, 21 Sep 2025 09:21:42 +0000</pubDate></item><item><title>Vol.32 Docker入門</title><link>https://grapehut.dpdns.org/post/32.html</link><description>`Gmeek-html&lt;iframe style='border-radius:12px' width='100%' height='200px' src='https://www.youtube.com/embed/RzYO_cGqrAY?si=qO64_ABMM0jyvNUi' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen&gt;&lt;/iframe&gt;`
-
-
-# 🎉CheatSheet
+```。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/33.html</guid><pubDate>Sun, 21 Sep 2025 09:21:42 +0000</pubDate></item><item><title>Vol.32 Docker入門</title><link>https://grapehut.dpdns.org/post/32.html</link><description># 🎉CheatSheet
 [CheatSheet](/imgs/DockerCheatSheet.pdf)
 
 `Gmeek-html&lt;img src='/imgs/DockerCheatSheet.png'&gt;`
@@ -1903,11 +1900,14 @@ function Question() {
 sudo curl -fsSL https://get.docker.com | sh    #安装Docker
 sudo systemctl enable --now docker             #启动Docker服务
 sudo docker -v                                 #查看docker版本，检查是否安装成功
+
+sudo service docker restart                                 #重启docker
 ```
 
 # 🎉一些Docker常用命令
+
+### 🪄拉取image
 ```
-🪄拉取image
 sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
                                ↑            ↑
                      空间（官方空间可省略）  image（版本省略的话，默认最新）
@@ -1915,9 +1915,8 @@ sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
 例：　sudo docker pull nginx　#省略写法表示，从官网拉取nginx的最新版本
  ```
 
+### 🪄运行image
 ```
-🪄运行image
-
 docker run   #每次从image 创建新容器及运行
 
 sudo docker run -d  -p 80:8080  -v /data:/data  image_name:lastest      
@@ -1926,16 +1925,15 @@ sudo docker run -d  -p 80:8080  -v /data:/data  image_name:lastest
            host内:docker内　host内:docker内
 ```
 
+### 🪄进入容器
 ```
-🪄进入容器
 sudo run -it  image_name 
           ↑
      -it 进入容器后
 ```
 
-
+### 🪄挂载卷
 ```
-🪄挂载卷
 sudo docker volume create  volume_name                                #创建挂载卷
 sudo run -d  -p 80:8080  -v volume_name:/data  image_name:lastest     #用挂载卷启动容器
 
@@ -1944,32 +1942,26 @@ sudo docker volume list                                               #查看所
 sudo docker volume rm volume_name                                     #删除挂载卷
 ```
 
+### 🪄image管理
 ```
-🪄image管理
 sudo docker images                       #查看docker中所有image
 sudo docker rmi image_id/image_name      #删除image
 ```
 
 ```
-🪄container管理
+### 🪄container管理
 sudo docker ps -a                             #查看docker中所有容器
 sudo docker rm  container_id/container_name   #删除容器
 ```
 
+### 🪄启动停止container
 ```
-🪄container管理
-sudo docker ps -a                             #查看docker中所有容器
-sudo docker rm  container_id/container_name   #删除容器
-```
-
-```
-🪄启动停止container
 sudo docker start container_id/container_name   #启动容器
 sudo docker stop container_id/container_name   #停止容器
 ```
 
+### 🪄查看docker内network
 ```
-🪄查看docker内network
 sudo docker network ls
 ・bridge 
 ・host 
