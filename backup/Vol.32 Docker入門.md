@@ -74,10 +74,15 @@ sudo docker ps -a                             #查看docker中所有容器
 sudo docker rm  container_id/container_name   #删除容器
 ```
 
-### 🪄启动停止container
+### 🪄启动停止容器
 ```
 sudo docker start container_id/container_name   #启动容器
 sudo docker stop container_id/container_name   #停止容器
+```
+
+### 🪄自动重启容器
+```
+sudo run -d --restart always  image_name 
 ```
 
 ### 🪄进入容器
@@ -86,6 +91,8 @@ sudo run -it  image_name
           ↑
      -it 进入容器后
 ```
+
+
 
 ### 🪄查看docker内network
 ```

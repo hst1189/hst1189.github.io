@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Mon, 04 May 2026 07:54:14 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.45 「白嫖」无限企业邮箱（larksuite篇）</title><link>https://grapehut.dpdns.org/post/46.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Mon, 04 May 2026 07:56:25 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.45 「白嫖」无限企业邮箱（larksuite篇）</title><link>https://grapehut.dpdns.org/post/46.html</link><description>
   ✨ 免费企业邮箱之Lark （飞书海外版）
 =================
 
@@ -1964,10 +1964,15 @@ sudo docker ps -a                             #查看docker中所有容器
 sudo docker rm  container_id/container_name   #删除容器
 ```
 
-### 🪄启动停止container
+### 🪄启动停止容器
 ```
 sudo docker start container_id/container_name   #启动容器
 sudo docker stop container_id/container_name   #停止容器
+```
+
+### 🪄自动重启容器
+```
+sudo run -d --restart always  image_name 
 ```
 
 ### 🪄进入容器
@@ -1976,6 +1981,8 @@ sudo run -it  image_name
           ↑
      -it 进入容器后
 ```
+
+
 
 ### 🪄查看docker内network
 ```
