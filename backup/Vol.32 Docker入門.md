@@ -84,11 +84,8 @@ sudo docker run -d --restart always  image_name
 
 ### 🪄进入容器
 ```
-sudo docker run -it  container_id/container_name
-     -it 进入容器后
-
-
 sudo docker exec  container_id/container_name  ps -ef   #查看容器里面的进程
+sudo docker exec -it  container_id/container_name  /bin/sh  #进入容器，执行命令
 ```
 
 ### 🪄查看容器日志
