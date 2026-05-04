@@ -82,14 +82,21 @@ sudo docker stop container_id/container_name   #停止容器
 
 ### 🪄自动重启容器
 ```
-sudo run -d --restart always  image_name 
+sudo docker run -d --restart always  image_name 
 ```
 
 ### 🪄进入容器
 ```
-sudo run -it  image_name 
+sudo docker run -it  container_id/container_name
           ↑
      -it 进入容器后
+```
+
+### 🪄查看容器日志
+```
+sudo docker logs container_id/container_name
+sudo docker logs container_id/container_name -f   #滚动查看日志
+
 ```
 
 
