@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:20,updated at 2026-05-04 08:00</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:20,updated at 2026-05-04 08:06</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/33.html" aria-label="Previous Page">上一篇-Vol.33 Vite + React入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/31.html" aria-label="Next Page">下一篇-Vol.31 科学上网（VPN客户端）</a></div>
 </nav>
 
@@ -112,7 +112,7 @@ sudo service docker restart                                 #重启docker
 </code></pre>
 <h1>🎉一些Docker常用命令</h1>
 <h3>🪄拉取image</h3>
-<pre class="notranslate"><code class="notranslate">sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
+<pre class="notranslate"><code class="notranslate">sudo docker pull docker.io/library/image_name:lastest      #仅拉取镜像，不运行
                          ↑                        ↑
                 docker.io/library/（官方空间可省略）  
                 image_name:lastest（版本省略的话，默认最新）
@@ -120,9 +120,7 @@ sudo service docker restart                                 #重启docker
 例：　sudo docker pull nginx　#省略写法表示，从官网拉取nginx的最新版本
 </code></pre>
 <h3>🪄运行image</h3>
-<pre class="notranslate"><code class="notranslate">docker run   #每次从image 创建新容器及运行
-
-sudo docker run -d -p 80:8080  -v /data:/data  image_name:lastest      
+<pre class="notranslate"><code class="notranslate">sudo docker run -d -p 80:8080  -v /data:/data  image_name:lastest      ＃注意：运行docker run  每次从image 创建新容器
                 ↑　　　↑　　　　　　↑               ↑
            -d 后台运行
            -p 端口映射  80:8080（容器外：容器内）
@@ -132,18 +130,17 @@ sudo docker run -d -p 80:8080  -v /data:/data  image_name:lastest
 例：　sudo docker run -d -p 80:80  -v /website/html:/usr/share/nginx/html  nginx
 </code></pre>
 <h3>🪄挂载卷</h3>
-<pre class="notranslate"><code class="notranslate">sudo docker volume create  aaa                                #创建挂载卷
-sudo run -d  -p 80:8080  -v aaa:/data  image_name:lastest     #用挂载卷启动容器
-                             ↑
-                       用挂载卷名代入
+<pre class="notranslate"><code class="notranslate">sudo docker volume create  挂载卷名                                #创建挂载卷
+sudo docker run -d  -p 80:8080  -v 挂载卷名 :/data    image_name:lastest     #用挂载卷启动容器
+                                    ↑
+                                挂载卷名代入
 
 sudo docker volume inspect volume_name                                #查看挂载卷的目录
 sudo docker volume list                                               #查看所有挂载卷
 sudo docker volume rm volume_name                                     #删除挂载卷
 </code></pre>
 <h3>🪄添加参数</h3>
-<pre class="notranslate"><code class="notranslate">sudo docker run -d \ 
--p 27017:27017 \
+<pre class="notranslate"><code class="notranslate">sudo docker run -d  -p 27017:27017 \
 -e MONGO_INITDB_ROOT_USERNAME=user \
 -e MONGO_INITDB_ROOT_PASSWORD=password \
 mongo
@@ -165,8 +162,10 @@ sudo docker stop container_id/container_name   #停止容器
 </code></pre>
 <h3>🪄进入容器</h3>
 <pre class="notranslate"><code class="notranslate">sudo docker run -it  container_id/container_name
-          ↑
      -it 进入容器后
+
+
+sudo docker exec  container_id/container_name  ps -ef   #查看容器里面的进程
 </code></pre>
 <h3>🪄查看容器日志</h3>
 <pre class="notranslate"><code class="notranslate">sudo docker logs container_id/container_name

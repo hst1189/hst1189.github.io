@@ -18,7 +18,7 @@ sudo service docker restart                                 #重启docker
 
 ### 🪄拉取image
 ```
-sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
+sudo docker pull docker.io/library/image_name:lastest      #仅拉取镜像，不运行
                          ↑                        ↑
                 docker.io/library/（官方空间可省略）  
                 image_name:lastest（版本省略的话，默认最新）
@@ -28,9 +28,7 @@ sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
 
 ### 🪄运行image
 ```
-docker run   #每次从image 创建新容器及运行
-
-sudo docker run -d -p 80:8080  -v /data:/data  image_name:lastest      
+sudo docker run -d -p 80:8080  -v /data:/data  image_name:lastest      ＃注意：运行docker run  每次从image 创建新容器
                 ↑　　　↑　　　　　　↑               ↑
            -d 后台运行
            -p 端口映射  80:8080（容器外：容器内）
@@ -42,10 +40,10 @@ sudo docker run -d -p 80:8080  -v /data:/data  image_name:lastest
 
 ### 🪄挂载卷
 ```
-sudo docker volume create  aaa                                #创建挂载卷
-sudo run -d  -p 80:8080  -v aaa:/data  image_name:lastest     #用挂载卷启动容器
-                             ↑
-                       用挂载卷名代入
+sudo docker volume create  挂载卷名                                #创建挂载卷
+sudo docker run -d  -p 80:8080  -v 挂载卷名 :/data    image_name:lastest     #用挂载卷启动容器
+                                    ↑
+                                挂载卷名代入
 
 sudo docker volume inspect volume_name                                #查看挂载卷的目录
 sudo docker volume list                                               #查看所有挂载卷
@@ -54,8 +52,7 @@ sudo docker volume rm volume_name                                     #删除挂
 
 ### 🪄添加参数
 ```
-sudo docker run -d \ 
--p 27017:27017 \
+sudo docker run -d  -p 27017:27017 \
 -e MONGO_INITDB_ROOT_USERNAME=user \
 -e MONGO_INITDB_ROOT_PASSWORD=password \
 mongo
@@ -88,8 +85,10 @@ sudo docker run -d --restart always  image_name
 ### 🪄进入容器
 ```
 sudo docker run -it  container_id/container_name
-          ↑
      -it 进入容器后
+
+
+sudo docker exec  container_id/container_name  ps -ef   #查看容器里面的进程
 ```
 
 ### 🪄查看容器日志
