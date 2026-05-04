@@ -40,17 +40,12 @@ sudo docker run -d -p 80:8080  -v /data:/data  image_name:lastest
 例：　sudo docker run -d -p 80:80  -v /website/html:/usr/share/nginx/html  nginx
 ```
 
-### 🪄进入容器
-```
-sudo run -it  image_name 
-          ↑
-     -it 进入容器后
-```
-
 ### 🪄挂载卷
 ```
-sudo docker volume create  volume_name                                #创建挂载卷
-sudo run -d  -p 80:8080  -v volume_name:/data  image_name:lastest     #用挂载卷启动容器
+sudo docker volume create  aaa                                #创建挂载卷
+sudo run -d  -p 80:8080  -v aaa:/data  image_name:lastest     #用挂载卷启动容器
+                             ↑
+                       用挂载卷名代入
 
 sudo docker volume inspect volume_name                                #查看挂载卷的真是目录
 sudo docker volume list                                               #查看所有挂载卷
@@ -73,6 +68,13 @@ sudo docker rm  container_id/container_name   #删除容器
 ```
 sudo docker start container_id/container_name   #启动容器
 sudo docker stop container_id/container_name   #停止容器
+```
+
+### 🪄进入容器
+```
+sudo run -it  image_name 
+          ↑
+     -it 进入容器后
 ```
 
 ### 🪄查看docker内network

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Mon, 04 May 2026 07:40:58 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.45 「白嫖」无限企业邮箱（larksuite篇）</title><link>https://grapehut.dpdns.org/post/46.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Mon, 04 May 2026 07:45:37 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.45 「白嫖」无限企业邮箱（larksuite篇）</title><link>https://grapehut.dpdns.org/post/46.html</link><description>
   ✨ 免费企业邮箱之Lark （飞书海外版）
 =================
 
@@ -1930,17 +1930,12 @@ sudo docker run -d -p 80:8080  -v /data:/data  image_name:lastest
 例：　sudo docker run -d -p 80:80  -v /website/html:/usr/share/nginx/html  nginx
 ```
 
-### 🪄进入容器
-```
-sudo run -it  image_name 
-          ↑
-     -it 进入容器后
-```
-
 ### 🪄挂载卷
 ```
-sudo docker volume create  volume_name                                #创建挂载卷
-sudo run -d  -p 80:8080  -v volume_name:/data  image_name:lastest     #用挂载卷启动容器
+sudo docker volume create  aaa                                #创建挂载卷
+sudo run -d  -p 80:8080  -v aaa:/data  image_name:lastest     #用挂载卷启动容器
+                             ↑
+                       用挂载卷名代入
 
 sudo docker volume inspect volume_name                                #查看挂载卷的真是目录
 sudo docker volume list                                               #查看所有挂载卷
@@ -1963,6 +1958,13 @@ sudo docker rm  container_id/container_name   #删除容器
 ```
 sudo docker start container_id/container_name   #启动容器
 sudo docker stop container_id/container_name   #停止容器
+```
+
+### 🪄进入容器
+```
+sudo run -it  image_name 
+          ↑
+     -it 进入容器后
 ```
 
 ### 🪄查看docker内network
