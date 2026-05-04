@@ -58,8 +58,8 @@ sudo docker images                       #查看docker中所有image
 sudo docker rmi image_id/image_name      #删除image
 ```
 
-```
 ### 🪄container管理
+```
 sudo docker ps -a                             #查看docker中所有容器
 sudo docker rm  container_id/container_name   #删除容器
 ```
