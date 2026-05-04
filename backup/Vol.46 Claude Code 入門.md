@@ -16,7 +16,15 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del in
 ```
 
 
+# 配置文件
+```
+~\.claude.json
+~\.claude\settings.json
+```
+
 # 命令
+```
 /init           プロジェクト用の CLAUDE.md を作成する
 /agents     カスタム subagent を設定するのに役立ちます
 /doctor      インストールの一般的な問題を診断します
+```
