@@ -19,8 +19,9 @@ sudo service docker restart                                 #重启docker
 ### 🪄拉取image
 ```
 sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
-                               ↑            ↑
-                     空间（官方空间可省略）  image（版本省略的话，默认最新）
+                         ↑                        ↑
+                docker.io/library/（官方空间可省略）  
+                image_name:lastest（版本省略的话，默认最新）
 
 例：　sudo docker pull nginx　#省略写法表示，从官网拉取nginx的最新版本
  ```
@@ -31,8 +32,10 @@ docker run   #每次从image 创建新容器及运行
 
 sudo docker run -d  -p 80:8080  -v /data:/data  image_name:lastest      
                 ↑　　　↑　　　　　　↑               ↑
-           -d 后台运行 -p 端口映射 -v 目录映射   image（版本省略的话，默认最新）
-           host内:docker内　host内:docker内
+           -d 后台运行  80（host内）:8080（docker内）
+           -p 端口映射 
+           -v 目录映射   　/data（host内）:/data（docker内）
+           image_name:lastest  （版本省略的话，默认最新）
 ```
 
 ### 🪄进入容器
