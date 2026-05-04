@@ -30,12 +30,14 @@ sudo docker pull docker.io/library/image_name:lastest      #拉取镜像
 ```
 docker run   #每次从image 创建新容器及运行
 
-sudo docker run -d  -p 80:8080  -v /data:/data  image_name:lastest      
+sudo docker run -d -p 80:8080  -v /data:/data  image_name:lastest      
                 ↑　　　↑　　　　　　↑               ↑
            -d 后台运行
            -p 端口映射  80:8080（容器外：容器内）
            -v 目录映射  /data:/data（容器外：容器内）
            image_name:lastest （版本省略的话，默认最新）
+
+例：　sudo docker run -d -p 80:80  -v /website/html:/usr/share/nginx/html  nginx
 ```
 
 ### 🪄进入容器
