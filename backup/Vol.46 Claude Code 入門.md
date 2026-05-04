@@ -30,3 +30,8 @@ npm install -g @anthropic-ai/claude-code
 /init           CLAUDE.md 初期化
 /model      切换LLM
 ```
+
+# Skill
+1. superpowers
+2. cLaude-hud
+3. skill-creator
