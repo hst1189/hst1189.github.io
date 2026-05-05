@@ -85,9 +85,22 @@ bridge.claudeusercontent.com	[Chrome の Claude](https://code.claude.com/docs/ja
 
 
 ## claude-hud
+![](https://pic2.zhimg.com/v2-d85d0363ea77eae4f1478857a6374917_1440w.jpg)
+1、上下文健康度（最有用的功能）
+Context █████░░░░░ 45%    这个进度条会变色
+绿色：安全，随便用
+黄色：注意了，开始控制输出
+红色：快爆了，赶紧compact或者开新会话
 
+2、订阅额度监控（Pro/Max用户福音）
+Usage ██░░░░░░░░ 25% (1h 30m / 5h)
+如果你是Claude Pro或Max订阅用户，这个功能太实用了。
+
+
+安装
 ```
 /plugin marketplace add jarrodwatts/claude-hud
 /plugin install claude-hud
 /claude-hud:setup
 ```
+
