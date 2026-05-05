@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Tue, 05 May 2026 03:02:35 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 安装
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Tue, 05 May 2026 03:09:19 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 安装
 
 ・macOS, Linux, WSL
 ```
@@ -26,6 +26,26 @@ npm install -g @anthropic-ai/claude-code
 ~\.claude\settings.json
 ```
 
+
+# 通信要件
+### プロキシ（推奨）
+export HTTP_PROXY=http://username:password@proxy.example.com:8080
+export HTTPS_PROXY=http://username:password@proxy.example.com:8080
+export NO_PROXY='localhost,192.168.1.1,example.com,.example.com'　#特定のリクエストのプロキシをバイパス（カンマ区切り）
+export NO_PROXY='*'　#すべてのリクエストのプロキシをバイパス
+
+
+URL | 必要な用途
+-- | --
+api.anthropic.com | Claude API リクエスト
+claude.ai | claude.ai アカウント認証
+platform.claude.com | Anthropic Console アカウント認証
+downloads.claude.ai | プラグイン実行可能ファイルのダウンロード、ネイティブインストーラーおよびネイティブ自動更新プログラム
+storage.googleapis.com | 2.1.116 より前のバージョンのネイティブインストーラーおよびネイティブ自動更新プログラム
+bridge.claudeusercontent.com | Chrome の Claude 拡張機能 WebSocket ブリッジ
+
+
+
 # 命令
 |命令  |  说明
 |---     |  ---
@@ -49,7 +69,13 @@ npm install -g @anthropic-ai/claude-code
 2. skills.sh：[https://skills.sh](https://skills.sh)
 3. agentskill.sh：[https://agentskill.sh](https://agentskill.sh)
 4. Lobehub Skills：[https://lobehub.com/skills](https://lobehub.com/skills)
-。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/47.html</guid><pubDate>Mon, 04 May 2026 13:52:21 +0000</pubDate></item><item><title>Vol.45 「白嫖」无限企业邮箱（larksuite篇）</title><link>https://grapehut.dpdns.org/post/46.html</link><description>
+URL	必要な用途
+api.anthropic.com	Claude API リクエスト
+claude.ai	claude.ai アカウント認証
+platform.claude.com	Anthropic Console アカウント認証
+downloads.claude.ai	プラグイン実行可能ファイルのダウンロード、ネイティブインストーラーおよびネイティブ自動更新プログラム
+storage.googleapis.com	2.1.116 より前のバージョンのネイティブインストーラーおよびネイティブ自動更新プログラム
+bridge.claudeusercontent.com	[Chrome の Claude](https://code.claude.com/docs/ja/chrome) 拡張機能 WebSocket ブリッジ。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/47.html</guid><pubDate>Mon, 04 May 2026 13:52:21 +0000</pubDate></item><item><title>Vol.45 「白嫖」无限企业邮箱（larksuite篇）</title><link>https://grapehut.dpdns.org/post/46.html</link><description>
   ✨ 免费企业邮箱之Lark （飞书海外版）
 =================
 

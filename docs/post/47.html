@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-05 03:02</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-05 03:08</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/46.html" aria-label="Next Page">下一篇-Vol.45 「白嫖」无限企业邮箱（larksuite篇）</a></div>
 </nav>
 
@@ -118,6 +118,46 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &
 
 ~\.claude\settings.json
 </code></pre>
+<h1>通信要件</h1>
+<h3>プロキシ（推奨）</h3>
+<p>export HTTP_PROXY=<a href="http://username:password@proxy.example.com:8080" rel="nofollow">http://username:password@proxy.example.com:8080</a><br>
+export HTTPS_PROXY=<a href="http://username:password@proxy.example.com:8080" rel="nofollow">http://username:password@proxy.example.com:8080</a><br>
+export NO_PROXY="localhost,192.168.1.1,example.com,.example.com"　#特定のリクエストのプロキシをバイパス（カンマ区切り）<br>
+export NO_PROXY="*"　#すべてのリクエストのプロキシをバイパス</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>URL</th>
+<th>必要な用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>api.anthropic.com</td>
+<td>Claude API リクエスト</td>
+</tr>
+<tr>
+<td>claude.ai</td>
+<td>claude.ai アカウント認証</td>
+</tr>
+<tr>
+<td>platform.claude.com</td>
+<td>Anthropic Console アカウント認証</td>
+</tr>
+<tr>
+<td>downloads.claude.ai</td>
+<td>プラグイン実行可能ファイルのダウンロード、ネイティブインストーラーおよびネイティブ自動更新プログラム</td>
+</tr>
+<tr>
+<td>storage.googleapis.com</td>
+<td>2.1.116 より前のバージョンのネイティブインストーラーおよびネイティブ自動更新プログラム</td>
+</tr>
+<tr>
+<td>bridge.claudeusercontent.com</td>
+<td>Chrome の Claude 拡張機能 WebSocket ブリッジ</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
 <h1>命令</h1>
 <markdown-accessiblity-table><table role="table">
 <thead>
@@ -186,7 +226,14 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &
 <p>agentskill.sh：<a href="https://agentskill.sh" rel="nofollow">https://agentskill.sh</a></p>
 </li>
 <li>
-<p>Lobehub Skills：<a href="https://lobehub.com/skills" rel="nofollow">https://lobehub.com/skills</a></p>
+<p>Lobehub Skills：<a href="https://lobehub.com/skills" rel="nofollow">https://lobehub.com/skills</a><br>
+URL	必要な用途<br>
+api.anthropic.com	Claude API リクエスト<br>
+claude.ai	claude.ai アカウント認証<br>
+platform.claude.com	Anthropic Console アカウント認証<br>
+downloads.claude.ai	プラグイン実行可能ファイルのダウンロード、ネイティブインストーラーおよびネイティブ自動更新プログラム<br>
+storage.googleapis.com	2.1.116 より前のバージョンのネイティブインストーラーおよびネイティブ自動更新プログラム<br>
+bridge.claudeusercontent.com	<a href="https://code.claude.com/docs/ja/chrome" rel="nofollow">Chrome の Claude</a> 拡張機能 WebSocket ブリッジ</p>
 </li>
 </ol></section>
 
