@@ -31,7 +31,10 @@ npm install -g @anthropic-ai/claude-code
 /init          | CLAUDE.md 初期化
 /compact |  压缩上下文
 /clear        | 清空上下文
+/resume   |  历史对话
 /model     | 切换LLM
+!               |  bash mode
+#              |
 alt+m       | `普通 mode 修改需人工审核` / `plan mode 不进行任何修改`/  `accept edits 自动修改` 切换
 alt+t        | thinking mode  `Enabled`/`Disabled` 切换
 
