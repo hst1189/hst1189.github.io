@@ -32,8 +32,8 @@ npm install -g @anthropic-ai/claude-code
 /compact |  压缩上下文
 /clear        | 清空上下文
 /model     | 切换LLM
-alt+m       | plan mode on/  accept edits on 切换
-alt+t        | thinking mode  Enabled/Disabled 切换
+alt+m       | `plan mode on`/  `accept edits on` 切换
+alt+t        | thinking mode  `Enabled`/`Disabled` 切换
 
 
 # Skill
