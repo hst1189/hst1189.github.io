@@ -16,6 +16,13 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del in
 npm install -g @anthropic-ai/claude-code
 ```
 
+# 環境変数
+https://code.claude.com/docs/ja/env-vars
+claude を起動する前にシェルで設定するか、[settings.json](https://code.claude.com/docs/ja/settings#available-settings) の env キーで設定してください。
+```
+```
+
+
 # 配置文件
 ```
 ~\.claude.json
