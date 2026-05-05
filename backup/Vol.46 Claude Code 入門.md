@@ -16,13 +16,6 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del in
 npm install -g @anthropic-ai/claude-code
 ```
 
-# 環境変数
-https://code.claude.com/docs/ja/env-vars
-claude を起動する前にシェルで設定するか、[settings.json](https://code.claude.com/docs/ja/settings#available-settings) の env キーで設定してください。
-```
-```
-
-
 # 配置文件
 ```
 ~\.claude.json
@@ -30,6 +23,12 @@ claude を起動する前にシェルで設定するか、[settings.json](https:
 
 
 ~\.claude\settings.json
+```
+
+# 環境変数
+https://code.claude.com/docs/ja/env-vars
+claude を起動する前にシェルで設定するか、[settings.json](https://code.claude.com/docs/ja/settings#available-settings) の env キーで設定してください。
+```
 ```
 
 
@@ -82,3 +81,13 @@ platform.claude.com	Anthropic Console アカウント認証
 downloads.claude.ai	プラグイン実行可能ファイルのダウンロード、ネイティブインストーラーおよびネイティブ自動更新プログラム
 storage.googleapis.com	2.1.116 より前のバージョンのネイティブインストーラーおよびネイティブ自動更新プログラム
 bridge.claudeusercontent.com	[Chrome の Claude](https://code.claude.com/docs/ja/chrome) 拡張機能 WebSocket ブリッジ
+
+
+
+## claude-hud
+
+```
+/plugin marketplace add jarrodwatts/claude-hud
+/plugin install claude-hud
+/claude-hud:setup
+```
