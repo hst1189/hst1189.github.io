@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-05 03:38</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-05 03:49</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/1.html" aria-label="Previous Page">上一篇-Vol.01 「建站」Gmeek使用手册（基础篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/46.html" aria-label="Next Page">下一篇-Vol.45 「白嫖」无限企业邮箱（larksuite篇）</a></div>
 </nav>
 
@@ -245,11 +245,22 @@ bridge.claudeusercontent.com	<a href="https://code.claude.com/docs/ja/chrome" re
 <p>Context █████░░░░░ 45%　#上下文健康度（最有用的功能）<br>
 这个进度条会变色（绿色：安全，随便用　　黄色：注意了，开始控制输出　　红色：快爆了，赶紧compact或者开新会话）<br>
 Usage ██░░░░░░░░ 25% (1h 30m / 5h)　#订阅额度监控（Pro/Max用户福音）<br>
-◐ Edit: auth.ts | ✓ Read ×3 | ✓ Grep ×2　#工具活动追踪</p>
-<p>安装</p>
-<pre class="notranslate"><code class="notranslate">/plugin marketplace add jarrodwatts/claude-hud
+◐ Edit: auth.ts | ✓ Read ×3 | ✓ Grep ×2　#工具活动追踪<br>
+◐ explore [haiku]: Finding auth code (2m 15s)　#Agent状态追踪<br>
+▸ Fix authentication bug (2/5)　#Todo进度追踪<br>
+※如果你是用API Key而不是订阅账号登录的，Usage那行不会显示、API是按量计费，没有速率限制的概念<br>
+※工具追踪、Agent追踪、Todo追踪默认都是关闭的，需要手动开启</p>
+<pre class="notranslate"><code class="notranslate">・安装
+/plugin marketplace add jarrodwatts/claude-hud
 /plugin install claude-hud
-/claude-hud:setup
+/claude-hud:setup　#装完立刻生效，不用重启
+
+自定义
+/claude-hud:configure
+
+Full 全部功能
+Essential 活动状态+git
+Minimal 只有模型名+上下文
 </code></pre></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
