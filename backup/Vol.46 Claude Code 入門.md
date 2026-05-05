@@ -18,11 +18,22 @@ npm install -g @anthropic-ai/claude-code
 
 # 配置文件
 ```
-~\.claude.json
+①　~\.claude\settings.json
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "key",
+    "ANTHROPIC_BASE_URL": "https://api.longcat.chat/anthropic",
+    "ANTHROPIC_MODEL": "LongCat-Flash-Thinking-2601",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "LongCat-Flash-Thinking-2601",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "LongCat-Flash-Thinking-2601",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "LongCat-Flash-Thinking-2601",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "6000",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+  }
+}
+
+②　~\.claude.json
 "hasCompletedOnboarding": true,　　#跳过官方登入
-
-
-~\.claude\settings.json
 ```
 
 # 環境変数
