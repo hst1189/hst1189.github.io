@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Tue, 05 May 2026 02:32:20 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 安装
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Tue, 05 May 2026 02:33:06 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 安装
 
 ・macOS, Linux, WSL
 ```
@@ -33,7 +33,7 @@ npm install -g @anthropic-ai/claude-code
 /compact |  压缩上下文
 /clear        | 清空上下文
 /model     | 切换LLM
-alt+m       | `普通 mode` 修改都需人工审核/`plan mode`  不进行任何修改/  `accept edits` 自动修改 切换
+alt+m       | `普通 mode 修改需人工审核` / `plan mode 不进行任何修改`/  `accept edits 自动修改` 切换
 alt+t        | thinking mode  `Enabled`/`Disabled` 切换
 
 
