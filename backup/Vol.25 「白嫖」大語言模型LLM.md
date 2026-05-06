@@ -1,5 +1,6 @@
 ## 🔖 openrouter.ai
 https://openrouter.ai/models?order=most-popular&q=free
+gmail
 "api-url": "https://openrouter.ai/api/v1/chat/completions"
 "model": "qwen/qwen3-coder:free"
 
@@ -10,7 +11,7 @@ https://lmarena.ai/leaderboard
 
 ## 🔖 longcat（美团）
 https://longcat.chat/platform/usage
-
+gmail
 
 
 ## 🔖 Gemini

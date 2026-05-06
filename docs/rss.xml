@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 06 May 2026 07:40:05 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 各種CLI
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 06 May 2026 08:15:12 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 各種CLI
 名称|コマンド
 ---|---
 github/copilot      | npm install -g @github/copilot
@@ -2553,6 +2553,7 @@ python vpn.py
 &gt; [!CAUTION]
 &gt; 默认我只获取了第一个页面，因为如果批量获取分页的话，会引起网站防火墙的拦截。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/26.html</guid><pubDate>Sun, 21 Sep 2025 09:16:34 +0000</pubDate></item><item><title>Vol.25 「白嫖」大語言模型LLM</title><link>https://grapehut.dpdns.org/post/25.html</link><description>## 🔖 openrouter.ai
 https://openrouter.ai/models?order=most-popular&amp;q=free
+gmail
 'api-url': 'https://openrouter.ai/api/v1/chat/completions'
 'model': 'qwen/qwen3-coder:free'
 
@@ -2563,7 +2564,7 @@ https://lmarena.ai/leaderboard
 
 ## 🔖 longcat（美团）
 https://longcat.chat/platform/usage
-
+gmail
 
 
 ## 🔖 Gemini
