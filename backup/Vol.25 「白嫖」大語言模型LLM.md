@@ -75,9 +75,4 @@ API地址：http://192.168.0.200:8000
 
 
 ## 🔖 cf中转代理
-cf中转代理：https://github.com/tech-shrimp/gemini-proxy
-```
-cloudflare里创建一个 worker 用于websocket-proxy （例如：gemini-proxy）
-绑定域名（例如：gemini-proxy.grapehut.us.kg）
-コード編集：将worker.js 的内容黏贴到 cloudflare worker
-```
+
