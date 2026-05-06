@@ -1,9 +1,11 @@
 # 各種CLI
 名称|コマンド
 ---|---
-github/copilot      | npm install -g @github/copilot
-gemini                  | npm install -g @google/gemini-cli
 googleworkspace | npm install -g @googleworkspace/cli
+gemini                  | npm install -g @google/gemini-cli
+github/copilot      | npm install -g @github/copilot
+codex                    | npm install -g @openai/codex
+claude-code         | npm install -g @anthropic-ai/claude-code
 
 
 
