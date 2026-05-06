@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 06 May 2026 06:58:53 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 安装
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 06 May 2026 07:03:12 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 安装
 
 ・macOS, Linux, WSL
 ```
@@ -2541,18 +2541,22 @@ python vpn.py
 `Gmeek-html&lt;img src='https://www.freedidi.com/wp-content/uploads/2024/11/c85b610e7e20241124163116-2081x1440.webp'&gt;`
 
 &gt; [!CAUTION]
-&gt; 默认我只获取了第一个页面，因为如果批量获取分页的话，会引起网站防火墙的拦截。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/26.html</guid><pubDate>Sun, 21 Sep 2025 09:16:34 +0000</pubDate></item><item><title>Vol.25 「白嫖」大語言模型LLM</title><link>https://grapehut.dpdns.org/post/25.html</link><description># 🔖 openrouter.ai
+&gt; 默认我只获取了第一个页面，因为如果批量获取分页的话，会引起网站防火墙的拦截。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/26.html</guid><pubDate>Sun, 21 Sep 2025 09:16:34 +0000</pubDate></item><item><title>Vol.25 「白嫖」大語言模型LLM</title><link>https://grapehut.dpdns.org/post/25.html</link><description>## 🔖 openrouter.ai
 https://openrouter.ai/models?order=most-popular&amp;q=free
 'api-url': 'https://openrouter.ai/api/v1/chat/completions'
 'model': 'qwen/qwen3-coder:free'
 
 
-# 🔖 arena.ai
+## 🔖 arena.ai
 https://lmarena.ai/leaderboard
 
 
+## 🔖 longcat（美团）
+https://longcat.chat/platform/usage
 
-# 🔖 Gemini API生态  （国内无法直接访问，需代理）
+
+
+## 🔖 Gemini API生态  （国内无法直接访问，需代理）
 https://gemini.google.com/   （面向普通用户）
 https://aistudio.google.com/   (面向开发人员)
 https://notebooklm.google.com/
@@ -2613,42 +2617,14 @@ API地址：http://192.168.0.200:8000
 
 
 
-
-
-# 🔖 OpenAI API
-### 0. https://api.openai.com（国内无法直接访问，需要自建代理）
-代理API地址：https://api-proxy.me/openai
-模型：gpt-4o-mini
-
-
-以下2个，大佬自建的代理服务
-### 1. https://github.com/chatanywhere/GPT_API_free （一天200次）
+## 🔖 cf中转代理
+cf中转代理：https://github.com/tech-shrimp/gemini-proxy
 ```
-gpt-4o-mini，和gpt-3.5-turbo共享一天200次
-国内动态加速 直连无需代理
-支持 gpt-3.5-turbo系列 / gpt-4系列 / gpt-4o系列 / gpt-4o-audio-preview / embeddings / DALL·E / whisper 等
+cloudflare里创建一个 worker 用于websocket-proxy （例如：gemini-proxy）
+绑定域名（例如：gemini-proxy.grapehut.us.kg）
+コード編集：将worker.js 的内容黏贴到 cloudflare worker
 ```
-模型：gpt-4o-mini
-获取KEY：[申请内测免费Key](https://api.chatanywhere.org/v1/oauth/free/render)
-API地址： https://api.chatanywhere.tech (国内中转，延时更低)
-　　　　　https://api.chatanywhere.org (国外使用)
-
-
-### 2. https://github.com/popjane/free_chatgpt_api （不限量 无门槛）
-```
-完全免费使用以下勾选模型：
-★ ✓gpt-4o-mini（不限量 无门槛）
- 　✓gpt-3.5-turbo-0125
- 　✓gpt-3.5-turbo-1106
- 　✓gpt-3.5-turbo
- 　✓gpt-3.5-turbo-16k
- 　✓net-gpt-3.5-turbo (可联网搜索模型-稳定性稍差)
- 　✓whisper-1
- 　✓dall-e-2
- 　×text-开头系列模型，例如：text-davinci（免费版已取消text系列模型）
- 　×gpt-4全系列（只定期限量开放）
- 　×付费版API支持OpenAI所有模型，包括（联网、绘画、聊天、向量、图片分析、文件分析、GPTs等）
- 　×付费版API支持Midjourney专业绘画、Suno音乐生成、PPT生成、多种视频模型。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/25.html</guid><pubDate>Sun, 21 Sep 2025 09:16:05 +0000</pubDate></item><item><title>Vol.24 「白嫖」无限企业邮箱（cloudflare＋resend 篇）</title><link>https://grapehut.dpdns.org/post/24.html</link><description># 白嫖cloudflare无限企业邮箱
+。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/25.html</guid><pubDate>Sun, 21 Sep 2025 09:16:05 +0000</pubDate></item><item><title>Vol.24 「白嫖」无限企业邮箱（cloudflare＋resend 篇）</title><link>https://grapehut.dpdns.org/post/24.html</link><description># 白嫖cloudflare无限企业邮箱
 
 ## 🎉收邮件（简易模式）
 1. 进入cloudflare，选择一个域名

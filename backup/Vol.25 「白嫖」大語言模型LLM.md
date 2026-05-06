@@ -1,15 +1,19 @@
-# 🔖 openrouter.ai
+## 🔖 openrouter.ai
 https://openrouter.ai/models?order=most-popular&q=free
 "api-url": "https://openrouter.ai/api/v1/chat/completions"
 "model": "qwen/qwen3-coder:free"
 
 
-# 🔖 arena.ai
+## 🔖 arena.ai
 https://lmarena.ai/leaderboard
 
 
+## 🔖 longcat（美团）
+https://longcat.chat/platform/usage
 
-# 🔖 Gemini API生态  （国内无法直接访问，需代理）
+
+
+## 🔖 Gemini API生态  （国内无法直接访问，需代理）
 https://gemini.google.com/   （面向普通用户）
 https://aistudio.google.com/   (面向开发人员)
 https://notebooklm.google.com/
@@ -70,119 +74,8 @@ API地址：http://192.168.0.200:8000
 
 
 
-
-
-# 🔖 OpenAI API
-### 0. https://api.openai.com（国内无法直接访问，需要自建代理）
-代理API地址：https://api-proxy.me/openai
-模型：gpt-4o-mini
-
-
-以下2个，大佬自建的代理服务
-### 1. https://github.com/chatanywhere/GPT_API_free （一天200次）
-```
-gpt-4o-mini，和gpt-3.5-turbo共享一天200次
-国内动态加速 直连无需代理
-支持 gpt-3.5-turbo系列 / gpt-4系列 / gpt-4o系列 / gpt-4o-audio-preview / embeddings / DALL·E / whisper 等
-```
-模型：gpt-4o-mini
-获取KEY：[申请内测免费Key](https://api.chatanywhere.org/v1/oauth/free/render)
-API地址： https://api.chatanywhere.tech (国内中转，延时更低)
-　　　　　https://api.chatanywhere.org (国外使用)
-
-
-### 2. https://github.com/popjane/free_chatgpt_api （不限量 无门槛）
-```
-完全免费使用以下勾选模型：
-★ ✓gpt-4o-mini（不限量 无门槛）
- 　✓gpt-3.5-turbo-0125
- 　✓gpt-3.5-turbo-1106
- 　✓gpt-3.5-turbo
- 　✓gpt-3.5-turbo-16k
- 　✓net-gpt-3.5-turbo (可联网搜索模型-稳定性稍差)
- 　✓whisper-1
- 　✓dall-e-2
- 　×text-开头系列模型，例如：text-davinci（免费版已取消text系列模型）
- 　×gpt-4全系列（只定期限量开放）
- 　×付费版API支持OpenAI所有模型，包括（联网、绘画、聊天、向量、图片分析、文件分析、GPTs等）
- 　×付费版API支持Midjourney专业绘画、Suno音乐生成、PPT生成、多种视频模型。
-```
-模型：gpt-4o-mini
-获取KEY：[立即领取免费KEY](https://free.v36.cm/github)
-API地址： https://free.v36.cm (无需代理，直接可用）
-
-
-
-
-# 🔖 Deepseek API（国内直接访问）
-获取KEY：https://platform.deepseek.com/api_keys
-API地址： https://api.deepseek.com/chat/completions
-模型：deepseek-r1
-
-
-
-
-# 🔖 Grok API   (免费赠送25USD/mo活动 2024/12已结束)
-模型：grok-beta
-获取KEY：https://console.x.ai/
-API地址： https://api.x.ai/
-代理API地址： https://api-proxy.me/xai
-
-
-Gork2 可在X直接使用
-https://x.com/i/grok （有X账号就可以使用）
-
-
-
-# 🔖 Groq API（国内无法直接访问，需要自建代理）
-获取KEY：https://console.groq.com/keys
-API地址： https://api.groq.com/openai
-代理API地址：https://api-proxy.me/groq
-模型：deepseek-r1-distill-llama-70b
-
-
-
-
-# 🔖 利用实例
-
-ChatBox：https://github.com/Bin-Huang/chatbox
-```
-下载安装后设置
-　模型提供：OpenAI API
-　API  Key ：API密钥
-　API域名  ：https://gemini.grapehut.us.kg/
-　模型       ：gemini-2.0-flash-exp（选择自定义模型，手动输入）
-　　　　　　gemini-2.0-flash-exp
-　　　　　　gemini exp-1206 　
-
-设置参数：
-1. 方法一：选择OpenAI
-API  Key ：API密钥
-API域名 ： https://gemini.grapehut.us.kg（Cloudflare Worker的自定义域名）
-模型添加 ：gemini-2.0-flash-exp
-
-2. 方法二：选择自定义 (OpenAI API兼容)
-API  Key ：API密钥
-API域名 ： https://gemini.grapehut.us.kg/v1
-API路径 ： chat/completions
-
-模型添加：gemini-2.0-flash-exp
-
-```
-
-
-Gemini多模态客户端：https://github.com/ViaAnthroposBenevolentia/gemini-2-live-api-demo
-```
-下载source
-cd gemini-2-live-api-demo-main
-cp js/config/config.example.js js/config/config.js  
-Edit js/config/config.js with your API key ★ 
-python -m http.server 8000
-http://127.0.0.1:8000/
-```
-
-
-Worker代理：https://github.com/tech-shrimp/gemini-proxy
+## 🔖 cf中转代理
+cf中转代理：https://github.com/tech-shrimp/gemini-proxy
 ```
 cloudflare里创建一个 worker 用于websocket-proxy （例如：gemini-proxy）
 绑定域名（例如：gemini-proxy.grapehut.us.kg）
