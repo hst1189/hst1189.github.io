@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:16,updated at 2026-05-06 07:19</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:16,updated at 2026-05-06 07:20</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/26.html" aria-label="Previous Page">上一篇-Vol.26 科学上网（批量免费节点）</a><a class="next_page" href="https://grapehut.dpdns.org/post/24.html" aria-label="Next Page">下一篇-Vol.24 「白嫖」无限企业邮箱（cloudflare＋resend 篇）</a></div>
 </nav>
 
@@ -116,10 +116,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <p>获取KEY：<a href="https://aistudio.google.com/apikey" rel="nofollow">https://aistudio.google.com/apikey</a><br>
 API地址： <a href="https://generativelanguage.googleapis.com/v1beta/" rel="nofollow">https://generativelanguage.googleapis.com/v1beta/</a><br>
 模型：Gemini 2.5 Flash Preview 05-20</p>
-<h3>Gemini費用</h3>
-<p><a href="https://ai.google.dev/gemini-api/docs/rate-limits#free-tier" rel="nofollow">https://ai.google.dev/gemini-api/docs/rate-limits#free-tier</a><br>
-10次/分，500次/天，250,000token/分</p>
-<h3>多Key轮询</h3>
+<h2>🔖 多Key轮询</h2>
 <p><a href="https://github.com/snailyp/gemini-balance">https://github.com/snailyp/gemini-balance</a></p>
 <pre class="notranslate"><code class="notranslate">1. 创建挂在文件夹
 mkdir ./geminibalance-data
@@ -136,13 +133,6 @@ SQLITE_DATABASE=default_db
 
 3. 启动容器
 sudo docker run -d -p 8000:8000 --name gemini-balance -v ./geminibalance-data:/app/data --env-file .geminibalance-env ghcr.io/snailyp/gemini-balance:latest
-</code></pre>
-<pre class="notranslate"><code class="notranslate">提供商类型：OpenAI
-提供名：GeminiBalance
-APIkey：登入密码
-API地址：http://192.168.0.200:8000
-模型：Gemini 2.5 Flash Preview 05-20
-
 </code></pre>
 <h2>🔖 cf中转代理</h2>
 <p><a href="https://github.com/PublicAffairs/openai-gemini">https://github.com/PublicAffairs/openai-gemini</a></p></section>

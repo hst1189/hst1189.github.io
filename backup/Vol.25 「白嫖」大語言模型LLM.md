@@ -23,12 +23,8 @@ https://notebooklm.google.com/
 API地址： https://generativelanguage.googleapis.com/v1beta/
 模型：Gemini 2.5 Flash Preview 05-20
 
-### Gemini費用
-https://ai.google.dev/gemini-api/docs/rate-limits#free-tier
-10次/分，500次/天，250,000token/分
 
-
-### 多Key轮询
+## 🔖 多Key轮询
 https://github.com/snailyp/gemini-balance
 ```
 1. 创建挂在文件夹
@@ -48,16 +44,10 @@ SQLITE_DATABASE=default_db
 sudo docker run -d -p 8000:8000 --name gemini-balance -v ./geminibalance-data:/app/data --env-file .geminibalance-env ghcr.io/snailyp/gemini-balance:latest
 ```
 
-```
-提供商类型：OpenAI
-提供名：GeminiBalance
-APIkey：登入密码
-API地址：http://192.168.0.200:8000
-模型：Gemini 2.5 Flash Preview 05-20
-
-```
 
 
 ## 🔖 cf中转代理
 https://github.com/PublicAffairs/openai-gemini
+
+
 

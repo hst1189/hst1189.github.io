@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 06 May 2026 07:19:33 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 安装
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 06 May 2026 07:21:12 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 安装
 
 ・macOS, Linux, WSL
 ```
@@ -2566,12 +2566,8 @@ https://notebooklm.google.com/
 API地址： https://generativelanguage.googleapis.com/v1beta/
 模型：Gemini 2.5 Flash Preview 05-20
 
-### Gemini費用
-https://ai.google.dev/gemini-api/docs/rate-limits#free-tier
-10次/分，500次/天，250,000token/分
 
-
-### 多Key轮询
+## 🔖 多Key轮询
 https://github.com/snailyp/gemini-balance
 ```
 1. 创建挂在文件夹
@@ -2591,18 +2587,12 @@ SQLITE_DATABASE=default_db
 sudo docker run -d -p 8000:8000 --name gemini-balance -v ./geminibalance-data:/app/data --env-file .geminibalance-env ghcr.io/snailyp/gemini-balance:latest
 ```
 
-```
-提供商类型：OpenAI
-提供名：GeminiBalance
-APIkey：登入密码
-API地址：http://192.168.0.200:8000
-模型：Gemini 2.5 Flash Preview 05-20
-
-```
 
 
 ## 🔖 cf中转代理
 https://github.com/PublicAffairs/openai-gemini
+
+
 
 。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/25.html</guid><pubDate>Sun, 21 Sep 2025 09:16:05 +0000</pubDate></item><item><title>Vol.24 「白嫖」无限企业邮箱（cloudflare＋resend 篇）</title><link>https://grapehut.dpdns.org/post/24.html</link><description># 白嫖cloudflare无限企业邮箱
 
