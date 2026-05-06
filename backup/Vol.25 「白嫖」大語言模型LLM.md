@@ -1,13 +1,11 @@
-# 🔖 Openrouter.ai
-获取KEY：https://openrouter.ai/settings/keys
-API地址： https://openrouter.ai/api/v1/chat/completions
-模型：deepseek/deepseek-r1:free
+# 🔖 openrouter.ai
+https://openrouter.ai/models?order=most-popular&q=free
+"api-url": "https://openrouter.ai/api/v1/chat/completions"
+"model": "qwen/qwen3-coder:free"
 
-# 🔖 大模型竞技场
+
+# 🔖 arena.ai
 https://lmarena.ai/leaderboard
-
-# 🔖 代理地址
-https://api-proxy.me/
 
 
 
