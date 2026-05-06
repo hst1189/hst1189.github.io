@@ -1,3 +1,13 @@
+# 各種CLI
+名称|コマンド
+---|---
+github/copilot      | npm install -g @github/copilot
+gemini                  | npm install -g @google/gemini-cli
+googleworkspace | npm install -g @googleworkspace/cli
+
+
+
+
 # 安装
 
 ・macOS, Linux, WSL
