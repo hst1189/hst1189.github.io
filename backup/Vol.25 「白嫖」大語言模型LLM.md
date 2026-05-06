@@ -13,15 +13,15 @@ https://longcat.chat/platform/usage
 
 
 
-## 🔖 Gemini API生态  （国内无法直接访问，需代理）
+## 🔖 Gemini
+https://aistudio.google.com/
+"api-url": "https://generativelanguage.googleapis.com/v1beta"
+"model": "Gemini 2.5 Flash Preview 05-20"
+
 https://gemini.google.com/   （面向普通用户）
-https://aistudio.google.com/   (面向开发人员)
 https://notebooklm.google.com/
 
-### APIキー
-获取KEY：https://aistudio.google.com/apikey
-API地址： https://generativelanguage.googleapis.com/v1beta/
-模型：Gemini 2.5 Flash Preview 05-20
+
 
 
 ## 🔖 多Key轮询
