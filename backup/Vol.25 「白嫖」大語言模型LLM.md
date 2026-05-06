@@ -11,7 +11,12 @@ https://lmarena.ai/leaderboard
 
 ## 🔖 longcat（美团）
 https://longcat.chat/platform/usage
-gmail
+hst1189@hotmail.com
+model: 
+- LongCat-Flash-Chat
+- LongCat-Flash-Thinking-2601
+- LongCat-Flash-Omni-2603
+- LongCat-Flash-Lite
 
 
 ## 🔖 Gemini
