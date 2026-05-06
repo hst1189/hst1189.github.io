@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 06 May 2026 07:18:59 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 安装
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Wed, 06 May 2026 07:19:33 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 安装
 
 ・macOS, Linux, WSL
 ```
@@ -2600,24 +2600,9 @@ API地址：http://192.168.0.200:8000
 
 ```
 
-### 自建代理方法：
-通过下面自建代理，同时能转成常用的 OpenAI格式接口
-[openai-gemini](https://github.com/PublicAffairs/openai-gemini)通过Github Actions功能，在Cloudflare创建Worker
-
-```
-1. 选择VPS
-例：Deploy to Cloudflare
-・获取 Account ID
-・获取 API Token  选择所有账户，所有区域
-
-2. Fork repository　运行github workflower， 自動部署 Cloudflare Worker（Worker默认名字为 gemini ） 
-
-3. Worker绑定域名（例如：gemini.grapehut.us.kg） 　※然后就可以调用此域名了
-```
-
-
 
 ## 🔖 cf中转代理
+https://github.com/PublicAffairs/openai-gemini
 
 。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/25.html</guid><pubDate>Sun, 21 Sep 2025 09:16:05 +0000</pubDate></item><item><title>Vol.24 「白嫖」无限企业邮箱（cloudflare＋resend 篇）</title><link>https://grapehut.dpdns.org/post/24.html</link><description># 白嫖cloudflare无限企业邮箱
 

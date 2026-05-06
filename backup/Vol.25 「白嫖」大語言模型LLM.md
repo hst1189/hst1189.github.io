@@ -57,22 +57,7 @@ API地址：http://192.168.0.200:8000
 
 ```
 
-### 自建代理方法：
-通过下面自建代理，同时能转成常用的 OpenAI格式接口
-[openai-gemini](https://github.com/PublicAffairs/openai-gemini)通过Github Actions功能，在Cloudflare创建Worker
-
-```
-1. 选择VPS
-例：Deploy to Cloudflare
-・获取 Account ID
-・获取 API Token  选择所有账户，所有区域
-
-2. Fork repository　运行github workflower， 自動部署 Cloudflare Worker（Worker默认名字为 gemini ） 
-
-3. Worker绑定域名（例如：gemini.grapehut.us.kg） 　※然后就可以调用此域名了
-```
-
-
 
 ## 🔖 cf中转代理
+https://github.com/PublicAffairs/openai-gemini
 
