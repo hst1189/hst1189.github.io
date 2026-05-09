@@ -207,6 +207,7 @@ ghcr.io/jiangrui1994/cloudsaver:latest
 [{"name":"115网盘资源分享频道","id":"Lsp115"},{"id":"alyp_1","name":"网盘(高品质)影视"},{"id":"shareAliyun","name":"阿里云盘发布频道"},{"id":"Quark_Movies","name":"夸克云盘综合资源"},{"id":"Aliyun_4K_Movies","name":"阿里云盘4K影视"},{"id":"zaihuayun","name":"阿里云盘资源"},{"id":"PanjClub","name":"盘酱酱Club"},{"id":"tianyirigeng","name":"天翼云盘资源频道"},{"id":"xx123pan","name":"123云盘资源频道"},{"id":"zyzhpd123","name":"123云盘综合频道"},{"id":"cloudtianyi","name":"天翼云盘资源发布频道"},{"id":"tyypzhpd","name":"天翼云盘综合频道"},{"id":"Oscar_4Kmovies","name":"奥斯卡4K蓝光（精品）影视磁力站"},{"id":"ydypzyfx","name":"移动云盘资源分享"},{"id":"bdwpzhpd","name":"百度网盘综合频道"},{"id":"Q66share","name":"阿里云盘吧"},{"id":"BaiduCloudDisk","name":"百度网盘资源分享"},{"id":"yunpan139","name":"网盘资源收藏（移动云盘）"},{"id":"yunpanuc","name":"网盘资源收藏（UC网盘）"},{"id":"qixingzhenren","name":"云盘资源发布频道"},{"id":"duanjucabian","name":"热门短剧/擦边短剧/精选短剧/在线预览"},{"id":"yoyokuakeduanju","name":"YOYO资源|夸克|短剧"},{"id":"Channel_Shares_115","name":"Shares_115_Channel"},{"id":"yeqingjie_GJG666","name":"爷青回动画分享"},{"id":"gotopan","name":"迅雷云盘"},{"id":"oneonefivewpfx","name":"影巢"},{"id":"zhenyingsg","name":"帧影时光"},{"id":"movielover8888_TV","name":"【热门网剧在线】"},{"id":"CBduanju","name":"全网擦边｜电影｜资源分享"},{"id":"ucquark","name":"UC夸克百度迅雷资源分享"},{"id":"weichengduanju666","name":"短剧大全资源"},{"id":"yingxiangkj","name":"影享空间"},{"name":"夸克网盘资源收藏夹","id":"QuarkFree"},{"name":"综艺网盘资源频道","id":"TG654TG"},{"name":"115影视资源分享频道","id":"QukanMovie"},{"name":"夸克丶百度丶迅雷丶4K网盘","id":"WFYSFX02"},{"name":"网盘资源收藏","id":"naclyunpan"},{"name":"综艺网盘资源频道","id":"TG654TG"},{"name":"网盘资源收藏","id":"naclyunpan"},{"name":"夸克丶百度丶迅雷丶4K网盘","id":"WFYSFX02"},{"name":"115影视资源分享频道","id":"QukanMovie"}]
 ```
 
+
 4. [nextcloud](https://hub.docker.com/_/nextcloud?xk=ShowRecommendedBadge&xt=Disabled)
 ```
 mkdir ./nextcloud
@@ -219,6 +220,20 @@ sudo docker run -d \
 -v nextcloud_db:/var/lib/mysql \
 nextcloud:latest
 ```
+
+
+5. [Xboard](https://github.com/cedar2025/Xboard)
+```
+git clone -b compose --depth 1 https://github.com/cedar2025/Xboard && \
+cd Xboard && \
+docker compose run -it --rm \
+    -e ENABLE_SQLITE=true \
+    -e ENABLE_REDIS=true \
+    -e ADMIN_ACCOUNT=admin@demo.com \
+    xboard php artisan xboard:install && \
+docker compose up -d
+```
+
 
 6. [uptime-kuma](https://github.com/louislam/uptime-kuma)
 ```

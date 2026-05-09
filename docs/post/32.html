@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:20,updated at 2026-05-09 07:47</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:20,updated at 2026-05-09 08:01</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/33.html" aria-label="Previous Page">上一篇-Vol.33 Vite + React入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/31.html" aria-label="Next Page">下一篇-Vol.31 科学上网（VPN客户端）</a></div>
 </nav>
 
@@ -263,6 +263,18 @@ sudo docker run -d \
 -v nextcloud:/var/www/html \
 -v nextcloud_db:/var/lib/mysql \
 nextcloud:latest
+</code></pre>
+<ol start="5">
+<li><a href="https://github.com/cedar2025/Xboard">Xboard</a></li>
+</ol>
+<pre class="notranslate"><code class="notranslate">git clone -b compose --depth 1 https://github.com/cedar2025/Xboard &amp;&amp; \
+cd Xboard &amp;&amp; \
+docker compose run -it --rm \
+    -e ENABLE_SQLITE=true \
+    -e ENABLE_REDIS=true \
+    -e ADMIN_ACCOUNT=admin@demo.com \
+    xboard php artisan xboard:install &amp;&amp; \
+docker compose up -d
 </code></pre>
 <ol start="6">
 <li><a href="https://github.com/louislam/uptime-kuma">uptime-kuma</a></li>
