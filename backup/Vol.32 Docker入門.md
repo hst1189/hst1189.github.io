@@ -170,7 +170,7 @@ sudo docker run -d \
 -p 8000:8000 \
 --name gemini-balance \
 -v ./geminibalance_data:/app/data \
---env-file .geminibalance.env \
+--env-file ./geminibalance_data/geminibalance.env \
 ghcr.io/snailyp/gemini-balance:latest
 ```
 
@@ -210,7 +210,14 @@ ghcr.io/jiangrui1994/cloudsaver:latest
 4. [nextcloud](https://hub.docker.com/_/nextcloud?xk=ShowRecommendedBadge&xt=Disabled)
 ```
 mkdir ./nextcloud
-sudo docker run -d -p 8080:80  -v nextcloud:/var/www/html nextcloud:latest
+mkdir ./nextcloud_db
+
+sudo docker run -d \
+-p 8080:80 \
+--name nextcloud \
+-v nextcloud:/var/www/html \
+-v nextcloud_db:/var/lib/mysql \
+nextcloud:latest
 ```
 
 6. [uptime-kuma](https://github.com/louislam/uptime-kuma)
