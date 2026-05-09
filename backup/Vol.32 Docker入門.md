@@ -188,9 +188,15 @@ sudo docker run -d \
 docker.n8n.io/n8nio/n8n:latest
 ```
 
+3. [pansou](https://github.com/fish2018/pansou)
+```
+sudo docker run -d \
+-p 8001:80 \
+--name pansou \
+ghcr.io/fish2018/pansou-web
+```
 
-
-3. [CloudSaver](https://github.com/jiangrui1994/CloudSaver)
+4. [CloudSaver](https://github.com/jiangrui1994/CloudSaver)
 ```
 mkdir ./cloudsaver_data
 mkdir ./cloudsaver_config
@@ -208,7 +214,7 @@ ghcr.io/jiangrui1994/cloudsaver:latest
 ```
 
 
-4. [nextcloud](https://hub.docker.com/_/nextcloud?xk=ShowRecommendedBadge&xt=Disabled)
+5. [nextcloud](https://hub.docker.com/_/nextcloud?xk=ShowRecommendedBadge&xt=Disabled)
 ```
 mkdir ./nextcloud
 mkdir ./nextcloud_db
@@ -222,7 +228,7 @@ nextcloud:latest
 ```
 
 
-5. [Xboard](https://github.com/cedar2025/Xboard)
+6. [Xboard](https://github.com/cedar2025/Xboard)
 ```
 git clone -b compose --depth 1 https://github.com/cedar2025/Xboard && \
 cd Xboard && \
