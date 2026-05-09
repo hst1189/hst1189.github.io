@@ -6,6 +6,7 @@ gemini                  | npm install -g @google/gemini-cli
 github/copilot      | npm install -g @github/copilot
 codex                    | npm install -g @openai/codex
 claude-code         | npm install -g @anthropic-ai/claude-code
+playwright            | npm install -g @playwright/cli@latest
 
 
 
