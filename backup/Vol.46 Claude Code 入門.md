@@ -22,7 +22,7 @@ npm install -g @anthropic-ai/claude-code
 ①　~\.claude\settings.json
 {
   "env": {
-    "ANTHROPIC_AUTH_TOKEN": "key",
+    "ANTHROPIC_AUTH_TOKEN": "-----token-----",
     "ANTHROPIC_BASE_URL": "https://api.longcat.chat/anthropic",
     "ANTHROPIC_MODEL": "LongCat-Flash-Thinking-2601",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "LongCat-Flash-Thinking-2601",
