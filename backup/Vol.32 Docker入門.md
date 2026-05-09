@@ -224,8 +224,8 @@ mkdir ./nextcloud_db
 sudo docker run -d \
 -p 8080:80 \
 --name nextcloud \
--v nextcloud:/var/www/html \
--v nextcloud_db:/var/lib/mysql \
+-v ./nextcloud:/var/www/html \
+-v ./nextcloud_db:/var/lib/mysql \
 nextcloud:latest
 ```
 
@@ -245,18 +245,35 @@ docker compose up -d
 
 6. [uptime-kuma](https://github.com/louislam/uptime-kuma)
 ```
-sudo docker run -d --restart=always -p 3001:3001 --name uptime-kuma -v uptime-kuma:/app/data louislam/uptime-kuma:latest
+mkdir ./uptime-kuma
+
+sudo docker run -d \
+--restart=always \
+-p 3001:3001 \
+--name uptime-kuma \
+-v ./uptime-kuma:/app/data \
+louislam/uptime-kuma:latest
 ```
 
 7. [excalidraw](https://github.com/excalidraw/excalidraw)
 ```
-sudo docker run -d --restart=always -p 5000:5000 --name excalidraw excalidraw/excalidraw:latest
+sudo docker run -d \
+--restart=always \
+-p 5000:5000 \
+--name excalidraw \
+excalidraw/excalidraw:latest
 ```
 
 8. [komari](https://github.com/komari-monitor/komari)
 ```
 mkdir ./komari_data
-sudo docker run -d --restart=always -p 25774:25774 --name komari -v ./komari_data:/app/data  ghcr.io/komari-monitor/komari:latest
+
+sudo docker run -d \
+--restart=always \
+-p 25774:25774 \
+--name komari \
+-v ./komari_data:/app/data  \
+ghcr.io/komari-monitor/komari:latest
 
 docker logs komari
 

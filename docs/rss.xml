@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 09 May 2026 11:17:47 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.47 Copy Fail CVE-2026-31431</title><link>https://grapehut.dpdns.org/post/48.html</link><description>https://copy.fail/
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 09 May 2026 12:01:58 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.47 Copy Fail CVE-2026-31431</title><link>https://grapehut.dpdns.org/post/48.html</link><description>https://copy.fail/
 
 
 ```
@@ -2186,8 +2186,8 @@ mkdir ./nextcloud_db
 sudo docker run -d \
 -p 8080:80 \
 --name nextcloud \
--v nextcloud:/var/www/html \
--v nextcloud_db:/var/lib/mysql \
+-v ./nextcloud:/var/www/html \
+-v ./nextcloud_db:/var/lib/mysql \
 nextcloud:latest
 ```
 
@@ -2207,18 +2207,35 @@ docker compose up -d
 
 6. [uptime-kuma](https://github.com/louislam/uptime-kuma)
 ```
-sudo docker run -d --restart=always -p 3001:3001 --name uptime-kuma -v uptime-kuma:/app/data louislam/uptime-kuma:latest
+mkdir ./uptime-kuma
+
+sudo docker run -d \
+--restart=always \
+-p 3001:3001 \
+--name uptime-kuma \
+-v ./uptime-kuma:/app/data \
+louislam/uptime-kuma:latest
 ```
 
 7. [excalidraw](https://github.com/excalidraw/excalidraw)
 ```
-sudo docker run -d --restart=always -p 5000:5000 --name excalidraw excalidraw/excalidraw:latest
+sudo docker run -d \
+--restart=always \
+-p 5000:5000 \
+--name excalidraw \
+excalidraw/excalidraw:latest
 ```
 
 8. [komari](https://github.com/komari-monitor/komari)
 ```
 mkdir ./komari_data
-sudo docker run -d --restart=always -p 25774:25774 --name komari -v ./komari_data:/app/data  ghcr.io/komari-monitor/komari:latest
+
+sudo docker run -d \
+--restart=always \
+-p 25774:25774 \
+--name komari \
+-v ./komari_data:/app/data  \
+ghcr.io/komari-monitor/komari:latest
 
 docker logs komari
 
