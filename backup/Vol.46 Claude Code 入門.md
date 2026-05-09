@@ -141,29 +141,3 @@ subagent-driven-development - Fast iteration with two-stage review (spec complia
 ## 3.cc-switch https://github.com/farion1231/cc-switch
 
 
-
-## 4. cLaude-hud
-![](https://pic2.zhimg.com/v2-d85d0363ea77eae4f1478857a6374917_1440w.jpg)
-
-Context █████░░░░░ 45%　#上下文健康度（最有用的功能） 这个进度条会变色
-Usage ██░░░░░░░░ 25% (1h 30m / 5h)　#订阅额度监控（Pro/Max用户福音）
-◐ Edit: auth.ts | ✓ Read ×3 | ✓ Grep ×2　#工具活动追踪
-◐ explore [haiku]: Finding auth code (2m 15s)　#Agent状态追踪
-▸ Fix authentication bug (2/5)　#Todo进度追踪
-※如果你是用API Key而不是订阅账号登录的，Usage那行不会显示、API是按量计费，没有速率限制的概念
-※工具追踪、Agent追踪、Todo追踪默认都是关闭的，需要手动开启
-
-```
-・安装
-/plugin marketplace add jarrodwatts/claude-hud
-/plugin install claude-hud
-/claude-hud:setup　#装完立刻生效，不用重启
-
-自定义
-/claude-hud:configure
-
-Full 全部功能
-Essential 活动状态+git
-Minimal 只有模型名+上下文
-```
-
