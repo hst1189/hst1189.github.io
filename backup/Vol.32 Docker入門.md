@@ -189,6 +189,8 @@ docker.n8n.io/n8nio/n8n:latest
 ```
 
 3. [pansou](https://github.com/fish2018/pansou)
+https://so.252035.xyz/api/health
+https://so.252035.xyz/api/search?kw=精选街拍作品&refresh=true&res=merge&src=tg&cloud_types=baidu,quark
 ```
 sudo docker run -d \
 -p 8001:80 \
