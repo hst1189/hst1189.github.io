@@ -10,22 +10,10 @@ playwright            | npm install -g @playwright/cli@latest
 
 
 
-
 # 安装
-
-・macOS, Linux, WSL
 ```
 curl -fsSL https://claude.ai/install.sh | bash
-```
-
-・Windows
-```
 irm https://claude.ai/install.ps1 | iex
-curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
-```
-
-・npm（Node.js 18以上）
-```
 npm install -g @anthropic-ai/claude-code
 ```
 
