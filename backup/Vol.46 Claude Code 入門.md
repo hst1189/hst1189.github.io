@@ -138,6 +138,8 @@ subagent-driven-development - Fast iteration with two-stage review (spec complia
 /plugin install everything-claude-code@everything-claude-code
 ```
 
-## 3. cc-switch https://github.com/farion1231/cc-switch
+## 3. gstack https://github.com/garrytan/gstack
 
-## 4. peon-ping https://github.com/PeonPing/peon-ping
+## 4. cc-switch https://github.com/farion1231/cc-switch
+
+## 5. peon-ping https://github.com/PeonPing/peon-ping
