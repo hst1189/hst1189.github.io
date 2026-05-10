@@ -25,6 +25,7 @@ github-cli                  | winget install --id GitHub.cli                   |
 playwright-cli            | npm install -g @playwright/cli@latest   | playwright-cli install --skills　https://github.com/microsoft/playwright-cli
 googleworkspace-cli | npm install -g @googleworkspace/cli   | https://github.com/googleworkspace/cli
 larksuite-cli               | npm install -g @larksuite/cli && npx skills add larksuite/cli -y -g | https://github.com/larksuite/cli
+stripe-cli                   | scoop install stripe | https://github.com/stripe/stripe-cli
 sherlock                    | pipx install sherlock-project                    | sherlock --help,　sherlock user1 user2 user3
 social-analyzer          | git clone https://github.com/qeeqbox/social-analyzer.git && cd social-analyzer && npm install && nodejs app.js --username "johndoe" | https://github.com/qeeqbox/social-analyzer
 yt-dlp                        | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-dlp --help
@@ -191,8 +192,21 @@ subagent-driven-development - Fast iteration with two-stage review (spec complia
 /plugin install everything-claude-code@everything-claude-code
 ```
 
-## 3. gstack https://github.com/garrytan/gstack
+## 3. CLI-Anything https://github.com/HKUDS/CLI-Anything
+```
+# Add the CLI-Anything marketplace
+/plugin marketplace add HKUDS/CLI-Anything
 
-## 4. cc-switch https://github.com/farion1231/cc-switch
+# Install the cli-anything plugin from the marketplace
+/plugin install cli-anything
 
-## 5. peon-ping https://github.com/PeonPing/peon-ping
+# /cli-anything <software-path-or-repo>
+# Generate a complete CLI for GIMP (all 7 phases)
+/cli-anything ./gimp
+```
+
+## 4. gstack https://github.com/garrytan/gstack
+
+## 5. cc-switch https://github.com/farion1231/cc-switch
+
+## 6. peon-ping https://github.com/PeonPing/peon-ping
