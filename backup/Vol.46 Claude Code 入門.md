@@ -223,8 +223,25 @@ subagent-driven-development - Fast iteration with two-stage review (spec complia
 /cli-anything:validate /home/user/audacity
 ```
 
-## 🎉4. cc-switch https://github.com/farion1231/cc-switch
+## 🎉4. opencli https://github.com/jackwener/opencli
+```
+npm install -g @jackwener/opencli
 
-## 🎉5. gstack https://github.com/garrytan/gstack
+opencli doctor
 
-## 🎉6. peon-ping https://github.com/PeonPing/peon-ping
+opencli profile list
+opencli profile rename <contextId> work
+opencli profile use work
+opencli --profile work browser state
+
+opencli list
+opencli hackernews top --limit 5
+opencli bilibili hot --limit 5
+
+```
+
+## 🎉5. cc-switch https://github.com/farion1231/cc-switch
+
+## 🎉6. gstack https://github.com/garrytan/gstack
+
+## 🎉7. peon-ping https://github.com/PeonPing/peon-ping
