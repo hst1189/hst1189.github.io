@@ -74,16 +74,40 @@ gws drive files list --params '{"pageSize": 100}' --page-all | jq -r '.files[].n
 # 配置文件
 ```
 ①　~\.claude\settings.json
+<longcat>
 {
   "env": {
-    "ANTHROPIC_AUTH_TOKEN": "-----token-----",
     "ANTHROPIC_BASE_URL": "https://api.longcat.chat/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "-----token-----",
     "ANTHROPIC_MODEL": "LongCat-Flash-Thinking-2601",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "LongCat-Flash-Thinking-2601",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "LongCat-Flash-Thinking-2601",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "LongCat-Flash-Thinking-2601",
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "6000",
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "LongCat-Flash-Thinking-2601"
+  }
+}
+
+<openrouter>
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://openrouter.ai/api",
+    "ANTHROPIC_AUTH_TOKEN": "-----token-----",
+    "OPENROUTER_API_KEY": "-----token-----",
+    "ANTHROPIC_MODEL": "openrouter/free",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "openrouter/free",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "openrouter/free",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "openrouter/free"
+  }
+}
+
+<nvidia>
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://integrate.api.nvidia.com",
+    "ANTHROPIC_AUTH_TOKEN": "-----token-----",
+    "ANTHROPIC_MODEL": "minimaxai/minimax-m2.7",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "minimaxai/minimax-m2.7",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "minimaxai/minimax-m2.7",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "minimaxai/minimax-m2.7"
   }
 }
 

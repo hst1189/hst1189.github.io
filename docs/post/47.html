@@ -96,8 +96,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-10 03:13</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/46.html" aria-label="Previous Page">上一篇-Vol.45 「白嫖」无限企业邮箱（larksuite篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/48.html" aria-label="Next Page">下一篇-Vol.47 Copy Fail CVE-2026-31431</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-10 04:51</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/48.html" aria-label="Previous Page">上一篇-Vol.47 Copy Fail CVE-2026-31431</a><a class="next_page" href="https://grapehut.dpdns.org/post/46.html" aria-label="Next Page">下一篇-Vol.45 「白嫖」无限企业邮箱（larksuite篇）</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>安装</h1>
@@ -227,16 +227,40 @@ gws drive files list --params '{"pageSize": 100}' --page-all | jq -r '.files[].n
 </code></pre>
 <h1>配置文件</h1>
 <pre class="notranslate"><code class="notranslate">①　~\.claude\settings.json
+&lt;longcat&gt;
 {
   "env": {
-    "ANTHROPIC_AUTH_TOKEN": "-----token-----",
     "ANTHROPIC_BASE_URL": "https://api.longcat.chat/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "-----token-----",
     "ANTHROPIC_MODEL": "LongCat-Flash-Thinking-2601",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "LongCat-Flash-Thinking-2601",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "LongCat-Flash-Thinking-2601",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "LongCat-Flash-Thinking-2601",
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "6000",
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "LongCat-Flash-Thinking-2601"
+  }
+}
+
+&lt;openrouter&gt;
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://openrouter.ai/api",
+    "ANTHROPIC_AUTH_TOKEN": "-----token-----",
+    "OPENROUTER_API_KEY": "-----token-----",
+    "ANTHROPIC_MODEL": "openrouter/free",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "openrouter/free",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "openrouter/free",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "openrouter/free"
+  }
+}
+
+&lt;nvidia&gt;
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://integrate.api.nvidia.com",
+    "ANTHROPIC_AUTH_TOKEN": "-----token-----",
+    "ANTHROPIC_MODEL": "minimaxai/minimax-m2.7",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "minimaxai/minimax-m2.7",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "minimaxai/minimax-m2.7",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "minimaxai/minimax-m2.7"
   }
 }
 
