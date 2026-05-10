@@ -21,7 +21,7 @@ claude-code         | npm install -g @anthropic-ai/claude-code |
 gemini                  | npm install -g @google/gemini-cli             | 
  | |
 googleworkspace | npm install -g @googleworkspace/cli    |
-github-cli               | winget install --id GitHub.cli                   | https://cli.github.com/manual/
+github-cli               | winget install --id GitHub.cli                   | gh auth status　https://cli.github.com/manual/
 github/copilot      | npm install -g @github/copilot               |
 playwright-cli            | npm install -g @playwright/cli@latest     | playwright-cli install --skills　https://github.com/microsoft/playwright-cli
 sherlock               | pipx install sherlock-project                      | sherlock --help,　sherlock user1 user2 user3
