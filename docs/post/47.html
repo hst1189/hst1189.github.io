@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-10 02:52</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-10 03:06</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/48.html" aria-label="Previous Page">上一篇-Vol.47 Copy Fail CVE-2026-31431</a><a class="next_page" href="https://grapehut.dpdns.org/post/46.html" aria-label="Next Page">下一篇-Vol.45 「白嫖」无限企业邮箱（larksuite篇）</a></div>
 </nav>
 
@@ -361,7 +361,7 @@ description: このスキルが何をするか、いつ使うかを明確に書�
 ## 例
 [具体例を書く]
 </code></pre>
-<h2>1. superpowers <a href="https://github.com/obra/superpowers">https://github.com/obra/superpowers</a></h2>
+<h2>🎉1. superpowers <a href="https://github.com/obra/superpowers">https://github.com/obra/superpowers</a></h2>
 <pre class="notranslate"><code class="notranslate"># Add marketplace
 /plugin marketplace add obra/superpowers-marketplace
 
@@ -378,27 +378,44 @@ using-git-worktrees - Parallel development branches
 finishing-a-development-branch - Merge/PR decision workflow
 subagent-driven-development - Fast iteration with two-stage review (spec compliance, then code quality)
 </code></pre>
-<h2>2. everything-claude-code <a href="https://github.com/affaan-m/everything-claude-code">https://github.com/affaan-m/everything-claude-code</a></h2>
+<h2>🎉2. everything-claude-code <a href="https://github.com/affaan-m/everything-claude-code">https://github.com/affaan-m/everything-claude-code</a></h2>
 <pre class="notranslate"><code class="notranslate"># Add marketplace
 /plugin marketplace add https://github.com/affaan-m/everything-claude-code
 
 # Install plugin
 /plugin install everything-claude-code@everything-claude-code
 </code></pre>
-<h2>3. CLI-Anything <a href="https://github.com/HKUDS/CLI-Anything">https://github.com/HKUDS/CLI-Anything</a></h2>
-<pre class="notranslate"><code class="notranslate"># Add the CLI-Anything marketplace
+<h2>🎉3. CLI-Anything <a href="https://github.com/HKUDS/CLI-Anything">https://github.com/HKUDS/CLI-Anything</a></h2>
+<pre class="notranslate"><code class="notranslate"># Add marketplace &amp; install (recommended)
 /plugin marketplace add HKUDS/CLI-Anything
-
-# Install the cli-anything plugin from the marketplace
 /plugin install cli-anything
 
-# /cli-anything &lt;software-path-or-repo&gt;
+# Build a CLI for any software with a codebase
 # Generate a complete CLI for GIMP (all 7 phases)
 /cli-anything ./gimp
+
+
+# Build a complete CLI for GIMP from local source
+/cli-anything /home/user/gimp
+
+# Build from a GitHub repo
+/cli-anything https://github.com/blender/blender
+
+# Refine an existing harness — broad gap analysis
+/cli-anything:refine /home/user/gimp
+
+# Refine with a specific focus area
+/cli-anything:refine /home/user/shotcut "vid-in-vid and picture-in-picture compositing"
+
+# Run tests and update TEST.md
+/cli-anything:test /home/user/inkscape
+
+# Validate against HARNESS.md standards
+/cli-anything:validate /home/user/audacity
 </code></pre>
-<h2>4. gstack <a href="https://github.com/garrytan/gstack">https://github.com/garrytan/gstack</a></h2>
-<h2>5. cc-switch <a href="https://github.com/farion1231/cc-switch">https://github.com/farion1231/cc-switch</a></h2>
-<h2>6. peon-ping <a href="https://github.com/PeonPing/peon-ping">https://github.com/PeonPing/peon-ping</a></h2></section>
+<h2>🎉4. cc-switch <a href="https://github.com/farion1231/cc-switch">https://github.com/farion1231/cc-switch</a></h2>
+<h2>🎉5. gstack <a href="https://github.com/garrytan/gstack">https://github.com/garrytan/gstack</a></h2>
+<h2>🎉6. peon-ping <a href="https://github.com/PeonPing/peon-ping">https://github.com/PeonPing/peon-ping</a></h2></section>
 
 <section style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</section>
 
