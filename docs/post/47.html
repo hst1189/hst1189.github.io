@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-10 02:08</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2026-05-04 13:52,updated at 2026-05-10 02:16</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/48.html" aria-label="Previous Page">上一篇-Vol.47 Copy Fail CVE-2026-31431</a><a class="next_page" href="https://grapehut.dpdns.org/post/46.html" aria-label="Next Page">下一篇-Vol.45 「白嫖」无限企业邮箱（larksuite篇）</a></div>
 </nav>
 
@@ -124,59 +124,61 @@ npm install -g @anthropic-ai/claude-code
 </thead>
 <tbody>
 <tr>
-<td>codex</td>
-<td>npm install -g @openai/codex</td>
-<td></td>
-</tr>
-<tr>
-<td>claude-code</td>
+<td><code class="notranslate">claude-code</code></td>
 <td>npm install -g @anthropic-ai/claude-code</td>
 <td></td>
 </tr>
 <tr>
-<td>gemini</td>
+<td><code class="notranslate">codex</code></td>
+<td>npm install -g @openai/codex</td>
+<td></td>
+</tr>
+<tr>
+<td><code class="notranslate">gemini</code></td>
 <td>npm install -g @google/gemini-cli</td>
 <td></td>
 </tr>
 <tr>
-<td>github/copilot</td>
+<td><code class="notranslate">copilot</code></td>
 <td>npm install -g @github/copilot</td>
 <td><a href="https://github.com/features/copilot/cli">https://github.com/features/copilot/cli</a></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<td>---</td>
+<td>---</td>
+<td>---</td>
 </tr>
 <tr>
-<td>googleworkspace-cli</td>
-<td>npm install -g @googleworkspace/cli</td>
-<td><a href="https://github.com/googleworkspace/cli">https://github.com/googleworkspace/cli</a></td>
-</tr>
-<tr>
-<td>github-cli</td>
+<td><code class="notranslate">github-cli</code></td>
 <td>winget install --id GitHub.cli</td>
 <td>gh auth status　<a href="https://cli.github.com/manual/">https://cli.github.com/manual/</a></td>
 </tr>
 <tr>
-<td>playwright-cli</td>
+<td><code class="notranslate">playwright-cli</code></td>
 <td>npm install -g @playwright/cli@latest</td>
 <td>playwright-cli install --skills　<a href="https://github.com/microsoft/playwright-cli">https://github.com/microsoft/playwright-cli</a></td>
 </tr>
 <tr>
-<td>sherlock</td>
+<td><code class="notranslate">googleworkspace-cli</code></td>
+<td>npm install -g @googleworkspace/cli</td>
+<td><a href="https://github.com/googleworkspace/cli">https://github.com/googleworkspace/cli</a></td>
+</tr>
+<tr>
+<td><code class="notranslate">sherlock</code></td>
 <td>pipx install sherlock-project</td>
 <td>sherlock --help,　sherlock user1 user2 user3</td>
 </tr>
 <tr>
-<td>yt-dlp</td>
+<td><code class="notranslate">yt-dlp</code></td>
 <td><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp.exe</a></td>
 <td>yt-dlp --help</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
 <h4>playwright-cli</h4>
-<pre class="notranslate"><code class="notranslate">playwright-cli open https://demo.playwright.dev/todomvc/ --headed
+<pre class="notranslate"><code class="notranslate">playwright-cli install --skills
+
+playwright-cli open https://demo.playwright.dev/todomvc/ --headed
 playwright-cli type "Buy groceries"
 playwright-cli press Enter
 playwright-cli type "Water flowers"
@@ -184,6 +186,29 @@ playwright-cli press Enter
 playwright-cli check e21
 playwright-cli check e35
 playwright-cli screenshot
+</code></pre>
+<h4>gws</h4>
+<pre class="notranslate"><code class="notranslate">gws auth setup     # walks you through Google Cloud project config
+gws auth login     # subsequent OAuth login
+gws drive files list --params '{"pageSize": 5}'
+
+# List the 10 most recent files
+gws drive files list --params '{"pageSize": 10}'
+
+# Create a spreadsheet
+gws sheets spreadsheets create --json '{"properties": {"title": "Q1 Budget"}}'
+
+# Send a Chat message
+gws chat spaces messages create \
+  --params '{"parent": "spaces/xyz"}' \
+  --json '{"text": "Deploy complete."}' \
+  --dry-run
+
+# Introspect any method's request/response schema
+gws schema drive.files.list
+
+# Stream paginated results as NDJSON
+gws drive files list --params '{"pageSize": 100}' --page-all | jq -r '.files[].name'
 </code></pre>
 <h1>配置文件</h1>
 <pre class="notranslate"><code class="notranslate">①　~\.claude\settings.json

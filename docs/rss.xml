@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 10 May 2026 02:09:17 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.47 Copy Fail CVE-2026-31431</title><link>https://grapehut.dpdns.org/post/48.html</link><description>https://copy.fail/
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 10 May 2026 02:16:45 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.47 Copy Fail CVE-2026-31431</title><link>https://grapehut.dpdns.org/post/48.html</link><description>https://copy.fail/
 
 
 ```
@@ -37,19 +37,21 @@ npm install -g @anthropic-ai/claude-code
 # 各種CLI
 名称|コマンド|用法
 ---|---|---
-codex                    | npm install -g @openai/codex                   |
-claude-code         | npm install -g @anthropic-ai/claude-code |
-gemini                  | npm install -g @google/gemini-cli             | 
-github/copilot      | npm install -g @github/copilot                  | https://github.com/features/copilot/cli
- | |
-googleworkspace-cli | npm install -g @googleworkspace/cli   | https://github.com/googleworkspace/cli
-github-cli                  | winget install --id GitHub.cli                   | gh auth status　https://cli.github.com/manual/
-playwright-cli            | npm install -g @playwright/cli@latest   | playwright-cli install --skills　https://github.com/microsoft/playwright-cli
-sherlock                    | pipx install sherlock-project                    | sherlock --help,　sherlock user1 user2 user3
-yt-dlp                        | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-dlp --help
+`claude-code`         | npm install -g @anthropic-ai/claude-code |
+`codex`                   | npm install -g @openai/codex                    |
+`gemini`                  | npm install -g @google/gemini-cli             | 
+`copilot`                  | npm install -g @github/copilot                   | https://github.com/features/copilot/cli
+ ---| ---|---
+`github-cli`                  | winget install --id GitHub.cli                   | gh auth status　https://cli.github.com/manual/
+`playwright-cli`            | npm install -g @playwright/cli@latest   | playwright-cli install --skills　https://github.com/microsoft/playwright-cli
+`googleworkspace-cli` | npm install -g @googleworkspace/cli   | https://github.com/googleworkspace/cli
+`sherlock`                    | pipx install sherlock-project                    | sherlock --help,　sherlock user1 user2 user3
+`yt-dlp`                        | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-dlp --help
 
 #### playwright-cli
 ```
+playwright-cli install --skills
+
 playwright-cli open https://demo.playwright.dev/todomvc/ --headed
 playwright-cli type 'Buy groceries'
 playwright-cli press Enter
@@ -59,6 +61,32 @@ playwright-cli check e21
 playwright-cli check e35
 playwright-cli screenshot
 ```
+
+#### gws
+```
+gws auth setup     # walks you through Google Cloud project config
+gws auth login     # subsequent OAuth login
+gws drive files list --params '{'pageSize': 5}'
+
+# List the 10 most recent files
+gws drive files list --params '{'pageSize': 10}'
+
+# Create a spreadsheet
+gws sheets spreadsheets create --json '{'properties': {'title': 'Q1 Budget'}}'
+
+# Send a Chat message
+gws chat spaces messages create \
+  --params '{'parent': 'spaces/xyz'}' \
+  --json '{'text': 'Deploy complete.'}' \
+  --dry-run
+
+# Introspect any method's request/response schema
+gws schema drive.files.list
+
+# Stream paginated results as NDJSON
+gws drive files list --params '{'pageSize': 100}' --page-all | jq -r '.files[].name'
+```
+
 
 # 配置文件
 ```

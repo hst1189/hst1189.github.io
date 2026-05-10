@@ -16,19 +16,21 @@ npm install -g @anthropic-ai/claude-code
 # 各種CLI
 名称|コマンド|用法
 ---|---|---
-codex                    | npm install -g @openai/codex                   |
-claude-code         | npm install -g @anthropic-ai/claude-code |
-gemini                  | npm install -g @google/gemini-cli             | 
-github/copilot      | npm install -g @github/copilot                  | https://github.com/features/copilot/cli
- | |
-googleworkspace-cli | npm install -g @googleworkspace/cli   | https://github.com/googleworkspace/cli
-github-cli                  | winget install --id GitHub.cli                   | gh auth status　https://cli.github.com/manual/
-playwright-cli            | npm install -g @playwright/cli@latest   | playwright-cli install --skills　https://github.com/microsoft/playwright-cli
-sherlock                    | pipx install sherlock-project                    | sherlock --help,　sherlock user1 user2 user3
-yt-dlp                        | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-dlp --help
+`claude-code`         | npm install -g @anthropic-ai/claude-code |
+`codex`                   | npm install -g @openai/codex                    |
+`gemini`                  | npm install -g @google/gemini-cli             | 
+`copilot`                  | npm install -g @github/copilot                   | https://github.com/features/copilot/cli
+ ---| ---|---
+`github-cli`                  | winget install --id GitHub.cli                   | gh auth status　https://cli.github.com/manual/
+`playwright-cli`            | npm install -g @playwright/cli@latest   | playwright-cli install --skills　https://github.com/microsoft/playwright-cli
+`googleworkspace-cli` | npm install -g @googleworkspace/cli   | https://github.com/googleworkspace/cli
+`sherlock`                    | pipx install sherlock-project                    | sherlock --help,　sherlock user1 user2 user3
+`yt-dlp`                        | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-dlp --help
 
 #### playwright-cli
 ```
+playwright-cli install --skills
+
 playwright-cli open https://demo.playwright.dev/todomvc/ --headed
 playwright-cli type "Buy groceries"
 playwright-cli press Enter
@@ -38,6 +40,32 @@ playwright-cli check e21
 playwright-cli check e35
 playwright-cli screenshot
 ```
+
+#### gws
+```
+gws auth setup     # walks you through Google Cloud project config
+gws auth login     # subsequent OAuth login
+gws drive files list --params '{"pageSize": 5}'
+
+# List the 10 most recent files
+gws drive files list --params '{"pageSize": 10}'
+
+# Create a spreadsheet
+gws sheets spreadsheets create --json '{"properties": {"title": "Q1 Budget"}}'
+
+# Send a Chat message
+gws chat spaces messages create \
+  --params '{"parent": "spaces/xyz"}' \
+  --json '{"text": "Deploy complete."}' \
+  --dry-run
+
+# Introspect any method's request/response schema
+gws schema drive.files.list
+
+# Stream paginated results as NDJSON
+gws drive files list --params '{"pageSize": 100}' --page-all | jq -r '.files[].name'
+```
+
 
 # 配置文件
 ```
