@@ -14,14 +14,17 @@ npm install -g @anthropic-ai/claude-code
 
 
 # 各種CLI
-名称|コマンド
----|---
-googleworkspace | npm install -g @googleworkspace/cli
-gemini                  | npm install -g @google/gemini-cli
-github/copilot      | npm install -g @github/copilot
-codex                    | npm install -g @openai/codex
-claude-code         | npm install -g @anthropic-ai/claude-code
-playwright            | npm install -g @playwright/cli@latest
+名称|コマンド|用法
+---|---|---
+codex                    | npm install -g @openai/codex                   |
+claude-code         | npm install -g @anthropic-ai/claude-code |
+gemini                  | npm install -g @google/gemini-cli             | 
+ | |
+googleworkspace | npm install -g @googleworkspace/cli    |
+github/copilot      | npm install -g @github/copilot               |
+playwright            | npm install -g @playwright/cli@latest     |
+sherlock               | pipx install sherlock-project                      | sherlock --help,　sherlock user1 user2 user3
+yt-dlp                  | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-dlp --help
 
 # 配置文件
 ```
