@@ -21,12 +21,14 @@ npm install -g @anthropic-ai/claude-code
 `gemini`                  | npm install -g @google/gemini-cli             | 
 `copilot`                  | npm install -g @github/copilot                   | https://github.com/features/copilot/cli
  ---| ---|---
-`github-cli`                  | winget install --id GitHub.cli                   | gh auth status　https://cli.github.com/manual/
-`playwright-cli`            | npm install -g @playwright/cli@latest   | playwright-cli install --skills　https://github.com/microsoft/playwright-cli
-`googleworkspace-cli` | npm install -g @googleworkspace/cli   | https://github.com/googleworkspace/cli
-`sherlock`                    | pipx install sherlock-project                    | sherlock --help,　sherlock user1 user2 user3
-`yt-dlp`                        | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-dlp --help
-`social-analyzer`          | git clone https://github.com/qeeqbox/social-analyzer.git && cd social-analyzer && npm install && nodejs app.js --username "johndoe" | https://github.com/qeeqbox/social-analyzer
+github-cli                  | winget install --id GitHub.cli                   | gh auth status　https://cli.github.com/manual/
+playwright-cli            | npm install -g @playwright/cli@latest   | playwright-cli install --skills　https://github.com/microsoft/playwright-cli
+googleworkspace-cli | npm install -g @googleworkspace/cli   | https://github.com/googleworkspace/cli
+larksuite/cli               | npm install -g @larksuite/cli && npx skills add larksuite/cli -y -g | https://github.com/larksuite/cli
+sherlock                    | pipx install sherlock-project                    | sherlock --help,　sherlock user1 user2 user3
+social-analyzer          | git clone https://github.com/qeeqbox/social-analyzer.git && cd social-analyzer && npm install && nodejs app.js --username "johndoe" | https://github.com/qeeqbox/social-analyzer
+yt-dlp                        | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-dlp --help
+
 
 #### playwright-cli
 ```
