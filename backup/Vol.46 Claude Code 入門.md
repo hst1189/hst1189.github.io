@@ -26,6 +26,7 @@ npm install -g @anthropic-ai/claude-code
 `googleworkspace-cli` | npm install -g @googleworkspace/cli   | https://github.com/googleworkspace/cli
 `sherlock`                    | pipx install sherlock-project                    | sherlock --help,　sherlock user1 user2 user3
 `yt-dlp`                        | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-dlp --help
+`social-analyzer`          | git clone https://github.com/qeeqbox/social-analyzer.git && cd social-analyzer && npm install && nodejs app.js --username "johndoe" | https://github.com/qeeqbox/social-analyzer
 
 #### playwright-cli
 ```
