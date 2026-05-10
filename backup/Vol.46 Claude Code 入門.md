@@ -99,7 +99,7 @@ gws drive files list --params '{"pageSize": 100}' --page-all | jq -r '.files[].n
   }
 }
 
-<nvidia>
+<nvidia> 需开启兼容 OpenAI Chat格式
 {
   "env": {
     "ANTHROPIC_BASE_URL": "https://integrate.api.nvidia.com",
