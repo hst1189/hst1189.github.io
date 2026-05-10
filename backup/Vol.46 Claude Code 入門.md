@@ -1,3 +1,18 @@
+# 安装
+```
+curl -fsSL https://claude.ai/install.sh | bash
+irm https://claude.ai/install.ps1 | iex
+npm install -g @anthropic-ai/claude-code
+```
+
+# 其他软件
+- curl
+- wget
+- git
+- node.js
+- python
+
+
 # 各種CLI
 名称|コマンド
 ---|---
@@ -7,15 +22,6 @@ github/copilot      | npm install -g @github/copilot
 codex                    | npm install -g @openai/codex
 claude-code         | npm install -g @anthropic-ai/claude-code
 playwright            | npm install -g @playwright/cli@latest
-
-
-
-# 安装
-```
-curl -fsSL https://claude.ai/install.sh | bash
-irm https://claude.ai/install.ps1 | iex
-npm install -g @anthropic-ai/claude-code
-```
 
 # 配置文件
 ```
