@@ -19,13 +19,25 @@ npm install -g @anthropic-ai/claude-code
 codex                    | npm install -g @openai/codex                   |
 claude-code         | npm install -g @anthropic-ai/claude-code |
 gemini                  | npm install -g @google/gemini-cli             | 
+github/copilot      | npm install -g @github/copilot                  | https://github.com/features/copilot/cli
  | |
-googleworkspace | npm install -g @googleworkspace/cli    |
-github-cli               | winget install --id GitHub.cli                   | gh auth status　https://cli.github.com/manual/
-github/copilot      | npm install -g @github/copilot               |
-playwright-cli            | npm install -g @playwright/cli@latest     | playwright-cli install --skills　https://github.com/microsoft/playwright-cli
-sherlock               | pipx install sherlock-project                      | sherlock --help,　sherlock user1 user2 user3
-yt-dlp                  | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-dlp --help
+googleworkspace-cli | npm install -g @googleworkspace/cli        |
+github-cli                  | winget install --id GitHub.cli                      | gh auth status　https://cli.github.com/manual/
+playwright-cli            | npm install -g @playwright/cli@latest   | playwright-cli install --skills　https://github.com/microsoft/playwright-cli
+sherlock                    | pipx install sherlock-project                         | sherlock --help,　sherlock user1 user2 user3
+yt-dlp                        | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-dlp --help
+
+#### playwright-cli
+```
+playwright-cli open https://demo.playwright.dev/todomvc/ --headed
+playwright-cli type "Buy groceries"
+playwright-cli press Enter
+playwright-cli type "Water flowers"
+playwright-cli press Enter
+playwright-cli check e21
+playwright-cli check e35
+playwright-cli screenshot
+```
 
 # 配置文件
 ```
@@ -48,9 +60,9 @@ yt-dlp                  | [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp)   | yt-
 ```
 
 # 環境変数
+```
 https://code.claude.com/docs/ja/env-vars
 claude を起動する前にシェルで設定するか、[settings.json](https://code.claude.com/docs/ja/settings#available-settings) の env キーで設定してください。
-```
 ```
 
 
