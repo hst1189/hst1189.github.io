@@ -22,9 +22,9 @@
     },
 
     "exlink":{
-        "RSS月刊🔖":"https://grapehut.dpdns.org/gmerss",
-        "音楽🎶":"https://grapehut.dpdns.org/MetingJS",
-        "Me💕":"https://grapehut.dpdns.org/me"
+        "RSS月刊🔖":"https://gmerss.grapehut.dpdns.org",
+        "音楽🎶":"https://music.grapehut.dpdns.org",
+        "About me💕":"https://me.grapehut.dpdns.org"
     },
     
     "commentLabelColor":"#006b75",
