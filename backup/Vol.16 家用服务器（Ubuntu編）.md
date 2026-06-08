@@ -120,8 +120,8 @@ journalctl -xe | 查看系统日志
 tail -f /var/log/syslog | 实时跟踪日志
 tail -f /var/log/messages | 实时跟踪日志（CentOS）
 watch -n 5 ‘command’ | 每 5 秒刷新运行命令结果
-kill | 杀掉指定进程 
-kill -9 | 强制杀掉进程
+kill ‘pid‘ | 杀掉指定进程 
+kill -9 ‘pid‘ | 强制杀掉进程
 
 
 #### ・用户权限与管理
