@@ -110,7 +110,7 @@ systemctl stop | 停止服务
 systemctl restart | 重启服务
 systemctl reload | 重新载入
 systemctl list-unit-files -t service | サービス一覧 
-sudo systemctl list-unit-files -t service ｜ grep enabled　| 起動時に有効化されるサービスの一覧
+sudo systemctl list-unit-files -t service ｜grep enabled　| 起動時に有効化されるサービスの一覧
 sudo systemctl list-unit-files -t service ｜grep disabled　| 起動時に無効化されるサービスの一覧
 ps aux | 查看当前运行的进程
 top | 实时监控进程
