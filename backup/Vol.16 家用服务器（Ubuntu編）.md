@@ -2,7 +2,7 @@
 Linux发行版Ubuntu24.04LTS　　※LTS的意思是"长期支持"
 https://ubuntu.com/
 
-#### ・查看硬件配置
+#### ・查看硬件及系统配置
 命令 | 作用
 ---|---
 cat /etc/os-release | OS版本
@@ -21,68 +21,56 @@ date | 查看系统时间
 timedatectl | 查看时区信息
 who -b | 查看开机时间
 dmesg |  查看系统最近启动日志
+lsblk | 列出磁盘与分区
+fdisk -l | 查看磁盘分区表
+mount /dev/sda1 /mnt | 挂载分区
+umount /mnt | 卸载分区
+df -h | 查看磁盘使用情况
+du -sh /path | 查看目录大小
+echo $PATH | 查看环境变量 PATH
+export VAR=value | 设置环境变量
+history | 查看历史命令
+alias ll=‘ls -lh’ | 定义命令别名
 
 
 #### ・网络与端口
 命令|作用
 ---|---
-ping | 测试目标主机连通性
+ping | 网络连接
+ifconfig 或 ip addr | 查看内网 IP
+curl ifconfig.me | 查看公网 IP
 curl -I | 查看 HTTP 响应头
-wget | 下载文件
 netstat -tunlp | 查看端口是否使用
 netstat -tunlp ｜grep 8080 | 查看8080端口是否使用
 ss -tulnp | 查看网络连接和端口占用（替代 netstat）
-traceroute | 路由追踪
+traceroute google.com | 路由追踪
 dig | DNS 查询
 mtr | 连续 traceroute + ping
-iperf3 -s | 启动带宽测试服务器
-iperf3 -c | 带宽测试客户端
+iperf3 -s | 带宽测试サーバー側（受信側）
+iperf3 -c | 带宽测试クライアント側（送信側）
 nc -zv | 测试端口是否开放
 telnet | 测试端口连接
-ifconfig 或 ip addr | 查看网络接口信息
-curl ifconfig.me | 查看公网 IP
+wget | 下载文件
 scp  user@host:/path | 远程拷贝文件
 rsync -avz  user@host:/path | 远程同步文件
 
 
-#### ・用户权限与管理
-命令|作用
----|---
-sudo -i | 切换到 root 用户，并保持 root 环境变量
-sudo su - | 切换到 root 用户，保持完整环境
-sudo | 以 root 权限执行命令
-su - | 切换用户
-whoami | 显示当前用户名
-id | 查看当前用户 ID 和组信息
-groups | 显示当前用户所属组
-passwd | 修改当前用户密码
-adduser | 新增用户
-userdel -r | 删除用户及家目录
-usermod -aG | 将用户添加到组
-w | 查看当前用户登录信息
-last | 查看最近登录用户
-usermod -L  | 锁定用户
-usermod -U | 解锁用户
+#### ・配置防火墙 ufw
+```
+sudo ufw status　　　※status: inactive
+sudo ufw allow ssh   ※重要！有効化前にSSHを許可
+sudo ufw enable
+sudo ufw status　　　※status: active
+```
 
-
-#### ・文件与目录操作
-命令|作用
----|---
-ls -lh | 列出目录内容，带大小和可读格式
-cd | 切换目录
-pwd | 显示当前目录路径
-mkdir -p | 创建目录（包含上级目录）
-rm -rf | 强制删除目录及其内容
-cp -r | 复制文件或目录
-mv | 移动或重命名文件或目录  
-touch | 新建空文件 
-cat | 查看文件内容 
-less | 分页查看文件内容 
-head -n 20 | 查看文件前 20 行
-tail -n 20 | 查看文件后 20 行
-find /path -name “” | 按名称查找文件
-grep “pattern” | 文件内容搜索
-diff | 比较两个文件内容 
+操作 | コマンド |  説明
+-- | -- | --
+enable | sudo ufw enable |　开启防火墙
+disable | sudo ufw disable |　关闭防火墙
+allow | sudo ufw allow 80 |　TCP/UDPポート80を許可 (デフォルトTCP
+deny | sudo ufw deny 23 |　ポート23(telnet)拒否
+delete | sudo ufw delete allow 80 |　ALLOWしたルールを削除
+status | sudo ufw status |　現在のルール一覧と詳細
 
 
 #### ・系统更新
@@ -110,33 +98,80 @@ yum search | 搜索软件包
 yum info | 查看软件包信息
 
 
-
 #### ・服务与进程
 命令|作用
 ---|---
-systemctl status | 查看服务状态
+systemctl status | 查看服务状态（全体）
+systemctl status docker | 查看服务状态（個別）
+systemctl enable | 开机启动服务
+systemctl disable | 取消开机启动服务
 systemctl start | 启动服务
 systemctl stop | 停止服务
 systemctl restart | 重启服务
-systemctl enable | 开机启动服务
-systemctl disable | 取消开机启动服务
+systemctl reload | 重新载入
+systemctl list-unit-files -t service | サービス一覧 
+sudo systemctl list-unit-files -t service ｜ grep enabled　| 起動時に有効化されるサービスの一覧
+sudo systemctl list-unit-files -t service |｜grep disabled　| 起動時に無効化されるサービスの一覧
 ps aux | 查看当前运行的进程
 top | 实时监控进程
 kill | 杀掉指定进程 
 kill -9 | 强制杀掉进程
 
+
+#### ・用户权限与管理
 命令|作用
 ---|---
-压缩与解压 |
+sudo -i | 切换到 root 用户，并保持 root 环境变量
+sudo su - | 切换到 root 用户，保持完整环境
+sudo | 以 root 权限执行命令
+su - | 切换用户
+whoami | 显示当前用户名
+id | 查看当前用户 ID 和组信息
+groups | 显示当前用户所属组
+w | 查看当前用户登录信息
+last | 查看最近登录用户
+passwd | 修改当前用户密码
+adduser | 新增用户
+userdel -r | 删除用户及家目录
+usermod -aG | 将用户添加到组
+usermod -L  | 锁定用户
+usermod -U | 解锁用户
+
+
+#### ・文件与目录操作
+命令|作用
+---|---
+ls -lh | 列出目录内容，带大小和可读格式
+cd | 切换目录
+pwd | 显示当前目录路径
+mkdir -p | 创建目录（包含上级目录）
+rm -rf | 强制删除目录及其内容
+cp -r | 复制文件或目录
+mv | 移动或重命名文件或目录  
+touch | 新建空文件 
+cat | 查看文件内容 
+less | 分页查看文件内容 
+head -n 20 | 查看文件前 20 行
+tail -n 20 | 查看文件后 20 行
+find /path -name “” | 按名称查找文件
+grep “pattern” | 文件内容搜索
+diff | 比较两个文件内容 
+
+
+
+#### ・压缩与解压
+命令|作用
+---|---
 tar -czvf file.tar.gz folder/ | 压缩目录成 tar.gz
 tar -xzvf file.tar.gz | 解压 tar.gz 文件
 tar -xjvf file.tar.bz2 | 解压 tar.bz2 文件
 zip -r file.zip folder/ | 压缩成 zip
 unzip file.zip | 解压 zip 文件
 
+
+#### ・日志与监控
 命令|作用
 ---|---
-日志与监控|
 journalctl -xe | 查看系统日志
 tail -f /var/log/syslog | 实时跟踪日志
 tail -f /var/log/messages | 实时跟踪日志（CentOS）
@@ -144,31 +179,17 @@ watch -n 5 ‘command’ | 每 5 秒刷新运行命令结果
 iostat | 查看磁盘 I/O 状况
 vmstat 5 | 实时查看内存和 CPU
 
-
+#### ・计划任务与定时
 命令|作用
 ---|---
-计划任务与定时 |
 crontab -e | 编辑当前用户定时任务
 crontab -l | 查看定时任务
 systemctl list-timers | 查看系统定时器
 
-
+#### ・磁盘与分区管理
 命令|作用
 ---|---
-磁盘与分区管理 |
-lsblk | 列出磁盘与分区
-fdisk -l | 查看磁盘分区表
-mount /dev/sda1 /mnt | 挂载分区
-umount /mnt | 卸载分区
-df -h | 查看磁盘使用情况
-du -sh /path | 查看目录大小
 
-date | 查看系统时间
-timedatectl | 管理时间和时区
-echo $PATH | 查看环境变量 PATH
-export VAR=value | 设置环境变量
-history | 查看历史命令
-alias ll=‘ls -lh’ | 定义命令别名
 
 
 
@@ -203,42 +224,11 @@ echo "系统维护任务已完成。"
 ```
 
 
-#### ・配置防火墙 ufw
-```
-sudo ufw status　　　※status: inactive
-sudo ufw allow ssh   ※重要！有効化前にSSHを許可
-sudo ufw enable
-sudo ufw status　　　※status: active
-```
-
-操作 | コマンド |  説明
--- | -- | --
-enable | sudo ufw enable |　开启防火墙
-disable | sudo ufw disable |　关闭防火墙
-allow | sudo ufw allow 80 |　TCP/UDPポート80を許可 (デフォルトTCP
-deny | sudo ufw deny 23 |　ポート23(telnet)拒否
-delete | sudo ufw delete allow 80 |　ALLOWしたルールを削除
-status | sudo ufw status |　現在のルール一覧と詳細
 
 
 
-#### ・サービス一覧
-```
-sudo systemctl list-unit-files -t service | grep enabled　※起動時に有効化されるサービスの一覧
-sudo systemctl list-unit-files -t service | grep disabled　※起動時に無効化されるサービスの一覧
-```
 
-操作 | コマンド
--- | --
-サービスステータス表示（全体） | systemctl status
-サービスステータス表示（個別） | systemctl status docker
-サービス自動起動有効 | systemctl enable
-サービス自動起動無効 | systemctl disable
-サービス起動 | systemctl start
-サービス停止 | systemctl stop
-サービス再起動 | systemctl restart 
-サービスリロード | systemctl reload
-サービス一覧 | systemctl list-unit-files -t service
+
 
 
 

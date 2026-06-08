@@ -96,14 +96,14 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2026-06-08 13:05</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2026-06-08 13:26</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/17.html" aria-label="Previous Page">上一篇-Vol.17 Omakub 专为开发者设计的 Ubuntu</a><a class="next_page" href="https://grapehut.dpdns.org/post/15.html" aria-label="Next Page">下一篇-Vol.15 Win开启SMB安全共享</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>🔖1. 安装Ubuntu系统</h1>
 <p>Linux发行版Ubuntu24.04LTS　　※LTS的意思是"长期支持"<br>
 <a href="https://ubuntu.com/" rel="nofollow">https://ubuntu.com/</a></p>
-<h4>・查看硬件配置</h4>
+<h4>・查看硬件及系统配置</h4>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
@@ -176,6 +176,46 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <td>dmesg</td>
 <td>查看系统最近启动日志</td>
 </tr>
+<tr>
+<td>lsblk</td>
+<td>列出磁盘与分区</td>
+</tr>
+<tr>
+<td>fdisk -l</td>
+<td>查看磁盘分区表</td>
+</tr>
+<tr>
+<td>mount /dev/sda1 /mnt</td>
+<td>挂载分区</td>
+</tr>
+<tr>
+<td>umount /mnt</td>
+<td>卸载分区</td>
+</tr>
+<tr>
+<td>df -h</td>
+<td>查看磁盘使用情况</td>
+</tr>
+<tr>
+<td>du -sh /path</td>
+<td>查看目录大小</td>
+</tr>
+<tr>
+<td>echo $PATH</td>
+<td>查看环境变量 PATH</td>
+</tr>
+<tr>
+<td>export VAR=value</td>
+<td>设置环境变量</td>
+</tr>
+<tr>
+<td>history</td>
+<td>查看历史命令</td>
+</tr>
+<tr>
+<td>alias ll=‘ls -lh’</td>
+<td>定义命令别名</td>
+</tr>
 </tbody>
 </table></markdown-accessiblity-table>
 <h4>・网络与端口</h4>
@@ -189,15 +229,19 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <tbody>
 <tr>
 <td>ping</td>
-<td>测试目标主机连通性</td>
+<td>网络连接</td>
+</tr>
+<tr>
+<td>ifconfig 或 ip addr</td>
+<td>查看内网 IP</td>
+</tr>
+<tr>
+<td>curl ifconfig.me</td>
+<td>查看公网 IP</td>
 </tr>
 <tr>
 <td>curl -I</td>
 <td>查看 HTTP 响应头</td>
-</tr>
-<tr>
-<td>wget</td>
-<td>下载文件</td>
 </tr>
 <tr>
 <td>netstat -tunlp</td>
@@ -212,7 +256,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <td>查看网络连接和端口占用（替代 netstat）</td>
 </tr>
 <tr>
-<td>traceroute</td>
+<td>traceroute google.com</td>
 <td>路由追踪</td>
 </tr>
 <tr>
@@ -225,11 +269,11 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 <tr>
 <td>iperf3 -s</td>
-<td>启动带宽测试服务器</td>
+<td>带宽测试サーバー側（受信側）</td>
 </tr>
 <tr>
 <td>iperf3 -c</td>
-<td>带宽测试客户端</td>
+<td>带宽测试クライアント側（送信側）</td>
 </tr>
 <tr>
 <td>nc -zv</td>
@@ -240,12 +284,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <td>测试端口连接</td>
 </tr>
 <tr>
-<td>ifconfig 或 ip addr</td>
-<td>查看网络接口信息</td>
-</tr>
-<tr>
-<td>curl ifconfig.me</td>
-<td>查看公网 IP</td>
+<td>wget</td>
+<td>下载文件</td>
 </tr>
 <tr>
 <td>scp  user@host:/path</td>
@@ -257,145 +297,50 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<h4>・用户权限与管理</h4>
+<h4>・配置防火墙 ufw</h4>
+<pre class="notranslate"><code class="notranslate">sudo ufw status　　　※status: inactive
+sudo ufw allow ssh   ※重要！有効化前にSSHを許可
+sudo ufw enable
+sudo ufw status　　　※status: active
+</code></pre>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
-<th>命令</th>
-<th>作用</th>
+<th>操作</th>
+<th>コマンド</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>sudo -i</td>
-<td>切换到 root 用户，并保持 root 环境变量</td>
+<td>enable</td>
+<td>sudo ufw enable</td>
+<td>　开启防火墙</td>
 </tr>
 <tr>
-<td>sudo su -</td>
-<td>切换到 root 用户，保持完整环境</td>
+<td>disable</td>
+<td>sudo ufw disable</td>
+<td>　关闭防火墙</td>
 </tr>
 <tr>
-<td>sudo</td>
-<td>以 root 权限执行命令</td>
+<td>allow</td>
+<td>sudo ufw allow 80</td>
+<td>　TCP/UDPポート80を許可 (デフォルトTCP</td>
 </tr>
 <tr>
-<td>su -</td>
-<td>切换用户</td>
+<td>deny</td>
+<td>sudo ufw deny 23</td>
+<td>　ポート23(telnet)拒否</td>
 </tr>
 <tr>
-<td>whoami</td>
-<td>显示当前用户名</td>
+<td>delete</td>
+<td>sudo ufw delete allow 80</td>
+<td>　ALLOWしたルールを削除</td>
 </tr>
 <tr>
-<td>id</td>
-<td>查看当前用户 ID 和组信息</td>
-</tr>
-<tr>
-<td>groups</td>
-<td>显示当前用户所属组</td>
-</tr>
-<tr>
-<td>passwd</td>
-<td>修改当前用户密码</td>
-</tr>
-<tr>
-<td>adduser</td>
-<td>新增用户</td>
-</tr>
-<tr>
-<td>userdel -r</td>
-<td>删除用户及家目录</td>
-</tr>
-<tr>
-<td>usermod -aG</td>
-<td>将用户添加到组</td>
-</tr>
-<tr>
-<td>w</td>
-<td>查看当前用户登录信息</td>
-</tr>
-<tr>
-<td>last</td>
-<td>查看最近登录用户</td>
-</tr>
-<tr>
-<td>usermod -L</td>
-<td>锁定用户</td>
-</tr>
-<tr>
-<td>usermod -U</td>
-<td>解锁用户</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<h4>・文件与目录操作</h4>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ls -lh</td>
-<td>列出目录内容，带大小和可读格式</td>
-</tr>
-<tr>
-<td>cd</td>
-<td>切换目录</td>
-</tr>
-<tr>
-<td>pwd</td>
-<td>显示当前目录路径</td>
-</tr>
-<tr>
-<td>mkdir -p</td>
-<td>创建目录（包含上级目录）</td>
-</tr>
-<tr>
-<td>rm -rf</td>
-<td>强制删除目录及其内容</td>
-</tr>
-<tr>
-<td>cp -r</td>
-<td>复制文件或目录</td>
-</tr>
-<tr>
-<td>mv</td>
-<td>移动或重命名文件或目录</td>
-</tr>
-<tr>
-<td>touch</td>
-<td>新建空文件</td>
-</tr>
-<tr>
-<td>cat</td>
-<td>查看文件内容</td>
-</tr>
-<tr>
-<td>less</td>
-<td>分页查看文件内容</td>
-</tr>
-<tr>
-<td>head -n 20</td>
-<td>查看文件前 20 行</td>
-</tr>
-<tr>
-<td>tail -n 20</td>
-<td>查看文件后 20 行</td>
-</tr>
-<tr>
-<td>find /path -name “”</td>
-<td>按名称查找文件</td>
-</tr>
-<tr>
-<td>grep “pattern”</td>
-<td>文件内容搜索</td>
-</tr>
-<tr>
-<td>diff</td>
-<td>比较两个文件内容</td>
+<td>status</td>
+<td>sudo ufw status</td>
+<td>　現在のルール一覧と詳細</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
@@ -493,7 +438,19 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <tbody>
 <tr>
 <td>systemctl status</td>
-<td>查看服务状态</td>
+<td>查看服务状态（全体）</td>
+</tr>
+<tr>
+<td>systemctl status docker</td>
+<td>查看服务状态（個別）</td>
+</tr>
+<tr>
+<td>systemctl enable</td>
+<td>开机启动服务</td>
+</tr>
+<tr>
+<td>systemctl disable</td>
+<td>取消开机启动服务</td>
 </tr>
 <tr>
 <td>systemctl start</td>
@@ -508,12 +465,20 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <td>重启服务</td>
 </tr>
 <tr>
-<td>systemctl enable</td>
-<td>开机启动服务</td>
+<td>systemctl reload</td>
+<td>重新载入</td>
 </tr>
 <tr>
-<td>systemctl disable</td>
-<td>取消开机启动服务</td>
+<td>systemctl list-unit-files -t service</td>
+<td>サービス一覧</td>
+</tr>
+<tr>
+<td>sudo systemctl list-unit-files -t service ｜ grep enabled　</td>
+<td>起動時に有効化されるサービスの一覧</td>
+</tr>
+<tr>
+<td>sudo systemctl list-unit-files -t service</td>
+<td>｜grep disabled　</td>
 </tr>
 <tr>
 <td>ps aux</td>
@@ -533,6 +498,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
+<h4>・用户权限与管理</h4>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
@@ -542,9 +508,147 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </thead>
 <tbody>
 <tr>
-<td>压缩与解压</td>
-<td></td>
+<td>sudo -i</td>
+<td>切换到 root 用户，并保持 root 环境变量</td>
 </tr>
+<tr>
+<td>sudo su -</td>
+<td>切换到 root 用户，保持完整环境</td>
+</tr>
+<tr>
+<td>sudo</td>
+<td>以 root 权限执行命令</td>
+</tr>
+<tr>
+<td>su -</td>
+<td>切换用户</td>
+</tr>
+<tr>
+<td>whoami</td>
+<td>显示当前用户名</td>
+</tr>
+<tr>
+<td>id</td>
+<td>查看当前用户 ID 和组信息</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>显示当前用户所属组</td>
+</tr>
+<tr>
+<td>w</td>
+<td>查看当前用户登录信息</td>
+</tr>
+<tr>
+<td>last</td>
+<td>查看最近登录用户</td>
+</tr>
+<tr>
+<td>passwd</td>
+<td>修改当前用户密码</td>
+</tr>
+<tr>
+<td>adduser</td>
+<td>新增用户</td>
+</tr>
+<tr>
+<td>userdel -r</td>
+<td>删除用户及家目录</td>
+</tr>
+<tr>
+<td>usermod -aG</td>
+<td>将用户添加到组</td>
+</tr>
+<tr>
+<td>usermod -L</td>
+<td>锁定用户</td>
+</tr>
+<tr>
+<td>usermod -U</td>
+<td>解锁用户</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>・文件与目录操作</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ls -lh</td>
+<td>列出目录内容，带大小和可读格式</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>显示当前目录路径</td>
+</tr>
+<tr>
+<td>mkdir -p</td>
+<td>创建目录（包含上级目录）</td>
+</tr>
+<tr>
+<td>rm -rf</td>
+<td>强制删除目录及其内容</td>
+</tr>
+<tr>
+<td>cp -r</td>
+<td>复制文件或目录</td>
+</tr>
+<tr>
+<td>mv</td>
+<td>移动或重命名文件或目录</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>新建空文件</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>查看文件内容</td>
+</tr>
+<tr>
+<td>less</td>
+<td>分页查看文件内容</td>
+</tr>
+<tr>
+<td>head -n 20</td>
+<td>查看文件前 20 行</td>
+</tr>
+<tr>
+<td>tail -n 20</td>
+<td>查看文件后 20 行</td>
+</tr>
+<tr>
+<td>find /path -name “”</td>
+<td>按名称查找文件</td>
+</tr>
+<tr>
+<td>grep “pattern”</td>
+<td>文件内容搜索</td>
+</tr>
+<tr>
+<td>diff</td>
+<td>比较两个文件内容</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>・压缩与解压</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>tar -czvf file.tar.gz folder/</td>
 <td>压缩目录成 tar.gz</td>
@@ -567,6 +671,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
+<h4>・日志与监控</h4>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
@@ -575,10 +680,6 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>日志与监控</td>
-<td></td>
-</tr>
 <tr>
 <td>journalctl -xe</td>
 <td>查看系统日志</td>
@@ -605,6 +706,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
+<h4>・计划任务与定时</h4>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
@@ -613,10 +715,6 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>计划任务与定时</td>
-<td></td>
-</tr>
 <tr>
 <td>crontab -e</td>
 <td>编辑当前用户定时任务</td>
@@ -631,6 +729,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
+<h4>・磁盘与分区管理</h4>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
@@ -638,43 +737,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <th>作用</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>磁盘与分区管理</td>
-<td></td>
-</tr>
-<tr>
-<td>lsblk</td>
-<td>列出磁盘与分区</td>
-</tr>
-<tr>
-<td>fdisk -l</td>
-<td>查看磁盘分区表</td>
-</tr>
-<tr>
-<td>mount /dev/sda1 /mnt</td>
-<td>挂载分区</td>
-</tr>
-<tr>
-<td>umount /mnt</td>
-<td>卸载分区</td>
-</tr>
-<tr>
-<td>df -h</td>
-<td>查看磁盘使用情况</td>
-</tr>
-<tr>
-<td>du -sh /path</td>
-<td>查看目录大小</td>
-</tr>
-</tbody>
 </table></markdown-accessiblity-table>
-<p>date | 查看系统时间<br>
-timedatectl | 管理时间和时区<br>
-echo $PATH | 查看环境变量 PATH<br>
-export VAR=value | 设置环境变量<br>
-history | 查看历史命令<br>
-alias ll=‘ls -lh’ | 定义命令别名</p>
 <div class="highlight highlight-source-js"><pre class="notranslate">#!/bin/bash
 # <span class="pl-v">Ubuntu系统维护脚本</span>
 
@@ -697,103 +760,6 @@ alias ll=‘ls -lh’ | 定义命令别名</p>
 <span class="pl-s1">find</span> <span class="pl-c1">/</span><span class="pl-s1">var</span><span class="pl-c1">/</span><span class="pl-s1">log</span> <span class="pl-c1">-</span><span class="pl-s1">type</span> <span class="pl-s1">f</span> <span class="pl-c1">-</span><span class="pl-s1">name</span> <span class="pl-s">"*.log"</span> <span class="pl-c1">-</span><span class="pl-s1">size</span> <span class="pl-c1">+</span><span class="pl-c1">50</span><span class="pl-v">M</span> <span class="pl-c1">-</span><span class="pl-s1">exec</span> <span class="pl-s1">sudo</span> <span class="pl-s1">truncate</span> <span class="pl-c1">-</span><span class="pl-s1">s</span> <span class="pl-c1">0</span> <span class="pl-kos">{</span><span class="pl-kos">}</span> \<span class="pl-kos">;</span>
 
 <span class="pl-s1">echo</span><span class="pl-kos"></span> <span class="pl-s">"系统维护任务已完成。"</span></pre></div>
-<h4>・配置防火墙 ufw</h4>
-<pre class="notranslate"><code class="notranslate">sudo ufw status　　　※status: inactive
-sudo ufw allow ssh   ※重要！有効化前にSSHを許可
-sudo ufw enable
-sudo ufw status　　　※status: active
-</code></pre>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>操作</th>
-<th>コマンド</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>enable</td>
-<td>sudo ufw enable</td>
-<td>　开启防火墙</td>
-</tr>
-<tr>
-<td>disable</td>
-<td>sudo ufw disable</td>
-<td>　关闭防火墙</td>
-</tr>
-<tr>
-<td>allow</td>
-<td>sudo ufw allow 80</td>
-<td>　TCP/UDPポート80を許可 (デフォルトTCP</td>
-</tr>
-<tr>
-<td>deny</td>
-<td>sudo ufw deny 23</td>
-<td>　ポート23(telnet)拒否</td>
-</tr>
-<tr>
-<td>delete</td>
-<td>sudo ufw delete allow 80</td>
-<td>　ALLOWしたルールを削除</td>
-</tr>
-<tr>
-<td>status</td>
-<td>sudo ufw status</td>
-<td>　現在のルール一覧と詳細</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<h4>・サービス一覧</h4>
-<pre class="notranslate"><code class="notranslate">sudo systemctl list-unit-files -t service | grep enabled　※起動時に有効化されるサービスの一覧
-sudo systemctl list-unit-files -t service | grep disabled　※起動時に無効化されるサービスの一覧
-</code></pre>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>操作</th>
-<th>コマンド</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>サービスステータス表示（全体）</td>
-<td>systemctl status</td>
-</tr>
-<tr>
-<td>サービスステータス表示（個別）</td>
-<td>systemctl status docker</td>
-</tr>
-<tr>
-<td>サービス自動起動有効</td>
-<td>systemctl enable</td>
-</tr>
-<tr>
-<td>サービス自動起動無効</td>
-<td>systemctl disable</td>
-</tr>
-<tr>
-<td>サービス起動</td>
-<td>systemctl start</td>
-</tr>
-<tr>
-<td>サービス停止</td>
-<td>systemctl stop</td>
-</tr>
-<tr>
-<td>サービス再起動</td>
-<td>systemctl restart</td>
-</tr>
-<tr>
-<td>サービスリロード</td>
-<td>systemctl reload</td>
-</tr>
-<tr>
-<td>サービス一覧</td>
-<td>systemctl list-unit-files -t service</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
 <h1>🔖2. 绑定静态IP</h1>
 <p>打开路由器设置---&gt;局域网设置--&gt;DHCP静态IP设置，分配一个固定IP，比如192.168.0.100。配置完成后记得重启路由器。<br>
 这样即使重启服务器或者路由器，IP地址就不会变来变去了。</p>
