@@ -186,18 +186,10 @@ crontab -e | 编辑当前用户定时任务
 crontab -l | 查看定时任务
 systemctl list-timers | 查看系统定时器
 
-#### ・磁盘与分区管理
-命令|作用
----|---
 
 
 
-
-
-
-
-
-
+#### ・Ubuntu系统维护脚本
 ```javascript
 #!/bin/bash
 # Ubuntu系统维护脚本
