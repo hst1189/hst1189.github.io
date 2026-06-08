@@ -111,9 +111,15 @@ systemctl restart | 重启服务
 systemctl reload | 重新载入
 systemctl list-unit-files -t service | サービス一覧 
 sudo systemctl list-unit-files -t service ｜ grep enabled　| 起動時に有効化されるサービスの一覧
-sudo systemctl list-unit-files -t service |｜grep disabled　| 起動時に無効化されるサービスの一覧
+sudo systemctl list-unit-files -t service ｜grep disabled　| 起動時に無効化されるサービスの一覧
 ps aux | 查看当前运行的进程
 top | 实时监控进程
+vmstat 5 | 实时查看内存和 CPU
+iostat | 查看磁盘 I/O 状况
+journalctl -xe | 查看系统日志
+tail -f /var/log/syslog | 实时跟踪日志
+tail -f /var/log/messages | 实时跟踪日志（CentOS）
+watch -n 5 ‘command’ | 每 5 秒刷新运行命令结果
 kill | 杀掉指定进程 
 kill -9 | 强制杀掉进程
 
@@ -169,15 +175,6 @@ zip -r file.zip folder/ | 压缩成 zip
 unzip file.zip | 解压 zip 文件
 
 
-#### ・日志与监控
-命令|作用
----|---
-journalctl -xe | 查看系统日志
-tail -f /var/log/syslog | 实时跟踪日志
-tail -f /var/log/messages | 实时跟踪日志（CentOS）
-watch -n 5 ‘command’ | 每 5 秒刷新运行命令结果
-iostat | 查看磁盘 I/O 状况
-vmstat 5 | 实时查看内存和 CPU
 
 #### ・计划任务与定时
 命令|作用

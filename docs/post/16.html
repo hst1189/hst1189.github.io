@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2026-06-08 13:38</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2026-06-08 13:42</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/17.html" aria-label="Previous Page">上一篇-Vol.17 Omakub 专为开发者设计的 Ubuntu</a><a class="next_page" href="https://grapehut.dpdns.org/post/15.html" aria-label="Next Page">下一篇-Vol.15 Win开启SMB安全共享</a></div>
 </nav>
 
@@ -477,8 +477,8 @@ sudo ufw status　　　※status: active
 <td>起動時に有効化されるサービスの一覧</td>
 </tr>
 <tr>
-<td>sudo systemctl list-unit-files -t service</td>
-<td>｜grep disabled　</td>
+<td>sudo systemctl list-unit-files -t service ｜grep disabled　</td>
+<td>起動時に無効化されるサービスの一覧</td>
 </tr>
 <tr>
 <td>ps aux</td>
@@ -487,6 +487,30 @@ sudo ufw status　　　※status: active
 <tr>
 <td>top</td>
 <td>实时监控进程</td>
+</tr>
+<tr>
+<td>vmstat 5</td>
+<td>实时查看内存和 CPU</td>
+</tr>
+<tr>
+<td>iostat</td>
+<td>查看磁盘 I/O 状况</td>
+</tr>
+<tr>
+<td>journalctl -xe</td>
+<td>查看系统日志</td>
+</tr>
+<tr>
+<td>tail -f /var/log/syslog</td>
+<td>实时跟踪日志</td>
+</tr>
+<tr>
+<td>tail -f /var/log/messages</td>
+<td>实时跟踪日志（CentOS）</td>
+</tr>
+<tr>
+<td>watch -n 5 ‘command’</td>
+<td>每 5 秒刷新运行命令结果</td>
 </tr>
 <tr>
 <td>kill</td>
@@ -668,41 +692,6 @@ sudo ufw status　　　※status: active
 <tr>
 <td>unzip file.zip</td>
 <td>解压 zip 文件</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<h4>・日志与监控</h4>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>journalctl -xe</td>
-<td>查看系统日志</td>
-</tr>
-<tr>
-<td>tail -f /var/log/syslog</td>
-<td>实时跟踪日志</td>
-</tr>
-<tr>
-<td>tail -f /var/log/messages</td>
-<td>实时跟踪日志（CentOS）</td>
-</tr>
-<tr>
-<td>watch -n 5 ‘command’</td>
-<td>每 5 秒刷新运行命令结果</td>
-</tr>
-<tr>
-<td>iostat</td>
-<td>查看磁盘 I/O 状况</td>
-</tr>
-<tr>
-<td>vmstat 5</td>
-<td>实时查看内存和 CPU</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
