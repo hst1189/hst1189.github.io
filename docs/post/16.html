@@ -96,27 +96,585 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2026-02-07 14:06</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/15.html" aria-label="Previous Page">上一篇-Vol.15 Win开启SMB安全共享</a><a class="next_page" href="https://grapehut.dpdns.org/post/17.html" aria-label="Next Page">下一篇-Vol.17 Omakub 专为开发者设计的 Ubuntu</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-09-21 09:09,updated at 2026-06-08 13:05</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/17.html" aria-label="Previous Page">上一篇-Vol.17 Omakub 专为开发者设计的 Ubuntu</a><a class="next_page" href="https://grapehut.dpdns.org/post/15.html" aria-label="Next Page">下一篇-Vol.15 Win开启SMB安全共享</a></div>
 </nav>
 
-<section class="markdown-body spoiler" id="postBody"><h1>1. 安装Ubuntu系统🔖</h1>
+<section class="markdown-body spoiler" id="postBody"><h1>🔖1. 安装Ubuntu系统</h1>
 <p>Linux发行版Ubuntu24.04LTS　　※LTS的意思是"长期支持"<br>
 <a href="https://ubuntu.com/" rel="nofollow">https://ubuntu.com/</a></p>
 <h4>・查看硬件配置</h4>
-<pre class="notranslate"><code class="notranslate">OS版本：cat /etc/issue
-CPU：lscpu
-内存：free -h
-磁盘容量：df -h
-</code></pre>
-<h4>・系统清理</h4>
-<pre class="notranslate"><code class="notranslate">sudo apt autoremove  ※自动删除无用软件包
-sudo apt autoclean　　※自动清除软件包缓存
-</code></pre>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cat /etc/os-release</td>
+<td>OS版本</td>
+</tr>
+<tr>
+<td>cat /etc/issue</td>
+<td>OS版本</td>
+</tr>
+<tr>
+<td>uname -a</td>
+<td>系统内核信息</td>
+</tr>
+<tr>
+<td>lsmod</td>
+<td>内核模块</td>
+</tr>
+<tr>
+<td>lscpu</td>
+<td>CPU</td>
+</tr>
+<tr>
+<td>free -h</td>
+<td>内存</td>
+</tr>
+<tr>
+<td>top</td>
+<td>实时查看进程、CPU、内存占用</td>
+</tr>
+<tr>
+<td>uptime</td>
+<td>查看系统运行时间和负载</td>
+</tr>
+<tr>
+<td>lsblk</td>
+<td>硬盘信息</td>
+</tr>
+<tr>
+<td>df -h</td>
+<td>磁盘空间</td>
+</tr>
+<tr>
+<td>du -sh</td>
+<td>查看指定目录大小</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>查看主机名</td>
+</tr>
+<tr>
+<td>date</td>
+<td>查看系统时间</td>
+</tr>
+<tr>
+<td>timedatectl</td>
+<td>查看时区信息</td>
+</tr>
+<tr>
+<td>who -b</td>
+<td>查看开机时间</td>
+</tr>
+<tr>
+<td>dmesg</td>
+<td>查看系统最近启动日志</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>・网络与端口</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ping</td>
+<td>测试目标主机连通性</td>
+</tr>
+<tr>
+<td>curl -I</td>
+<td>查看 HTTP 响应头</td>
+</tr>
+<tr>
+<td>wget</td>
+<td>下载文件</td>
+</tr>
+<tr>
+<td>netstat -tunlp</td>
+<td>查看端口是否使用</td>
+</tr>
+<tr>
+<td>netstat -tunlp ｜grep 8080</td>
+<td>查看8080端口是否使用</td>
+</tr>
+<tr>
+<td>ss -tulnp</td>
+<td>查看网络连接和端口占用（替代 netstat）</td>
+</tr>
+<tr>
+<td>traceroute</td>
+<td>路由追踪</td>
+</tr>
+<tr>
+<td>dig</td>
+<td>DNS 查询</td>
+</tr>
+<tr>
+<td>mtr</td>
+<td>连续 traceroute + ping</td>
+</tr>
+<tr>
+<td>iperf3 -s</td>
+<td>启动带宽测试服务器</td>
+</tr>
+<tr>
+<td>iperf3 -c</td>
+<td>带宽测试客户端</td>
+</tr>
+<tr>
+<td>nc -zv</td>
+<td>测试端口是否开放</td>
+</tr>
+<tr>
+<td>telnet</td>
+<td>测试端口连接</td>
+</tr>
+<tr>
+<td>ifconfig 或 ip addr</td>
+<td>查看网络接口信息</td>
+</tr>
+<tr>
+<td>curl ifconfig.me</td>
+<td>查看公网 IP</td>
+</tr>
+<tr>
+<td>scp  user@host:/path</td>
+<td>远程拷贝文件</td>
+</tr>
+<tr>
+<td>rsync -avz  user@host:/path</td>
+<td>远程同步文件</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>・用户权限与管理</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sudo -i</td>
+<td>切换到 root 用户，并保持 root 环境变量</td>
+</tr>
+<tr>
+<td>sudo su -</td>
+<td>切换到 root 用户，保持完整环境</td>
+</tr>
+<tr>
+<td>sudo</td>
+<td>以 root 权限执行命令</td>
+</tr>
+<tr>
+<td>su -</td>
+<td>切换用户</td>
+</tr>
+<tr>
+<td>whoami</td>
+<td>显示当前用户名</td>
+</tr>
+<tr>
+<td>id</td>
+<td>查看当前用户 ID 和组信息</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>显示当前用户所属组</td>
+</tr>
+<tr>
+<td>passwd</td>
+<td>修改当前用户密码</td>
+</tr>
+<tr>
+<td>adduser</td>
+<td>新增用户</td>
+</tr>
+<tr>
+<td>userdel -r</td>
+<td>删除用户及家目录</td>
+</tr>
+<tr>
+<td>usermod -aG</td>
+<td>将用户添加到组</td>
+</tr>
+<tr>
+<td>w</td>
+<td>查看当前用户登录信息</td>
+</tr>
+<tr>
+<td>last</td>
+<td>查看最近登录用户</td>
+</tr>
+<tr>
+<td>usermod -L</td>
+<td>锁定用户</td>
+</tr>
+<tr>
+<td>usermod -U</td>
+<td>解锁用户</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>・文件与目录操作</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ls -lh</td>
+<td>列出目录内容，带大小和可读格式</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>显示当前目录路径</td>
+</tr>
+<tr>
+<td>mkdir -p</td>
+<td>创建目录（包含上级目录）</td>
+</tr>
+<tr>
+<td>rm -rf</td>
+<td>强制删除目录及其内容</td>
+</tr>
+<tr>
+<td>cp -r</td>
+<td>复制文件或目录</td>
+</tr>
+<tr>
+<td>mv</td>
+<td>移动或重命名文件或目录</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>新建空文件</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>查看文件内容</td>
+</tr>
+<tr>
+<td>less</td>
+<td>分页查看文件内容</td>
+</tr>
+<tr>
+<td>head -n 20</td>
+<td>查看文件前 20 行</td>
+</tr>
+<tr>
+<td>tail -n 20</td>
+<td>查看文件后 20 行</td>
+</tr>
+<tr>
+<td>find /path -name “”</td>
+<td>按名称查找文件</td>
+</tr>
+<tr>
+<td>grep “pattern”</td>
+<td>文件内容搜索</td>
+</tr>
+<tr>
+<td>diff</td>
+<td>比较两个文件内容</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
 <h4>・系统更新</h4>
-<pre class="notranslate"><code class="notranslate">sudo apt update
-sudo apt upgrade
-</code></pre>
+<h5>・软件管理（Debian/Ubuntu）</h5>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apt update</td>
+<td>更新软件源列表</td>
+</tr>
+<tr>
+<td>apt upgrade -y</td>
+<td>升级所有软件包</td>
+</tr>
+<tr>
+<td>apt install</td>
+<td>安装软件</td>
+</tr>
+<tr>
+<td>apt remove</td>
+<td>卸载软件</td>
+</tr>
+<tr>
+<td>apt autoremove -y</td>
+<td>自动删除无用依赖</td>
+</tr>
+<tr>
+<td>apt autoclean　　</td>
+<td>自动清除软件包缓存</td>
+</tr>
+<tr>
+<td>dpkg -l</td>
+<td>查看已安装软件包</td>
+</tr>
+<tr>
+<td>apt search</td>
+<td>搜索软件包</td>
+</tr>
+<tr>
+<td>apt show</td>
+<td>查看软件包信息</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h5>・软件管理（CentOS/RHEL）</h5>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>yum update -y</td>
+<td>更新软件包</td>
+</tr>
+<tr>
+<td>yum install</td>
+<td>安装软件</td>
+</tr>
+<tr>
+<td>yum remove</td>
+<td>卸载软件</td>
+</tr>
+<tr>
+<td>rpm -qa</td>
+<td>查看已安装软件包</td>
+</tr>
+<tr>
+<td>yum search</td>
+<td>搜索软件包</td>
+</tr>
+<tr>
+<td>yum info</td>
+<td>查看软件包信息</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>・服务与进程</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>systemctl status</td>
+<td>查看服务状态</td>
+</tr>
+<tr>
+<td>systemctl start</td>
+<td>启动服务</td>
+</tr>
+<tr>
+<td>systemctl stop</td>
+<td>停止服务</td>
+</tr>
+<tr>
+<td>systemctl restart</td>
+<td>重启服务</td>
+</tr>
+<tr>
+<td>systemctl enable</td>
+<td>开机启动服务</td>
+</tr>
+<tr>
+<td>systemctl disable</td>
+<td>取消开机启动服务</td>
+</tr>
+<tr>
+<td>ps aux</td>
+<td>查看当前运行的进程</td>
+</tr>
+<tr>
+<td>top</td>
+<td>实时监控进程</td>
+</tr>
+<tr>
+<td>kill</td>
+<td>杀掉指定进程</td>
+</tr>
+<tr>
+<td>kill -9</td>
+<td>强制杀掉进程</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>压缩与解压</td>
+<td></td>
+</tr>
+<tr>
+<td>tar -czvf file.tar.gz folder/</td>
+<td>压缩目录成 tar.gz</td>
+</tr>
+<tr>
+<td>tar -xzvf file.tar.gz</td>
+<td>解压 tar.gz 文件</td>
+</tr>
+<tr>
+<td>tar -xjvf file.tar.bz2</td>
+<td>解压 tar.bz2 文件</td>
+</tr>
+<tr>
+<td>zip -r file.zip folder/</td>
+<td>压缩成 zip</td>
+</tr>
+<tr>
+<td>unzip file.zip</td>
+<td>解压 zip 文件</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>日志与监控</td>
+<td></td>
+</tr>
+<tr>
+<td>journalctl -xe</td>
+<td>查看系统日志</td>
+</tr>
+<tr>
+<td>tail -f /var/log/syslog</td>
+<td>实时跟踪日志</td>
+</tr>
+<tr>
+<td>tail -f /var/log/messages</td>
+<td>实时跟踪日志（CentOS）</td>
+</tr>
+<tr>
+<td>watch -n 5 ‘command’</td>
+<td>每 5 秒刷新运行命令结果</td>
+</tr>
+<tr>
+<td>iostat</td>
+<td>查看磁盘 I/O 状况</td>
+</tr>
+<tr>
+<td>vmstat 5</td>
+<td>实时查看内存和 CPU</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计划任务与定时</td>
+<td></td>
+</tr>
+<tr>
+<td>crontab -e</td>
+<td>编辑当前用户定时任务</td>
+</tr>
+<tr>
+<td>crontab -l</td>
+<td>查看定时任务</td>
+</tr>
+<tr>
+<td>systemctl list-timers</td>
+<td>查看系统定时器</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>磁盘与分区管理</td>
+<td></td>
+</tr>
+<tr>
+<td>lsblk</td>
+<td>列出磁盘与分区</td>
+</tr>
+<tr>
+<td>fdisk -l</td>
+<td>查看磁盘分区表</td>
+</tr>
+<tr>
+<td>mount /dev/sda1 /mnt</td>
+<td>挂载分区</td>
+</tr>
+<tr>
+<td>umount /mnt</td>
+<td>卸载分区</td>
+</tr>
+<tr>
+<td>df -h</td>
+<td>查看磁盘使用情况</td>
+</tr>
+<tr>
+<td>du -sh /path</td>
+<td>查看目录大小</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>date | 查看系统时间<br>
+timedatectl | 管理时间和时区<br>
+echo $PATH | 查看环境变量 PATH<br>
+export VAR=value | 设置环境变量<br>
+history | 查看历史命令<br>
+alias ll=‘ls -lh’ | 定义命令别名</p>
 <div class="highlight highlight-source-js"><pre class="notranslate">#!/bin/bash
 # <span class="pl-v">Ubuntu系统维护脚本</span>
 
@@ -236,14 +794,10 @@ sudo systemctl list-unit-files -t service | grep disabled　※起動時に無�
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<h4>・查看端口</h4>
-<pre class="notranslate"><code class="notranslate">sudo netstat -tunlp   查看端口是否使用
-sudo netstat -tunlp | grep 8080
-</code></pre>
-<h1>2. 绑定静态IP🔖</h1>
+<h1>🔖2. 绑定静态IP</h1>
 <p>打开路由器设置---&gt;局域网设置--&gt;DHCP静态IP设置，分配一个固定IP，比如192.168.0.100。配置完成后记得重启路由器。<br>
 这样即使重启服务器或者路由器，IP地址就不会变来变去了。</p>
-<h1>3. 设置笔记本合盖不休眠 🔖</h1>
+<h1>🔖3. 设置笔记本合盖不休眠</h1>
 <p>配置文件</p>
 <pre class="notranslate"><code class="notranslate">/etc/systemd/logind.conf
 </code></pre>
@@ -274,7 +828,7 @@ hybrid-sleep(同时休眠到内存与硬盘),
 suspend-then-hibernate(先休眠到内存超时后再休眠到硬盘),
 lock(锁屏)
 </code></pre>
-<h1>4. RustDesk🔖</h1>
+<h1>🔖4. RustDesk</h1>
 <p>4-1. 通过github下载Ubuntu版本：<a href="https://github.com/rustdesk/rustdesk/releases">https://github.com/rustdesk/rustdesk/releases</a><br>
 <a href="https://github.com/rustdesk/rustdesk/releases/download/1.3.5/rustdesk-1.3.5-x86_64.deb">https://github.com/rustdesk/rustdesk/releases/download/1.3.5/rustdesk-1.3.5-x86_64.deb</a>       ※目前最新版本1.3.5</p>
 <p>4-2. 将安装包<code class="notranslate">.deb</code> 放在桌面，右键打开命令行、执行以下两个命令</p>
@@ -297,14 +851,14 @@ WaylandEnable=false
 打开Rustdesk 设置两个地方<br>
 设置-&gt;安全-&gt;允许IP直接访问 <strong>默认端口 21118</strong>，这样在家里就可以不使用中继服务器，而是IP直连，提高速度<br>
 设置-&gt;安全-&gt;密码 使用固定密码，这样主控方就可以使用固定密码控制</p>
-<h1>5. OpenSSH🔖</h1>
+<h1>🔖5. OpenSSH</h1>
 <p>添加ssh的远程访问功能、这样就可以通过ssh的方式链接。</p>
 <pre class="notranslate"><code class="notranslate">sudo apt install openssh-server
 </code></pre>
 <p>【链接方式】输入ssh命令、然后输入密码</p>
 <pre class="notranslate"><code class="notranslate">ssh 用户名@192.168.0.100    #路由设置里所绑定的静态IP
 </code></pre>
-<h1>6. SMB文件共享🔖</h1>
+<h1>🔖6. SMB文件共享</h1>
 <p>可以在Ubuntu服务器上开启SMB文件共享，构建文件共享服务，<br>
 这样可以很方便的在手机电脑上查看服务器上文件（包括电影，电视剧等）</p>
 <p>6-1. 安装</p>
@@ -341,7 +895,7 @@ force group =用户名 #更改用户名
 地址栏输入IP，然后输入服务器的用户名和密码</p>
 <pre class="notranslate"><code class="notranslate">\\192.168.0.100\share    #路由设置里所绑定的静态IP
 </code></pre>
-<h1>7. Docker🔖</h1>
+<h1>🔖7. Docker</h1>
 <p>安装docker本体，需要执行以下命令。</p>
 <pre class="notranslate"><code class="notranslate">sudo curl -fsSL https://get.docker.com | sh    #安装Docker
 sudo systemctl enable --now docker        #启动Docker服务
