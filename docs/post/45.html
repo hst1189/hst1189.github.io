@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2026-03-03 12:54,updated at 2026-06-28 15:51</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2026-03-03 12:54,updated at 2026-06-28 15:53</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/46.html" aria-label="Previous Page">上一篇-Vol.45 「白嫖」无限企业邮箱（larksuite篇）</a><a class="next_page" href="https://grapehut.dpdns.org/post/44.html" aria-label="Next Page">下一篇-Vol.43 eSIM</a></div>
 </nav>
 
@@ -160,11 +160,17 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 <h2>例</h2>
 <pre class="notranslate"><code class="notranslate">curl -X GET http://example.com
 </code></pre>
-<pre class="notranslate"><code class="notranslate">curl -X POST -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
+<pre class="notranslate"><code class="notranslate">curl -X POST  http://example.com/post \
+       -H "Content-Type: application/json" \
+       -d '{"name": "John", "age": 25}'
 </code></pre>
-<pre class="notranslate"><code class="notranslate">curl -X PUT -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
+<pre class="notranslate"><code class="notranslate">curl -X PUT  http://example.com/post \
+       -H "Content-Type: application/json" \
+       -d '{"name": "John", "age": 25}'  
 </code></pre>
-<pre class="notranslate"><code class="notranslate">curl -X DELETE -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
+<pre class="notranslate"><code class="notranslate">curl -X DELETE  http://example.com/post \
+       -H "Content-Type: application/json" \
+       -d '{"name": "John", "age": 25}'
 </code></pre>
 <pre class="notranslate"><code class="notranslate">curl -I http://example.com
 </code></pre>

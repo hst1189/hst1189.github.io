@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Mon, 08 Jun 2026 13:45:12 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.47 Copy Fail CVE-2026-31431</title><link>https://grapehut.dpdns.org/post/48.html</link><description>https://copy.fail/
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 28 Jun 2026 15:54:22 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.47 Copy Fail CVE-2026-31431</title><link>https://grapehut.dpdns.org/post/48.html</link><description>https://copy.fail/
 
 
 ```
@@ -169,30 +169,44 @@ curl --version
 ```
 curl -X GET http://example.com
 ```
+
 ```
-curl -X POST -H 'Content-Type: application/json' -d '{'name': 'John', 'age': 25}'  http://example.com/post
+curl -X POST  http://example.com/post \
+       -H 'Content-Type: application/json' \
+       -d '{'name': 'John', 'age': 25}'
 ```
+
 ```
-curl -X PUT -H 'Content-Type: application/json' -d '{'name': 'John', 'age': 25}'  http://example.com/post
+curl -X PUT  http://example.com/post \
+       -H 'Content-Type: application/json' \
+       -d '{'name': 'John', 'age': 25}'  
 ```
+
 ```
-curl -X DELETE -H 'Content-Type: application/json' -d '{'name': 'John', 'age': 25}'  http://example.com/post
+curl -X DELETE  http://example.com/post \
+       -H 'Content-Type: application/json' \
+       -d '{'name': 'John', 'age': 25}'
 ```
+
 ```
 curl -I http://example.com
 ```
 ```
 curl -O https://cdn-ak.f.st-hatena.com/images/fotolife/p/pixiv_corp/20220804/20220804131307.png
 ```
+
 ```
 curl -o aaa.png https://cdn-ak.f.st-hatena.com/images/fotolife/p/pixiv_corp/20220804/20220804131307.png
 ```
+
 ```
 curl -L https://www.bilibili.com
 ```
+
 ```
 curl -v -L https://www.bilibili.com
 ```
+
 ```
 curl --proxy http://用户名:密码@127.0.0.1:433  https://www.bilibili.com
 ```

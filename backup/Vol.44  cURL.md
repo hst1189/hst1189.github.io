@@ -20,30 +20,44 @@ curl --version
 ```
 curl -X GET http://example.com
 ```
+
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
+curl -X POST  http://example.com/post \
+       -H "Content-Type: application/json" \
+       -d '{"name": "John", "age": 25}'
 ```
+
 ```
-curl -X PUT -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
+curl -X PUT  http://example.com/post \
+       -H "Content-Type: application/json" \
+       -d '{"name": "John", "age": 25}'  
 ```
+
 ```
-curl -X DELETE -H "Content-Type: application/json" -d '{"name": "John", "age": 25}'  http://example.com/post
+curl -X DELETE  http://example.com/post \
+       -H "Content-Type: application/json" \
+       -d '{"name": "John", "age": 25}'
 ```
+
 ```
 curl -I http://example.com
 ```
 ```
 curl -O https://cdn-ak.f.st-hatena.com/images/fotolife/p/pixiv_corp/20220804/20220804131307.png
 ```
+
 ```
 curl -o aaa.png https://cdn-ak.f.st-hatena.com/images/fotolife/p/pixiv_corp/20220804/20220804131307.png
 ```
+
 ```
 curl -L https://www.bilibili.com
 ```
+
 ```
 curl -v -L https://www.bilibili.com
 ```
+
 ```
 curl --proxy http://用户名:密码@127.0.0.1:433  https://www.bilibili.com
 ```
