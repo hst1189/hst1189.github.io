@@ -10,4 +10,8 @@ flutter doctor -v
 
 VS Code   插件
 1. Flutter
-2. 
+2. Awesome Flutter Snippets
+
+
+
+
