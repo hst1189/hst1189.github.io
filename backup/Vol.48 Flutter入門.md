@@ -35,9 +35,9 @@ MaterialApp
 
 ### statefulWidget的生命周期
 
-阶段| 函数名| 调用实际 &核心任务|
+阶段| 函数名| 调用时机 & 核心任务|
 ---|---|---
-| createState() |  
-| initState() | 
-| didChangeDependencies() | 
+创建阶段 | createState() |  Widget初始化调用，创建State对象
+创建阶段 | initState() | 
+创建阶段 | didChangeDependencies() | 
 
