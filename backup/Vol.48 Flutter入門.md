@@ -13,11 +13,15 @@ flutter doctor -v
 2. Awesome Flutter Snippets
 
 # 组件
-Socffold
-　∟appBar                         顶部 title
-　∟body                             主页面
-　∟bottomNavigationBar  底部导航栏
-　∟backgroundColor         背景色
-　∟floatingActionButton    悬浮按钮
+MaterialApp
+　∟title　标签栏
+　∟theme　主题
+　∟home　主体
+　　∟Socffold
+　　　∟appBar　顶部 title
+　　　∟body　主页面
+　　　∟bottomNavigationBar　底部导航栏
+　　　∟backgroundColor　背景色
+　　　∟floatingActionButton　悬浮按钮
 
 
