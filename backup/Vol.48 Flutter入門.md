@@ -26,6 +26,7 @@ MaterialApp
 　　　∟bottomNavigationBar　底部导航栏
 　　　∟backgroundColor　背景色
 　　　∟floatingActionButton　悬浮按钮
+　　　∟etc.
 ```
 
 ## 自定义组件
