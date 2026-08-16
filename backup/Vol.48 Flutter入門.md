@@ -10,19 +10,23 @@ flutter doctor -v
 
 # VS Code   插件
 1. Flutter
-2. Awesome Flutter Snippets
+2. Flutter Widget Snippets　快捷键
+3. Awesome Flutter Snippets　快捷键
 
 # 组件
 ## 基础组件MaterialApp
+```
+MaterialApp
 　∟title　标签栏
 　∟theme　主题
 　∟home　主体
-　　∟Socffold
-　　　∟appBar　顶部 title
+　　∟Scaffold      骨架
+　　　∟appBar　顶部标题栏
 　　　∟body　主页面
 　　　∟bottomNavigationBar　底部导航栏
 　　　∟backgroundColor　背景色
 　　　∟floatingActionButton　悬浮按钮
+```
 
 ## 自定义组件
 ・statelessWidget 
