@@ -34,16 +34,19 @@ MaterialApp
 ・statefulWidget
 
 ### statefulWidget的生命周期
+创建阶段：createState -> initState -> didChangeDependencies -> build
+更新阶段：didUpdateWidget -> build
+销毁阶段：deactivate -> dispose
 
 阶段| 函数名| 调用时机 & 核心任务|
 ---|---|---
-创建阶段 | createState( ) |  Widget初始化调用，创建State对象
-创建阶段 | initState( ) | State对象插入Widget立刻执行，仅执行一次
+创建阶段 | createState( ) |  Widget初始化调用，创建State对象，`仅执行一次`
+创建阶段 | initState( ) | State对象插入Widget立刻执行，`仅执行一次`
 创建阶段 | didChangeDependencies( ) | initState()后立刻执行，当所依赖的inherbitedWidget更新时调用，可能多次
 构建和更新阶段 | build( ) | 构建UI方法，初始化或更新后，多次调用
 构建和更新阶段 | didUpdateWidget( ) | 父组件传入新配置时调用，用于比较新旧配置
 销毁阶段 | deactivate( ) | State对象，暂时移除时调用
-销毁阶段 | dispose( ) | State对象，永久移除时调用，释放资源，仅执行一次
+销毁阶段 | dispose( ) | State对象，永久移除时调用，释放资源，`仅执行一次`
 
 
 
