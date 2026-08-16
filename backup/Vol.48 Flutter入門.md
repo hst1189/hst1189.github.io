@@ -13,7 +13,7 @@ flutter doctor -v
 2. Awesome Flutter Snippets
 
 # 组件
-MaterialApp
+## 基础组件MaterialApp
 　∟title　标签栏
 　∟theme　主题
 　∟home　主体
@@ -24,4 +24,15 @@ MaterialApp
 　　　∟backgroundColor　背景色
 　　　∟floatingActionButton　悬浮按钮
 
+## 自定义组件
+・statelessWidget 
+・statefulWidget
+
+### statefulWidget的生命周期
+
+阶段| 函数名| 调用实际 &核心任务|
+---|---|---
+| createState() |  
+| initState() | 
+| didChangeDependencies() | 
 
