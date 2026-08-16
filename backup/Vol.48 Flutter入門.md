@@ -38,6 +38,7 @@ MaterialApp
 阶段| 函数名| 调用时机 & 核心任务|
 ---|---|---
 创建阶段 | createState() |  Widget初始化调用，创建State对象
-创建阶段 | initState() | 
-创建阶段 | didChangeDependencies() | 
+创建阶段 | initState() | State对象插入Widget立刻执行，仅执行一次
+创建阶段 | didChangeDependencies() | initState()后立刻执行，当所依赖的inherbitedWidget更新时调用，可能多次
+
 

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 16 Aug 2026 05:07:20 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.48 Flutter入門</title><link>https://grapehut.dpdns.org/post/49.html</link><description># 安装flutter
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小饅頭の部落格</title><link>https://grapehut.dpdns.org</link><description>Stay hungry. Stay foolish. --Steve Jobs</description><copyright>小饅頭の部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>../avatar.png</url><title>avatar</title><link>https://grapehut.dpdns.org</link></image><lastBuildDate>Sun, 16 Aug 2026 05:10:05 +0000</lastBuildDate><managingEditor>小饅頭の部落格</managingEditor><ttl>60</ttl><webMaster>小饅頭の部落格</webMaster><item><title>Vol.48 Flutter入門</title><link>https://grapehut.dpdns.org/post/49.html</link><description># 安装flutter
 1. Download the Flutter SDK bundle（flutter_windows_3.47.0-stable.zip）https://docs.flutter.dev/install/manual
 2. 解压缩 Flutter SDK
 3. 添加环境变量  add the Flutter SDK's `bin` directory to your `PATH` environment variable.
@@ -39,8 +39,9 @@ MaterialApp
 阶段| 函数名| 调用时机 &amp; 核心任务|
 ---|---|---
 创建阶段 | createState() |  Widget初始化调用，创建State对象
-创建阶段 | initState() | 
-创建阶段 | didChangeDependencies() | 
+创建阶段 | initState() | State对象插入Widget立刻执行，仅执行一次
+创建阶段 | didChangeDependencies() | initState()后立刻执行，当所依赖的inherbitedWidget更新时调用，可能多次
+
 
 。</description><guid isPermaLink="true">https://grapehut.dpdns.org/post/49.html</guid><pubDate>Sat, 08 Aug 2026 14:46:36 +0000</pubDate></item><item><title>Vol.47 Copy Fail CVE-2026-31431</title><link>https://grapehut.dpdns.org/post/48.html</link><description>https://copy.fail/
 
