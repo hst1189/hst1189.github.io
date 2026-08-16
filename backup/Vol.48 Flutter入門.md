@@ -42,7 +42,7 @@ MaterialApp
 ---|---|---
 创建阶段 | createState( ) |  Widget初始化调用，创建State对象，`仅执行一次`
 创建阶段 | initState( ) | State对象插入Widget立刻执行，`仅执行一次`
-创建阶段 | didChangeDependencies( ) | initState()后立刻执行，当所依赖的inheritedWidget更新时调用，可能多次
+创建阶段 | didChangeDependencies( ) | initState()后立刻执行，当所依赖的`inheritedWidget *` 更新时调用，可能多次
 构建和更新阶段 | build( ) | 构建UI方法，初始化或更新后，多次调用
 构建和更新阶段 | didUpdateWidget( ) | 父组件传入新配置时调用，用于比较新旧配置
 销毁阶段 | deactivate( ) | State对象，暂时移除时调用
