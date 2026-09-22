@@ -4,7 +4,7 @@
 骷髅大佬版本：[DHDAXCW/OpenWRT_x86_x64](https://github.com/DHDAXCW/OpenWRT_x86_x64/releases)
 基于 immortalwrt 源码建构 x86 的 OpenWrt 固件。
 
-教程：https://www.youtube.com/watch?v=Ok-qHkNYvU8
+教程：https://www.youtube.com/watch?v=JfSJmPFiL_s
 
 
 `ext4` 文件系统镜像可以对任何改动都进行持久化存储，
