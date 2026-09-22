@@ -2,10 +2,8 @@
 软路由：
 `Gmeek-html<iframe width="560" height="315" src="https://www.youtube.com/embed/JfSJmPFiL_s?si=RPrcNpyHyHK-zW_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
 
-`Gmeek-html<iframe style='border-radius:12px' width="100%" height="400px"  src="https://www.youtube.com/watch?v=JfSJmPFiL_s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
-
 旁路由：
-`Gmeek-html<iframe style='border-radius:12px' width="100%" height="400px"  src="https://www.youtube.com/watch?v=cFOob3djiOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+`Gmeek-html<iframe width="560" height="315" src="https://www.youtube.com/embed/cFOob3djiOA?si=sEFDG3pH0IG-HnjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
 
 
 # 事前准备
