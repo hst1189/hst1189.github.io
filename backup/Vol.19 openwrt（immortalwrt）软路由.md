@@ -1,11 +1,16 @@
+# youtube教程
+软路由：
+`Gmeek-html<iframe style='border-radius:12px' width="100%" height="400px"  src="https://www.youtube.com/watch?v=JfSJmPFiL_s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+
+旁路由：
+`Gmeek-html<iframe style='border-radius:12px' width="100%" height="400px"  src="https://www.youtube.com/watch?v=cFOob3djiOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+
+
 # 事前准备
 
 ### 1. 下载 OpenWrt 镜像
 骷髅大佬版本：[DHDAXCW/OpenWRT_x86_x64](https://github.com/DHDAXCW/OpenWRT_x86_x64/releases)
 基于 immortalwrt 源码建构 x86 的 OpenWrt 固件。
-
-教程：https://www.youtube.com/watch?v=JfSJmPFiL_s
-
 
 `ext4` 文件系统镜像可以对任何改动都进行持久化存储，
 `squashfs` 一般情况下对文件系统的改动无法持久化，每次重启都会重置更改，但便于从错误配置中重置。推荐使用 `generic-squashfs-x.img` 
