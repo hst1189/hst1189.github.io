@@ -1,12 +1,26 @@
-## 🔖 openrouter.ai
-https://openrouter.ai/models?order=most-popular&q=free
-gmail
-"api-url": "https://openrouter.ai/api/v1/chat/completions"
-"model": "qwen/qwen3-coder:free"
-
-
 ## 🔖 arena.ai
 https://lmarena.ai/leaderboard
+
+## 🔖 AMD
+https://developer.amd.com.cn/radeon/tokenfactory
+gmail
+https://developer.amd.com.cn/radeon/api/v1
+
+
+## 🔖 openrouter.ai
+https://openrouter.ai/models?q=free
+gmail
+https://openrouter.ai/api/v1
+Model：qwen/qwen3.8-27b:free
+
+
+## 🔖 Gemini
+https://aistudio.google.com/
+"api-url": "https://generativelanguage.googleapis.com/v1beta"
+"model": "Gemini 2.5 Flash Preview 05-20"
+
+https://gemini.google.com/   （面向普通用户）
+https://notebooklm.google.com/
 
 
 ## 🔖 longcat（美团）
@@ -19,13 +33,6 @@ model:
 - LongCat-Flash-Lite
 
 
-## 🔖 Gemini
-https://aistudio.google.com/
-"api-url": "https://generativelanguage.googleapis.com/v1beta"
-"model": "Gemini 2.5 Flash Preview 05-20"
-
-https://gemini.google.com/   （面向普通用户）
-https://notebooklm.google.com/
 
 
 
