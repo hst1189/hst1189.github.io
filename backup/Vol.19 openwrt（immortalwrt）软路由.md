@@ -1,9 +1,15 @@
 # youtube教程
-软路由：
+### 软路由：
 `Gmeek-html<iframe width="560" height="315" src="https://www.youtube.com/embed/JfSJmPFiL_s?si=RPrcNpyHyHK-zW_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
 
-旁路由：
+### 旁路由：
 `Gmeek-html<iframe width="560" height="315" src="https://www.youtube.com/embed/cFOob3djiOA?si=sEFDG3pH0IG-HnjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+
+### 野生网关的软路由
+`Gmeek-html<iframe width="560" height="315" src="https://www.youtube.com/embed/ogVia0iP8hg?si=xHHCr_ss_csFTjl4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+
+打包资源：　包内集成内容  4:44
+https://download.wildprobe.com/api/public/dl/3xBmKieA?inline=true
 
 
 # 事前准备
