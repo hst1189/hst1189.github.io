@@ -422,10 +422,14 @@ npm init    // 初始化一个新项目，在当前目录创建 package.json 文
 
 npm pack <package-name> // 只拿回tgz包，不执行任何脚本
 tar -xfz *.tgz                           // 展开，先不运行
+
 grep -rnE "child_process | spawn | fetch | \.ssh | credentials | process.env"  <package-name>/
+
 grep -nE "cordis_define | cordis_run | subprocess" captain.log
 
-
+cordis_define： 自定义插件的接口
+cordis_run： 运行插件的接口
+subprocess.spawn：插件逃出沙箱后，启动进程
 
 child_process：启动子程序，攻击连最后拿到的功能
 spawn：启动子程序，攻击连最后拿到的功能

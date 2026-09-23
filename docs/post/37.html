@@ -96,7 +96,7 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2026-09-23 02:37</p></section><nav class="paginate-container" aria-label="Pagination">
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2026-09-23 02:42</p></section><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
@@ -558,10 +558,14 @@ console.log('Environment variables:', process.env);
 
 <span class="pl-s1">npm</span> <span class="pl-s1">pack</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span> <span class="pl-c">// 只拿回tgz包，不执行任何脚本</span>
 <span class="pl-s1">tar</span> <span class="pl-c1">-</span><span class="pl-s1">xfz</span> <span class="pl-c1">*</span><span class="pl-kos">.</span><span class="pl-c1">tgz</span>                           <span class="pl-c">// 展开，先不运行</span>
+
 <span class="pl-s1">grep</span> <span class="pl-c1">-</span><span class="pl-s1">rnE</span> <span class="pl-s">"child_process | spawn | fetch | \.ssh | credentials | process.env"</span>  <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span><span class="pl-c1">/</span>
+
 <span class="pl-s1">grep</span> <span class="pl-c1">-</span><span class="pl-s1">nE</span> <span class="pl-s">"cordis_define | cordis_run | subprocess"</span> <span class="pl-s1">captain</span><span class="pl-kos">.</span><span class="pl-c1">log</span>
 
-
+<span class="pl-s1">cordis_define：</span><span class="pl-kos"></span> <span class="pl-s1">自定义插件的接口</span>
+<span class="pl-s1">cordis_run：</span><span class="pl-kos"></span> <span class="pl-s1">运行插件的接口</span>
+<span class="pl-s1">subprocess</span><span class="pl-kos">.</span><span class="pl-c1">spawn：插件逃出沙箱后，启动进程</span>
 
 <span class="pl-s1">child_process：启动子程序，攻击连最后拿到的功能</span>
 <span class="pl-s1">spawn：启动子程序，攻击连最后拿到的功能</span>
