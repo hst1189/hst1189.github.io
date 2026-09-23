@@ -96,8 +96,8 @@ footer{margin-top:64px; text-align: center;font-size: small;}
 </nav>
 </header>
     <main id="content">
-<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2026-02-11 07:53</p></section><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Previous Page">上一篇-Vol.36 网络资源</a><a class="next_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Next Page">下一篇-Vol.38 ExpressJS入門</a></div>
+<section style="font-size:10px; text-align:right;"><p>created at 2025-11-11 03:56,updated at 2026-09-23 02:11</p></section><nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination"><a class="previous_page" href="https://grapehut.dpdns.org/post/38.html" aria-label="Previous Page">上一篇-Vol.38 ExpressJS入門</a><a class="next_page" href="https://grapehut.dpdns.org/post/36.html" aria-label="Next Page">下一篇-Vol.36 网络资源</a></div>
 </nav>
 
 <section class="markdown-body spoiler" id="postBody"><h1>NodeJS</h1>
@@ -556,7 +556,19 @@ console.log('Environment variables:', process.env);
 <h2>🚀npm</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">npm</span> <span class="pl-s1">init</span>    <span class="pl-c">// 初始化一个新项目，在当前目录创建 package.json 文件</span>
 
-<span class="pl-s1">npm</span> <span class="pl-s1">install</span>    <span class="pl-c">// 根据 package.json 文件安装项目的所有依赖</span>
+<span class="pl-s1">npm</span> <span class="pl-s1">pack</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span> <span class="pl-c">// 只拿回tgz包，不执行任何脚本</span>
+<span class="pl-s1">tar</span> <span class="pl-c1">-</span><span class="pl-s1">xfz</span> <span class="pl-c1">*</span><span class="pl-kos">.</span><span class="pl-c1">tgz</span>                           <span class="pl-c">// 展开，先不运行</span>
+<span class="pl-s1">grep</span> <span class="pl-c1">-</span><span class="pl-s1">rnE</span> <span class="pl-s">"child_process | spawn | fetch | \.ssh | credentials | process.env"</span>  <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span><span class="pl-c1">/</span>
+
+<span class="pl-s1">child_process：启动子程序，攻击连最后拿到的功能</span>
+<span class="pl-s1">spawn：启动子程序，攻击连最后拿到的功能</span>
+<span class="pl-s1">fetch：发网络请求</span>
+<span class="pl-kos">.</span><span class="pl-c1">ssh：密钥目录</span>
+<span class="pl-s1">credentials：</span><span class="pl-kos"></span> <span class="pl-s1">凭证字段</span>
+<span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env：读环境变量</span>
+
+
+<span class="pl-s1">npm</span><span class="pl-kos"></span> <span class="pl-s1">install</span>    <span class="pl-c">// 根据 package.json 文件安装项目的所有依赖</span>
 <span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>        <span class="pl-c">// 当前项目安装指定package</span>
 <span class="pl-s1">npm</span> <span class="pl-s1">install</span> <span class="pl-c1">-</span><span class="pl-s1">g</span> <span class="pl-c1">&lt;</span><span class="pl-s1">package</span><span class="pl-c1">-</span><span class="pl-s1">name</span><span class="pl-c1">&gt;</span>    <span class="pl-c">// 全局安装指定package</span>
 
